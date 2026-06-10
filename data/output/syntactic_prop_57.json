@@ -1,0 +1,1175 @@
+{
+  "method": "syntactic",
+  "normalization": "strip Type/Sort binders + alpha-rename",
+  "input_files": [
+    "data/prop_57_lemmas.json"
+  ],
+  "num_input_lemmas": 97,
+  "num_clusters": 97,
+  "clusters": [
+    {
+      "canonical": "(ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (n : ℕ) (m : ℕ) (h1 : List.drop 0 (List.take m (x :: xs)) = List.take (m - 0) (List.drop 0 (x :: xs)) ∧ List.drop (n + 1) (x :: List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs))) : List.drop n (List.take m (x :: xs)) = List.take (m - n) (List.drop n (x :: xs))",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 0,
+          "statement": "(ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (n : ℕ) (m : ℕ) (h1 : List.drop 0 (List.take m (x :: xs)) = List.take (m - 0) (List.drop 0 (x :: xs)) ∧ List.drop (n + 1) (x :: List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs))) : List.drop n (List.take m (x :: xs)) = List.take (m - n) (List.drop n (x :: xs))"
+        }
+      ]
+    },
+    {
+      "canonical": "(ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (n : ℕ) (m : ℕ) : List.drop (n + 1) (x :: List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs))",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 1,
+          "statement": "(ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (n : ℕ) (m : ℕ) : List.drop (n + 1) (x :: List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs))"
+        }
+      ]
+    },
+    {
+      "canonical": "(h1 : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) : List.drop n (List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs))",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 2,
+          "statement": "(h1 : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) : List.drop n (List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs))"
+        }
+      ]
+    },
+    {
+      "canonical": "(ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (n : ℕ) (m : ℕ) (h1 : List.drop (n + 1) (List.take m (x :: xs)) = List.take (m - (n + 1)) (List.drop (n + 1) (x :: xs))) : List.drop n (List.take m (x :: xs)) = List.take (m - n) (List.drop n (x :: xs))",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 3,
+          "statement": "(ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (n : ℕ) (m : ℕ) (h1 : List.drop (n + 1) (List.take m (x :: xs)) = List.take (m - (n + 1)) (List.drop (n + 1) (x :: xs))) : List.drop n (List.take m (x :: xs)) = List.take (m - n) (List.drop n (x :: xs))"
+        }
+      ]
+    },
+    {
+      "canonical": "(n : ℕ) (m : ℕ) (xs : List α) (x : α) (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (h1 : List.drop n (List.take m (x :: xs)) = List.take (m - n) (List.drop n (x :: xs))) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 4,
+          "statement": "(n : ℕ) (m : ℕ) (xs : List α) (x : α) (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (h1 : List.drop n (List.take m (x :: xs)) = List.take (m - n) (List.drop n (x :: xs))) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (m : ℕ) (n : ℕ) (h1 : List.drop n (List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs))) : List.drop (n + 1) (List.take m (x :: xs)) = List.take (m - (n + 1)) (List.drop (n + 1) (x :: xs))",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 5,
+          "statement": "(ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (m : ℕ) (n : ℕ) (h1 : List.drop n (List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs))) : List.drop (n + 1) (List.take m (x :: xs)) = List.take (m - (n + 1)) (List.drop (n + 1) (x :: xs))"
+        }
+      ]
+    },
+    {
+      "canonical": "(ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (n : ℕ) (m : ℕ) (h1 : List.drop (n + 1) (List.take (m + 1) (x :: xs)) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs))) : List.drop n (List.take m (x :: xs)) = List.take (m - n) (List.drop n (x :: xs))",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 6,
+          "statement": "(ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (n : ℕ) (m : ℕ) (h1 : List.drop (n + 1) (List.take (m + 1) (x :: xs)) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs))) : List.drop n (List.take m (x :: xs)) = List.take (m - n) (List.drop n (x :: xs))"
+        }
+      ]
+    },
+    {
+      "canonical": "(h1 : List.drop n (List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs))) : List.drop (n + 1) (List.take (m + 1) (x :: xs)) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs))",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 7,
+          "statement": "(h1 : List.drop n (List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs))) : List.drop (n + 1) (List.take (m + 1) (x :: xs)) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs))"
+        }
+      ]
+    },
+    {
+      "canonical": "(ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (n : ℕ) (m : ℕ) : List.drop n (List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop n xs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 8,
+          "statement": "(ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (n : ℕ) (m : ℕ) : List.drop n (List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop n xs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (n : ℕ) (m : ℕ) : List.drop n (List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs))",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 9,
+          "statement": "(ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (n : ℕ) (m : ℕ) : List.drop n (List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs))"
+        }
+      ]
+    },
+    {
+      "canonical": "(h1 : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) : List.drop (n + 1) (x :: List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs))",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 10,
+          "statement": "(h1 : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) : List.drop (n + 1) (x :: List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs))"
+        }
+      ]
+    },
+    {
+      "canonical": "(h1 : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) : List.drop (n + 1) (List.take (m + 1) (x :: xs)) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs))",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 11,
+          "statement": "(h1 : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) : List.drop (n + 1) (List.take (m + 1) (x :: xs)) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs))"
+        }
+      ]
+    },
+    {
+      "canonical": "(h1 : List.drop n (List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop n xs)) : List.drop (n + 1) (x :: List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs))",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 12,
+          "statement": "(h1 : List.drop n (List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop n xs)) : List.drop (n + 1) (x :: List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs))"
+        }
+      ]
+    },
+    {
+      "canonical": "(h1 : List.drop n (List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop n xs)) : List.drop (n + 1) (List.take (m + 1) (x :: xs)) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs))",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 13,
+          "statement": "(h1 : List.drop n (List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop n xs)) : List.drop (n + 1) (List.take (m + 1) (x :: xs)) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs))"
+        }
+      ]
+    },
+    {
+      "canonical": "(ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (m : ℕ) (n : ℕ) (h1 : List.drop (n + 1) (List.take 0 (x :: xs)) = List.take (0 - (n + 1)) (List.drop (n + 1) (x :: xs)) ∧ List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) : List.drop (n + 1) (List.take m (x :: xs)) = List.take (m - (n + 1)) (List.drop (n + 1) (x :: xs))",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 14,
+          "statement": "(ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (m : ℕ) (n : ℕ) (h1 : List.drop (n + 1) (List.take 0 (x :: xs)) = List.take (0 - (n + 1)) (List.drop (n + 1) (x :: xs)) ∧ List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) : List.drop (n + 1) (List.take m (x :: xs)) = List.take (m - (n + 1)) (List.drop (n + 1) (x :: xs))"
+        }
+      ]
+    },
+    {
+      "canonical": "(ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (m : ℕ) (n : ℕ) (h1 : List.drop (n + 1) (List.take 0 (x :: xs)) = List.take (0 - (n + 1)) (List.drop (n + 1) (x :: xs)) ∧ List.drop (n + 1) (x :: List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs))) : List.drop (n + 1) (List.take m (x :: xs)) = List.take (m - (n + 1)) (List.drop (n + 1) (x :: xs))",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 15,
+          "statement": "(ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (m : ℕ) (n : ℕ) (h1 : List.drop (n + 1) (List.take 0 (x :: xs)) = List.take (0 - (n + 1)) (List.drop (n + 1) (x :: xs)) ∧ List.drop (n + 1) (x :: List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs))) : List.drop (n + 1) (List.take m (x :: xs)) = List.take (m - (n + 1)) (List.drop (n + 1) (x :: xs))"
+        }
+      ]
+    },
+    {
+      "canonical": "(ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (m : ℕ) (n : ℕ) (h1 : List.drop (n + 1) (x :: List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs))) : List.drop (n + 1) (List.take m (x :: xs)) = List.take (m - (n + 1)) (List.drop (n + 1) (x :: xs))",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 16,
+          "statement": "(ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (m : ℕ) (n : ℕ) (h1 : List.drop (n + 1) (x :: List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs))) : List.drop (n + 1) (List.take m (x :: xs)) = List.take (m - (n + 1)) (List.drop (n + 1) (x :: xs))"
+        }
+      ]
+    },
+    {
+      "canonical": "(ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (m : ℕ) (n : ℕ) (h1 : List.drop (n + 1) (List.take (m + 1) (x :: xs)) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs))) : List.drop (n + 1) (List.take m (x :: xs)) = List.take (m - (n + 1)) (List.drop (n + 1) (x :: xs))",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 17,
+          "statement": "(ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (m : ℕ) (n : ℕ) (h1 : List.drop (n + 1) (List.take (m + 1) (x :: xs)) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs))) : List.drop (n + 1) (List.take m (x :: xs)) = List.take (m - (n + 1)) (List.drop (n + 1) (x :: xs))"
+        }
+      ]
+    },
+    {
+      "canonical": "(ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (n : ℕ) (m : ℕ) (h1 : List.drop 0 (List.take m (x :: xs)) = List.take (m - 0) (List.drop 0 (x :: xs)) ∧ List.drop (n + 1) (List.take (m + 1) (x :: xs)) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs))) : List.drop n (List.take m (x :: xs)) = List.take (m - n) (List.drop n (x :: xs))",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 18,
+          "statement": "(ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (n : ℕ) (m : ℕ) (h1 : List.drop 0 (List.take m (x :: xs)) = List.take (m - 0) (List.drop 0 (x :: xs)) ∧ List.drop (n + 1) (List.take (m + 1) (x :: xs)) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs))) : List.drop n (List.take m (x :: xs)) = List.take (m - n) (List.drop n (x :: xs))"
+        }
+      ]
+    },
+    {
+      "canonical": "(ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (n : ℕ) (m : ℕ) (h1 : List.drop 0 (List.take m (x :: xs)) = List.take (m - 0) (List.drop 0 (x :: xs)) ∧ List.drop (n + 1) (List.take 0 (x :: xs)) = List.take (0 - (n + 1)) (List.drop (n + 1) (x :: xs)) ∧ List.drop n (List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs))) : List.drop n (List.take m (x :: xs)) = List.take (m - n) (List.drop n (x :: xs))",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 19,
+          "statement": "(ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (n : ℕ) (m : ℕ) (h1 : List.drop 0 (List.take m (x :: xs)) = List.take (m - 0) (List.drop 0 (x :: xs)) ∧ List.drop (n + 1) (List.take 0 (x :: xs)) = List.take (0 - (n + 1)) (List.drop (n + 1) (x :: xs)) ∧ List.drop n (List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs))) : List.drop n (List.take m (x :: xs)) = List.take (m - n) (List.drop n (x :: xs))"
+        }
+      ]
+    },
+    {
+      "canonical": "(n : ℕ) (m : ℕ) (xs : List α) (h1 : List.drop n (List.take m []) = List.take (m - n) (List.drop n []) ∧ ((x : α) → (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) → List.drop 0 (List.take m (x :: xs)) = List.take (m - 0) (List.drop 0 (x :: xs)) ∧ List.drop (n + 1) (List.take 0 (x :: xs)) = List.take (0 - (n + 1)) (List.drop (n + 1) (x :: xs)))) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 20,
+          "statement": "(n : ℕ) (m : ℕ) (xs : List α) (h1 : List.drop n (List.take m []) = List.take (m - n) (List.drop n []) ∧ ((x : α) → (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) → List.drop 0 (List.take m (x :: xs)) = List.take (m - 0) (List.drop 0 (x :: xs)) ∧ List.drop (n + 1) (List.take 0 (x :: xs)) = List.take (0 - (n + 1)) (List.drop (n + 1) (x :: xs)))) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(n : ℕ) (m : ℕ) (xs : List α) (h1 : List.drop n (List.take m []) = List.take (m - n) (List.drop n []) ∧ ((x : α) → (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) → List.drop (n + 1) (List.take 0 (x :: xs)) = List.take (0 - (n + 1)) (List.drop (n + 1) (x :: xs)) ∧ List.drop (n + 1) (List.take (m + 1) (x :: xs)) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs)))) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 21,
+          "statement": "(n : ℕ) (m : ℕ) (xs : List α) (h1 : List.drop n (List.take m []) = List.take (m - n) (List.drop n []) ∧ ((x : α) → (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) → List.drop (n + 1) (List.take 0 (x :: xs)) = List.take (0 - (n + 1)) (List.drop (n + 1) (x :: xs)) ∧ List.drop (n + 1) (List.take (m + 1) (x :: xs)) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs)))) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (n : ℕ) (m : ℕ) : List.drop (n + 1) (List.take (m + 1) (x :: xs)) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs))",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 22,
+          "statement": "(ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (n : ℕ) (m : ℕ) : List.drop (n + 1) (List.take (m + 1) (x :: xs)) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs))"
+        }
+      ]
+    },
+    {
+      "canonical": "(ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (n : ℕ) (m : ℕ) (h1 : List.drop n (List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs))) : List.drop n (List.take m (x :: xs)) = List.take (m - n) (List.drop n (x :: xs))",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 23,
+          "statement": "(ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (n : ℕ) (m : ℕ) (h1 : List.drop n (List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs))) : List.drop n (List.take m (x :: xs)) = List.take (m - n) (List.drop n (x :: xs))"
+        }
+      ]
+    },
+    {
+      "canonical": "(n : ℕ) (m : ℕ) (xs : List α) (x : α) (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (h1 : List.drop (n + 1) (List.take 0 (x :: xs)) = List.take (0 - (n + 1)) (List.drop (n + 1) (x :: xs)) ∧ List.drop (n + 1) (List.take (m + 1) (x :: xs)) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs))) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 24,
+          "statement": "(n : ℕ) (m : ℕ) (xs : List α) (x : α) (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (h1 : List.drop (n + 1) (List.take 0 (x :: xs)) = List.take (0 - (n + 1)) (List.drop (n + 1) (x :: xs)) ∧ List.drop (n + 1) (List.take (m + 1) (x :: xs)) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs))) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (m : ℕ) (n : ℕ) (h1 : List.drop (n + 1) (List.take 0 (x :: xs)) = List.take (0 - (n + 1)) (List.drop (n + 1) (x :: xs)) ∧ List.drop n (List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs))) : List.drop (n + 1) (List.take m (x :: xs)) = List.take (m - (n + 1)) (List.drop (n + 1) (x :: xs))",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 25,
+          "statement": "(ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (m : ℕ) (n : ℕ) (h1 : List.drop (n + 1) (List.take 0 (x :: xs)) = List.take (0 - (n + 1)) (List.drop (n + 1) (x :: xs)) ∧ List.drop n (List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs))) : List.drop (n + 1) (List.take m (x :: xs)) = List.take (m - (n + 1)) (List.drop (n + 1) (x :: xs))"
+        }
+      ]
+    },
+    {
+      "canonical": "(ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (n : ℕ) (m : ℕ) (h1 : List.drop 0 (List.take m (x :: xs)) = List.take (m - 0) (List.drop 0 (x :: xs)) ∧ List.drop (n + 1) (List.take 0 (x :: xs)) = List.take (0 - (n + 1)) (List.drop (n + 1) (x :: xs)) ∧ List.drop (n + 1) (x :: List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs))) : List.drop n (List.take m (x :: xs)) = List.take (m - n) (List.drop n (x :: xs))",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 26,
+          "statement": "(ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (n : ℕ) (m : ℕ) (h1 : List.drop 0 (List.take m (x :: xs)) = List.take (m - 0) (List.drop 0 (x :: xs)) ∧ List.drop (n + 1) (List.take 0 (x :: xs)) = List.take (0 - (n + 1)) (List.drop (n + 1) (x :: xs)) ∧ List.drop (n + 1) (x :: List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs))) : List.drop n (List.take m (x :: xs)) = List.take (m - n) (List.drop n (x :: xs))"
+        }
+      ]
+    },
+    {
+      "canonical": "(ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (n : ℕ) (m : ℕ) (h1 : List.drop 0 (List.take m (x :: xs)) = List.take (m - 0) (List.drop 0 (x :: xs)) ∧ List.drop (n + 1) (List.take 0 (x :: xs)) = List.take (0 - (n + 1)) (List.drop (n + 1) (x :: xs)) ∧ List.drop (n + 1) (List.take (m + 1) (x :: xs)) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs))) : List.drop n (List.take m (x :: xs)) = List.take (m - n) (List.drop n (x :: xs))",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 27,
+          "statement": "(ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (n : ℕ) (m : ℕ) (h1 : List.drop 0 (List.take m (x :: xs)) = List.take (m - 0) (List.drop 0 (x :: xs)) ∧ List.drop (n + 1) (List.take 0 (x :: xs)) = List.take (0 - (n + 1)) (List.drop (n + 1) (x :: xs)) ∧ List.drop (n + 1) (List.take (m + 1) (x :: xs)) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs))) : List.drop n (List.take m (x :: xs)) = List.take (m - n) (List.drop n (x :: xs))"
+        }
+      ]
+    },
+    {
+      "canonical": "(n : ℕ) (m : ℕ) (xs : List α) (h1 : List.drop n (List.take m []) = List.take (m - n) (List.drop n []) ∧ ((x : α) → (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) → List.drop n (List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs)))) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 28,
+          "statement": "(n : ℕ) (m : ℕ) (xs : List α) (h1 : List.drop n (List.take m []) = List.take (m - n) (List.drop n []) ∧ ((x : α) → (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) → List.drop n (List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs)))) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (m : ℕ) (n : ℕ) (h1 : List.drop (n + 1) (List.take 0 (x :: xs)) = List.take (0 - (n + 1)) (List.drop (n + 1) (x :: xs)) ∧ List.drop n (List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop n xs)) : List.drop (n + 1) (List.take m (x :: xs)) = List.take (m - (n + 1)) (List.drop (n + 1) (x :: xs))",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 29,
+          "statement": "(ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (m : ℕ) (n : ℕ) (h1 : List.drop (n + 1) (List.take 0 (x :: xs)) = List.take (0 - (n + 1)) (List.drop (n + 1) (x :: xs)) ∧ List.drop n (List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop n xs)) : List.drop (n + 1) (List.take m (x :: xs)) = List.take (m - (n + 1)) (List.drop (n + 1) (x :: xs))"
+        }
+      ]
+    },
+    {
+      "canonical": "(n : ℕ) (m : ℕ) (xs : List α) (h1 : List.drop n (List.take m []) = List.take (m - n) (List.drop n []) ∧ ((x : α) → (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) → List.drop 0 (List.take m (x :: xs)) = List.take (m - 0) (List.drop 0 (x :: xs)) ∧ List.drop n (List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop n xs))) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 30,
+          "statement": "(n : ℕ) (m : ℕ) (xs : List α) (h1 : List.drop n (List.take m []) = List.take (m - n) (List.drop n []) ∧ ((x : α) → (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) → List.drop 0 (List.take m (x :: xs)) = List.take (m - 0) (List.drop 0 (x :: xs)) ∧ List.drop n (List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop n xs))) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(n : ℕ) (m : ℕ) (xs : List α) (x : α) (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (h1 : List.drop 0 (List.take m (x :: xs)) = List.take (m - 0) (List.drop 0 (x :: xs)) ∧ List.drop (n + 1) (List.take m (x :: xs)) = List.take (m - (n + 1)) (List.drop (n + 1) (x :: xs))) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 31,
+          "statement": "(n : ℕ) (m : ℕ) (xs : List α) (x : α) (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (h1 : List.drop 0 (List.take m (x :: xs)) = List.take (m - 0) (List.drop 0 (x :: xs)) ∧ List.drop (n + 1) (List.take m (x :: xs)) = List.take (m - (n + 1)) (List.drop (n + 1) (x :: xs))) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (n : ℕ) (m : ℕ) (h1 : List.drop (n + 1) (List.take 0 (x :: xs)) = List.take (0 - (n + 1)) (List.drop (n + 1) (x :: xs)) ∧ List.drop (n + 1) (x :: List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs))) : List.drop n (List.take m (x :: xs)) = List.take (m - n) (List.drop n (x :: xs))",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 32,
+          "statement": "(ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (n : ℕ) (m : ℕ) (h1 : List.drop (n + 1) (List.take 0 (x :: xs)) = List.take (0 - (n + 1)) (List.drop (n + 1) (x :: xs)) ∧ List.drop (n + 1) (x :: List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs))) : List.drop n (List.take m (x :: xs)) = List.take (m - n) (List.drop n (x :: xs))"
+        }
+      ]
+    },
+    {
+      "canonical": "(n : ℕ) (m : ℕ) (xs : List α) (x : α) (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (h1 : List.drop (n + 1) (List.take m (x :: xs)) = List.take (m - (n + 1)) (List.drop (n + 1) (x :: xs))) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 33,
+          "statement": "(n : ℕ) (m : ℕ) (xs : List α) (x : α) (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (h1 : List.drop (n + 1) (List.take m (x :: xs)) = List.take (m - (n + 1)) (List.drop (n + 1) (x :: xs))) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (n : ℕ) (m : ℕ) (h1 : List.drop (n + 1) (List.take 0 (x :: xs)) = List.take (0 - (n + 1)) (List.drop (n + 1) (x :: xs)) ∧ List.drop n (List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop n xs)) : List.drop n (List.take m (x :: xs)) = List.take (m - n) (List.drop n (x :: xs))",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 34,
+          "statement": "(ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (n : ℕ) (m : ℕ) (h1 : List.drop (n + 1) (List.take 0 (x :: xs)) = List.take (0 - (n + 1)) (List.drop (n + 1) (x :: xs)) ∧ List.drop n (List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop n xs)) : List.drop n (List.take m (x :: xs)) = List.take (m - n) (List.drop n (x :: xs))"
+        }
+      ]
+    },
+    {
+      "canonical": "(n : ℕ) (m : ℕ) (xs : List α) (x : α) (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (h1 : List.drop n (List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop n xs)) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 35,
+          "statement": "(n : ℕ) (m : ℕ) (xs : List α) (x : α) (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (h1 : List.drop n (List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop n xs)) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(n : ℕ) (m : ℕ) (xs : List α) (h1 : List.drop n (List.take m []) = List.take (m - n) (List.drop n []) ∧ ((x : α) → (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) → List.drop 0 (List.take m (x :: xs)) = List.take (m - 0) (List.drop 0 (x :: xs)) ∧ List.drop (n + 1) (List.take m (x :: xs)) = List.take (m - (n + 1)) (List.drop (n + 1) (x :: xs)))) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 36,
+          "statement": "(n : ℕ) (m : ℕ) (xs : List α) (h1 : List.drop n (List.take m []) = List.take (m - n) (List.drop n []) ∧ ((x : α) → (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) → List.drop 0 (List.take m (x :: xs)) = List.take (m - 0) (List.drop 0 (x :: xs)) ∧ List.drop (n + 1) (List.take m (x :: xs)) = List.take (m - (n + 1)) (List.drop (n + 1) (x :: xs)))) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (n : ℕ) (m : ℕ) (h1 : List.drop (n + 1) (List.take 0 (x :: xs)) = List.take (0 - (n + 1)) (List.drop (n + 1) (x :: xs)) ∧ List.drop (n + 1) (List.take (m + 1) (x :: xs)) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs))) : List.drop n (List.take m (x :: xs)) = List.take (m - n) (List.drop n (x :: xs))",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 37,
+          "statement": "(ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (n : ℕ) (m : ℕ) (h1 : List.drop (n + 1) (List.take 0 (x :: xs)) = List.take (0 - (n + 1)) (List.drop (n + 1) (x :: xs)) ∧ List.drop (n + 1) (List.take (m + 1) (x :: xs)) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs))) : List.drop n (List.take m (x :: xs)) = List.take (m - n) (List.drop n (x :: xs))"
+        }
+      ]
+    },
+    {
+      "canonical": "(n : ℕ) (m : ℕ) (xs : List α) (h1 : List.drop n (List.take m []) = List.take (m - n) (List.drop n []) ∧ ((x : α) → (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) → List.drop 0 (List.take m (x :: xs)) = List.take (m - 0) (List.drop 0 (x :: xs)) ∧ List.drop (n + 1) (List.take 0 (x :: xs)) = List.take (0 - (n + 1)) (List.drop (n + 1) (x :: xs)) ∧ List.drop (n + 1) (List.take (m + 1) (x :: xs)) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs)))) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 38,
+          "statement": "(n : ℕ) (m : ℕ) (xs : List α) (h1 : List.drop n (List.take m []) = List.take (m - n) (List.drop n []) ∧ ((x : α) → (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) → List.drop 0 (List.take m (x :: xs)) = List.take (m - 0) (List.drop 0 (x :: xs)) ∧ List.drop (n + 1) (List.take 0 (x :: xs)) = List.take (0 - (n + 1)) (List.drop (n + 1) (x :: xs)) ∧ List.drop (n + 1) (List.take (m + 1) (x :: xs)) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs)))) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (n : ℕ) (m : ℕ) (h1 : List.drop n (List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop n xs)) : List.drop n (List.take m (x :: xs)) = List.take (m - n) (List.drop n (x :: xs))",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 39,
+          "statement": "(ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (n : ℕ) (m : ℕ) (h1 : List.drop n (List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop n xs)) : List.drop n (List.take m (x :: xs)) = List.take (m - n) (List.drop n (x :: xs))"
+        }
+      ]
+    },
+    {
+      "canonical": "(n : ℕ) (m : ℕ) (xs : List α) (h1 : List.drop n (List.take m []) = List.take (m - n) (List.drop n []) ∧ ((x : α) → (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) → List.drop 0 (List.take m (x :: xs)) = List.take (m - 0) (List.drop 0 (x :: xs)) ∧ List.drop (n + 1) (List.take 0 (x :: xs)) = List.take (0 - (n + 1)) (List.drop (n + 1) (x :: xs)) ∧ List.drop n (List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs)))) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 40,
+          "statement": "(n : ℕ) (m : ℕ) (xs : List α) (h1 : List.drop n (List.take m []) = List.take (m - n) (List.drop n []) ∧ ((x : α) → (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) → List.drop 0 (List.take m (x :: xs)) = List.take (m - 0) (List.drop 0 (x :: xs)) ∧ List.drop (n + 1) (List.take 0 (x :: xs)) = List.take (0 - (n + 1)) (List.drop (n + 1) (x :: xs)) ∧ List.drop n (List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs)))) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(n : ℕ) (m : ℕ) (xs : List α) (x : α) (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (h1 : List.drop 0 (List.take m (x :: xs)) = List.take (m - 0) (List.drop 0 (x :: xs)) ∧ List.drop (n + 1) (List.take 0 (x :: xs)) = List.take (0 - (n + 1)) (List.drop (n + 1) (x :: xs)) ∧ List.drop n (List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs))) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 41,
+          "statement": "(n : ℕ) (m : ℕ) (xs : List α) (x : α) (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (h1 : List.drop 0 (List.take m (x :: xs)) = List.take (m - 0) (List.drop 0 (x :: xs)) ∧ List.drop (n + 1) (List.take 0 (x :: xs)) = List.take (0 - (n + 1)) (List.drop (n + 1) (x :: xs)) ∧ List.drop n (List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs))) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(n : ℕ) (m : ℕ) (xs : List α) (x : α) (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (h1 : List.drop 0 (List.take m (x :: xs)) = List.take (m - 0) (List.drop 0 (x :: xs)) ∧ List.drop (n + 1) (List.take 0 (x :: xs)) = List.take (0 - (n + 1)) (List.drop (n + 1) (x :: xs)) ∧ List.drop (n + 1) (List.take (m + 1) (x :: xs)) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs))) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 42,
+          "statement": "(n : ℕ) (m : ℕ) (xs : List α) (x : α) (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (h1 : List.drop 0 (List.take m (x :: xs)) = List.take (m - 0) (List.drop 0 (x :: xs)) ∧ List.drop (n + 1) (List.take 0 (x :: xs)) = List.take (0 - (n + 1)) (List.drop (n + 1) (x :: xs)) ∧ List.drop (n + 1) (List.take (m + 1) (x :: xs)) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs))) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(n : ℕ) (m : ℕ) (xs : List α) (h1 : List.drop n (List.take m []) = List.take (m - n) (List.drop n []) ∧ ((x : α) → (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) → List.drop (n + 1) (List.take (m + 1) (x :: xs)) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs)))) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 43,
+          "statement": "(n : ℕ) (m : ℕ) (xs : List α) (h1 : List.drop n (List.take m []) = List.take (m - n) (List.drop n []) ∧ ((x : α) → (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) → List.drop (n + 1) (List.take (m + 1) (x :: xs)) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs)))) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(n : ℕ) (m : ℕ) (xs : List α) (x : α) (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (h1 : List.drop 0 (List.take m (x :: xs)) = List.take (m - 0) (List.drop 0 (x :: xs)) ∧ List.drop (n + 1) (List.take (m + 1) (x :: xs)) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs))) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 44,
+          "statement": "(n : ℕ) (m : ℕ) (xs : List α) (x : α) (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (h1 : List.drop 0 (List.take m (x :: xs)) = List.take (m - 0) (List.drop 0 (x :: xs)) ∧ List.drop (n + 1) (List.take (m + 1) (x :: xs)) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs))) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(n : ℕ) (m : ℕ) (xs : List α) (x : α) (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (h1 : List.drop (n + 1) (List.take 0 (x :: xs)) = List.take (0 - (n + 1)) (List.drop (n + 1) (x :: xs)) ∧ List.drop (n + 1) (x :: List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs))) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 45,
+          "statement": "(n : ℕ) (m : ℕ) (xs : List α) (x : α) (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (h1 : List.drop (n + 1) (List.take 0 (x :: xs)) = List.take (0 - (n + 1)) (List.drop (n + 1) (x :: xs)) ∧ List.drop (n + 1) (x :: List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs))) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(n : ℕ) (m : ℕ) (xs : List α) (x : α) (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (h1 : List.drop 0 (List.take m (x :: xs)) = List.take (m - 0) (List.drop 0 (x :: xs)) ∧ List.drop (n + 1) (List.take 0 (x :: xs)) = List.take (0 - (n + 1)) (List.drop (n + 1) (x :: xs)) ∧ List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 46,
+          "statement": "(n : ℕ) (m : ℕ) (xs : List α) (x : α) (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (h1 : List.drop 0 (List.take m (x :: xs)) = List.take (m - 0) (List.drop 0 (x :: xs)) ∧ List.drop (n + 1) (List.take 0 (x :: xs)) = List.take (0 - (n + 1)) (List.drop (n + 1) (x :: xs)) ∧ List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(n : ℕ) (m : ℕ) (xs : List α) (x : α) (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (h1 : List.drop 0 (List.take m (x :: xs)) = List.take (m - 0) (List.drop 0 (x :: xs)) ∧ List.drop (n + 1) (List.take 0 (x :: xs)) = List.take (0 - (n + 1)) (List.drop (n + 1) (x :: xs)) ∧ List.drop (n + 1) (x :: List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs))) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 47,
+          "statement": "(n : ℕ) (m : ℕ) (xs : List α) (x : α) (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (h1 : List.drop 0 (List.take m (x :: xs)) = List.take (m - 0) (List.drop 0 (x :: xs)) ∧ List.drop (n + 1) (List.take 0 (x :: xs)) = List.take (0 - (n + 1)) (List.drop (n + 1) (x :: xs)) ∧ List.drop (n + 1) (x :: List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs))) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(n : ℕ) (m : ℕ) (xs : List α) (x : α) (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (h1 : List.drop 0 (List.take m (x :: xs)) = List.take (m - 0) (List.drop 0 (x :: xs)) ∧ List.drop (n + 1) (x :: List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs))) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 48,
+          "statement": "(n : ℕ) (m : ℕ) (xs : List α) (x : α) (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (h1 : List.drop 0 (List.take m (x :: xs)) = List.take (m - 0) (List.drop 0 (x :: xs)) ∧ List.drop (n + 1) (x :: List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs))) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(n : ℕ) (m : ℕ) (xs : List α) (h1 : List.drop n (List.take m []) = List.take (m - n) (List.drop n []) ∧ ((x : α) → (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) → List.drop (n + 1) (List.take 0 (x :: xs)) = List.take (0 - (n + 1)) (List.drop (n + 1) (x :: xs)) ∧ List.drop n (List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs)))) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 49,
+          "statement": "(n : ℕ) (m : ℕ) (xs : List α) (h1 : List.drop n (List.take m []) = List.take (m - n) (List.drop n []) ∧ ((x : α) → (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) → List.drop (n + 1) (List.take 0 (x :: xs)) = List.take (0 - (n + 1)) (List.drop (n + 1) (x :: xs)) ∧ List.drop n (List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs)))) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (n : ℕ) (m : ℕ) (h1 : List.drop 0 (List.take m (x :: xs)) = List.take (m - 0) (List.drop 0 (x :: xs)) ∧ List.drop n (List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs))) : List.drop n (List.take m (x :: xs)) = List.take (m - n) (List.drop n (x :: xs))",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 50,
+          "statement": "(ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (n : ℕ) (m : ℕ) (h1 : List.drop 0 (List.take m (x :: xs)) = List.take (m - 0) (List.drop 0 (x :: xs)) ∧ List.drop n (List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs))) : List.drop n (List.take m (x :: xs)) = List.take (m - n) (List.drop n (x :: xs))"
+        }
+      ]
+    },
+    {
+      "canonical": "(ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (m : ℕ) (n : ℕ) (h1 : List.drop n (List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop n xs)) : List.drop (n + 1) (List.take m (x :: xs)) = List.take (m - (n + 1)) (List.drop (n + 1) (x :: xs))",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 51,
+          "statement": "(ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (m : ℕ) (n : ℕ) (h1 : List.drop n (List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop n xs)) : List.drop (n + 1) (List.take m (x :: xs)) = List.take (m - (n + 1)) (List.drop (n + 1) (x :: xs))"
+        }
+      ]
+    },
+    {
+      "canonical": "(ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (n : ℕ) (m : ℕ) (h1 : List.drop 0 (List.take m (x :: xs)) = List.take (m - 0) (List.drop 0 (x :: xs)) ∧ List.drop (n + 1) (List.take 0 (x :: xs)) = List.take (0 - (n + 1)) (List.drop (n + 1) (x :: xs)) ∧ List.drop n (List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop n xs)) : List.drop n (List.take m (x :: xs)) = List.take (m - n) (List.drop n (x :: xs))",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 52,
+          "statement": "(ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (n : ℕ) (m : ℕ) (h1 : List.drop 0 (List.take m (x :: xs)) = List.take (m - 0) (List.drop 0 (x :: xs)) ∧ List.drop (n + 1) (List.take 0 (x :: xs)) = List.take (0 - (n + 1)) (List.drop (n + 1) (x :: xs)) ∧ List.drop n (List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop n xs)) : List.drop n (List.take m (x :: xs)) = List.take (m - n) (List.drop n (x :: xs))"
+        }
+      ]
+    },
+    {
+      "canonical": "(ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (n : ℕ) (m : ℕ) : List.drop n (List.take m (x :: xs)) = List.take (m - n) (List.drop n (x :: xs))",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 53,
+          "statement": "(ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (n : ℕ) (m : ℕ) : List.drop n (List.take m (x :: xs)) = List.take (m - n) (List.drop n (x :: xs))"
+        }
+      ]
+    },
+    {
+      "canonical": "(ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (n : ℕ) (m : ℕ) (h1 : List.drop (n + 1) (x :: List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs))) : List.drop n (List.take m (x :: xs)) = List.take (m - n) (List.drop n (x :: xs))",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 54,
+          "statement": "(ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (n : ℕ) (m : ℕ) (h1 : List.drop (n + 1) (x :: List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs))) : List.drop n (List.take m (x :: xs)) = List.take (m - n) (List.drop n (x :: xs))"
+        }
+      ]
+    },
+    {
+      "canonical": "(n : ℕ) (m : ℕ) (xs : List α) (h1 : List.drop n (List.take m []) = List.take (m - n) (List.drop n []) ∧ ((x : α) → (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) → List.drop (n + 1) (List.take m (x :: xs)) = List.take (m - (n + 1)) (List.drop (n + 1) (x :: xs)))) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 55,
+          "statement": "(n : ℕ) (m : ℕ) (xs : List α) (h1 : List.drop n (List.take m []) = List.take (m - n) (List.drop n []) ∧ ((x : α) → (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) → List.drop (n + 1) (List.take m (x :: xs)) = List.take (m - (n + 1)) (List.drop (n + 1) (x :: xs)))) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (n : ℕ) (m : ℕ) (h1 : List.drop 0 (List.take m (x :: xs)) = List.take (m - 0) (List.drop 0 (x :: xs)) ∧ List.drop n (List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop n xs)) : List.drop n (List.take m (x :: xs)) = List.take (m - n) (List.drop n (x :: xs))",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 56,
+          "statement": "(ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (n : ℕ) (m : ℕ) (h1 : List.drop 0 (List.take m (x :: xs)) = List.take (m - 0) (List.drop 0 (x :: xs)) ∧ List.drop n (List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop n xs)) : List.drop n (List.take m (x :: xs)) = List.take (m - n) (List.drop n (x :: xs))"
+        }
+      ]
+    },
+    {
+      "canonical": "(ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (m : ℕ) (n : ℕ) (h1 : List.drop (n + 1) (List.take 0 (x :: xs)) = List.take (0 - (n + 1)) (List.drop (n + 1) (x :: xs))) : List.drop (n + 1) (List.take m (x :: xs)) = List.take (m - (n + 1)) (List.drop (n + 1) (x :: xs))",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 57,
+          "statement": "(ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (m : ℕ) (n : ℕ) (h1 : List.drop (n + 1) (List.take 0 (x :: xs)) = List.take (0 - (n + 1)) (List.drop (n + 1) (x :: xs))) : List.drop (n + 1) (List.take m (x :: xs)) = List.take (m - (n + 1)) (List.drop (n + 1) (x :: xs))"
+        }
+      ]
+    },
+    {
+      "canonical": "(n : ℕ) (m : ℕ) (xs : List α) (h1 : List.drop n (List.take m []) = List.take (m - n) (List.drop n []) ∧ ((x : α) → (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) → List.drop 0 (List.take m (x :: xs)) = List.take (m - 0) (List.drop 0 (x :: xs)) ∧ List.drop n (List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs)))) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 58,
+          "statement": "(n : ℕ) (m : ℕ) (xs : List α) (h1 : List.drop n (List.take m []) = List.take (m - n) (List.drop n []) ∧ ((x : α) → (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) → List.drop 0 (List.take m (x :: xs)) = List.take (m - 0) (List.drop 0 (x :: xs)) ∧ List.drop n (List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs)))) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (n : ℕ) (m : ℕ) (h1 : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) : List.drop n (List.take m (x :: xs)) = List.take (m - n) (List.drop n (x :: xs))",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 59,
+          "statement": "(ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (n : ℕ) (m : ℕ) (h1 : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) : List.drop n (List.take m (x :: xs)) = List.take (m - n) (List.drop n (x :: xs))"
+        }
+      ]
+    },
+    {
+      "canonical": "(n : ℕ) (m : ℕ) (xs : List α) (x : α) (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (h1 : List.drop (n + 1) (List.take (m + 1) (x :: xs)) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs))) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 60,
+          "statement": "(n : ℕ) (m : ℕ) (xs : List α) (x : α) (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (h1 : List.drop (n + 1) (List.take (m + 1) (x :: xs)) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs))) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(n : ℕ) (m : ℕ) (xs : List α) (h1 : List.drop n (List.take m []) = List.take (m - n) (List.drop n []) ∧ ((x : α) → (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) → List.drop 0 (List.take m (x :: xs)) = List.take (m - 0) (List.drop 0 (x :: xs)) ∧ List.drop (n + 1) (List.take (m + 1) (x :: xs)) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs)))) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 61,
+          "statement": "(n : ℕ) (m : ℕ) (xs : List α) (h1 : List.drop n (List.take m []) = List.take (m - n) (List.drop n []) ∧ ((x : α) → (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) → List.drop 0 (List.take m (x :: xs)) = List.take (m - 0) (List.drop 0 (x :: xs)) ∧ List.drop (n + 1) (List.take (m + 1) (x :: xs)) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs)))) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(n : ℕ) (m : ℕ) (xs : List α) (h1 : List.drop n (List.take m []) = List.take (m - n) (List.drop n []) ∧ ((x : α) → (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) → List.drop (n + 1) (List.take 0 (x :: xs)) = List.take (0 - (n + 1)) (List.drop (n + 1) (x :: xs)) ∧ List.drop n (List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop n xs))) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 62,
+          "statement": "(n : ℕ) (m : ℕ) (xs : List α) (h1 : List.drop n (List.take m []) = List.take (m - n) (List.drop n []) ∧ ((x : α) → (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) → List.drop (n + 1) (List.take 0 (x :: xs)) = List.take (0 - (n + 1)) (List.drop (n + 1) (x :: xs)) ∧ List.drop n (List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop n xs))) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (m : ℕ) (n : ℕ) : List.drop (n + 1) (List.take m (x :: xs)) = List.take (m - (n + 1)) (List.drop (n + 1) (x :: xs))",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 63,
+          "statement": "(ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (m : ℕ) (n : ℕ) : List.drop (n + 1) (List.take m (x :: xs)) = List.take (m - (n + 1)) (List.drop (n + 1) (x :: xs))"
+        }
+      ]
+    },
+    {
+      "canonical": "(n : ℕ) (m : ℕ) (xs : List α) (x : α) (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (h1 : List.drop 0 (List.take m (x :: xs)) = List.take (m - 0) (List.drop 0 (x :: xs)) ∧ List.drop n (List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs))) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 64,
+          "statement": "(n : ℕ) (m : ℕ) (xs : List α) (x : α) (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (h1 : List.drop 0 (List.take m (x :: xs)) = List.take (m - 0) (List.drop 0 (x :: xs)) ∧ List.drop n (List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs))) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (n : ℕ) (m : ℕ) (h1 : List.drop (n + 1) (List.take 0 (x :: xs)) = List.take (0 - (n + 1)) (List.drop (n + 1) (x :: xs)) ∧ List.drop n (List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs))) : List.drop n (List.take m (x :: xs)) = List.take (m - n) (List.drop n (x :: xs))",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 65,
+          "statement": "(ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (n : ℕ) (m : ℕ) (h1 : List.drop (n + 1) (List.take 0 (x :: xs)) = List.take (0 - (n + 1)) (List.drop (n + 1) (x :: xs)) ∧ List.drop n (List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs))) : List.drop n (List.take m (x :: xs)) = List.take (m - n) (List.drop n (x :: xs))"
+        }
+      ]
+    },
+    {
+      "canonical": "(ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (m : ℕ) (n : ℕ) (h1 : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) : List.drop (n + 1) (List.take m (x :: xs)) = List.take (m - (n + 1)) (List.drop (n + 1) (x :: xs))",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 66,
+          "statement": "(ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (m : ℕ) (n : ℕ) (h1 : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) : List.drop (n + 1) (List.take m (x :: xs)) = List.take (m - (n + 1)) (List.drop (n + 1) (x :: xs))"
+        }
+      ]
+    },
+    {
+      "canonical": "(n : ℕ) (m : ℕ) (xs : List α) (h1 : List.drop n (List.take m []) = List.take (m - n) (List.drop n []) ∧ ((x : α) → (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) → List.drop 0 (List.take m (x :: xs)) = List.take (m - 0) (List.drop 0 (x :: xs)) ∧ List.drop (n + 1) (List.take 0 (x :: xs)) = List.take (0 - (n + 1)) (List.drop (n + 1) (x :: xs)) ∧ List.drop (n + 1) (x :: List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs)))) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 67,
+          "statement": "(n : ℕ) (m : ℕ) (xs : List α) (h1 : List.drop n (List.take m []) = List.take (m - n) (List.drop n []) ∧ ((x : α) → (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) → List.drop 0 (List.take m (x :: xs)) = List.take (m - 0) (List.drop 0 (x :: xs)) ∧ List.drop (n + 1) (List.take 0 (x :: xs)) = List.take (0 - (n + 1)) (List.drop (n + 1) (x :: xs)) ∧ List.drop (n + 1) (x :: List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs)))) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(n : ℕ) (m : ℕ) (xs : List α) (x : α) (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (h1 : List.drop (n + 1) (List.take 0 (x :: xs)) = List.take (0 - (n + 1)) (List.drop (n + 1) (x :: xs)) ∧ List.drop n (List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop n xs)) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 68,
+          "statement": "(n : ℕ) (m : ℕ) (xs : List α) (x : α) (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (h1 : List.drop (n + 1) (List.take 0 (x :: xs)) = List.take (0 - (n + 1)) (List.drop (n + 1) (x :: xs)) ∧ List.drop n (List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop n xs)) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(n : ℕ) (m : ℕ) (xs : List α) (h1 : List.drop n (List.take m []) = List.take (m - n) (List.drop n []) ∧ ((x : α) → (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) → List.drop 0 (List.take m (x :: xs)) = List.take (m - 0) (List.drop 0 (x :: xs)) ∧ List.drop (n + 1) (x :: List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs)))) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 69,
+          "statement": "(n : ℕ) (m : ℕ) (xs : List α) (h1 : List.drop n (List.take m []) = List.take (m - n) (List.drop n []) ∧ ((x : α) → (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) → List.drop 0 (List.take m (x :: xs)) = List.take (m - 0) (List.drop 0 (x :: xs)) ∧ List.drop (n + 1) (x :: List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs)))) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(n : ℕ) (m : ℕ) (xs : List α) (x : α) (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (h1 : List.drop (n + 1) (List.take 0 (x :: xs)) = List.take (0 - (n + 1)) (List.drop (n + 1) (x :: xs)) ∧ List.drop n (List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs))) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 70,
+          "statement": "(n : ℕ) (m : ℕ) (xs : List α) (x : α) (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (h1 : List.drop (n + 1) (List.take 0 (x :: xs)) = List.take (0 - (n + 1)) (List.drop (n + 1) (x :: xs)) ∧ List.drop n (List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs))) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(n : ℕ) (m : ℕ) (xs : List α) (x : α) (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (h1 : List.drop 0 (List.take m (x :: xs)) = List.take (m - 0) (List.drop 0 (x :: xs)) ∧ List.drop n (List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop n xs)) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 71,
+          "statement": "(n : ℕ) (m : ℕ) (xs : List α) (x : α) (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (h1 : List.drop 0 (List.take m (x :: xs)) = List.take (m - 0) (List.drop 0 (x :: xs)) ∧ List.drop n (List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop n xs)) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(n : ℕ) (m : ℕ) (xs : List α) (h1 : List.drop n (List.take m []) = List.take (m - n) (List.drop n []) ∧ ((x : α) → (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) → List.drop 0 (List.take m (x :: xs)) = List.take (m - 0) (List.drop 0 (x :: xs)) ∧ List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs))) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 72,
+          "statement": "(n : ℕ) (m : ℕ) (xs : List α) (h1 : List.drop n (List.take m []) = List.take (m - n) (List.drop n []) ∧ ((x : α) → (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) → List.drop 0 (List.take m (x :: xs)) = List.take (m - 0) (List.drop 0 (x :: xs)) ∧ List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs))) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (n : ℕ) (m : ℕ) (h1 : List.drop (n + 1) (List.take 0 (x :: xs)) = List.take (0 - (n + 1)) (List.drop (n + 1) (x :: xs))) : List.drop n (List.take m (x :: xs)) = List.take (m - n) (List.drop n (x :: xs))",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 73,
+          "statement": "(ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (n : ℕ) (m : ℕ) (h1 : List.drop (n + 1) (List.take 0 (x :: xs)) = List.take (0 - (n + 1)) (List.drop (n + 1) (x :: xs))) : List.drop n (List.take m (x :: xs)) = List.take (m - n) (List.drop n (x :: xs))"
+        }
+      ]
+    },
+    {
+      "canonical": "(n : ℕ) (m : ℕ) (xs : List α) (x : α) (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (h1 : List.drop (n + 1) (List.take 0 (x :: xs)) = List.take (0 - (n + 1)) (List.drop (n + 1) (x :: xs))) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 74,
+          "statement": "(n : ℕ) (m : ℕ) (xs : List α) (x : α) (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (h1 : List.drop (n + 1) (List.take 0 (x :: xs)) = List.take (0 - (n + 1)) (List.drop (n + 1) (x :: xs))) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(n : ℕ) (m : ℕ) (xs : List α) (h1 : List.drop n (List.take m []) = List.take (m - n) (List.drop n []) ∧ ((x : α) → (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) → List.drop 0 (List.take m (x :: xs)) = List.take (m - 0) (List.drop 0 (x :: xs)))) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 75,
+          "statement": "(n : ℕ) (m : ℕ) (xs : List α) (h1 : List.drop n (List.take m []) = List.take (m - n) (List.drop n []) ∧ ((x : α) → (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) → List.drop 0 (List.take m (x :: xs)) = List.take (m - 0) (List.drop 0 (x :: xs)))) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (n : ℕ) (m : ℕ) (h1 : List.drop 0 (List.take m (x :: xs)) = List.take (m - 0) (List.drop 0 (x :: xs))) : List.drop n (List.take m (x :: xs)) = List.take (m - n) (List.drop n (x :: xs))",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 76,
+          "statement": "(ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (n : ℕ) (m : ℕ) (h1 : List.drop 0 (List.take m (x :: xs)) = List.take (m - 0) (List.drop 0 (x :: xs))) : List.drop n (List.take m (x :: xs)) = List.take (m - n) (List.drop n (x :: xs))"
+        }
+      ]
+    },
+    {
+      "canonical": "(ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (n : ℕ) (m : ℕ) (h1 : List.drop (n + 1) (List.take 0 (x :: xs)) = List.take (0 - (n + 1)) (List.drop (n + 1) (x :: xs)) ∧ List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) : List.drop n (List.take m (x :: xs)) = List.take (m - n) (List.drop n (x :: xs))",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 77,
+          "statement": "(ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (n : ℕ) (m : ℕ) (h1 : List.drop (n + 1) (List.take 0 (x :: xs)) = List.take (0 - (n + 1)) (List.drop (n + 1) (x :: xs)) ∧ List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) : List.drop n (List.take m (x :: xs)) = List.take (m - n) (List.drop n (x :: xs))"
+        }
+      ]
+    },
+    {
+      "canonical": "(n : ℕ) (m : ℕ) (xs : List α) (h1 : List.drop n (List.take m []) = List.take (m - n) (List.drop n []) ∧ ((x : α) → (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) → List.drop (n + 1) (List.take 0 (x :: xs)) = List.take (0 - (n + 1)) (List.drop (n + 1) (x :: xs)) ∧ List.drop (n + 1) (x :: List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs)))) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 78,
+          "statement": "(n : ℕ) (m : ℕ) (xs : List α) (h1 : List.drop n (List.take m []) = List.take (m - n) (List.drop n []) ∧ ((x : α) → (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) → List.drop (n + 1) (List.take 0 (x :: xs)) = List.take (0 - (n + 1)) (List.drop (n + 1) (x :: xs)) ∧ List.drop (n + 1) (x :: List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs)))) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(n : ℕ) (m : ℕ) (xs : List α) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 79,
+          "statement": "(n : ℕ) (m : ℕ) (xs : List α) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(n : ℕ) (m : ℕ) (xs : List α) (h1 : List.drop n (List.take m []) = List.take (m - n) (List.drop n []) ∧ ((x : α) → (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) → List.drop 0 (List.take m (x :: xs)) = List.take (m - 0) (List.drop 0 (x :: xs)) ∧ List.drop (n + 1) (List.take 0 (x :: xs)) = List.take (0 - (n + 1)) (List.drop (n + 1) (x :: xs)) ∧ List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs))) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 80,
+          "statement": "(n : ℕ) (m : ℕ) (xs : List α) (h1 : List.drop n (List.take m []) = List.take (m - n) (List.drop n []) ∧ ((x : α) → (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) → List.drop 0 (List.take m (x :: xs)) = List.take (m - 0) (List.drop 0 (x :: xs)) ∧ List.drop (n + 1) (List.take 0 (x :: xs)) = List.take (0 - (n + 1)) (List.drop (n + 1) (x :: xs)) ∧ List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs))) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(n : ℕ) (m : ℕ) (xs : List α) (h1 : List.drop n (List.take m []) = List.take (m - n) (List.drop n []) ∧ ((x : α) → (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) → List.drop (n + 1) (x :: List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs)))) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 81,
+          "statement": "(n : ℕ) (m : ℕ) (xs : List α) (h1 : List.drop n (List.take m []) = List.take (m - n) (List.drop n []) ∧ ((x : α) → (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) → List.drop (n + 1) (x :: List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs)))) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(n : ℕ) (m : ℕ) (xs : List α) (x : α) (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (h1 : List.drop (n + 1) (x :: List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs))) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 82,
+          "statement": "(n : ℕ) (m : ℕ) (xs : List α) (x : α) (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (h1 : List.drop (n + 1) (x :: List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs))) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(n : ℕ) (m : ℕ) (xs : List α) (h1 : List.drop n (List.take m []) = List.take (m - n) (List.drop n []) ∧ ((x : α) → (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) → List.drop (n + 1) (List.take 0 (x :: xs)) = List.take (0 - (n + 1)) (List.drop (n + 1) (x :: xs)))) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 83,
+          "statement": "(n : ℕ) (m : ℕ) (xs : List α) (h1 : List.drop n (List.take m []) = List.take (m - n) (List.drop n []) ∧ ((x : α) → (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) → List.drop (n + 1) (List.take 0 (x :: xs)) = List.take (0 - (n + 1)) (List.drop (n + 1) (x :: xs)))) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (n : ℕ) (m : ℕ) (h1 : List.drop 0 (List.take m (x :: xs)) = List.take (m - 0) (List.drop 0 (x :: xs)) ∧ List.drop (n + 1) (List.take 0 (x :: xs)) = List.take (0 - (n + 1)) (List.drop (n + 1) (x :: xs)) ∧ List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) : List.drop n (List.take m (x :: xs)) = List.take (m - n) (List.drop n (x :: xs))",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 84,
+          "statement": "(ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (n : ℕ) (m : ℕ) (h1 : List.drop 0 (List.take m (x :: xs)) = List.take (m - 0) (List.drop 0 (x :: xs)) ∧ List.drop (n + 1) (List.take 0 (x :: xs)) = List.take (0 - (n + 1)) (List.drop (n + 1) (x :: xs)) ∧ List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) : List.drop n (List.take m (x :: xs)) = List.take (m - n) (List.drop n (x :: xs))"
+        }
+      ]
+    },
+    {
+      "canonical": "(ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (n : ℕ) (m : ℕ) (h1 : List.drop 0 (List.take m (x :: xs)) = List.take (m - 0) (List.drop 0 (x :: xs)) ∧ List.drop (n + 1) (List.take 0 (x :: xs)) = List.take (0 - (n + 1)) (List.drop (n + 1) (x :: xs))) : List.drop n (List.take m (x :: xs)) = List.take (m - n) (List.drop n (x :: xs))",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 85,
+          "statement": "(ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (n : ℕ) (m : ℕ) (h1 : List.drop 0 (List.take m (x :: xs)) = List.take (m - 0) (List.drop 0 (x :: xs)) ∧ List.drop (n + 1) (List.take 0 (x :: xs)) = List.take (0 - (n + 1)) (List.drop (n + 1) (x :: xs))) : List.drop n (List.take m (x :: xs)) = List.take (m - n) (List.drop n (x :: xs))"
+        }
+      ]
+    },
+    {
+      "canonical": "(n : ℕ) (m : ℕ) (xs : List α) (h1 : List.drop n (List.take m []) = List.take (m - n) (List.drop n []) ∧ ((x : α) → (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) → List.drop 0 (List.take m (x :: xs)) = List.take (m - 0) (List.drop 0 (x :: xs)) ∧ List.drop (n + 1) (List.take 0 (x :: xs)) = List.take (0 - (n + 1)) (List.drop (n + 1) (x :: xs)) ∧ List.drop n (List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop n xs))) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 86,
+          "statement": "(n : ℕ) (m : ℕ) (xs : List α) (h1 : List.drop n (List.take m []) = List.take (m - n) (List.drop n []) ∧ ((x : α) → (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) → List.drop 0 (List.take m (x :: xs)) = List.take (m - 0) (List.drop 0 (x :: xs)) ∧ List.drop (n + 1) (List.take 0 (x :: xs)) = List.take (0 - (n + 1)) (List.drop (n + 1) (x :: xs)) ∧ List.drop n (List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop n xs))) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(n : ℕ) (m : ℕ) (xs : List α) (x : α) (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (h1 : List.drop 0 (List.take m (x :: xs)) = List.take (m - 0) (List.drop 0 (x :: xs)) ∧ List.drop (n + 1) (List.take 0 (x :: xs)) = List.take (0 - (n + 1)) (List.drop (n + 1) (x :: xs)) ∧ List.drop n (List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop n xs)) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 87,
+          "statement": "(n : ℕ) (m : ℕ) (xs : List α) (x : α) (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (h1 : List.drop 0 (List.take m (x :: xs)) = List.take (m - 0) (List.drop 0 (x :: xs)) ∧ List.drop (n + 1) (List.take 0 (x :: xs)) = List.take (0 - (n + 1)) (List.drop (n + 1) (x :: xs)) ∧ List.drop n (List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop n xs)) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (n : ℕ) (m : ℕ) (h1 : List.drop 0 (List.take m (x :: xs)) = List.take (m - 0) (List.drop 0 (x :: xs)) ∧ List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) : List.drop n (List.take m (x :: xs)) = List.take (m - n) (List.drop n (x :: xs))",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 88,
+          "statement": "(ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (n : ℕ) (m : ℕ) (h1 : List.drop 0 (List.take m (x :: xs)) = List.take (m - 0) (List.drop 0 (x :: xs)) ∧ List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) : List.drop n (List.take m (x :: xs)) = List.take (m - n) (List.drop n (x :: xs))"
+        }
+      ]
+    },
+    {
+      "canonical": "(n : ℕ) (m : ℕ) (xs : List α) (x : α) (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (h1 : List.drop n (List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs))) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 89,
+          "statement": "(n : ℕ) (m : ℕ) (xs : List α) (x : α) (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (h1 : List.drop n (List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop (n + 1) (x :: xs))) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(n : ℕ) (m : ℕ) (xs : List α) (x : α) (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (h1 : List.drop 0 (List.take m (x :: xs)) = List.take (m - 0) (List.drop 0 (x :: xs)) ∧ List.drop (n + 1) (List.take 0 (x :: xs)) = List.take (0 - (n + 1)) (List.drop (n + 1) (x :: xs))) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 90,
+          "statement": "(n : ℕ) (m : ℕ) (xs : List α) (x : α) (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (h1 : List.drop 0 (List.take m (x :: xs)) = List.take (m - 0) (List.drop 0 (x :: xs)) ∧ List.drop (n + 1) (List.take 0 (x :: xs)) = List.take (0 - (n + 1)) (List.drop (n + 1) (x :: xs))) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(n : ℕ) (m : ℕ) (xs : List α) (x : α) (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (h1 : List.drop 0 (List.take m (x :: xs)) = List.take (m - 0) (List.drop 0 (x :: xs))) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 91,
+          "statement": "(n : ℕ) (m : ℕ) (xs : List α) (x : α) (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (h1 : List.drop 0 (List.take m (x :: xs)) = List.take (m - 0) (List.drop 0 (x :: xs))) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(n : ℕ) (m : ℕ) (xs : List α) (h1 : List.drop n (List.take m []) = List.take (m - n) (List.drop n []) ∧ ((x : α) → (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) → List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs))) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 92,
+          "statement": "(n : ℕ) (m : ℕ) (xs : List α) (h1 : List.drop n (List.take m []) = List.take (m - n) (List.drop n []) ∧ ((x : α) → (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) → List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs))) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(n : ℕ) (m : ℕ) (xs : List α) (h1 : List.drop n (List.take m []) = List.take (m - n) (List.drop n []) ∧ ((x : α) → (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) → List.drop n (List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop n xs))) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 93,
+          "statement": "(n : ℕ) (m : ℕ) (xs : List α) (h1 : List.drop n (List.take m []) = List.take (m - n) (List.drop n []) ∧ ((x : α) → (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) → List.drop n (List.take m xs) = List.take (m + 1 - (n + 1)) (List.drop n xs))) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(n : ℕ) (m : ℕ) (xs : List α) (x : α) (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (h1 : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 94,
+          "statement": "(n : ℕ) (m : ℕ) (xs : List α) (x : α) (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (h1 : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(n : ℕ) (m : ℕ) (xs : List α) (h1 : List.drop n (List.take m []) = List.take (m - n) (List.drop n [])) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 95,
+          "statement": "(n : ℕ) (m : ℕ) (xs : List α) (h1 : List.drop n (List.take m []) = List.take (m - n) (List.drop n [])) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(n : ℕ) (m : ℕ) (xs : List α) (x : α) (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (h1 : List.drop (n + 1) (List.take 0 (x :: xs)) = List.take (0 - (n + 1)) (List.drop (n + 1) (x :: xs)) ∧ List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/prop_57.json",
+          "decl_name": "prop_57",
+          "fragment_id": 96,
+          "statement": "(n : ℕ) (m : ℕ) (xs : List α) (x : α) (ih : ∀ (n m : ℕ), List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) (h1 : List.drop (n + 1) (List.take 0 (x :: xs)) = List.take (0 - (n + 1)) (List.drop (n + 1) (x :: xs)) ∧ List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)) : List.drop n (List.take m xs) = List.take (m - n) (List.drop n xs)"
+        }
+      ]
+    }
+  ]
+}

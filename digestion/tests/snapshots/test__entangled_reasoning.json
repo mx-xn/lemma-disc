@@ -1,0 +1,1243 @@
+{
+  "name": "entangled_reasoning",
+  "statement": "theorem entangled_reasoning\n    (A B C D E F : Prop)\n    (hab : A → B)\n    (hac : A → C)\n    (hbde : B → D → E)\n    (hcf : C → F)\n    (ha : A)\n    (hd : D) : (B ∧ E) ∧ (C ∧ F) :=",
+  "root_tactic_id": 0,
+  "tactic_nodes": [
+    {
+      "id": 0,
+      "tactic_text": "have hb : B := hab ha",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "A",
+            "type": "Prop"
+          },
+          {
+            "name": "B",
+            "type": "Prop"
+          },
+          {
+            "name": "C",
+            "type": "Prop"
+          },
+          {
+            "name": "D",
+            "type": "Prop"
+          },
+          {
+            "name": "E",
+            "type": "Prop"
+          },
+          {
+            "name": "F",
+            "type": "Prop"
+          },
+          {
+            "name": "hab",
+            "type": "A → B"
+          },
+          {
+            "name": "hac",
+            "type": "A → C"
+          },
+          {
+            "name": "hbde",
+            "type": "B → D → E"
+          },
+          {
+            "name": "hcf",
+            "type": "C → F"
+          },
+          {
+            "name": "ha",
+            "type": "A"
+          },
+          {
+            "name": "hd",
+            "type": "D"
+          }
+        ],
+        "goal": "(B ∧ E) ∧ C ∧ F"
+      },
+      "output_obligations": [
+        {
+          "hypotheses": [
+            {
+              "name": "A",
+              "type": "Prop"
+            },
+            {
+              "name": "B",
+              "type": "Prop"
+            },
+            {
+              "name": "C",
+              "type": "Prop"
+            },
+            {
+              "name": "D",
+              "type": "Prop"
+            },
+            {
+              "name": "E",
+              "type": "Prop"
+            },
+            {
+              "name": "F",
+              "type": "Prop"
+            },
+            {
+              "name": "hab",
+              "type": "A → B"
+            },
+            {
+              "name": "hac",
+              "type": "A → C"
+            },
+            {
+              "name": "hbde",
+              "type": "B → D → E"
+            },
+            {
+              "name": "hcf",
+              "type": "C → F"
+            },
+            {
+              "name": "ha",
+              "type": "A"
+            },
+            {
+              "name": "hd",
+              "type": "D"
+            },
+            {
+              "name": "hb",
+              "type": "B"
+            }
+          ],
+          "goal": "(B ∧ E) ∧ C ∧ F"
+        }
+      ],
+      "summary": {
+        "directly_used": [
+          "B",
+          "ha",
+          "hab"
+        ],
+        "dependency_maps": [
+          {
+            "A": [
+              "A"
+            ],
+            "B": [
+              "B"
+            ],
+            "C": [
+              "C"
+            ],
+            "D": [
+              "D"
+            ],
+            "E": [
+              "E"
+            ],
+            "F": [
+              "F"
+            ],
+            "hab": [
+              "hab"
+            ],
+            "hac": [
+              "hac"
+            ],
+            "hbde": [
+              "hbde"
+            ],
+            "hcf": [
+              "hcf"
+            ],
+            "ha": [
+              "ha"
+            ],
+            "hd": [
+              "hd"
+            ],
+            "hb": [
+              "B"
+            ]
+          }
+        ]
+      },
+      "parent_id": null,
+      "child_ids": [
+        1
+      ]
+    },
+    {
+      "id": 1,
+      "tactic_text": "have hc : C := hac ha",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "A",
+            "type": "Prop"
+          },
+          {
+            "name": "B",
+            "type": "Prop"
+          },
+          {
+            "name": "C",
+            "type": "Prop"
+          },
+          {
+            "name": "D",
+            "type": "Prop"
+          },
+          {
+            "name": "E",
+            "type": "Prop"
+          },
+          {
+            "name": "F",
+            "type": "Prop"
+          },
+          {
+            "name": "hab",
+            "type": "A → B"
+          },
+          {
+            "name": "hac",
+            "type": "A → C"
+          },
+          {
+            "name": "hbde",
+            "type": "B → D → E"
+          },
+          {
+            "name": "hcf",
+            "type": "C → F"
+          },
+          {
+            "name": "ha",
+            "type": "A"
+          },
+          {
+            "name": "hd",
+            "type": "D"
+          },
+          {
+            "name": "hb",
+            "type": "B"
+          }
+        ],
+        "goal": "(B ∧ E) ∧ C ∧ F"
+      },
+      "output_obligations": [
+        {
+          "hypotheses": [
+            {
+              "name": "A",
+              "type": "Prop"
+            },
+            {
+              "name": "B",
+              "type": "Prop"
+            },
+            {
+              "name": "C",
+              "type": "Prop"
+            },
+            {
+              "name": "D",
+              "type": "Prop"
+            },
+            {
+              "name": "E",
+              "type": "Prop"
+            },
+            {
+              "name": "F",
+              "type": "Prop"
+            },
+            {
+              "name": "hab",
+              "type": "A → B"
+            },
+            {
+              "name": "hac",
+              "type": "A → C"
+            },
+            {
+              "name": "hbde",
+              "type": "B → D → E"
+            },
+            {
+              "name": "hcf",
+              "type": "C → F"
+            },
+            {
+              "name": "ha",
+              "type": "A"
+            },
+            {
+              "name": "hd",
+              "type": "D"
+            },
+            {
+              "name": "hb",
+              "type": "B"
+            },
+            {
+              "name": "hc",
+              "type": "C"
+            }
+          ],
+          "goal": "(B ∧ E) ∧ C ∧ F"
+        }
+      ],
+      "summary": {
+        "directly_used": [
+          "C",
+          "ha",
+          "hac"
+        ],
+        "dependency_maps": [
+          {
+            "A": [
+              "A"
+            ],
+            "B": [
+              "B"
+            ],
+            "C": [
+              "C"
+            ],
+            "D": [
+              "D"
+            ],
+            "E": [
+              "E"
+            ],
+            "F": [
+              "F"
+            ],
+            "hab": [
+              "hab"
+            ],
+            "hac": [
+              "hac"
+            ],
+            "hbde": [
+              "hbde"
+            ],
+            "hcf": [
+              "hcf"
+            ],
+            "ha": [
+              "ha"
+            ],
+            "hd": [
+              "hd"
+            ],
+            "hb": [
+              "hb"
+            ],
+            "hc": [
+              "C"
+            ]
+          }
+        ]
+      },
+      "parent_id": 0,
+      "child_ids": [
+        2
+      ]
+    },
+    {
+      "id": 2,
+      "tactic_text": "have he : E := hbde hb hd",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "A",
+            "type": "Prop"
+          },
+          {
+            "name": "B",
+            "type": "Prop"
+          },
+          {
+            "name": "C",
+            "type": "Prop"
+          },
+          {
+            "name": "D",
+            "type": "Prop"
+          },
+          {
+            "name": "E",
+            "type": "Prop"
+          },
+          {
+            "name": "F",
+            "type": "Prop"
+          },
+          {
+            "name": "hab",
+            "type": "A → B"
+          },
+          {
+            "name": "hac",
+            "type": "A → C"
+          },
+          {
+            "name": "hbde",
+            "type": "B → D → E"
+          },
+          {
+            "name": "hcf",
+            "type": "C → F"
+          },
+          {
+            "name": "ha",
+            "type": "A"
+          },
+          {
+            "name": "hd",
+            "type": "D"
+          },
+          {
+            "name": "hb",
+            "type": "B"
+          },
+          {
+            "name": "hc",
+            "type": "C"
+          }
+        ],
+        "goal": "(B ∧ E) ∧ C ∧ F"
+      },
+      "output_obligations": [
+        {
+          "hypotheses": [
+            {
+              "name": "A",
+              "type": "Prop"
+            },
+            {
+              "name": "B",
+              "type": "Prop"
+            },
+            {
+              "name": "C",
+              "type": "Prop"
+            },
+            {
+              "name": "D",
+              "type": "Prop"
+            },
+            {
+              "name": "E",
+              "type": "Prop"
+            },
+            {
+              "name": "F",
+              "type": "Prop"
+            },
+            {
+              "name": "hab",
+              "type": "A → B"
+            },
+            {
+              "name": "hac",
+              "type": "A → C"
+            },
+            {
+              "name": "hbde",
+              "type": "B → D → E"
+            },
+            {
+              "name": "hcf",
+              "type": "C → F"
+            },
+            {
+              "name": "ha",
+              "type": "A"
+            },
+            {
+              "name": "hd",
+              "type": "D"
+            },
+            {
+              "name": "hb",
+              "type": "B"
+            },
+            {
+              "name": "hc",
+              "type": "C"
+            },
+            {
+              "name": "he",
+              "type": "E"
+            }
+          ],
+          "goal": "(B ∧ E) ∧ C ∧ F"
+        }
+      ],
+      "summary": {
+        "directly_used": [
+          "E",
+          "hb",
+          "hbde",
+          "hd"
+        ],
+        "dependency_maps": [
+          {
+            "A": [
+              "A"
+            ],
+            "B": [
+              "B"
+            ],
+            "C": [
+              "C"
+            ],
+            "D": [
+              "D"
+            ],
+            "E": [
+              "E"
+            ],
+            "F": [
+              "F"
+            ],
+            "hab": [
+              "hab"
+            ],
+            "hac": [
+              "hac"
+            ],
+            "hbde": [
+              "hbde"
+            ],
+            "hcf": [
+              "hcf"
+            ],
+            "ha": [
+              "ha"
+            ],
+            "hd": [
+              "hd"
+            ],
+            "hb": [
+              "hb"
+            ],
+            "hc": [
+              "hc"
+            ],
+            "he": [
+              "E"
+            ]
+          }
+        ]
+      },
+      "parent_id": 1,
+      "child_ids": [
+        3
+      ]
+    },
+    {
+      "id": 3,
+      "tactic_text": "have hf : F := hcf hc",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "A",
+            "type": "Prop"
+          },
+          {
+            "name": "B",
+            "type": "Prop"
+          },
+          {
+            "name": "C",
+            "type": "Prop"
+          },
+          {
+            "name": "D",
+            "type": "Prop"
+          },
+          {
+            "name": "E",
+            "type": "Prop"
+          },
+          {
+            "name": "F",
+            "type": "Prop"
+          },
+          {
+            "name": "hab",
+            "type": "A → B"
+          },
+          {
+            "name": "hac",
+            "type": "A → C"
+          },
+          {
+            "name": "hbde",
+            "type": "B → D → E"
+          },
+          {
+            "name": "hcf",
+            "type": "C → F"
+          },
+          {
+            "name": "ha",
+            "type": "A"
+          },
+          {
+            "name": "hd",
+            "type": "D"
+          },
+          {
+            "name": "hb",
+            "type": "B"
+          },
+          {
+            "name": "hc",
+            "type": "C"
+          },
+          {
+            "name": "he",
+            "type": "E"
+          }
+        ],
+        "goal": "(B ∧ E) ∧ C ∧ F"
+      },
+      "output_obligations": [
+        {
+          "hypotheses": [
+            {
+              "name": "A",
+              "type": "Prop"
+            },
+            {
+              "name": "B",
+              "type": "Prop"
+            },
+            {
+              "name": "C",
+              "type": "Prop"
+            },
+            {
+              "name": "D",
+              "type": "Prop"
+            },
+            {
+              "name": "E",
+              "type": "Prop"
+            },
+            {
+              "name": "F",
+              "type": "Prop"
+            },
+            {
+              "name": "hab",
+              "type": "A → B"
+            },
+            {
+              "name": "hac",
+              "type": "A → C"
+            },
+            {
+              "name": "hbde",
+              "type": "B → D → E"
+            },
+            {
+              "name": "hcf",
+              "type": "C → F"
+            },
+            {
+              "name": "ha",
+              "type": "A"
+            },
+            {
+              "name": "hd",
+              "type": "D"
+            },
+            {
+              "name": "hb",
+              "type": "B"
+            },
+            {
+              "name": "hc",
+              "type": "C"
+            },
+            {
+              "name": "he",
+              "type": "E"
+            },
+            {
+              "name": "hf",
+              "type": "F"
+            }
+          ],
+          "goal": "(B ∧ E) ∧ C ∧ F"
+        }
+      ],
+      "summary": {
+        "directly_used": [
+          "F",
+          "hc",
+          "hcf"
+        ],
+        "dependency_maps": [
+          {
+            "A": [
+              "A"
+            ],
+            "B": [
+              "B"
+            ],
+            "C": [
+              "C"
+            ],
+            "D": [
+              "D"
+            ],
+            "E": [
+              "E"
+            ],
+            "F": [
+              "F"
+            ],
+            "hab": [
+              "hab"
+            ],
+            "hac": [
+              "hac"
+            ],
+            "hbde": [
+              "hbde"
+            ],
+            "hcf": [
+              "hcf"
+            ],
+            "ha": [
+              "ha"
+            ],
+            "hd": [
+              "hd"
+            ],
+            "hb": [
+              "hb"
+            ],
+            "hc": [
+              "hc"
+            ],
+            "he": [
+              "he"
+            ],
+            "hf": [
+              "F"
+            ]
+          }
+        ]
+      },
+      "parent_id": 2,
+      "child_ids": [
+        4
+      ]
+    },
+    {
+      "id": 4,
+      "tactic_text": "constructor",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "A",
+            "type": "Prop"
+          },
+          {
+            "name": "B",
+            "type": "Prop"
+          },
+          {
+            "name": "C",
+            "type": "Prop"
+          },
+          {
+            "name": "D",
+            "type": "Prop"
+          },
+          {
+            "name": "E",
+            "type": "Prop"
+          },
+          {
+            "name": "F",
+            "type": "Prop"
+          },
+          {
+            "name": "hab",
+            "type": "A → B"
+          },
+          {
+            "name": "hac",
+            "type": "A → C"
+          },
+          {
+            "name": "hbde",
+            "type": "B → D → E"
+          },
+          {
+            "name": "hcf",
+            "type": "C → F"
+          },
+          {
+            "name": "ha",
+            "type": "A"
+          },
+          {
+            "name": "hd",
+            "type": "D"
+          },
+          {
+            "name": "hb",
+            "type": "B"
+          },
+          {
+            "name": "hc",
+            "type": "C"
+          },
+          {
+            "name": "he",
+            "type": "E"
+          },
+          {
+            "name": "hf",
+            "type": "F"
+          }
+        ],
+        "goal": "(B ∧ E) ∧ C ∧ F"
+      },
+      "output_obligations": [
+        {
+          "hypotheses": [
+            {
+              "name": "A",
+              "type": "Prop"
+            },
+            {
+              "name": "B",
+              "type": "Prop"
+            },
+            {
+              "name": "C",
+              "type": "Prop"
+            },
+            {
+              "name": "D",
+              "type": "Prop"
+            },
+            {
+              "name": "E",
+              "type": "Prop"
+            },
+            {
+              "name": "F",
+              "type": "Prop"
+            },
+            {
+              "name": "hab",
+              "type": "A → B"
+            },
+            {
+              "name": "hac",
+              "type": "A → C"
+            },
+            {
+              "name": "hbde",
+              "type": "B → D → E"
+            },
+            {
+              "name": "hcf",
+              "type": "C → F"
+            },
+            {
+              "name": "ha",
+              "type": "A"
+            },
+            {
+              "name": "hd",
+              "type": "D"
+            },
+            {
+              "name": "hb",
+              "type": "B"
+            },
+            {
+              "name": "hc",
+              "type": "C"
+            },
+            {
+              "name": "he",
+              "type": "E"
+            },
+            {
+              "name": "hf",
+              "type": "F"
+            }
+          ],
+          "goal": "B ∧ E"
+        },
+        {
+          "hypotheses": [
+            {
+              "name": "A",
+              "type": "Prop"
+            },
+            {
+              "name": "B",
+              "type": "Prop"
+            },
+            {
+              "name": "C",
+              "type": "Prop"
+            },
+            {
+              "name": "D",
+              "type": "Prop"
+            },
+            {
+              "name": "E",
+              "type": "Prop"
+            },
+            {
+              "name": "F",
+              "type": "Prop"
+            },
+            {
+              "name": "hab",
+              "type": "A → B"
+            },
+            {
+              "name": "hac",
+              "type": "A → C"
+            },
+            {
+              "name": "hbde",
+              "type": "B → D → E"
+            },
+            {
+              "name": "hcf",
+              "type": "C → F"
+            },
+            {
+              "name": "ha",
+              "type": "A"
+            },
+            {
+              "name": "hd",
+              "type": "D"
+            },
+            {
+              "name": "hb",
+              "type": "B"
+            },
+            {
+              "name": "hc",
+              "type": "C"
+            },
+            {
+              "name": "he",
+              "type": "E"
+            },
+            {
+              "name": "hf",
+              "type": "F"
+            }
+          ],
+          "goal": "C ∧ F"
+        }
+      ],
+      "summary": {
+        "directly_used": [],
+        "dependency_maps": [
+          {
+            "A": [
+              "A"
+            ],
+            "B": [
+              "B"
+            ],
+            "C": [
+              "C"
+            ],
+            "D": [
+              "D"
+            ],
+            "E": [
+              "E"
+            ],
+            "F": [
+              "F"
+            ],
+            "hab": [
+              "hab"
+            ],
+            "hac": [
+              "hac"
+            ],
+            "hbde": [
+              "hbde"
+            ],
+            "hcf": [
+              "hcf"
+            ],
+            "ha": [
+              "ha"
+            ],
+            "hd": [
+              "hd"
+            ],
+            "hb": [
+              "hb"
+            ],
+            "hc": [
+              "hc"
+            ],
+            "he": [
+              "he"
+            ],
+            "hf": [
+              "hf"
+            ]
+          },
+          {
+            "A": [
+              "A"
+            ],
+            "B": [
+              "B"
+            ],
+            "C": [
+              "C"
+            ],
+            "D": [
+              "D"
+            ],
+            "E": [
+              "E"
+            ],
+            "F": [
+              "F"
+            ],
+            "hab": [
+              "hab"
+            ],
+            "hac": [
+              "hac"
+            ],
+            "hbde": [
+              "hbde"
+            ],
+            "hcf": [
+              "hcf"
+            ],
+            "ha": [
+              "ha"
+            ],
+            "hd": [
+              "hd"
+            ],
+            "hb": [
+              "hb"
+            ],
+            "hc": [
+              "hc"
+            ],
+            "he": [
+              "he"
+            ],
+            "hf": [
+              "hf"
+            ]
+          }
+        ]
+      },
+      "parent_id": 3,
+      "child_ids": [
+        5,
+        6
+      ]
+    },
+    {
+      "id": 5,
+      "tactic_text": "exact ⟨hb, he⟩",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "A",
+            "type": "Prop"
+          },
+          {
+            "name": "B",
+            "type": "Prop"
+          },
+          {
+            "name": "C",
+            "type": "Prop"
+          },
+          {
+            "name": "D",
+            "type": "Prop"
+          },
+          {
+            "name": "E",
+            "type": "Prop"
+          },
+          {
+            "name": "F",
+            "type": "Prop"
+          },
+          {
+            "name": "hab",
+            "type": "A → B"
+          },
+          {
+            "name": "hac",
+            "type": "A → C"
+          },
+          {
+            "name": "hbde",
+            "type": "B → D → E"
+          },
+          {
+            "name": "hcf",
+            "type": "C → F"
+          },
+          {
+            "name": "ha",
+            "type": "A"
+          },
+          {
+            "name": "hd",
+            "type": "D"
+          },
+          {
+            "name": "hb",
+            "type": "B"
+          },
+          {
+            "name": "hc",
+            "type": "C"
+          },
+          {
+            "name": "he",
+            "type": "E"
+          },
+          {
+            "name": "hf",
+            "type": "F"
+          }
+        ],
+        "goal": "B ∧ E"
+      },
+      "output_obligations": [],
+      "summary": {
+        "directly_used": [
+          "hb",
+          "he"
+        ],
+        "dependency_maps": []
+      },
+      "parent_id": 4,
+      "child_ids": []
+    },
+    {
+      "id": 6,
+      "tactic_text": "exact ⟨hc, hf⟩",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "A",
+            "type": "Prop"
+          },
+          {
+            "name": "B",
+            "type": "Prop"
+          },
+          {
+            "name": "C",
+            "type": "Prop"
+          },
+          {
+            "name": "D",
+            "type": "Prop"
+          },
+          {
+            "name": "E",
+            "type": "Prop"
+          },
+          {
+            "name": "F",
+            "type": "Prop"
+          },
+          {
+            "name": "hab",
+            "type": "A → B"
+          },
+          {
+            "name": "hac",
+            "type": "A → C"
+          },
+          {
+            "name": "hbde",
+            "type": "B → D → E"
+          },
+          {
+            "name": "hcf",
+            "type": "C → F"
+          },
+          {
+            "name": "ha",
+            "type": "A"
+          },
+          {
+            "name": "hd",
+            "type": "D"
+          },
+          {
+            "name": "hb",
+            "type": "B"
+          },
+          {
+            "name": "hc",
+            "type": "C"
+          },
+          {
+            "name": "he",
+            "type": "E"
+          },
+          {
+            "name": "hf",
+            "type": "F"
+          }
+        ],
+        "goal": "C ∧ F"
+      },
+      "output_obligations": [],
+      "summary": {
+        "directly_used": [
+          "hc",
+          "hf"
+        ],
+        "dependency_maps": []
+      },
+      "parent_id": 4,
+      "child_ids": []
+    }
+  ]
+}

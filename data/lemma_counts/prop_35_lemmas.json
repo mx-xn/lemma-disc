@@ -1,0 +1,15 @@
+{
+  "lemmas": [
+    {
+      "fragment_id": 0,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_35.json",
+      "decl_name": "prop_35",
+      "premises": [
+        "xs : List α"
+      ],
+      "body": "True",
+      "conclusion": "dropWhile (fun x => decide False) xs = xs",
+      "statement": "(xs : List α) : dropWhile (fun x => decide False) xs = xs"
+    }
+  ]
+}

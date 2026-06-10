@@ -1,0 +1,57 @@
+[1/4] Building POG...
+[info] welcome to sbt 1.10.1 (JetBrains s.r.o. Java 21.0.6)
+[info] loading project definition from /nas/lemma-disc/scala-core/project
+[info] loading settings for project scala-core from build.sbt ...
+[info] set current project to scala-core (in build file:/nas/lemma-disc/scala-core/)
+[info] running Serializer /tmp/lemma_trace_V1TCd3.json /tmp/lemma_pog_mtUALb.json
+[success] Total time: 1 s, completed Jun 4, 2026, 12:43:54 AM
+[2/4] Enumerating fragments...
+[info] welcome to sbt 1.10.1 (JetBrains s.r.o. Java 21.0.6)
+[info] loading project definition from /nas/lemma-disc/scala-core/project
+[info] loading settings for project scala-core from build.sbt ...
+[info] set current project to scala-core (in build file:/nas/lemma-disc/scala-core/)
+[info] running Serializer --timeout 60000 /tmp/lemma_pog_mtUALb.json /tmp/lemma_segments_7k47GC.json
+[success] Total time: 44 s, completed Jun 4, 2026, 12:44:42 AM
+[2/4] Got 862 fragment(s).
+[3/4] Running support minimization...
+[info] welcome to sbt 1.10.1 (JetBrains s.r.o. Java 21.0.6)
+[info] loading project definition from /nas/lemma-disc/scala-core/project
+[info] loading settings for project scala-core from build.sbt ...
+[info] set current project to scala-core (in build file:/nas/lemma-disc/scala-core/)
+[info] running Serializer /tmp/lemma_segments_7k47GC.json /tmp/lemma_out_xV4UuT.json
+[success] Total time: 3 s, completed Jun 4, 2026, 12:44:49 AM
+[4/4] Deduplicating lemmas...
+Deduplicated: 862 → 30 lemmas (832 dropped)
+[4/4] Lemmas    written to /nas/lemma-disc/data/lemma_counts_pog/prop_77_lemmas_pog.json
+[4/4] Fragments written to /nas/lemma-disc/data/lemma_counts_pog/prop_77_lemmas_pog.fragments.json
+--- 30 lemma statement(s) ---
+[0] prop_77: sorted xs = true → sorted (insort x xs) = true
+[1] prop_77: (h : sorted (y :: ys) = true) (h1 : sorted (insort x (y :: ys)) = true) : sorted (y :: ys) = true → sorted (insort x (y :: ys)) = true
+[2] prop_77: sorted (y :: ys) = true → sorted (insort x (y :: ys)) = true
+[3] prop_77: (x : ℕ) (y : ℕ) (hyx : y ≤ x) (h1 : sorted (y :: ys) = true) (h2 : sorted (insort x (y :: ys)) = true) : sorted (y :: ys) = true → sorted (insort x (y :: ys)) = true
+[4] prop_77: (h1 : sorted (y :: insort x ys) = true) : sorted (insort x (y :: ys)) = true
+[5] prop_77: (x : ℕ) (y : ℕ) (hyx : y ≤ x) (h1 : sorted (y :: insort x ys) = true) : sorted (insort x (y :: ys)) = true
+[6] prop_77: (x : ℕ) (y : ℕ) : sorted (y :: ys) = true → sorted (insort x (y :: ys)) = true
+[7] prop_77: (x : ℕ) (y : ℕ) (ys : List ℕ) : sorted (y :: ys) = true → sorted (insort x (y :: ys)) = true
+[8] prop_77: (h : sorted (y :: z :: zs) = true) (hyz : y ≤ z) (hzs : sorted (z :: zs) = true) (h1 : sorted (y :: insort x (z :: zs)) = true) : sorted (y :: insort x (z :: zs)) = true
+[9] prop_77: (y : ℕ) (h : sorted (y :: z :: zs) = true) (z : ℕ) (zs : List ℕ) (hyz : y ≤ z) (hzs : sorted (z :: zs) = true) (h1 : sorted (y :: insort x (z :: zs)) = true) : sorted (y :: insort x (z :: zs)) = true
+[10] prop_77: (x : ℕ) (z : ℕ) (zs : List ℕ) (h1 : sorted (y :: x :: z :: zs) = true) : sorted (y :: insort x (z :: zs)) = true
+[11] prop_77: sorted (y :: insort x (z :: zs)) = true
+[12] prop_77: (x : ℕ) (y : ℕ) (h : sorted (y :: z :: zs) = true) : sorted (y :: insort x (z :: zs)) = true
+[13] prop_77: (x : ℕ) (z : ℕ) (zs : List ℕ) : sorted (y :: insort x (z :: zs)) = true
+[14] prop_77: (x : ℕ) (z : ℕ) (zs : List ℕ) (hins : insort x (z :: zs) = z :: insort x zs) (h1 : sorted (y :: insort x (z :: zs)) = true) : sorted (y :: insort x (z :: zs)) = true
+[15] prop_77: (h1 : sorted (y :: z :: insort x zs) = true) : sorted (y :: insort x (z :: zs)) = true
+[16] prop_77: (x : ℕ) (z : ℕ) (zs : List ℕ) (hins : insort x (z :: zs) = z :: insort x zs) (h1 : sorted (y :: z :: insort x zs) = true) : sorted (y :: insort x (z :: zs)) = true
+[17] prop_77: (x : ℕ) (ih : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true) (z : ℕ) (zs : List ℕ) : sorted (y :: insort x (z :: zs)) = true
+[18] prop_77: (x : ℕ) (y : ℕ) (ih : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true) (h : sorted (y :: z :: zs) = true) : sorted (y :: insort x (z :: zs)) = true
+[19] prop_77: (x : ℕ) (ih : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true) (h : sorted (y :: z :: zs) = true) (z : ℕ) (zs : List ℕ) : sorted (y :: insort x (z :: zs)) = true
+[20] prop_77: (x : ℕ) (y : ℕ) (ih : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true) (h : sorted (y :: z :: zs) = true) (z : ℕ) (zs : List ℕ) : sorted (y :: insort x (z :: zs)) = true
+[21] prop_77: (hins : insort x (z :: zs) = z :: insort x zs) (h1 : sorted (insort x (z :: zs)) = true) : sorted (z :: insort x zs) = true
+[22] prop_77: (ih : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true) (hzs : sorted (z :: zs) = true) : sorted (z :: insort x zs) = true
+[23] prop_77: (x : ℕ) (y : ℕ) (ih : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true) : sorted (z :: insort x zs) = true
+[24] prop_77: (x : ℕ) (ys : List ℕ) (ih : sorted ys = true → sorted (insort x ys) = true) (h : sorted (y :: ys) = true) : sorted (y :: insort x ys) = true
+[25] prop_77: (x : ℕ) (y : ℕ) (ys : List ℕ) (ih : sorted ys = true → sorted (insort x ys) = true) (h : sorted (y :: ys) = true) : sorted (y :: insort x ys) = true
+[26] prop_77: (x : ℕ) (ys : List ℕ) (ih : sorted ys = true → sorted (insort x ys) = true) (h : sorted (y :: ys) = true) : sorted (insort x (y :: ys)) = true
+[27] prop_77: (x : ℕ) (y : ℕ) (ys : List ℕ) (ih : sorted ys = true → sorted (insort x ys) = true) (h : sorted (y :: ys) = true) : sorted (insort x (y :: ys)) = true
+[28] prop_77: (x : ℕ) (y : ℕ) (ys : List ℕ) (ih : sorted ys = true → sorted (insort x ys) = true) : sorted (y :: ys) = true → sorted (insort x (y :: ys)) = true
+[29] prop_77: (ih : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true) (hzs : sorted (z :: zs) = true) (hins : insort x (z :: zs) = z :: insort x zs) : sorted (z :: insort x zs) = true

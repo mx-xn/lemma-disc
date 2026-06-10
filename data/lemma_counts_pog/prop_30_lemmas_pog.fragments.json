@@ -1,0 +1,1539 @@
+{
+  "fragments": [
+    {
+      "fragment_id": 0,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_30.json",
+      "decl_name": "prop_30",
+      "root_node_id": 1,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "xs",
+            "type": "List ℕ"
+          }
+        ],
+        "goal": "x ∈ ins x xs"
+      },
+      "nodes": [
+        {
+          "id": 1,
+          "kind": "leaf",
+          "tactic_text": "simp [ins]",
+          "parent_id": null,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              }
+            ],
+            "goal": "x ∈ ins x xs"
+          },
+          "summary": {
+            "directly_used": [],
+            "dependency_maps": []
+          }
+        }
+      ]
+    },
+    {
+      "fragment_id": 1,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_30.json",
+      "decl_name": "prop_30",
+      "root_node_id": 2,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "y",
+            "type": "ℕ"
+          },
+          {
+            "name": "ys",
+            "type": "List ℕ"
+          },
+          {
+            "name": "ih",
+            "type": "x ∈ ins x ys"
+          }
+        ],
+        "goal": "x ∈ ins x (y :: ys)"
+      },
+      "nodes": [
+        {
+          "id": 2,
+          "kind": "node",
+          "tactic_text": "simp [ins]",
+          "parent_id": null,
+          "child_ids": [
+            3
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "y",
+                "type": "ℕ"
+              },
+              {
+                "name": "ys",
+                "type": "List ℕ"
+              },
+              {
+                "name": "ih",
+                "type": "x ∈ ins x ys"
+              }
+            ],
+            "goal": "x ∈ ins x (y :: ys)"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "x",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "y",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "ys",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "ih",
+                  "type": "x ∈ ins x ys"
+                }
+              ],
+              "goal": "x ∈ if x < y then x :: y :: ys else y :: ins x ys"
+            }
+          ],
+          "summary": {
+            "directly_used": [],
+            "dependency_maps": [
+              {
+                "x": [
+                  "x"
+                ],
+                "y": [
+                  "y"
+                ],
+                "ys": [
+                  "ys"
+                ],
+                "ih": [
+                  "ih"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 3,
+          "kind": "hole",
+          "hole_id": "hole_0",
+          "parent_id": 2,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "y",
+                "type": "ℕ"
+              },
+              {
+                "name": "ys",
+                "type": "List ℕ"
+              },
+              {
+                "name": "ih",
+                "type": "x ∈ ins x ys"
+              }
+            ],
+            "goal": "x ∈ if x < y then x :: y :: ys else y :: ins x ys"
+          }
+        }
+      ]
+    },
+    {
+      "fragment_id": 2,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_30.json",
+      "decl_name": "prop_30",
+      "root_node_id": 5,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "y",
+            "type": "ℕ"
+          },
+          {
+            "name": "ys",
+            "type": "List ℕ"
+          },
+          {
+            "name": "ih",
+            "type": "x ∈ ins x ys"
+          },
+          {
+            "name": "h",
+            "type": "¬x < y"
+          }
+        ],
+        "goal": "x ∈ y :: ins x ys"
+      },
+      "nodes": [
+        {
+          "id": 5,
+          "kind": "node",
+          "tactic_text": "simp",
+          "parent_id": null,
+          "child_ids": [
+            6
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "y",
+                "type": "ℕ"
+              },
+              {
+                "name": "ys",
+                "type": "List ℕ"
+              },
+              {
+                "name": "ih",
+                "type": "x ∈ ins x ys"
+              },
+              {
+                "name": "h",
+                "type": "¬x < y"
+              }
+            ],
+            "goal": "x ∈ y :: ins x ys"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "x",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "y",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "ys",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "ih",
+                  "type": "x ∈ ins x ys"
+                },
+                {
+                  "name": "h",
+                  "type": "¬x < y"
+                }
+              ],
+              "goal": "x = y ∨ x ∈ ins x ys"
+            }
+          ],
+          "summary": {
+            "directly_used": [],
+            "dependency_maps": [
+              {
+                "x": [
+                  "x"
+                ],
+                "ys": [
+                  "ys"
+                ],
+                "y": [
+                  "y"
+                ],
+                "ih": [
+                  "ih"
+                ],
+                "h": [
+                  "h"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 6,
+          "kind": "hole",
+          "hole_id": "hole_0",
+          "parent_id": 5,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "y",
+                "type": "ℕ"
+              },
+              {
+                "name": "ys",
+                "type": "List ℕ"
+              },
+              {
+                "name": "ih",
+                "type": "x ∈ ins x ys"
+              },
+              {
+                "name": "h",
+                "type": "¬x < y"
+              }
+            ],
+            "goal": "x = y ∨ x ∈ ins x ys"
+          }
+        }
+      ]
+    },
+    {
+      "fragment_id": 3,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_30.json",
+      "decl_name": "prop_30",
+      "root_node_id": 6,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "y",
+            "type": "ℕ"
+          },
+          {
+            "name": "ys",
+            "type": "List ℕ"
+          },
+          {
+            "name": "ih",
+            "type": "x ∈ ins x ys"
+          },
+          {
+            "name": "h",
+            "type": "¬x < y"
+          }
+        ],
+        "goal": "x = y ∨ x ∈ ins x ys"
+      },
+      "nodes": [
+        {
+          "id": 6,
+          "kind": "node",
+          "tactic_text": "right",
+          "parent_id": null,
+          "child_ids": [
+            7
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "y",
+                "type": "ℕ"
+              },
+              {
+                "name": "ys",
+                "type": "List ℕ"
+              },
+              {
+                "name": "ih",
+                "type": "x ∈ ins x ys"
+              },
+              {
+                "name": "h",
+                "type": "¬x < y"
+              }
+            ],
+            "goal": "x = y ∨ x ∈ ins x ys"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "x",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "y",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "ys",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "ih",
+                  "type": "x ∈ ins x ys"
+                },
+                {
+                  "name": "h",
+                  "type": "¬x < y"
+                }
+              ],
+              "goal": "x ∈ ins x ys"
+            }
+          ],
+          "summary": {
+            "directly_used": [],
+            "dependency_maps": [
+              {
+                "x": [
+                  "x"
+                ],
+                "ys": [
+                  "ys"
+                ],
+                "y": [
+                  "y"
+                ],
+                "ih": [
+                  "ih"
+                ],
+                "h": [
+                  "h"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 7,
+          "kind": "hole",
+          "hole_id": "hole_0",
+          "parent_id": 6,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "y",
+                "type": "ℕ"
+              },
+              {
+                "name": "ys",
+                "type": "List ℕ"
+              },
+              {
+                "name": "ih",
+                "type": "x ∈ ins x ys"
+              },
+              {
+                "name": "h",
+                "type": "¬x < y"
+              }
+            ],
+            "goal": "x ∈ ins x ys"
+          }
+        }
+      ]
+    },
+    {
+      "fragment_id": 4,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_30.json",
+      "decl_name": "prop_30",
+      "root_node_id": 5,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "y",
+            "type": "ℕ"
+          },
+          {
+            "name": "ys",
+            "type": "List ℕ"
+          },
+          {
+            "name": "ih",
+            "type": "x ∈ ins x ys"
+          },
+          {
+            "name": "h",
+            "type": "¬x < y"
+          }
+        ],
+        "goal": "x ∈ y :: ins x ys"
+      },
+      "nodes": [
+        {
+          "id": 5,
+          "kind": "node",
+          "tactic_text": "simp",
+          "parent_id": null,
+          "child_ids": [
+            6
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "y",
+                "type": "ℕ"
+              },
+              {
+                "name": "ys",
+                "type": "List ℕ"
+              },
+              {
+                "name": "ih",
+                "type": "x ∈ ins x ys"
+              },
+              {
+                "name": "h",
+                "type": "¬x < y"
+              }
+            ],
+            "goal": "x ∈ y :: ins x ys"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "x",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "y",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "ys",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "ih",
+                  "type": "x ∈ ins x ys"
+                },
+                {
+                  "name": "h",
+                  "type": "¬x < y"
+                }
+              ],
+              "goal": "x = y ∨ x ∈ ins x ys"
+            }
+          ],
+          "summary": {
+            "directly_used": [],
+            "dependency_maps": [
+              {
+                "x": [
+                  "x"
+                ],
+                "ys": [
+                  "ys"
+                ],
+                "y": [
+                  "y"
+                ],
+                "ih": [
+                  "ih"
+                ],
+                "h": [
+                  "h"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 6,
+          "kind": "node",
+          "tactic_text": "right",
+          "parent_id": 5,
+          "child_ids": [
+            7
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "y",
+                "type": "ℕ"
+              },
+              {
+                "name": "ys",
+                "type": "List ℕ"
+              },
+              {
+                "name": "ih",
+                "type": "x ∈ ins x ys"
+              },
+              {
+                "name": "h",
+                "type": "¬x < y"
+              }
+            ],
+            "goal": "x = y ∨ x ∈ ins x ys"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "x",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "y",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "ys",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "ih",
+                  "type": "x ∈ ins x ys"
+                },
+                {
+                  "name": "h",
+                  "type": "¬x < y"
+                }
+              ],
+              "goal": "x ∈ ins x ys"
+            }
+          ],
+          "summary": {
+            "directly_used": [],
+            "dependency_maps": [
+              {
+                "x": [
+                  "x"
+                ],
+                "ys": [
+                  "ys"
+                ],
+                "y": [
+                  "y"
+                ],
+                "ih": [
+                  "ih"
+                ],
+                "h": [
+                  "h"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 7,
+          "kind": "hole",
+          "hole_id": "hole_0",
+          "parent_id": 6,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "y",
+                "type": "ℕ"
+              },
+              {
+                "name": "ys",
+                "type": "List ℕ"
+              },
+              {
+                "name": "ih",
+                "type": "x ∈ ins x ys"
+              },
+              {
+                "name": "h",
+                "type": "¬x < y"
+              }
+            ],
+            "goal": "x ∈ ins x ys"
+          }
+        }
+      ]
+    },
+    {
+      "fragment_id": 5,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_30.json",
+      "decl_name": "prop_30",
+      "root_node_id": 3,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "y",
+            "type": "ℕ"
+          },
+          {
+            "name": "ys",
+            "type": "List ℕ"
+          },
+          {
+            "name": "ih",
+            "type": "x ∈ ins x ys"
+          }
+        ],
+        "goal": "x ∈ if x < y then x :: y :: ys else y :: ins x ys"
+      },
+      "nodes": [
+        {
+          "id": 3,
+          "kind": "node",
+          "tactic_text": "split_ifs with h",
+          "parent_id": null,
+          "child_ids": [
+            4,
+            7
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "y",
+                "type": "ℕ"
+              },
+              {
+                "name": "ys",
+                "type": "List ℕ"
+              },
+              {
+                "name": "ih",
+                "type": "x ∈ ins x ys"
+              }
+            ],
+            "goal": "x ∈ if x < y then x :: y :: ys else y :: ins x ys"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "x",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "y",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "ys",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "ih",
+                  "type": "x ∈ ins x ys"
+                },
+                {
+                  "name": "h",
+                  "type": "x < y"
+                }
+              ],
+              "goal": "x ∈ x :: y :: ys"
+            },
+            {
+              "hypotheses": [
+                {
+                  "name": "x",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "y",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "ys",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "ih",
+                  "type": "x ∈ ins x ys"
+                },
+                {
+                  "name": "h",
+                  "type": "¬x < y"
+                }
+              ],
+              "goal": "x ∈ y :: ins x ys"
+            }
+          ],
+          "summary": {
+            "directly_used": [],
+            "dependency_maps": [
+              {
+                "x": [
+                  "x"
+                ],
+                "ys": [
+                  "ys"
+                ],
+                "y": [
+                  "y"
+                ],
+                "ih": [
+                  "ih"
+                ],
+                "h": [
+                  "x",
+                  "y"
+                ]
+              },
+              {
+                "x": [
+                  "x"
+                ],
+                "ys": [
+                  "ys"
+                ],
+                "y": [
+                  "y"
+                ],
+                "ih": [
+                  "ih"
+                ],
+                "h": [
+                  "x",
+                  "y"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 4,
+          "kind": "leaf",
+          "tactic_text": "simp",
+          "parent_id": 3,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "y",
+                "type": "ℕ"
+              },
+              {
+                "name": "ys",
+                "type": "List ℕ"
+              },
+              {
+                "name": "ih",
+                "type": "x ∈ ins x ys"
+              },
+              {
+                "name": "h",
+                "type": "x < y"
+              }
+            ],
+            "goal": "x ∈ x :: y :: ys"
+          },
+          "summary": {
+            "directly_used": [],
+            "dependency_maps": []
+          }
+        },
+        {
+          "id": 7,
+          "kind": "leaf",
+          "tactic_text": "exact ih",
+          "parent_id": 3,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "y",
+                "type": "ℕ"
+              },
+              {
+                "name": "ys",
+                "type": "List ℕ"
+              },
+              {
+                "name": "ih",
+                "type": "x ∈ ins x ys"
+              },
+              {
+                "name": "h",
+                "type": "¬x < y"
+              }
+            ],
+            "goal": "x ∈ y :: ins x ys"
+          },
+          "summary": {
+            "directly_used": [
+              "ih"
+            ],
+            "dependency_maps": []
+          }
+        }
+      ]
+    },
+    {
+      "fragment_id": 6,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_30.json",
+      "decl_name": "prop_30",
+      "root_node_id": 2,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "y",
+            "type": "ℕ"
+          },
+          {
+            "name": "ys",
+            "type": "List ℕ"
+          },
+          {
+            "name": "ih",
+            "type": "x ∈ ins x ys"
+          }
+        ],
+        "goal": "x ∈ ins x (y :: ys)"
+      },
+      "nodes": [
+        {
+          "id": 2,
+          "kind": "node",
+          "tactic_text": "simp [ins]",
+          "parent_id": null,
+          "child_ids": [
+            3
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "y",
+                "type": "ℕ"
+              },
+              {
+                "name": "ys",
+                "type": "List ℕ"
+              },
+              {
+                "name": "ih",
+                "type": "x ∈ ins x ys"
+              }
+            ],
+            "goal": "x ∈ ins x (y :: ys)"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "x",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "y",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "ys",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "ih",
+                  "type": "x ∈ ins x ys"
+                }
+              ],
+              "goal": "x ∈ if x < y then x :: y :: ys else y :: ins x ys"
+            }
+          ],
+          "summary": {
+            "directly_used": [],
+            "dependency_maps": [
+              {
+                "x": [
+                  "x"
+                ],
+                "y": [
+                  "y"
+                ],
+                "ys": [
+                  "ys"
+                ],
+                "ih": [
+                  "ih"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 3,
+          "kind": "node",
+          "tactic_text": "split_ifs with h",
+          "parent_id": 2,
+          "child_ids": [
+            4,
+            7
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "y",
+                "type": "ℕ"
+              },
+              {
+                "name": "ys",
+                "type": "List ℕ"
+              },
+              {
+                "name": "ih",
+                "type": "x ∈ ins x ys"
+              }
+            ],
+            "goal": "x ∈ if x < y then x :: y :: ys else y :: ins x ys"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "x",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "y",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "ys",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "ih",
+                  "type": "x ∈ ins x ys"
+                },
+                {
+                  "name": "h",
+                  "type": "x < y"
+                }
+              ],
+              "goal": "x ∈ x :: y :: ys"
+            },
+            {
+              "hypotheses": [
+                {
+                  "name": "x",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "y",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "ys",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "ih",
+                  "type": "x ∈ ins x ys"
+                },
+                {
+                  "name": "h",
+                  "type": "¬x < y"
+                }
+              ],
+              "goal": "x ∈ y :: ins x ys"
+            }
+          ],
+          "summary": {
+            "directly_used": [],
+            "dependency_maps": [
+              {
+                "x": [
+                  "x"
+                ],
+                "ys": [
+                  "ys"
+                ],
+                "y": [
+                  "y"
+                ],
+                "ih": [
+                  "ih"
+                ],
+                "h": [
+                  "x",
+                  "y"
+                ]
+              },
+              {
+                "x": [
+                  "x"
+                ],
+                "ys": [
+                  "ys"
+                ],
+                "y": [
+                  "y"
+                ],
+                "ih": [
+                  "ih"
+                ],
+                "h": [
+                  "x",
+                  "y"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 4,
+          "kind": "leaf",
+          "tactic_text": "simp",
+          "parent_id": 3,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "y",
+                "type": "ℕ"
+              },
+              {
+                "name": "ys",
+                "type": "List ℕ"
+              },
+              {
+                "name": "ih",
+                "type": "x ∈ ins x ys"
+              },
+              {
+                "name": "h",
+                "type": "x < y"
+              }
+            ],
+            "goal": "x ∈ x :: y :: ys"
+          },
+          "summary": {
+            "directly_used": [],
+            "dependency_maps": []
+          }
+        },
+        {
+          "id": 7,
+          "kind": "leaf",
+          "tactic_text": "exact ih",
+          "parent_id": 3,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "y",
+                "type": "ℕ"
+              },
+              {
+                "name": "ys",
+                "type": "List ℕ"
+              },
+              {
+                "name": "ih",
+                "type": "x ∈ ins x ys"
+              },
+              {
+                "name": "h",
+                "type": "¬x < y"
+              }
+            ],
+            "goal": "x ∈ y :: ins x ys"
+          },
+          "summary": {
+            "directly_used": [
+              "ih"
+            ],
+            "dependency_maps": []
+          }
+        }
+      ]
+    },
+    {
+      "fragment_id": 7,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_30.json",
+      "decl_name": "prop_30",
+      "root_node_id": 5,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "y",
+            "type": "ℕ"
+          },
+          {
+            "name": "ys",
+            "type": "List ℕ"
+          },
+          {
+            "name": "ih",
+            "type": "x ∈ ins x ys"
+          },
+          {
+            "name": "h",
+            "type": "¬x < y"
+          }
+        ],
+        "goal": "x ∈ y :: ins x ys"
+      },
+      "nodes": [
+        {
+          "id": 5,
+          "kind": "node",
+          "tactic_text": "simp",
+          "parent_id": null,
+          "child_ids": [
+            7
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "y",
+                "type": "ℕ"
+              },
+              {
+                "name": "ys",
+                "type": "List ℕ"
+              },
+              {
+                "name": "ih",
+                "type": "x ∈ ins x ys"
+              },
+              {
+                "name": "h",
+                "type": "¬x < y"
+              }
+            ],
+            "goal": "x ∈ y :: ins x ys"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "x",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "y",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "ys",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "ih",
+                  "type": "x ∈ ins x ys"
+                },
+                {
+                  "name": "h",
+                  "type": "¬x < y"
+                }
+              ],
+              "goal": "x = y ∨ x ∈ ins x ys"
+            }
+          ],
+          "summary": {
+            "directly_used": [],
+            "dependency_maps": [
+              {
+                "x": [
+                  "x"
+                ],
+                "ys": [
+                  "ys"
+                ],
+                "y": [
+                  "y"
+                ],
+                "ih": [
+                  "ih"
+                ],
+                "h": [
+                  "h"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 7,
+          "kind": "leaf",
+          "tactic_text": "exact ih",
+          "parent_id": 5,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "y",
+                "type": "ℕ"
+              },
+              {
+                "name": "ys",
+                "type": "List ℕ"
+              },
+              {
+                "name": "ih",
+                "type": "x ∈ ins x ys"
+              },
+              {
+                "name": "h",
+                "type": "¬x < y"
+              }
+            ],
+            "goal": "x = y ∨ x ∈ ins x ys"
+          },
+          "summary": {
+            "directly_used": [
+              "ih"
+            ],
+            "dependency_maps": []
+          }
+        }
+      ]
+    },
+    {
+      "fragment_id": 8,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_30.json",
+      "decl_name": "prop_30",
+      "root_node_id": 6,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "y",
+            "type": "ℕ"
+          },
+          {
+            "name": "ys",
+            "type": "List ℕ"
+          },
+          {
+            "name": "ih",
+            "type": "x ∈ ins x ys"
+          },
+          {
+            "name": "h",
+            "type": "¬x < y"
+          }
+        ],
+        "goal": "x = y ∨ x ∈ ins x ys"
+      },
+      "nodes": [
+        {
+          "id": 6,
+          "kind": "node",
+          "tactic_text": "right",
+          "parent_id": null,
+          "child_ids": [
+            7
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "y",
+                "type": "ℕ"
+              },
+              {
+                "name": "ys",
+                "type": "List ℕ"
+              },
+              {
+                "name": "ih",
+                "type": "x ∈ ins x ys"
+              },
+              {
+                "name": "h",
+                "type": "¬x < y"
+              }
+            ],
+            "goal": "x = y ∨ x ∈ ins x ys"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "x",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "y",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "ys",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "ih",
+                  "type": "x ∈ ins x ys"
+                },
+                {
+                  "name": "h",
+                  "type": "¬x < y"
+                }
+              ],
+              "goal": "x ∈ ins x ys"
+            }
+          ],
+          "summary": {
+            "directly_used": [],
+            "dependency_maps": [
+              {
+                "x": [
+                  "x"
+                ],
+                "ys": [
+                  "ys"
+                ],
+                "y": [
+                  "y"
+                ],
+                "ih": [
+                  "ih"
+                ],
+                "h": [
+                  "h"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 7,
+          "kind": "leaf",
+          "tactic_text": "exact ih",
+          "parent_id": 6,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "y",
+                "type": "ℕ"
+              },
+              {
+                "name": "ys",
+                "type": "List ℕ"
+              },
+              {
+                "name": "ih",
+                "type": "x ∈ ins x ys"
+              },
+              {
+                "name": "h",
+                "type": "¬x < y"
+              }
+            ],
+            "goal": "x ∈ ins x ys"
+          },
+          "summary": {
+            "directly_used": [
+              "ih"
+            ],
+            "dependency_maps": []
+          }
+        }
+      ]
+    }
+  ]
+}

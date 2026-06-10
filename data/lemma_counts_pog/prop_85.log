@@ -1,0 +1,51 @@
+[1/4] Building POG...
+[info] welcome to sbt 1.10.1 (JetBrains s.r.o. Java 21.0.6)
+[info] loading project definition from /nas/lemma-disc/scala-core/project
+[info] loading settings for project scala-core from build.sbt ...
+[info] set current project to scala-core (in build file:/nas/lemma-disc/scala-core/)
+[info] running Serializer /tmp/lemma_trace_AAJsKr.json /tmp/lemma_pog_Lkpkne.json
+[success] Total time: 1 s, completed Jun 4, 2026, 12:46:12 AM
+[2/4] Enumerating fragments...
+[info] welcome to sbt 1.10.1 (JetBrains s.r.o. Java 21.0.6)
+[info] loading project definition from /nas/lemma-disc/scala-core/project
+[info] loading settings for project scala-core from build.sbt ...
+[info] set current project to scala-core (in build file:/nas/lemma-disc/scala-core/)
+[info] running Serializer --timeout 60000 /tmp/lemma_pog_Lkpkne.json /tmp/lemma_segments_ePyjyo.json
+[success] Total time: 5 s, completed Jun 4, 2026, 12:46:21 AM
+[2/4] Got 92 fragment(s).
+[3/4] Running support minimization...
+[info] welcome to sbt 1.10.1 (JetBrains s.r.o. Java 21.0.6)
+[info] loading project definition from /nas/lemma-disc/scala-core/project
+[info] loading settings for project scala-core from build.sbt ...
+[info] set current project to scala-core (in build file:/nas/lemma-disc/scala-core/)
+[info] running Serializer /tmp/lemma_segments_ePyjyo.json /tmp/lemma_out_L88V0B.json
+[success] Total time: 2 s, completed Jun 4, 2026, 12:46:26 AM
+[4/4] Deduplicating lemmas...
+Deduplicated: 92 → 24 lemmas (68 dropped)
+[4/4] Lemmas    written to /nas/lemma-disc/data/lemma_counts_pog/prop_85_lemmas_pog.json
+[4/4] Fragments written to /nas/lemma-disc/data/lemma_counts_pog/prop_85_lemmas_pog.fragments.json
+--- 24 lemma statement(s) ---
+[0] prop_85: (h : length [] = length ys) (h1 : zip' (reverse []) (reverse ys) = reverse (zip' [] ys)) : length [] = length ys → zip' (reverse []) (reverse ys) = reverse (zip' [] ys)
+[1] prop_85: length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)
+[2] prop_85: (h : length [] = length (head✝ :: tail✝)) (h1 : zip' (reverse []) (reverse (head✝ :: tail✝)) = reverse (zip' [] (head✝ :: tail✝))) : zip' (reverse []) (reverse (head✝ :: tail✝)) = reverse (zip' [] (head✝ :: tail✝))
+[3] prop_85: (head✝ : β) (tail✝ : List β) (h : 0 = 1 + length tail✝) : zip' (reverse []) (reverse (head✝ :: tail✝)) = reverse (zip' [] (head✝ :: tail✝))
+[4] prop_85: (head✝ : β) (tail✝ : List β) (h : length [] = length (head✝ :: tail✝)) : zip' (reverse []) (reverse (head✝ :: tail✝)) = reverse (zip' [] (head✝ :: tail✝))
+[5] prop_85: (ys : List β) (h : length [] = length ys) : zip' (reverse []) (reverse ys) = reverse (zip' [] ys)
+[6] prop_85: (ys : List β) : length [] = length ys → zip' (reverse []) (reverse ys) = reverse (zip' [] ys)
+[7] prop_85: (h : length (x :: xs) = length ys) (h1 : zip' (reverse (x :: xs)) (reverse ys) = reverse (zip' (x :: xs) ys)) : length (x :: xs) = length ys → zip' (reverse (x :: xs)) (reverse ys) = reverse (zip' (x :: xs) ys)
+[8] prop_85: (x : α) (xs : List α) (ih : ∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)) : length (x :: xs) = length ys → zip' (reverse (x :: xs)) (reverse ys) = reverse (zip' (x :: xs) ys)
+[9] prop_85: (x : α) (xs : List α) (ih : ∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)) (y : β) (ys : List β) (h : length (x :: xs) = length (y :: ys)) (h' : length xs = length ys) (h1 : zip' (reverse (x :: xs)) (reverse (y :: ys)) = reverse (zip' (x :: xs) (y :: ys))) : zip' (reverse (x :: xs)) (reverse (y :: ys)) = reverse (zip' (x :: xs) (y :: ys))
+[10] prop_85: (xs : List α) (ys : List β) (hL : length (reverse xs) = length (reverse ys)) (h1 : zip' (reverse (x :: xs)) (reverse (y :: ys)) = reverse (zip' (x :: xs) (y :: ys))) : zip' (reverse (x :: xs)) (reverse (y :: ys)) = reverse (zip' (x :: xs) (y :: ys))
+[11] prop_85: (x : α) (xs : List α) (ih : ∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)) (y : β) (ys : List β) (h : length (x :: xs) = length (y :: ys)) (h' : length xs = length ys) (hL : length (reverse xs) = length (reverse ys)) (h1 : zip' (reverse (x :: xs)) (reverse (y :: ys)) = reverse (zip' (x :: xs) (y :: ys))) : zip' (reverse (x :: xs)) (reverse (y :: ys)) = reverse (zip' (x :: xs) (y :: ys))
+[12] prop_85: (h1 : zip' (reverse xs ++ [x]) (reverse ys ++ [y]) = reverse (zip' xs ys) ++ [(x, y)]) : zip' (reverse (x :: xs)) (reverse (y :: ys)) = reverse (zip' (x :: xs) (y :: ys))
+[13] prop_85: (x : α) (xs : List α) (ih : ∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)) (y : β) (ys : List β) (h : length (x :: xs) = length (y :: ys)) (h' : length xs = length ys) (h1 : zip' (reverse xs ++ [x]) (reverse ys ++ [y]) = reverse (zip' xs ys) ++ [(x, y)]) : zip' (reverse (x :: xs)) (reverse (y :: ys)) = reverse (zip' (x :: xs) (y :: ys))
+[14] prop_85: (xs : List α) (ys : List β) (hL : length (reverse xs) = length (reverse ys)) (h1 : zip' (reverse xs ++ [x]) (reverse ys ++ [y]) = reverse (zip' xs ys) ++ [(x, y)]) : zip' (reverse (x :: xs)) (reverse (y :: ys)) = reverse (zip' (x :: xs) (y :: ys))
+[15] prop_85: (x : α) (xs : List α) (ih : ∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)) (y : β) (ys : List β) (h : length (x :: xs) = length (y :: ys)) (h' : length xs = length ys) (hL : length (reverse xs) = length (reverse ys)) (h1 : zip' (reverse xs ++ [x]) (reverse ys ++ [y]) = reverse (zip' xs ys) ++ [(x, y)]) : zip' (reverse (x :: xs)) (reverse (y :: ys)) = reverse (zip' (x :: xs) (y :: ys))
+[16] prop_85: (ih : ∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)) (ys : List β) : zip' (reverse (x :: xs)) (reverse (y :: ys)) = reverse (zip' (x :: xs) (y :: ys))
+[17] prop_85: (x : α) (xs : List α) (ih : ∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)) (y : β) (ys : List β) (h : length (x :: xs) = length (y :: ys)) : zip' (reverse (x :: xs)) (reverse (y :: ys)) = reverse (zip' (x :: xs) (y :: ys))
+[18] prop_85: (xs : List α) (ih : ∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)) (ys : List β) : zip' (reverse (x :: xs)) (reverse (y :: ys)) = reverse (zip' (x :: xs) (y :: ys))
+[19] prop_85: (h : length (x :: xs) = length (y :: ys)) (h1 : length xs = length ys) : length xs = length ys
+[20] prop_85: (x : α) (xs : List α) (ih : ∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)) (y : β) (ys : List β) (h : length (x :: xs) = length (y :: ys)) : length xs = length ys
+[21] prop_85: (h' : length xs = length ys) : length (reverse xs) = length (reverse ys)
+[22] prop_85: (x : α) (xs : List α) (ih : ∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)) (ys : List β) (h : length (x :: xs) = length ys) : zip' (reverse (x :: xs)) (reverse ys) = reverse (zip' (x :: xs) ys)
+[23] prop_85: (x : α) (xs : List α) (ih : ∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)) (ys : List β) : length (x :: xs) = length ys → zip' (reverse (x :: xs)) (reverse ys) = reverse (zip' (x :: xs) ys)

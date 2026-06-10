@@ -1,0 +1,213 @@
+{
+  "name": "prop_53",
+  "statement": "theorem prop_53 (n: Nat) (xs: List Nat) :\n  (count n xs = count n (sort xs)) :=",
+  "root_tactic_id": 0,
+  "tactic_nodes": [
+    {
+      "id": 0,
+      "tactic_text": "induction xs with\n| nil => _*_\n| cons x xs ih => _*_",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "n",
+            "type": "ℕ"
+          },
+          {
+            "name": "xs",
+            "type": "List ℕ"
+          }
+        ],
+        "goal": "count n xs = count n (sort xs)"
+      },
+      "output_obligations": [
+        {
+          "hypotheses": [
+            {
+              "name": "n",
+              "type": "ℕ"
+            }
+          ],
+          "goal": "count n [] = count n (sort [])"
+        },
+        {
+          "hypotheses": [
+            {
+              "name": "n",
+              "type": "ℕ"
+            },
+            {
+              "name": "x",
+              "type": "ℕ"
+            },
+            {
+              "name": "xs",
+              "type": "List ℕ"
+            },
+            {
+              "name": "ih",
+              "type": "count n xs = count n (sort xs)"
+            }
+          ],
+          "goal": "count n (x :: xs) = count n (sort (x :: xs))"
+        }
+      ],
+      "summary": {
+        "directly_used": [
+          "xs"
+        ],
+        "dependency_maps": [
+          {
+            "n": [
+              "n"
+            ]
+          },
+          {
+            "n": [
+              "n"
+            ],
+            "x": [
+              "xs"
+            ],
+            "xs": [
+              "xs"
+            ],
+            "ih": [
+              "n",
+              "xs"
+            ]
+          }
+        ]
+      },
+      "parent_id": null,
+      "child_ids": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": 1,
+      "tactic_text": "simp [sort]",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "n",
+            "type": "ℕ"
+          }
+        ],
+        "goal": "count n [] = count n (sort [])"
+      },
+      "output_obligations": [],
+      "summary": {
+        "directly_used": [],
+        "dependency_maps": []
+      },
+      "parent_id": 0,
+      "child_ids": []
+    },
+    {
+      "id": 2,
+      "tactic_text": "simp only [sort, count_insort, count]",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "n",
+            "type": "ℕ"
+          },
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "xs",
+            "type": "List ℕ"
+          },
+          {
+            "name": "ih",
+            "type": "count n xs = count n (sort xs)"
+          }
+        ],
+        "goal": "count n (x :: xs) = count n (sort (x :: xs))"
+      },
+      "output_obligations": [
+        {
+          "hypotheses": [
+            {
+              "name": "n",
+              "type": "ℕ"
+            },
+            {
+              "name": "x",
+              "type": "ℕ"
+            },
+            {
+              "name": "xs",
+              "type": "List ℕ"
+            },
+            {
+              "name": "ih",
+              "type": "count n xs = count n (sort xs)"
+            }
+          ],
+          "goal": "(if n = x then count n xs + 1 else count n xs) = if n = x then count n (sort xs) + 1 else count n (sort xs)"
+        }
+      ],
+      "summary": {
+        "directly_used": [],
+        "dependency_maps": [
+          {
+            "n": [
+              "n"
+            ],
+            "x": [
+              "x"
+            ],
+            "xs": [
+              "xs"
+            ],
+            "ih": [
+              "ih"
+            ]
+          }
+        ]
+      },
+      "parent_id": 0,
+      "child_ids": [
+        3
+      ]
+    },
+    {
+      "id": 3,
+      "tactic_text": "rw [ih]",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "n",
+            "type": "ℕ"
+          },
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "xs",
+            "type": "List ℕ"
+          },
+          {
+            "name": "ih",
+            "type": "count n xs = count n (sort xs)"
+          }
+        ],
+        "goal": "(if n = x then count n xs + 1 else count n xs) = if n = x then count n (sort xs) + 1 else count n (sort xs)"
+      },
+      "output_obligations": [],
+      "summary": {
+        "directly_used": [
+          "ih"
+        ],
+        "dependency_maps": []
+      },
+      "parent_id": 2,
+      "child_ids": []
+    }
+  ]
+}

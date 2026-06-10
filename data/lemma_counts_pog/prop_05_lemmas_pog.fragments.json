@@ -1,0 +1,641 @@
+{
+  "fragments": [
+    {
+      "fragment_id": 0,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_05.json",
+      "decl_name": "prop_05",
+      "root_node_id": 0,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "n",
+            "type": "ℕ"
+          },
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "xs",
+            "type": "List ℕ"
+          }
+        ],
+        "goal": "n = x → (count n xs).succ = count n (x :: xs)"
+      },
+      "nodes": [
+        {
+          "id": 0,
+          "kind": "node",
+          "tactic_text": "intro h",
+          "parent_id": null,
+          "child_ids": [
+            1
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "n",
+                "type": "ℕ"
+              },
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              }
+            ],
+            "goal": "n = x → (count n xs).succ = count n (x :: xs)"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "n",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "x",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "xs",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "h",
+                  "type": "n = x"
+                }
+              ],
+              "goal": "(count n xs).succ = count n (x :: xs)"
+            }
+          ],
+          "summary": {
+            "directly_used": [],
+            "dependency_maps": [
+              {
+                "n": [
+                  "n"
+                ],
+                "x": [
+                  "x"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "h": [
+                  "n",
+                  "x"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 1,
+          "kind": "hole",
+          "hole_id": "hole_0",
+          "parent_id": 0,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "n",
+                "type": "ℕ"
+              },
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "h",
+                "type": "n = x"
+              }
+            ],
+            "goal": "(count n xs).succ = count n (x :: xs)"
+          }
+        }
+      ]
+    },
+    {
+      "fragment_id": 1,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_05.json",
+      "decl_name": "prop_05",
+      "root_node_id": 1,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "n",
+            "type": "ℕ"
+          },
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "xs",
+            "type": "List ℕ"
+          },
+          {
+            "name": "h",
+            "type": "n = x"
+          }
+        ],
+        "goal": "(count n xs).succ = count n (x :: xs)"
+      },
+      "nodes": [
+        {
+          "id": 1,
+          "kind": "node",
+          "tactic_text": "rw [← h]",
+          "parent_id": null,
+          "child_ids": [
+            2
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "n",
+                "type": "ℕ"
+              },
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "h",
+                "type": "n = x"
+              }
+            ],
+            "goal": "(count n xs).succ = count n (x :: xs)"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "n",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "x",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "xs",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "h",
+                  "type": "n = x"
+                }
+              ],
+              "goal": "(count n xs).succ = count n (n :: xs)"
+            }
+          ],
+          "summary": {
+            "directly_used": [
+              "h"
+            ],
+            "dependency_maps": [
+              {
+                "n": [
+                  "n"
+                ],
+                "x": [
+                  "x"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "h": [
+                  "h"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 2,
+          "kind": "hole",
+          "hole_id": "hole_0",
+          "parent_id": 1,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "n",
+                "type": "ℕ"
+              },
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "h",
+                "type": "n = x"
+              }
+            ],
+            "goal": "(count n xs).succ = count n (n :: xs)"
+          }
+        }
+      ]
+    },
+    {
+      "fragment_id": 2,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_05.json",
+      "decl_name": "prop_05",
+      "root_node_id": 0,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "n",
+            "type": "ℕ"
+          },
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "xs",
+            "type": "List ℕ"
+          }
+        ],
+        "goal": "n = x → (count n xs).succ = count n (x :: xs)"
+      },
+      "nodes": [
+        {
+          "id": 0,
+          "kind": "node",
+          "tactic_text": "intro h",
+          "parent_id": null,
+          "child_ids": [
+            1
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "n",
+                "type": "ℕ"
+              },
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              }
+            ],
+            "goal": "n = x → (count n xs).succ = count n (x :: xs)"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "n",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "x",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "xs",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "h",
+                  "type": "n = x"
+                }
+              ],
+              "goal": "(count n xs).succ = count n (x :: xs)"
+            }
+          ],
+          "summary": {
+            "directly_used": [],
+            "dependency_maps": [
+              {
+                "n": [
+                  "n"
+                ],
+                "x": [
+                  "x"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "h": [
+                  "n",
+                  "x"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 1,
+          "kind": "node",
+          "tactic_text": "rw [← h]",
+          "parent_id": 0,
+          "child_ids": [
+            2
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "n",
+                "type": "ℕ"
+              },
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "h",
+                "type": "n = x"
+              }
+            ],
+            "goal": "(count n xs).succ = count n (x :: xs)"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "n",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "x",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "xs",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "h",
+                  "type": "n = x"
+                }
+              ],
+              "goal": "(count n xs).succ = count n (n :: xs)"
+            }
+          ],
+          "summary": {
+            "directly_used": [
+              "h"
+            ],
+            "dependency_maps": [
+              {
+                "n": [
+                  "n"
+                ],
+                "x": [
+                  "x"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "h": [
+                  "h"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 2,
+          "kind": "hole",
+          "hole_id": "hole_0",
+          "parent_id": 1,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "n",
+                "type": "ℕ"
+              },
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "h",
+                "type": "n = x"
+              }
+            ],
+            "goal": "(count n xs).succ = count n (n :: xs)"
+          }
+        }
+      ]
+    },
+    {
+      "fragment_id": 3,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_05.json",
+      "decl_name": "prop_05",
+      "root_node_id": 2,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "n",
+            "type": "ℕ"
+          },
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "xs",
+            "type": "List ℕ"
+          }
+        ],
+        "goal": "n = x → (count n xs).succ = count n (x :: xs)"
+      },
+      "nodes": [
+        {
+          "id": 2,
+          "kind": "leaf",
+          "tactic_text": "simp [count]",
+          "parent_id": null,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "n",
+                "type": "ℕ"
+              },
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              }
+            ],
+            "goal": "n = x → (count n xs).succ = count n (x :: xs)"
+          },
+          "summary": {
+            "directly_used": [],
+            "dependency_maps": []
+          }
+        }
+      ]
+    },
+    {
+      "fragment_id": 4,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_05.json",
+      "decl_name": "prop_05",
+      "root_node_id": 1,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "n",
+            "type": "ℕ"
+          },
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "xs",
+            "type": "List ℕ"
+          },
+          {
+            "name": "h",
+            "type": "n = x"
+          }
+        ],
+        "goal": "(count n xs).succ = count n (x :: xs)"
+      },
+      "nodes": [
+        {
+          "id": 1,
+          "kind": "node",
+          "tactic_text": "rw [← h]",
+          "parent_id": null,
+          "child_ids": [
+            2
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "n",
+                "type": "ℕ"
+              },
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "h",
+                "type": "n = x"
+              }
+            ],
+            "goal": "(count n xs).succ = count n (x :: xs)"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "n",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "x",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "xs",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "h",
+                  "type": "n = x"
+                }
+              ],
+              "goal": "(count n xs).succ = count n (n :: xs)"
+            }
+          ],
+          "summary": {
+            "directly_used": [
+              "h"
+            ],
+            "dependency_maps": [
+              {
+                "n": [
+                  "n"
+                ],
+                "x": [
+                  "x"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "h": [
+                  "h"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 2,
+          "kind": "leaf",
+          "tactic_text": "simp [count]",
+          "parent_id": 1,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "n",
+                "type": "ℕ"
+              },
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "h",
+                "type": "n = x"
+              }
+            ],
+            "goal": "(count n xs).succ = count n (n :: xs)"
+          },
+          "summary": {
+            "directly_used": [],
+            "dependency_maps": []
+          }
+        }
+      ]
+    }
+  ]
+}

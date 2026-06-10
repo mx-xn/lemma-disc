@@ -1,0 +1,291 @@
+{
+  "lemmas": [
+    {
+      "fragment_id": 0,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_78.json",
+      "decl_name": "prop_78",
+      "premises": [],
+      "body": "True",
+      "conclusion": "sorted (sort xs) = true",
+      "statement": "sorted (sort xs) = true"
+    },
+    {
+      "fragment_id": 1,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_78.json",
+      "decl_name": "prop_78",
+      "premises": [],
+      "body": "sorted (insort x (sort xs)) = true",
+      "conclusion": "sorted (sort (x :: xs)) = true",
+      "statement": "(h1 : sorted (insort x (sort xs)) = true) : sorted (sort (x :: xs)) = true"
+    },
+    {
+      "fragment_id": 2,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_78.json",
+      "decl_name": "prop_78",
+      "premises": [
+        "xs : List ℕ",
+        "ih : sorted (sort xs) = true"
+      ],
+      "body": "(sorted_xs : List ℕ) → (hsort : sort xs = sorted_xs) → sorted (insort x sorted_xs) = true",
+      "conclusion": "sorted (insort x (sort xs)) = true",
+      "statement": "(xs : List ℕ) (ih : sorted (sort xs) = true) (sorted_xs : List ℕ) (hsort : sort xs = sorted_xs) (h1 : sorted (insort x sorted_xs) = true) : sorted (insort x (sort xs)) = true"
+    },
+    {
+      "fragment_id": 3,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_78.json",
+      "decl_name": "prop_78",
+      "premises": [
+        "xs : List ℕ",
+        "ih : sorted (sort xs) = true"
+      ],
+      "body": "(sorted_xs : List ℕ) → (hsort : sort xs = sorted_xs) → sorted (insort x sorted_xs) = true",
+      "conclusion": "sorted (sort (x :: xs)) = true",
+      "statement": "(xs : List ℕ) (ih : sorted (sort xs) = true) (sorted_xs : List ℕ) (hsort : sort xs = sorted_xs) (h1 : sorted (insort x sorted_xs) = true) : sorted (sort (x :: xs)) = true"
+    },
+    {
+      "fragment_id": 4,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_78.json",
+      "decl_name": "prop_78",
+      "premises": [
+        "ih : sorted (y :: ys) = true"
+      ],
+      "body": "True",
+      "conclusion": "sorted (insort x (y :: ys)) = true",
+      "statement": "(ih : sorted (y :: ys) = true) : sorted (insort x (y :: ys)) = true"
+    },
+    {
+      "fragment_id": 5,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_78.json",
+      "decl_name": "prop_78",
+      "premises": [
+        "x : ℕ",
+        "sorted_xs : List ℕ",
+        "ih : sorted sorted_xs = true"
+      ],
+      "body": "True",
+      "conclusion": "sorted (insort x sorted_xs) = true",
+      "statement": "(x : ℕ) (sorted_xs : List ℕ) (ih : sorted sorted_xs = true) : sorted (insort x sorted_xs) = true"
+    },
+    {
+      "fragment_id": 6,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_78.json",
+      "decl_name": "prop_78",
+      "premises": [
+        "x : ℕ",
+        "xs : List ℕ",
+        "ih : sorted (sort xs) = true"
+      ],
+      "body": "True",
+      "conclusion": "sorted (insort x (sort xs)) = true",
+      "statement": "(x : ℕ) (xs : List ℕ) (ih : sorted (sort xs) = true) : sorted (insort x (sort xs)) = true"
+    },
+    {
+      "fragment_id": 7,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_78.json",
+      "decl_name": "prop_78",
+      "premises": [
+        "x : ℕ",
+        "xs : List ℕ",
+        "ih : sorted (sort xs) = true"
+      ],
+      "body": "True",
+      "conclusion": "sorted (sort (x :: xs)) = true",
+      "statement": "(x : ℕ) (xs : List ℕ) (ih : sorted (sort xs) = true) : sorted (sort (x :: xs)) = true"
+    },
+    {
+      "fragment_id": 8,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_78.json",
+      "decl_name": "prop_78",
+      "premises": [
+        "x : ℕ",
+        "sorted_xs : List ℕ",
+        "hsort : sort xs = sorted_xs",
+        "ih : sorted sorted_xs = true"
+      ],
+      "body": "True",
+      "conclusion": "sorted (insort x sorted_xs) = true",
+      "statement": "(x : ℕ) (sorted_xs : List ℕ) (hsort : sort xs = sorted_xs) (ih : sorted sorted_xs = true) : sorted (insort x sorted_xs) = true"
+    },
+    {
+      "fragment_id": 9,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_78.json",
+      "decl_name": "prop_78",
+      "premises": [
+        "x : ℕ",
+        "y : ℕ"
+      ],
+      "body": "(hyx : y ≤ x) → sorted (insort x (y :: ys)) = true",
+      "conclusion": "sorted (insort x (y :: ys)) = true",
+      "statement": "(x : ℕ) (y : ℕ) (hyx : y ≤ x) (h1 : sorted (insort x (y :: ys)) = true) : sorted (insort x (y :: ys)) = true"
+    },
+    {
+      "fragment_id": 10,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_78.json",
+      "decl_name": "prop_78",
+      "premises": [],
+      "body": "sorted (y :: insort x ys) = true",
+      "conclusion": "sorted (insort x (y :: ys)) = true",
+      "statement": "(h1 : sorted (y :: insort x ys) = true) : sorted (insort x (y :: ys)) = true"
+    },
+    {
+      "fragment_id": 11,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_78.json",
+      "decl_name": "prop_78",
+      "premises": [
+        "x : ℕ",
+        "y : ℕ"
+      ],
+      "body": "(hyx : y ≤ x) → sorted (y :: insort x ys) = true",
+      "conclusion": "sorted (insort x (y :: ys)) = true",
+      "statement": "(x : ℕ) (y : ℕ) (hyx : y ≤ x) (h1 : sorted (y :: insort x ys) = true) : sorted (insort x (y :: ys)) = true"
+    },
+    {
+      "fragment_id": 12,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_78.json",
+      "decl_name": "prop_78",
+      "premises": [],
+      "body": "True",
+      "conclusion": "sorted (insort x (y :: ys)) = true",
+      "statement": "sorted (insort x (y :: ys)) = true"
+    },
+    {
+      "fragment_id": 13,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_78.json",
+      "decl_name": "prop_78",
+      "premises": [
+        "x : ℕ",
+        "ih : sorted (y :: ys) = true",
+        "y : ℕ"
+      ],
+      "body": "True",
+      "conclusion": "sorted (insort x (y :: ys)) = true",
+      "statement": "(x : ℕ) (ih : sorted (y :: ys) = true) (y : ℕ) : sorted (insort x (y :: ys)) = true"
+    },
+    {
+      "fragment_id": 14,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_78.json",
+      "decl_name": "prop_78",
+      "premises": [
+        "ih : sorted (y :: z :: zs) = true"
+      ],
+      "body": "(hyz : y ≤ z) → (hzs : sorted (z :: zs) = true) → sorted (y :: insort x (z :: zs)) = true",
+      "conclusion": "sorted (y :: insort x (z :: zs)) = true",
+      "statement": "(ih : sorted (y :: z :: zs) = true) (hyz : y ≤ z) (hzs : sorted (z :: zs) = true) (h1 : sorted (y :: insort x (z :: zs)) = true) : sorted (y :: insort x (z :: zs)) = true"
+    },
+    {
+      "fragment_id": 15,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_78.json",
+      "decl_name": "prop_78",
+      "premises": [
+        "ih : sorted (y :: z :: zs) = true",
+        "y : ℕ",
+        "z : ℕ",
+        "zs : List ℕ"
+      ],
+      "body": "(hyz : y ≤ z) → (hzs : sorted (z :: zs) = true) → sorted (y :: insort x (z :: zs)) = true",
+      "conclusion": "sorted (y :: insort x (z :: zs)) = true",
+      "statement": "(ih : sorted (y :: z :: zs) = true) (y : ℕ) (z : ℕ) (zs : List ℕ) (hyz : y ≤ z) (hzs : sorted (z :: zs) = true) (h1 : sorted (y :: insort x (z :: zs)) = true) : sorted (y :: insort x (z :: zs)) = true"
+    },
+    {
+      "fragment_id": 16,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_78.json",
+      "decl_name": "prop_78",
+      "premises": [
+        "x : ℕ",
+        "z : ℕ",
+        "zs : List ℕ"
+      ],
+      "body": "sorted (y :: x :: z :: zs) = true",
+      "conclusion": "sorted (y :: insort x (z :: zs)) = true",
+      "statement": "(x : ℕ) (z : ℕ) (zs : List ℕ) (h1 : sorted (y :: x :: z :: zs) = true) : sorted (y :: insort x (z :: zs)) = true"
+    },
+    {
+      "fragment_id": 17,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_78.json",
+      "decl_name": "prop_78",
+      "premises": [],
+      "body": "True",
+      "conclusion": "sorted (y :: insort x (z :: zs)) = true",
+      "statement": "sorted (y :: insort x (z :: zs)) = true"
+    },
+    {
+      "fragment_id": 18,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_78.json",
+      "decl_name": "prop_78",
+      "premises": [
+        "x : ℕ",
+        "ih : sorted (y :: z :: zs) = true",
+        "y : ℕ"
+      ],
+      "body": "True",
+      "conclusion": "sorted (y :: insort x (z :: zs)) = true",
+      "statement": "(x : ℕ) (ih : sorted (y :: z :: zs) = true) (y : ℕ) : sorted (y :: insort x (z :: zs)) = true"
+    },
+    {
+      "fragment_id": 19,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_78.json",
+      "decl_name": "prop_78",
+      "premises": [
+        "x : ℕ",
+        "z : ℕ",
+        "zs : List ℕ"
+      ],
+      "body": "True",
+      "conclusion": "sorted (y :: insort x (z :: zs)) = true",
+      "statement": "(x : ℕ) (z : ℕ) (zs : List ℕ) : sorted (y :: insort x (z :: zs)) = true"
+    },
+    {
+      "fragment_id": 20,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_78.json",
+      "decl_name": "prop_78",
+      "premises": [],
+      "body": "True",
+      "conclusion": "sorted (sort (x :: xs)) = true",
+      "statement": "sorted (sort (x :: xs)) = true"
+    },
+    {
+      "fragment_id": 21,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_78.json",
+      "decl_name": "prop_78",
+      "premises": [
+        "x : ℕ",
+        "z : ℕ",
+        "zs : List ℕ"
+      ],
+      "body": "(hins : insort x (z :: zs) = z :: insort x zs) → sorted (y :: insort x (z :: zs)) = true",
+      "conclusion": "sorted (y :: insort x (z :: zs)) = true",
+      "statement": "(x : ℕ) (z : ℕ) (zs : List ℕ) (hins : insort x (z :: zs) = z :: insort x zs) (h1 : sorted (y :: insort x (z :: zs)) = true) : sorted (y :: insort x (z :: zs)) = true"
+    },
+    {
+      "fragment_id": 22,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_78.json",
+      "decl_name": "prop_78",
+      "premises": [],
+      "body": "sorted (y :: z :: insort x zs) = true",
+      "conclusion": "sorted (y :: insort x (z :: zs)) = true",
+      "statement": "(h1 : sorted (y :: z :: insort x zs) = true) : sorted (y :: insort x (z :: zs)) = true"
+    },
+    {
+      "fragment_id": 23,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_78.json",
+      "decl_name": "prop_78",
+      "premises": [
+        "x : ℕ",
+        "z : ℕ",
+        "zs : List ℕ"
+      ],
+      "body": "(hins : insort x (z :: zs) = z :: insort x zs) → sorted (y :: z :: insort x zs) = true",
+      "conclusion": "sorted (y :: insort x (z :: zs)) = true",
+      "statement": "(x : ℕ) (z : ℕ) (zs : List ℕ) (hins : insort x (z :: zs) = z :: insort x zs) (h1 : sorted (y :: z :: insort x zs) = true) : sorted (y :: insort x (z :: zs)) = true"
+    },
+    {
+      "fragment_id": 24,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_78.json",
+      "decl_name": "prop_78",
+      "premises": [],
+      "body": "sorted (z :: insort x zs) = true",
+      "conclusion": "sorted (y :: z :: insort x zs) = true",
+      "statement": "(h1 : sorted (z :: insort x zs) = true) : sorted (y :: z :: insort x zs) = true"
+    }
+  ]
+}

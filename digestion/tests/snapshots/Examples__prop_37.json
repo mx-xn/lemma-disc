@@ -1,0 +1,31 @@
+{
+  "name": "prop_37",
+  "statement": "theorem prop_37 (x: Nat) (xs: List Nat) :\n  not (x ∈ delete x xs) :=",
+  "root_tactic_id": 0,
+  "tactic_nodes": [
+    {
+      "id": 0,
+      "tactic_text": "sorry",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "xs",
+            "type": "List ℕ"
+          }
+        ],
+        "goal": "(!decide (x ∈ delete x xs)) = true"
+      },
+      "output_obligations": [],
+      "summary": {
+        "directly_used": [],
+        "dependency_maps": []
+      },
+      "parent_id": null,
+      "child_ids": []
+    }
+  ]
+}

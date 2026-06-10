@@ -1,0 +1,36 @@
+[1/4] Building POG...
+[info] welcome to sbt 1.10.1 (JetBrains s.r.o. Java 21.0.6)
+[info] loading project definition from /nas/lemma-disc/scala-core/project
+[info] loading settings for project scala-core from build.sbt ...
+[info] set current project to scala-core (in build file:/nas/lemma-disc/scala-core/)
+[info] running Serializer /tmp/lemma_trace_2pSZkA.json /tmp/lemma_pog_iMufq9.json
+[success] Total time: 1 s, completed Jun 4, 2026, 12:41:31 AM
+[2/4] Enumerating fragments...
+[info] welcome to sbt 1.10.1 (JetBrains s.r.o. Java 21.0.6)
+[info] loading project definition from /nas/lemma-disc/scala-core/project
+[info] loading settings for project scala-core from build.sbt ...
+[info] set current project to scala-core (in build file:/nas/lemma-disc/scala-core/)
+[info] running Serializer --timeout 60000 /tmp/lemma_pog_iMufq9.json /tmp/lemma_segments_8t72T7.json
+[success] Total time: 2 s, completed Jun 4, 2026, 12:41:37 AM
+[2/4] Got 16 fragment(s).
+[3/4] Running support minimization...
+[info] welcome to sbt 1.10.1 (JetBrains s.r.o. Java 21.0.6)
+[info] loading project definition from /nas/lemma-disc/scala-core/project
+[info] loading settings for project scala-core from build.sbt ...
+[info] set current project to scala-core (in build file:/nas/lemma-disc/scala-core/)
+[info] running Serializer /tmp/lemma_segments_8t72T7.json /tmp/lemma_out_z2DWEB.json
+[success] Total time: 1 s, completed Jun 4, 2026, 12:41:43 AM
+[4/4] Deduplicating lemmas...
+Deduplicated: 16 → 9 lemmas (7 dropped)
+[4/4] Lemmas    written to /nas/lemma-disc/data/lemma_counts_pog/prop_30_lemmas_pog.json
+[4/4] Fragments written to /nas/lemma-disc/data/lemma_counts_pog/prop_30_lemmas_pog.fragments.json
+--- 9 lemma statement(s) ---
+[0] prop_30: x ∈ ins x xs
+[1] prop_30: (h1 : x ∈ if x < y then x :: y :: ys else y :: ins x ys) : x ∈ ins x (y :: ys)
+[2] prop_30: (h1 : x = y ∨ x ∈ ins x ys) : x ∈ y :: ins x ys
+[3] prop_30: (h1 : x ∈ ins x ys) : x = y ∨ x ∈ ins x ys
+[4] prop_30: (h1 : x ∈ ins x ys) : x ∈ y :: ins x ys
+[5] prop_30: (ih : x ∈ ins x ys) : x ∈ if x < y then x :: y :: ys else y :: ins x ys
+[6] prop_30: (ih : x ∈ ins x ys) : x ∈ ins x (y :: ys)
+[7] prop_30: (ih : x ∈ ins x ys) : x ∈ y :: ins x ys
+[8] prop_30: (ih : x ∈ ins x ys) : x = y ∨ x ∈ ins x ys

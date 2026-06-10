@@ -1,0 +1,188 @@
+{
+  "lemmas": [
+    {
+      "fragment_id": 0,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_85.json",
+      "decl_name": "prop_85",
+      "premises": [
+        "x : α",
+        "xs : List α",
+        "ih : ∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)",
+        "y : β",
+        "ys : List β",
+        "h : length (x :: xs) = length (y :: ys)"
+      ],
+      "body": "True",
+      "conclusion": "length xs = length ys",
+      "statement": "(x : α) (xs : List α) (ih : ∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)) (y : β) (ys : List β) (h : length (x :: xs) = length (y :: ys)) : length xs = length ys"
+    },
+    {
+      "fragment_id": 1,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_85.json",
+      "decl_name": "prop_85",
+      "premises": [
+        "ih : ∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)",
+        "ys : List β",
+        "h' : length xs = length ys",
+        "hL : length (reverse xs) = length (reverse ys)"
+      ],
+      "body": "True",
+      "conclusion": "zip' (reverse (x :: xs)) (reverse (y :: ys)) = reverse (zip' (x :: xs) (y :: ys))",
+      "statement": "(ih : ∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)) (ys : List β) (h' : length xs = length ys) (hL : length (reverse xs) = length (reverse ys)) : zip' (reverse (x :: xs)) (reverse (y :: ys)) = reverse (zip' (x :: xs) (y :: ys))"
+    },
+    {
+      "fragment_id": 2,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_85.json",
+      "decl_name": "prop_85",
+      "premises": [
+        "xs : List α",
+        "ys : List β",
+        "h' : length xs = length ys"
+      ],
+      "body": "(hL : length (reverse xs) = length (reverse ys)) → zip' (reverse xs ++ [x]) (reverse ys ++ [y]) = reverse (zip' xs ys) ++ [(x, y)]",
+      "conclusion": "zip' (reverse (x :: xs)) (reverse (y :: ys)) = reverse (zip' (x :: xs) (y :: ys))",
+      "statement": "(xs : List α) (ys : List β) (h' : length xs = length ys) (hL : length (reverse xs) = length (reverse ys)) (h1 : zip' (reverse xs ++ [x]) (reverse ys ++ [y]) = reverse (zip' xs ys) ++ [(x, y)]) : zip' (reverse (x :: xs)) (reverse (y :: ys)) = reverse (zip' (x :: xs) (y :: ys))"
+    },
+    {
+      "fragment_id": 3,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_85.json",
+      "decl_name": "prop_85",
+      "premises": [
+        "head✝ : β",
+        "tail✝ : List β",
+        "h : length [] = length (head✝ :: tail✝)"
+      ],
+      "body": "True",
+      "conclusion": "zip' (reverse []) (reverse (head✝ :: tail✝)) = reverse (zip' [] (head✝ :: tail✝))",
+      "statement": "(head✝ : β) (tail✝ : List β) (h : length [] = length (head✝ :: tail✝)) : zip' (reverse []) (reverse (head✝ :: tail✝)) = reverse (zip' [] (head✝ :: tail✝))"
+    },
+    {
+      "fragment_id": 4,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_85.json",
+      "decl_name": "prop_85",
+      "premises": [
+        "x : α",
+        "xs : List α",
+        "ih : ∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)",
+        "y : β",
+        "ys : List β",
+        "h : length (x :: xs) = length (y :: ys)"
+      ],
+      "body": "True",
+      "conclusion": "zip' (reverse (x :: xs)) (reverse (y :: ys)) = reverse (zip' (x :: xs) (y :: ys))",
+      "statement": "(x : α) (xs : List α) (ih : ∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)) (y : β) (ys : List β) (h : length (x :: xs) = length (y :: ys)) : zip' (reverse (x :: xs)) (reverse (y :: ys)) = reverse (zip' (x :: xs) (y :: ys))"
+    },
+    {
+      "fragment_id": 5,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_85.json",
+      "decl_name": "prop_85",
+      "premises": [
+        "ys : List β",
+        "h : length [] = length ys"
+      ],
+      "body": "True",
+      "conclusion": "zip' (reverse []) (reverse ys) = reverse (zip' [] ys)",
+      "statement": "(ys : List β) (h : length [] = length ys) : zip' (reverse []) (reverse ys) = reverse (zip' [] ys)"
+    },
+    {
+      "fragment_id": 6,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_85.json",
+      "decl_name": "prop_85",
+      "premises": [
+        "x : α",
+        "xs : List α",
+        "ih : ∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)",
+        "h : length (x :: xs) = length []"
+      ],
+      "body": "True",
+      "conclusion": "zip' (reverse (x :: xs)) (reverse []) = reverse (zip' (x :: xs) [])",
+      "statement": "(x : α) (xs : List α) (ih : ∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)) (h : length (x :: xs) = length []) : zip' (reverse (x :: xs)) (reverse []) = reverse (zip' (x :: xs) [])"
+    },
+    {
+      "fragment_id": 7,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_85.json",
+      "decl_name": "prop_85",
+      "premises": [
+        "xs : List α",
+        "ih : ∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)",
+        "ys : List β",
+        "h' : length xs = length ys"
+      ],
+      "body": "True",
+      "conclusion": "zip' (reverse (x :: xs)) (reverse (y :: ys)) = reverse (zip' (x :: xs) (y :: ys))",
+      "statement": "(xs : List α) (ih : ∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)) (ys : List β) (h' : length xs = length ys) : zip' (reverse (x :: xs)) (reverse (y :: ys)) = reverse (zip' (x :: xs) (y :: ys))"
+    },
+    {
+      "fragment_id": 8,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_85.json",
+      "decl_name": "prop_85",
+      "premises": [
+        "x : α",
+        "xs : List α",
+        "ih : ∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)",
+        "ys : List β",
+        "h : length (x :: xs) = length ys"
+      ],
+      "body": "True",
+      "conclusion": "zip' (reverse (x :: xs)) (reverse ys) = reverse (zip' (x :: xs) ys)",
+      "statement": "(x : α) (xs : List α) (ih : ∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)) (ys : List β) (h : length (x :: xs) = length ys) : zip' (reverse (x :: xs)) (reverse ys) = reverse (zip' (x :: xs) ys)"
+    },
+    {
+      "fragment_id": 9,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_85.json",
+      "decl_name": "prop_85",
+      "premises": [
+        "ys : List β"
+      ],
+      "body": "True",
+      "conclusion": "length [] = length ys → zip' (reverse []) (reverse ys) = reverse (zip' [] ys)",
+      "statement": "(ys : List β) : length [] = length ys → zip' (reverse []) (reverse ys) = reverse (zip' [] ys)"
+    },
+    {
+      "fragment_id": 10,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_85.json",
+      "decl_name": "prop_85",
+      "premises": [
+        "x : α",
+        "xs : List α",
+        "ih : ∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)",
+        "y : β",
+        "ys : List β",
+        "h : length (x :: xs) = length (y :: ys)"
+      ],
+      "body": "(h' : length xs = length ys) → (hL : length (reverse xs) = length (reverse ys)) → zip' (reverse (x :: xs)) (reverse (y :: ys)) = reverse (zip' (x :: xs) (y :: ys))",
+      "conclusion": "zip' (reverse (x :: xs)) (reverse (y :: ys)) = reverse (zip' (x :: xs) (y :: ys))",
+      "statement": "(x : α) (xs : List α) (ih : ∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)) (y : β) (ys : List β) (h : length (x :: xs) = length (y :: ys)) (h' : length xs = length ys) (hL : length (reverse xs) = length (reverse ys)) (h1 : zip' (reverse (x :: xs)) (reverse (y :: ys)) = reverse (zip' (x :: xs) (y :: ys))) : zip' (reverse (x :: xs)) (reverse (y :: ys)) = reverse (zip' (x :: xs) (y :: ys))"
+    },
+    {
+      "fragment_id": 11,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_85.json",
+      "decl_name": "prop_85",
+      "premises": [
+        "x : α",
+        "xs : List α",
+        "ih : ∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)",
+        "y : β",
+        "ys : List β",
+        "h : length (x :: xs) = length (y :: ys)"
+      ],
+      "body": "(h' : length xs = length ys) → (hL : length (reverse xs) = length (reverse ys)) → zip' (reverse xs ++ [x]) (reverse ys ++ [y]) = reverse (zip' xs ys) ++ [(x, y)]",
+      "conclusion": "zip' (reverse (x :: xs)) (reverse (y :: ys)) = reverse (zip' (x :: xs) (y :: ys))",
+      "statement": "(x : α) (xs : List α) (ih : ∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)) (y : β) (ys : List β) (h : length (x :: xs) = length (y :: ys)) (h' : length xs = length ys) (hL : length (reverse xs) = length (reverse ys)) (h1 : zip' (reverse xs ++ [x]) (reverse ys ++ [y]) = reverse (zip' xs ys) ++ [(x, y)]) : zip' (reverse (x :: xs)) (reverse (y :: ys)) = reverse (zip' (x :: xs) (y :: ys))"
+    },
+    {
+      "fragment_id": 12,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_85.json",
+      "decl_name": "prop_85",
+      "premises": [
+        "x : α",
+        "xs : List α",
+        "ih : ∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)",
+        "ys : List β"
+      ],
+      "body": "True",
+      "conclusion": "length (x :: xs) = length ys → zip' (reverse (x :: xs)) (reverse ys) = reverse (zip' (x :: xs) ys)",
+      "statement": "(x : α) (xs : List α) (ih : ∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)) (ys : List β) : length (x :: xs) = length ys → zip' (reverse (x :: xs)) (reverse ys) = reverse (zip' (x :: xs) ys)"
+    }
+  ]
+}

@@ -1,0 +1,442 @@
+{
+  "name": "prop_12",
+  "statement": "theorem prop_12 (n: Nat) (f: α → α) (xs: List α) :\n   (List.drop n (List.map f xs) = List.map f (List.drop n xs)) :=",
+  "root_tactic_id": 0,
+  "tactic_nodes": [
+    {
+      "id": 0,
+      "tactic_text": "induction xs generalizing n with\n| nil => _*_\n| cons x xs ih => _*_",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "α",
+            "type": "Type u_1"
+          },
+          {
+            "name": "n",
+            "type": "ℕ"
+          },
+          {
+            "name": "f",
+            "type": "α → α"
+          },
+          {
+            "name": "xs",
+            "type": "List α"
+          }
+        ],
+        "goal": "List.drop n (List.map f xs) = List.map f (List.drop n xs)"
+      },
+      "output_obligations": [
+        {
+          "hypotheses": [
+            {
+              "name": "α",
+              "type": "Type u_1"
+            },
+            {
+              "name": "f",
+              "type": "α → α"
+            },
+            {
+              "name": "n",
+              "type": "ℕ"
+            }
+          ],
+          "goal": "List.drop n (List.map f []) = List.map f (List.drop n [])"
+        },
+        {
+          "hypotheses": [
+            {
+              "name": "α",
+              "type": "Type u_1"
+            },
+            {
+              "name": "f",
+              "type": "α → α"
+            },
+            {
+              "name": "x",
+              "type": "α"
+            },
+            {
+              "name": "xs",
+              "type": "List α"
+            },
+            {
+              "name": "ih",
+              "type": "∀ (n : ℕ), List.drop n (List.map f xs) = List.map f (List.drop n xs)"
+            },
+            {
+              "name": "n",
+              "type": "ℕ"
+            }
+          ],
+          "goal": "List.drop n (List.map f (x :: xs)) = List.map f (List.drop n (x :: xs))"
+        }
+      ],
+      "summary": {
+        "directly_used": [
+          "n",
+          "xs"
+        ],
+        "dependency_maps": [
+          {
+            "α": [
+              "α"
+            ],
+            "f": [
+              "f"
+            ],
+            "n": [
+              "n"
+            ]
+          },
+          {
+            "α": [
+              "α"
+            ],
+            "f": [
+              "f"
+            ],
+            "x": [
+              "α"
+            ],
+            "xs": [
+              "xs"
+            ],
+            "ih": [
+              "n",
+              "xs",
+              "f"
+            ],
+            "n": [
+              "n"
+            ]
+          }
+        ]
+      },
+      "parent_id": null,
+      "child_ids": [
+        1,
+        3
+      ]
+    },
+    {
+      "id": 1,
+      "tactic_text": "unfold List.map",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "α",
+            "type": "Type u_1"
+          },
+          {
+            "name": "f",
+            "type": "α → α"
+          },
+          {
+            "name": "n",
+            "type": "ℕ"
+          }
+        ],
+        "goal": "List.drop n (List.map f []) = List.map f (List.drop n [])"
+      },
+      "output_obligations": [
+        {
+          "hypotheses": [
+            {
+              "name": "α",
+              "type": "Type u_1"
+            },
+            {
+              "name": "f",
+              "type": "α → α"
+            },
+            {
+              "name": "n",
+              "type": "ℕ"
+            }
+          ],
+          "goal": "List.drop n [] ="
+        }
+      ],
+      "summary": {
+        "directly_used": [],
+        "dependency_maps": [
+          {
+            "α": [
+              "α"
+            ],
+            "f": [
+              "f"
+            ],
+            "n": [
+              "n"
+            ]
+          }
+        ]
+      },
+      "parent_id": 0,
+      "child_ids": [
+        2
+      ]
+    },
+    {
+      "id": 2,
+      "tactic_text": "simp",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "α",
+            "type": "Type u_1"
+          },
+          {
+            "name": "f",
+            "type": "α → α"
+          },
+          {
+            "name": "n",
+            "type": "ℕ"
+          }
+        ],
+        "goal": "List.drop n [] ="
+      },
+      "output_obligations": [],
+      "summary": {
+        "directly_used": [],
+        "dependency_maps": []
+      },
+      "parent_id": 1,
+      "child_ids": []
+    },
+    {
+      "id": 3,
+      "tactic_text": "induction n with\n| zero => _*_\n| succ n _ => _*_",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "α",
+            "type": "Type u_1"
+          },
+          {
+            "name": "f",
+            "type": "α → α"
+          },
+          {
+            "name": "x",
+            "type": "α"
+          },
+          {
+            "name": "xs",
+            "type": "List α"
+          },
+          {
+            "name": "ih",
+            "type": "∀ (n : ℕ), List.drop n (List.map f xs) = List.map f (List.drop n xs)"
+          },
+          {
+            "name": "n",
+            "type": "ℕ"
+          }
+        ],
+        "goal": "List.drop n (List.map f (x :: xs)) = List.map f (List.drop n (x :: xs))"
+      },
+      "output_obligations": [
+        {
+          "hypotheses": [
+            {
+              "name": "α",
+              "type": "Type u_1"
+            },
+            {
+              "name": "f",
+              "type": "α → α"
+            },
+            {
+              "name": "x",
+              "type": "α"
+            },
+            {
+              "name": "xs",
+              "type": "List α"
+            },
+            {
+              "name": "ih",
+              "type": "∀ (n : ℕ), List.drop n (List.map f xs) = List.map f (List.drop n xs)"
+            }
+          ],
+          "goal": "List.drop 0 (List.map f (x :: xs)) = List.map f (List.drop 0 (x :: xs))"
+        },
+        {
+          "hypotheses": [
+            {
+              "name": "α",
+              "type": "Type u_1"
+            },
+            {
+              "name": "f",
+              "type": "α → α"
+            },
+            {
+              "name": "x",
+              "type": "α"
+            },
+            {
+              "name": "xs",
+              "type": "List α"
+            },
+            {
+              "name": "ih",
+              "type": "∀ (n : ℕ), List.drop n (List.map f xs) = List.map f (List.drop n xs)"
+            },
+            {
+              "name": "n",
+              "type": "ℕ"
+            },
+            {
+              "name": "a✝",
+              "type": "List.drop n (List.map f (x :: xs)) = List.map f (List.drop n (x :: xs))"
+            }
+          ],
+          "goal": "List.drop (n + 1) (List.map f (x :: xs)) = List.map f (List.drop (n + 1) (x :: xs))"
+        }
+      ],
+      "summary": {
+        "directly_used": [
+          "n"
+        ],
+        "dependency_maps": [
+          {
+            "α": [
+              "α"
+            ],
+            "f": [
+              "f"
+            ],
+            "x": [
+              "x"
+            ],
+            "xs": [
+              "xs"
+            ],
+            "ih": [
+              "ih"
+            ]
+          },
+          {
+            "α": [
+              "α"
+            ],
+            "f": [
+              "f"
+            ],
+            "x": [
+              "x"
+            ],
+            "xs": [
+              "xs"
+            ],
+            "ih": [
+              "ih"
+            ],
+            "n": [
+              "n"
+            ],
+            "a✝": [
+              "x",
+              "xs",
+              "f",
+              "n"
+            ]
+          }
+        ]
+      },
+      "parent_id": 0,
+      "child_ids": [
+        4,
+        5
+      ]
+    },
+    {
+      "id": 4,
+      "tactic_text": "simp",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "α",
+            "type": "Type u_1"
+          },
+          {
+            "name": "f",
+            "type": "α → α"
+          },
+          {
+            "name": "x",
+            "type": "α"
+          },
+          {
+            "name": "xs",
+            "type": "List α"
+          },
+          {
+            "name": "ih",
+            "type": "∀ (n : ℕ), List.drop n (List.map f xs) = List.map f (List.drop n xs)"
+          }
+        ],
+        "goal": "List.drop 0 (List.map f (x :: xs)) = List.map f (List.drop 0 (x :: xs))"
+      },
+      "output_obligations": [],
+      "summary": {
+        "directly_used": [],
+        "dependency_maps": []
+      },
+      "parent_id": 3,
+      "child_ids": []
+    },
+    {
+      "id": 5,
+      "tactic_text": "simp",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "α",
+            "type": "Type u_1"
+          },
+          {
+            "name": "f",
+            "type": "α → α"
+          },
+          {
+            "name": "x",
+            "type": "α"
+          },
+          {
+            "name": "xs",
+            "type": "List α"
+          },
+          {
+            "name": "ih",
+            "type": "∀ (n : ℕ), List.drop n (List.map f xs) = List.map f (List.drop n xs)"
+          },
+          {
+            "name": "n",
+            "type": "ℕ"
+          },
+          {
+            "name": "a✝",
+            "type": "List.drop n (List.map f (x :: xs)) = List.map f (List.drop n (x :: xs))"
+          }
+        ],
+        "goal": "List.drop (n + 1) (List.map f (x :: xs)) = List.map f (List.drop (n + 1) (x :: xs))"
+      },
+      "output_obligations": [],
+      "summary": {
+        "directly_used": [],
+        "dependency_maps": []
+      },
+      "parent_id": 3,
+      "child_ids": []
+    }
+  ]
+}

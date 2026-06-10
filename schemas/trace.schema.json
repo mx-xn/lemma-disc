@@ -1,0 +1,142 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "LeanProofTrace",
+  "description": "Output of phase1 (digestion). One trace per Lean source file.",
+  "type": "object",
+  "required": ["source_file", "declarations"],
+  "additionalProperties": false,
+  "properties": {
+    "source_file": {
+      "type": "string",
+      "description": "Path to the Lean source file."
+    },
+    "declarations": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/Declaration" }
+    }
+  },
+  "definitions": {
+    "Hypothesis": {
+      "type": "object",
+      "required": ["name", "type"],
+      "additionalProperties": false,
+      "properties": {
+        "name": { "type": "string" },
+        "type": {
+          "type": "string",
+          "description": "Lean expression string for the hypothesis type."
+        }
+      }
+    },
+    "Obligation": {
+      "type": "object",
+      "required": ["hypotheses", "goal"],
+      "additionalProperties": false,
+      "properties": {
+        "hypotheses": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/Hypothesis" },
+          "description": "Ordered local context Γ."
+        },
+        "goal": {
+          "type": "string",
+          "description": "Lean expression string for the goal g."
+        }
+      }
+    },
+    "TacticSummary": {
+      "type": "object",
+      "required": ["directly_used", "dependency_maps"],
+      "additionalProperties": false,
+      "description": "Σ(a, Γ, g) = (U, π₁, …, πₘ) from §3.1.",
+      "properties": {
+        "directly_used": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "U ⊆ Γ: hypothesis names directly consumed by this tactic."
+        },
+        "dependency_maps": {
+          "type": "array",
+          "description": "One map per output branch. Each map is total over the residual context Γᵢ: for every h ∈ Γᵢ, lists the hypotheses in Γ it depends on. Pass-through hypotheses map to [h] (themselves).",
+          "items": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": { "type": "string" },
+              "description": "πᵢ(h) ⊆ Γ: parent hypotheses that h depends on."
+            }
+          }
+        }
+      }
+    },
+    "TacticNode": {
+      "type": "object",
+      "required": [
+        "id",
+        "tactic_text",
+        "input_obligation",
+        "output_obligations",
+        "summary",
+        "parent_id",
+        "child_ids"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Unique identifier within the declaration, assigned in DFS pre-order."
+        },
+        "tactic_text": {
+          "type": "string",
+          "description": "Raw tactic source text."
+        },
+        "input_obligation": {
+          "$ref": "#/definitions/Obligation",
+          "description": "Proof obligation (Γ, g) at which this tactic is executed."
+        },
+        "output_obligations": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/Obligation" },
+          "description": "Residual obligations (Γ₁,g₁),…,(Γₘ,gₘ) produced by this tactic. Empty for a leaf (proved goal). Ordered consistently with child_ids and dependency_maps."
+        },
+        "summary": { "$ref": "#/definitions/TacticSummary" },
+        "parent_id": {
+          "type": ["integer", "null"],
+          "minimum": 0,
+          "description": "ID of the parent tactic node, or null for the root."
+        },
+        "child_ids": {
+          "type": "array",
+          "items": { "type": "integer", "minimum": 0 },
+          "description": "IDs of child tactic nodes in branch order: child_ids[i] is the root of the sub-proof for output_obligations[i]."
+        }
+      }
+    },
+    "Declaration": {
+      "type": "object",
+      "required": ["name", "statement", "root_tactic_id", "tactic_nodes"],
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Fully qualified Lean declaration name."
+        },
+        "statement": {
+          "type": "string",
+          "description": "Lean expression string for the theorem statement."
+        },
+        "root_tactic_id": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "ID of the root tactic node (the first tactic applied to the initial obligation)."
+        },
+        "tactic_nodes": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/TacticNode" },
+          "description": "Flat list of all tactic nodes. Tree structure is encoded via parent_id and child_ids."
+        }
+      }
+    }
+  }
+}

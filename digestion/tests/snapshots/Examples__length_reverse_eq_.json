@@ -1,0 +1,216 @@
+{
+  "name": "length_reverse_eq'",
+  "statement": "private lemma length_reverse_eq' (xs : List α) : length (reverse xs) = length xs :=",
+  "root_tactic_id": 0,
+  "tactic_nodes": [
+    {
+      "id": 0,
+      "tactic_text": "induction xs with\n| nil => _*_\n| cons x xs ih => _*_",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "α",
+            "type": "Type u_1"
+          },
+          {
+            "name": "xs",
+            "type": "List α"
+          }
+        ],
+        "goal": "length (reverse xs) = length xs"
+      },
+      "output_obligations": [
+        {
+          "hypotheses": [
+            {
+              "name": "α",
+              "type": "Type u_1"
+            }
+          ],
+          "goal": "length (reverse []) = length []"
+        },
+        {
+          "hypotheses": [
+            {
+              "name": "α",
+              "type": "Type u_1"
+            },
+            {
+              "name": "x",
+              "type": "α"
+            },
+            {
+              "name": "xs",
+              "type": "List α"
+            },
+            {
+              "name": "ih",
+              "type": "length (reverse xs) = length xs"
+            }
+          ],
+          "goal": "length (reverse (x :: xs)) = length (x :: xs)"
+        }
+      ],
+      "summary": {
+        "directly_used": [
+          "xs",
+          "α"
+        ],
+        "dependency_maps": [
+          {
+            "α": [
+              "α"
+            ]
+          },
+          {
+            "α": [
+              "α"
+            ],
+            "x": [
+              "α"
+            ],
+            "xs": [
+              "xs"
+            ],
+            "ih": [
+              "xs"
+            ]
+          }
+        ]
+      },
+      "parent_id": null,
+      "child_ids": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": 1,
+      "tactic_text": "simp [reverse, length]",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "α",
+            "type": "Type u_1"
+          }
+        ],
+        "goal": "length (reverse []) = length []"
+      },
+      "output_obligations": [],
+      "summary": {
+        "directly_used": [],
+        "dependency_maps": []
+      },
+      "parent_id": 0,
+      "child_ids": []
+    },
+    {
+      "id": 2,
+      "tactic_text": "simp [reverse, length_append', length]",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "α",
+            "type": "Type u_1"
+          },
+          {
+            "name": "x",
+            "type": "α"
+          },
+          {
+            "name": "xs",
+            "type": "List α"
+          },
+          {
+            "name": "ih",
+            "type": "length (reverse xs) = length xs"
+          }
+        ],
+        "goal": "length (reverse (x :: xs)) = length (x :: xs)"
+      },
+      "output_obligations": [
+        {
+          "hypotheses": [
+            {
+              "name": "α",
+              "type": "Type u_1"
+            },
+            {
+              "name": "x",
+              "type": "α"
+            },
+            {
+              "name": "xs",
+              "type": "List α"
+            },
+            {
+              "name": "ih",
+              "type": "length (reverse xs) = length xs"
+            }
+          ],
+          "goal": "length (reverse xs) + 1 = 1 + length xs"
+        }
+      ],
+      "summary": {
+        "directly_used": [],
+        "dependency_maps": [
+          {
+            "α": [
+              "α"
+            ],
+            "x": [
+              "x"
+            ],
+            "xs": [
+              "xs"
+            ],
+            "ih": [
+              "ih"
+            ]
+          }
+        ]
+      },
+      "parent_id": 0,
+      "child_ids": [
+        3
+      ]
+    },
+    {
+      "id": 3,
+      "tactic_text": "omega",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "α",
+            "type": "Type u_1"
+          },
+          {
+            "name": "x",
+            "type": "α"
+          },
+          {
+            "name": "xs",
+            "type": "List α"
+          },
+          {
+            "name": "ih",
+            "type": "length (reverse xs) = length xs"
+          }
+        ],
+        "goal": "length (reverse xs) + 1 = 1 + length xs"
+      },
+      "output_obligations": [],
+      "summary": {
+        "directly_used": [
+          "ih",
+          "x",
+          "xs",
+          "α"
+        ],
+        "dependency_maps": []
+      },
+      "parent_id": 2,
+      "child_ids": []
+    }
+  ]
+}

@@ -1,0 +1,224 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "PogFile",
+  "description": "Output of phase2 (POG construction). One file per Lean source file. Contains a Proof Ordering Graph G_T = (V, E) per declaration, as defined in paper §2.1. Each POG records the equivalence class of the input proof under reorderings that preserve dependency constraints. Coarsening: footprints are name-level (no AST positions), so dependencies may be over-approximated — sound but not complete.",
+  "type": "object",
+  "required": ["source_file", "pogs"],
+  "additionalProperties": false,
+  "properties": {
+    "source_file": {
+      "type": "string",
+      "description": "Path to the Lean source file (mirrors trace.schema.json)."
+    },
+    "pogs": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/ProofOrderingGraph" }
+    }
+  },
+  "definitions": {
+    "Hypothesis": {
+      "type": "object",
+      "required": ["name", "type"],
+      "additionalProperties": false,
+      "properties": {
+        "name": { "type": "string" },
+        "type": {
+          "type": "string",
+          "description": "Lean expression string for the hypothesis type (i.e. the proposition it inhabits)."
+        }
+      }
+    },
+    "Obligation": {
+      "type": "object",
+      "required": ["hypotheses", "goal"],
+      "additionalProperties": false,
+      "properties": {
+        "hypotheses": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/Hypothesis" },
+          "description": "Ordered local context Γ."
+        },
+        "goal": {
+          "type": "string",
+          "description": "Lean expression string for the goal g."
+        }
+      }
+    },
+    "TacticSummary": {
+      "type": "object",
+      "required": ["directly_used", "dependency_maps"],
+      "additionalProperties": false,
+      "description": "Σ(a, Γ, g) = (U, π₁, …, πₘ) from §3.1.",
+      "properties": {
+        "directly_used": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "U ⊆ Γ: hypothesis names directly consumed by this tactic."
+        },
+        "dependency_maps": {
+          "type": "array",
+          "description": "One map per output branch. Each map is total over the residual context Γᵢ: for every h ∈ Γᵢ, lists the hypotheses in Γ it depends on. Pass-through hypotheses map to [h] (themselves).",
+          "items": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": { "type": "string" },
+              "description": "πᵢ(h) ⊆ Γ: parent hypotheses that h depends on."
+            }
+          }
+        }
+      }
+    },
+    "Footprint": {
+      "type": "object",
+      "required": ["uses", "modifies_hyps", "modifies_goal", "rho"],
+      "additionalProperties": false,
+      "description": "Coarsened tactic footprint Φ(a, Γ, g) = (D, M, ρ). Positions µ are dropped (name-level coarsening — see FUTURE.md).",
+      "properties": {
+        "uses": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "D ⊆ Γ: hypothesis names used but not modified by this tactic. D = U \\ M_hyps."
+        },
+        "modifies_hyps": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "M_hyps ⊆ Γ: hypothesis names modified by this tactic (dropped, renamed, or whose proposition changed)."
+        },
+        "modifies_goal": {
+          "type": "boolean",
+          "description": "True iff the goal is modified (i.e. ∃ i. gᵢ ≠ g) on at least one output branch."
+        },
+        "rho": {
+          "type": "array",
+          "description": "Per-output-branch forward propagation, coarsened to a name map. rho[i] maps each name in {names(Γ), '⊢'} to the set of names in {names(Γᵢ), '⊢'} it propagates to. The literal '⊢' key/value denotes the goal slot. Co-indexed with TacticNode.output_obligations.",
+          "items": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "PogNode": {
+      "type": "object",
+      "required": [
+        "id",
+        "tactic_text",
+        "input_obligation",
+        "output_obligations",
+        "summary",
+        "parent_id",
+        "child_ids",
+        "footprint",
+        "branch_path"
+      ],
+      "additionalProperties": false,
+      "description": "A tactic node extended with its computed footprint and branch path. Preserves all phase 1 TacticNode fields verbatim; phase 3 (reconstruction) and phase 4 (support) read these directly.",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Unique identifier within the declaration, inherited from phase 1 (DFS pre-order)."
+        },
+        "tactic_text": {
+          "type": "string",
+          "description": "Raw tactic source text."
+        },
+        "input_obligation": {
+          "$ref": "#/definitions/Obligation",
+          "description": "Proof obligation (Γ, g) at which this tactic is executed."
+        },
+        "output_obligations": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/Obligation" },
+          "description": "Residual obligations (Γ₁,g₁),…,(Γₘ,gₘ). Empty for a leaf. Ordered consistently with child_ids and summary.dependency_maps."
+        },
+        "summary": { "$ref": "#/definitions/TacticSummary" },
+        "parent_id": {
+          "type": ["integer", "null"],
+          "minimum": 0,
+          "description": "ID of the parent tactic node, or null for the root."
+        },
+        "child_ids": {
+          "type": "array",
+          "items": { "type": "integer", "minimum": 0 },
+          "description": "IDs of child tactic nodes in branch order: child_ids[i] is the root of the sub-proof for output_obligations[i]."
+        },
+        "footprint": { "$ref": "#/definitions/Footprint" },
+        "branch_path": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "B(a): sequence of branch indices chosen at branching ancestors of a, with '*' suffix on the final entry (or as a standalone entry) if a is itself branching. Examples: [] for a non-branching node in a linear chain; ['*'] for the root when the root is branching; ['1', '0*'] for the second child of root whose first child is itself branching."
+        }
+      }
+    },
+    "PogEdge": {
+      "type": "object",
+      "required": ["from", "to", "kind"],
+      "additionalProperties": false,
+      "description": "Dependency edge aᵢ ≺ aⱼ per Definition 2 (§2.1). 'modify' = both endpoints modify the same propagated name; 'use' = the source modifies a name the target uses. Edges are minimal: no intermediate k satisfies the same condition relative to to.",
+      "properties": {
+        "from": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Source node id (the aᵢ in aᵢ ≺ aⱼ)."
+        },
+        "to": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Target node id (the aⱼ in aᵢ ≺ aⱼ)."
+        },
+        "kind": {
+          "type": "string",
+          "enum": ["modify", "use"],
+          "description": "Kind of dependency."
+        }
+      }
+    },
+    "ProofOrderingGraph": {
+      "type": "object",
+      "required": [
+        "decl_name",
+        "statement",
+        "root_tactic_id",
+        "root_obligation",
+        "nodes",
+        "edges"
+      ],
+      "additionalProperties": false,
+      "description": "G_T = (V, E) for a single declaration. V = nodes, E = edges.",
+      "properties": {
+        "decl_name": {
+          "type": "string",
+          "description": "Fully qualified Lean declaration name."
+        },
+        "statement": {
+          "type": "string",
+          "description": "Lean expression string for the theorem statement."
+        },
+        "root_tactic_id": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "ID of the root tactic node (the first tactic applied to the initial obligation)."
+        },
+        "root_obligation": {
+          "$ref": "#/definitions/Obligation",
+          "description": "Initial proof obligation, i.e. input_obligation of the root tactic node. Lifted to the POG level for phase 3 convenience."
+        },
+        "nodes": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/PogNode" },
+          "description": "Flat list of all POG nodes. Tree structure is encoded via parent_id and child_ids."
+        },
+        "edges": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/PogEdge" },
+          "description": "Dependency edges. If both modify- and use-dependence hold for the same (i,j), two distinct edges are emitted."
+        }
+      }
+    }
+  }
+}

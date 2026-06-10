@@ -1,0 +1,76 @@
+{
+  "lemmas": [
+    {
+      "fragment_id": 0,
+      "source_file": "digestion/tests/snapshots/Examples__prop_03.json",
+      "decl_name": "prop_03",
+      "premises": [
+        "n : ℕ",
+        "ys : List ℕ",
+        "x : ℕ",
+        "xs : List ℕ"
+      ],
+      "body": "(if n = x then count n xs + 1 else count n xs) ≤ if n = x then count n (xs ++ ys) + 1 else count n (xs ++ ys)",
+      "conclusion": "count n (x :: xs) ≤ count n (x :: xs ++ ys)",
+      "statement": "(n : ℕ) (ys : List ℕ) (x : ℕ) (xs : List ℕ) (h1 : (if n = x then count n xs + 1 else count n xs) ≤ if n = x then count n (xs ++ ys) + 1 else count n (xs ++ ys)) : count n (x :: xs) ≤ count n (x :: xs ++ ys)"
+    },
+    {
+      "fragment_id": 1,
+      "source_file": "digestion/tests/snapshots/Examples__prop_03.json",
+      "decl_name": "prop_03",
+      "premises": [
+        "n : ℕ",
+        "ys : List ℕ",
+        "x : ℕ",
+        "xs : List ℕ",
+        "ih : count n xs ≤ count n (xs ++ ys)"
+      ],
+      "body": "True",
+      "conclusion": "(if n = x then count n xs + 1 else count n xs) ≤ if n = x then count n (xs ++ ys) + 1 else count n (xs ++ ys)",
+      "statement": "(n : ℕ) (ys : List ℕ) (x : ℕ) (xs : List ℕ) (ih : count n xs ≤ count n (xs ++ ys)) : (if n = x then count n xs + 1 else count n xs) ≤ if n = x then count n (xs ++ ys) + 1 else count n (xs ++ ys)"
+    },
+    {
+      "fragment_id": 2,
+      "source_file": "digestion/tests/snapshots/Examples__prop_03.json",
+      "decl_name": "prop_03",
+      "premises": [
+        "n : ℕ",
+        "ys : List ℕ",
+        "x : ℕ",
+        "xs : List ℕ",
+        "ih : count n xs ≤ count n (xs ++ ys)"
+      ],
+      "body": "True",
+      "conclusion": "count n (x :: xs) ≤ count n (x :: (xs ++ ys))",
+      "statement": "(n : ℕ) (ys : List ℕ) (x : ℕ) (xs : List ℕ) (ih : count n xs ≤ count n (xs ++ ys)) : count n (x :: xs) ≤ count n (x :: (xs ++ ys))"
+    },
+    {
+      "fragment_id": 3,
+      "source_file": "digestion/tests/snapshots/Examples__prop_03.json",
+      "decl_name": "prop_03",
+      "premises": [
+        "n : ℕ",
+        "ys : List ℕ",
+        "x : ℕ",
+        "xs : List ℕ",
+        "ih : count n xs ≤ count n (xs ++ ys)"
+      ],
+      "body": "True",
+      "conclusion": "count n (x :: xs) ≤ count n (x :: xs ++ ys)",
+      "statement": "(n : ℕ) (ys : List ℕ) (x : ℕ) (xs : List ℕ) (ih : count n xs ≤ count n (xs ++ ys)) : count n (x :: xs) ≤ count n (x :: xs ++ ys)"
+    },
+    {
+      "fragment_id": 4,
+      "source_file": "digestion/tests/snapshots/Examples__prop_03.json",
+      "decl_name": "prop_03",
+      "premises": [
+        "n : ℕ",
+        "xs : List ℕ",
+        "ys : List ℕ"
+      ],
+      "body": "True",
+      "conclusion": "count n xs ≤ count n (xs ++ ys)",
+      "statement": "(n : ℕ) (xs : List ℕ) (ys : List ℕ) : count n xs ≤ count n (xs ++ ys)"
+    }
+  ]
+}

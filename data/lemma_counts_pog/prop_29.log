@@ -1,0 +1,42 @@
+[1/4] Building POG...
+[info] welcome to sbt 1.10.1 (JetBrains s.r.o. Java 21.0.6)
+[info] loading project definition from /nas/lemma-disc/scala-core/project
+[info] loading settings for project scala-core from build.sbt ...
+[info] set current project to scala-core (in build file:/nas/lemma-disc/scala-core/)
+[info] running Serializer /tmp/lemma_trace_scF3aD.json /tmp/lemma_pog_j7yj80.json
+[success] Total time: 1 s, completed Jun 4, 2026, 12:41:14 AM
+[2/4] Enumerating fragments...
+[info] welcome to sbt 1.10.1 (JetBrains s.r.o. Java 21.0.6)
+[info] loading project definition from /nas/lemma-disc/scala-core/project
+[info] loading settings for project scala-core from build.sbt ...
+[info] set current project to scala-core (in build file:/nas/lemma-disc/scala-core/)
+[info] running Serializer --timeout 60000 /tmp/lemma_pog_j7yj80.json /tmp/lemma_segments_Wom8qa.json
+[success] Total time: 2 s, completed Jun 4, 2026, 12:41:20 AM
+[2/4] Got 34 fragment(s).
+[3/4] Running support minimization...
+[info] welcome to sbt 1.10.1 (JetBrains s.r.o. Java 21.0.6)
+[info] loading project definition from /nas/lemma-disc/scala-core/project
+[info] loading settings for project scala-core from build.sbt ...
+[info] set current project to scala-core (in build file:/nas/lemma-disc/scala-core/)
+[info] running Serializer /tmp/lemma_segments_Wom8qa.json /tmp/lemma_out_0utrlB.json
+[success] Total time: 2 s, completed Jun 4, 2026, 12:41:26 AM
+[4/4] Deduplicating lemmas...
+Deduplicated: 34 → 15 lemmas (19 dropped)
+[4/4] Lemmas    written to /nas/lemma-disc/data/lemma_counts_pog/prop_29_lemmas_pog.json
+[4/4] Fragments written to /nas/lemma-disc/data/lemma_counts_pog/prop_29_lemmas_pog.fragments.json
+--- 15 lemma statement(s) ---
+[0] prop_29: x ∈ ins1 x xs
+[1] prop_29: (h1 : x ∈ if x = y then y :: ys else y :: ins1 x ys) : x ∈ ins1 x (y :: ys)
+[2] prop_29: (h1 : x = y ∨ x ∈ ys) : x ∈ y :: ys
+[3] prop_29: (h1 : x = y) : x = y ∨ x ∈ ys
+[4] prop_29: (h1 : x = y) : x ∈ y :: ys
+[5] prop_29: x ∈ ins1 x (y :: ys)
+[6] prop_29: (h : x = y) : x ∈ y :: ys
+[7] prop_29: (h : x = y) : x = y ∨ x ∈ ys
+[8] prop_29: (h1 : x = y ∨ x ∈ ins1 x ys) : x ∈ y :: ins1 x ys
+[9] prop_29: (h1 : x ∈ ins1 x ys) : x = y ∨ x ∈ ins1 x ys
+[10] prop_29: (h1 : x ∈ ins1 x ys) : x ∈ y :: ins1 x ys
+[11] prop_29: (x : ℕ) (y : ℕ) (ih : x ∈ ins1 x ys) : x ∈ if x = y then y :: ys else y :: ins1 x ys
+[12] prop_29: (x : ℕ) (y : ℕ) (ih : x ∈ ins1 x ys) : x ∈ ins1 x (y :: ys)
+[13] prop_29: (ih : x ∈ ins1 x ys) : x ∈ y :: ins1 x ys
+[14] prop_29: (ih : x ∈ ins1 x ys) : x = y ∨ x ∈ ins1 x ys

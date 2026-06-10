@@ -1,0 +1,151 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "FragmentList",
+  "description": "Output of phase3 (fragment construction). Consumed by phase4 (support minimization). A flat list of proof fragment candidates extracted from the proof corpus.",
+  "type": "object",
+  "required": ["fragments"],
+  "additionalProperties": false,
+  "properties": {
+    "fragments": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/Fragment" }
+    }
+  },
+  "definitions": {
+    "Hypothesis": {
+      "type": "object",
+      "required": ["name", "type"],
+      "additionalProperties": false,
+      "properties": {
+        "name": { "type": "string" },
+        "type": { "type": "string", "description": "Lean expression string for the hypothesis type." }
+      }
+    },
+    "Obligation": {
+      "type": "object",
+      "required": ["hypotheses", "goal"],
+      "additionalProperties": false,
+      "properties": {
+        "hypotheses": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/Hypothesis" },
+          "description": "Ordered local context Γ."
+        },
+        "goal": { "type": "string", "description": "Lean expression string for the goal g." }
+      }
+    },
+    "TacticSummary": {
+      "type": "object",
+      "required": ["directly_used", "dependency_maps"],
+      "additionalProperties": false,
+      "description": "Σ(a, Γ, g) = (U, π₁, …, πₘ) from §3.1.",
+      "properties": {
+        "directly_used": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "U ⊆ Γ: hypothesis names directly consumed by this tactic."
+        },
+        "dependency_maps": {
+          "type": "array",
+          "description": "One map per output branch. πᵢ(h) lists the parent hypotheses in Γ that h depends on.",
+          "items": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "TreeNode": {
+      "description": "One node in the flat proof-tree node list. Discriminated by 'kind'.",
+      "oneOf": [
+        { "$ref": "#/definitions/HoleNode" },
+        { "$ref": "#/definitions/LeafNode" },
+        { "$ref": "#/definitions/CompositeNode" }
+      ]
+    },
+    "HoleNode": {
+      "type": "object",
+      "required": ["id", "kind", "hole_id", "parent_id", "child_ids", "obligation"],
+      "additionalProperties": false,
+      "properties": {
+        "id":        { "type": "integer", "minimum": 0, "description": "Node ID, unique within the fragment." },
+        "kind":      { "type": "string", "const": "hole" },
+        "hole_id":   { "type": "string", "description": "Unique hole identifier ℓ within the fragment." },
+        "parent_id": { "type": ["integer", "null"], "minimum": 0, "description": "ID of the parent node, or null for the root." },
+        "child_ids": { "type": "array", "items": { "type": "integer" }, "maxItems": 0 },
+        "obligation": { "$ref": "#/definitions/Obligation", "description": "(Γℓ, gℓ): the open obligation this hole stands for." }
+      }
+    },
+    "LeafNode": {
+      "type": "object",
+      "required": ["id", "kind", "tactic_text", "parent_id", "child_ids", "obligation", "summary"],
+      "additionalProperties": false,
+      "properties": {
+        "id":          { "type": "integer", "minimum": 0 },
+        "kind":        { "type": "string", "const": "leaf" },
+        "tactic_text": { "type": "string" },
+        "parent_id":   { "type": ["integer", "null"], "minimum": 0 },
+        "child_ids":   { "type": "array", "items": { "type": "integer" }, "maxItems": 0 },
+        "obligation":  { "$ref": "#/definitions/Obligation" },
+        "summary":     { "$ref": "#/definitions/TacticSummary", "description": "dependency_maps is empty (leaf produces no subgoals)." }
+      }
+    },
+    "CompositeNode": {
+      "type": "object",
+      "required": ["id", "kind", "tactic_text", "parent_id", "child_ids", "obligation", "output_obligations", "summary"],
+      "additionalProperties": false,
+      "properties": {
+        "id":          { "type": "integer", "minimum": 0 },
+        "kind":        { "type": "string", "const": "node" },
+        "tactic_text": { "type": "string" },
+        "parent_id":   { "type": ["integer", "null"], "minimum": 0 },
+        "child_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "integer", "minimum": 0 },
+          "description": "Co-indexed with output_obligations and summary.dependency_maps."
+        },
+        "obligation":  { "$ref": "#/definitions/Obligation" },
+        "output_obligations": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/definitions/Obligation" },
+          "description": "Residual obligations (Γ₁,g₁),…,(Γₘ,gₘ). Co-indexed with child_ids."
+        },
+        "summary": { "$ref": "#/definitions/TacticSummary" }
+      }
+    },
+    "Fragment": {
+      "type": "object",
+      "required": ["fragment_id", "source_file", "decl_name", "root_node_id", "root_obligation", "nodes"],
+      "additionalProperties": false,
+      "properties": {
+        "fragment_id": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Index unique within (source_file, decl_name)."
+        },
+        "source_file": { "type": "string", "description": "Path to the Lean source file this fragment came from." },
+        "decl_name":   { "type": "string", "description": "Fully qualified Lean declaration name this fragment came from." },
+        "root_node_id": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "ID of the root node in the nodes list."
+        },
+        "root_obligation": {
+          "$ref": "#/definitions/Obligation",
+          "description": "(ΓF, gF): proof obligation this fragment is responsible for. Equals the root node's obligation."
+        },
+        "nodes": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/definitions/TreeNode" },
+          "description": "Flat list of all tree nodes. Tree structure is encoded via parent_id and child_ids."
+        }
+      }
+    }
+  }
+}

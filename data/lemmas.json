@@ -1,0 +1,60 @@
+{
+  "lemmas": [
+    {
+      "fragment_id": 0,
+      "source_file": "digestion/tests/snapshots/prop_12.json",
+      "decl_name": "prop_12",
+      "premises": [
+        "n : ℕ"
+      ],
+      "body": "List.drop 0 (List.map f (x :: xs)) = List.map f (List.drop 0 (x :: xs))",
+      "conclusion": "List.drop n (List.map f (x :: xs)) = List.map f (List.drop n (x :: xs))",
+      "statement": "(n : ℕ) (h1 : List.drop 0 (List.map f (x :: xs)) = List.map f (List.drop 0 (x :: xs))) : List.drop n (List.map f (x :: xs)) = List.map f (List.drop n (x :: xs))"
+    },
+    {
+      "fragment_id": 1,
+      "source_file": "digestion/tests/snapshots/prop_12.json",
+      "decl_name": "prop_12",
+      "premises": [
+        "n : ℕ",
+        "xs : List α"
+      ],
+      "body": "List.drop n (List.map f []) = List.map f (List.drop n []) ∧ ((x : α) → (ih : ∀ (n : ℕ), List.drop n (List.map f xs) = List.map f (List.drop n xs)) → (a✝ : List.drop n (List.map f (x :: xs)) = List.map f (List.drop n (x :: xs))) → List.drop (n + 1) (List.map f (x :: xs)) = List.map f (List.drop (n + 1) (x :: xs)))",
+      "conclusion": "List.drop n (List.map f xs) = List.map f (List.drop n xs)",
+      "statement": "(n : ℕ) (xs : List α) (h1 : List.drop n (List.map f []) = List.map f (List.drop n []) ∧ ((x : α) → (ih : ∀ (n : ℕ), List.drop n (List.map f xs) = List.map f (List.drop n xs)) → (a✝ : List.drop n (List.map f (x :: xs)) = List.map f (List.drop n (x :: xs))) → List.drop (n + 1) (List.map f (x :: xs)) = List.map f (List.drop (n + 1) (x :: xs)))) : List.drop n (List.map f xs) = List.map f (List.drop n xs)"
+    },
+    {
+      "fragment_id": 2,
+      "source_file": "digestion/tests/snapshots/prop_12.json",
+      "decl_name": "prop_12",
+      "premises": [],
+      "body": "True",
+      "conclusion": "List.drop n (List.map f []) = List.map f (List.drop n [])",
+      "statement": "List.drop n (List.map f []) = List.map f (List.drop n [])"
+    },
+    {
+      "fragment_id": 3,
+      "source_file": "digestion/tests/snapshots/prop_12.json",
+      "decl_name": "prop_12",
+      "premises": [
+        "n : ℕ",
+        "xs : List α"
+      ],
+      "body": "List.drop n [] = ∧ ((x : α) → (ih : ∀ (n : ℕ), List.drop n (List.map f xs) = List.map f (List.drop n xs)) → List.drop n (List.map f (x :: xs)) = List.map f (List.drop n (x :: xs)))",
+      "conclusion": "List.drop n (List.map f xs) = List.map f (List.drop n xs)",
+      "statement": "(n : ℕ) (xs : List α) (h1 : List.drop n [] = ∧ ((x : α) → (ih : ∀ (n : ℕ), List.drop n (List.map f xs) = List.map f (List.drop n xs)) → List.drop n (List.map f (x :: xs)) = List.map f (List.drop n (x :: xs)))) : List.drop n (List.map f xs) = List.map f (List.drop n xs)"
+    },
+    {
+      "fragment_id": 4,
+      "source_file": "digestion/tests/snapshots/prop_12.json",
+      "decl_name": "prop_12",
+      "premises": [
+        "n : ℕ",
+        "xs : List α"
+      ],
+      "body": "(x : α) → (ih : ∀ (n : ℕ), List.drop n (List.map f xs) = List.map f (List.drop n xs)) → List.drop 0 (List.map f (x :: xs)) = List.map f (List.drop 0 (x :: xs))",
+      "conclusion": "List.drop n (List.map f xs) = List.map f (List.drop n xs)",
+      "statement": "(n : ℕ) (xs : List α) (x : α) (ih : ∀ (n : ℕ), List.drop n (List.map f xs) = List.map f (List.drop n xs)) (h1 : List.drop 0 (List.map f (x :: xs)) = List.map f (List.drop 0 (x :: xs))) : List.drop n (List.map f xs) = List.map f (List.drop n xs)"
+    }
+  ]
+}

@@ -1,0 +1,652 @@
+{
+  "name": "count_insort",
+  "statement": "private lemma count_insort (n x : Nat) (xs : List Nat) :\n    count n (insort x xs) = count n (x :: xs) :=",
+  "root_tactic_id": 0,
+  "tactic_nodes": [
+    {
+      "id": 0,
+      "tactic_text": "induction xs with\n| nil => _*_\n| cons y ys ih => _*_",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "n",
+            "type": "ℕ"
+          },
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "xs",
+            "type": "List ℕ"
+          }
+        ],
+        "goal": "count n (insort x xs) = count n (x :: xs)"
+      },
+      "output_obligations": [
+        {
+          "hypotheses": [
+            {
+              "name": "n",
+              "type": "ℕ"
+            },
+            {
+              "name": "x",
+              "type": "ℕ"
+            }
+          ],
+          "goal": "count n (insort x []) = count n [x]"
+        },
+        {
+          "hypotheses": [
+            {
+              "name": "n",
+              "type": "ℕ"
+            },
+            {
+              "name": "x",
+              "type": "ℕ"
+            },
+            {
+              "name": "y",
+              "type": "ℕ"
+            },
+            {
+              "name": "ys",
+              "type": "List ℕ"
+            },
+            {
+              "name": "ih",
+              "type": "count n (insort x ys) = count n (x :: ys)"
+            }
+          ],
+          "goal": "count n (insort x (y :: ys)) = count n (x :: y :: ys)"
+        }
+      ],
+      "summary": {
+        "directly_used": [
+          "n",
+          "x",
+          "xs"
+        ],
+        "dependency_maps": [
+          {
+            "n": [
+              "n"
+            ],
+            "x": [
+              "x"
+            ]
+          },
+          {
+            "n": [
+              "n"
+            ],
+            "x": [
+              "x"
+            ],
+            "y": [
+              "n",
+              "x",
+              "xs"
+            ],
+            "ys": [
+              "n",
+              "x",
+              "xs"
+            ],
+            "ih": [
+              "n",
+              "x"
+            ]
+          }
+        ]
+      },
+      "parent_id": null,
+      "child_ids": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": 1,
+      "tactic_text": "simp [insort]",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "n",
+            "type": "ℕ"
+          },
+          {
+            "name": "x",
+            "type": "ℕ"
+          }
+        ],
+        "goal": "count n (insort x []) = count n [x]"
+      },
+      "output_obligations": [],
+      "summary": {
+        "directly_used": [],
+        "dependency_maps": []
+      },
+      "parent_id": 0,
+      "child_ids": []
+    },
+    {
+      "id": 2,
+      "tactic_text": "by_cases hle : x ≤ y",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "n",
+            "type": "ℕ"
+          },
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "y",
+            "type": "ℕ"
+          },
+          {
+            "name": "ys",
+            "type": "List ℕ"
+          },
+          {
+            "name": "ih",
+            "type": "count n (insort x ys) = count n (x :: ys)"
+          }
+        ],
+        "goal": "count n (insort x (y :: ys)) = count n (x :: y :: ys)"
+      },
+      "output_obligations": [
+        {
+          "hypotheses": [
+            {
+              "name": "n",
+              "type": "ℕ"
+            },
+            {
+              "name": "x",
+              "type": "ℕ"
+            },
+            {
+              "name": "y",
+              "type": "ℕ"
+            },
+            {
+              "name": "ys",
+              "type": "List ℕ"
+            },
+            {
+              "name": "ih",
+              "type": "count n (insort x ys) = count n (x :: ys)"
+            },
+            {
+              "name": "hle",
+              "type": "x ≤ y"
+            }
+          ],
+          "goal": "count n (insort x (y :: ys)) = count n (x :: y :: ys)"
+        },
+        {
+          "hypotheses": [
+            {
+              "name": "n",
+              "type": "ℕ"
+            },
+            {
+              "name": "x",
+              "type": "ℕ"
+            },
+            {
+              "name": "y",
+              "type": "ℕ"
+            },
+            {
+              "name": "ys",
+              "type": "List ℕ"
+            },
+            {
+              "name": "ih",
+              "type": "count n (insort x ys) = count n (x :: ys)"
+            },
+            {
+              "name": "hle",
+              "type": "¬x ≤ y"
+            }
+          ],
+          "goal": "count n (insort x (y :: ys)) = count n (x :: y :: ys)"
+        }
+      ],
+      "summary": {
+        "directly_used": [
+          "x",
+          "y"
+        ],
+        "dependency_maps": [
+          {
+            "n": [
+              "n"
+            ],
+            "x": [
+              "x"
+            ],
+            "y": [
+              "y"
+            ],
+            "ys": [
+              "ys"
+            ],
+            "ih": [
+              "ih"
+            ],
+            "hle": [
+              "x",
+              "y"
+            ]
+          },
+          {
+            "n": [
+              "n"
+            ],
+            "x": [
+              "x"
+            ],
+            "y": [
+              "y"
+            ],
+            "ys": [
+              "ys"
+            ],
+            "ih": [
+              "ih"
+            ],
+            "hle": [
+              "x",
+              "y"
+            ]
+          }
+        ]
+      },
+      "parent_id": 0,
+      "child_ids": [
+        3,
+        4
+      ]
+    },
+    {
+      "id": 3,
+      "tactic_text": "simp [insort, if_pos hle]",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "n",
+            "type": "ℕ"
+          },
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "y",
+            "type": "ℕ"
+          },
+          {
+            "name": "ys",
+            "type": "List ℕ"
+          },
+          {
+            "name": "ih",
+            "type": "count n (insort x ys) = count n (x :: ys)"
+          },
+          {
+            "name": "hle",
+            "type": "x ≤ y"
+          }
+        ],
+        "goal": "count n (insort x (y :: ys)) = count n (x :: y :: ys)"
+      },
+      "output_obligations": [],
+      "summary": {
+        "directly_used": [
+          "hle"
+        ],
+        "dependency_maps": []
+      },
+      "parent_id": 2,
+      "child_ids": []
+    },
+    {
+      "id": 4,
+      "tactic_text": "simp only [insort, if_neg hle, count]",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "n",
+            "type": "ℕ"
+          },
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "y",
+            "type": "ℕ"
+          },
+          {
+            "name": "ys",
+            "type": "List ℕ"
+          },
+          {
+            "name": "ih",
+            "type": "count n (insort x ys) = count n (x :: ys)"
+          },
+          {
+            "name": "hle",
+            "type": "¬x ≤ y"
+          }
+        ],
+        "goal": "count n (insort x (y :: ys)) = count n (x :: y :: ys)"
+      },
+      "output_obligations": [
+        {
+          "hypotheses": [
+            {
+              "name": "n",
+              "type": "ℕ"
+            },
+            {
+              "name": "x",
+              "type": "ℕ"
+            },
+            {
+              "name": "y",
+              "type": "ℕ"
+            },
+            {
+              "name": "ys",
+              "type": "List ℕ"
+            },
+            {
+              "name": "ih",
+              "type": "count n (insort x ys) = count n (x :: ys)"
+            },
+            {
+              "name": "hle",
+              "type": "¬x ≤ y"
+            }
+          ],
+          "goal": "(if n = y then count n (insort x ys) + 1 else count n (insort x ys)) ="
+        }
+      ],
+      "summary": {
+        "directly_used": [
+          "hle"
+        ],
+        "dependency_maps": [
+          {
+            "n": [
+              "n"
+            ],
+            "x": [
+              "x"
+            ],
+            "y": [
+              "y"
+            ],
+            "ys": [
+              "ys"
+            ],
+            "ih": [
+              "ih"
+            ],
+            "hle": [
+              "hle"
+            ]
+          }
+        ]
+      },
+      "parent_id": 2,
+      "child_ids": [
+        5
+      ]
+    },
+    {
+      "id": 5,
+      "tactic_text": "rw [ih]",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "n",
+            "type": "ℕ"
+          },
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "y",
+            "type": "ℕ"
+          },
+          {
+            "name": "ys",
+            "type": "List ℕ"
+          },
+          {
+            "name": "ih",
+            "type": "count n (insort x ys) = count n (x :: ys)"
+          },
+          {
+            "name": "hle",
+            "type": "¬x ≤ y"
+          }
+        ],
+        "goal": "(if n = y then count n (insort x ys) + 1 else count n (insort x ys)) ="
+      },
+      "output_obligations": [
+        {
+          "hypotheses": [
+            {
+              "name": "n",
+              "type": "ℕ"
+            },
+            {
+              "name": "x",
+              "type": "ℕ"
+            },
+            {
+              "name": "y",
+              "type": "ℕ"
+            },
+            {
+              "name": "ys",
+              "type": "List ℕ"
+            },
+            {
+              "name": "ih",
+              "type": "count n (insort x ys) = count n (x :: ys)"
+            },
+            {
+              "name": "hle",
+              "type": "¬x ≤ y"
+            }
+          ],
+          "goal": "(if n = y then count n (x :: ys) + 1 else count n (x :: ys)) ="
+        }
+      ],
+      "summary": {
+        "directly_used": [
+          "ih"
+        ],
+        "dependency_maps": [
+          {
+            "n": [
+              "n"
+            ],
+            "x": [
+              "x"
+            ],
+            "y": [
+              "y"
+            ],
+            "ys": [
+              "ys"
+            ],
+            "ih": [
+              "ih"
+            ],
+            "hle": [
+              "hle"
+            ]
+          }
+        ]
+      },
+      "parent_id": 4,
+      "child_ids": [
+        6
+      ]
+    },
+    {
+      "id": 6,
+      "tactic_text": "simp only [count]",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "n",
+            "type": "ℕ"
+          },
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "y",
+            "type": "ℕ"
+          },
+          {
+            "name": "ys",
+            "type": "List ℕ"
+          },
+          {
+            "name": "ih",
+            "type": "count n (insort x ys) = count n (x :: ys)"
+          },
+          {
+            "name": "hle",
+            "type": "¬x ≤ y"
+          }
+        ],
+        "goal": "(if n = y then count n (x :: ys) + 1 else count n (x :: ys)) ="
+      },
+      "output_obligations": [
+        {
+          "hypotheses": [
+            {
+              "name": "n",
+              "type": "ℕ"
+            },
+            {
+              "name": "x",
+              "type": "ℕ"
+            },
+            {
+              "name": "y",
+              "type": "ℕ"
+            },
+            {
+              "name": "ys",
+              "type": "List ℕ"
+            },
+            {
+              "name": "ih",
+              "type": "count n (insort x ys) = count n (x :: ys)"
+            },
+            {
+              "name": "hle",
+              "type": "¬x ≤ y"
+            }
+          ],
+          "goal": "(if n = y then (if n = x then count n ys + 1 else count n ys) + 1 else if n = x then count n ys + 1 else count n ys) ="
+        }
+      ],
+      "summary": {
+        "directly_used": [],
+        "dependency_maps": [
+          {
+            "n": [
+              "n"
+            ],
+            "x": [
+              "x"
+            ],
+            "y": [
+              "y"
+            ],
+            "ys": [
+              "ys"
+            ],
+            "ih": [
+              "ih"
+            ],
+            "hle": [
+              "hle"
+            ]
+          }
+        ]
+      },
+      "parent_id": 5,
+      "child_ids": [
+        7
+      ]
+    },
+    {
+      "id": 7,
+      "tactic_text": "split_ifs <;> omega",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "n",
+            "type": "ℕ"
+          },
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "y",
+            "type": "ℕ"
+          },
+          {
+            "name": "ys",
+            "type": "List ℕ"
+          },
+          {
+            "name": "ih",
+            "type": "count n (insort x ys) = count n (x :: ys)"
+          },
+          {
+            "name": "hle",
+            "type": "¬x ≤ y"
+          }
+        ],
+        "goal": "(if n = y then (if n = x then count n ys + 1 else count n ys) + 1 else if n = x then count n ys + 1 else count n ys) ="
+      },
+      "output_obligations": [],
+      "summary": {
+        "directly_used": [
+          "hle",
+          "ih",
+          "n",
+          "x",
+          "y",
+          "ys"
+        ],
+        "dependency_maps": []
+      },
+      "parent_id": 6,
+      "child_ids": []
+    }
+  ]
+}

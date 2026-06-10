@@ -1,0 +1,50 @@
+{
+  "lemmas": [
+    {
+      "fragment_id": 0,
+      "source_file": "digestion/tests/snapshots/Examples__prop_14.json",
+      "decl_name": "prop_14",
+      "premises": [
+        "ih : filter p (xs ++ ys) = filter p xs ++ filter p ys"
+      ],
+      "body": "True",
+      "conclusion": "(if p x = true then x :: filter p (xs ++ ys) else filter p (xs ++ ys)) =",
+      "statement": "(ih : filter p (xs ++ ys) = filter p xs ++ filter p ys) : (if p x = true then x :: filter p (xs ++ ys) else filter p (xs ++ ys)) ="
+    },
+    {
+      "fragment_id": 1,
+      "source_file": "digestion/tests/snapshots/Examples__prop_14.json",
+      "decl_name": "prop_14",
+      "premises": [
+        "ih : filter p (xs ++ ys) = filter p xs ++ filter p ys"
+      ],
+      "body": "True",
+      "conclusion": "x :: filter p (xs ++ ys) = x :: filter p xs ++ filter p ys",
+      "statement": "(ih : filter p (xs ++ ys) = filter p xs ++ filter p ys) : x :: filter p (xs ++ ys) = x :: filter p xs ++ filter p ys"
+    },
+    {
+      "fragment_id": 2,
+      "source_file": "digestion/tests/snapshots/Examples__prop_14.json",
+      "decl_name": "prop_14",
+      "premises": [
+        "ih : filter p (xs ++ ys) = filter p xs ++ filter p ys"
+      ],
+      "body": "True",
+      "conclusion": "filter p (x :: xs ++ ys) = filter p (x :: xs) ++ filter p ys",
+      "statement": "(ih : filter p (xs ++ ys) = filter p xs ++ filter p ys) : filter p (x :: xs ++ ys) = filter p (x :: xs) ++ filter p ys"
+    },
+    {
+      "fragment_id": 3,
+      "source_file": "digestion/tests/snapshots/Examples__prop_14.json",
+      "decl_name": "prop_14",
+      "premises": [
+        "p : α → Bool",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "True",
+      "conclusion": "filter p (xs ++ ys) = filter p xs ++ filter p ys",
+      "statement": "(p : α → Bool) (xs : List α) (ys : List α) : filter p (xs ++ ys) = filter p xs ++ filter p ys"
+    }
+  ]
+}

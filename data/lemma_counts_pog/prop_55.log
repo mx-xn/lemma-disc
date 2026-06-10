@@ -1,0 +1,45 @@
+[1/4] Building POG...
+[info] welcome to sbt 1.10.1 (JetBrains s.r.o. Java 21.0.6)
+[info] loading project definition from /nas/lemma-disc/scala-core/project
+[info] loading settings for project scala-core from build.sbt ...
+[info] set current project to scala-core (in build file:/nas/lemma-disc/scala-core/)
+[info] running Serializer /tmp/lemma_trace_AKWuwT.json /tmp/lemma_pog_DKuarl.json
+[success] Total time: 1 s, completed Jun 4, 2026, 12:42:40 AM
+[2/4] Enumerating fragments...
+[info] welcome to sbt 1.10.1 (JetBrains s.r.o. Java 21.0.6)
+[info] loading project definition from /nas/lemma-disc/scala-core/project
+[info] loading settings for project scala-core from build.sbt ...
+[info] set current project to scala-core (in build file:/nas/lemma-disc/scala-core/)
+[info] running Serializer --timeout 60000 /tmp/lemma_pog_DKuarl.json /tmp/lemma_segments_ncxnzC.json
+[success] Total time: 2 s, completed Jun 4, 2026, 12:42:46 AM
+[2/4] Got 28 fragment(s).
+[3/4] Running support minimization...
+[info] welcome to sbt 1.10.1 (JetBrains s.r.o. Java 21.0.6)
+[info] loading project definition from /nas/lemma-disc/scala-core/project
+[info] loading settings for project scala-core from build.sbt ...
+[info] set current project to scala-core (in build file:/nas/lemma-disc/scala-core/)
+[info] running Serializer /tmp/lemma_segments_ncxnzC.json /tmp/lemma_out_oHDJlM.json
+[success] Total time: 2 s, completed Jun 4, 2026, 12:42:52 AM
+[4/4] Deduplicating lemmas...
+Deduplicated: 28 → 18 lemmas (10 dropped)
+[4/4] Lemmas    written to /nas/lemma-disc/data/lemma_counts_pog/prop_55_lemmas_pog.json
+[4/4] Fragments written to /nas/lemma-disc/data/lemma_counts_pog/prop_55_lemmas_pog.fragments.json
+--- 18 lemma statement(s) ---
+[0] prop_55: (h1 : drop n [] = []) : drop n ([] ++ ys) = drop n [] ++ drop (n - length []) ys
+[1] prop_55: drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys
+[2] prop_55: (n : ℕ) : drop n [] = []
+[3] prop_55: (n : ℕ) : drop n ([] ++ ys) = drop n [] ++ drop (n - length []) ys
+[4] prop_55: (h1 : drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys) : drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys
+[5] prop_55: (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) (n : ℕ) (h1 : drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys) : drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys
+[6] prop_55: (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) (n : ℕ) (h1 : drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys) : drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys
+[7] prop_55: (ys : List α) (x : α) (xs : List α) (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) (n : ℕ) (key : n - length xs = n + 1 - (1 + length xs)) (h1 : drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys) : drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys
+[8] prop_55: (ys : List α) (x : α) (xs : List α) (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) (n : ℕ) (key : n - length xs = n + 1 - (1 + length xs)) (h1 : drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys) : drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys
+[9] prop_55: (ys : List α) (x : α) (xs : List α) (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) (n : ℕ) (key : n - length xs = n + 1 - (1 + length xs)) (h1 : drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys) : drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys
+[10] prop_55: (ys : List α) (x : α) (xs : List α) (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) (n : ℕ) (key : n - length xs = n + 1 - (1 + length xs)) (h1 : drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys) : drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys
+[11] prop_55: drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys
+[12] prop_55: (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) (n : ℕ) : drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys
+[13] prop_55: (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) (n : ℕ) : drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys
+[14] prop_55: (ys : List α) (x : α) (xs : List α) (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) (n : ℕ) : drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys
+[15] prop_55: (ys : List α) (x : α) (xs : List α) (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) (n : ℕ) : drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys
+[16] prop_55: (ys : List α) (x : α) (xs : List α) (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) (n : ℕ) : n - length xs = n + 1 - (1 + length xs)
+[17] prop_55: (ys : List α) (x : α) (xs : List α) (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) (n : ℕ) : drop n (x :: xs ++ ys) = drop n (x :: xs) ++ drop (n - length (x :: xs)) ys

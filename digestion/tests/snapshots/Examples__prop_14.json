@@ -1,0 +1,601 @@
+{
+  "name": "prop_14",
+  "statement": "theorem prop_14 (p: α → Bool) (xs: List α) (ys: List α) :\n  (filter p (xs ++ ys) = (filter p xs) ++ (filter p ys)) :=",
+  "root_tactic_id": 0,
+  "tactic_nodes": [
+    {
+      "id": 0,
+      "tactic_text": "induction xs with\n| nil => _*_\n| cons x xs ih => _*_",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "α",
+            "type": "Type u_1"
+          },
+          {
+            "name": "p",
+            "type": "α → Bool"
+          },
+          {
+            "name": "xs",
+            "type": "List α"
+          },
+          {
+            "name": "ys",
+            "type": "List α"
+          }
+        ],
+        "goal": "filter p (xs ++ ys) = filter p xs ++ filter p ys"
+      },
+      "output_obligations": [
+        {
+          "hypotheses": [
+            {
+              "name": "α",
+              "type": "Type u_1"
+            },
+            {
+              "name": "p",
+              "type": "α → Bool"
+            },
+            {
+              "name": "ys",
+              "type": "List α"
+            }
+          ],
+          "goal": "filter p ([] ++ ys) = filter p [] ++ filter p ys"
+        },
+        {
+          "hypotheses": [
+            {
+              "name": "α",
+              "type": "Type u_1"
+            },
+            {
+              "name": "p",
+              "type": "α → Bool"
+            },
+            {
+              "name": "ys",
+              "type": "List α"
+            },
+            {
+              "name": "x",
+              "type": "α"
+            },
+            {
+              "name": "xs",
+              "type": "List α"
+            },
+            {
+              "name": "ih",
+              "type": "filter p (xs ++ ys) = filter p xs ++ filter p ys"
+            }
+          ],
+          "goal": "filter p (x :: xs ++ ys) = filter p (x :: xs) ++ filter p ys"
+        }
+      ],
+      "summary": {
+        "directly_used": [
+          "xs"
+        ],
+        "dependency_maps": [
+          {
+            "α": [
+              "α"
+            ],
+            "p": [
+              "p"
+            ],
+            "ys": [
+              "ys"
+            ]
+          },
+          {
+            "α": [
+              "α"
+            ],
+            "p": [
+              "p"
+            ],
+            "ys": [
+              "ys"
+            ],
+            "x": [
+              "α"
+            ],
+            "xs": [
+              "xs"
+            ],
+            "ih": [
+              "ys",
+              "p",
+              "xs"
+            ]
+          }
+        ]
+      },
+      "parent_id": null,
+      "child_ids": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": 1,
+      "tactic_text": "simp [filter]",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "α",
+            "type": "Type u_1"
+          },
+          {
+            "name": "p",
+            "type": "α → Bool"
+          },
+          {
+            "name": "ys",
+            "type": "List α"
+          }
+        ],
+        "goal": "filter p ([] ++ ys) = filter p [] ++ filter p ys"
+      },
+      "output_obligations": [],
+      "summary": {
+        "directly_used": [],
+        "dependency_maps": []
+      },
+      "parent_id": 0,
+      "child_ids": []
+    },
+    {
+      "id": 2,
+      "tactic_text": "simp [filter]",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "α",
+            "type": "Type u_1"
+          },
+          {
+            "name": "p",
+            "type": "α → Bool"
+          },
+          {
+            "name": "ys",
+            "type": "List α"
+          },
+          {
+            "name": "x",
+            "type": "α"
+          },
+          {
+            "name": "xs",
+            "type": "List α"
+          },
+          {
+            "name": "ih",
+            "type": "filter p (xs ++ ys) = filter p xs ++ filter p ys"
+          }
+        ],
+        "goal": "filter p (x :: xs ++ ys) = filter p (x :: xs) ++ filter p ys"
+      },
+      "output_obligations": [
+        {
+          "hypotheses": [
+            {
+              "name": "α",
+              "type": "Type u_1"
+            },
+            {
+              "name": "p",
+              "type": "α → Bool"
+            },
+            {
+              "name": "ys",
+              "type": "List α"
+            },
+            {
+              "name": "x",
+              "type": "α"
+            },
+            {
+              "name": "xs",
+              "type": "List α"
+            },
+            {
+              "name": "ih",
+              "type": "filter p (xs ++ ys) = filter p xs ++ filter p ys"
+            }
+          ],
+          "goal": "(if p x = true then x :: filter p (xs ++ ys) else filter p (xs ++ ys)) ="
+        }
+      ],
+      "summary": {
+        "directly_used": [],
+        "dependency_maps": [
+          {
+            "α": [
+              "α"
+            ],
+            "p": [
+              "p"
+            ],
+            "ys": [
+              "ys"
+            ],
+            "x": [
+              "x"
+            ],
+            "xs": [
+              "xs"
+            ],
+            "ih": [
+              "ih"
+            ]
+          }
+        ]
+      },
+      "parent_id": 0,
+      "child_ids": [
+        3
+      ]
+    },
+    {
+      "id": 3,
+      "tactic_text": "split_ifs with h",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "α",
+            "type": "Type u_1"
+          },
+          {
+            "name": "p",
+            "type": "α → Bool"
+          },
+          {
+            "name": "ys",
+            "type": "List α"
+          },
+          {
+            "name": "x",
+            "type": "α"
+          },
+          {
+            "name": "xs",
+            "type": "List α"
+          },
+          {
+            "name": "ih",
+            "type": "filter p (xs ++ ys) = filter p xs ++ filter p ys"
+          }
+        ],
+        "goal": "(if p x = true then x :: filter p (xs ++ ys) else filter p (xs ++ ys)) ="
+      },
+      "output_obligations": [
+        {
+          "hypotheses": [
+            {
+              "name": "α",
+              "type": "Type u_1"
+            },
+            {
+              "name": "p",
+              "type": "α → Bool"
+            },
+            {
+              "name": "ys",
+              "type": "List α"
+            },
+            {
+              "name": "x",
+              "type": "α"
+            },
+            {
+              "name": "xs",
+              "type": "List α"
+            },
+            {
+              "name": "ih",
+              "type": "filter p (xs ++ ys) = filter p xs ++ filter p ys"
+            },
+            {
+              "name": "h",
+              "type": "p x = true"
+            }
+          ],
+          "goal": "x :: filter p (xs ++ ys) = x :: filter p xs ++ filter p ys"
+        },
+        {
+          "hypotheses": [
+            {
+              "name": "α",
+              "type": "Type u_1"
+            },
+            {
+              "name": "p",
+              "type": "α → Bool"
+            },
+            {
+              "name": "ys",
+              "type": "List α"
+            },
+            {
+              "name": "x",
+              "type": "α"
+            },
+            {
+              "name": "xs",
+              "type": "List α"
+            },
+            {
+              "name": "ih",
+              "type": "filter p (xs ++ ys) = filter p xs ++ filter p ys"
+            },
+            {
+              "name": "h",
+              "type": "¬p x = true"
+            }
+          ],
+          "goal": "filter p (xs ++ ys) = filter p xs ++ filter p ys"
+        }
+      ],
+      "summary": {
+        "directly_used": [],
+        "dependency_maps": [
+          {
+            "α": [
+              "α"
+            ],
+            "p": [
+              "p"
+            ],
+            "ys": [
+              "ys"
+            ],
+            "x": [
+              "x"
+            ],
+            "xs": [
+              "xs"
+            ],
+            "ih": [
+              "ih"
+            ],
+            "h": [
+              "x",
+              "p"
+            ]
+          },
+          {
+            "α": [
+              "α"
+            ],
+            "p": [
+              "p"
+            ],
+            "ys": [
+              "ys"
+            ],
+            "x": [
+              "x"
+            ],
+            "xs": [
+              "xs"
+            ],
+            "ih": [
+              "ih"
+            ],
+            "h": [
+              "x",
+              "p"
+            ]
+          }
+        ]
+      },
+      "parent_id": 2,
+      "child_ids": [
+        4,
+        6
+      ]
+    },
+    {
+      "id": 4,
+      "tactic_text": "simp",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "α",
+            "type": "Type u_1"
+          },
+          {
+            "name": "p",
+            "type": "α → Bool"
+          },
+          {
+            "name": "ys",
+            "type": "List α"
+          },
+          {
+            "name": "x",
+            "type": "α"
+          },
+          {
+            "name": "xs",
+            "type": "List α"
+          },
+          {
+            "name": "ih",
+            "type": "filter p (xs ++ ys) = filter p xs ++ filter p ys"
+          },
+          {
+            "name": "h",
+            "type": "p x = true"
+          }
+        ],
+        "goal": "x :: filter p (xs ++ ys) = x :: filter p xs ++ filter p ys"
+      },
+      "output_obligations": [
+        {
+          "hypotheses": [
+            {
+              "name": "α",
+              "type": "Type u_1"
+            },
+            {
+              "name": "p",
+              "type": "α → Bool"
+            },
+            {
+              "name": "ys",
+              "type": "List α"
+            },
+            {
+              "name": "x",
+              "type": "α"
+            },
+            {
+              "name": "xs",
+              "type": "List α"
+            },
+            {
+              "name": "ih",
+              "type": "filter p (xs ++ ys) = filter p xs ++ filter p ys"
+            },
+            {
+              "name": "h",
+              "type": "p x = true"
+            }
+          ],
+          "goal": "filter p (xs ++ ys) = filter p xs ++ filter p ys"
+        }
+      ],
+      "summary": {
+        "directly_used": [],
+        "dependency_maps": [
+          {
+            "α": [
+              "α"
+            ],
+            "p": [
+              "p"
+            ],
+            "ys": [
+              "ys"
+            ],
+            "x": [
+              "x"
+            ],
+            "xs": [
+              "xs"
+            ],
+            "ih": [
+              "ih"
+            ],
+            "h": [
+              "h"
+            ]
+          }
+        ]
+      },
+      "parent_id": 3,
+      "child_ids": [
+        5
+      ]
+    },
+    {
+      "id": 5,
+      "tactic_text": "exact ih",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "α",
+            "type": "Type u_1"
+          },
+          {
+            "name": "p",
+            "type": "α → Bool"
+          },
+          {
+            "name": "ys",
+            "type": "List α"
+          },
+          {
+            "name": "x",
+            "type": "α"
+          },
+          {
+            "name": "xs",
+            "type": "List α"
+          },
+          {
+            "name": "ih",
+            "type": "filter p (xs ++ ys) = filter p xs ++ filter p ys"
+          },
+          {
+            "name": "h",
+            "type": "p x = true"
+          }
+        ],
+        "goal": "filter p (xs ++ ys) = filter p xs ++ filter p ys"
+      },
+      "output_obligations": [],
+      "summary": {
+        "directly_used": [
+          "ih"
+        ],
+        "dependency_maps": []
+      },
+      "parent_id": 4,
+      "child_ids": []
+    },
+    {
+      "id": 6,
+      "tactic_text": "exact ih",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "α",
+            "type": "Type u_1"
+          },
+          {
+            "name": "p",
+            "type": "α → Bool"
+          },
+          {
+            "name": "ys",
+            "type": "List α"
+          },
+          {
+            "name": "x",
+            "type": "α"
+          },
+          {
+            "name": "xs",
+            "type": "List α"
+          },
+          {
+            "name": "ih",
+            "type": "filter p (xs ++ ys) = filter p xs ++ filter p ys"
+          },
+          {
+            "name": "h",
+            "type": "¬p x = true"
+          }
+        ],
+        "goal": "filter p (xs ++ ys) = filter p xs ++ filter p ys"
+      },
+      "output_obligations": [],
+      "summary": {
+        "directly_used": [
+          "ih"
+        ],
+        "dependency_maps": []
+      },
+      "parent_id": 3,
+      "child_ids": []
+    }
+  ]
+}

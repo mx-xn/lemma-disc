@@ -1,0 +1,241 @@
+{
+  "fragments": [
+    {
+      "fragment_id": 0,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_53.json",
+      "decl_name": "prop_53",
+      "root_node_id": 1,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "n",
+            "type": "ℕ"
+          },
+          {
+            "name": "xs",
+            "type": "List ℕ"
+          }
+        ],
+        "goal": "count n xs = count n (sort xs)"
+      },
+      "nodes": [
+        {
+          "id": 1,
+          "kind": "leaf",
+          "tactic_text": "simp [sort]",
+          "parent_id": null,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "n",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              }
+            ],
+            "goal": "count n xs = count n (sort xs)"
+          },
+          "summary": {
+            "directly_used": [],
+            "dependency_maps": []
+          }
+        }
+      ]
+    },
+    {
+      "fragment_id": 1,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_53.json",
+      "decl_name": "prop_53",
+      "root_node_id": 2,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "n",
+            "type": "ℕ"
+          },
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "xs",
+            "type": "List ℕ"
+          },
+          {
+            "name": "ih",
+            "type": "count n xs = count n (sort xs)"
+          }
+        ],
+        "goal": "count n (x :: xs) = count n (sort (x :: xs))"
+      },
+      "nodes": [
+        {
+          "id": 2,
+          "kind": "node",
+          "tactic_text": "simp only [sort, count_insort, count]",
+          "parent_id": null,
+          "child_ids": [
+            3
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "n",
+                "type": "ℕ"
+              },
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "ih",
+                "type": "count n xs = count n (sort xs)"
+              }
+            ],
+            "goal": "count n (x :: xs) = count n (sort (x :: xs))"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "n",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "x",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "xs",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "ih",
+                  "type": "count n xs = count n (sort xs)"
+                }
+              ],
+              "goal": "(if n = x then count n xs + 1 else count n xs) = if n = x then count n (sort xs) + 1 else count n (sort xs)"
+            }
+          ],
+          "summary": {
+            "directly_used": [],
+            "dependency_maps": [
+              {
+                "n": [
+                  "n"
+                ],
+                "x": [
+                  "x"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "ih": [
+                  "ih"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 3,
+          "kind": "hole",
+          "hole_id": "hole_0",
+          "parent_id": 2,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "n",
+                "type": "ℕ"
+              },
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "ih",
+                "type": "count n xs = count n (sort xs)"
+              }
+            ],
+            "goal": "(if n = x then count n xs + 1 else count n xs) = if n = x then count n (sort xs) + 1 else count n (sort xs)"
+          }
+        }
+      ]
+    },
+    {
+      "fragment_id": 2,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_53.json",
+      "decl_name": "prop_53",
+      "root_node_id": 3,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "n",
+            "type": "ℕ"
+          },
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "xs",
+            "type": "List ℕ"
+          },
+          {
+            "name": "ih",
+            "type": "count n xs = count n (sort xs)"
+          }
+        ],
+        "goal": "count n (x :: xs) = count n (sort (x :: xs))"
+      },
+      "nodes": [
+        {
+          "id": 3,
+          "kind": "leaf",
+          "tactic_text": "rw [ih]",
+          "parent_id": null,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "n",
+                "type": "ℕ"
+              },
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "ih",
+                "type": "count n xs = count n (sort xs)"
+              }
+            ],
+            "goal": "count n (x :: xs) = count n (sort (x :: xs))"
+          },
+          "summary": {
+            "directly_used": [
+              "ih"
+            ],
+            "dependency_maps": []
+          }
+        }
+      ]
+    }
+  ]
+}

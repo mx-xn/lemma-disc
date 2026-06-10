@@ -1,0 +1,30 @@
+[1/4] Building POG...
+[info] welcome to sbt 1.10.1 (JetBrains s.r.o. Java 21.0.6)
+[info] loading project definition from /nas/lemma-disc/scala-core/project
+[info] loading settings for project scala-core from build.sbt ...
+[info] set current project to scala-core (in build file:/nas/lemma-disc/scala-core/)
+[info] running Serializer /tmp/lemma_trace_w7hEoa.json /tmp/lemma_pog_RjZhTj.json
+[success] Total time: 1 s, completed Jun 4, 2026, 12:42:05 AM
+[2/4] Enumerating fragments...
+[info] welcome to sbt 1.10.1 (JetBrains s.r.o. Java 21.0.6)
+[info] loading project definition from /nas/lemma-disc/scala-core/project
+[info] loading settings for project scala-core from build.sbt ...
+[info] set current project to scala-core (in build file:/nas/lemma-disc/scala-core/)
+[info] running Serializer --timeout 60000 /tmp/lemma_pog_RjZhTj.json /tmp/lemma_segments_tzjdcE.json
+[success] Total time: 2 s, completed Jun 4, 2026, 12:42:11 AM
+[2/4] Got 4 fragment(s).
+[3/4] Running support minimization...
+[info] welcome to sbt 1.10.1 (JetBrains s.r.o. Java 21.0.6)
+[info] loading project definition from /nas/lemma-disc/scala-core/project
+[info] loading settings for project scala-core from build.sbt ...
+[info] set current project to scala-core (in build file:/nas/lemma-disc/scala-core/)
+[info] running Serializer /tmp/lemma_segments_tzjdcE.json /tmp/lemma_out_kNdQvH.json
+[success] Total time: 1 s, completed Jun 4, 2026, 12:42:17 AM
+[4/4] Deduplicating lemmas...
+Deduplicated: 4 → 3 lemmas (1 dropped)
+[4/4] Lemmas    written to /nas/lemma-disc/data/lemma_counts_pog/prop_36_lemmas_pog.json
+[4/4] Fragments written to /nas/lemma-disc/data/lemma_counts_pog/prop_36_lemmas_pog.fragments.json
+--- 3 lemma statement(s) ---
+[0] prop_36: takeWhile (fun x => decide True) xs = xs
+[1] prop_36: (h1 : takeWhile (fun x => true) xs = xs) : takeWhile (fun x => decide True) (x :: xs) = x :: xs
+[2] prop_36: (ih : takeWhile (fun x => decide True) xs = xs) : takeWhile (fun x => decide True) (x :: xs) = x :: xs

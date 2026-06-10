@@ -1,0 +1,37 @@
+[1/4] Building POG...
+[info] welcome to sbt 1.10.1 (JetBrains s.r.o. Java 21.0.6)
+[info] loading project definition from /nas/lemma-disc/scala-core/project
+[info] loading settings for project scala-core from build.sbt ...
+[info] set current project to scala-core (in build file:/nas/lemma-disc/scala-core/)
+[info] running Serializer /tmp/lemma_trace_eg8Y1p.json /tmp/lemma_pog_PtuItB.json
+[success] Total time: 1 s, completed Jun 4, 2026, 12:42:57 AM
+[2/4] Enumerating fragments...
+[info] welcome to sbt 1.10.1 (JetBrains s.r.o. Java 21.0.6)
+[info] loading project definition from /nas/lemma-disc/scala-core/project
+[info] loading settings for project scala-core from build.sbt ...
+[info] set current project to scala-core (in build file:/nas/lemma-disc/scala-core/)
+[info] running Serializer --timeout 60000 /tmp/lemma_pog_PtuItB.json /tmp/lemma_segments_uLt14Z.json
+[success] Total time: 2 s, completed Jun 4, 2026, 12:43:03 AM
+[2/4] Got 22 fragment(s).
+[3/4] Running support minimization...
+[info] welcome to sbt 1.10.1 (JetBrains s.r.o. Java 21.0.6)
+[info] loading project definition from /nas/lemma-disc/scala-core/project
+[info] loading settings for project scala-core from build.sbt ...
+[info] set current project to scala-core (in build file:/nas/lemma-disc/scala-core/)
+[info] running Serializer /tmp/lemma_segments_uLt14Z.json /tmp/lemma_out_5P8oK7.json
+[success] Total time: 1 s, completed Jun 4, 2026, 12:43:09 AM
+[4/4] Deduplicating lemmas...
+Deduplicated: 22 → 10 lemmas (12 dropped)
+[4/4] Lemmas    written to /nas/lemma-disc/data/lemma_counts_pog/prop_56_lemmas_pog.json
+[4/4] Fragments written to /nas/lemma-disc/data/lemma_counts_pog/prop_56_lemmas_pog.fragments.json
+--- 10 lemma statement(s) ---
+[0] prop_56: drop n (drop m xs) = drop (n + m) xs
+[1] prop_56: (h1 : drop n [] = []) : drop n (drop (m + 1) []) = drop (n + (m + 1)) []
+[2] prop_56: (n : ℕ) : drop n [] = []
+[3] prop_56: (n : ℕ) : drop n (drop (m + 1) []) = drop (n + (m + 1)) []
+[4] prop_56: (h1 : drop n (drop (m + 0).succ (x :: xs)) = drop (n + m).succ (x :: xs)) : drop n (drop (m + 1) (x :: xs)) = drop (n + (m + 1)) (x :: xs)
+[5] prop_56: (h1 : drop n (drop m xs) = drop (n + m) xs) : drop n (drop (m + 0).succ (x :: xs)) = drop (n + m).succ (x :: xs)
+[6] prop_56: (h1 : drop n (drop m xs) = drop (n + m) xs) : drop n (drop (m + 1) (x :: xs)) = drop (n + (m + 1)) (x :: xs)
+[7] prop_56: (ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) (xs : List α) : drop n (drop (m + 1) (x :: xs)) = drop (n + (m + 1)) (x :: xs)
+[8] prop_56: (n : ℕ) (ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) (xs : List α) : drop n (drop (m + 1) xs) = drop (n + (m + 1)) xs
+[9] prop_56: (ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) (xs : List α) : drop n (drop (m + 0).succ (x :: xs)) = drop (n + m).succ (x :: xs)

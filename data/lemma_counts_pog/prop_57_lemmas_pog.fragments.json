@@ -1,0 +1,2561 @@
+{
+  "fragments": [
+    {
+      "fragment_id": 0,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_57.json",
+      "decl_name": "prop_57",
+      "root_node_id": 1,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "α",
+            "type": "Type u_1"
+          },
+          {
+            "name": "n",
+            "type": "ℕ"
+          },
+          {
+            "name": "m",
+            "type": "ℕ"
+          },
+          {
+            "name": "xs",
+            "type": "List α"
+          }
+        ],
+        "goal": "drop n (take m xs) = take (m - n) (drop n xs)"
+      },
+      "nodes": [
+        {
+          "id": 1,
+          "kind": "node",
+          "tactic_text": "have take_nil : ∀ k, take k ([] : List α) = [] := by\n  intro k\n  cases k with\n  | zero => rfl\n  | succ k => rfl",
+          "parent_id": null,
+          "child_ids": [
+            2
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "n",
+                "type": "ℕ"
+              },
+              {
+                "name": "m",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              }
+            ],
+            "goal": "drop n (take m xs) = take (m - n) (drop n xs)"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "n",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "m",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "xs",
+                  "type": "List α"
+                },
+                {
+                  "name": "take_nil",
+                  "type": "∀ (k : ℕ), take k [] = []"
+                }
+              ],
+              "goal": "drop n (take m xs) = take (m - n) (drop n xs)"
+            }
+          ],
+          "summary": {
+            "directly_used": [
+              "α"
+            ],
+            "dependency_maps": [
+              {
+                "α": [
+                  "α"
+                ],
+                "n": [
+                  "n"
+                ],
+                "m": [
+                  "m"
+                ],
+                "take_nil": [
+                  "α"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 2,
+          "kind": "hole",
+          "hole_id": "hole_0",
+          "parent_id": 1,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "n",
+                "type": "ℕ"
+              },
+              {
+                "name": "m",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              },
+              {
+                "name": "take_nil",
+                "type": "∀ (k : ℕ), take k [] = []"
+              }
+            ],
+            "goal": "drop n (take m xs) = take (m - n) (drop n xs)"
+          }
+        }
+      ]
+    },
+    {
+      "fragment_id": 1,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_57.json",
+      "decl_name": "prop_57",
+      "root_node_id": 2,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "α",
+            "type": "Type u_1"
+          },
+          {
+            "name": "n",
+            "type": "ℕ"
+          },
+          {
+            "name": "m",
+            "type": "ℕ"
+          },
+          {
+            "name": "xs",
+            "type": "List α"
+          }
+        ],
+        "goal": "drop n (take m xs) = take (m - n) (drop n xs)"
+      },
+      "nodes": [
+        {
+          "id": 2,
+          "kind": "node",
+          "tactic_text": "have drop_nil : ∀ k, drop k ([] : List α) = [] := by\n  intro k\n  cases k with\n  | zero => rfl\n  | succ k => rfl",
+          "parent_id": null,
+          "child_ids": [
+            3
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "n",
+                "type": "ℕ"
+              },
+              {
+                "name": "m",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              }
+            ],
+            "goal": "drop n (take m xs) = take (m - n) (drop n xs)"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "n",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "m",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "xs",
+                  "type": "List α"
+                },
+                {
+                  "name": "drop_nil",
+                  "type": "∀ (k : ℕ), drop k [] = []"
+                }
+              ],
+              "goal": "drop n (take m xs) = take (m - n) (drop n xs)"
+            }
+          ],
+          "summary": {
+            "directly_used": [
+              "α"
+            ],
+            "dependency_maps": [
+              {
+                "α": [
+                  "α"
+                ],
+                "n": [
+                  "n"
+                ],
+                "take_nil": [
+                  "take_nil"
+                ],
+                "m": [
+                  "m"
+                ],
+                "drop_nil": [
+                  "α"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 3,
+          "kind": "hole",
+          "hole_id": "hole_0",
+          "parent_id": 2,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "n",
+                "type": "ℕ"
+              },
+              {
+                "name": "m",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              },
+              {
+                "name": "drop_nil",
+                "type": "∀ (k : ℕ), drop k [] = []"
+              }
+            ],
+            "goal": "drop n (take m xs) = take (m - n) (drop n xs)"
+          }
+        }
+      ]
+    },
+    {
+      "fragment_id": 2,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_57.json",
+      "decl_name": "prop_57",
+      "root_node_id": 1,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "α",
+            "type": "Type u_1"
+          },
+          {
+            "name": "n",
+            "type": "ℕ"
+          },
+          {
+            "name": "m",
+            "type": "ℕ"
+          },
+          {
+            "name": "xs",
+            "type": "List α"
+          }
+        ],
+        "goal": "drop n (take m xs) = take (m - n) (drop n xs)"
+      },
+      "nodes": [
+        {
+          "id": 1,
+          "kind": "node",
+          "tactic_text": "have take_nil : ∀ k, take k ([] : List α) = [] := by\n  intro k\n  cases k with\n  | zero => rfl\n  | succ k => rfl",
+          "parent_id": null,
+          "child_ids": [
+            2
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "n",
+                "type": "ℕ"
+              },
+              {
+                "name": "m",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              }
+            ],
+            "goal": "drop n (take m xs) = take (m - n) (drop n xs)"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "n",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "m",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "xs",
+                  "type": "List α"
+                },
+                {
+                  "name": "take_nil",
+                  "type": "∀ (k : ℕ), take k [] = []"
+                }
+              ],
+              "goal": "drop n (take m xs) = take (m - n) (drop n xs)"
+            }
+          ],
+          "summary": {
+            "directly_used": [
+              "α"
+            ],
+            "dependency_maps": [
+              {
+                "α": [
+                  "α"
+                ],
+                "n": [
+                  "n"
+                ],
+                "m": [
+                  "m"
+                ],
+                "take_nil": [
+                  "α"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 2,
+          "kind": "node",
+          "tactic_text": "have drop_nil : ∀ k, drop k ([] : List α) = [] := by\n  intro k\n  cases k with\n  | zero => rfl\n  | succ k => rfl",
+          "parent_id": 1,
+          "child_ids": [
+            3
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "n",
+                "type": "ℕ"
+              },
+              {
+                "name": "m",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              },
+              {
+                "name": "take_nil",
+                "type": "∀ (k : ℕ), take k [] = []"
+              }
+            ],
+            "goal": "drop n (take m xs) = take (m - n) (drop n xs)"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "n",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "m",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "xs",
+                  "type": "List α"
+                },
+                {
+                  "name": "take_nil",
+                  "type": "∀ (k : ℕ), take k [] = []"
+                },
+                {
+                  "name": "drop_nil",
+                  "type": "∀ (k : ℕ), drop k [] = []"
+                }
+              ],
+              "goal": "drop n (take m xs) = take (m - n) (drop n xs)"
+            }
+          ],
+          "summary": {
+            "directly_used": [
+              "α"
+            ],
+            "dependency_maps": [
+              {
+                "α": [
+                  "α"
+                ],
+                "n": [
+                  "n"
+                ],
+                "take_nil": [
+                  "take_nil"
+                ],
+                "m": [
+                  "m"
+                ],
+                "drop_nil": [
+                  "α"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 3,
+          "kind": "hole",
+          "hole_id": "hole_0",
+          "parent_id": 2,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "n",
+                "type": "ℕ"
+              },
+              {
+                "name": "m",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              },
+              {
+                "name": "take_nil",
+                "type": "∀ (k : ℕ), take k [] = []"
+              },
+              {
+                "name": "drop_nil",
+                "type": "∀ (k : ℕ), drop k [] = []"
+              }
+            ],
+            "goal": "drop n (take m xs) = take (m - n) (drop n xs)"
+          }
+        }
+      ]
+    },
+    {
+      "fragment_id": 3,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_57.json",
+      "decl_name": "prop_57",
+      "root_node_id": 3,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "α",
+            "type": "Type u_1"
+          },
+          {
+            "name": "n",
+            "type": "ℕ"
+          },
+          {
+            "name": "m",
+            "type": "ℕ"
+          },
+          {
+            "name": "xs",
+            "type": "List α"
+          }
+        ],
+        "goal": "drop n (take m xs) = take (m - n) (drop n xs)"
+      },
+      "nodes": [
+        {
+          "id": 3,
+          "kind": "leaf",
+          "tactic_text": "rw [take_nil, drop_nil, take_nil]",
+          "parent_id": null,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "n",
+                "type": "ℕ"
+              },
+              {
+                "name": "m",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              }
+            ],
+            "goal": "drop n (take m xs) = take (m - n) (drop n xs)"
+          },
+          "summary": {
+            "directly_used": [
+              "drop_nil",
+              "take_nil"
+            ],
+            "dependency_maps": []
+          }
+        }
+      ]
+    },
+    {
+      "fragment_id": 4,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_57.json",
+      "decl_name": "prop_57",
+      "root_node_id": 4,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "α",
+            "type": "Type u_1"
+          },
+          {
+            "name": "n",
+            "type": "ℕ"
+          },
+          {
+            "name": "m",
+            "type": "ℕ"
+          }
+        ],
+        "goal": "∀ (k : ℕ), take k [] = []"
+      },
+      "nodes": [
+        {
+          "id": 4,
+          "kind": "node",
+          "tactic_text": "intro k",
+          "parent_id": null,
+          "child_ids": [
+            5
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "n",
+                "type": "ℕ"
+              },
+              {
+                "name": "m",
+                "type": "ℕ"
+              }
+            ],
+            "goal": "∀ (k : ℕ), take k [] = []"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "n",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "m",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "k",
+                  "type": "ℕ"
+                }
+              ],
+              "goal": "take k [] = []"
+            }
+          ],
+          "summary": {
+            "directly_used": [],
+            "dependency_maps": [
+              {
+                "α": [
+                  "α"
+                ],
+                "n": [
+                  "n"
+                ],
+                "m": [
+                  "m"
+                ],
+                "k": []
+              }
+            ]
+          }
+        },
+        {
+          "id": 5,
+          "kind": "hole",
+          "hole_id": "hole_0",
+          "parent_id": 4,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "n",
+                "type": "ℕ"
+              },
+              {
+                "name": "m",
+                "type": "ℕ"
+              },
+              {
+                "name": "k",
+                "type": "ℕ"
+              }
+            ],
+            "goal": "take k [] = []"
+          }
+        }
+      ]
+    },
+    {
+      "fragment_id": 5,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_57.json",
+      "decl_name": "prop_57",
+      "root_node_id": 5,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "α",
+            "type": "Type u_1"
+          },
+          {
+            "name": "n",
+            "type": "ℕ"
+          },
+          {
+            "name": "m",
+            "type": "ℕ"
+          },
+          {
+            "name": "k",
+            "type": "ℕ"
+          }
+        ],
+        "goal": "take k [] = []"
+      },
+      "nodes": [
+        {
+          "id": 5,
+          "kind": "node",
+          "tactic_text": "cases k with\n| zero => _*_\n| succ k => _*_",
+          "parent_id": null,
+          "child_ids": [
+            6,
+            7
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "n",
+                "type": "ℕ"
+              },
+              {
+                "name": "m",
+                "type": "ℕ"
+              },
+              {
+                "name": "k",
+                "type": "ℕ"
+              }
+            ],
+            "goal": "take k [] = []"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "n",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "m",
+                  "type": "ℕ"
+                }
+              ],
+              "goal": "take 0 [] = []"
+            },
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "n",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "m",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "k",
+                  "type": "ℕ"
+                }
+              ],
+              "goal": "take (k + 1) [] = []"
+            }
+          ],
+          "summary": {
+            "directly_used": [
+              "k"
+            ],
+            "dependency_maps": [
+              {
+                "α": [
+                  "α"
+                ],
+                "n": [
+                  "n"
+                ],
+                "m": [
+                  "m"
+                ]
+              },
+              {
+                "α": [
+                  "α"
+                ],
+                "n": [
+                  "n"
+                ],
+                "m": [
+                  "m"
+                ],
+                "k": [
+                  "k"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 6,
+          "kind": "leaf",
+          "tactic_text": "rfl",
+          "parent_id": 5,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "n",
+                "type": "ℕ"
+              },
+              {
+                "name": "m",
+                "type": "ℕ"
+              }
+            ],
+            "goal": "take 0 [] = []"
+          },
+          "summary": {
+            "directly_used": [],
+            "dependency_maps": []
+          }
+        },
+        {
+          "id": 7,
+          "kind": "leaf",
+          "tactic_text": "rfl",
+          "parent_id": 5,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "n",
+                "type": "ℕ"
+              },
+              {
+                "name": "m",
+                "type": "ℕ"
+              },
+              {
+                "name": "k",
+                "type": "ℕ"
+              }
+            ],
+            "goal": "take (k + 1) [] = []"
+          },
+          "summary": {
+            "directly_used": [],
+            "dependency_maps": []
+          }
+        }
+      ]
+    },
+    {
+      "fragment_id": 6,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_57.json",
+      "decl_name": "prop_57",
+      "root_node_id": 4,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "α",
+            "type": "Type u_1"
+          },
+          {
+            "name": "n",
+            "type": "ℕ"
+          },
+          {
+            "name": "m",
+            "type": "ℕ"
+          }
+        ],
+        "goal": "∀ (k : ℕ), take k [] = []"
+      },
+      "nodes": [
+        {
+          "id": 4,
+          "kind": "node",
+          "tactic_text": "intro k",
+          "parent_id": null,
+          "child_ids": [
+            5
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "n",
+                "type": "ℕ"
+              },
+              {
+                "name": "m",
+                "type": "ℕ"
+              }
+            ],
+            "goal": "∀ (k : ℕ), take k [] = []"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "n",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "m",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "k",
+                  "type": "ℕ"
+                }
+              ],
+              "goal": "take k [] = []"
+            }
+          ],
+          "summary": {
+            "directly_used": [],
+            "dependency_maps": [
+              {
+                "α": [
+                  "α"
+                ],
+                "n": [
+                  "n"
+                ],
+                "m": [
+                  "m"
+                ],
+                "k": []
+              }
+            ]
+          }
+        },
+        {
+          "id": 5,
+          "kind": "node",
+          "tactic_text": "cases k with\n| zero => _*_\n| succ k => _*_",
+          "parent_id": 4,
+          "child_ids": [
+            6,
+            7
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "n",
+                "type": "ℕ"
+              },
+              {
+                "name": "m",
+                "type": "ℕ"
+              },
+              {
+                "name": "k",
+                "type": "ℕ"
+              }
+            ],
+            "goal": "take k [] = []"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "n",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "m",
+                  "type": "ℕ"
+                }
+              ],
+              "goal": "take 0 [] = []"
+            },
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "n",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "m",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "k",
+                  "type": "ℕ"
+                }
+              ],
+              "goal": "take (k + 1) [] = []"
+            }
+          ],
+          "summary": {
+            "directly_used": [
+              "k"
+            ],
+            "dependency_maps": [
+              {
+                "α": [
+                  "α"
+                ],
+                "n": [
+                  "n"
+                ],
+                "m": [
+                  "m"
+                ]
+              },
+              {
+                "α": [
+                  "α"
+                ],
+                "n": [
+                  "n"
+                ],
+                "m": [
+                  "m"
+                ],
+                "k": [
+                  "k"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 6,
+          "kind": "leaf",
+          "tactic_text": "rfl",
+          "parent_id": 5,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "n",
+                "type": "ℕ"
+              },
+              {
+                "name": "m",
+                "type": "ℕ"
+              }
+            ],
+            "goal": "take 0 [] = []"
+          },
+          "summary": {
+            "directly_used": [],
+            "dependency_maps": []
+          }
+        },
+        {
+          "id": 7,
+          "kind": "leaf",
+          "tactic_text": "rfl",
+          "parent_id": 5,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "n",
+                "type": "ℕ"
+              },
+              {
+                "name": "m",
+                "type": "ℕ"
+              },
+              {
+                "name": "k",
+                "type": "ℕ"
+              }
+            ],
+            "goal": "take (k + 1) [] = []"
+          },
+          "summary": {
+            "directly_used": [],
+            "dependency_maps": []
+          }
+        }
+      ]
+    },
+    {
+      "fragment_id": 7,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_57.json",
+      "decl_name": "prop_57",
+      "root_node_id": 8,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "α",
+            "type": "Type u_1"
+          },
+          {
+            "name": "n",
+            "type": "ℕ"
+          },
+          {
+            "name": "m",
+            "type": "ℕ"
+          },
+          {
+            "name": "take_nil",
+            "type": "∀ (k : ℕ), take k [] = []"
+          }
+        ],
+        "goal": "∀ (k : ℕ), drop k [] = []"
+      },
+      "nodes": [
+        {
+          "id": 8,
+          "kind": "node",
+          "tactic_text": "intro k",
+          "parent_id": null,
+          "child_ids": [
+            9
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "n",
+                "type": "ℕ"
+              },
+              {
+                "name": "m",
+                "type": "ℕ"
+              },
+              {
+                "name": "take_nil",
+                "type": "∀ (k : ℕ), take k [] = []"
+              }
+            ],
+            "goal": "∀ (k : ℕ), drop k [] = []"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "n",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "m",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "take_nil",
+                  "type": "∀ (k : ℕ), take k [] = []"
+                },
+                {
+                  "name": "k",
+                  "type": "ℕ"
+                }
+              ],
+              "goal": "drop k [] = []"
+            }
+          ],
+          "summary": {
+            "directly_used": [],
+            "dependency_maps": [
+              {
+                "α": [
+                  "α"
+                ],
+                "n": [
+                  "n"
+                ],
+                "take_nil": [
+                  "take_nil"
+                ],
+                "m": [
+                  "m"
+                ],
+                "k": []
+              }
+            ]
+          }
+        },
+        {
+          "id": 9,
+          "kind": "hole",
+          "hole_id": "hole_0",
+          "parent_id": 8,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "n",
+                "type": "ℕ"
+              },
+              {
+                "name": "m",
+                "type": "ℕ"
+              },
+              {
+                "name": "take_nil",
+                "type": "∀ (k : ℕ), take k [] = []"
+              },
+              {
+                "name": "k",
+                "type": "ℕ"
+              }
+            ],
+            "goal": "drop k [] = []"
+          }
+        }
+      ]
+    },
+    {
+      "fragment_id": 8,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_57.json",
+      "decl_name": "prop_57",
+      "root_node_id": 9,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "α",
+            "type": "Type u_1"
+          },
+          {
+            "name": "n",
+            "type": "ℕ"
+          },
+          {
+            "name": "m",
+            "type": "ℕ"
+          },
+          {
+            "name": "take_nil",
+            "type": "∀ (k : ℕ), take k [] = []"
+          },
+          {
+            "name": "k",
+            "type": "ℕ"
+          }
+        ],
+        "goal": "drop k [] = []"
+      },
+      "nodes": [
+        {
+          "id": 9,
+          "kind": "node",
+          "tactic_text": "cases k with\n| zero => _*_\n| succ k => _*_",
+          "parent_id": null,
+          "child_ids": [
+            10,
+            11
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "n",
+                "type": "ℕ"
+              },
+              {
+                "name": "m",
+                "type": "ℕ"
+              },
+              {
+                "name": "take_nil",
+                "type": "∀ (k : ℕ), take k [] = []"
+              },
+              {
+                "name": "k",
+                "type": "ℕ"
+              }
+            ],
+            "goal": "drop k [] = []"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "n",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "m",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "take_nil",
+                  "type": "∀ (k : ℕ), take k [] = []"
+                }
+              ],
+              "goal": "drop 0 [] = []"
+            },
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "n",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "m",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "take_nil",
+                  "type": "∀ (k : ℕ), take k [] = []"
+                },
+                {
+                  "name": "k",
+                  "type": "ℕ"
+                }
+              ],
+              "goal": "drop (k + 1) [] = []"
+            }
+          ],
+          "summary": {
+            "directly_used": [
+              "k"
+            ],
+            "dependency_maps": [
+              {
+                "α": [
+                  "α"
+                ],
+                "n": [
+                  "n"
+                ],
+                "m": [
+                  "m"
+                ],
+                "take_nil": [
+                  "take_nil"
+                ]
+              },
+              {
+                "α": [
+                  "α"
+                ],
+                "n": [
+                  "n"
+                ],
+                "take_nil": [
+                  "take_nil"
+                ],
+                "m": [
+                  "m"
+                ],
+                "k": [
+                  "k"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 10,
+          "kind": "leaf",
+          "tactic_text": "rfl",
+          "parent_id": 9,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "n",
+                "type": "ℕ"
+              },
+              {
+                "name": "m",
+                "type": "ℕ"
+              },
+              {
+                "name": "take_nil",
+                "type": "∀ (k : ℕ), take k [] = []"
+              }
+            ],
+            "goal": "drop 0 [] = []"
+          },
+          "summary": {
+            "directly_used": [],
+            "dependency_maps": []
+          }
+        },
+        {
+          "id": 11,
+          "kind": "leaf",
+          "tactic_text": "rfl",
+          "parent_id": 9,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "n",
+                "type": "ℕ"
+              },
+              {
+                "name": "m",
+                "type": "ℕ"
+              },
+              {
+                "name": "take_nil",
+                "type": "∀ (k : ℕ), take k [] = []"
+              },
+              {
+                "name": "k",
+                "type": "ℕ"
+              }
+            ],
+            "goal": "drop (k + 1) [] = []"
+          },
+          "summary": {
+            "directly_used": [],
+            "dependency_maps": []
+          }
+        }
+      ]
+    },
+    {
+      "fragment_id": 9,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_57.json",
+      "decl_name": "prop_57",
+      "root_node_id": 8,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "α",
+            "type": "Type u_1"
+          },
+          {
+            "name": "n",
+            "type": "ℕ"
+          },
+          {
+            "name": "m",
+            "type": "ℕ"
+          },
+          {
+            "name": "take_nil",
+            "type": "∀ (k : ℕ), take k [] = []"
+          }
+        ],
+        "goal": "∀ (k : ℕ), drop k [] = []"
+      },
+      "nodes": [
+        {
+          "id": 8,
+          "kind": "node",
+          "tactic_text": "intro k",
+          "parent_id": null,
+          "child_ids": [
+            9
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "n",
+                "type": "ℕ"
+              },
+              {
+                "name": "m",
+                "type": "ℕ"
+              },
+              {
+                "name": "take_nil",
+                "type": "∀ (k : ℕ), take k [] = []"
+              }
+            ],
+            "goal": "∀ (k : ℕ), drop k [] = []"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "n",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "m",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "take_nil",
+                  "type": "∀ (k : ℕ), take k [] = []"
+                },
+                {
+                  "name": "k",
+                  "type": "ℕ"
+                }
+              ],
+              "goal": "drop k [] = []"
+            }
+          ],
+          "summary": {
+            "directly_used": [],
+            "dependency_maps": [
+              {
+                "α": [
+                  "α"
+                ],
+                "n": [
+                  "n"
+                ],
+                "take_nil": [
+                  "take_nil"
+                ],
+                "m": [
+                  "m"
+                ],
+                "k": []
+              }
+            ]
+          }
+        },
+        {
+          "id": 9,
+          "kind": "node",
+          "tactic_text": "cases k with\n| zero => _*_\n| succ k => _*_",
+          "parent_id": 8,
+          "child_ids": [
+            10,
+            11
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "n",
+                "type": "ℕ"
+              },
+              {
+                "name": "m",
+                "type": "ℕ"
+              },
+              {
+                "name": "take_nil",
+                "type": "∀ (k : ℕ), take k [] = []"
+              },
+              {
+                "name": "k",
+                "type": "ℕ"
+              }
+            ],
+            "goal": "drop k [] = []"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "n",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "m",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "take_nil",
+                  "type": "∀ (k : ℕ), take k [] = []"
+                }
+              ],
+              "goal": "drop 0 [] = []"
+            },
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "n",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "m",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "take_nil",
+                  "type": "∀ (k : ℕ), take k [] = []"
+                },
+                {
+                  "name": "k",
+                  "type": "ℕ"
+                }
+              ],
+              "goal": "drop (k + 1) [] = []"
+            }
+          ],
+          "summary": {
+            "directly_used": [
+              "k"
+            ],
+            "dependency_maps": [
+              {
+                "α": [
+                  "α"
+                ],
+                "n": [
+                  "n"
+                ],
+                "m": [
+                  "m"
+                ],
+                "take_nil": [
+                  "take_nil"
+                ]
+              },
+              {
+                "α": [
+                  "α"
+                ],
+                "n": [
+                  "n"
+                ],
+                "take_nil": [
+                  "take_nil"
+                ],
+                "m": [
+                  "m"
+                ],
+                "k": [
+                  "k"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 10,
+          "kind": "leaf",
+          "tactic_text": "rfl",
+          "parent_id": 9,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "n",
+                "type": "ℕ"
+              },
+              {
+                "name": "m",
+                "type": "ℕ"
+              },
+              {
+                "name": "take_nil",
+                "type": "∀ (k : ℕ), take k [] = []"
+              }
+            ],
+            "goal": "drop 0 [] = []"
+          },
+          "summary": {
+            "directly_used": [],
+            "dependency_maps": []
+          }
+        },
+        {
+          "id": 11,
+          "kind": "leaf",
+          "tactic_text": "rfl",
+          "parent_id": 9,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "n",
+                "type": "ℕ"
+              },
+              {
+                "name": "m",
+                "type": "ℕ"
+              },
+              {
+                "name": "take_nil",
+                "type": "∀ (k : ℕ), take k [] = []"
+              },
+              {
+                "name": "k",
+                "type": "ℕ"
+              }
+            ],
+            "goal": "drop (k + 1) [] = []"
+          },
+          "summary": {
+            "directly_used": [],
+            "dependency_maps": []
+          }
+        }
+      ]
+    },
+    {
+      "fragment_id": 10,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_57.json",
+      "decl_name": "prop_57",
+      "root_node_id": 12,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "α",
+            "type": "Type u_1"
+          },
+          {
+            "name": "x",
+            "type": "α"
+          },
+          {
+            "name": "xs",
+            "type": "List α"
+          },
+          {
+            "name": "ih",
+            "type": "∀ (n m : ℕ), drop n (take m xs) = take (m - n) (drop n xs)"
+          },
+          {
+            "name": "n",
+            "type": "ℕ"
+          },
+          {
+            "name": "m",
+            "type": "ℕ"
+          }
+        ],
+        "goal": "drop n (take m (x :: xs)) = take (m - n) (drop n (x :: xs))"
+      },
+      "nodes": [
+        {
+          "id": 12,
+          "kind": "node",
+          "tactic_text": "cases n with\n| zero => _*_\n| succ n => _*_",
+          "parent_id": null,
+          "child_ids": [
+            13,
+            15
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "x",
+                "type": "α"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (n m : ℕ), drop n (take m xs) = take (m - n) (drop n xs)"
+              },
+              {
+                "name": "n",
+                "type": "ℕ"
+              },
+              {
+                "name": "m",
+                "type": "ℕ"
+              }
+            ],
+            "goal": "drop n (take m (x :: xs)) = take (m - n) (drop n (x :: xs))"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "x",
+                  "type": "α"
+                },
+                {
+                  "name": "xs",
+                  "type": "List α"
+                },
+                {
+                  "name": "ih",
+                  "type": "∀ (n m : ℕ), drop n (take m xs) = take (m - n) (drop n xs)"
+                },
+                {
+                  "name": "m",
+                  "type": "ℕ"
+                }
+              ],
+              "goal": "drop 0 (take m (x :: xs)) = take (m - 0) (drop 0 (x :: xs))"
+            },
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "x",
+                  "type": "α"
+                },
+                {
+                  "name": "xs",
+                  "type": "List α"
+                },
+                {
+                  "name": "ih",
+                  "type": "∀ (n m : ℕ), drop n (take m xs) = take (m - n) (drop n xs)"
+                },
+                {
+                  "name": "m",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "n",
+                  "type": "ℕ"
+                }
+              ],
+              "goal": "drop (n + 1) (take m (x :: xs)) = take (m - (n + 1)) (drop (n + 1) (x :: xs))"
+            }
+          ],
+          "summary": {
+            "directly_used": [
+              "ih",
+              "m",
+              "n"
+            ],
+            "dependency_maps": [
+              {
+                "x": [
+                  "x"
+                ],
+                "α": [
+                  "α"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "m": [
+                  "m"
+                ],
+                "ih": [
+                  "ih"
+                ]
+              },
+              {
+                "x": [
+                  "x"
+                ],
+                "α": [
+                  "α"
+                ],
+                "n": [
+                  "n"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "m": [
+                  "m"
+                ],
+                "ih": [
+                  "ih"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 13,
+          "kind": "leaf",
+          "tactic_text": "simp [drop]",
+          "parent_id": 12,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "x",
+                "type": "α"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (n m : ℕ), drop n (take m xs) = take (m - n) (drop n xs)"
+              },
+              {
+                "name": "m",
+                "type": "ℕ"
+              }
+            ],
+            "goal": "drop 0 (take m (x :: xs)) = take (m - 0) (drop 0 (x :: xs))"
+          },
+          "summary": {
+            "directly_used": [],
+            "dependency_maps": []
+          }
+        },
+        {
+          "id": 15,
+          "kind": "leaf",
+          "tactic_text": "simp [drop, take]",
+          "parent_id": 12,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "x",
+                "type": "α"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (n m : ℕ), drop n (take m xs) = take (m - n) (drop n xs)"
+              },
+              {
+                "name": "m",
+                "type": "ℕ"
+              },
+              {
+                "name": "n",
+                "type": "ℕ"
+              }
+            ],
+            "goal": "drop (n + 1) (take m (x :: xs)) = take (m - (n + 1)) (drop (n + 1) (x :: xs))"
+          },
+          "summary": {
+            "directly_used": [],
+            "dependency_maps": []
+          }
+        }
+      ]
+    },
+    {
+      "fragment_id": 11,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_57.json",
+      "decl_name": "prop_57",
+      "root_node_id": 16,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "α",
+            "type": "Type u_1"
+          },
+          {
+            "name": "x",
+            "type": "α"
+          },
+          {
+            "name": "xs",
+            "type": "List α"
+          },
+          {
+            "name": "ih",
+            "type": "∀ (n m : ℕ), drop n (take m xs) = take (m - n) (drop n xs)"
+          },
+          {
+            "name": "n",
+            "type": "ℕ"
+          },
+          {
+            "name": "m",
+            "type": "ℕ"
+          }
+        ],
+        "goal": "drop (n + 1) (take (m + 1) (x :: xs)) = take (m + 1 - (n + 1)) (drop (n + 1) (x :: xs))"
+      },
+      "nodes": [
+        {
+          "id": 16,
+          "kind": "node",
+          "tactic_text": "simp only [take, drop, Nat.succ_sub_succ_eq_sub]",
+          "parent_id": null,
+          "child_ids": [
+            17
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "x",
+                "type": "α"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (n m : ℕ), drop n (take m xs) = take (m - n) (drop n xs)"
+              },
+              {
+                "name": "n",
+                "type": "ℕ"
+              },
+              {
+                "name": "m",
+                "type": "ℕ"
+              }
+            ],
+            "goal": "drop (n + 1) (take (m + 1) (x :: xs)) = take (m + 1 - (n + 1)) (drop (n + 1) (x :: xs))"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "x",
+                  "type": "α"
+                },
+                {
+                  "name": "xs",
+                  "type": "List α"
+                },
+                {
+                  "name": "ih",
+                  "type": "∀ (n m : ℕ), drop n (take m xs) = take (m - n) (drop n xs)"
+                },
+                {
+                  "name": "n",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "m",
+                  "type": "ℕ"
+                }
+              ],
+              "goal": "drop n (take m xs) = take (m - n) (drop n xs)"
+            }
+          ],
+          "summary": {
+            "directly_used": [],
+            "dependency_maps": [
+              {
+                "x": [
+                  "x"
+                ],
+                "α": [
+                  "α"
+                ],
+                "n": [
+                  "n"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "m": [
+                  "m"
+                ],
+                "ih": [
+                  "ih"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 17,
+          "kind": "hole",
+          "hole_id": "hole_0",
+          "parent_id": 16,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "x",
+                "type": "α"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (n m : ℕ), drop n (take m xs) = take (m - n) (drop n xs)"
+              },
+              {
+                "name": "n",
+                "type": "ℕ"
+              },
+              {
+                "name": "m",
+                "type": "ℕ"
+              }
+            ],
+            "goal": "drop n (take m xs) = take (m - n) (drop n xs)"
+          }
+        }
+      ]
+    },
+    {
+      "fragment_id": 12,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_57.json",
+      "decl_name": "prop_57",
+      "root_node_id": 17,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "α",
+            "type": "Type u_1"
+          },
+          {
+            "name": "x",
+            "type": "α"
+          },
+          {
+            "name": "xs",
+            "type": "List α"
+          },
+          {
+            "name": "ih",
+            "type": "∀ (n m : ℕ), drop n (take m xs) = take (m - n) (drop n xs)"
+          },
+          {
+            "name": "n",
+            "type": "ℕ"
+          },
+          {
+            "name": "m",
+            "type": "ℕ"
+          }
+        ],
+        "goal": "drop (n + 1) (take (m + 1) (x :: xs)) = take (m + 1 - (n + 1)) (drop (n + 1) (x :: xs))"
+      },
+      "nodes": [
+        {
+          "id": 17,
+          "kind": "leaf",
+          "tactic_text": "exact ih n m",
+          "parent_id": null,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "x",
+                "type": "α"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (n m : ℕ), drop n (take m xs) = take (m - n) (drop n xs)"
+              },
+              {
+                "name": "n",
+                "type": "ℕ"
+              },
+              {
+                "name": "m",
+                "type": "ℕ"
+              }
+            ],
+            "goal": "drop (n + 1) (take (m + 1) (x :: xs)) = take (m + 1 - (n + 1)) (drop (n + 1) (x :: xs))"
+          },
+          "summary": {
+            "directly_used": [
+              "ih",
+              "m",
+              "n"
+            ],
+            "dependency_maps": []
+          }
+        }
+      ]
+    },
+    {
+      "fragment_id": 13,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_57.json",
+      "decl_name": "prop_57",
+      "root_node_id": 14,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "α",
+            "type": "Type u_1"
+          },
+          {
+            "name": "x",
+            "type": "α"
+          },
+          {
+            "name": "xs",
+            "type": "List α"
+          },
+          {
+            "name": "ih",
+            "type": "∀ (n m : ℕ), drop n (take m xs) = take (m - n) (drop n xs)"
+          },
+          {
+            "name": "m",
+            "type": "ℕ"
+          },
+          {
+            "name": "n",
+            "type": "ℕ"
+          }
+        ],
+        "goal": "drop (n + 1) (take m (x :: xs)) = take (m - (n + 1)) (drop (n + 1) (x :: xs))"
+      },
+      "nodes": [
+        {
+          "id": 14,
+          "kind": "node",
+          "tactic_text": "cases m with\n| zero => _*_\n| succ m => _*_",
+          "parent_id": null,
+          "child_ids": [
+            15,
+            17
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "x",
+                "type": "α"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (n m : ℕ), drop n (take m xs) = take (m - n) (drop n xs)"
+              },
+              {
+                "name": "m",
+                "type": "ℕ"
+              },
+              {
+                "name": "n",
+                "type": "ℕ"
+              }
+            ],
+            "goal": "drop (n + 1) (take m (x :: xs)) = take (m - (n + 1)) (drop (n + 1) (x :: xs))"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "x",
+                  "type": "α"
+                },
+                {
+                  "name": "xs",
+                  "type": "List α"
+                },
+                {
+                  "name": "ih",
+                  "type": "∀ (n m : ℕ), drop n (take m xs) = take (m - n) (drop n xs)"
+                },
+                {
+                  "name": "n",
+                  "type": "ℕ"
+                }
+              ],
+              "goal": "drop (n + 1) (take 0 (x :: xs)) = take (0 - (n + 1)) (drop (n + 1) (x :: xs))"
+            },
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "x",
+                  "type": "α"
+                },
+                {
+                  "name": "xs",
+                  "type": "List α"
+                },
+                {
+                  "name": "ih",
+                  "type": "∀ (n m : ℕ), drop n (take m xs) = take (m - n) (drop n xs)"
+                },
+                {
+                  "name": "n",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "m",
+                  "type": "ℕ"
+                }
+              ],
+              "goal": "drop (n + 1) (take (m + 1) (x :: xs)) = take (m + 1 - (n + 1)) (drop (n + 1) (x :: xs))"
+            }
+          ],
+          "summary": {
+            "directly_used": [
+              "ih",
+              "m",
+              "n"
+            ],
+            "dependency_maps": [
+              {
+                "x": [
+                  "x"
+                ],
+                "α": [
+                  "α"
+                ],
+                "n": [
+                  "n"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "ih": [
+                  "ih"
+                ]
+              },
+              {
+                "x": [
+                  "x"
+                ],
+                "α": [
+                  "α"
+                ],
+                "n": [
+                  "n"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "m": [
+                  "m"
+                ],
+                "ih": [
+                  "ih"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 15,
+          "kind": "leaf",
+          "tactic_text": "simp [drop, take]",
+          "parent_id": 14,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "x",
+                "type": "α"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (n m : ℕ), drop n (take m xs) = take (m - n) (drop n xs)"
+              },
+              {
+                "name": "n",
+                "type": "ℕ"
+              }
+            ],
+            "goal": "drop (n + 1) (take 0 (x :: xs)) = take (0 - (n + 1)) (drop (n + 1) (x :: xs))"
+          },
+          "summary": {
+            "directly_used": [],
+            "dependency_maps": []
+          }
+        },
+        {
+          "id": 17,
+          "kind": "leaf",
+          "tactic_text": "exact ih n m",
+          "parent_id": 14,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "x",
+                "type": "α"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (n m : ℕ), drop n (take m xs) = take (m - n) (drop n xs)"
+              },
+              {
+                "name": "n",
+                "type": "ℕ"
+              },
+              {
+                "name": "m",
+                "type": "ℕ"
+              }
+            ],
+            "goal": "drop (n + 1) (take (m + 1) (x :: xs)) = take (m + 1 - (n + 1)) (drop (n + 1) (x :: xs))"
+          },
+          "summary": {
+            "directly_used": [
+              "ih",
+              "m",
+              "n"
+            ],
+            "dependency_maps": []
+          }
+        }
+      ]
+    }
+  ]
+}

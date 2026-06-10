@@ -1,0 +1,31 @@
+{
+  "name": "prop_47",
+  "statement": "theorem prop_47 (a: MyTree α) :\n  (height' (mirror a) = height' a) :=",
+  "root_tactic_id": 0,
+  "tactic_nodes": [
+    {
+      "id": 0,
+      "tactic_text": "sorry",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "α",
+            "type": "Type"
+          },
+          {
+            "name": "a",
+            "type": "MyTree α"
+          }
+        ],
+        "goal": "height' (mirror a) = height' a"
+      },
+      "output_obligations": [],
+      "summary": {
+        "directly_used": [],
+        "dependency_maps": []
+      },
+      "parent_id": null,
+      "child_ids": []
+    }
+  ]
+}

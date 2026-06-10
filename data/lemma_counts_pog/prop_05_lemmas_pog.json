@@ -1,0 +1,56 @@
+{
+  "lemmas": [
+    {
+      "fragment_id": 0,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_05.json",
+      "decl_name": "prop_05",
+      "premises": [],
+      "body": "(h : n = x) → (count n xs).succ = count n (x :: xs)",
+      "conclusion": "n = x → (count n xs).succ = count n (x :: xs)",
+      "statement": "(h : n = x) (h1 : (count n xs).succ = count n (x :: xs)) : n = x → (count n xs).succ = count n (x :: xs)"
+    },
+    {
+      "fragment_id": 1,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_05.json",
+      "decl_name": "prop_05",
+      "premises": [
+        "h : n = x"
+      ],
+      "body": "(count n xs).succ = count n (n :: xs)",
+      "conclusion": "(count n xs).succ = count n (x :: xs)",
+      "statement": "(h : n = x) (h1 : (count n xs).succ = count n (n :: xs)) : (count n xs).succ = count n (x :: xs)"
+    },
+    {
+      "fragment_id": 2,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_05.json",
+      "decl_name": "prop_05",
+      "premises": [
+        "n : ℕ",
+        "x : ℕ"
+      ],
+      "body": "(h : n = x) → (count n xs).succ = count n (n :: xs)",
+      "conclusion": "n = x → (count n xs).succ = count n (x :: xs)",
+      "statement": "(n : ℕ) (x : ℕ) (h : n = x) (h1 : (count n xs).succ = count n (n :: xs)) : n = x → (count n xs).succ = count n (x :: xs)"
+    },
+    {
+      "fragment_id": 3,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_05.json",
+      "decl_name": "prop_05",
+      "premises": [],
+      "body": "True",
+      "conclusion": "n = x → (count n xs).succ = count n (x :: xs)",
+      "statement": "n = x → (count n xs).succ = count n (x :: xs)"
+    },
+    {
+      "fragment_id": 4,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_05.json",
+      "decl_name": "prop_05",
+      "premises": [
+        "h : n = x"
+      ],
+      "body": "True",
+      "conclusion": "(count n xs).succ = count n (x :: xs)",
+      "statement": "(h : n = x) : (count n xs).succ = count n (x :: xs)"
+    }
+  ]
+}

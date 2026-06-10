@@ -1,0 +1,705 @@
+{
+  "name": "prop_29",
+  "statement": "theorem prop_29 (x: Nat) (xs: List Nat) : x ∈ ins1 x xs :=",
+  "root_tactic_id": 0,
+  "tactic_nodes": [
+    {
+      "id": 0,
+      "tactic_text": "induction xs with\n| nil => _*_\n| cons y ys ih => _*_",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "xs",
+            "type": "List ℕ"
+          }
+        ],
+        "goal": "x ∈ ins1 x xs"
+      },
+      "output_obligations": [
+        {
+          "hypotheses": [
+            {
+              "name": "x",
+              "type": "ℕ"
+            }
+          ],
+          "goal": "x ∈ ins1 x []"
+        },
+        {
+          "hypotheses": [
+            {
+              "name": "x",
+              "type": "ℕ"
+            },
+            {
+              "name": "y",
+              "type": "ℕ"
+            },
+            {
+              "name": "ys",
+              "type": "List ℕ"
+            },
+            {
+              "name": "ih",
+              "type": "x ∈ ins1 x ys"
+            }
+          ],
+          "goal": "x ∈ ins1 x (y :: ys)"
+        }
+      ],
+      "summary": {
+        "directly_used": [
+          "xs"
+        ],
+        "dependency_maps": [
+          {
+            "x": [
+              "x"
+            ]
+          },
+          {
+            "x": [
+              "x"
+            ],
+            "y": [
+              "xs"
+            ],
+            "ys": [
+              "xs"
+            ],
+            "ih": [
+              "x"
+            ]
+          }
+        ]
+      },
+      "parent_id": null,
+      "child_ids": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": 1,
+      "tactic_text": "simp [ins1]",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "x",
+            "type": "ℕ"
+          }
+        ],
+        "goal": "x ∈ ins1 x []"
+      },
+      "output_obligations": [],
+      "summary": {
+        "directly_used": [],
+        "dependency_maps": []
+      },
+      "parent_id": 0,
+      "child_ids": []
+    },
+    {
+      "id": 2,
+      "tactic_text": "simp [ins1]",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "y",
+            "type": "ℕ"
+          },
+          {
+            "name": "ys",
+            "type": "List ℕ"
+          },
+          {
+            "name": "ih",
+            "type": "x ∈ ins1 x ys"
+          }
+        ],
+        "goal": "x ∈ ins1 x (y :: ys)"
+      },
+      "output_obligations": [
+        {
+          "hypotheses": [
+            {
+              "name": "x",
+              "type": "ℕ"
+            },
+            {
+              "name": "y",
+              "type": "ℕ"
+            },
+            {
+              "name": "ys",
+              "type": "List ℕ"
+            },
+            {
+              "name": "ih",
+              "type": "x ∈ ins1 x ys"
+            }
+          ],
+          "goal": "x ∈ if x = y then y :: ys else y :: ins1 x ys"
+        }
+      ],
+      "summary": {
+        "directly_used": [],
+        "dependency_maps": [
+          {
+            "x": [
+              "x"
+            ],
+            "y": [
+              "y"
+            ],
+            "ys": [
+              "ys"
+            ],
+            "ih": [
+              "ih"
+            ]
+          }
+        ]
+      },
+      "parent_id": 0,
+      "child_ids": [
+        3
+      ]
+    },
+    {
+      "id": 3,
+      "tactic_text": "split_ifs with h",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "y",
+            "type": "ℕ"
+          },
+          {
+            "name": "ys",
+            "type": "List ℕ"
+          },
+          {
+            "name": "ih",
+            "type": "x ∈ ins1 x ys"
+          }
+        ],
+        "goal": "x ∈ if x = y then y :: ys else y :: ins1 x ys"
+      },
+      "output_obligations": [
+        {
+          "hypotheses": [
+            {
+              "name": "x",
+              "type": "ℕ"
+            },
+            {
+              "name": "y",
+              "type": "ℕ"
+            },
+            {
+              "name": "ys",
+              "type": "List ℕ"
+            },
+            {
+              "name": "ih",
+              "type": "x ∈ ins1 x ys"
+            },
+            {
+              "name": "h",
+              "type": "x = y"
+            }
+          ],
+          "goal": "x ∈ y :: ys"
+        },
+        {
+          "hypotheses": [
+            {
+              "name": "x",
+              "type": "ℕ"
+            },
+            {
+              "name": "y",
+              "type": "ℕ"
+            },
+            {
+              "name": "ys",
+              "type": "List ℕ"
+            },
+            {
+              "name": "ih",
+              "type": "x ∈ ins1 x ys"
+            },
+            {
+              "name": "h",
+              "type": "¬x = y"
+            }
+          ],
+          "goal": "x ∈ y :: ins1 x ys"
+        }
+      ],
+      "summary": {
+        "directly_used": [],
+        "dependency_maps": [
+          {
+            "x": [
+              "x"
+            ],
+            "y": [
+              "y"
+            ],
+            "ys": [
+              "ys"
+            ],
+            "ih": [
+              "ih"
+            ],
+            "h": [
+              "x",
+              "y"
+            ]
+          },
+          {
+            "x": [
+              "x"
+            ],
+            "y": [
+              "y"
+            ],
+            "ys": [
+              "ys"
+            ],
+            "ih": [
+              "ih"
+            ],
+            "h": [
+              "x",
+              "y"
+            ]
+          }
+        ]
+      },
+      "parent_id": 2,
+      "child_ids": [
+        4,
+        7
+      ]
+    },
+    {
+      "id": 4,
+      "tactic_text": "simp",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "y",
+            "type": "ℕ"
+          },
+          {
+            "name": "ys",
+            "type": "List ℕ"
+          },
+          {
+            "name": "ih",
+            "type": "x ∈ ins1 x ys"
+          },
+          {
+            "name": "h",
+            "type": "x = y"
+          }
+        ],
+        "goal": "x ∈ y :: ys"
+      },
+      "output_obligations": [
+        {
+          "hypotheses": [
+            {
+              "name": "x",
+              "type": "ℕ"
+            },
+            {
+              "name": "y",
+              "type": "ℕ"
+            },
+            {
+              "name": "ys",
+              "type": "List ℕ"
+            },
+            {
+              "name": "ih",
+              "type": "x ∈ ins1 x ys"
+            },
+            {
+              "name": "h",
+              "type": "x = y"
+            }
+          ],
+          "goal": "x = y ∨ x ∈ ys"
+        }
+      ],
+      "summary": {
+        "directly_used": [],
+        "dependency_maps": [
+          {
+            "x": [
+              "x"
+            ],
+            "y": [
+              "y"
+            ],
+            "ys": [
+              "ys"
+            ],
+            "ih": [
+              "ih"
+            ],
+            "h": [
+              "h"
+            ]
+          }
+        ]
+      },
+      "parent_id": 3,
+      "child_ids": [
+        5
+      ]
+    },
+    {
+      "id": 5,
+      "tactic_text": "left",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "y",
+            "type": "ℕ"
+          },
+          {
+            "name": "ys",
+            "type": "List ℕ"
+          },
+          {
+            "name": "ih",
+            "type": "x ∈ ins1 x ys"
+          },
+          {
+            "name": "h",
+            "type": "x = y"
+          }
+        ],
+        "goal": "x = y ∨ x ∈ ys"
+      },
+      "output_obligations": [
+        {
+          "hypotheses": [
+            {
+              "name": "x",
+              "type": "ℕ"
+            },
+            {
+              "name": "y",
+              "type": "ℕ"
+            },
+            {
+              "name": "ys",
+              "type": "List ℕ"
+            },
+            {
+              "name": "ih",
+              "type": "x ∈ ins1 x ys"
+            },
+            {
+              "name": "h",
+              "type": "x = y"
+            }
+          ],
+          "goal": "x = y"
+        }
+      ],
+      "summary": {
+        "directly_used": [],
+        "dependency_maps": [
+          {
+            "x": [
+              "x"
+            ],
+            "y": [
+              "y"
+            ],
+            "ys": [
+              "ys"
+            ],
+            "ih": [
+              "ih"
+            ],
+            "h": [
+              "h"
+            ]
+          }
+        ]
+      },
+      "parent_id": 4,
+      "child_ids": [
+        6
+      ]
+    },
+    {
+      "id": 6,
+      "tactic_text": "exact h",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "y",
+            "type": "ℕ"
+          },
+          {
+            "name": "ys",
+            "type": "List ℕ"
+          },
+          {
+            "name": "ih",
+            "type": "x ∈ ins1 x ys"
+          },
+          {
+            "name": "h",
+            "type": "x = y"
+          }
+        ],
+        "goal": "x = y"
+      },
+      "output_obligations": [],
+      "summary": {
+        "directly_used": [
+          "h"
+        ],
+        "dependency_maps": []
+      },
+      "parent_id": 5,
+      "child_ids": []
+    },
+    {
+      "id": 7,
+      "tactic_text": "simp",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "y",
+            "type": "ℕ"
+          },
+          {
+            "name": "ys",
+            "type": "List ℕ"
+          },
+          {
+            "name": "ih",
+            "type": "x ∈ ins1 x ys"
+          },
+          {
+            "name": "h",
+            "type": "¬x = y"
+          }
+        ],
+        "goal": "x ∈ y :: ins1 x ys"
+      },
+      "output_obligations": [
+        {
+          "hypotheses": [
+            {
+              "name": "x",
+              "type": "ℕ"
+            },
+            {
+              "name": "y",
+              "type": "ℕ"
+            },
+            {
+              "name": "ys",
+              "type": "List ℕ"
+            },
+            {
+              "name": "ih",
+              "type": "x ∈ ins1 x ys"
+            },
+            {
+              "name": "h",
+              "type": "¬x = y"
+            }
+          ],
+          "goal": "x = y ∨ x ∈ ins1 x ys"
+        }
+      ],
+      "summary": {
+        "directly_used": [],
+        "dependency_maps": [
+          {
+            "x": [
+              "x"
+            ],
+            "y": [
+              "y"
+            ],
+            "ys": [
+              "ys"
+            ],
+            "ih": [
+              "ih"
+            ],
+            "h": [
+              "h"
+            ]
+          }
+        ]
+      },
+      "parent_id": 3,
+      "child_ids": [
+        8
+      ]
+    },
+    {
+      "id": 8,
+      "tactic_text": "right",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "y",
+            "type": "ℕ"
+          },
+          {
+            "name": "ys",
+            "type": "List ℕ"
+          },
+          {
+            "name": "ih",
+            "type": "x ∈ ins1 x ys"
+          },
+          {
+            "name": "h",
+            "type": "¬x = y"
+          }
+        ],
+        "goal": "x = y ∨ x ∈ ins1 x ys"
+      },
+      "output_obligations": [
+        {
+          "hypotheses": [
+            {
+              "name": "x",
+              "type": "ℕ"
+            },
+            {
+              "name": "y",
+              "type": "ℕ"
+            },
+            {
+              "name": "ys",
+              "type": "List ℕ"
+            },
+            {
+              "name": "ih",
+              "type": "x ∈ ins1 x ys"
+            },
+            {
+              "name": "h",
+              "type": "¬x = y"
+            }
+          ],
+          "goal": "x ∈ ins1 x ys"
+        }
+      ],
+      "summary": {
+        "directly_used": [],
+        "dependency_maps": [
+          {
+            "x": [
+              "x"
+            ],
+            "y": [
+              "y"
+            ],
+            "ys": [
+              "ys"
+            ],
+            "ih": [
+              "ih"
+            ],
+            "h": [
+              "h"
+            ]
+          }
+        ]
+      },
+      "parent_id": 7,
+      "child_ids": [
+        9
+      ]
+    },
+    {
+      "id": 9,
+      "tactic_text": "exact ih",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "y",
+            "type": "ℕ"
+          },
+          {
+            "name": "ys",
+            "type": "List ℕ"
+          },
+          {
+            "name": "ih",
+            "type": "x ∈ ins1 x ys"
+          },
+          {
+            "name": "h",
+            "type": "¬x = y"
+          }
+        ],
+        "goal": "x ∈ ins1 x ys"
+      },
+      "output_obligations": [],
+      "summary": {
+        "directly_used": [
+          "ih"
+        ],
+        "dependency_maps": []
+      },
+      "parent_id": 8,
+      "child_ids": []
+    }
+  ]
+}

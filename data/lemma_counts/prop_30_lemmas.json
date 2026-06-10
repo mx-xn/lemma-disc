@@ -1,0 +1,69 @@
+{
+  "lemmas": [
+    {
+      "fragment_id": 0,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_30.json",
+      "decl_name": "prop_30",
+      "premises": [
+        "ih : x ∈ ins x ys"
+      ],
+      "body": "True",
+      "conclusion": "x ∈ if x < y then x :: y :: ys else y :: ins x ys",
+      "statement": "(ih : x ∈ ins x ys) : x ∈ if x < y then x :: y :: ys else y :: ins x ys"
+    },
+    {
+      "fragment_id": 1,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_30.json",
+      "decl_name": "prop_30",
+      "premises": [
+        "ih : x ∈ ins x ys"
+      ],
+      "body": "True",
+      "conclusion": "x = y ∨ x ∈ ins x ys",
+      "statement": "(ih : x ∈ ins x ys) : x = y ∨ x ∈ ins x ys"
+    },
+    {
+      "fragment_id": 2,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_30.json",
+      "decl_name": "prop_30",
+      "premises": [],
+      "body": "x ∈ ins x ys",
+      "conclusion": "x ∈ y :: ins x ys",
+      "statement": "(h1 : x ∈ ins x ys) : x ∈ y :: ins x ys"
+    },
+    {
+      "fragment_id": 3,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_30.json",
+      "decl_name": "prop_30",
+      "premises": [
+        "ih : x ∈ ins x ys"
+      ],
+      "body": "True",
+      "conclusion": "x ∈ y :: ins x ys",
+      "statement": "(ih : x ∈ ins x ys) : x ∈ y :: ins x ys"
+    },
+    {
+      "fragment_id": 4,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_30.json",
+      "decl_name": "prop_30",
+      "premises": [
+        "ih : x ∈ ins x ys"
+      ],
+      "body": "True",
+      "conclusion": "x ∈ ins x (y :: ys)",
+      "statement": "(ih : x ∈ ins x ys) : x ∈ ins x (y :: ys)"
+    },
+    {
+      "fragment_id": 5,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_30.json",
+      "decl_name": "prop_30",
+      "premises": [
+        "x : ℕ",
+        "xs : List ℕ"
+      ],
+      "body": "True",
+      "conclusion": "x ∈ ins x xs",
+      "statement": "(x : ℕ) (xs : List ℕ) : x ∈ ins x xs"
+    }
+  ]
+}

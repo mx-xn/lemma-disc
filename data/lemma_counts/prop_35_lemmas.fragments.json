@@ -1,0 +1,158 @@
+{
+  "fragments": [
+    {
+      "fragment_id": 0,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_35.json",
+      "decl_name": "prop_35",
+      "root_node_id": 0,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "α",
+            "type": "Type u_1"
+          },
+          {
+            "name": "xs",
+            "type": "List α"
+          }
+        ],
+        "goal": "dropWhile (fun x => decide False) xs = xs"
+      },
+      "nodes": [
+        {
+          "id": 0,
+          "kind": "node",
+          "tactic_text": "induction xs with\n| nil => _*_\n| cons x xs ih => _*_",
+          "parent_id": null,
+          "child_ids": [
+            1,
+            2
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              }
+            ],
+            "goal": "dropWhile (fun x => decide False) xs = xs"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                }
+              ],
+              "goal": "dropWhile (fun x => decide False) [] = []"
+            },
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "x",
+                  "type": "α"
+                },
+                {
+                  "name": "xs",
+                  "type": "List α"
+                },
+                {
+                  "name": "ih",
+                  "type": "dropWhile (fun x => decide False) xs = xs"
+                }
+              ],
+              "goal": "dropWhile (fun x => decide False) (x :: xs) = x :: xs"
+            }
+          ],
+          "summary": {
+            "directly_used": [
+              "xs"
+            ],
+            "dependency_maps": [
+              {
+                "α": [
+                  "α"
+                ]
+              },
+              {
+                "α": [
+                  "α"
+                ],
+                "x": [
+                  "α"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "ih": [
+                  "xs"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 1,
+          "kind": "leaf",
+          "tactic_text": "simp [dropWhile]",
+          "parent_id": 0,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              }
+            ],
+            "goal": "dropWhile (fun x => decide False) [] = []"
+          },
+          "summary": {
+            "directly_used": [],
+            "dependency_maps": []
+          }
+        },
+        {
+          "id": 2,
+          "kind": "leaf",
+          "tactic_text": "simp [dropWhile]",
+          "parent_id": 0,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "x",
+                "type": "α"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              },
+              {
+                "name": "ih",
+                "type": "dropWhile (fun x => decide False) xs = xs"
+              }
+            ],
+            "goal": "dropWhile (fun x => decide False) (x :: xs) = x :: xs"
+          },
+          "summary": {
+            "directly_used": [],
+            "dependency_maps": []
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+[1/4] Building POG...
+[info] welcome to sbt 1.10.1 (JetBrains s.r.o. Java 21.0.6)
+[info] loading project definition from /nas/lemma-disc/scala-core/project
+[info] loading settings for project scala-core from build.sbt ...
+[info] set current project to scala-core (in build file:/nas/lemma-disc/scala-core/)
+[info] running Serializer /tmp/lemma_trace_jbu2Lk.json /tmp/lemma_pog_71dMrQ.json
+[success] Total time: 2 s, completed Jun 4, 2026, 12:43:15 AM
+[2/4] Enumerating fragments...
+[info] welcome to sbt 1.10.1 (JetBrains s.r.o. Java 21.0.6)
+[info] loading project definition from /nas/lemma-disc/scala-core/project
+[info] loading settings for project scala-core from build.sbt ...
+[info] set current project to scala-core (in build file:/nas/lemma-disc/scala-core/)
+[info] running Serializer --timeout 60000 /tmp/lemma_pog_71dMrQ.json /tmp/lemma_segments_RvglZg.json
+[success] Total time: 6 s, completed Jun 4, 2026, 12:43:25 AM
+[2/4] Got 27 fragment(s).
+[3/4] Running support minimization...
+[info] welcome to sbt 1.10.1 (JetBrains s.r.o. Java 21.0.6)
+[info] loading project definition from /nas/lemma-disc/scala-core/project
+[info] loading settings for project scala-core from build.sbt ...
+[info] set current project to scala-core (in build file:/nas/lemma-disc/scala-core/)
+[info] running Serializer /tmp/lemma_segments_RvglZg.json /tmp/lemma_out_Mg3eXn.json
+[success] Total time: 1 s, completed Jun 4, 2026, 12:43:30 AM
+[4/4] Deduplicating lemmas...
+Deduplicated: 27 → 14 lemmas (13 dropped)
+[4/4] Lemmas    written to /nas/lemma-disc/data/lemma_counts_pog/prop_57_lemmas_pog.json
+[4/4] Fragments written to /nas/lemma-disc/data/lemma_counts_pog/prop_57_lemmas_pog.fragments.json
+--- 14 lemma statement(s) ---
+[0] prop_57: (take_nil : ∀ (k : ℕ), take k [] = []) (h1 : drop n (take m xs) = take (m - n) (drop n xs)) : drop n (take m xs) = take (m - n) (drop n xs)
+[1] prop_57: (drop_nil : ∀ (k : ℕ), drop k [] = []) (h1 : drop n (take m xs) = take (m - n) (drop n xs)) : drop n (take m xs) = take (m - n) (drop n xs)
+[2] prop_57: (take_nil : ∀ (k : ℕ), take k [] = []) (drop_nil : ∀ (k : ℕ), drop k [] = []) (h1 : drop n (take m xs) = take (m - n) (drop n xs)) : drop n (take m xs) = take (m - n) (drop n xs)
+[3] prop_57: drop n (take m xs) = take (m - n) (drop n xs)
+[4] prop_57: (k : ℕ) (h1 : take k [] = []) : ∀ (k : ℕ), take k [] = []
+[5] prop_57: (k : ℕ) : take k [] = []
+[6] prop_57: ∀ (k : ℕ), take k [] = []
+[7] prop_57: (k : ℕ) (h1 : drop k [] = []) : ∀ (k : ℕ), drop k [] = []
+[8] prop_57: (k : ℕ) : drop k [] = []
+[9] prop_57: ∀ (k : ℕ), drop k [] = []
+[10] prop_57: (ih : ∀ (n m : ℕ), drop n (take m xs) = take (m - n) (drop n xs)) (n : ℕ) (m : ℕ) : drop n (take m (x :: xs)) = take (m - n) (drop n (x :: xs))
+[11] prop_57: (h1 : drop n (take m xs) = take (m - n) (drop n xs)) : drop (n + 1) (take (m + 1) (x :: xs)) = take (m + 1 - (n + 1)) (drop (n + 1) (x :: xs))
+[12] prop_57: (ih : ∀ (n m : ℕ), drop n (take m xs) = take (m - n) (drop n xs)) (n : ℕ) (m : ℕ) : drop (n + 1) (take (m + 1) (x :: xs)) = take (m + 1 - (n + 1)) (drop (n + 1) (x :: xs))
+[13] prop_57: (ih : ∀ (n m : ℕ), drop n (take m xs) = take (m - n) (drop n xs)) (m : ℕ) (n : ℕ) : drop (n + 1) (take m (x :: xs)) = take (m - (n + 1)) (drop (n + 1) (x :: xs))

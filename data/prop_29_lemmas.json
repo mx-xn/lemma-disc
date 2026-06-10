@@ -1,0 +1,104 @@
+{
+  "lemmas": [
+    {
+      "fragment_id": 0,
+      "source_file": "digestion/tests/snapshots/Examples__prop_29.json",
+      "decl_name": "prop_29",
+      "premises": [
+        "x : ℕ",
+        "y : ℕ",
+        "ih : x ∈ ins1 x ys"
+      ],
+      "body": "True",
+      "conclusion": "x ∈ if x = y then y :: ys else y :: ins1 x ys",
+      "statement": "(x : ℕ) (y : ℕ) (ih : x ∈ ins1 x ys) : x ∈ if x = y then y :: ys else y :: ins1 x ys"
+    },
+    {
+      "fragment_id": 1,
+      "source_file": "digestion/tests/snapshots/Examples__prop_29.json",
+      "decl_name": "prop_29",
+      "premises": [],
+      "body": "x ∈ ins1 x ys",
+      "conclusion": "x ∈ y :: ins1 x ys",
+      "statement": "(h1 : x ∈ ins1 x ys) : x ∈ y :: ins1 x ys"
+    },
+    {
+      "fragment_id": 2,
+      "source_file": "digestion/tests/snapshots/Examples__prop_29.json",
+      "decl_name": "prop_29",
+      "premises": [
+        "h : x = y"
+      ],
+      "body": "True",
+      "conclusion": "x = y ∨ x ∈ ys",
+      "statement": "(h : x = y) : x = y ∨ x ∈ ys"
+    },
+    {
+      "fragment_id": 3,
+      "source_file": "digestion/tests/snapshots/Examples__prop_29.json",
+      "decl_name": "prop_29",
+      "premises": [
+        "ih : x ∈ ins1 x ys"
+      ],
+      "body": "True",
+      "conclusion": "x = y ∨ x ∈ ins1 x ys",
+      "statement": "(ih : x ∈ ins1 x ys) : x = y ∨ x ∈ ins1 x ys"
+    },
+    {
+      "fragment_id": 4,
+      "source_file": "digestion/tests/snapshots/Examples__prop_29.json",
+      "decl_name": "prop_29",
+      "premises": [
+        "ih : x ∈ ins1 x ys"
+      ],
+      "body": "True",
+      "conclusion": "x ∈ y :: ins1 x ys",
+      "statement": "(ih : x ∈ ins1 x ys) : x ∈ y :: ins1 x ys"
+    },
+    {
+      "fragment_id": 5,
+      "source_file": "digestion/tests/snapshots/Examples__prop_29.json",
+      "decl_name": "prop_29",
+      "premises": [
+        "h : x = y"
+      ],
+      "body": "True",
+      "conclusion": "x ∈ y :: ys",
+      "statement": "(h : x = y) : x ∈ y :: ys"
+    },
+    {
+      "fragment_id": 6,
+      "source_file": "digestion/tests/snapshots/Examples__prop_29.json",
+      "decl_name": "prop_29",
+      "premises": [],
+      "body": "x = y",
+      "conclusion": "x ∈ y :: ys",
+      "statement": "(h1 : x = y) : x ∈ y :: ys"
+    },
+    {
+      "fragment_id": 7,
+      "source_file": "digestion/tests/snapshots/Examples__prop_29.json",
+      "decl_name": "prop_29",
+      "premises": [
+        "x : ℕ",
+        "xs : List ℕ"
+      ],
+      "body": "True",
+      "conclusion": "x ∈ ins1 x xs",
+      "statement": "(x : ℕ) (xs : List ℕ) : x ∈ ins1 x xs"
+    },
+    {
+      "fragment_id": 8,
+      "source_file": "digestion/tests/snapshots/Examples__prop_29.json",
+      "decl_name": "prop_29",
+      "premises": [
+        "x : ℕ",
+        "y : ℕ",
+        "ih : x ∈ ins1 x ys"
+      ],
+      "body": "True",
+      "conclusion": "x ∈ ins1 x (y :: ys)",
+      "statement": "(x : ℕ) (y : ℕ) (ih : x ∈ ins1 x ys) : x ∈ ins1 x (y :: ys)"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+[1/4] Building POG...
+[info] welcome to sbt 1.10.1 (JetBrains s.r.o. Java 21.0.6)
+[info] loading project definition from /nas/lemma-disc/scala-core/project
+[info] loading settings for project scala-core from build.sbt ...
+[info] set current project to scala-core (in build file:/nas/lemma-disc/scala-core/)
+[info] running Serializer /tmp/lemma_trace_mQcaOh.json /tmp/lemma_pog_B1FTcF.json
+[success] Total time: 1 s, completed Jun 4, 2026, 12:40:39 AM
+[2/4] Enumerating fragments...
+[info] welcome to sbt 1.10.1 (JetBrains s.r.o. Java 21.0.6)
+[info] loading project definition from /nas/lemma-disc/scala-core/project
+[info] loading settings for project scala-core from build.sbt ...
+[info] set current project to scala-core (in build file:/nas/lemma-disc/scala-core/)
+[info] running Serializer --timeout 60000 /tmp/lemma_pog_B1FTcF.json /tmp/lemma_segments_6mR8PO.json
+[success] Total time: 2 s, completed Jun 4, 2026, 12:40:45 AM
+[2/4] Got 5 fragment(s).
+[3/4] Running support minimization...
+[info] welcome to sbt 1.10.1 (JetBrains s.r.o. Java 21.0.6)
+[info] loading project definition from /nas/lemma-disc/scala-core/project
+[info] loading settings for project scala-core from build.sbt ...
+[info] set current project to scala-core (in build file:/nas/lemma-disc/scala-core/)
+[info] running Serializer /tmp/lemma_segments_6mR8PO.json /tmp/lemma_out_r97eIs.json
+[success] Total time: 1 s, completed Jun 4, 2026, 12:40:51 AM
+[4/4] Deduplicating lemmas...
+Deduplicated: 5 → 5 lemmas (0 dropped)
+[4/4] Lemmas    written to /nas/lemma-disc/data/lemma_counts_pog/prop_05_lemmas_pog.json
+[4/4] Fragments written to /nas/lemma-disc/data/lemma_counts_pog/prop_05_lemmas_pog.fragments.json
+--- 5 lemma statement(s) ---
+[0] prop_05: (h : n = x) (h1 : (count n xs).succ = count n (x :: xs)) : n = x → (count n xs).succ = count n (x :: xs)
+[1] prop_05: (h : n = x) (h1 : (count n xs).succ = count n (n :: xs)) : (count n xs).succ = count n (x :: xs)
+[2] prop_05: (n : ℕ) (x : ℕ) (h : n = x) (h1 : (count n xs).succ = count n (n :: xs)) : n = x → (count n xs).succ = count n (x :: xs)
+[3] prop_05: n = x → (count n xs).succ = count n (x :: xs)
+[4] prop_05: (h : n = x) : (count n xs).succ = count n (x :: xs)

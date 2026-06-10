@@ -1,0 +1,1415 @@
+{
+  "method": "syntactic",
+  "normalization": "strip Type/Sort binders + alpha-rename",
+  "input_files": [
+    "data/zip_append_of_length_eq.json"
+  ],
+  "num_input_lemmas": 117,
+  "num_clusters": 117,
+  "clusters": [
+    {
+      "canonical": "(ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) (ys : List β) (h' : xs.length = ys.length) : (x, y) :: (zip' xs ys ++ zip' as bs) = zip' (x :: xs ++ as) (y :: ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 0,
+          "statement": "(ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) (ys : List β) (h' : xs.length = ys.length) : (x, y) :: (zip' xs ys ++ zip' as bs) = zip' (x :: xs ++ as) (y :: ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (ys : List β) (h : xs.length = ys.length) (h1 : (((x✝ : [].length = [].length) → zip' [] [] ++ zip' as bs = zip' ([] ++ as) ([] ++ bs)) ∧ ((h✝ : [].length = ys.length) → (head✝ : β) → (tail✝ : List β) → zip' [] (head✝ :: tail✝) ++ zip' as bs = zip' ([] ++ as) (head✝ :: tail✝ ++ bs))) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → zip' (x :: xs) ys ++ zip' as bs = zip' (x :: xs ++ as) (ys ++ bs))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 1,
+          "statement": "(xs : List α) (ys : List β) (h : xs.length = ys.length) (h1 : (((x✝ : [].length = [].length) → zip' [] [] ++ zip' as bs = zip' ([] ++ as) ([] ++ bs)) ∧ ((h✝ : [].length = ys.length) → (head✝ : β) → (tail✝ : List β) → zip' [] (head✝ :: tail✝) ++ zip' as bs = zip' ([] ++ as) (head✝ :: tail✝ ++ bs))) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → zip' (x :: xs) ys ++ zip' as bs = zip' (x :: xs ++ as) (ys ++ bs))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (ys : List β) (h : (x :: xs).length = (y :: ys).length) (h' : xs.length = ys.length) (h1 : (x, y) :: (zip' xs ys ++ zip' as bs) = zip' (x :: xs ++ as) (y :: ys ++ bs)) : zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 2,
+          "statement": "(xs : List α) (ys : List β) (h : (x :: xs).length = (y :: ys).length) (h' : xs.length = ys.length) (h1 : (x, y) :: (zip' xs ys ++ zip' as bs) = zip' (x :: xs ++ as) (y :: ys ++ bs)) : zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : ((x✝ : [].length = [].length) → zip' [] [] ++ zip' as bs = zip' ([] ++ as) ([] ++ bs)) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → (x, y) :: (zip' xs ys ++ zip' as bs) = (x, y) :: zip' (xs ++ as) (ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 3,
+          "statement": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : ((x✝ : [].length = [].length) → zip' [] [] ++ zip' as bs = zip' ([] ++ as) ([] ++ bs)) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → (x, y) :: (zip' xs ys ++ zip' as bs) = (x, y) :: zip' (xs ++ as) (ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (ys : List β) (h : xs.length = ys.length) (h1 : ((h✝ : [].length = ys.length) → (head✝ : β) → (tail✝ : List β) → zip' [] (head✝ :: tail✝) ++ zip' as bs = zip' ([] ++ as) (head✝ :: tail✝ ++ bs)) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → zip' (x :: xs) ys ++ zip' as bs = zip' (x :: xs ++ as) (ys ++ bs))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 4,
+          "statement": "(xs : List α) (ys : List β) (h : xs.length = ys.length) (h1 : ((h✝ : [].length = ys.length) → (head✝ : β) → (tail✝ : List β) → zip' [] (head✝ :: tail✝) ++ zip' as bs = zip' ([] ++ as) (head✝ :: tail✝ ++ bs)) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → zip' (x :: xs) ys ++ zip' as bs = zip' (x :: xs ++ as) (ys ++ bs))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (ys : List β) (h : (x :: xs).length = (y :: ys).length) : xs.length = ys.length",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 5,
+          "statement": "(xs : List α) (ys : List β) (h : (x :: xs).length = (y :: ys).length) : xs.length = ys.length"
+        }
+      ]
+    },
+    {
+      "canonical": "(ys : List β) (h : [].length = ys.length) : zip' [] ys ++ zip' as bs = zip' ([] ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 6,
+          "statement": "(ys : List β) (h : [].length = ys.length) : zip' [] ys ++ zip' as bs = zip' ([] ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(x : α) (xs : List α) (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) (ys : List β) (h : (x :: xs).length = ys.length) (h1 : ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → (x, y) :: (zip' xs ys ++ zip' as bs) = (x, y) :: zip' (xs ++ as) (ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length)) : zip' (x :: xs) ys ++ zip' as bs = zip' (x :: xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 7,
+          "statement": "(x : α) (xs : List α) (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) (ys : List β) (h : (x :: xs).length = ys.length) (h1 : ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → (x, y) :: (zip' xs ys ++ zip' as bs) = (x, y) :: zip' (xs ++ as) (ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length)) : zip' (x :: xs) ys ++ zip' as bs = zip' (x :: xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(ys : List β) (h : [].length = ys.length) (h✝ : [].length = ys.length) (head✝ : β) (tail✝ : List β) (h1 : zip' [] (head✝ :: tail✝) ++ zip' as bs = zip' ([] ++ as) (head✝ :: tail✝ ++ bs)) : zip' [] ys ++ zip' as bs = zip' ([] ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 8,
+          "statement": "(ys : List β) (h : [].length = ys.length) (h✝ : [].length = ys.length) (head✝ : β) (tail✝ : List β) (h1 : zip' [] (head✝ :: tail✝) ++ zip' as bs = zip' ([] ++ as) (head✝ :: tail✝ ++ bs)) : zip' [] ys ++ zip' as bs = zip' ([] ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : (((x✝ : [].length = [].length) → zip' [] [] ++ zip' as bs = zip' ([] ++ as) ([] ++ bs)) ∧ ((h✝ : [].length = ys.length) → (head✝ : β) → (tail✝ : List β) → zip' [] (head✝ :: tail✝) ++ zip' as bs = zip' ([] ++ as) (head✝ :: tail✝ ++ bs))) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → (ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 9,
+          "statement": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : (((x✝ : [].length = [].length) → zip' [] [] ++ zip' as bs = zip' ([] ++ as) ([] ++ bs)) ∧ ((h✝ : [].length = ys.length) → (head✝ : β) → (tail✝ : List β) → zip' [] (head✝ :: tail✝) ++ zip' as bs = zip' ([] ++ as) (head✝ :: tail✝ ++ bs))) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → (ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(x : α) (xs : List α) (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) (ys : List β) (h : (x :: xs).length = ys.length) (h1 : ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length)) : zip' (x :: xs) ys ++ zip' as bs = zip' (x :: xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 10,
+          "statement": "(x : α) (xs : List α) (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) (ys : List β) (h : (x :: xs).length = ys.length) (h1 : ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length)) : zip' (x :: xs) ys ++ zip' as bs = zip' (x :: xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : ((x✝ : [].length = [].length) → zip' [] [] ++ zip' as bs = zip' ([] ++ as) ([] ++ bs)) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 11,
+          "statement": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : ((x✝ : [].length = [].length) → zip' [] [] ++ zip' as bs = zip' ([] ++ as) ([] ++ bs)) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : zip' [] ys ++ zip' as bs = zip' ([] ++ as) (ys ++ bs) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 12,
+          "statement": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : zip' [] ys ++ zip' as bs = zip' ([] ++ as) (ys ++ bs) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(h1 : (x, y) :: (zip' xs ys ++ zip' as bs) = (x, y) :: zip' (xs ++ as) (ys ++ bs)) : zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 13,
+          "statement": "(h1 : (x, y) :: (zip' xs ys ++ zip' as bs) = (x, y) :: zip' (xs ++ as) (ys ++ bs)) : zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (ys : List β) (h : (x :: xs).length = (y :: ys).length) (h' : xs.length = ys.length) (h1 : (x, y) :: (zip' xs ys ++ zip' as bs) = (x, y) :: zip' (xs ++ as) (ys ++ bs)) : zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 14,
+          "statement": "(xs : List α) (ys : List β) (h : (x :: xs).length = (y :: ys).length) (h' : xs.length = ys.length) (h1 : (x, y) :: (zip' xs ys ++ zip' as bs) = (x, y) :: zip' (xs ++ as) (ys ++ bs)) : zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) (ys : List β) (h' : xs.length = ys.length) : zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 15,
+          "statement": "(ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) (ys : List β) (h' : xs.length = ys.length) : zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : zip' [] ys ++ zip' as bs = zip' ([] ++ as) (ys ++ bs) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 16,
+          "statement": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : zip' [] ys ++ zip' as bs = zip' ([] ++ as) (ys ++ bs) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(ys : List β) (h : [].length = ys.length) (x✝ : [].length = [].length) (h1 : zip' [] [] ++ zip' as bs = zip' ([] ++ as) ([] ++ bs)) : zip' [] ys ++ zip' as bs = zip' ([] ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 17,
+          "statement": "(ys : List β) (h : [].length = ys.length) (x✝ : [].length = [].length) (h1 : zip' [] [] ++ zip' as bs = zip' ([] ++ as) ([] ++ bs)) : zip' [] ys ++ zip' as bs = zip' ([] ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (ys : List β) (h : xs.length = ys.length) (x : α) (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) (h1 : zip' (x :: xs) ys ++ zip' as bs = zip' (x :: xs ++ as) (ys ++ bs)) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 18,
+          "statement": "(xs : List α) (ys : List β) (h : xs.length = ys.length) (x : α) (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) (h1 : zip' (x :: xs) ys ++ zip' as bs = zip' (x :: xs ++ as) (ys ++ bs)) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(x : α) (xs : List α) (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) (ys : List β) (h : (x :: xs).length = ys.length) (h1 : ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length)) : zip' (x :: xs) ys ++ zip' as bs = zip' (x :: xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 19,
+          "statement": "(x : α) (xs : List α) (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) (ys : List β) (h : (x :: xs).length = ys.length) (h1 : ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length)) : zip' (x :: xs) ys ++ zip' as bs = zip' (x :: xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(x : α) (xs : List α) (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) (ys : List β) (h : (x :: xs).length = ys.length) (ys✝ : List β) (h✝ : (x :: xs).length = ys✝.length) (y : β) (h' : xs.length = ys.length) (h1 : zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)) : zip' (x :: xs) ys ++ zip' as bs = zip' (x :: xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 20,
+          "statement": "(x : α) (xs : List α) (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) (ys : List β) (h : (x :: xs).length = ys.length) (ys✝ : List β) (h✝ : (x :: xs).length = ys✝.length) (y : β) (h' : xs.length = ys.length) (h1 : zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)) : zip' (x :: xs) ys ++ zip' as bs = zip' (x :: xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) (ys : List β) (h : (x :: xs).length = (y :: ys).length) : zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 21,
+          "statement": "(xs : List α) (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) (ys : List β) (h : (x :: xs).length = (y :: ys).length) : zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(x : α) (xs : List α) (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) (ys : List β) (h : (x :: xs).length = ys.length) (h1 : ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length)) : zip' (x :: xs) ys ++ zip' as bs = zip' (x :: xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 22,
+          "statement": "(x : α) (xs : List α) (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) (ys : List β) (h : (x :: xs).length = ys.length) (h1 : ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length)) : zip' (x :: xs) ys ++ zip' as bs = zip' (x :: xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : ((x✝ : [].length = [].length) → zip' [] [] ++ zip' as bs = zip' ([] ++ as) ([] ++ bs)) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → (x, y) :: (zip' xs ys ++ zip' as bs) = zip' (x :: xs ++ as) (y :: ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 23,
+          "statement": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : ((x✝ : [].length = [].length) → zip' [] [] ++ zip' as bs = zip' ([] ++ as) ([] ++ bs)) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → (x, y) :: (zip' xs ys ++ zip' as bs) = zip' (x :: xs ++ as) (y :: ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(x : α) (xs : List α) (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) (ys : List β) (h : (x :: xs).length = ys.length) (h1 : ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length)) : zip' (x :: xs) ys ++ zip' as bs = zip' (x :: xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 24,
+          "statement": "(x : α) (xs : List α) (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) (ys : List β) (h : (x :: xs).length = ys.length) (h1 : ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length)) : zip' (x :: xs) ys ++ zip' as bs = zip' (x :: xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : ((x✝ : [].length = [].length) → zip' [] [] ++ zip' as bs = zip' ([] ++ as) ([] ++ bs)) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → (x, y) :: (zip' xs ys ++ zip' as bs) = zip' (x :: xs ++ as) (y :: ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 25,
+          "statement": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : ((x✝ : [].length = [].length) → zip' [] [] ++ zip' as bs = zip' ([] ++ as) ([] ++ bs)) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → (x, y) :: (zip' xs ys ++ zip' as bs) = zip' (x :: xs ++ as) (y :: ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(x : α) (xs : List α) (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) (ys : List β) (h : (x :: xs).length = ys.length) (h1 : ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → (x, y) :: (zip' xs ys ++ zip' as bs) = zip' (x :: xs ++ as) (y :: ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length)) : zip' (x :: xs) ys ++ zip' as bs = zip' (x :: xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 26,
+          "statement": "(x : α) (xs : List α) (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) (ys : List β) (h : (x :: xs).length = ys.length) (h1 : ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → (x, y) :: (zip' xs ys ++ zip' as bs) = zip' (x :: xs ++ as) (y :: ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length)) : zip' (x :: xs) ys ++ zip' as bs = zip' (x :: xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : ((h✝ : [].length = ys.length) → (head✝ : β) → (tail✝ : List β) → zip' [] (head✝ :: tail✝) ++ zip' as bs = zip' ([] ++ as) (head✝ :: tail✝ ++ bs)) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 27,
+          "statement": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : ((h✝ : [].length = ys.length) → (head✝ : β) → (tail✝ : List β) → zip' [] (head✝ :: tail✝) ++ zip' as bs = zip' ([] ++ as) (head✝ :: tail✝ ++ bs)) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(x : α) (xs : List α) (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) (ys : List β) (h : (x :: xs).length = ys.length) (h1 : ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → (x, y) :: (zip' xs ys ++ zip' as bs) = zip' (x :: xs ++ as) (y :: ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length)) : zip' (x :: xs) ys ++ zip' as bs = zip' (x :: xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 28,
+          "statement": "(x : α) (xs : List α) (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) (ys : List β) (h : (x :: xs).length = ys.length) (h1 : ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → (x, y) :: (zip' xs ys ++ zip' as bs) = zip' (x :: xs ++ as) (y :: ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length)) : zip' (x :: xs) ys ++ zip' as bs = zip' (x :: xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(x : α) (xs : List α) (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) (ys : List β) (h : (x :: xs).length = ys.length) (h1 : ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs))) : zip' (x :: xs) ys ++ zip' as bs = zip' (x :: xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 29,
+          "statement": "(x : α) (xs : List α) (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) (ys : List β) (h : (x :: xs).length = ys.length) (h1 : ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs))) : zip' (x :: xs) ys ++ zip' as bs = zip' (x :: xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(x : α) (xs : List α) (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) (ys : List β) (h : (x :: xs).length = ys.length) (h1 : ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length)) : zip' (x :: xs) ys ++ zip' as bs = zip' (x :: xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 30,
+          "statement": "(x : α) (xs : List α) (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) (ys : List β) (h : (x :: xs).length = ys.length) (h1 : ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length)) : zip' (x :: xs) ys ++ zip' as bs = zip' (x :: xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : zip' [] ys ++ zip' as bs = zip' ([] ++ as) (ys ++ bs) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 31,
+          "statement": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : zip' [] ys ++ zip' as bs = zip' ([] ++ as) (ys ++ bs) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : zip' [] ys ++ zip' as bs = zip' ([] ++ as) (ys ++ bs) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → (x, y) :: (zip' xs ys ++ zip' as bs) = (x, y) :: zip' (xs ++ as) (ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 32,
+          "statement": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : zip' [] ys ++ zip' as bs = zip' ([] ++ as) (ys ++ bs) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → (x, y) :: (zip' xs ys ++ zip' as bs) = (x, y) :: zip' (xs ++ as) (ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(x : α) (xs : List α) (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) (ys : List β) (h : (x :: xs).length = ys.length) (ys✝ : List β) (h✝ : (x :: xs).length = ys✝.length) (y : β) (h1 : zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)) : zip' (x :: xs) ys ++ zip' as bs = zip' (x :: xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 33,
+          "statement": "(x : α) (xs : List α) (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) (ys : List β) (h : (x :: xs).length = ys.length) (ys✝ : List β) (h✝ : (x :: xs).length = ys✝.length) (y : β) (h1 : zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)) : zip' (x :: xs) ys ++ zip' as bs = zip' (x :: xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : zip' [] ys ++ zip' as bs = zip' ([] ++ as) (ys ++ bs) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → (x, y) :: (zip' xs ys ++ zip' as bs) = zip' (x :: xs ++ as) (y :: ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 34,
+          "statement": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : zip' [] ys ++ zip' as bs = zip' ([] ++ as) (ys ++ bs) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → (x, y) :: (zip' xs ys ++ zip' as bs) = zip' (x :: xs ++ as) (y :: ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : zip' [] ys ++ zip' as bs = zip' ([] ++ as) (ys ++ bs) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 35,
+          "statement": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : zip' [] ys ++ zip' as bs = zip' ([] ++ as) (ys ++ bs) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : zip' [] ys ++ zip' as bs = zip' ([] ++ as) (ys ++ bs) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → (ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 36,
+          "statement": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : zip' [] ys ++ zip' as bs = zip' ([] ++ as) (ys ++ bs) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → (ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : zip' [] ys ++ zip' as bs = zip' ([] ++ as) (ys ++ bs) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 37,
+          "statement": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : zip' [] ys ++ zip' as bs = zip' ([] ++ as) (ys ++ bs) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : (((x✝ : [].length = [].length) → zip' [] [] ++ zip' as bs = zip' ([] ++ as) ([] ++ bs)) ∧ ((h✝ : [].length = ys.length) → (head✝ : β) → (tail✝ : List β) → zip' [] (head✝ :: tail✝) ++ zip' as bs = zip' ([] ++ as) (head✝ :: tail✝ ++ bs))) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → (x, y) :: (zip' xs ys ++ zip' as bs) = (x, y) :: zip' (xs ++ as) (ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 38,
+          "statement": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : (((x✝ : [].length = [].length) → zip' [] [] ++ zip' as bs = zip' ([] ++ as) ([] ++ bs)) ∧ ((h✝ : [].length = ys.length) → (head✝ : β) → (tail✝ : List β) → zip' [] (head✝ :: tail✝) ++ zip' as bs = zip' ([] ++ as) (head✝ :: tail✝ ++ bs))) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → (x, y) :: (zip' xs ys ++ zip' as bs) = (x, y) :: zip' (xs ++ as) (ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(x : α) (xs : List α) (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) (ys : List β) (h : (x :: xs).length = ys.length) (h1 : ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs))) : zip' (x :: xs) ys ++ zip' as bs = zip' (x :: xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 39,
+          "statement": "(x : α) (xs : List α) (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) (ys : List β) (h : (x :: xs).length = ys.length) (h1 : ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs))) : zip' (x :: xs) ys ++ zip' as bs = zip' (x :: xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (ys : List β) (h : xs.length = ys.length) (h1 : ((x✝ : [].length = [].length) → zip' [] [] ++ zip' as bs = zip' ([] ++ as) ([] ++ bs)) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → zip' (x :: xs) ys ++ zip' as bs = zip' (x :: xs ++ as) (ys ++ bs))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 40,
+          "statement": "(xs : List α) (ys : List β) (h : xs.length = ys.length) (h1 : ((x✝ : [].length = [].length) → zip' [] [] ++ zip' as bs = zip' ([] ++ as) ([] ++ bs)) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → zip' (x :: xs) ys ++ zip' as bs = zip' (x :: xs ++ as) (ys ++ bs))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : zip' [] ys ++ zip' as bs = zip' ([] ++ as) (ys ++ bs) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 41,
+          "statement": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : zip' [] ys ++ zip' as bs = zip' ([] ++ as) (ys ++ bs) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (x : α) (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) (ys✝ : List β) (h✝ : (x :: xs).length = ys✝.length) (y : β) (h' : xs.length = ys.length) (h1 : zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 42,
+          "statement": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (x : α) (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) (ys✝ : List β) (h✝ : (x :: xs).length = ys✝.length) (y : β) (h' : xs.length = ys.length) (h1 : zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : (((x✝ : [].length = [].length) → zip' [] [] ++ zip' as bs = zip' ([] ++ as) ([] ++ bs)) ∧ ((h✝ : [].length = ys.length) → (head✝ : β) → (tail✝ : List β) → zip' [] (head✝ :: tail✝) ++ zip' as bs = zip' ([] ++ as) (head✝ :: tail✝ ++ bs))) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → (x, y) :: (zip' xs ys ++ zip' as bs) = zip' (x :: xs ++ as) (y :: ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 43,
+          "statement": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : (((x✝ : [].length = [].length) → zip' [] [] ++ zip' as bs = zip' ([] ++ as) ([] ++ bs)) ∧ ((h✝ : [].length = ys.length) → (head✝ : β) → (tail✝ : List β) → zip' [] (head✝ :: tail✝) ++ zip' as bs = zip' ([] ++ as) (head✝ :: tail✝ ++ bs))) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → (x, y) :: (zip' xs ys ++ zip' as bs) = zip' (x :: xs ++ as) (y :: ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : zip' [] ys ++ zip' as bs = zip' ([] ++ as) (ys ++ bs) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → (x, y) :: (zip' xs ys ++ zip' as bs) = zip' (x :: xs ++ as) (y :: ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 44,
+          "statement": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : zip' [] ys ++ zip' as bs = zip' ([] ++ as) (ys ++ bs) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → (x, y) :: (zip' xs ys ++ zip' as bs) = zip' (x :: xs ++ as) (y :: ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (x : α) (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) (ys✝ : List β) (h✝ : (x :: xs).length = ys✝.length) (y : β) (h1 : zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 45,
+          "statement": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (x : α) (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) (ys✝ : List β) (h✝ : (x :: xs).length = ys✝.length) (y : β) (h1 : zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(x : α) (xs : List α) (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) (ys : List β) (h : (x :: xs).length = ys.length) (ys✝ : List β) (h✝ : (x :: xs).length = ys✝.length) (y : β) (h1 : xs.length = ys.length) : zip' (x :: xs) ys ++ zip' as bs = zip' (x :: xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 46,
+          "statement": "(x : α) (xs : List α) (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) (ys : List β) (h : (x :: xs).length = ys.length) (ys✝ : List β) (h✝ : (x :: xs).length = ys✝.length) (y : β) (h1 : xs.length = ys.length) : zip' (x :: xs) ys ++ zip' as bs = zip' (x :: xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(x : α) (xs : List α) (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) (ys : List β) (h : (x :: xs).length = ys.length) (ys✝ : List β) (h✝ : (x :: xs).length = ys✝.length) (y : β) (h' : xs.length = ys.length) (h1 : (x, y) :: (zip' xs ys ++ zip' as bs) = zip' (x :: xs ++ as) (y :: ys ++ bs)) : zip' (x :: xs) ys ++ zip' as bs = zip' (x :: xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 47,
+          "statement": "(x : α) (xs : List α) (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) (ys : List β) (h : (x :: xs).length = ys.length) (ys✝ : List β) (h✝ : (x :: xs).length = ys✝.length) (y : β) (h' : xs.length = ys.length) (h1 : (x, y) :: (zip' xs ys ++ zip' as bs) = zip' (x :: xs ++ as) (y :: ys ++ bs)) : zip' (x :: xs) ys ++ zip' as bs = zip' (x :: xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(x : α) (xs : List α) (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) (ys : List β) (h : (x :: xs).length = ys.length) (h1 : ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → (x, y) :: (zip' xs ys ++ zip' as bs) = zip' (x :: xs ++ as) (y :: ys ++ bs))) : zip' (x :: xs) ys ++ zip' as bs = zip' (x :: xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 48,
+          "statement": "(x : α) (xs : List α) (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) (ys : List β) (h : (x :: xs).length = ys.length) (h1 : ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → (x, y) :: (zip' xs ys ++ zip' as bs) = zip' (x :: xs ++ as) (y :: ys ++ bs))) : zip' (x :: xs) ys ++ zip' as bs = zip' (x :: xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(x : α) (xs : List α) (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) (ys : List β) (h : (x :: xs).length = ys.length) (h✝ : (x :: xs).length = ys.length) (h1 : zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) : zip' (x :: xs) ys ++ zip' as bs = zip' (x :: xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 49,
+          "statement": "(x : α) (xs : List α) (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) (ys : List β) (h : (x :: xs).length = ys.length) (h✝ : (x :: xs).length = ys.length) (h1 : zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) : zip' (x :: xs) ys ++ zip' as bs = zip' (x :: xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (x : α) (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) (h1 : ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length)) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 50,
+          "statement": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (x : α) (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) (h1 : ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length)) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : ((x✝ : [].length = [].length) → zip' [] [] ++ zip' as bs = zip' ([] ++ as) ([] ++ bs)) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 51,
+          "statement": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : ((x✝ : [].length = [].length) → zip' [] [] ++ zip' as bs = zip' ([] ++ as) ([] ++ bs)) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : zip' [] ys ++ zip' as bs = zip' ([] ++ as) (ys ++ bs) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → (ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → (x, y) :: (zip' xs ys ++ zip' as bs) = (x, y) :: zip' (xs ++ as) (ys ++ bs))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 52,
+          "statement": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : zip' [] ys ++ zip' as bs = zip' ([] ++ as) (ys ++ bs) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → (ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → (x, y) :: (zip' xs ys ++ zip' as bs) = (x, y) :: zip' (xs ++ as) (ys ++ bs))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : ((x✝ : [].length = [].length) → zip' [] [] ++ zip' as bs = zip' ([] ++ as) ([] ++ bs)) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 53,
+          "statement": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : ((x✝ : [].length = [].length) → zip' [] [] ++ zip' as bs = zip' ([] ++ as) ([] ++ bs)) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : ((h✝ : [].length = ys.length) → (head✝ : β) → (tail✝ : List β) → zip' [] (head✝ :: tail✝) ++ zip' as bs = zip' ([] ++ as) (head✝ :: tail✝ ++ bs)) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → (x, y) :: (zip' xs ys ++ zip' as bs) = zip' (x :: xs ++ as) (y :: ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 54,
+          "statement": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : ((h✝ : [].length = ys.length) → (head✝ : β) → (tail✝ : List β) → zip' [] (head✝ :: tail✝) ++ zip' as bs = zip' ([] ++ as) (head✝ :: tail✝ ++ bs)) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → (x, y) :: (zip' xs ys ++ zip' as bs) = zip' (x :: xs ++ as) (y :: ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : ((h✝ : [].length = ys.length) → (head✝ : β) → (tail✝ : List β) → zip' [] (head✝ :: tail✝) ++ zip' as bs = zip' ([] ++ as) (head✝ :: tail✝ ++ bs)) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 55,
+          "statement": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : ((h✝ : [].length = ys.length) → (head✝ : β) → (tail✝ : List β) → zip' [] (head✝ :: tail✝) ++ zip' as bs = zip' ([] ++ as) (head✝ :: tail✝ ++ bs)) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : ((h✝ : [].length = ys.length) → (head✝ : β) → (tail✝ : List β) → zip' [] (head✝ :: tail✝) ++ zip' as bs = zip' ([] ++ as) (head✝ :: tail✝ ++ bs)) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 56,
+          "statement": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : ((h✝ : [].length = ys.length) → (head✝ : β) → (tail✝ : List β) → zip' [] (head✝ :: tail✝) ++ zip' as bs = zip' ([] ++ as) (head✝ :: tail✝ ++ bs)) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(x : α) (xs : List α) (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) (ys : List β) (h : (x :: xs).length = ys.length) (ys✝ : List β) (h✝ : (x :: xs).length = ys✝.length) (y : β) (h' : xs.length = ys.length) (h1 : (x, y) :: (zip' xs ys ++ zip' as bs) = (x, y) :: zip' (xs ++ as) (ys ++ bs)) : zip' (x :: xs) ys ++ zip' as bs = zip' (x :: xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 57,
+          "statement": "(x : α) (xs : List α) (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) (ys : List β) (h : (x :: xs).length = ys.length) (ys✝ : List β) (h✝ : (x :: xs).length = ys✝.length) (y : β) (h' : xs.length = ys.length) (h1 : (x, y) :: (zip' xs ys ++ zip' as bs) = (x, y) :: zip' (xs ++ as) (ys ++ bs)) : zip' (x :: xs) ys ++ zip' as bs = zip' (x :: xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (x : α) (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) (h1 : ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → (x, y) :: (zip' xs ys ++ zip' as bs) = zip' (x :: xs ++ as) (y :: ys ++ bs))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 58,
+          "statement": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (x : α) (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) (h1 : ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → (x, y) :: (zip' xs ys ++ zip' as bs) = zip' (x :: xs ++ as) (y :: ys ++ bs))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : ((h✝ : [].length = ys.length) → (head✝ : β) → (tail✝ : List β) → zip' [] (head✝ :: tail✝) ++ zip' as bs = zip' ([] ++ as) (head✝ :: tail✝ ++ bs)) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → (x, y) :: (zip' xs ys ++ zip' as bs) = zip' (x :: xs ++ as) (y :: ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 59,
+          "statement": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : ((h✝ : [].length = ys.length) → (head✝ : β) → (tail✝ : List β) → zip' [] (head✝ :: tail✝) ++ zip' as bs = zip' ([] ++ as) (head✝ :: tail✝ ++ bs)) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → (x, y) :: (zip' xs ys ++ zip' as bs) = zip' (x :: xs ++ as) (y :: ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : (((x✝ : [].length = [].length) → zip' [] [] ++ zip' as bs = zip' ([] ++ as) ([] ++ bs)) ∧ ((h✝ : [].length = ys.length) → (head✝ : β) → (tail✝ : List β) → zip' [] (head✝ :: tail✝) ++ zip' as bs = zip' ([] ++ as) (head✝ :: tail✝ ++ bs))) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 60,
+          "statement": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : (((x✝ : [].length = [].length) → zip' [] [] ++ zip' as bs = zip' ([] ++ as) ([] ++ bs)) ∧ ((h✝ : [].length = ys.length) → (head✝ : β) → (tail✝ : List β) → zip' [] (head✝ :: tail✝) ++ zip' as bs = zip' ([] ++ as) (head✝ :: tail✝ ++ bs))) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : ((x✝ : [].length = [].length) → zip' [] [] ++ zip' as bs = zip' ([] ++ as) ([] ++ bs)) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 61,
+          "statement": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : ((x✝ : [].length = [].length) → zip' [] [] ++ zip' as bs = zip' ([] ++ as) ([] ++ bs)) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (x : α) (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) (h1 : ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → (x, y) :: (zip' xs ys ++ zip' as bs) = zip' (x :: xs ++ as) (y :: ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length)) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 62,
+          "statement": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (x : α) (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) (h1 : ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → (x, y) :: (zip' xs ys ++ zip' as bs) = zip' (x :: xs ++ as) (y :: ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length)) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(x : α) (xs : List α) (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) (ys : List β) (h : (x :: xs).length = ys.length) (h1 : ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → (x, y) :: (zip' xs ys ++ zip' as bs) = (x, y) :: zip' (xs ++ as) (ys ++ bs))) : zip' (x :: xs) ys ++ zip' as bs = zip' (x :: xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 63,
+          "statement": "(x : α) (xs : List α) (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) (ys : List β) (h : (x :: xs).length = ys.length) (h1 : ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → (x, y) :: (zip' xs ys ++ zip' as bs) = (x, y) :: zip' (xs ++ as) (ys ++ bs))) : zip' (x :: xs) ys ++ zip' as bs = zip' (x :: xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : zip' [] ys ++ zip' as bs = zip' ([] ++ as) (ys ++ bs) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → (x, y) :: (zip' xs ys ++ zip' as bs) = (x, y) :: zip' (xs ++ as) (ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 64,
+          "statement": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : zip' [] ys ++ zip' as bs = zip' ([] ++ as) (ys ++ bs) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → (x, y) :: (zip' xs ys ++ zip' as bs) = (x, y) :: zip' (xs ++ as) (ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (x : α) (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) (h1 : ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → (x, y) :: (zip' xs ys ++ zip' as bs) = (x, y) :: zip' (xs ++ as) (ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length)) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 65,
+          "statement": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (x : α) (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) (h1 : ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → (x, y) :: (zip' xs ys ++ zip' as bs) = (x, y) :: zip' (xs ++ as) (ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length)) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : (((x✝ : [].length = [].length) → zip' [] [] ++ zip' as bs = zip' ([] ++ as) ([] ++ bs)) ∧ ((h✝ : [].length = ys.length) → (head✝ : β) → (tail✝ : List β) → zip' [] (head✝ :: tail✝) ++ zip' as bs = zip' ([] ++ as) (head✝ :: tail✝ ++ bs))) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 66,
+          "statement": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : (((x✝ : [].length = [].length) → zip' [] [] ++ zip' as bs = zip' ([] ++ as) ([] ++ bs)) ∧ ((h✝ : [].length = ys.length) → (head✝ : β) → (tail✝ : List β) → zip' [] (head✝ :: tail✝) ++ zip' as bs = zip' ([] ++ as) (head✝ :: tail✝ ++ bs))) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : ((x✝ : [].length = [].length) → zip' [] [] ++ zip' as bs = zip' ([] ++ as) ([] ++ bs)) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → (ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 67,
+          "statement": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : ((x✝ : [].length = [].length) → zip' [] [] ++ zip' as bs = zip' ([] ++ as) ([] ++ bs)) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → (ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(x : α) (xs : List α) (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) (ys : List β) (h : (x :: xs).length = ys.length) : zip' (x :: xs) ys ++ zip' as bs = zip' (x :: xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 68,
+          "statement": "(x : α) (xs : List α) (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) (ys : List β) (h : (x :: xs).length = ys.length) : zip' (x :: xs) ys ++ zip' as bs = zip' (x :: xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : (((x✝ : [].length = [].length) → zip' [] [] ++ zip' as bs = zip' ([] ++ as) ([] ++ bs)) ∧ ((h✝ : [].length = ys.length) → (head✝ : β) → (tail✝ : List β) → zip' [] (head✝ :: tail✝) ++ zip' as bs = zip' ([] ++ as) (head✝ :: tail✝ ++ bs))) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 69,
+          "statement": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : (((x✝ : [].length = [].length) → zip' [] [] ++ zip' as bs = zip' ([] ++ as) ([] ++ bs)) ∧ ((h✝ : [].length = ys.length) → (head✝ : β) → (tail✝ : List β) → zip' [] (head✝ :: tail✝) ++ zip' as bs = zip' ([] ++ as) (head✝ :: tail✝ ++ bs))) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (x : α) (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) (h1 : ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 70,
+          "statement": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (x : α) (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) (h1 : ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 71,
+          "statement": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : zip' [] ys ++ zip' as bs = zip' ([] ++ as) (ys ++ bs) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → (x, y) :: (zip' xs ys ++ zip' as bs) = (x, y) :: zip' (xs ++ as) (ys ++ bs)))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 72,
+          "statement": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : zip' [] ys ++ zip' as bs = zip' ([] ++ as) (ys ++ bs) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → (x, y) :: (zip' xs ys ++ zip' as bs) = (x, y) :: zip' (xs ++ as) (ys ++ bs)))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (x : α) (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) (h1 : ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → (x, y) :: (zip' xs ys ++ zip' as bs) = zip' (x :: xs ++ as) (y :: ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length)) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 73,
+          "statement": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (x : α) (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) (h1 : ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → (x, y) :: (zip' xs ys ++ zip' as bs) = zip' (x :: xs ++ as) (y :: ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length)) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : ((x✝ : [].length = [].length) → zip' [] [] ++ zip' as bs = zip' ([] ++ as) ([] ++ bs)) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → (ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 74,
+          "statement": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : ((x✝ : [].length = [].length) → zip' [] [] ++ zip' as bs = zip' ([] ++ as) ([] ++ bs)) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → (ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(x : α) (xs : List α) (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) (ys : List β) (h : (x :: xs).length = ys.length) (h1 : ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → (x, y) :: (zip' xs ys ++ zip' as bs) = (x, y) :: zip' (xs ++ as) (ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length)) : zip' (x :: xs) ys ++ zip' as bs = zip' (x :: xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 75,
+          "statement": "(x : α) (xs : List α) (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) (ys : List β) (h : (x :: xs).length = ys.length) (h1 : ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → (x, y) :: (zip' xs ys ++ zip' as bs) = (x, y) :: zip' (xs ++ as) (ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length)) : zip' (x :: xs) ys ++ zip' as bs = zip' (x :: xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (x : α) (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) (h1 : ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length)) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 76,
+          "statement": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (x : α) (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) (h1 : ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length)) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h✝ : [].length = ys.length) (head✝ : β) (tail✝ : List β) (h1 : zip' [] (head✝ :: tail✝) ++ zip' as bs = zip' ([] ++ as) (head✝ :: tail✝ ++ bs)) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 77,
+          "statement": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h✝ : [].length = ys.length) (head✝ : β) (tail✝ : List β) (h1 : zip' [] (head✝ :: tail✝) ++ zip' as bs = zip' ([] ++ as) (head✝ :: tail✝ ++ bs)) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : (((x✝ : [].length = [].length) → zip' [] [] ++ zip' as bs = zip' ([] ++ as) ([] ++ bs)) ∧ ((h✝ : [].length = ys.length) → (head✝ : β) → (tail✝ : List β) → zip' [] (head✝ :: tail✝) ++ zip' as bs = zip' ([] ++ as) (head✝ :: tail✝ ++ bs))) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 78,
+          "statement": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : (((x✝ : [].length = [].length) → zip' [] [] ++ zip' as bs = zip' ([] ++ as) ([] ++ bs)) ∧ ((h✝ : [].length = ys.length) → (head✝ : β) → (tail✝ : List β) → zip' [] (head✝ :: tail✝) ++ zip' as bs = zip' ([] ++ as) (head✝ :: tail✝ ++ bs))) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (x : α) (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) (h1 : ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length)) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 79,
+          "statement": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (x : α) (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) (h1 : ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length)) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : ((x✝ : [].length = [].length) → zip' [] [] ++ zip' as bs = zip' ([] ++ as) ([] ++ bs)) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → (x, y) :: (zip' xs ys ++ zip' as bs) = (x, y) :: zip' (xs ++ as) (ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 80,
+          "statement": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : ((x✝ : [].length = [].length) → zip' [] [] ++ zip' as bs = zip' ([] ++ as) ([] ++ bs)) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → (x, y) :: (zip' xs ys ++ zip' as bs) = (x, y) :: zip' (xs ++ as) (ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : (((x✝ : [].length = [].length) → zip' [] [] ++ zip' as bs = zip' ([] ++ as) ([] ++ bs)) ∧ ((h✝ : [].length = ys.length) → (head✝ : β) → (tail✝ : List β) → zip' [] (head✝ :: tail✝) ++ zip' as bs = zip' ([] ++ as) (head✝ :: tail✝ ++ bs))) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → (x, y) :: (zip' xs ys ++ zip' as bs) = zip' (x :: xs ++ as) (y :: ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 81,
+          "statement": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : (((x✝ : [].length = [].length) → zip' [] [] ++ zip' as bs = zip' ([] ++ as) ([] ++ bs)) ∧ ((h✝ : [].length = ys.length) → (head✝ : β) → (tail✝ : List β) → zip' [] (head✝ :: tail✝) ++ zip' as bs = zip' ([] ++ as) (head✝ :: tail✝ ++ bs))) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → (x, y) :: (zip' xs ys ++ zip' as bs) = zip' (x :: xs ++ as) (y :: ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : zip' [] ys ++ zip' as bs = zip' ([] ++ as) (ys ++ bs) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → (ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length)) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 82,
+          "statement": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : zip' [] ys ++ zip' as bs = zip' ([] ++ as) (ys ++ bs) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → (ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length)) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : ((h✝ : [].length = ys.length) → (head✝ : β) → (tail✝ : List β) → zip' [] (head✝ :: tail✝) ++ zip' as bs = zip' ([] ++ as) (head✝ :: tail✝ ++ bs)) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 83,
+          "statement": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : ((h✝ : [].length = ys.length) → (head✝ : β) → (tail✝ : List β) → zip' [] (head✝ :: tail✝) ++ zip' as bs = zip' ([] ++ as) (head✝ :: tail✝ ++ bs)) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : ((h✝ : [].length = ys.length) → (head✝ : β) → (tail✝ : List β) → zip' [] (head✝ :: tail✝) ++ zip' as bs = zip' ([] ++ as) (head✝ :: tail✝ ++ bs)) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 84,
+          "statement": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : ((h✝ : [].length = ys.length) → (head✝ : β) → (tail✝ : List β) → zip' [] (head✝ :: tail✝) ++ zip' as bs = zip' ([] ++ as) (head✝ :: tail✝ ++ bs)) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : zip' [] ys ++ zip' as bs = zip' ([] ++ as) (ys ++ bs) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → (h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 85,
+          "statement": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : zip' [] ys ++ zip' as bs = zip' ([] ++ as) (ys ++ bs) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → (h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : (((x✝ : [].length = [].length) → zip' [] [] ++ zip' as bs = zip' ([] ++ as) ([] ++ bs)) ∧ ((h✝ : [].length = ys.length) → (head✝ : β) → (tail✝ : List β) → zip' [] (head✝ :: tail✝) ++ zip' as bs = zip' ([] ++ as) (head✝ :: tail✝ ++ bs))) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 86,
+          "statement": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : (((x✝ : [].length = [].length) → zip' [] [] ++ zip' as bs = zip' ([] ++ as) ([] ++ bs)) ∧ ((h✝ : [].length = ys.length) → (head✝ : β) → (tail✝ : List β) → zip' [] (head✝ :: tail✝) ++ zip' as bs = zip' ([] ++ as) (head✝ :: tail✝ ++ bs))) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : ((x✝ : [].length = [].length) → zip' [] [] ++ zip' as bs = zip' ([] ++ as) ([] ++ bs)) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 87,
+          "statement": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : ((x✝ : [].length = [].length) → zip' [] [] ++ zip' as bs = zip' ([] ++ as) ([] ++ bs)) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : ((x✝ : [].length = [].length) → zip' [] [] ++ zip' as bs = zip' ([] ++ as) ([] ++ bs)) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 88,
+          "statement": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : ((x✝ : [].length = [].length) → zip' [] [] ++ zip' as bs = zip' ([] ++ as) ([] ++ bs)) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : zip' [] ys ++ zip' as bs = zip' ([] ++ as) (ys ++ bs) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → (ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 89,
+          "statement": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : zip' [] ys ++ zip' as bs = zip' ([] ++ as) (ys ++ bs) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → (ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : ((h✝ : [].length = ys.length) → (head✝ : β) → (tail✝ : List β) → zip' [] (head✝ :: tail✝) ++ zip' as bs = zip' ([] ++ as) (head✝ :: tail✝ ++ bs)) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 90,
+          "statement": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : ((h✝ : [].length = ys.length) → (head✝ : β) → (tail✝ : List β) → zip' [] (head✝ :: tail✝) ++ zip' as bs = zip' ([] ++ as) (head✝ :: tail✝ ++ bs)) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : ((x✝ : [].length = [].length) → zip' [] [] ++ zip' as bs = zip' ([] ++ as) ([] ++ bs)) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → (ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → (x, y) :: (zip' xs ys ++ zip' as bs) = zip' (x :: xs ++ as) (y :: ys ++ bs))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 91,
+          "statement": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : ((x✝ : [].length = [].length) → zip' [] [] ++ zip' as bs = zip' ([] ++ as) ([] ++ bs)) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → (ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → (x, y) :: (zip' xs ys ++ zip' as bs) = zip' (x :: xs ++ as) (y :: ys ++ bs))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : ((x✝ : [].length = [].length) → zip' [] [] ++ zip' as bs = zip' ([] ++ as) ([] ++ bs)) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → (ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length)) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 92,
+          "statement": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : ((x✝ : [].length = [].length) → zip' [] [] ++ zip' as bs = zip' ([] ++ as) ([] ++ bs)) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → (ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length)) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (x : α) (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) (h1 : ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length)) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 93,
+          "statement": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (x : α) (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) (h1 : ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length)) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : ((x✝ : [].length = [].length) → zip' [] [] ++ zip' as bs = zip' ([] ++ as) ([] ++ bs)) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 94,
+          "statement": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : ((x✝ : [].length = [].length) → zip' [] [] ++ zip' as bs = zip' ([] ++ as) ([] ++ bs)) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (x : α) (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) (h1 : ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length)) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 95,
+          "statement": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (x : α) (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) (h1 : ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length)) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : ((x✝ : [].length = [].length) → zip' [] [] ++ zip' as bs = zip' ([] ++ as) ([] ++ bs)) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → (x, y) :: (zip' xs ys ++ zip' as bs) = zip' (x :: xs ++ as) (y :: ys ++ bs)))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 96,
+          "statement": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : ((x✝ : [].length = [].length) → zip' [] [] ++ zip' as bs = zip' ([] ++ as) ([] ++ bs)) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → (x, y) :: (zip' xs ys ++ zip' as bs) = zip' (x :: xs ++ as) (y :: ys ++ bs)))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : (((x✝ : [].length = [].length) → zip' [] [] ++ zip' as bs = zip' ([] ++ as) ([] ++ bs)) ∧ ((h✝ : [].length = ys.length) → (head✝ : β) → (tail✝ : List β) → zip' [] (head✝ :: tail✝) ++ zip' as bs = zip' ([] ++ as) (head✝ :: tail✝ ++ bs))) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → (x, y) :: (zip' xs ys ++ zip' as bs) = (x, y) :: zip' (xs ++ as) (ys ++ bs)))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 97,
+          "statement": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : (((x✝ : [].length = [].length) → zip' [] [] ++ zip' as bs = zip' ([] ++ as) ([] ++ bs)) ∧ ((h✝ : [].length = ys.length) → (head✝ : β) → (tail✝ : List β) → zip' [] (head✝ :: tail✝) ++ zip' as bs = zip' ([] ++ as) (head✝ :: tail✝ ++ bs))) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → (x, y) :: (zip' xs ys ++ zip' as bs) = (x, y) :: zip' (xs ++ as) (ys ++ bs)))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : ((h✝ : [].length = ys.length) → (head✝ : β) → (tail✝ : List β) → zip' [] (head✝ :: tail✝) ++ zip' as bs = zip' ([] ++ as) (head✝ :: tail✝ ++ bs)) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → (ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 98,
+          "statement": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : ((h✝ : [].length = ys.length) → (head✝ : β) → (tail✝ : List β) → zip' [] (head✝ :: tail✝) ++ zip' as bs = zip' ([] ++ as) (head✝ :: tail✝ ++ bs)) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → (ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : (((x✝ : [].length = [].length) → zip' [] [] ++ zip' as bs = zip' ([] ++ as) ([] ++ bs)) ∧ ((h✝ : [].length = ys.length) → (head✝ : β) → (tail✝ : List β) → zip' [] (head✝ :: tail✝) ++ zip' as bs = zip' ([] ++ as) (head✝ :: tail✝ ++ bs))) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 99,
+          "statement": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : (((x✝ : [].length = [].length) → zip' [] [] ++ zip' as bs = zip' ([] ++ as) ([] ++ bs)) ∧ ((h✝ : [].length = ys.length) → (head✝ : β) → (tail✝ : List β) → zip' [] (head✝ :: tail✝) ++ zip' as bs = zip' ([] ++ as) (head✝ :: tail✝ ++ bs))) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : zip' [] ys ++ zip' as bs = zip' ([] ++ as) (ys ++ bs) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 100,
+          "statement": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : zip' [] ys ++ zip' as bs = zip' ([] ++ as) (ys ++ bs) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : (((x✝ : [].length = [].length) → zip' [] [] ++ zip' as bs = zip' ([] ++ as) ([] ++ bs)) ∧ ((h✝ : [].length = ys.length) → (head✝ : β) → (tail✝ : List β) → zip' [] (head✝ :: tail✝) ++ zip' as bs = zip' ([] ++ as) (head✝ :: tail✝ ++ bs))) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 101,
+          "statement": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : (((x✝ : [].length = [].length) → zip' [] [] ++ zip' as bs = zip' ([] ++ as) ([] ++ bs)) ∧ ((h✝ : [].length = ys.length) → (head✝ : β) → (tail✝ : List β) → zip' [] (head✝ :: tail✝) ++ zip' as bs = zip' ([] ++ as) (head✝ :: tail✝ ++ bs))) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (x : α) (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) (h1 : ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 102,
+          "statement": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (x : α) (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) (h1 : ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : zip' [] ys ++ zip' as bs = zip' ([] ++ as) (ys ++ bs) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → (x, y) :: (zip' xs ys ++ zip' as bs) = zip' (x :: xs ++ as) (y :: ys ++ bs)))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 103,
+          "statement": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : zip' [] ys ++ zip' as bs = zip' ([] ++ as) (ys ++ bs) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → (x, y) :: (zip' xs ys ++ zip' as bs) = zip' (x :: xs ++ as) (y :: ys ++ bs)))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : ((h✝ : [].length = ys.length) → (head✝ : β) → (tail✝ : List β) → zip' [] (head✝ :: tail✝) ++ zip' as bs = zip' ([] ++ as) (head✝ :: tail✝ ++ bs)) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → (ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length)) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 104,
+          "statement": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : ((h✝ : [].length = ys.length) → (head✝ : β) → (tail✝ : List β) → zip' [] (head✝ :: tail✝) ++ zip' as bs = zip' ([] ++ as) (head✝ :: tail✝ ++ bs)) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → (ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length)) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : ((h✝ : [].length = ys.length) → (head✝ : β) → (tail✝ : List β) → zip' [] (head✝ :: tail✝) ++ zip' as bs = zip' ([] ++ as) (head✝ :: tail✝ ++ bs)) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 105,
+          "statement": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : ((h✝ : [].length = ys.length) → (head✝ : β) → (tail✝ : List β) → zip' [] (head✝ :: tail✝) ++ zip' as bs = zip' ([] ++ as) (head✝ :: tail✝ ++ bs)) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : zip' [] ys ++ zip' as bs = zip' ([] ++ as) (ys ++ bs)) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 106,
+          "statement": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : zip' [] ys ++ zip' as bs = zip' ([] ++ as) (ys ++ bs)) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : (((x✝ : [].length = [].length) → zip' [] [] ++ zip' as bs = zip' ([] ++ as) ([] ++ bs)) ∧ ((h✝ : [].length = ys.length) → (head✝ : β) → (tail✝ : List β) → zip' [] (head✝ :: tail✝) ++ zip' as bs = zip' ([] ++ as) (head✝ :: tail✝ ++ bs))) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → (x, y) :: (zip' xs ys ++ zip' as bs) = (x, y) :: zip' (xs ++ as) (ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 107,
+          "statement": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : (((x✝ : [].length = [].length) → zip' [] [] ++ zip' as bs = zip' ([] ++ as) ([] ++ bs)) ∧ ((h✝ : [].length = ys.length) → (head✝ : β) → (tail✝ : List β) → zip' [] (head✝ :: tail✝) ++ zip' as bs = zip' ([] ++ as) (head✝ :: tail✝ ++ bs))) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → (x, y) :: (zip' xs ys ++ zip' as bs) = (x, y) :: zip' (xs ++ as) (ys ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (x : α) (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) (ys✝ : List β) (h✝ : (x :: xs).length = ys✝.length) (y : β) (h1 : xs.length = ys.length) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 108,
+          "statement": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (x : α) (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) (ys✝ : List β) (h✝ : (x :: xs).length = ys✝.length) (y : β) (h1 : xs.length = ys.length) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : (((x✝ : [].length = [].length) → zip' [] [] ++ zip' as bs = zip' ([] ++ as) ([] ++ bs)) ∧ ((h✝ : [].length = ys.length) → (head✝ : β) → (tail✝ : List β) → zip' [] (head✝ :: tail✝) ++ zip' as bs = zip' ([] ++ as) (head✝ :: tail✝ ++ bs))) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → (x, y) :: (zip' xs ys ++ zip' as bs) = zip' (x :: xs ++ as) (y :: ys ++ bs)))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 109,
+          "statement": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : (((x✝ : [].length = [].length) → zip' [] [] ++ zip' as bs = zip' ([] ++ as) ([] ++ bs)) ∧ ((h✝ : [].length = ys.length) → (head✝ : β) → (tail✝ : List β) → zip' [] (head✝ :: tail✝) ++ zip' as bs = zip' ([] ++ as) (head✝ :: tail✝ ++ bs))) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → ((h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) ∧ ((ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → (x, y) :: (zip' xs ys ++ zip' as bs) = zip' (x :: xs ++ as) (y :: ys ++ bs)))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : ((x✝ : [].length = [].length) → zip' [] [] ++ zip' as bs = zip' ([] ++ as) ([] ++ bs)) ∧ ((h✝ : [].length = ys.length) → (head✝ : β) → (tail✝ : List β) → zip' [] (head✝ :: tail✝) ++ zip' as bs = zip' ([] ++ as) (head✝ :: tail✝ ++ bs))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 110,
+          "statement": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : ((x✝ : [].length = [].length) → zip' [] [] ++ zip' as bs = zip' ([] ++ as) ([] ++ bs)) ∧ ((h✝ : [].length = ys.length) → (head✝ : β) → (tail✝ : List β) → zip' [] (head✝ :: tail✝) ++ zip' as bs = zip' ([] ++ as) (head✝ :: tail✝ ++ bs))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : ((h✝ : [].length = ys.length) → (head✝ : β) → (tail✝ : List β) → zip' [] (head✝ :: tail✝) ++ zip' as bs = zip' ([] ++ as) (head✝ :: tail✝ ++ bs)) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → (h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 111,
+          "statement": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : ((h✝ : [].length = ys.length) → (head✝ : β) → (tail✝ : List β) → zip' [] (head✝ :: tail✝) ++ zip' as bs = zip' ([] ++ as) (head✝ :: tail✝ ++ bs)) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → (h✝ : (x :: xs).length = ys.length) → zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : zip' [] ys ++ zip' as bs = zip' ([] ++ as) (ys ++ bs) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → (ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → (x, y) :: (zip' xs ys ++ zip' as bs) = zip' (x :: xs ++ as) (y :: ys ++ bs))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 112,
+          "statement": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : zip' [] ys ++ zip' as bs = zip' ([] ++ as) (ys ++ bs) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → (ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → (x, y) :: (zip' xs ys ++ zip' as bs) = zip' (x :: xs ++ as) (y :: ys ++ bs))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : (((x✝ : [].length = [].length) → zip' [] [] ++ zip' as bs = zip' ([] ++ as) ([] ++ bs)) ∧ ((h✝ : [].length = ys.length) → (head✝ : β) → (tail✝ : List β) → zip' [] (head✝ :: tail✝) ++ zip' as bs = zip' ([] ++ as) (head✝ :: tail✝ ++ bs))) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → (ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length)) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 113,
+          "statement": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : (((x✝ : [].length = [].length) → zip' [] [] ++ zip' as bs = zip' ([] ++ as) ([] ++ bs)) ∧ ((h✝ : [].length = ys.length) → (head✝ : β) → (tail✝ : List β) → zip' [] (head✝ :: tail✝) ++ zip' as bs = zip' ([] ++ as) (head✝ :: tail✝ ++ bs))) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → (ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → xs.length = ys.length)) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : (((x✝ : [].length = [].length) → zip' [] [] ++ zip' as bs = zip' ([] ++ as) ([] ++ bs)) ∧ ((h✝ : [].length = ys.length) → (head✝ : β) → (tail✝ : List β) → zip' [] (head✝ :: tail✝) ++ zip' as bs = zip' ([] ++ as) (head✝ :: tail✝ ++ bs))) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → (ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 114,
+          "statement": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : (((x✝ : [].length = [].length) → zip' [] [] ++ zip' as bs = zip' ([] ++ as) ([] ++ bs)) ∧ ((h✝ : [].length = ys.length) → (head✝ : β) → (tail✝ : List β) → zip' [] (head✝ :: tail✝) ++ zip' as bs = zip' ([] ++ as) (head✝ :: tail✝ ++ bs))) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → (ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : ((h✝ : [].length = ys.length) → (head✝ : β) → (tail✝ : List β) → zip' [] (head✝ :: tail✝) ++ zip' as bs = zip' ([] ++ as) (head✝ :: tail✝ ++ bs)) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → (ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → (x, y) :: (zip' xs ys ++ zip' as bs) = zip' (x :: xs ++ as) (y :: ys ++ bs))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 115,
+          "statement": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (h1 : ((h✝ : [].length = ys.length) → (head✝ : β) → (tail✝ : List β) → zip' [] (head✝ :: tail✝) ++ zip' as bs = zip' ([] ++ as) (head✝ :: tail✝ ++ bs)) ∧ ((x : α) → (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) → (ys✝ : List β) → (h✝ : (x :: xs).length = ys✝.length) → (y : β) → (h' : xs.length = ys.length) → (x, y) :: (zip' xs ys ++ zip' as bs) = zip' (x :: xs ++ as) (y :: ys ++ bs))) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    },
+    {
+      "canonical": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (x : α) (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) (h✝ : (x :: xs).length = ys.length) (h1 : zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)",
+      "frequency": 1,
+      "members": [
+        {
+          "source_file": "digestion/tests/snapshots/zip_append_of_length_eq.json",
+          "decl_name": "zip'_append_of_length_eq",
+          "fragment_id": 116,
+          "statement": "(xs : List α) (as : List α) (ys : List β) (bs : List β) (h : xs.length = ys.length) (x : α) (ih : ∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)) (h✝ : (x :: xs).length = ys.length) (h1 : zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)) : zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+        }
+      ]
+    }
+  ]
+}

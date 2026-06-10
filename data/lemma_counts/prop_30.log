@@ -1,0 +1,21 @@
+[1/3] Enumerating fragments (limit=200, strategy=random)...
+Wrote 6 fragment(s) to /tmp/lemma_fragments_c3hEMq.json
+[1/3] Got 6 fragment(s).
+[2/3] Running support minimization...
+[info] welcome to sbt 1.10.1 (JetBrains s.r.o. Java 21.0.6)
+[info] loading project definition from /nas/lemma-disc/scala-core/project
+[info] loading settings for project scala-core from build.sbt ...
+[info] set current project to scala-core (in build file:/nas/lemma-disc/scala-core/)
+[info] running Serializer /tmp/lemma_fragments_c3hEMq.json /tmp/lemma_out_WpxkJ1.json
+[success] Total time: 1 s, completed Jun 4, 2026, 12:17:59 AM
+[3/3] Deduplicating lemmas...
+Deduplicated: 6 → 6 lemmas (0 dropped)
+[3/3] Lemmas    written to /nas/lemma-disc/data/lemma_counts/prop_30_lemmas.json
+[3/3] Fragments written to /nas/lemma-disc/data/lemma_counts/prop_30_lemmas.fragments.json
+--- 6 lemma statement(s) ---
+[0] prop_30: (ih : x ∈ ins x ys) : x ∈ if x < y then x :: y :: ys else y :: ins x ys
+[1] prop_30: (ih : x ∈ ins x ys) : x = y ∨ x ∈ ins x ys
+[2] prop_30: (h1 : x ∈ ins x ys) : x ∈ y :: ins x ys
+[3] prop_30: (ih : x ∈ ins x ys) : x ∈ y :: ins x ys
+[4] prop_30: (ih : x ∈ ins x ys) : x ∈ ins x (y :: ys)
+[5] prop_30: (x : ℕ) (xs : List ℕ) : x ∈ ins x xs

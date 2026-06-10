@@ -1,0 +1,1753 @@
+{
+  "lemmas": [
+    {
+      "fragment_id": 0,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "ys : List α",
+        "x : α",
+        "xs : List α",
+        "ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+        "n : ℕ"
+      ],
+      "body": "True",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys",
+      "statement": "(ys : List α) (x : α) (xs : List α) (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) (n : ℕ) : drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys"
+    },
+    {
+      "fragment_id": 1,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "ys : List α",
+        "x : α",
+        "xs : List α",
+        "ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+        "n : ℕ"
+      ],
+      "body": "True",
+      "conclusion": "drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys",
+      "statement": "(ys : List α) (x : α) (xs : List α) (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) (n : ℕ) : drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys"
+    },
+    {
+      "fragment_id": 2,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ"
+      ],
+      "body": "drop 0 [] = [] ∧ ((a✝ : drop n [] = []) → drop (n + 1) [] = [])",
+      "conclusion": "drop n ([] ++ ys) = drop n [] ++ drop (n - length []) ys",
+      "statement": "(n : ℕ) (h1 : drop 0 [] = [] ∧ ((a✝ : drop n [] = []) → drop (n + 1) [] = [])) : drop n ([] ++ ys) = drop n [] ++ drop (n - length []) ys"
+    },
+    {
+      "fragment_id": 3,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ"
+      ],
+      "body": "True",
+      "conclusion": "drop n [] = []",
+      "statement": "(n : ℕ) : drop n [] = []"
+    },
+    {
+      "fragment_id": 4,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "(x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (x : α) (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) (h1 : drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 5,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "ys : List α",
+        "x : α",
+        "xs : List α",
+        "ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+        "n : ℕ"
+      ],
+      "body": "(key : n - length xs = n + 1 - (1 + length xs)) → drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys",
+      "conclusion": "drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys",
+      "statement": "(ys : List α) (x : α) (xs : List α) (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) (n : ℕ) (key : n - length xs = n + 1 - (1 + length xs)) (h1 : drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys) : drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys"
+    },
+    {
+      "fragment_id": 6,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "ys : List α",
+        "x : α",
+        "xs : List α",
+        "ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+        "n : ℕ"
+      ],
+      "body": "drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys",
+      "conclusion": "drop n (x :: xs ++ ys) = drop n (x :: xs) ++ drop (n - length (x :: xs)) ys",
+      "statement": "(ys : List α) (x : α) (xs : List α) (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) (n : ℕ) (h1 : drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys) : drop n (x :: xs ++ ys) = drop n (x :: xs) ++ drop (n - length (x :: xs)) ys"
+    },
+    {
+      "fragment_id": 7,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+        "n : ℕ"
+      ],
+      "body": "drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys",
+      "conclusion": "drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys",
+      "statement": "(ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) (n : ℕ) (h1 : drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys) : drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys"
+    },
+    {
+      "fragment_id": 8,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "ys : List α",
+        "x : α",
+        "xs : List α",
+        "ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+        "n : ℕ"
+      ],
+      "body": "drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys",
+      "conclusion": "drop n (x :: xs ++ ys) = drop n (x :: xs) ++ drop (n - length (x :: xs)) ys",
+      "statement": "(ys : List α) (x : α) (xs : List α) (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) (n : ℕ) (h1 : drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys) : drop n (x :: xs ++ ys) = drop n (x :: xs) ++ drop (n - length (x :: xs)) ys"
+    },
+    {
+      "fragment_id": 9,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "ys : List α",
+        "x : α",
+        "xs : List α",
+        "ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+        "n : ℕ"
+      ],
+      "body": "drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys",
+      "conclusion": "drop n (x :: xs ++ ys) = drop n (x :: xs) ++ drop (n - length (x :: xs)) ys",
+      "statement": "(ys : List α) (x : α) (xs : List α) (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) (n : ℕ) (h1 : drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys) : drop n (x :: xs ++ ys) = drop n (x :: xs) ++ drop (n - length (x :: xs)) ys"
+    },
+    {
+      "fragment_id": 10,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ"
+      ],
+      "body": "(a✝ : drop n [] = []) → drop (n + 1) [] = []",
+      "conclusion": "drop n ([] ++ ys) = drop n [] ++ drop (n - length []) ys",
+      "statement": "(n : ℕ) (a✝ : drop n [] = []) (h1 : drop (n + 1) [] = []) : drop n ([] ++ ys) = drop n [] ++ drop (n - length []) ys"
+    },
+    {
+      "fragment_id": 11,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "drop n ([] ++ ys) = drop n [] ++ drop (n - length []) ys ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys)",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (h1 : drop n ([] ++ ys) = drop n [] ++ drop (n - length []) ys ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys)) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 12,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "drop n [] = [] ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop n (x :: xs ++ ys) = drop n (x :: xs) ++ drop (n - length (x :: xs)) ys)",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (h1 : drop n [] = [] ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop n (x :: xs ++ ys) = drop n (x :: xs) ++ drop (n - length (x :: xs)) ys)) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 13,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ"
+      ],
+      "body": "True",
+      "conclusion": "drop n ([] ++ ys) = drop n [] ++ drop (n - length []) ys",
+      "statement": "(n : ℕ) : drop n ([] ++ ys) = drop n [] ++ drop (n - length []) ys"
+    },
+    {
+      "fragment_id": 14,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "ys : List α",
+        "x : α",
+        "xs : List α",
+        "ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+        "n : ℕ"
+      ],
+      "body": "drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ ((key : n - length xs = n + 1 - (1 + length xs)) → drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys) ∧ n - length xs = n + 1 - (1 + length xs)",
+      "conclusion": "drop n (x :: xs ++ ys) = drop n (x :: xs) ++ drop (n - length (x :: xs)) ys",
+      "statement": "(ys : List α) (x : α) (xs : List α) (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) (n : ℕ) (h1 : drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ ((key : n - length xs = n + 1 - (1 + length xs)) → drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys) ∧ n - length xs = n + 1 - (1 + length xs)) : drop n (x :: xs ++ ys) = drop n (x :: xs) ++ drop (n - length (x :: xs)) ys"
+    },
+    {
+      "fragment_id": 15,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ"
+      ],
+      "body": "(a✝ : drop n [] = []) → drop (n + 1) [] = []",
+      "conclusion": "drop n [] = []",
+      "statement": "(n : ℕ) (a✝ : drop n [] = []) (h1 : drop (n + 1) [] = []) : drop n [] = []"
+    },
+    {
+      "fragment_id": 16,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ"
+      ],
+      "body": "drop 0 [] = []",
+      "conclusion": "drop n [] = []",
+      "statement": "(n : ℕ) (h1 : drop 0 [] = []) : drop n [] = []"
+    },
+    {
+      "fragment_id": 17,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "drop n ([] ++ ys) = drop n [] ++ drop (n - length []) ys ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → ((key : n - length xs = n + 1 - (1 + length xs)) → drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys) ∧ n - length xs = n + 1 - (1 + length xs))",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (h1 : drop n ([] ++ ys) = drop n [] ++ drop (n - length []) ys ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → ((key : n - length xs = n + 1 - (1 + length xs)) → drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys) ∧ n - length xs = n + 1 - (1 + length xs))) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 18,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "((a✝ : drop n [] = []) → drop (n + 1) [] = []) ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys ∧ n - length xs = n + 1 - (1 + length xs))",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (h1 : ((a✝ : drop n [] = []) → drop (n + 1) [] = []) ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys ∧ n - length xs = n + 1 - (1 + length xs))) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 19,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "ys : List α",
+        "x : α",
+        "xs : List α",
+        "ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+        "n : ℕ"
+      ],
+      "body": "drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys ∧ n - length xs = n + 1 - (1 + length xs)",
+      "conclusion": "drop n (x :: xs ++ ys) = drop n (x :: xs) ++ drop (n - length (x :: xs)) ys",
+      "statement": "(ys : List α) (x : α) (xs : List α) (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) (n : ℕ) (h1 : drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys ∧ n - length xs = n + 1 - (1 + length xs)) : drop n (x :: xs ++ ys) = drop n (x :: xs) ++ drop (n - length (x :: xs)) ys"
+    },
+    {
+      "fragment_id": 20,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "drop n ([] ++ ys) = drop n [] ++ drop (n - length []) ys ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys ∧ n - length xs = n + 1 - (1 + length xs))",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (h1 : drop n ([] ++ ys) = drop n [] ++ drop (n - length []) ys ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys ∧ n - length xs = n + 1 - (1 + length xs))) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 21,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "ys : List α",
+        "x : α",
+        "xs : List α",
+        "ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+        "n : ℕ"
+      ],
+      "body": "n - length xs = n + 1 - (1 + length xs)",
+      "conclusion": "drop n (x :: xs ++ ys) = drop n (x :: xs) ++ drop (n - length (x :: xs)) ys",
+      "statement": "(ys : List α) (x : α) (xs : List α) (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) (n : ℕ) (h1 : n - length xs = n + 1 - (1 + length xs)) : drop n (x :: xs ++ ys) = drop n (x :: xs) ++ drop (n - length (x :: xs)) ys"
+    },
+    {
+      "fragment_id": 22,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "(drop 0 [] = [] ∧ ((a✝ : drop n [] = []) → drop (n + 1) [] = [])) ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop n (x :: xs ++ ys) = drop n (x :: xs) ++ drop (n - length (x :: xs)) ys)",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (h1 : (drop 0 [] = [] ∧ ((a✝ : drop n [] = []) → drop (n + 1) [] = [])) ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop n (x :: xs ++ ys) = drop n (x :: xs) ++ drop (n - length (x :: xs)) ys)) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 23,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ"
+      ],
+      "body": "drop 0 [] = []",
+      "conclusion": "drop n ([] ++ ys) = drop n [] ++ drop (n - length []) ys",
+      "statement": "(n : ℕ) (h1 : drop 0 [] = []) : drop n ([] ++ ys) = drop n [] ++ drop (n - length []) ys"
+    },
+    {
+      "fragment_id": 24,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "ys : List α",
+        "x : α",
+        "xs : List α",
+        "ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+        "n : ℕ"
+      ],
+      "body": "(key : n - length xs = n + 1 - (1 + length xs)) → drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys",
+      "statement": "(ys : List α) (x : α) (xs : List α) (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) (n : ℕ) (key : n - length xs = n + 1 - (1 + length xs)) (h1 : drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys) : drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys"
+    },
+    {
+      "fragment_id": 25,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "ys : List α",
+        "x : α",
+        "xs : List α",
+        "ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+        "n : ℕ"
+      ],
+      "body": "drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys",
+      "conclusion": "drop n (x :: xs ++ ys) = drop n (x :: xs) ++ drop (n - length (x :: xs)) ys",
+      "statement": "(ys : List α) (x : α) (xs : List α) (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) (n : ℕ) (h1 : drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys) : drop n (x :: xs ++ ys) = drop n (x :: xs) ++ drop (n - length (x :: xs)) ys"
+    },
+    {
+      "fragment_id": 26,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "ys : List α",
+        "x : α",
+        "xs : List α",
+        "ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+        "n : ℕ"
+      ],
+      "body": "True",
+      "conclusion": "drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys",
+      "statement": "(ys : List α) (x : α) (xs : List α) (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) (n : ℕ) : drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys"
+    },
+    {
+      "fragment_id": 27,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "ys : List α",
+        "x : α",
+        "xs : List α",
+        "ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+        "n : ℕ"
+      ],
+      "body": "True",
+      "conclusion": "drop n (x :: xs ++ ys) = drop n (x :: xs) ++ drop (n - length (x :: xs)) ys",
+      "statement": "(ys : List α) (x : α) (xs : List α) (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) (n : ℕ) : drop n (x :: xs ++ ys) = drop n (x :: xs) ++ drop (n - length (x :: xs)) ys"
+    },
+    {
+      "fragment_id": 28,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "ys : List α",
+        "x : α",
+        "xs : List α",
+        "ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+        "n : ℕ"
+      ],
+      "body": "drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys ∧ n - length xs = n + 1 - (1 + length xs)",
+      "conclusion": "drop n (x :: xs ++ ys) = drop n (x :: xs) ++ drop (n - length (x :: xs)) ys",
+      "statement": "(ys : List α) (x : α) (xs : List α) (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) (n : ℕ) (h1 : drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys ∧ n - length xs = n + 1 - (1 + length xs)) : drop n (x :: xs ++ ys) = drop n (x :: xs) ++ drop (n - length (x :: xs)) ys"
+    },
+    {
+      "fragment_id": 29,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "drop n [] = [] ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → ((key : n - length xs = n + 1 - (1 + length xs)) → drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys) ∧ n - length xs = n + 1 - (1 + length xs))",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (h1 : drop n [] = [] ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → ((key : n - length xs = n + 1 - (1 + length xs)) → drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys) ∧ n - length xs = n + 1 - (1 + length xs))) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 30,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "ys : List α",
+        "x : α",
+        "xs : List α",
+        "ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+        "n : ℕ"
+      ],
+      "body": "drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys ∧ n - length xs = n + 1 - (1 + length xs)",
+      "conclusion": "drop n (x :: xs ++ ys) = drop n (x :: xs) ++ drop (n - length (x :: xs)) ys",
+      "statement": "(ys : List α) (x : α) (xs : List α) (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) (n : ℕ) (h1 : drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys ∧ n - length xs = n + 1 - (1 + length xs)) : drop n (x :: xs ++ ys) = drop n (x :: xs) ++ drop (n - length (x :: xs)) ys"
+    },
+    {
+      "fragment_id": 31,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "drop 0 [] = [] ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys ∧ n - length xs = n + 1 - (1 + length xs))",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (h1 : drop 0 [] = [] ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys ∧ n - length xs = n + 1 - (1 + length xs))) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 32,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "ys : List α",
+        "x : α",
+        "xs : List α",
+        "ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+        "n : ℕ"
+      ],
+      "body": "drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys",
+      "conclusion": "drop n (x :: xs ++ ys) = drop n (x :: xs) ++ drop (n - length (x :: xs)) ys",
+      "statement": "(ys : List α) (x : α) (xs : List α) (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) (n : ℕ) (h1 : drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys) : drop n (x :: xs ++ ys) = drop n (x :: xs) ++ drop (n - length (x :: xs)) ys"
+    },
+    {
+      "fragment_id": 33,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "ys : List α",
+        "x : α",
+        "xs : List α",
+        "ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+        "n : ℕ"
+      ],
+      "body": "drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys",
+      "conclusion": "drop n (x :: xs ++ ys) = drop n (x :: xs) ++ drop (n - length (x :: xs)) ys",
+      "statement": "(ys : List α) (x : α) (xs : List α) (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) (n : ℕ) (h1 : drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys) : drop n (x :: xs ++ ys) = drop n (x :: xs) ++ drop (n - length (x :: xs)) ys"
+    },
+    {
+      "fragment_id": 34,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "drop n [] = [] ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys)",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (h1 : drop n [] = [] ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys)) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 35,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "drop n ([] ++ ys) = drop n [] ++ drop (n - length []) ys ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys ∧ n - length xs = n + 1 - (1 + length xs))",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (h1 : drop n ([] ++ ys) = drop n [] ++ drop (n - length []) ys ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys ∧ n - length xs = n + 1 - (1 + length xs))) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 36,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "drop n [] = [] ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys)",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (h1 : drop n [] = [] ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys)) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 37,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "(x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (x : α) (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) (h1 : drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 38,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "(drop 0 [] = [] ∧ ((a✝ : drop n [] = []) → drop (n + 1) [] = [])) ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys ∧ n - length xs = n + 1 - (1 + length xs))",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (h1 : (drop 0 [] = [] ∧ ((a✝ : drop n [] = []) → drop (n + 1) [] = [])) ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys ∧ n - length xs = n + 1 - (1 + length xs))) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 39,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "drop n [] = [] ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys ∧ n - length xs = n + 1 - (1 + length xs))",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (h1 : drop n [] = [] ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys ∧ n - length xs = n + 1 - (1 + length xs))) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 40,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "((a✝ : drop n [] = []) → drop (n + 1) [] = []) ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys ∧ n - length xs = n + 1 - (1 + length xs))",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (h1 : ((a✝ : drop n [] = []) → drop (n + 1) [] = []) ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys ∧ n - length xs = n + 1 - (1 + length xs))) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 41,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "drop n ([] ++ ys) = drop n [] ++ drop (n - length []) ys ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys)",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (h1 : drop n ([] ++ ys) = drop n [] ++ drop (n - length []) ys ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys)) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 42,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "drop n ([] ++ ys) = drop n [] ++ drop (n - length []) ys ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys)",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (h1 : drop n ([] ++ ys) = drop n [] ++ drop (n - length []) ys ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys)) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 43,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "((a✝ : drop n [] = []) → drop (n + 1) [] = []) ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys)",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (h1 : ((a✝ : drop n [] = []) → drop (n + 1) [] = []) ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys)) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 44,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "drop n [] = [] ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys ∧ n - length xs = n + 1 - (1 + length xs))",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (h1 : drop n [] = [] ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys ∧ n - length xs = n + 1 - (1 + length xs))) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 45,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "drop 0 [] = [] ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys ∧ n - length xs = n + 1 - (1 + length xs))",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (h1 : drop 0 [] = [] ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys ∧ n - length xs = n + 1 - (1 + length xs))) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 46,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "drop n ([] ++ ys) = drop n [] ++ drop (n - length []) ys ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → n - length xs = n + 1 - (1 + length xs))",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (h1 : drop n ([] ++ ys) = drop n [] ++ drop (n - length []) ys ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → n - length xs = n + 1 - (1 + length xs))) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 47,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "(x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop n (x :: xs ++ ys) = drop n (x :: xs) ++ drop (n - length (x :: xs)) ys",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (x : α) (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) (h1 : drop n (x :: xs ++ ys) = drop n (x :: xs) ++ drop (n - length (x :: xs)) ys) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 48,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "ys : List α",
+        "x : α",
+        "xs : List α",
+        "ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+        "n : ℕ"
+      ],
+      "body": "drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys",
+      "conclusion": "drop n (x :: xs ++ ys) = drop n (x :: xs) ++ drop (n - length (x :: xs)) ys",
+      "statement": "(ys : List α) (x : α) (xs : List α) (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) (n : ℕ) (h1 : drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys) : drop n (x :: xs ++ ys) = drop n (x :: xs) ++ drop (n - length (x :: xs)) ys"
+    },
+    {
+      "fragment_id": 49,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "ys : List α",
+        "x : α",
+        "xs : List α",
+        "ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+        "n : ℕ"
+      ],
+      "body": "drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys ∧ n - length xs = n + 1 - (1 + length xs)",
+      "conclusion": "drop n (x :: xs ++ ys) = drop n (x :: xs) ++ drop (n - length (x :: xs)) ys",
+      "statement": "(ys : List α) (x : α) (xs : List α) (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) (n : ℕ) (h1 : drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys ∧ n - length xs = n + 1 - (1 + length xs)) : drop n (x :: xs ++ ys) = drop n (x :: xs) ++ drop (n - length (x :: xs)) ys"
+    },
+    {
+      "fragment_id": 50,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "drop n ([] ++ ys) = drop n [] ++ drop (n - length []) ys ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys)",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (h1 : drop n ([] ++ ys) = drop n [] ++ drop (n - length []) ys ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys)) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 51,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "ys : List α",
+        "x : α",
+        "xs : List α",
+        "ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+        "n : ℕ"
+      ],
+      "body": "((key : n - length xs = n + 1 - (1 + length xs)) → drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys) ∧ n - length xs = n + 1 - (1 + length xs)",
+      "conclusion": "drop n (x :: xs ++ ys) = drop n (x :: xs) ++ drop (n - length (x :: xs)) ys",
+      "statement": "(ys : List α) (x : α) (xs : List α) (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) (n : ℕ) (h1 : ((key : n - length xs = n + 1 - (1 + length xs)) → drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys) ∧ n - length xs = n + 1 - (1 + length xs)) : drop n (x :: xs ++ ys) = drop n (x :: xs) ++ drop (n - length (x :: xs)) ys"
+    },
+    {
+      "fragment_id": 52,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "drop n [] = [] ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys)",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (h1 : drop n [] = [] ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys)) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 53,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "((a✝ : drop n [] = []) → drop (n + 1) [] = []) ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop n (x :: xs ++ ys) = drop n (x :: xs) ++ drop (n - length (x :: xs)) ys)",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (h1 : ((a✝ : drop n [] = []) → drop (n + 1) [] = []) ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop n (x :: xs ++ ys) = drop n (x :: xs) ++ drop (n - length (x :: xs)) ys)) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 54,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "drop 0 [] = [] ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys)",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (h1 : drop 0 [] = [] ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys)) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 55,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "drop 0 [] = [] ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys ∧ n - length xs = n + 1 - (1 + length xs))",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (h1 : drop 0 [] = [] ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys ∧ n - length xs = n + 1 - (1 + length xs))) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 56,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "drop n [] = [] ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys)",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (h1 : drop n [] = [] ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys)) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 57,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "ys : List α",
+        "x : α",
+        "xs : List α",
+        "ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+        "n : ℕ"
+      ],
+      "body": "drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys ∧ n - length xs = n + 1 - (1 + length xs)",
+      "conclusion": "drop n (x :: xs ++ ys) = drop n (x :: xs) ++ drop (n - length (x :: xs)) ys",
+      "statement": "(ys : List α) (x : α) (xs : List α) (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) (n : ℕ) (h1 : drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys ∧ n - length xs = n + 1 - (1 + length xs)) : drop n (x :: xs ++ ys) = drop n (x :: xs) ++ drop (n - length (x :: xs)) ys"
+    },
+    {
+      "fragment_id": 58,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "drop n ([] ++ ys) = drop n [] ++ drop (n - length []) ys ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys ∧ n - length xs = n + 1 - (1 + length xs))",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (h1 : drop n ([] ++ ys) = drop n [] ++ drop (n - length []) ys ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys ∧ n - length xs = n + 1 - (1 + length xs))) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 59,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "drop 0 [] = [] ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop n (x :: xs ++ ys) = drop n (x :: xs) ++ drop (n - length (x :: xs)) ys)",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (h1 : drop 0 [] = [] ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop n (x :: xs ++ ys) = drop n (x :: xs) ++ drop (n - length (x :: xs)) ys)) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 60,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "drop n ([] ++ ys) = drop n [] ++ drop (n - length []) ys ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys ∧ n - length xs = n + 1 - (1 + length xs))",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (h1 : drop n ([] ++ ys) = drop n [] ++ drop (n - length []) ys ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys ∧ n - length xs = n + 1 - (1 + length xs))) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 61,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "drop n [] = [] ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys)",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (h1 : drop n [] = [] ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys)) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 62,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "(drop 0 [] = [] ∧ ((a✝ : drop n [] = []) → drop (n + 1) [] = [])) ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ ((key : n - length xs = n + 1 - (1 + length xs)) → drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys))",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (h1 : (drop 0 [] = [] ∧ ((a✝ : drop n [] = []) → drop (n + 1) [] = [])) ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ ((key : n - length xs = n + 1 - (1 + length xs)) → drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys))) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 63,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "drop n ([] ++ ys) = drop n [] ++ drop (n - length []) ys ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys)",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (h1 : drop n ([] ++ ys) = drop n [] ++ drop (n - length []) ys ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys)) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 64,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "drop n [] = [] ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys ∧ n - length xs = n + 1 - (1 + length xs))",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (h1 : drop n [] = [] ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys ∧ n - length xs = n + 1 - (1 + length xs))) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 65,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "ys : List α",
+        "x : α",
+        "xs : List α",
+        "ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+        "n : ℕ"
+      ],
+      "body": "drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ n - length xs = n + 1 - (1 + length xs)",
+      "conclusion": "drop n (x :: xs ++ ys) = drop n (x :: xs) ++ drop (n - length (x :: xs)) ys",
+      "statement": "(ys : List α) (x : α) (xs : List α) (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) (n : ℕ) (h1 : drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ n - length xs = n + 1 - (1 + length xs)) : drop n (x :: xs ++ ys) = drop n (x :: xs) ++ drop (n - length (x :: xs)) ys"
+    },
+    {
+      "fragment_id": 66,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "((a✝ : drop n [] = []) → drop (n + 1) [] = []) ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys)",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (h1 : ((a✝ : drop n [] = []) → drop (n + 1) [] = []) ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys)) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 67,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "(x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (x : α) (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) (h1 : drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 68,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "ys : List α",
+        "x : α",
+        "xs : List α",
+        "ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+        "n : ℕ"
+      ],
+      "body": "drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ ((key : n - length xs = n + 1 - (1 + length xs)) → drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys)",
+      "conclusion": "drop n (x :: xs ++ ys) = drop n (x :: xs) ++ drop (n - length (x :: xs)) ys",
+      "statement": "(ys : List α) (x : α) (xs : List α) (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) (n : ℕ) (h1 : drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ ((key : n - length xs = n + 1 - (1 + length xs)) → drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys)) : drop n (x :: xs ++ ys) = drop n (x :: xs) ++ drop (n - length (x :: xs)) ys"
+    },
+    {
+      "fragment_id": 69,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "(x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → ((key : n - length xs = n + 1 - (1 + length xs)) → drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys) ∧ n - length xs = n + 1 - (1 + length xs)",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (x : α) (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) (h1 : ((key : n - length xs = n + 1 - (1 + length xs)) → drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys) ∧ n - length xs = n + 1 - (1 + length xs)) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 70,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "(x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys ∧ n - length xs = n + 1 - (1 + length xs)",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (x : α) (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) (h1 : drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys ∧ n - length xs = n + 1 - (1 + length xs)) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 71,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "drop n [] = [] ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys ∧ n - length xs = n + 1 - (1 + length xs))",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (h1 : drop n [] = [] ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys ∧ n - length xs = n + 1 - (1 + length xs))) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 72,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "ys : List α",
+        "x : α",
+        "xs : List α",
+        "ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+        "n : ℕ"
+      ],
+      "body": "(key : n - length xs = n + 1 - (1 + length xs)) → drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys",
+      "conclusion": "drop n (x :: xs ++ ys) = drop n (x :: xs) ++ drop (n - length (x :: xs)) ys",
+      "statement": "(ys : List α) (x : α) (xs : List α) (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) (n : ℕ) (key : n - length xs = n + 1 - (1 + length xs)) (h1 : drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys) : drop n (x :: xs ++ ys) = drop n (x :: xs) ++ drop (n - length (x :: xs)) ys"
+    },
+    {
+      "fragment_id": 73,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "drop n ([] ++ ys) = drop n [] ++ drop (n - length []) ys ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys ∧ n - length xs = n + 1 - (1 + length xs))",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (h1 : drop n ([] ++ ys) = drop n [] ++ drop (n - length []) ys ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys ∧ n - length xs = n + 1 - (1 + length xs))) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 74,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "drop n ([] ++ ys) = drop n [] ++ drop (n - length []) ys ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys)",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (h1 : drop n ([] ++ ys) = drop n [] ++ drop (n - length []) ys ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys)) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 75,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "(x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys ∧ n - length xs = n + 1 - (1 + length xs)",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (x : α) (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) (h1 : drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys ∧ n - length xs = n + 1 - (1 + length xs)) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 76,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "drop n [] = [] ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys ∧ n - length xs = n + 1 - (1 + length xs))",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (h1 : drop n [] = [] ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys ∧ n - length xs = n + 1 - (1 + length xs))) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 77,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "((a✝ : drop n [] = []) → drop (n + 1) [] = []) ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys)",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (h1 : ((a✝ : drop n [] = []) → drop (n + 1) [] = []) ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys)) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 78,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "(drop 0 [] = [] ∧ ((a✝ : drop n [] = []) → drop (n + 1) [] = [])) ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys)",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (h1 : (drop 0 [] = [] ∧ ((a✝ : drop n [] = []) → drop (n + 1) [] = [])) ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys)) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 79,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "drop n [] = [] ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys)",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (h1 : drop n [] = [] ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys)) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 80,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "drop n ([] ++ ys) = drop n [] ++ drop (n - length []) ys ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → (key : n - length xs = n + 1 - (1 + length xs)) → drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys)",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (h1 : drop n ([] ++ ys) = drop n [] ++ drop (n - length []) ys ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → (key : n - length xs = n + 1 - (1 + length xs)) → drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys)) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 81,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "(drop 0 [] = [] ∧ ((a✝ : drop n [] = []) → drop (n + 1) [] = [])) ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → (key : n - length xs = n + 1 - (1 + length xs)) → drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys)",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (h1 : (drop 0 [] = [] ∧ ((a✝ : drop n [] = []) → drop (n + 1) [] = [])) ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → (key : n - length xs = n + 1 - (1 + length xs)) → drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys)) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 82,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "(drop 0 [] = [] ∧ ((a✝ : drop n [] = []) → drop (n + 1) [] = [])) ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys ∧ n - length xs = n + 1 - (1 + length xs))",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (h1 : (drop 0 [] = [] ∧ ((a✝ : drop n [] = []) → drop (n + 1) [] = [])) ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys ∧ n - length xs = n + 1 - (1 + length xs))) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 83,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "(drop 0 [] = [] ∧ ((a✝ : drop n [] = []) → drop (n + 1) [] = [])) ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys)",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (h1 : (drop 0 [] = [] ∧ ((a✝ : drop n [] = []) → drop (n + 1) [] = [])) ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys)) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 84,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "drop n [] = [] ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys ∧ n - length xs = n + 1 - (1 + length xs))",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (h1 : drop n [] = [] ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys ∧ n - length xs = n + 1 - (1 + length xs))) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 85,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "(drop 0 [] = [] ∧ ((a✝ : drop n [] = []) → drop (n + 1) [] = [])) ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys ∧ n - length xs = n + 1 - (1 + length xs))",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (h1 : (drop 0 [] = [] ∧ ((a✝ : drop n [] = []) → drop (n + 1) [] = [])) ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys ∧ n - length xs = n + 1 - (1 + length xs))) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 86,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "drop 0 [] = [] ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → ((key : n - length xs = n + 1 - (1 + length xs)) → drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys) ∧ n - length xs = n + 1 - (1 + length xs))",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (h1 : drop 0 [] = [] ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → ((key : n - length xs = n + 1 - (1 + length xs)) → drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys) ∧ n - length xs = n + 1 - (1 + length xs))) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 87,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "drop n ([] ++ ys) = drop n [] ++ drop (n - length []) ys ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys ∧ n - length xs = n + 1 - (1 + length xs))",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (h1 : drop n ([] ++ ys) = drop n [] ++ drop (n - length []) ys ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys ∧ n - length xs = n + 1 - (1 + length xs))) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 88,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "drop n ([] ++ ys) = drop n [] ++ drop (n - length []) ys ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys)",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (h1 : drop n ([] ++ ys) = drop n [] ++ drop (n - length []) ys ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys)) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 89,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "drop n ([] ++ ys) = drop n [] ++ drop (n - length []) ys ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ n - length xs = n + 1 - (1 + length xs))",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (h1 : drop n ([] ++ ys) = drop n [] ++ drop (n - length []) ys ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ n - length xs = n + 1 - (1 + length xs))) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 90,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "((a✝ : drop n [] = []) → drop (n + 1) [] = []) ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys ∧ n - length xs = n + 1 - (1 + length xs))",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (h1 : ((a✝ : drop n [] = []) → drop (n + 1) [] = []) ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys ∧ n - length xs = n + 1 - (1 + length xs))) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 91,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "drop 0 [] = [] ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys)",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (h1 : drop 0 [] = [] ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys)) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 92,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "((a✝ : drop n [] = []) → drop (n + 1) [] = []) ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ ((key : n - length xs = n + 1 - (1 + length xs)) → drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys))",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (h1 : ((a✝ : drop n [] = []) → drop (n + 1) [] = []) ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ ((key : n - length xs = n + 1 - (1 + length xs)) → drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys))) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 93,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "(drop 0 [] = [] ∧ ((a✝ : drop n [] = []) → drop (n + 1) [] = [])) ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ ((key : n - length xs = n + 1 - (1 + length xs)) → drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys) ∧ n - length xs = n + 1 - (1 + length xs))",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (h1 : (drop 0 [] = [] ∧ ((a✝ : drop n [] = []) → drop (n + 1) [] = [])) ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ ((key : n - length xs = n + 1 - (1 + length xs)) → drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys) ∧ n - length xs = n + 1 - (1 + length xs))) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 94,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "((a✝ : drop n [] = []) → drop (n + 1) [] = []) ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys ∧ n - length xs = n + 1 - (1 + length xs))",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (h1 : ((a✝ : drop n [] = []) → drop (n + 1) [] = []) ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys ∧ n - length xs = n + 1 - (1 + length xs))) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 95,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "drop n ([] ++ ys) = drop n [] ++ drop (n - length []) ys ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ ((key : n - length xs = n + 1 - (1 + length xs)) → drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys))",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (h1 : drop n ([] ++ ys) = drop n [] ++ drop (n - length []) ys ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ ((key : n - length xs = n + 1 - (1 + length xs)) → drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys))) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 96,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "(x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (x : α) (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) (h1 : drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 97,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "drop 0 [] = [] ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys ∧ n - length xs = n + 1 - (1 + length xs))",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (h1 : drop 0 [] = [] ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys ∧ n - length xs = n + 1 - (1 + length xs))) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 98,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "(drop 0 [] = [] ∧ ((a✝ : drop n [] = []) → drop (n + 1) [] = [])) ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys)",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (h1 : (drop 0 [] = [] ∧ ((a✝ : drop n [] = []) → drop (n + 1) [] = [])) ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys)) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 99,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "drop n ([] ++ ys) = drop n [] ++ drop (n - length []) ys ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ ((key : n - length xs = n + 1 - (1 + length xs)) → drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys) ∧ n - length xs = n + 1 - (1 + length xs))",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (h1 : drop n ([] ++ ys) = drop n [] ++ drop (n - length []) ys ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ ((key : n - length xs = n + 1 - (1 + length xs)) → drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys) ∧ n - length xs = n + 1 - (1 + length xs))) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 100,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "(drop 0 [] = [] ∧ ((a✝ : drop n [] = []) → drop (n + 1) [] = [])) ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys)",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (h1 : (drop 0 [] = [] ∧ ((a✝ : drop n [] = []) → drop (n + 1) [] = [])) ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys)) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 101,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "drop n [] = [] ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ ((key : n - length xs = n + 1 - (1 + length xs)) → drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys))",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (h1 : drop n [] = [] ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ ((key : n - length xs = n + 1 - (1 + length xs)) → drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys))) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 102,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "drop n [] = [] ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys)",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (h1 : drop n [] = [] ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys)) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 103,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "drop 0 [] = [] ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys)",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (h1 : drop 0 [] = [] ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys)) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 104,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "drop n [] = [] ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → n - length xs = n + 1 - (1 + length xs))",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (h1 : drop n [] = [] ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → n - length xs = n + 1 - (1 + length xs))) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 105,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "drop 0 [] = [] ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys ∧ n - length xs = n + 1 - (1 + length xs))",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (h1 : drop 0 [] = [] ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys ∧ n - length xs = n + 1 - (1 + length xs))) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 106,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "((a✝ : drop n [] = []) → drop (n + 1) [] = []) ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → n - length xs = n + 1 - (1 + length xs))",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (h1 : ((a✝ : drop n [] = []) → drop (n + 1) [] = []) ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → n - length xs = n + 1 - (1 + length xs))) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 107,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "(drop 0 [] = [] ∧ ((a✝ : drop n [] = []) → drop (n + 1) [] = [])) ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys ∧ n - length xs = n + 1 - (1 + length xs))",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (h1 : (drop 0 [] = [] ∧ ((a✝ : drop n [] = []) → drop (n + 1) [] = [])) ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys ∧ n - length xs = n + 1 - (1 + length xs))) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 108,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "(drop 0 [] = [] ∧ ((a✝ : drop n [] = []) → drop (n + 1) [] = [])) ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → n - length xs = n + 1 - (1 + length xs))",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (h1 : (drop 0 [] = [] ∧ ((a✝ : drop n [] = []) → drop (n + 1) [] = [])) ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → n - length xs = n + 1 - (1 + length xs))) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 109,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "(x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (x : α) (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) (h1 : drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 110,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "((a✝ : drop n [] = []) → drop (n + 1) [] = []) ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys)",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (h1 : ((a✝ : drop n [] = []) → drop (n + 1) [] = []) ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys)) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 111,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "(drop 0 [] = [] ∧ ((a✝ : drop n [] = []) → drop (n + 1) [] = [])) ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → ((key : n - length xs = n + 1 - (1 + length xs)) → drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys) ∧ n - length xs = n + 1 - (1 + length xs))",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (h1 : (drop 0 [] = [] ∧ ((a✝ : drop n [] = []) → drop (n + 1) [] = [])) ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → ((key : n - length xs = n + 1 - (1 + length xs)) → drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys) ∧ n - length xs = n + 1 - (1 + length xs))) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 112,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "drop 0 [] = [] ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys)",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (h1 : drop 0 [] = [] ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys)) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 113,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "drop 0 [] = [] ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys)",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (h1 : drop 0 [] = [] ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys)) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 114,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "(drop 0 [] = [] ∧ ((a✝ : drop n [] = []) → drop (n + 1) [] = [])) ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys)",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (h1 : (drop 0 [] = [] ∧ ((a✝ : drop n [] = []) → drop (n + 1) [] = [])) ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys)) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 115,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "((a✝ : drop n [] = []) → drop (n + 1) [] = []) ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys)",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (h1 : ((a✝ : drop n [] = []) → drop (n + 1) [] = []) ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys)) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 116,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "drop n [] = []",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (h1 : drop n [] = []) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 117,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "drop 0 [] = [] ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ ((key : n - length xs = n + 1 - (1 + length xs)) → drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys))",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (h1 : drop 0 [] = [] ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ ((key : n - length xs = n + 1 - (1 + length xs)) → drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys))) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 118,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "(x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys ∧ n - length xs = n + 1 - (1 + length xs)",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (x : α) (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) (h1 : drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys ∧ n - length xs = n + 1 - (1 + length xs)) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 119,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "((a✝ : drop n [] = []) → drop (n + 1) [] = []) ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys ∧ n - length xs = n + 1 - (1 + length xs))",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (h1 : ((a✝ : drop n [] = []) → drop (n + 1) [] = []) ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys ∧ n - length xs = n + 1 - (1 + length xs))) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 120,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "drop 0 [] = [] ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys)",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (h1 : drop 0 [] = [] ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys)) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 121,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "((a✝ : drop n [] = []) → drop (n + 1) [] = []) ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → (key : n - length xs = n + 1 - (1 + length xs)) → drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys)",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (h1 : ((a✝ : drop n [] = []) → drop (n + 1) [] = []) ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → (key : n - length xs = n + 1 - (1 + length xs)) → drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys)) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 122,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "drop n ([] ++ ys) = drop n [] ++ drop (n - length []) ys",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (h1 : drop n ([] ++ ys) = drop n [] ++ drop (n - length []) ys) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 123,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "(x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys ∧ n - length xs = n + 1 - (1 + length xs)",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (x : α) (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) (h1 : drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys ∧ n - length xs = n + 1 - (1 + length xs)) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 124,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "(x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys ∧ n - length xs = n + 1 - (1 + length xs)",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (x : α) (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) (h1 : drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys ∧ n - length xs = n + 1 - (1 + length xs)) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 125,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "drop 0 [] = [] ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → (key : n - length xs = n + 1 - (1 + length xs)) → drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys)",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (h1 : drop 0 [] = [] ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → (key : n - length xs = n + 1 - (1 + length xs)) → drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys)) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 126,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "(a✝ : drop n [] = []) → drop (n + 1) [] = []",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (a✝ : drop n [] = []) (h1 : drop (n + 1) [] = []) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 127,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "(x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys ∧ n - length xs = n + 1 - (1 + length xs)",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (x : α) (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) (h1 : drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys ∧ n - length xs = n + 1 - (1 + length xs)) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 128,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "(x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → n - length xs = n + 1 - (1 + length xs)",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (x : α) (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) (h1 : n - length xs = n + 1 - (1 + length xs)) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 129,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "(drop 0 [] = [] ∧ ((a✝ : drop n [] = []) → drop (n + 1) [] = [])) ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys)",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (h1 : (drop 0 [] = [] ∧ ((a✝ : drop n [] = []) → drop (n + 1) [] = [])) ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys)) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 130,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "drop n [] = [] ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ n - length xs = n + 1 - (1 + length xs))",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (h1 : drop n [] = [] ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ n - length xs = n + 1 - (1 + length xs))) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 131,
+      "source_file": "digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "body": "(drop 0 [] = [] ∧ ((a✝ : drop n [] = []) → drop (n + 1) [] = [])) ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys)",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) (h1 : (drop 0 [] = [] ∧ ((a✝ : drop n [] = []) → drop (n + 1) [] = [])) ∧ ((x : α) → (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) → drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys ∧ drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys)) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    }
+  ]
+}

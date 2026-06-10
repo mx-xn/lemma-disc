@@ -1,0 +1,1525 @@
+{
+  "fragments": [
+    {
+      "fragment_id": 0,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_02.json",
+      "decl_name": "prop_02",
+      "root_node_id": 1,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "n",
+            "type": "ℕ"
+          },
+          {
+            "name": "xs",
+            "type": "List ℕ"
+          },
+          {
+            "name": "ys",
+            "type": "List ℕ"
+          }
+        ],
+        "goal": "count n xs + count n ys = count n (xs ++ ys)"
+      },
+      "nodes": [
+        {
+          "id": 1,
+          "kind": "leaf",
+          "tactic_text": "simp [count]",
+          "parent_id": null,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "n",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "ys",
+                "type": "List ℕ"
+              }
+            ],
+            "goal": "count n xs + count n ys = count n (xs ++ ys)"
+          },
+          "summary": {
+            "directly_used": [],
+            "dependency_maps": []
+          }
+        }
+      ]
+    },
+    {
+      "fragment_id": 1,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_02.json",
+      "decl_name": "prop_02",
+      "root_node_id": 2,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "ys",
+            "type": "List ℕ"
+          },
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "xs",
+            "type": "List ℕ"
+          },
+          {
+            "name": "ih",
+            "type": "∀ (n : ℕ), count n xs + count n ys = count n (xs ++ ys)"
+          },
+          {
+            "name": "n",
+            "type": "ℕ"
+          }
+        ],
+        "goal": "count n (x :: xs) + count n ys = count n (x :: xs ++ ys)"
+      },
+      "nodes": [
+        {
+          "id": 2,
+          "kind": "node",
+          "tactic_text": "show count n (x :: xs) + count n ys = count n (x :: (xs ++ ys))",
+          "parent_id": null,
+          "child_ids": [
+            3
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "ys",
+                "type": "List ℕ"
+              },
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (n : ℕ), count n xs + count n ys = count n (xs ++ ys)"
+              },
+              {
+                "name": "n",
+                "type": "ℕ"
+              }
+            ],
+            "goal": "count n (x :: xs) + count n ys = count n (x :: xs ++ ys)"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "ys",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "x",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "xs",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "ih",
+                  "type": "∀ (n : ℕ), count n xs + count n ys = count n (xs ++ ys)"
+                },
+                {
+                  "name": "n",
+                  "type": "ℕ"
+                }
+              ],
+              "goal": "count n (x :: xs) + count n ys = count n (x :: (xs ++ ys))"
+            }
+          ],
+          "summary": {
+            "directly_used": [
+              "n",
+              "x",
+              "xs",
+              "ys"
+            ],
+            "dependency_maps": [
+              {
+                "x": [
+                  "x"
+                ],
+                "n": [
+                  "n"
+                ],
+                "ih": [
+                  "ih"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "ys": [
+                  "ys"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 3,
+          "kind": "hole",
+          "hole_id": "hole_0",
+          "parent_id": 2,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "ys",
+                "type": "List ℕ"
+              },
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (n : ℕ), count n xs + count n ys = count n (xs ++ ys)"
+              },
+              {
+                "name": "n",
+                "type": "ℕ"
+              }
+            ],
+            "goal": "count n (x :: xs) + count n ys = count n (x :: (xs ++ ys))"
+          }
+        }
+      ]
+    },
+    {
+      "fragment_id": 2,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_02.json",
+      "decl_name": "prop_02",
+      "root_node_id": 3,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "ys",
+            "type": "List ℕ"
+          },
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "xs",
+            "type": "List ℕ"
+          },
+          {
+            "name": "ih",
+            "type": "∀ (n : ℕ), count n xs + count n ys = count n (xs ++ ys)"
+          },
+          {
+            "name": "n",
+            "type": "ℕ"
+          }
+        ],
+        "goal": "count n (x :: xs) + count n ys = count n (x :: (xs ++ ys))"
+      },
+      "nodes": [
+        {
+          "id": 3,
+          "kind": "node",
+          "tactic_text": "simp only [count]",
+          "parent_id": null,
+          "child_ids": [
+            4
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "ys",
+                "type": "List ℕ"
+              },
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (n : ℕ), count n xs + count n ys = count n (xs ++ ys)"
+              },
+              {
+                "name": "n",
+                "type": "ℕ"
+              }
+            ],
+            "goal": "count n (x :: xs) + count n ys = count n (x :: (xs ++ ys))"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "ys",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "x",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "xs",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "ih",
+                  "type": "∀ (n : ℕ), count n xs + count n ys = count n (xs ++ ys)"
+                },
+                {
+                  "name": "n",
+                  "type": "ℕ"
+                }
+              ],
+              "goal": "(if n = x then count n xs + 1 else count n xs) + count n ys ="
+            }
+          ],
+          "summary": {
+            "directly_used": [],
+            "dependency_maps": [
+              {
+                "x": [
+                  "x"
+                ],
+                "n": [
+                  "n"
+                ],
+                "ih": [
+                  "ih"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "ys": [
+                  "ys"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 4,
+          "kind": "hole",
+          "hole_id": "hole_0",
+          "parent_id": 3,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "ys",
+                "type": "List ℕ"
+              },
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (n : ℕ), count n xs + count n ys = count n (xs ++ ys)"
+              },
+              {
+                "name": "n",
+                "type": "ℕ"
+              }
+            ],
+            "goal": "(if n = x then count n xs + 1 else count n xs) + count n ys ="
+          }
+        }
+      ]
+    },
+    {
+      "fragment_id": 3,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_02.json",
+      "decl_name": "prop_02",
+      "root_node_id": 2,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "ys",
+            "type": "List ℕ"
+          },
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "xs",
+            "type": "List ℕ"
+          },
+          {
+            "name": "ih",
+            "type": "∀ (n : ℕ), count n xs + count n ys = count n (xs ++ ys)"
+          },
+          {
+            "name": "n",
+            "type": "ℕ"
+          }
+        ],
+        "goal": "count n (x :: xs) + count n ys = count n (x :: xs ++ ys)"
+      },
+      "nodes": [
+        {
+          "id": 2,
+          "kind": "node",
+          "tactic_text": "show count n (x :: xs) + count n ys = count n (x :: (xs ++ ys))",
+          "parent_id": null,
+          "child_ids": [
+            3
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "ys",
+                "type": "List ℕ"
+              },
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (n : ℕ), count n xs + count n ys = count n (xs ++ ys)"
+              },
+              {
+                "name": "n",
+                "type": "ℕ"
+              }
+            ],
+            "goal": "count n (x :: xs) + count n ys = count n (x :: xs ++ ys)"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "ys",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "x",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "xs",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "ih",
+                  "type": "∀ (n : ℕ), count n xs + count n ys = count n (xs ++ ys)"
+                },
+                {
+                  "name": "n",
+                  "type": "ℕ"
+                }
+              ],
+              "goal": "count n (x :: xs) + count n ys = count n (x :: (xs ++ ys))"
+            }
+          ],
+          "summary": {
+            "directly_used": [
+              "n",
+              "x",
+              "xs",
+              "ys"
+            ],
+            "dependency_maps": [
+              {
+                "x": [
+                  "x"
+                ],
+                "n": [
+                  "n"
+                ],
+                "ih": [
+                  "ih"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "ys": [
+                  "ys"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 3,
+          "kind": "node",
+          "tactic_text": "simp only [count]",
+          "parent_id": 2,
+          "child_ids": [
+            4
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "ys",
+                "type": "List ℕ"
+              },
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (n : ℕ), count n xs + count n ys = count n (xs ++ ys)"
+              },
+              {
+                "name": "n",
+                "type": "ℕ"
+              }
+            ],
+            "goal": "count n (x :: xs) + count n ys = count n (x :: (xs ++ ys))"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "ys",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "x",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "xs",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "ih",
+                  "type": "∀ (n : ℕ), count n xs + count n ys = count n (xs ++ ys)"
+                },
+                {
+                  "name": "n",
+                  "type": "ℕ"
+                }
+              ],
+              "goal": "(if n = x then count n xs + 1 else count n xs) + count n ys ="
+            }
+          ],
+          "summary": {
+            "directly_used": [],
+            "dependency_maps": [
+              {
+                "x": [
+                  "x"
+                ],
+                "n": [
+                  "n"
+                ],
+                "ih": [
+                  "ih"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "ys": [
+                  "ys"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 4,
+          "kind": "hole",
+          "hole_id": "hole_0",
+          "parent_id": 3,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "ys",
+                "type": "List ℕ"
+              },
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (n : ℕ), count n xs + count n ys = count n (xs ++ ys)"
+              },
+              {
+                "name": "n",
+                "type": "ℕ"
+              }
+            ],
+            "goal": "(if n = x then count n xs + 1 else count n xs) + count n ys ="
+          }
+        }
+      ]
+    },
+    {
+      "fragment_id": 4,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_02.json",
+      "decl_name": "prop_02",
+      "root_node_id": 5,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "ys",
+            "type": "List ℕ"
+          },
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "xs",
+            "type": "List ℕ"
+          },
+          {
+            "name": "ih",
+            "type": "∀ (n : ℕ), count n xs + count n ys = count n (xs ++ ys)"
+          },
+          {
+            "name": "n",
+            "type": "ℕ"
+          }
+        ],
+        "goal": "count n (x :: xs) + count n ys = count n (x :: xs ++ ys)"
+      },
+      "nodes": [
+        {
+          "id": 5,
+          "kind": "node",
+          "tactic_text": "have h' := ih n",
+          "parent_id": null,
+          "child_ids": [
+            6
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "ys",
+                "type": "List ℕ"
+              },
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (n : ℕ), count n xs + count n ys = count n (xs ++ ys)"
+              },
+              {
+                "name": "n",
+                "type": "ℕ"
+              }
+            ],
+            "goal": "count n (x :: xs) + count n ys = count n (x :: xs ++ ys)"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "ys",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "x",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "xs",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "ih",
+                  "type": "∀ (n : ℕ), count n xs + count n ys = count n (xs ++ ys)"
+                },
+                {
+                  "name": "n",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "h'",
+                  "type": "count n xs + count n ys = count n (xs ++ ys)"
+                }
+              ],
+              "goal": "count n (x :: xs) + count n ys = count n (x :: xs ++ ys)"
+            }
+          ],
+          "summary": {
+            "directly_used": [
+              "ih",
+              "n"
+            ],
+            "dependency_maps": [
+              {
+                "x": [
+                  "x"
+                ],
+                "ih": [
+                  "ih"
+                ],
+                "h": [
+                  "h"
+                ],
+                "h'": [
+                  "ys",
+                  "xs",
+                  "n"
+                ],
+                "n": [
+                  "n"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "ys": [
+                  "ys"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 6,
+          "kind": "hole",
+          "hole_id": "hole_0",
+          "parent_id": 5,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "ys",
+                "type": "List ℕ"
+              },
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (n : ℕ), count n xs + count n ys = count n (xs ++ ys)"
+              },
+              {
+                "name": "n",
+                "type": "ℕ"
+              },
+              {
+                "name": "h'",
+                "type": "count n xs + count n ys = count n (xs ++ ys)"
+              }
+            ],
+            "goal": "count n (x :: xs) + count n ys = count n (x :: xs ++ ys)"
+          }
+        }
+      ]
+    },
+    {
+      "fragment_id": 5,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_02.json",
+      "decl_name": "prop_02",
+      "root_node_id": 6,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "ys",
+            "type": "List ℕ"
+          },
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "xs",
+            "type": "List ℕ"
+          },
+          {
+            "name": "ih",
+            "type": "∀ (n : ℕ), count n xs + count n ys = count n (xs ++ ys)"
+          },
+          {
+            "name": "n",
+            "type": "ℕ"
+          }
+        ],
+        "goal": "count n (x :: xs) + count n ys = count n (x :: xs ++ ys)"
+      },
+      "nodes": [
+        {
+          "id": 6,
+          "kind": "leaf",
+          "tactic_text": "omega",
+          "parent_id": null,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "ys",
+                "type": "List ℕ"
+              },
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (n : ℕ), count n xs + count n ys = count n (xs ++ ys)"
+              },
+              {
+                "name": "n",
+                "type": "ℕ"
+              }
+            ],
+            "goal": "count n (x :: xs) + count n ys = count n (x :: xs ++ ys)"
+          },
+          "summary": {
+            "directly_used": [
+              "h",
+              "h'",
+              "ih",
+              "n",
+              "x",
+              "xs",
+              "ys"
+            ],
+            "dependency_maps": []
+          }
+        }
+      ]
+    },
+    {
+      "fragment_id": 6,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_02.json",
+      "decl_name": "prop_02",
+      "root_node_id": 7,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "ys",
+            "type": "List ℕ"
+          },
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "xs",
+            "type": "List ℕ"
+          },
+          {
+            "name": "ih",
+            "type": "∀ (n : ℕ), count n xs + count n ys = count n (xs ++ ys)"
+          },
+          {
+            "name": "n",
+            "type": "ℕ"
+          }
+        ],
+        "goal": "count n (x :: xs) + count n ys = count n (x :: xs ++ ys)"
+      },
+      "nodes": [
+        {
+          "id": 7,
+          "kind": "leaf",
+          "tactic_text": "exact ih n",
+          "parent_id": null,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "ys",
+                "type": "List ℕ"
+              },
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (n : ℕ), count n xs + count n ys = count n (xs ++ ys)"
+              },
+              {
+                "name": "n",
+                "type": "ℕ"
+              }
+            ],
+            "goal": "count n (x :: xs) + count n ys = count n (x :: xs ++ ys)"
+          },
+          "summary": {
+            "directly_used": [
+              "ih",
+              "n"
+            ],
+            "dependency_maps": []
+          }
+        }
+      ]
+    },
+    {
+      "fragment_id": 7,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_02.json",
+      "decl_name": "prop_02",
+      "root_node_id": 4,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "ys",
+            "type": "List ℕ"
+          },
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "xs",
+            "type": "List ℕ"
+          },
+          {
+            "name": "ih",
+            "type": "∀ (n : ℕ), count n xs + count n ys = count n (xs ++ ys)"
+          },
+          {
+            "name": "n",
+            "type": "ℕ"
+          }
+        ],
+        "goal": "(if n = x then count n xs + 1 else count n xs) + count n ys ="
+      },
+      "nodes": [
+        {
+          "id": 4,
+          "kind": "node",
+          "tactic_text": "split_ifs with h",
+          "parent_id": null,
+          "child_ids": [
+            6,
+            7
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "ys",
+                "type": "List ℕ"
+              },
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (n : ℕ), count n xs + count n ys = count n (xs ++ ys)"
+              },
+              {
+                "name": "n",
+                "type": "ℕ"
+              }
+            ],
+            "goal": "(if n = x then count n xs + 1 else count n xs) + count n ys ="
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "ys",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "x",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "xs",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "ih",
+                  "type": "∀ (n : ℕ), count n xs + count n ys = count n (xs ++ ys)"
+                },
+                {
+                  "name": "n",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "h",
+                  "type": "n = x"
+                }
+              ],
+              "goal": "count n xs + 1 + count n ys = count n (xs ++ ys) + 1"
+            },
+            {
+              "hypotheses": [
+                {
+                  "name": "ys",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "x",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "xs",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "ih",
+                  "type": "∀ (n : ℕ), count n xs + count n ys = count n (xs ++ ys)"
+                },
+                {
+                  "name": "n",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "h",
+                  "type": "¬n = x"
+                }
+              ],
+              "goal": "count n xs + count n ys = count n (xs ++ ys)"
+            }
+          ],
+          "summary": {
+            "directly_used": [],
+            "dependency_maps": [
+              {
+                "x": [
+                  "x"
+                ],
+                "n": [
+                  "n"
+                ],
+                "ih": [
+                  "ih"
+                ],
+                "h": [
+                  "x",
+                  "n"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "ys": [
+                  "ys"
+                ]
+              },
+              {
+                "x": [
+                  "x"
+                ],
+                "n": [
+                  "n"
+                ],
+                "ih": [
+                  "ih"
+                ],
+                "h": [
+                  "x",
+                  "n"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "ys": [
+                  "ys"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 6,
+          "kind": "leaf",
+          "tactic_text": "omega",
+          "parent_id": 4,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "ys",
+                "type": "List ℕ"
+              },
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (n : ℕ), count n xs + count n ys = count n (xs ++ ys)"
+              },
+              {
+                "name": "n",
+                "type": "ℕ"
+              },
+              {
+                "name": "h",
+                "type": "n = x"
+              }
+            ],
+            "goal": "count n xs + 1 + count n ys = count n (xs ++ ys) + 1"
+          },
+          "summary": {
+            "directly_used": [
+              "h",
+              "h'",
+              "ih",
+              "n",
+              "x",
+              "xs",
+              "ys"
+            ],
+            "dependency_maps": []
+          }
+        },
+        {
+          "id": 7,
+          "kind": "leaf",
+          "tactic_text": "exact ih n",
+          "parent_id": 4,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "ys",
+                "type": "List ℕ"
+              },
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (n : ℕ), count n xs + count n ys = count n (xs ++ ys)"
+              },
+              {
+                "name": "n",
+                "type": "ℕ"
+              },
+              {
+                "name": "h",
+                "type": "¬n = x"
+              }
+            ],
+            "goal": "count n xs + count n ys = count n (xs ++ ys)"
+          },
+          "summary": {
+            "directly_used": [
+              "ih",
+              "n"
+            ],
+            "dependency_maps": []
+          }
+        }
+      ]
+    },
+    {
+      "fragment_id": 8,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_02.json",
+      "decl_name": "prop_02",
+      "root_node_id": 3,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "ys",
+            "type": "List ℕ"
+          },
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "xs",
+            "type": "List ℕ"
+          },
+          {
+            "name": "ih",
+            "type": "∀ (n : ℕ), count n xs + count n ys = count n (xs ++ ys)"
+          },
+          {
+            "name": "n",
+            "type": "ℕ"
+          }
+        ],
+        "goal": "count n (x :: xs) + count n ys = count n (x :: (xs ++ ys))"
+      },
+      "nodes": [
+        {
+          "id": 3,
+          "kind": "node",
+          "tactic_text": "simp only [count]",
+          "parent_id": null,
+          "child_ids": [
+            4
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "ys",
+                "type": "List ℕ"
+              },
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (n : ℕ), count n xs + count n ys = count n (xs ++ ys)"
+              },
+              {
+                "name": "n",
+                "type": "ℕ"
+              }
+            ],
+            "goal": "count n (x :: xs) + count n ys = count n (x :: (xs ++ ys))"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "ys",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "x",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "xs",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "ih",
+                  "type": "∀ (n : ℕ), count n xs + count n ys = count n (xs ++ ys)"
+                },
+                {
+                  "name": "n",
+                  "type": "ℕ"
+                }
+              ],
+              "goal": "(if n = x then count n xs + 1 else count n xs) + count n ys ="
+            }
+          ],
+          "summary": {
+            "directly_used": [],
+            "dependency_maps": [
+              {
+                "x": [
+                  "x"
+                ],
+                "n": [
+                  "n"
+                ],
+                "ih": [
+                  "ih"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "ys": [
+                  "ys"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 4,
+          "kind": "node",
+          "tactic_text": "split_ifs with h",
+          "parent_id": 3,
+          "child_ids": [
+            6,
+            7
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "ys",
+                "type": "List ℕ"
+              },
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (n : ℕ), count n xs + count n ys = count n (xs ++ ys)"
+              },
+              {
+                "name": "n",
+                "type": "ℕ"
+              }
+            ],
+            "goal": "(if n = x then count n xs + 1 else count n xs) + count n ys ="
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "ys",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "x",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "xs",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "ih",
+                  "type": "∀ (n : ℕ), count n xs + count n ys = count n (xs ++ ys)"
+                },
+                {
+                  "name": "n",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "h",
+                  "type": "n = x"
+                }
+              ],
+              "goal": "count n xs + 1 + count n ys = count n (xs ++ ys) + 1"
+            },
+            {
+              "hypotheses": [
+                {
+                  "name": "ys",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "x",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "xs",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "ih",
+                  "type": "∀ (n : ℕ), count n xs + count n ys = count n (xs ++ ys)"
+                },
+                {
+                  "name": "n",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "h",
+                  "type": "¬n = x"
+                }
+              ],
+              "goal": "count n xs + count n ys = count n (xs ++ ys)"
+            }
+          ],
+          "summary": {
+            "directly_used": [],
+            "dependency_maps": [
+              {
+                "x": [
+                  "x"
+                ],
+                "n": [
+                  "n"
+                ],
+                "ih": [
+                  "ih"
+                ],
+                "h": [
+                  "x",
+                  "n"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "ys": [
+                  "ys"
+                ]
+              },
+              {
+                "x": [
+                  "x"
+                ],
+                "n": [
+                  "n"
+                ],
+                "ih": [
+                  "ih"
+                ],
+                "h": [
+                  "x",
+                  "n"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "ys": [
+                  "ys"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 6,
+          "kind": "leaf",
+          "tactic_text": "omega",
+          "parent_id": 4,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "ys",
+                "type": "List ℕ"
+              },
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (n : ℕ), count n xs + count n ys = count n (xs ++ ys)"
+              },
+              {
+                "name": "n",
+                "type": "ℕ"
+              },
+              {
+                "name": "h",
+                "type": "n = x"
+              }
+            ],
+            "goal": "count n xs + 1 + count n ys = count n (xs ++ ys) + 1"
+          },
+          "summary": {
+            "directly_used": [
+              "h",
+              "h'",
+              "ih",
+              "n",
+              "x",
+              "xs",
+              "ys"
+            ],
+            "dependency_maps": []
+          }
+        },
+        {
+          "id": 7,
+          "kind": "leaf",
+          "tactic_text": "exact ih n",
+          "parent_id": 4,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "ys",
+                "type": "List ℕ"
+              },
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (n : ℕ), count n xs + count n ys = count n (xs ++ ys)"
+              },
+              {
+                "name": "n",
+                "type": "ℕ"
+              },
+              {
+                "name": "h",
+                "type": "¬n = x"
+              }
+            ],
+            "goal": "count n xs + count n ys = count n (xs ++ ys)"
+          },
+          "summary": {
+            "directly_used": [
+              "ih",
+              "n"
+            ],
+            "dependency_maps": []
+          }
+        }
+      ]
+    }
+  ]
+}

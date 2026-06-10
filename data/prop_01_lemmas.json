@@ -1,0 +1,84 @@
+{
+  "lemmas": [
+    {
+      "fragment_id": 0,
+      "source_file": "digestion/tests/snapshots/Examples__prop_01.json",
+      "decl_name": "prop_01",
+      "premises": [
+        "n : ℕ"
+      ],
+      "body": "True",
+      "conclusion": "drop n [] = []",
+      "statement": "(n : ℕ) : drop n [] = []"
+    },
+    {
+      "fragment_id": 1,
+      "source_file": "digestion/tests/snapshots/Examples__prop_01.json",
+      "decl_name": "prop_01",
+      "premises": [
+        "ih : ∀ (n : ℕ), take n xs ++ drop n xs = xs",
+        "n : ℕ"
+      ],
+      "body": "True",
+      "conclusion": "take (n + 1) (x :: xs) ++ drop (n + 1) (x :: xs) = x :: xs",
+      "statement": "(ih : ∀ (n : ℕ), take n xs ++ drop n xs = xs) (n : ℕ) : take (n + 1) (x :: xs) ++ drop (n + 1) (x :: xs) = x :: xs"
+    },
+    {
+      "fragment_id": 2,
+      "source_file": "digestion/tests/snapshots/Examples__prop_01.json",
+      "decl_name": "prop_01",
+      "premises": [
+        "ih : ∀ (n : ℕ), take n xs ++ drop n xs = xs",
+        "n : ℕ"
+      ],
+      "body": "True",
+      "conclusion": "take n (x :: xs) ++ drop n (x :: xs) = x :: xs",
+      "statement": "(ih : ∀ (n : ℕ), take n xs ++ drop n xs = xs) (n : ℕ) : take n (x :: xs) ++ drop n (x :: xs) = x :: xs"
+    },
+    {
+      "fragment_id": 3,
+      "source_file": "digestion/tests/snapshots/Examples__prop_01.json",
+      "decl_name": "prop_01",
+      "premises": [
+        "n : ℕ"
+      ],
+      "body": "True",
+      "conclusion": "take n [] = []",
+      "statement": "(n : ℕ) : take n [] = []"
+    },
+    {
+      "fragment_id": 4,
+      "source_file": "digestion/tests/snapshots/Examples__prop_01.json",
+      "decl_name": "prop_01",
+      "premises": [
+        "n : ℕ"
+      ],
+      "body": "True",
+      "conclusion": "take n [] = [] ∧ drop n [] = []",
+      "statement": "(n : ℕ) : take n [] = [] ∧ drop n [] = []"
+    },
+    {
+      "fragment_id": 5,
+      "source_file": "digestion/tests/snapshots/Examples__prop_01.json",
+      "decl_name": "prop_01",
+      "premises": [
+        "n : ℕ"
+      ],
+      "body": "True",
+      "conclusion": "take n [] ++ drop n [] = []",
+      "statement": "(n : ℕ) : take n [] ++ drop n [] = []"
+    },
+    {
+      "fragment_id": 6,
+      "source_file": "digestion/tests/snapshots/Examples__prop_01.json",
+      "decl_name": "prop_01",
+      "premises": [
+        "n : ℕ",
+        "xs : List α"
+      ],
+      "body": "True",
+      "conclusion": "take n xs ++ drop n xs = xs",
+      "statement": "(n : ℕ) (xs : List α) : take n xs ++ drop n xs = xs"
+    }
+  ]
+}

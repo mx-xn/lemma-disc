@@ -1,0 +1,139 @@
+{
+  "name": "prop_35",
+  "statement": "theorem prop_35 (xs: List α) :\n  (dropWhile (fun _ => False) xs = xs) :=",
+  "root_tactic_id": 0,
+  "tactic_nodes": [
+    {
+      "id": 0,
+      "tactic_text": "induction xs with\n| nil => _*_\n| cons x xs ih => _*_",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "α",
+            "type": "Type u_1"
+          },
+          {
+            "name": "xs",
+            "type": "List α"
+          }
+        ],
+        "goal": "dropWhile (fun x => decide False) xs = xs"
+      },
+      "output_obligations": [
+        {
+          "hypotheses": [
+            {
+              "name": "α",
+              "type": "Type u_1"
+            }
+          ],
+          "goal": "dropWhile (fun x => decide False) [] = []"
+        },
+        {
+          "hypotheses": [
+            {
+              "name": "α",
+              "type": "Type u_1"
+            },
+            {
+              "name": "x",
+              "type": "α"
+            },
+            {
+              "name": "xs",
+              "type": "List α"
+            },
+            {
+              "name": "ih",
+              "type": "dropWhile (fun x => decide False) xs = xs"
+            }
+          ],
+          "goal": "dropWhile (fun x => decide False) (x :: xs) = x :: xs"
+        }
+      ],
+      "summary": {
+        "directly_used": [
+          "xs"
+        ],
+        "dependency_maps": [
+          {
+            "α": [
+              "α"
+            ]
+          },
+          {
+            "α": [
+              "α"
+            ],
+            "x": [
+              "α"
+            ],
+            "xs": [
+              "xs"
+            ],
+            "ih": [
+              "xs"
+            ]
+          }
+        ]
+      },
+      "parent_id": null,
+      "child_ids": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": 1,
+      "tactic_text": "simp [dropWhile]",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "α",
+            "type": "Type u_1"
+          }
+        ],
+        "goal": "dropWhile (fun x => decide False) [] = []"
+      },
+      "output_obligations": [],
+      "summary": {
+        "directly_used": [],
+        "dependency_maps": []
+      },
+      "parent_id": 0,
+      "child_ids": []
+    },
+    {
+      "id": 2,
+      "tactic_text": "simp [dropWhile]",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "α",
+            "type": "Type u_1"
+          },
+          {
+            "name": "x",
+            "type": "α"
+          },
+          {
+            "name": "xs",
+            "type": "List α"
+          },
+          {
+            "name": "ih",
+            "type": "dropWhile (fun x => decide False) xs = xs"
+          }
+        ],
+        "goal": "dropWhile (fun x => decide False) (x :: xs) = x :: xs"
+      },
+      "output_obligations": [],
+      "summary": {
+        "directly_used": [],
+        "dependency_maps": []
+      },
+      "parent_id": 0,
+      "child_ids": []
+    }
+  ]
+}

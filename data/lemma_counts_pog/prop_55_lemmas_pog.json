@@ -1,0 +1,230 @@
+{
+  "lemmas": [
+    {
+      "fragment_id": 0,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [],
+      "body": "drop n [] = []",
+      "conclusion": "drop n ([] ++ ys) = drop n [] ++ drop (n - length []) ys",
+      "statement": "(h1 : drop n [] = []) : drop n ([] ++ ys) = drop n [] ++ drop (n - length []) ys"
+    },
+    {
+      "fragment_id": 1,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [],
+      "body": "True",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 2,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ"
+      ],
+      "body": "True",
+      "conclusion": "drop n [] = []",
+      "statement": "(n : ℕ) : drop n [] = []"
+    },
+    {
+      "fragment_id": 3,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "n : ℕ"
+      ],
+      "body": "True",
+      "conclusion": "drop n ([] ++ ys) = drop n [] ++ drop (n - length []) ys",
+      "statement": "(n : ℕ) : drop n ([] ++ ys) = drop n [] ++ drop (n - length []) ys"
+    },
+    {
+      "fragment_id": 4,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [],
+      "body": "drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys",
+      "conclusion": "drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys",
+      "statement": "(h1 : drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys) : drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys"
+    },
+    {
+      "fragment_id": 5,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+        "n : ℕ"
+      ],
+      "body": "drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys",
+      "statement": "(ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) (n : ℕ) (h1 : drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys) : drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys"
+    },
+    {
+      "fragment_id": 6,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+        "n : ℕ"
+      ],
+      "body": "drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys",
+      "conclusion": "drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys",
+      "statement": "(ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) (n : ℕ) (h1 : drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys) : drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys"
+    },
+    {
+      "fragment_id": 7,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "ys : List α",
+        "x : α",
+        "xs : List α",
+        "ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+        "n : ℕ"
+      ],
+      "body": "(key : n - length xs = n + 1 - (1 + length xs)) → drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys",
+      "conclusion": "drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys",
+      "statement": "(ys : List α) (x : α) (xs : List α) (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) (n : ℕ) (key : n - length xs = n + 1 - (1 + length xs)) (h1 : drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys) : drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys"
+    },
+    {
+      "fragment_id": 8,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "ys : List α",
+        "x : α",
+        "xs : List α",
+        "ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+        "n : ℕ"
+      ],
+      "body": "(key : n - length xs = n + 1 - (1 + length xs)) → drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys",
+      "conclusion": "drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys",
+      "statement": "(ys : List α) (x : α) (xs : List α) (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) (n : ℕ) (key : n - length xs = n + 1 - (1 + length xs)) (h1 : drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys) : drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys"
+    },
+    {
+      "fragment_id": 9,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "ys : List α",
+        "x : α",
+        "xs : List α",
+        "ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+        "n : ℕ"
+      ],
+      "body": "(key : n - length xs = n + 1 - (1 + length xs)) → drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys",
+      "statement": "(ys : List α) (x : α) (xs : List α) (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) (n : ℕ) (key : n - length xs = n + 1 - (1 + length xs)) (h1 : drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys) : drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys"
+    },
+    {
+      "fragment_id": 10,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "ys : List α",
+        "x : α",
+        "xs : List α",
+        "ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+        "n : ℕ"
+      ],
+      "body": "(key : n - length xs = n + 1 - (1 + length xs)) → drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys",
+      "conclusion": "drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys",
+      "statement": "(ys : List α) (x : α) (xs : List α) (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) (n : ℕ) (key : n - length xs = n + 1 - (1 + length xs)) (h1 : drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys) : drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys"
+    },
+    {
+      "fragment_id": 11,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [],
+      "body": "True",
+      "conclusion": "drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys",
+      "statement": "drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys"
+    },
+    {
+      "fragment_id": 12,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+        "n : ℕ"
+      ],
+      "body": "True",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys",
+      "statement": "(ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) (n : ℕ) : drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys"
+    },
+    {
+      "fragment_id": 13,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+        "n : ℕ"
+      ],
+      "body": "True",
+      "conclusion": "drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys",
+      "statement": "(ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) (n : ℕ) : drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys"
+    },
+    {
+      "fragment_id": 14,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "ys : List α",
+        "x : α",
+        "xs : List α",
+        "ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+        "n : ℕ"
+      ],
+      "body": "True",
+      "conclusion": "drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys",
+      "statement": "(ys : List α) (x : α) (xs : List α) (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) (n : ℕ) : drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys"
+    },
+    {
+      "fragment_id": 15,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "ys : List α",
+        "x : α",
+        "xs : List α",
+        "ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+        "n : ℕ"
+      ],
+      "body": "True",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys",
+      "statement": "(ys : List α) (x : α) (xs : List α) (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) (n : ℕ) : drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys"
+    },
+    {
+      "fragment_id": 16,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "ys : List α",
+        "x : α",
+        "xs : List α",
+        "ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+        "n : ℕ"
+      ],
+      "body": "True",
+      "conclusion": "n - length xs = n + 1 - (1 + length xs)",
+      "statement": "(ys : List α) (x : α) (xs : List α) (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) (n : ℕ) : n - length xs = n + 1 - (1 + length xs)"
+    },
+    {
+      "fragment_id": 17,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_55.json",
+      "decl_name": "prop_55",
+      "premises": [
+        "ys : List α",
+        "x : α",
+        "xs : List α",
+        "ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+        "n : ℕ"
+      ],
+      "body": "True",
+      "conclusion": "drop n (x :: xs ++ ys) = drop n (x :: xs) ++ drop (n - length (x :: xs)) ys",
+      "statement": "(ys : List α) (x : α) (xs : List α) (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) (n : ℕ) : drop n (x :: xs ++ ys) = drop n (x :: xs) ++ drop (n - length (x :: xs)) ys"
+    }
+  ]
+}

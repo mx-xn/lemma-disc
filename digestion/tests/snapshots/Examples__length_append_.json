@@ -1,0 +1,256 @@
+{
+  "name": "length_append'",
+  "statement": "private lemma length_append' (xs ys : List α) : length (xs ++ ys) = length xs + length ys :=",
+  "root_tactic_id": 0,
+  "tactic_nodes": [
+    {
+      "id": 0,
+      "tactic_text": "induction xs with\n| nil => _*_\n| cons x xs ih => _*_",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "α",
+            "type": "Type u_1"
+          },
+          {
+            "name": "xs",
+            "type": "List α"
+          },
+          {
+            "name": "ys",
+            "type": "List α"
+          }
+        ],
+        "goal": "length (xs ++ ys) = length xs + length ys"
+      },
+      "output_obligations": [
+        {
+          "hypotheses": [
+            {
+              "name": "α",
+              "type": "Type u_1"
+            },
+            {
+              "name": "ys",
+              "type": "List α"
+            }
+          ],
+          "goal": "length ([] ++ ys) = length [] + length ys"
+        },
+        {
+          "hypotheses": [
+            {
+              "name": "α",
+              "type": "Type u_1"
+            },
+            {
+              "name": "ys",
+              "type": "List α"
+            },
+            {
+              "name": "x",
+              "type": "α"
+            },
+            {
+              "name": "xs",
+              "type": "List α"
+            },
+            {
+              "name": "ih",
+              "type": "length (xs ++ ys) = length xs + length ys"
+            }
+          ],
+          "goal": "length (x :: xs ++ ys) = length (x :: xs) + length ys"
+        }
+      ],
+      "summary": {
+        "directly_used": [
+          "xs",
+          "ys",
+          "α"
+        ],
+        "dependency_maps": [
+          {
+            "α": [
+              "α"
+            ],
+            "ys": [
+              "ys"
+            ]
+          },
+          {
+            "α": [
+              "α"
+            ],
+            "ys": [
+              "ys"
+            ],
+            "x": [
+              "α"
+            ],
+            "xs": [
+              "xs"
+            ],
+            "ih": [
+              "ys",
+              "xs"
+            ]
+          }
+        ]
+      },
+      "parent_id": null,
+      "child_ids": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": 1,
+      "tactic_text": "simp [length]",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "α",
+            "type": "Type u_1"
+          },
+          {
+            "name": "ys",
+            "type": "List α"
+          }
+        ],
+        "goal": "length ([] ++ ys) = length [] + length ys"
+      },
+      "output_obligations": [],
+      "summary": {
+        "directly_used": [],
+        "dependency_maps": []
+      },
+      "parent_id": 0,
+      "child_ids": []
+    },
+    {
+      "id": 2,
+      "tactic_text": "simp [length]",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "α",
+            "type": "Type u_1"
+          },
+          {
+            "name": "ys",
+            "type": "List α"
+          },
+          {
+            "name": "x",
+            "type": "α"
+          },
+          {
+            "name": "xs",
+            "type": "List α"
+          },
+          {
+            "name": "ih",
+            "type": "length (xs ++ ys) = length xs + length ys"
+          }
+        ],
+        "goal": "length (x :: xs ++ ys) = length (x :: xs) + length ys"
+      },
+      "output_obligations": [
+        {
+          "hypotheses": [
+            {
+              "name": "α",
+              "type": "Type u_1"
+            },
+            {
+              "name": "ys",
+              "type": "List α"
+            },
+            {
+              "name": "x",
+              "type": "α"
+            },
+            {
+              "name": "xs",
+              "type": "List α"
+            },
+            {
+              "name": "ih",
+              "type": "length (xs ++ ys) = length xs + length ys"
+            }
+          ],
+          "goal": "1 + length (xs ++ ys) = 1 + length xs + length ys"
+        }
+      ],
+      "summary": {
+        "directly_used": [],
+        "dependency_maps": [
+          {
+            "α": [
+              "α"
+            ],
+            "ys": [
+              "ys"
+            ],
+            "x": [
+              "x"
+            ],
+            "xs": [
+              "xs"
+            ],
+            "ih": [
+              "ih"
+            ]
+          }
+        ]
+      },
+      "parent_id": 0,
+      "child_ids": [
+        3
+      ]
+    },
+    {
+      "id": 3,
+      "tactic_text": "omega",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "α",
+            "type": "Type u_1"
+          },
+          {
+            "name": "ys",
+            "type": "List α"
+          },
+          {
+            "name": "x",
+            "type": "α"
+          },
+          {
+            "name": "xs",
+            "type": "List α"
+          },
+          {
+            "name": "ih",
+            "type": "length (xs ++ ys) = length xs + length ys"
+          }
+        ],
+        "goal": "1 + length (xs ++ ys) = 1 + length xs + length ys"
+      },
+      "output_obligations": [],
+      "summary": {
+        "directly_used": [
+          "ih",
+          "x",
+          "xs",
+          "ys",
+          "α"
+        ],
+        "dependency_maps": []
+      },
+      "parent_id": 2,
+      "child_ids": []
+    }
+  ]
+}

@@ -1,0 +1,367 @@
+{
+  "fragments": [
+    {
+      "fragment_id": 0,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_36.json",
+      "decl_name": "prop_36",
+      "root_node_id": 2,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "α",
+            "type": "Type u_1"
+          },
+          {
+            "name": "x",
+            "type": "α"
+          },
+          {
+            "name": "xs",
+            "type": "List α"
+          },
+          {
+            "name": "ih",
+            "type": "takeWhile (fun x => decide True) xs = xs"
+          }
+        ],
+        "goal": "takeWhile (fun x => decide True) (x :: xs) = x :: xs"
+      },
+      "nodes": [
+        {
+          "id": 2,
+          "kind": "node",
+          "tactic_text": "simp [takeWhile]",
+          "parent_id": null,
+          "child_ids": [
+            3
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "x",
+                "type": "α"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              },
+              {
+                "name": "ih",
+                "type": "takeWhile (fun x => decide True) xs = xs"
+              }
+            ],
+            "goal": "takeWhile (fun x => decide True) (x :: xs) = x :: xs"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "x",
+                  "type": "α"
+                },
+                {
+                  "name": "xs",
+                  "type": "List α"
+                },
+                {
+                  "name": "ih",
+                  "type": "takeWhile (fun x => decide True) xs = xs"
+                }
+              ],
+              "goal": "takeWhile (fun x => true) xs = xs"
+            }
+          ],
+          "summary": {
+            "directly_used": [],
+            "dependency_maps": [
+              {
+                "α": [
+                  "α"
+                ],
+                "x": [
+                  "x"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "ih": [
+                  "ih"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 3,
+          "kind": "leaf",
+          "tactic_text": "exact ih",
+          "parent_id": 2,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "x",
+                "type": "α"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              },
+              {
+                "name": "ih",
+                "type": "takeWhile (fun x => decide True) xs = xs"
+              }
+            ],
+            "goal": "takeWhile (fun x => true) xs = xs"
+          },
+          "summary": {
+            "directly_used": [
+              "ih"
+            ],
+            "dependency_maps": []
+          }
+        }
+      ]
+    },
+    {
+      "fragment_id": 1,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_36.json",
+      "decl_name": "prop_36",
+      "root_node_id": 0,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "α",
+            "type": "Type u_1"
+          },
+          {
+            "name": "xs",
+            "type": "List α"
+          }
+        ],
+        "goal": "takeWhile (fun x => decide True) xs = xs"
+      },
+      "nodes": [
+        {
+          "id": 0,
+          "kind": "node",
+          "tactic_text": "induction xs with\n| nil => _*_\n| cons x xs ih => _*_",
+          "parent_id": null,
+          "child_ids": [
+            1,
+            2
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              }
+            ],
+            "goal": "takeWhile (fun x => decide True) xs = xs"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                }
+              ],
+              "goal": "takeWhile (fun x => decide True) [] = []"
+            },
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "x",
+                  "type": "α"
+                },
+                {
+                  "name": "xs",
+                  "type": "List α"
+                },
+                {
+                  "name": "ih",
+                  "type": "takeWhile (fun x => decide True) xs = xs"
+                }
+              ],
+              "goal": "takeWhile (fun x => decide True) (x :: xs) = x :: xs"
+            }
+          ],
+          "summary": {
+            "directly_used": [
+              "xs"
+            ],
+            "dependency_maps": [
+              {
+                "α": [
+                  "α"
+                ]
+              },
+              {
+                "α": [
+                  "α"
+                ],
+                "x": [
+                  "α"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "ih": [
+                  "xs"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 1,
+          "kind": "leaf",
+          "tactic_text": "simp [takeWhile]",
+          "parent_id": 0,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              }
+            ],
+            "goal": "takeWhile (fun x => decide True) [] = []"
+          },
+          "summary": {
+            "directly_used": [],
+            "dependency_maps": []
+          }
+        },
+        {
+          "id": 2,
+          "kind": "node",
+          "tactic_text": "simp [takeWhile]",
+          "parent_id": 0,
+          "child_ids": [
+            3
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "x",
+                "type": "α"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              },
+              {
+                "name": "ih",
+                "type": "takeWhile (fun x => decide True) xs = xs"
+              }
+            ],
+            "goal": "takeWhile (fun x => decide True) (x :: xs) = x :: xs"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "x",
+                  "type": "α"
+                },
+                {
+                  "name": "xs",
+                  "type": "List α"
+                },
+                {
+                  "name": "ih",
+                  "type": "takeWhile (fun x => decide True) xs = xs"
+                }
+              ],
+              "goal": "takeWhile (fun x => true) xs = xs"
+            }
+          ],
+          "summary": {
+            "directly_used": [],
+            "dependency_maps": [
+              {
+                "α": [
+                  "α"
+                ],
+                "x": [
+                  "x"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "ih": [
+                  "ih"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 3,
+          "kind": "leaf",
+          "tactic_text": "exact ih",
+          "parent_id": 2,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "x",
+                "type": "α"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              },
+              {
+                "name": "ih",
+                "type": "takeWhile (fun x => decide True) xs = xs"
+              }
+            ],
+            "goal": "takeWhile (fun x => true) xs = xs"
+          },
+          "summary": {
+            "directly_used": [
+              "ih"
+            ],
+            "dependency_maps": []
+          }
+        }
+      ]
+    }
+  ]
+}

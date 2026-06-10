@@ -1,0 +1,35 @@
+[1/4] Building POG...
+[info] welcome to sbt 1.10.1 (JetBrains s.r.o. Java 21.0.6)
+[info] loading project definition from /nas/lemma-disc/scala-core/project
+[info] loading settings for project scala-core from build.sbt ...
+[info] set current project to scala-core (in build file:/nas/lemma-disc/scala-core/)
+[info] running Serializer /tmp/lemma_trace_WrTEg8.json /tmp/lemma_pog_7qhG3J.json
+[success] Total time: 1 s, completed Jun 4, 2026, 12:43:36 AM
+[2/4] Enumerating fragments...
+[info] welcome to sbt 1.10.1 (JetBrains s.r.o. Java 21.0.6)
+[info] loading project definition from /nas/lemma-disc/scala-core/project
+[info] loading settings for project scala-core from build.sbt ...
+[info] set current project to scala-core (in build file:/nas/lemma-disc/scala-core/)
+[info] running Serializer --timeout 60000 /tmp/lemma_pog_7qhG3J.json /tmp/lemma_segments_6TRMna.json
+[success] Total time: 2 s, completed Jun 4, 2026, 12:43:42 AM
+[2/4] Got 17 fragment(s).
+[3/4] Running support minimization...
+[info] welcome to sbt 1.10.1 (JetBrains s.r.o. Java 21.0.6)
+[info] loading project definition from /nas/lemma-disc/scala-core/project
+[info] loading settings for project scala-core from build.sbt ...
+[info] set current project to scala-core (in build file:/nas/lemma-disc/scala-core/)
+[info] running Serializer /tmp/lemma_segments_6TRMna.json /tmp/lemma_out_vePx4R.json
+[success] Total time: 1 s, completed Jun 4, 2026, 12:43:48 AM
+[4/4] Deduplicating lemmas...
+Deduplicated: 17 → 8 lemmas (9 dropped)
+[4/4] Lemmas    written to /nas/lemma-disc/data/lemma_counts_pog/prop_58_lemmas_pog.json
+[4/4] Fragments written to /nas/lemma-disc/data/lemma_counts_pog/prop_58_lemmas_pog.fragments.json
+--- 8 lemma statement(s) ---
+[0] prop_58: drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)
+[1] prop_58: (h1 : zip' (drop n xs) [] = []) : drop (n + 1) (zip' (x :: xs) []) = zip' (drop (n + 1) (x :: xs)) (drop (n + 1) [])
+[2] prop_58: (n : ℕ) (xs : List α) : drop (n + 1) (zip' (x :: xs) ys) = zip' (drop (n + 1) (x :: xs)) (drop (n + 1) ys)
+[3] prop_58: (n : ℕ) (ih : ∀ (xs : List α) (ys : List β), drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)) (xs : List α) (ys : List β) : drop (n + 1) (zip' xs ys) = zip' (drop (n + 1) xs) (drop (n + 1) ys)
+[4] prop_58: (n : ℕ) (xs : List α) : drop (n + 1) (zip' (x :: xs) []) = zip' (drop (n + 1) (x :: xs)) (drop (n + 1) [])
+[5] prop_58: (h1 : drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)) : drop (n + 1) (zip' (x :: xs) (y :: ys)) = zip' (drop (n + 1) (x :: xs)) (drop (n + 1) (y :: ys))
+[6] prop_58: (ih : ∀ (xs : List α) (ys : List β), drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)) (xs : List α) (ys : List β) : drop (n + 1) (zip' (x :: xs) (y :: ys)) = zip' (drop (n + 1) (x :: xs)) (drop (n + 1) (y :: ys))
+[7] prop_58: (n : ℕ) (ih : ∀ (xs : List α) (ys : List β), drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)) (ys : List β) (xs : List α) : drop (n + 1) (zip' (x :: xs) ys) = zip' (drop (n + 1) (x :: xs)) (drop (n + 1) ys)

@@ -1,0 +1,96 @@
+{
+  "lemmas": [
+    {
+      "fragment_id": 0,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_58.json",
+      "decl_name": "prop_58",
+      "premises": [],
+      "body": "True",
+      "conclusion": "drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)",
+      "statement": "drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)"
+    },
+    {
+      "fragment_id": 1,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_58.json",
+      "decl_name": "prop_58",
+      "premises": [],
+      "body": "zip' (drop n xs) [] = []",
+      "conclusion": "drop (n + 1) (zip' (x :: xs) []) = zip' (drop (n + 1) (x :: xs)) (drop (n + 1) [])",
+      "statement": "(h1 : zip' (drop n xs) [] = []) : drop (n + 1) (zip' (x :: xs) []) = zip' (drop (n + 1) (x :: xs)) (drop (n + 1) [])"
+    },
+    {
+      "fragment_id": 2,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_58.json",
+      "decl_name": "prop_58",
+      "premises": [
+        "n : ℕ",
+        "xs : List α"
+      ],
+      "body": "True",
+      "conclusion": "drop (n + 1) (zip' (x :: xs) ys) = zip' (drop (n + 1) (x :: xs)) (drop (n + 1) ys)",
+      "statement": "(n : ℕ) (xs : List α) : drop (n + 1) (zip' (x :: xs) ys) = zip' (drop (n + 1) (x :: xs)) (drop (n + 1) ys)"
+    },
+    {
+      "fragment_id": 3,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_58.json",
+      "decl_name": "prop_58",
+      "premises": [
+        "n : ℕ",
+        "ih : ∀ (xs : List α) (ys : List β), drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)",
+        "xs : List α",
+        "ys : List β"
+      ],
+      "body": "True",
+      "conclusion": "drop (n + 1) (zip' xs ys) = zip' (drop (n + 1) xs) (drop (n + 1) ys)",
+      "statement": "(n : ℕ) (ih : ∀ (xs : List α) (ys : List β), drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)) (xs : List α) (ys : List β) : drop (n + 1) (zip' xs ys) = zip' (drop (n + 1) xs) (drop (n + 1) ys)"
+    },
+    {
+      "fragment_id": 4,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_58.json",
+      "decl_name": "prop_58",
+      "premises": [
+        "n : ℕ",
+        "xs : List α"
+      ],
+      "body": "True",
+      "conclusion": "drop (n + 1) (zip' (x :: xs) []) = zip' (drop (n + 1) (x :: xs)) (drop (n + 1) [])",
+      "statement": "(n : ℕ) (xs : List α) : drop (n + 1) (zip' (x :: xs) []) = zip' (drop (n + 1) (x :: xs)) (drop (n + 1) [])"
+    },
+    {
+      "fragment_id": 5,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_58.json",
+      "decl_name": "prop_58",
+      "premises": [],
+      "body": "drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)",
+      "conclusion": "drop (n + 1) (zip' (x :: xs) (y :: ys)) = zip' (drop (n + 1) (x :: xs)) (drop (n + 1) (y :: ys))",
+      "statement": "(h1 : drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)) : drop (n + 1) (zip' (x :: xs) (y :: ys)) = zip' (drop (n + 1) (x :: xs)) (drop (n + 1) (y :: ys))"
+    },
+    {
+      "fragment_id": 6,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_58.json",
+      "decl_name": "prop_58",
+      "premises": [
+        "ih : ∀ (xs : List α) (ys : List β), drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)",
+        "xs : List α",
+        "ys : List β"
+      ],
+      "body": "True",
+      "conclusion": "drop (n + 1) (zip' (x :: xs) (y :: ys)) = zip' (drop (n + 1) (x :: xs)) (drop (n + 1) (y :: ys))",
+      "statement": "(ih : ∀ (xs : List α) (ys : List β), drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)) (xs : List α) (ys : List β) : drop (n + 1) (zip' (x :: xs) (y :: ys)) = zip' (drop (n + 1) (x :: xs)) (drop (n + 1) (y :: ys))"
+    },
+    {
+      "fragment_id": 7,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_58.json",
+      "decl_name": "prop_58",
+      "premises": [
+        "n : ℕ",
+        "ih : ∀ (xs : List α) (ys : List β), drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)",
+        "ys : List β",
+        "xs : List α"
+      ],
+      "body": "True",
+      "conclusion": "drop (n + 1) (zip' (x :: xs) ys) = zip' (drop (n + 1) (x :: xs)) (drop (n + 1) ys)",
+      "statement": "(n : ℕ) (ih : ∀ (xs : List α) (ys : List β), drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)) (ys : List β) (xs : List α) : drop (n + 1) (zip' (x :: xs) ys) = zip' (drop (n + 1) (x :: xs)) (drop (n + 1) ys)"
+    }
+  ]
+}

@@ -1,0 +1,5508 @@
+{
+  "fragments": [
+    {
+      "fragment_id": 0,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_78.json",
+      "decl_name": "prop_78",
+      "root_node_id": 1,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "xs",
+            "type": "List ℕ"
+          }
+        ],
+        "goal": "sorted (sort xs) = true"
+      },
+      "nodes": [
+        {
+          "id": 1,
+          "kind": "leaf",
+          "tactic_text": "simp [sort, sorted]",
+          "parent_id": null,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              }
+            ],
+            "goal": "sorted (sort xs) = true"
+          },
+          "summary": {
+            "directly_used": [],
+            "dependency_maps": []
+          }
+        }
+      ]
+    },
+    {
+      "fragment_id": 1,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_78.json",
+      "decl_name": "prop_78",
+      "root_node_id": 2,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "xs",
+            "type": "List ℕ"
+          },
+          {
+            "name": "ih",
+            "type": "sorted (sort xs) = true"
+          }
+        ],
+        "goal": "sorted (sort (x :: xs)) = true"
+      },
+      "nodes": [
+        {
+          "id": 2,
+          "kind": "node",
+          "tactic_text": "simp [sort]",
+          "parent_id": null,
+          "child_ids": [
+            3
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "ih",
+                "type": "sorted (sort xs) = true"
+              }
+            ],
+            "goal": "sorted (sort (x :: xs)) = true"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "x",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "xs",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "ih",
+                  "type": "sorted (sort xs) = true"
+                }
+              ],
+              "goal": "sorted (insort x (sort xs)) = true"
+            }
+          ],
+          "summary": {
+            "directly_used": [],
+            "dependency_maps": [
+              {
+                "x": [
+                  "x"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "ih": [
+                  "ih"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 3,
+          "kind": "hole",
+          "hole_id": "hole_0",
+          "parent_id": 2,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "ih",
+                "type": "sorted (sort xs) = true"
+              }
+            ],
+            "goal": "sorted (insort x (sort xs)) = true"
+          }
+        }
+      ]
+    },
+    {
+      "fragment_id": 2,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_78.json",
+      "decl_name": "prop_78",
+      "root_node_id": 3,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "xs",
+            "type": "List ℕ"
+          },
+          {
+            "name": "ih",
+            "type": "sorted (sort xs) = true"
+          }
+        ],
+        "goal": "sorted (insort x (sort xs)) = true"
+      },
+      "nodes": [
+        {
+          "id": 3,
+          "kind": "node",
+          "tactic_text": "generalize hsort : sort xs = sorted_xs at ih ⊢",
+          "parent_id": null,
+          "child_ids": [
+            4
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "ih",
+                "type": "sorted (sort xs) = true"
+              }
+            ],
+            "goal": "sorted (insort x (sort xs)) = true"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "x",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "xs",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "sorted_xs",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "hsort",
+                  "type": "sort xs = sorted_xs"
+                },
+                {
+                  "name": "ih",
+                  "type": "sorted sorted_xs = true"
+                }
+              ],
+              "goal": "sorted (insort x sorted_xs) = true"
+            }
+          ],
+          "summary": {
+            "directly_used": [
+              "ih",
+              "xs"
+            ],
+            "dependency_maps": [
+              {
+                "x": [
+                  "x"
+                ],
+                "sorted_xs": [
+                  "ih",
+                  "xs"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "ih": [
+                  "ih",
+                  "xs"
+                ],
+                "hsort": [
+                  "xs"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 4,
+          "kind": "hole",
+          "hole_id": "hole_0",
+          "parent_id": 3,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "sorted_xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "hsort",
+                "type": "sort xs = sorted_xs"
+              },
+              {
+                "name": "ih",
+                "type": "sorted sorted_xs = true"
+              }
+            ],
+            "goal": "sorted (insort x sorted_xs) = true"
+          }
+        }
+      ]
+    },
+    {
+      "fragment_id": 3,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_78.json",
+      "decl_name": "prop_78",
+      "root_node_id": 2,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "xs",
+            "type": "List ℕ"
+          },
+          {
+            "name": "ih",
+            "type": "sorted (sort xs) = true"
+          }
+        ],
+        "goal": "sorted (sort (x :: xs)) = true"
+      },
+      "nodes": [
+        {
+          "id": 2,
+          "kind": "node",
+          "tactic_text": "simp [sort]",
+          "parent_id": null,
+          "child_ids": [
+            3
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "ih",
+                "type": "sorted (sort xs) = true"
+              }
+            ],
+            "goal": "sorted (sort (x :: xs)) = true"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "x",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "xs",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "ih",
+                  "type": "sorted (sort xs) = true"
+                }
+              ],
+              "goal": "sorted (insort x (sort xs)) = true"
+            }
+          ],
+          "summary": {
+            "directly_used": [],
+            "dependency_maps": [
+              {
+                "x": [
+                  "x"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "ih": [
+                  "ih"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 3,
+          "kind": "node",
+          "tactic_text": "generalize hsort : sort xs = sorted_xs at ih ⊢",
+          "parent_id": 2,
+          "child_ids": [
+            4
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "ih",
+                "type": "sorted (sort xs) = true"
+              }
+            ],
+            "goal": "sorted (insort x (sort xs)) = true"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "x",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "xs",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "sorted_xs",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "hsort",
+                  "type": "sort xs = sorted_xs"
+                },
+                {
+                  "name": "ih",
+                  "type": "sorted sorted_xs = true"
+                }
+              ],
+              "goal": "sorted (insort x sorted_xs) = true"
+            }
+          ],
+          "summary": {
+            "directly_used": [
+              "ih",
+              "xs"
+            ],
+            "dependency_maps": [
+              {
+                "x": [
+                  "x"
+                ],
+                "sorted_xs": [
+                  "ih",
+                  "xs"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "ih": [
+                  "ih",
+                  "xs"
+                ],
+                "hsort": [
+                  "xs"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 4,
+          "kind": "hole",
+          "hole_id": "hole_0",
+          "parent_id": 3,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "sorted_xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "hsort",
+                "type": "sort xs = sorted_xs"
+              },
+              {
+                "name": "ih",
+                "type": "sorted sorted_xs = true"
+              }
+            ],
+            "goal": "sorted (insort x sorted_xs) = true"
+          }
+        }
+      ]
+    },
+    {
+      "fragment_id": 4,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_78.json",
+      "decl_name": "prop_78",
+      "root_node_id": 8,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "xs",
+            "type": "List ℕ"
+          },
+          {
+            "name": "hsort",
+            "type": "sort xs = sorted_xs"
+          },
+          {
+            "name": "ih",
+            "type": "sorted (y :: ys) = true"
+          },
+          {
+            "name": "y",
+            "type": "ℕ"
+          },
+          {
+            "name": "ys",
+            "type": "List ℕ"
+          },
+          {
+            "name": "ih'",
+            "type": "sorted ys = true → sorted (insort x ys) = true"
+          }
+        ],
+        "goal": "sorted (insort x (y :: ys)) = true"
+      },
+      "nodes": [
+        {
+          "id": 8,
+          "kind": "leaf",
+          "tactic_text": "simp [insort, sorted, hle, ih]",
+          "parent_id": null,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "hsort",
+                "type": "sort xs = sorted_xs"
+              },
+              {
+                "name": "ih",
+                "type": "sorted (y :: ys) = true"
+              },
+              {
+                "name": "y",
+                "type": "ℕ"
+              },
+              {
+                "name": "ys",
+                "type": "List ℕ"
+              },
+              {
+                "name": "ih'",
+                "type": "sorted ys = true → sorted (insort x ys) = true"
+              }
+            ],
+            "goal": "sorted (insort x (y :: ys)) = true"
+          },
+          "summary": {
+            "directly_used": [
+              "hle",
+              "ih"
+            ],
+            "dependency_maps": []
+          }
+        }
+      ]
+    },
+    {
+      "fragment_id": 5,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_78.json",
+      "decl_name": "prop_78",
+      "root_node_id": 5,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "xs",
+            "type": "List ℕ"
+          },
+          {
+            "name": "sorted_xs",
+            "type": "List ℕ"
+          },
+          {
+            "name": "hsort",
+            "type": "sort xs = sorted_xs"
+          },
+          {
+            "name": "ih",
+            "type": "sorted sorted_xs = true"
+          }
+        ],
+        "goal": "sorted (insort x sorted_xs) = true"
+      },
+      "nodes": [
+        {
+          "id": 5,
+          "kind": "node",
+          "tactic_text": "induction sorted_xs with\n| nil => _*_\n| cons y ys ih' => _*_",
+          "parent_id": null,
+          "child_ids": [
+            6,
+            8
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "sorted_xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "hsort",
+                "type": "sort xs = sorted_xs"
+              },
+              {
+                "name": "ih",
+                "type": "sorted sorted_xs = true"
+              }
+            ],
+            "goal": "sorted (insort x sorted_xs) = true"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "x",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "xs",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "hsort",
+                  "type": "sort xs = sorted_xs"
+                },
+                {
+                  "name": "ih",
+                  "type": "sorted [] = true"
+                }
+              ],
+              "goal": "sorted (insort x []) = true"
+            },
+            {
+              "hypotheses": [
+                {
+                  "name": "x",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "xs",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "hsort",
+                  "type": "sort xs = sorted_xs"
+                },
+                {
+                  "name": "ih",
+                  "type": "sorted (y :: ys) = true"
+                },
+                {
+                  "name": "y",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "ys",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "ih'",
+                  "type": "sorted ys = true → sorted (insort x ys) = true"
+                }
+              ],
+              "goal": "sorted (insort x (y :: ys)) = true"
+            }
+          ],
+          "summary": {
+            "directly_used": [
+              "ih",
+              "sorted_xs",
+              "x"
+            ],
+            "dependency_maps": [
+              {
+                "x": [
+                  "x"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "ih": [
+                  "ih",
+                  "sorted_xs",
+                  "x"
+                ]
+              },
+              {
+                "x": [
+                  "x"
+                ],
+                "y": [
+                  "ih",
+                  "sorted_xs",
+                  "x"
+                ],
+                "ih'": [
+                  "x"
+                ],
+                "ih": [
+                  "ih",
+                  "sorted_xs",
+                  "x"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "ys": [
+                  "ih",
+                  "sorted_xs",
+                  "x"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 6,
+          "kind": "leaf",
+          "tactic_text": "simp [insort, sorted]",
+          "parent_id": 5,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "hsort",
+                "type": "sort xs = sorted_xs"
+              },
+              {
+                "name": "ih",
+                "type": "sorted [] = true"
+              }
+            ],
+            "goal": "sorted (insort x []) = true"
+          },
+          "summary": {
+            "directly_used": [],
+            "dependency_maps": []
+          }
+        },
+        {
+          "id": 8,
+          "kind": "leaf",
+          "tactic_text": "simp [insort, sorted, hle, ih]",
+          "parent_id": 5,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "hsort",
+                "type": "sort xs = sorted_xs"
+              },
+              {
+                "name": "ih",
+                "type": "sorted (y :: ys) = true"
+              },
+              {
+                "name": "y",
+                "type": "ℕ"
+              },
+              {
+                "name": "ys",
+                "type": "List ℕ"
+              },
+              {
+                "name": "ih'",
+                "type": "sorted ys = true → sorted (insort x ys) = true"
+              }
+            ],
+            "goal": "sorted (insort x (y :: ys)) = true"
+          },
+          "summary": {
+            "directly_used": [
+              "hle",
+              "ih"
+            ],
+            "dependency_maps": []
+          }
+        }
+      ]
+    },
+    {
+      "fragment_id": 6,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_78.json",
+      "decl_name": "prop_78",
+      "root_node_id": 3,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "xs",
+            "type": "List ℕ"
+          },
+          {
+            "name": "ih",
+            "type": "sorted (sort xs) = true"
+          }
+        ],
+        "goal": "sorted (insort x (sort xs)) = true"
+      },
+      "nodes": [
+        {
+          "id": 3,
+          "kind": "node",
+          "tactic_text": "generalize hsort : sort xs = sorted_xs at ih ⊢",
+          "parent_id": null,
+          "child_ids": [
+            5
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "ih",
+                "type": "sorted (sort xs) = true"
+              }
+            ],
+            "goal": "sorted (insort x (sort xs)) = true"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "x",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "xs",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "sorted_xs",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "hsort",
+                  "type": "sort xs = sorted_xs"
+                },
+                {
+                  "name": "ih",
+                  "type": "sorted sorted_xs = true"
+                }
+              ],
+              "goal": "sorted (insort x sorted_xs) = true"
+            }
+          ],
+          "summary": {
+            "directly_used": [
+              "ih",
+              "xs"
+            ],
+            "dependency_maps": [
+              {
+                "x": [
+                  "x"
+                ],
+                "sorted_xs": [
+                  "ih",
+                  "xs"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "ih": [
+                  "ih",
+                  "xs"
+                ],
+                "hsort": [
+                  "xs"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 5,
+          "kind": "node",
+          "tactic_text": "induction sorted_xs with\n| nil => _*_\n| cons y ys ih' => _*_",
+          "parent_id": 3,
+          "child_ids": [
+            6,
+            8
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "sorted_xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "hsort",
+                "type": "sort xs = sorted_xs"
+              },
+              {
+                "name": "ih",
+                "type": "sorted sorted_xs = true"
+              }
+            ],
+            "goal": "sorted (insort x sorted_xs) = true"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "x",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "xs",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "hsort",
+                  "type": "sort xs = sorted_xs"
+                },
+                {
+                  "name": "ih",
+                  "type": "sorted [] = true"
+                }
+              ],
+              "goal": "sorted (insort x []) = true"
+            },
+            {
+              "hypotheses": [
+                {
+                  "name": "x",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "xs",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "hsort",
+                  "type": "sort xs = sorted_xs"
+                },
+                {
+                  "name": "ih",
+                  "type": "sorted (y :: ys) = true"
+                },
+                {
+                  "name": "y",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "ys",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "ih'",
+                  "type": "sorted ys = true → sorted (insort x ys) = true"
+                }
+              ],
+              "goal": "sorted (insort x (y :: ys)) = true"
+            }
+          ],
+          "summary": {
+            "directly_used": [
+              "ih",
+              "sorted_xs",
+              "x"
+            ],
+            "dependency_maps": [
+              {
+                "x": [
+                  "x"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "ih": [
+                  "ih",
+                  "sorted_xs",
+                  "x"
+                ]
+              },
+              {
+                "x": [
+                  "x"
+                ],
+                "y": [
+                  "ih",
+                  "sorted_xs",
+                  "x"
+                ],
+                "ih'": [
+                  "x"
+                ],
+                "ih": [
+                  "ih",
+                  "sorted_xs",
+                  "x"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "ys": [
+                  "ih",
+                  "sorted_xs",
+                  "x"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 6,
+          "kind": "leaf",
+          "tactic_text": "simp [insort, sorted]",
+          "parent_id": 5,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "hsort",
+                "type": "sort xs = sorted_xs"
+              },
+              {
+                "name": "ih",
+                "type": "sorted [] = true"
+              }
+            ],
+            "goal": "sorted (insort x []) = true"
+          },
+          "summary": {
+            "directly_used": [],
+            "dependency_maps": []
+          }
+        },
+        {
+          "id": 8,
+          "kind": "leaf",
+          "tactic_text": "simp [insort, sorted, hle, ih]",
+          "parent_id": 5,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "hsort",
+                "type": "sort xs = sorted_xs"
+              },
+              {
+                "name": "ih",
+                "type": "sorted (y :: ys) = true"
+              },
+              {
+                "name": "y",
+                "type": "ℕ"
+              },
+              {
+                "name": "ys",
+                "type": "List ℕ"
+              },
+              {
+                "name": "ih'",
+                "type": "sorted ys = true → sorted (insort x ys) = true"
+              }
+            ],
+            "goal": "sorted (insort x (y :: ys)) = true"
+          },
+          "summary": {
+            "directly_used": [
+              "hle",
+              "ih"
+            ],
+            "dependency_maps": []
+          }
+        }
+      ]
+    },
+    {
+      "fragment_id": 7,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_78.json",
+      "decl_name": "prop_78",
+      "root_node_id": 2,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "xs",
+            "type": "List ℕ"
+          },
+          {
+            "name": "ih",
+            "type": "sorted (sort xs) = true"
+          }
+        ],
+        "goal": "sorted (sort (x :: xs)) = true"
+      },
+      "nodes": [
+        {
+          "id": 2,
+          "kind": "node",
+          "tactic_text": "simp [sort]",
+          "parent_id": null,
+          "child_ids": [
+            3
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "ih",
+                "type": "sorted (sort xs) = true"
+              }
+            ],
+            "goal": "sorted (sort (x :: xs)) = true"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "x",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "xs",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "ih",
+                  "type": "sorted (sort xs) = true"
+                }
+              ],
+              "goal": "sorted (insort x (sort xs)) = true"
+            }
+          ],
+          "summary": {
+            "directly_used": [],
+            "dependency_maps": [
+              {
+                "x": [
+                  "x"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "ih": [
+                  "ih"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 3,
+          "kind": "node",
+          "tactic_text": "generalize hsort : sort xs = sorted_xs at ih ⊢",
+          "parent_id": 2,
+          "child_ids": [
+            5
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "ih",
+                "type": "sorted (sort xs) = true"
+              }
+            ],
+            "goal": "sorted (insort x (sort xs)) = true"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "x",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "xs",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "sorted_xs",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "hsort",
+                  "type": "sort xs = sorted_xs"
+                },
+                {
+                  "name": "ih",
+                  "type": "sorted sorted_xs = true"
+                }
+              ],
+              "goal": "sorted (insort x sorted_xs) = true"
+            }
+          ],
+          "summary": {
+            "directly_used": [
+              "ih",
+              "xs"
+            ],
+            "dependency_maps": [
+              {
+                "x": [
+                  "x"
+                ],
+                "sorted_xs": [
+                  "ih",
+                  "xs"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "ih": [
+                  "ih",
+                  "xs"
+                ],
+                "hsort": [
+                  "xs"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 5,
+          "kind": "node",
+          "tactic_text": "induction sorted_xs with\n| nil => _*_\n| cons y ys ih' => _*_",
+          "parent_id": 3,
+          "child_ids": [
+            6,
+            8
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "sorted_xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "hsort",
+                "type": "sort xs = sorted_xs"
+              },
+              {
+                "name": "ih",
+                "type": "sorted sorted_xs = true"
+              }
+            ],
+            "goal": "sorted (insort x sorted_xs) = true"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "x",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "xs",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "hsort",
+                  "type": "sort xs = sorted_xs"
+                },
+                {
+                  "name": "ih",
+                  "type": "sorted [] = true"
+                }
+              ],
+              "goal": "sorted (insort x []) = true"
+            },
+            {
+              "hypotheses": [
+                {
+                  "name": "x",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "xs",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "hsort",
+                  "type": "sort xs = sorted_xs"
+                },
+                {
+                  "name": "ih",
+                  "type": "sorted (y :: ys) = true"
+                },
+                {
+                  "name": "y",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "ys",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "ih'",
+                  "type": "sorted ys = true → sorted (insort x ys) = true"
+                }
+              ],
+              "goal": "sorted (insort x (y :: ys)) = true"
+            }
+          ],
+          "summary": {
+            "directly_used": [
+              "ih",
+              "sorted_xs",
+              "x"
+            ],
+            "dependency_maps": [
+              {
+                "x": [
+                  "x"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "ih": [
+                  "ih",
+                  "sorted_xs",
+                  "x"
+                ]
+              },
+              {
+                "x": [
+                  "x"
+                ],
+                "y": [
+                  "ih",
+                  "sorted_xs",
+                  "x"
+                ],
+                "ih'": [
+                  "x"
+                ],
+                "ih": [
+                  "ih",
+                  "sorted_xs",
+                  "x"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "ys": [
+                  "ih",
+                  "sorted_xs",
+                  "x"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 6,
+          "kind": "leaf",
+          "tactic_text": "simp [insort, sorted]",
+          "parent_id": 5,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "hsort",
+                "type": "sort xs = sorted_xs"
+              },
+              {
+                "name": "ih",
+                "type": "sorted [] = true"
+              }
+            ],
+            "goal": "sorted (insort x []) = true"
+          },
+          "summary": {
+            "directly_used": [],
+            "dependency_maps": []
+          }
+        },
+        {
+          "id": 8,
+          "kind": "leaf",
+          "tactic_text": "simp [insort, sorted, hle, ih]",
+          "parent_id": 5,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "hsort",
+                "type": "sort xs = sorted_xs"
+              },
+              {
+                "name": "ih",
+                "type": "sorted (y :: ys) = true"
+              },
+              {
+                "name": "y",
+                "type": "ℕ"
+              },
+              {
+                "name": "ys",
+                "type": "List ℕ"
+              },
+              {
+                "name": "ih'",
+                "type": "sorted ys = true → sorted (insort x ys) = true"
+              }
+            ],
+            "goal": "sorted (insort x (y :: ys)) = true"
+          },
+          "summary": {
+            "directly_used": [
+              "hle",
+              "ih"
+            ],
+            "dependency_maps": []
+          }
+        }
+      ]
+    },
+    {
+      "fragment_id": 8,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_78.json",
+      "decl_name": "prop_78",
+      "root_node_id": 4,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "xs",
+            "type": "List ℕ"
+          },
+          {
+            "name": "sorted_xs",
+            "type": "List ℕ"
+          },
+          {
+            "name": "hsort",
+            "type": "sort xs = sorted_xs"
+          },
+          {
+            "name": "ih",
+            "type": "sorted sorted_xs = true"
+          }
+        ],
+        "goal": "sorted (insort x sorted_xs) = true"
+      },
+      "nodes": [
+        {
+          "id": 4,
+          "kind": "node",
+          "tactic_text": "clear hsort",
+          "parent_id": null,
+          "child_ids": [
+            5
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "sorted_xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "hsort",
+                "type": "sort xs = sorted_xs"
+              },
+              {
+                "name": "ih",
+                "type": "sorted sorted_xs = true"
+              }
+            ],
+            "goal": "sorted (insort x sorted_xs) = true"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "x",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "xs",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "sorted_xs",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "ih",
+                  "type": "sorted sorted_xs = true"
+                }
+              ],
+              "goal": "sorted (insort x sorted_xs) = true"
+            }
+          ],
+          "summary": {
+            "directly_used": [
+              "hsort"
+            ],
+            "dependency_maps": [
+              {
+                "x": [
+                  "x"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "sorted_xs": [
+                  "sorted_xs"
+                ],
+                "ih": [
+                  "ih"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 5,
+          "kind": "node",
+          "tactic_text": "induction sorted_xs with\n| nil => _*_\n| cons y ys ih' => _*_",
+          "parent_id": 4,
+          "child_ids": [
+            6,
+            8
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "sorted_xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "ih",
+                "type": "sorted sorted_xs = true"
+              }
+            ],
+            "goal": "sorted (insort x sorted_xs) = true"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "x",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "xs",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "ih",
+                  "type": "sorted [] = true"
+                }
+              ],
+              "goal": "sorted (insort x []) = true"
+            },
+            {
+              "hypotheses": [
+                {
+                  "name": "x",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "xs",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "y",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "ys",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "ih'",
+                  "type": "sorted ys = true → sorted (insort x ys) = true"
+                },
+                {
+                  "name": "ih",
+                  "type": "sorted (y :: ys) = true"
+                }
+              ],
+              "goal": "sorted (insort x (y :: ys)) = true"
+            }
+          ],
+          "summary": {
+            "directly_used": [
+              "ih",
+              "sorted_xs",
+              "x"
+            ],
+            "dependency_maps": [
+              {
+                "x": [
+                  "x"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "ih": [
+                  "ih",
+                  "sorted_xs",
+                  "x"
+                ]
+              },
+              {
+                "x": [
+                  "x"
+                ],
+                "y": [
+                  "ih",
+                  "sorted_xs",
+                  "x"
+                ],
+                "ih'": [
+                  "x"
+                ],
+                "ih": [
+                  "ih",
+                  "sorted_xs",
+                  "x"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "ys": [
+                  "ih",
+                  "sorted_xs",
+                  "x"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 6,
+          "kind": "leaf",
+          "tactic_text": "simp [insort, sorted]",
+          "parent_id": 5,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "ih",
+                "type": "sorted [] = true"
+              }
+            ],
+            "goal": "sorted (insort x []) = true"
+          },
+          "summary": {
+            "directly_used": [],
+            "dependency_maps": []
+          }
+        },
+        {
+          "id": 8,
+          "kind": "leaf",
+          "tactic_text": "simp [insort, sorted, hle, ih]",
+          "parent_id": 5,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "y",
+                "type": "ℕ"
+              },
+              {
+                "name": "ys",
+                "type": "List ℕ"
+              },
+              {
+                "name": "ih'",
+                "type": "sorted ys = true → sorted (insort x ys) = true"
+              },
+              {
+                "name": "ih",
+                "type": "sorted (y :: ys) = true"
+              }
+            ],
+            "goal": "sorted (insort x (y :: ys)) = true"
+          },
+          "summary": {
+            "directly_used": [
+              "hle",
+              "ih"
+            ],
+            "dependency_maps": []
+          }
+        }
+      ]
+    },
+    {
+      "fragment_id": 9,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_78.json",
+      "decl_name": "prop_78",
+      "root_node_id": 9,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "xs",
+            "type": "List ℕ"
+          },
+          {
+            "name": "hsort",
+            "type": "sort xs = sorted_xs"
+          },
+          {
+            "name": "ih",
+            "type": "sorted (y :: ys) = true"
+          },
+          {
+            "name": "y",
+            "type": "ℕ"
+          },
+          {
+            "name": "ys",
+            "type": "List ℕ"
+          },
+          {
+            "name": "ih'",
+            "type": "sorted ys = true → sorted (insort x ys) = true"
+          }
+        ],
+        "goal": "sorted (insort x (y :: ys)) = true"
+      },
+      "nodes": [
+        {
+          "id": 9,
+          "kind": "node",
+          "tactic_text": "have hyx : y ≤ x := Nat.le_of_lt (Nat.lt_of_not_le hle)",
+          "parent_id": null,
+          "child_ids": [
+            10
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "hsort",
+                "type": "sort xs = sorted_xs"
+              },
+              {
+                "name": "ih",
+                "type": "sorted (y :: ys) = true"
+              },
+              {
+                "name": "y",
+                "type": "ℕ"
+              },
+              {
+                "name": "ys",
+                "type": "List ℕ"
+              },
+              {
+                "name": "ih'",
+                "type": "sorted ys = true → sorted (insort x ys) = true"
+              }
+            ],
+            "goal": "sorted (insort x (y :: ys)) = true"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "x",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "xs",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "hsort",
+                  "type": "sort xs = sorted_xs"
+                },
+                {
+                  "name": "ih",
+                  "type": "sorted (y :: ys) = true"
+                },
+                {
+                  "name": "y",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "ys",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "ih'",
+                  "type": "sorted ys = true → sorted (insort x ys) = true"
+                },
+                {
+                  "name": "hyx",
+                  "type": "y ≤ x"
+                }
+              ],
+              "goal": "sorted (insort x (y :: ys)) = true"
+            }
+          ],
+          "summary": {
+            "directly_used": [
+              "hle",
+              "x",
+              "y"
+            ],
+            "dependency_maps": [
+              {
+                "x": [
+                  "x"
+                ],
+                "y": [
+                  "y"
+                ],
+                "ih": [
+                  "ih"
+                ],
+                "hle": [
+                  "hle"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "ys": [
+                  "ys"
+                ],
+                "ih'": [
+                  "ih'"
+                ],
+                "hyx": [
+                  "x",
+                  "y"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 10,
+          "kind": "hole",
+          "hole_id": "hole_0",
+          "parent_id": 9,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "hsort",
+                "type": "sort xs = sorted_xs"
+              },
+              {
+                "name": "ih",
+                "type": "sorted (y :: ys) = true"
+              },
+              {
+                "name": "y",
+                "type": "ℕ"
+              },
+              {
+                "name": "ys",
+                "type": "List ℕ"
+              },
+              {
+                "name": "ih'",
+                "type": "sorted ys = true → sorted (insort x ys) = true"
+              },
+              {
+                "name": "hyx",
+                "type": "y ≤ x"
+              }
+            ],
+            "goal": "sorted (insort x (y :: ys)) = true"
+          }
+        }
+      ]
+    },
+    {
+      "fragment_id": 10,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_78.json",
+      "decl_name": "prop_78",
+      "root_node_id": 10,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "xs",
+            "type": "List ℕ"
+          },
+          {
+            "name": "hsort",
+            "type": "sort xs = sorted_xs"
+          },
+          {
+            "name": "ih",
+            "type": "sorted (y :: ys) = true"
+          },
+          {
+            "name": "y",
+            "type": "ℕ"
+          },
+          {
+            "name": "ys",
+            "type": "List ℕ"
+          },
+          {
+            "name": "ih'",
+            "type": "sorted ys = true → sorted (insort x ys) = true"
+          }
+        ],
+        "goal": "sorted (insort x (y :: ys)) = true"
+      },
+      "nodes": [
+        {
+          "id": 10,
+          "kind": "node",
+          "tactic_text": "simp only [insort, if_neg hle]",
+          "parent_id": null,
+          "child_ids": [
+            11
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "hsort",
+                "type": "sort xs = sorted_xs"
+              },
+              {
+                "name": "ih",
+                "type": "sorted (y :: ys) = true"
+              },
+              {
+                "name": "y",
+                "type": "ℕ"
+              },
+              {
+                "name": "ys",
+                "type": "List ℕ"
+              },
+              {
+                "name": "ih'",
+                "type": "sorted ys = true → sorted (insort x ys) = true"
+              }
+            ],
+            "goal": "sorted (insort x (y :: ys)) = true"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "x",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "xs",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "hsort",
+                  "type": "sort xs = sorted_xs"
+                },
+                {
+                  "name": "ih",
+                  "type": "sorted (y :: ys) = true"
+                },
+                {
+                  "name": "y",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "ys",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "ih'",
+                  "type": "sorted ys = true → sorted (insort x ys) = true"
+                }
+              ],
+              "goal": "sorted (y :: insort x ys) = true"
+            }
+          ],
+          "summary": {
+            "directly_used": [
+              "hle"
+            ],
+            "dependency_maps": [
+              {
+                "x": [
+                  "x"
+                ],
+                "y": [
+                  "y"
+                ],
+                "ih": [
+                  "ih"
+                ],
+                "hle": [
+                  "hle"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "ys": [
+                  "ys"
+                ],
+                "ih'": [
+                  "ih'"
+                ],
+                "hyx": [
+                  "hyx"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 11,
+          "kind": "hole",
+          "hole_id": "hole_0",
+          "parent_id": 10,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "hsort",
+                "type": "sort xs = sorted_xs"
+              },
+              {
+                "name": "ih",
+                "type": "sorted (y :: ys) = true"
+              },
+              {
+                "name": "y",
+                "type": "ℕ"
+              },
+              {
+                "name": "ys",
+                "type": "List ℕ"
+              },
+              {
+                "name": "ih'",
+                "type": "sorted ys = true → sorted (insort x ys) = true"
+              }
+            ],
+            "goal": "sorted (y :: insort x ys) = true"
+          }
+        }
+      ]
+    },
+    {
+      "fragment_id": 11,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_78.json",
+      "decl_name": "prop_78",
+      "root_node_id": 9,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "xs",
+            "type": "List ℕ"
+          },
+          {
+            "name": "hsort",
+            "type": "sort xs = sorted_xs"
+          },
+          {
+            "name": "ih",
+            "type": "sorted (y :: ys) = true"
+          },
+          {
+            "name": "y",
+            "type": "ℕ"
+          },
+          {
+            "name": "ys",
+            "type": "List ℕ"
+          },
+          {
+            "name": "ih'",
+            "type": "sorted ys = true → sorted (insort x ys) = true"
+          }
+        ],
+        "goal": "sorted (insort x (y :: ys)) = true"
+      },
+      "nodes": [
+        {
+          "id": 9,
+          "kind": "node",
+          "tactic_text": "have hyx : y ≤ x := Nat.le_of_lt (Nat.lt_of_not_le hle)",
+          "parent_id": null,
+          "child_ids": [
+            10
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "hsort",
+                "type": "sort xs = sorted_xs"
+              },
+              {
+                "name": "ih",
+                "type": "sorted (y :: ys) = true"
+              },
+              {
+                "name": "y",
+                "type": "ℕ"
+              },
+              {
+                "name": "ys",
+                "type": "List ℕ"
+              },
+              {
+                "name": "ih'",
+                "type": "sorted ys = true → sorted (insort x ys) = true"
+              }
+            ],
+            "goal": "sorted (insort x (y :: ys)) = true"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "x",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "xs",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "hsort",
+                  "type": "sort xs = sorted_xs"
+                },
+                {
+                  "name": "ih",
+                  "type": "sorted (y :: ys) = true"
+                },
+                {
+                  "name": "y",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "ys",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "ih'",
+                  "type": "sorted ys = true → sorted (insort x ys) = true"
+                },
+                {
+                  "name": "hyx",
+                  "type": "y ≤ x"
+                }
+              ],
+              "goal": "sorted (insort x (y :: ys)) = true"
+            }
+          ],
+          "summary": {
+            "directly_used": [
+              "hle",
+              "x",
+              "y"
+            ],
+            "dependency_maps": [
+              {
+                "x": [
+                  "x"
+                ],
+                "y": [
+                  "y"
+                ],
+                "ih": [
+                  "ih"
+                ],
+                "hle": [
+                  "hle"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "ys": [
+                  "ys"
+                ],
+                "ih'": [
+                  "ih'"
+                ],
+                "hyx": [
+                  "x",
+                  "y"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 10,
+          "kind": "node",
+          "tactic_text": "simp only [insort, if_neg hle]",
+          "parent_id": 9,
+          "child_ids": [
+            11
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "hsort",
+                "type": "sort xs = sorted_xs"
+              },
+              {
+                "name": "ih",
+                "type": "sorted (y :: ys) = true"
+              },
+              {
+                "name": "y",
+                "type": "ℕ"
+              },
+              {
+                "name": "ys",
+                "type": "List ℕ"
+              },
+              {
+                "name": "ih'",
+                "type": "sorted ys = true → sorted (insort x ys) = true"
+              },
+              {
+                "name": "hyx",
+                "type": "y ≤ x"
+              }
+            ],
+            "goal": "sorted (insort x (y :: ys)) = true"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "x",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "xs",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "hsort",
+                  "type": "sort xs = sorted_xs"
+                },
+                {
+                  "name": "ih",
+                  "type": "sorted (y :: ys) = true"
+                },
+                {
+                  "name": "y",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "ys",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "ih'",
+                  "type": "sorted ys = true → sorted (insort x ys) = true"
+                },
+                {
+                  "name": "hyx",
+                  "type": "y ≤ x"
+                }
+              ],
+              "goal": "sorted (y :: insort x ys) = true"
+            }
+          ],
+          "summary": {
+            "directly_used": [
+              "hle"
+            ],
+            "dependency_maps": [
+              {
+                "x": [
+                  "x"
+                ],
+                "y": [
+                  "y"
+                ],
+                "ih": [
+                  "ih"
+                ],
+                "hle": [
+                  "hle"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "ys": [
+                  "ys"
+                ],
+                "ih'": [
+                  "ih'"
+                ],
+                "hyx": [
+                  "hyx"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 11,
+          "kind": "hole",
+          "hole_id": "hole_0",
+          "parent_id": 10,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "hsort",
+                "type": "sort xs = sorted_xs"
+              },
+              {
+                "name": "ih",
+                "type": "sorted (y :: ys) = true"
+              },
+              {
+                "name": "y",
+                "type": "ℕ"
+              },
+              {
+                "name": "ys",
+                "type": "List ℕ"
+              },
+              {
+                "name": "ih'",
+                "type": "sorted ys = true → sorted (insort x ys) = true"
+              },
+              {
+                "name": "hyx",
+                "type": "y ≤ x"
+              }
+            ],
+            "goal": "sorted (y :: insort x ys) = true"
+          }
+        }
+      ]
+    },
+    {
+      "fragment_id": 12,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_78.json",
+      "decl_name": "prop_78",
+      "root_node_id": 12,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "xs",
+            "type": "List ℕ"
+          },
+          {
+            "name": "hsort",
+            "type": "sort xs = sorted_xs"
+          },
+          {
+            "name": "ih",
+            "type": "sorted (y :: ys) = true"
+          },
+          {
+            "name": "y",
+            "type": "ℕ"
+          },
+          {
+            "name": "ys",
+            "type": "List ℕ"
+          },
+          {
+            "name": "ih'",
+            "type": "sorted ys = true → sorted (insort x ys) = true"
+          }
+        ],
+        "goal": "sorted (insort x (y :: ys)) = true"
+      },
+      "nodes": [
+        {
+          "id": 12,
+          "kind": "leaf",
+          "tactic_text": "simp [sorted, insort, hyx]",
+          "parent_id": null,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "hsort",
+                "type": "sort xs = sorted_xs"
+              },
+              {
+                "name": "ih",
+                "type": "sorted (y :: ys) = true"
+              },
+              {
+                "name": "y",
+                "type": "ℕ"
+              },
+              {
+                "name": "ys",
+                "type": "List ℕ"
+              },
+              {
+                "name": "ih'",
+                "type": "sorted ys = true → sorted (insort x ys) = true"
+              }
+            ],
+            "goal": "sorted (insort x (y :: ys)) = true"
+          },
+          "summary": {
+            "directly_used": [
+              "hyx"
+            ],
+            "dependency_maps": []
+          }
+        }
+      ]
+    },
+    {
+      "fragment_id": 13,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_78.json",
+      "decl_name": "prop_78",
+      "root_node_id": 7,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "xs",
+            "type": "List ℕ"
+          },
+          {
+            "name": "hsort",
+            "type": "sort xs = sorted_xs"
+          },
+          {
+            "name": "ih",
+            "type": "sorted (y :: ys) = true"
+          },
+          {
+            "name": "y",
+            "type": "ℕ"
+          },
+          {
+            "name": "ys",
+            "type": "List ℕ"
+          },
+          {
+            "name": "ih'",
+            "type": "sorted ys = true → sorted (insort x ys) = true"
+          }
+        ],
+        "goal": "sorted (insort x (y :: ys)) = true"
+      },
+      "nodes": [
+        {
+          "id": 7,
+          "kind": "node",
+          "tactic_text": "by_cases hle : x ≤ y",
+          "parent_id": null,
+          "child_ids": [
+            8,
+            12
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "hsort",
+                "type": "sort xs = sorted_xs"
+              },
+              {
+                "name": "ih",
+                "type": "sorted (y :: ys) = true"
+              },
+              {
+                "name": "y",
+                "type": "ℕ"
+              },
+              {
+                "name": "ys",
+                "type": "List ℕ"
+              },
+              {
+                "name": "ih'",
+                "type": "sorted ys = true → sorted (insort x ys) = true"
+              }
+            ],
+            "goal": "sorted (insort x (y :: ys)) = true"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "x",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "xs",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "hsort",
+                  "type": "sort xs = sorted_xs"
+                },
+                {
+                  "name": "ih",
+                  "type": "sorted (y :: ys) = true"
+                },
+                {
+                  "name": "y",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "ys",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "ih'",
+                  "type": "sorted ys = true → sorted (insort x ys) = true"
+                },
+                {
+                  "name": "hle",
+                  "type": "x ≤ y"
+                }
+              ],
+              "goal": "sorted (insort x (y :: ys)) = true"
+            },
+            {
+              "hypotheses": [
+                {
+                  "name": "x",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "xs",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "hsort",
+                  "type": "sort xs = sorted_xs"
+                },
+                {
+                  "name": "ih",
+                  "type": "sorted (y :: ys) = true"
+                },
+                {
+                  "name": "y",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "ys",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "ih'",
+                  "type": "sorted ys = true → sorted (insort x ys) = true"
+                },
+                {
+                  "name": "hle",
+                  "type": "¬x ≤ y"
+                }
+              ],
+              "goal": "sorted (insort x (y :: ys)) = true"
+            }
+          ],
+          "summary": {
+            "directly_used": [
+              "x",
+              "y"
+            ],
+            "dependency_maps": [
+              {
+                "x": [
+                  "x"
+                ],
+                "y": [
+                  "y"
+                ],
+                "ih'": [
+                  "ih'"
+                ],
+                "ih": [
+                  "ih"
+                ],
+                "hle": [
+                  "x",
+                  "y"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "ys": [
+                  "ys"
+                ]
+              },
+              {
+                "x": [
+                  "x"
+                ],
+                "y": [
+                  "y"
+                ],
+                "ih'": [
+                  "ih'"
+                ],
+                "ih": [
+                  "ih"
+                ],
+                "hle": [
+                  "x",
+                  "y"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "ys": [
+                  "ys"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 8,
+          "kind": "leaf",
+          "tactic_text": "simp [insort, sorted, hle, ih]",
+          "parent_id": 7,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "hsort",
+                "type": "sort xs = sorted_xs"
+              },
+              {
+                "name": "ih",
+                "type": "sorted (y :: ys) = true"
+              },
+              {
+                "name": "y",
+                "type": "ℕ"
+              },
+              {
+                "name": "ys",
+                "type": "List ℕ"
+              },
+              {
+                "name": "ih'",
+                "type": "sorted ys = true → sorted (insort x ys) = true"
+              },
+              {
+                "name": "hle",
+                "type": "x ≤ y"
+              }
+            ],
+            "goal": "sorted (insort x (y :: ys)) = true"
+          },
+          "summary": {
+            "directly_used": [
+              "hle",
+              "ih"
+            ],
+            "dependency_maps": []
+          }
+        },
+        {
+          "id": 12,
+          "kind": "leaf",
+          "tactic_text": "simp [sorted, insort, hyx]",
+          "parent_id": 7,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "hsort",
+                "type": "sort xs = sorted_xs"
+              },
+              {
+                "name": "ih",
+                "type": "sorted (y :: ys) = true"
+              },
+              {
+                "name": "y",
+                "type": "ℕ"
+              },
+              {
+                "name": "ys",
+                "type": "List ℕ"
+              },
+              {
+                "name": "ih'",
+                "type": "sorted ys = true → sorted (insort x ys) = true"
+              },
+              {
+                "name": "hle",
+                "type": "¬x ≤ y"
+              }
+            ],
+            "goal": "sorted (insort x (y :: ys)) = true"
+          },
+          "summary": {
+            "directly_used": [
+              "hyx"
+            ],
+            "dependency_maps": []
+          }
+        }
+      ]
+    },
+    {
+      "fragment_id": 14,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_78.json",
+      "decl_name": "prop_78",
+      "root_node_id": 14,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "xs",
+            "type": "List ℕ"
+          },
+          {
+            "name": "hsort",
+            "type": "sort xs = sorted_xs"
+          },
+          {
+            "name": "ih",
+            "type": "sorted (y :: z :: zs) = true"
+          },
+          {
+            "name": "y",
+            "type": "ℕ"
+          },
+          {
+            "name": "ih'",
+            "type": "sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true"
+          },
+          {
+            "name": "z",
+            "type": "ℕ"
+          },
+          {
+            "name": "zs",
+            "type": "List ℕ"
+          }
+        ],
+        "goal": "sorted (y :: insort x (z :: zs)) = true"
+      },
+      "nodes": [
+        {
+          "id": 14,
+          "kind": "node",
+          "tactic_text": "obtain ⟨hyz, hzs⟩ := ih",
+          "parent_id": null,
+          "child_ids": [
+            15
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "hsort",
+                "type": "sort xs = sorted_xs"
+              },
+              {
+                "name": "ih",
+                "type": "sorted (y :: z :: zs) = true"
+              },
+              {
+                "name": "y",
+                "type": "ℕ"
+              },
+              {
+                "name": "ih'",
+                "type": "sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true"
+              },
+              {
+                "name": "z",
+                "type": "ℕ"
+              },
+              {
+                "name": "zs",
+                "type": "List ℕ"
+              }
+            ],
+            "goal": "sorted (y :: insort x (z :: zs)) = true"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "x",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "xs",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "hsort",
+                  "type": "sort xs = sorted_xs"
+                },
+                {
+                  "name": "y",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "ih'",
+                  "type": "sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true"
+                },
+                {
+                  "name": "z",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "zs",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "hyz",
+                  "type": "y ≤ z"
+                },
+                {
+                  "name": "hzs",
+                  "type": "sorted (z :: zs) = true"
+                }
+              ],
+              "goal": "sorted (y :: insort x (z :: zs)) = true"
+            }
+          ],
+          "summary": {
+            "directly_used": [
+              "ih"
+            ],
+            "dependency_maps": [
+              {
+                "x": [
+                  "x"
+                ],
+                "y": [
+                  "y"
+                ],
+                "hyz": [
+                  "y",
+                  "z"
+                ],
+                "zs": [
+                  "zs"
+                ],
+                "z": [
+                  "z"
+                ],
+                "hle": [
+                  "hle"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "hzs": [
+                  "z",
+                  "zs"
+                ],
+                "ih'": [
+                  "ih'"
+                ],
+                "hyx": [
+                  "hyx"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 15,
+          "kind": "hole",
+          "hole_id": "hole_0",
+          "parent_id": 14,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "hsort",
+                "type": "sort xs = sorted_xs"
+              },
+              {
+                "name": "y",
+                "type": "ℕ"
+              },
+              {
+                "name": "ih'",
+                "type": "sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true"
+              },
+              {
+                "name": "z",
+                "type": "ℕ"
+              },
+              {
+                "name": "zs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "hyz",
+                "type": "y ≤ z"
+              },
+              {
+                "name": "hzs",
+                "type": "sorted (z :: zs) = true"
+              }
+            ],
+            "goal": "sorted (y :: insort x (z :: zs)) = true"
+          }
+        }
+      ]
+    },
+    {
+      "fragment_id": 15,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_78.json",
+      "decl_name": "prop_78",
+      "root_node_id": 13,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "xs",
+            "type": "List ℕ"
+          },
+          {
+            "name": "hsort",
+            "type": "sort xs = sorted_xs"
+          },
+          {
+            "name": "ih",
+            "type": "sorted (y :: z :: zs) = true"
+          },
+          {
+            "name": "y",
+            "type": "ℕ"
+          },
+          {
+            "name": "ih'",
+            "type": "sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true"
+          },
+          {
+            "name": "z",
+            "type": "ℕ"
+          },
+          {
+            "name": "zs",
+            "type": "List ℕ"
+          }
+        ],
+        "goal": "sorted (y :: insort x (z :: zs)) = true"
+      },
+      "nodes": [
+        {
+          "id": 13,
+          "kind": "node",
+          "tactic_text": "simp [sorted] at ih",
+          "parent_id": null,
+          "child_ids": [
+            14
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "hsort",
+                "type": "sort xs = sorted_xs"
+              },
+              {
+                "name": "ih",
+                "type": "sorted (y :: z :: zs) = true"
+              },
+              {
+                "name": "y",
+                "type": "ℕ"
+              },
+              {
+                "name": "ih'",
+                "type": "sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true"
+              },
+              {
+                "name": "z",
+                "type": "ℕ"
+              },
+              {
+                "name": "zs",
+                "type": "List ℕ"
+              }
+            ],
+            "goal": "sorted (y :: insort x (z :: zs)) = true"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "x",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "xs",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "hsort",
+                  "type": "sort xs = sorted_xs"
+                },
+                {
+                  "name": "ih",
+                  "type": "y ≤ z ∧ sorted (z :: zs) = true"
+                },
+                {
+                  "name": "y",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "ih'",
+                  "type": "sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true"
+                },
+                {
+                  "name": "z",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "zs",
+                  "type": "List ℕ"
+                }
+              ],
+              "goal": "sorted (y :: insort x (z :: zs)) = true"
+            }
+          ],
+          "summary": {
+            "directly_used": [
+              "ih"
+            ],
+            "dependency_maps": [
+              {
+                "x": [
+                  "x"
+                ],
+                "y": [
+                  "y"
+                ],
+                "ih": [
+                  "y",
+                  "z",
+                  "zs"
+                ],
+                "zs": [
+                  "zs"
+                ],
+                "z": [
+                  "z"
+                ],
+                "hle": [
+                  "hle"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "ih'": [
+                  "ih'"
+                ],
+                "hyx": [
+                  "hyx"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 14,
+          "kind": "node",
+          "tactic_text": "obtain ⟨hyz, hzs⟩ := ih",
+          "parent_id": 13,
+          "child_ids": [
+            15
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "hsort",
+                "type": "sort xs = sorted_xs"
+              },
+              {
+                "name": "ih",
+                "type": "y ≤ z ∧ sorted (z :: zs) = true"
+              },
+              {
+                "name": "y",
+                "type": "ℕ"
+              },
+              {
+                "name": "ih'",
+                "type": "sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true"
+              },
+              {
+                "name": "z",
+                "type": "ℕ"
+              },
+              {
+                "name": "zs",
+                "type": "List ℕ"
+              }
+            ],
+            "goal": "sorted (y :: insort x (z :: zs)) = true"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "x",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "xs",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "hsort",
+                  "type": "sort xs = sorted_xs"
+                },
+                {
+                  "name": "y",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "ih'",
+                  "type": "sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true"
+                },
+                {
+                  "name": "z",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "zs",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "hyz",
+                  "type": "y ≤ z"
+                },
+                {
+                  "name": "hzs",
+                  "type": "sorted (z :: zs) = true"
+                }
+              ],
+              "goal": "sorted (y :: insort x (z :: zs)) = true"
+            }
+          ],
+          "summary": {
+            "directly_used": [
+              "ih"
+            ],
+            "dependency_maps": [
+              {
+                "x": [
+                  "x"
+                ],
+                "y": [
+                  "y"
+                ],
+                "hyz": [
+                  "y",
+                  "z"
+                ],
+                "zs": [
+                  "zs"
+                ],
+                "z": [
+                  "z"
+                ],
+                "hle": [
+                  "hle"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "hzs": [
+                  "z",
+                  "zs"
+                ],
+                "ih'": [
+                  "ih'"
+                ],
+                "hyx": [
+                  "hyx"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 15,
+          "kind": "hole",
+          "hole_id": "hole_0",
+          "parent_id": 14,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "hsort",
+                "type": "sort xs = sorted_xs"
+              },
+              {
+                "name": "y",
+                "type": "ℕ"
+              },
+              {
+                "name": "ih'",
+                "type": "sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true"
+              },
+              {
+                "name": "z",
+                "type": "ℕ"
+              },
+              {
+                "name": "zs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "hyz",
+                "type": "y ≤ z"
+              },
+              {
+                "name": "hzs",
+                "type": "sorted (z :: zs) = true"
+              }
+            ],
+            "goal": "sorted (y :: insort x (z :: zs)) = true"
+          }
+        }
+      ]
+    },
+    {
+      "fragment_id": 16,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_78.json",
+      "decl_name": "prop_78",
+      "root_node_id": 16,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "xs",
+            "type": "List ℕ"
+          },
+          {
+            "name": "hsort",
+            "type": "sort xs = sorted_xs"
+          },
+          {
+            "name": "ih",
+            "type": "sorted (y :: z :: zs) = true"
+          },
+          {
+            "name": "y",
+            "type": "ℕ"
+          },
+          {
+            "name": "ih'",
+            "type": "sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true"
+          },
+          {
+            "name": "z",
+            "type": "ℕ"
+          },
+          {
+            "name": "zs",
+            "type": "List ℕ"
+          }
+        ],
+        "goal": "sorted (y :: insort x (z :: zs)) = true"
+      },
+      "nodes": [
+        {
+          "id": 16,
+          "kind": "node",
+          "tactic_text": "rw [show insort x (z :: zs) = x :: z :: zs from by simp [insort, hxz]]",
+          "parent_id": null,
+          "child_ids": [
+            17
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "hsort",
+                "type": "sort xs = sorted_xs"
+              },
+              {
+                "name": "ih",
+                "type": "sorted (y :: z :: zs) = true"
+              },
+              {
+                "name": "y",
+                "type": "ℕ"
+              },
+              {
+                "name": "ih'",
+                "type": "sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true"
+              },
+              {
+                "name": "z",
+                "type": "ℕ"
+              },
+              {
+                "name": "zs",
+                "type": "List ℕ"
+              }
+            ],
+            "goal": "sorted (y :: insort x (z :: zs)) = true"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "x",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "xs",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "hsort",
+                  "type": "sort xs = sorted_xs"
+                },
+                {
+                  "name": "ih",
+                  "type": "sorted (y :: z :: zs) = true"
+                },
+                {
+                  "name": "y",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "ih'",
+                  "type": "sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true"
+                },
+                {
+                  "name": "z",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "zs",
+                  "type": "List ℕ"
+                }
+              ],
+              "goal": "sorted (y :: x :: z :: zs) = true"
+            }
+          ],
+          "summary": {
+            "directly_used": [
+              "hxz",
+              "x",
+              "z",
+              "zs"
+            ],
+            "dependency_maps": [
+              {
+                "x": [
+                  "x"
+                ],
+                "y": [
+                  "y"
+                ],
+                "hxz": [
+                  "hxz"
+                ],
+                "hyz": [
+                  "hyz"
+                ],
+                "zs": [
+                  "zs"
+                ],
+                "z": [
+                  "z"
+                ],
+                "hle": [
+                  "hle"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "hzs": [
+                  "hzs"
+                ],
+                "ih'": [
+                  "ih'"
+                ],
+                "hyx": [
+                  "hyx"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 17,
+          "kind": "hole",
+          "hole_id": "hole_0",
+          "parent_id": 16,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "hsort",
+                "type": "sort xs = sorted_xs"
+              },
+              {
+                "name": "ih",
+                "type": "sorted (y :: z :: zs) = true"
+              },
+              {
+                "name": "y",
+                "type": "ℕ"
+              },
+              {
+                "name": "ih'",
+                "type": "sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true"
+              },
+              {
+                "name": "z",
+                "type": "ℕ"
+              },
+              {
+                "name": "zs",
+                "type": "List ℕ"
+              }
+            ],
+            "goal": "sorted (y :: x :: z :: zs) = true"
+          }
+        }
+      ]
+    },
+    {
+      "fragment_id": 17,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_78.json",
+      "decl_name": "prop_78",
+      "root_node_id": 17,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "xs",
+            "type": "List ℕ"
+          },
+          {
+            "name": "hsort",
+            "type": "sort xs = sorted_xs"
+          },
+          {
+            "name": "ih",
+            "type": "sorted (y :: z :: zs) = true"
+          },
+          {
+            "name": "y",
+            "type": "ℕ"
+          },
+          {
+            "name": "ih'",
+            "type": "sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true"
+          },
+          {
+            "name": "z",
+            "type": "ℕ"
+          },
+          {
+            "name": "zs",
+            "type": "List ℕ"
+          }
+        ],
+        "goal": "sorted (y :: insort x (z :: zs)) = true"
+      },
+      "nodes": [
+        {
+          "id": 17,
+          "kind": "leaf",
+          "tactic_text": "simp [sorted, hyx, hxz, hzs]",
+          "parent_id": null,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "hsort",
+                "type": "sort xs = sorted_xs"
+              },
+              {
+                "name": "ih",
+                "type": "sorted (y :: z :: zs) = true"
+              },
+              {
+                "name": "y",
+                "type": "ℕ"
+              },
+              {
+                "name": "ih'",
+                "type": "sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true"
+              },
+              {
+                "name": "z",
+                "type": "ℕ"
+              },
+              {
+                "name": "zs",
+                "type": "List ℕ"
+              }
+            ],
+            "goal": "sorted (y :: insort x (z :: zs)) = true"
+          },
+          "summary": {
+            "directly_used": [
+              "hxz",
+              "hyx",
+              "hzs"
+            ],
+            "dependency_maps": []
+          }
+        }
+      ]
+    },
+    {
+      "fragment_id": 18,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_78.json",
+      "decl_name": "prop_78",
+      "root_node_id": 7,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "xs",
+            "type": "List ℕ"
+          },
+          {
+            "name": "hsort",
+            "type": "sort xs = sorted_xs"
+          },
+          {
+            "name": "ih",
+            "type": "sorted (y :: z :: zs) = true"
+          },
+          {
+            "name": "y",
+            "type": "ℕ"
+          },
+          {
+            "name": "ih'",
+            "type": "sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true"
+          },
+          {
+            "name": "z",
+            "type": "ℕ"
+          },
+          {
+            "name": "zs",
+            "type": "List ℕ"
+          }
+        ],
+        "goal": "sorted (y :: insort x (z :: zs)) = true"
+      },
+      "nodes": [
+        {
+          "id": 7,
+          "kind": "node",
+          "tactic_text": "by_cases hle : x ≤ y",
+          "parent_id": null,
+          "child_ids": [
+            8,
+            17
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "hsort",
+                "type": "sort xs = sorted_xs"
+              },
+              {
+                "name": "ih",
+                "type": "sorted (y :: z :: zs) = true"
+              },
+              {
+                "name": "y",
+                "type": "ℕ"
+              },
+              {
+                "name": "ih'",
+                "type": "sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true"
+              },
+              {
+                "name": "z",
+                "type": "ℕ"
+              },
+              {
+                "name": "zs",
+                "type": "List ℕ"
+              }
+            ],
+            "goal": "sorted (y :: insort x (z :: zs)) = true"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "x",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "xs",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "hsort",
+                  "type": "sort xs = sorted_xs"
+                },
+                {
+                  "name": "ih",
+                  "type": "sorted (y :: z :: zs) = true"
+                },
+                {
+                  "name": "y",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "ih'",
+                  "type": "sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true"
+                },
+                {
+                  "name": "z",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "zs",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "hle",
+                  "type": "x ≤ y"
+                }
+              ],
+              "goal": "sorted (y :: insort x (z :: zs)) = true"
+            },
+            {
+              "hypotheses": [
+                {
+                  "name": "x",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "xs",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "hsort",
+                  "type": "sort xs = sorted_xs"
+                },
+                {
+                  "name": "ih",
+                  "type": "sorted (y :: z :: zs) = true"
+                },
+                {
+                  "name": "y",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "ih'",
+                  "type": "sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true"
+                },
+                {
+                  "name": "z",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "zs",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "hle",
+                  "type": "¬x ≤ y"
+                }
+              ],
+              "goal": "sorted (y :: insort x (z :: zs)) = true"
+            }
+          ],
+          "summary": {
+            "directly_used": [
+              "x",
+              "y"
+            ],
+            "dependency_maps": [
+              {
+                "x": [
+                  "x"
+                ],
+                "y": [
+                  "y"
+                ],
+                "ih'": [
+                  "ih'"
+                ],
+                "ih": [
+                  "ih"
+                ],
+                "hle": [
+                  "x",
+                  "y"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "ys": [
+                  "ys"
+                ]
+              },
+              {
+                "x": [
+                  "x"
+                ],
+                "y": [
+                  "y"
+                ],
+                "ih'": [
+                  "ih'"
+                ],
+                "ih": [
+                  "ih"
+                ],
+                "hle": [
+                  "x",
+                  "y"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "ys": [
+                  "ys"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 8,
+          "kind": "leaf",
+          "tactic_text": "simp [insort, sorted, hle, ih]",
+          "parent_id": 7,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "hsort",
+                "type": "sort xs = sorted_xs"
+              },
+              {
+                "name": "ih",
+                "type": "sorted (y :: z :: zs) = true"
+              },
+              {
+                "name": "y",
+                "type": "ℕ"
+              },
+              {
+                "name": "ih'",
+                "type": "sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true"
+              },
+              {
+                "name": "z",
+                "type": "ℕ"
+              },
+              {
+                "name": "zs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "hle",
+                "type": "x ≤ y"
+              }
+            ],
+            "goal": "sorted (y :: insort x (z :: zs)) = true"
+          },
+          "summary": {
+            "directly_used": [
+              "hle",
+              "ih"
+            ],
+            "dependency_maps": []
+          }
+        },
+        {
+          "id": 17,
+          "kind": "leaf",
+          "tactic_text": "simp [sorted, hyx, hxz, hzs]",
+          "parent_id": 7,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "hsort",
+                "type": "sort xs = sorted_xs"
+              },
+              {
+                "name": "ih",
+                "type": "sorted (y :: z :: zs) = true"
+              },
+              {
+                "name": "y",
+                "type": "ℕ"
+              },
+              {
+                "name": "ih'",
+                "type": "sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true"
+              },
+              {
+                "name": "z",
+                "type": "ℕ"
+              },
+              {
+                "name": "zs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "hle",
+                "type": "¬x ≤ y"
+              }
+            ],
+            "goal": "sorted (y :: insort x (z :: zs)) = true"
+          },
+          "summary": {
+            "directly_used": [
+              "hxz",
+              "hyx",
+              "hzs"
+            ],
+            "dependency_maps": []
+          }
+        }
+      ]
+    },
+    {
+      "fragment_id": 19,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_78.json",
+      "decl_name": "prop_78",
+      "root_node_id": 16,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "xs",
+            "type": "List ℕ"
+          },
+          {
+            "name": "hsort",
+            "type": "sort xs = sorted_xs"
+          },
+          {
+            "name": "ih",
+            "type": "sorted (y :: z :: zs) = true"
+          },
+          {
+            "name": "y",
+            "type": "ℕ"
+          },
+          {
+            "name": "ih'",
+            "type": "sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true"
+          },
+          {
+            "name": "z",
+            "type": "ℕ"
+          },
+          {
+            "name": "zs",
+            "type": "List ℕ"
+          }
+        ],
+        "goal": "sorted (y :: insort x (z :: zs)) = true"
+      },
+      "nodes": [
+        {
+          "id": 16,
+          "kind": "node",
+          "tactic_text": "rw [show insort x (z :: zs) = x :: z :: zs from by simp [insort, hxz]]",
+          "parent_id": null,
+          "child_ids": [
+            17
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "hsort",
+                "type": "sort xs = sorted_xs"
+              },
+              {
+                "name": "ih",
+                "type": "sorted (y :: z :: zs) = true"
+              },
+              {
+                "name": "y",
+                "type": "ℕ"
+              },
+              {
+                "name": "ih'",
+                "type": "sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true"
+              },
+              {
+                "name": "z",
+                "type": "ℕ"
+              },
+              {
+                "name": "zs",
+                "type": "List ℕ"
+              }
+            ],
+            "goal": "sorted (y :: insort x (z :: zs)) = true"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "x",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "xs",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "hsort",
+                  "type": "sort xs = sorted_xs"
+                },
+                {
+                  "name": "ih",
+                  "type": "sorted (y :: z :: zs) = true"
+                },
+                {
+                  "name": "y",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "ih'",
+                  "type": "sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true"
+                },
+                {
+                  "name": "z",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "zs",
+                  "type": "List ℕ"
+                }
+              ],
+              "goal": "sorted (y :: x :: z :: zs) = true"
+            }
+          ],
+          "summary": {
+            "directly_used": [
+              "hxz",
+              "x",
+              "z",
+              "zs"
+            ],
+            "dependency_maps": [
+              {
+                "x": [
+                  "x"
+                ],
+                "y": [
+                  "y"
+                ],
+                "hxz": [
+                  "hxz"
+                ],
+                "hyz": [
+                  "hyz"
+                ],
+                "zs": [
+                  "zs"
+                ],
+                "z": [
+                  "z"
+                ],
+                "hle": [
+                  "hle"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "hzs": [
+                  "hzs"
+                ],
+                "ih'": [
+                  "ih'"
+                ],
+                "hyx": [
+                  "hyx"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 17,
+          "kind": "leaf",
+          "tactic_text": "simp [sorted, hyx, hxz, hzs]",
+          "parent_id": 16,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "hsort",
+                "type": "sort xs = sorted_xs"
+              },
+              {
+                "name": "ih",
+                "type": "sorted (y :: z :: zs) = true"
+              },
+              {
+                "name": "y",
+                "type": "ℕ"
+              },
+              {
+                "name": "ih'",
+                "type": "sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true"
+              },
+              {
+                "name": "z",
+                "type": "ℕ"
+              },
+              {
+                "name": "zs",
+                "type": "List ℕ"
+              }
+            ],
+            "goal": "sorted (y :: x :: z :: zs) = true"
+          },
+          "summary": {
+            "directly_used": [
+              "hxz",
+              "hyx",
+              "hzs"
+            ],
+            "dependency_maps": []
+          }
+        }
+      ]
+    },
+    {
+      "fragment_id": 20,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_78.json",
+      "decl_name": "prop_78",
+      "root_node_id": 18,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "xs",
+            "type": "List ℕ"
+          },
+          {
+            "name": "ih",
+            "type": "sorted (sort xs) = true"
+          }
+        ],
+        "goal": "sorted (sort (x :: xs)) = true"
+      },
+      "nodes": [
+        {
+          "id": 18,
+          "kind": "leaf",
+          "tactic_text": "simp [insort, hxz]",
+          "parent_id": null,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "ih",
+                "type": "sorted (sort xs) = true"
+              }
+            ],
+            "goal": "sorted (sort (x :: xs)) = true"
+          },
+          "summary": {
+            "directly_used": [
+              "hxz"
+            ],
+            "dependency_maps": []
+          }
+        }
+      ]
+    },
+    {
+      "fragment_id": 21,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_78.json",
+      "decl_name": "prop_78",
+      "root_node_id": 19,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "xs",
+            "type": "List ℕ"
+          },
+          {
+            "name": "hsort",
+            "type": "sort xs = sorted_xs"
+          },
+          {
+            "name": "ih",
+            "type": "sorted (y :: z :: zs) = true"
+          },
+          {
+            "name": "y",
+            "type": "ℕ"
+          },
+          {
+            "name": "ih'",
+            "type": "sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true"
+          },
+          {
+            "name": "z",
+            "type": "ℕ"
+          },
+          {
+            "name": "zs",
+            "type": "List ℕ"
+          }
+        ],
+        "goal": "sorted (y :: insort x (z :: zs)) = true"
+      },
+      "nodes": [
+        {
+          "id": 19,
+          "kind": "node",
+          "tactic_text": "have hins : insort x (z :: zs) = z :: insort x zs := by simp [insort, hxz]",
+          "parent_id": null,
+          "child_ids": [
+            20
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "hsort",
+                "type": "sort xs = sorted_xs"
+              },
+              {
+                "name": "ih",
+                "type": "sorted (y :: z :: zs) = true"
+              },
+              {
+                "name": "y",
+                "type": "ℕ"
+              },
+              {
+                "name": "ih'",
+                "type": "sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true"
+              },
+              {
+                "name": "z",
+                "type": "ℕ"
+              },
+              {
+                "name": "zs",
+                "type": "List ℕ"
+              }
+            ],
+            "goal": "sorted (y :: insort x (z :: zs)) = true"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "x",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "xs",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "hsort",
+                  "type": "sort xs = sorted_xs"
+                },
+                {
+                  "name": "ih",
+                  "type": "sorted (y :: z :: zs) = true"
+                },
+                {
+                  "name": "y",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "ih'",
+                  "type": "sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true"
+                },
+                {
+                  "name": "z",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "zs",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "hins",
+                  "type": "insort x (z :: zs) = z :: insort x zs"
+                }
+              ],
+              "goal": "sorted (y :: insort x (z :: zs)) = true"
+            }
+          ],
+          "summary": {
+            "directly_used": [
+              "hxz",
+              "x",
+              "z",
+              "zs"
+            ],
+            "dependency_maps": [
+              {
+                "x": [
+                  "x"
+                ],
+                "y": [
+                  "y"
+                ],
+                "hxz": [
+                  "hxz"
+                ],
+                "hyz": [
+                  "hyz"
+                ],
+                "z": [
+                  "z"
+                ],
+                "hle": [
+                  "hle"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "hzs": [
+                  "hzs"
+                ],
+                "ih'": [
+                  "ih'"
+                ],
+                "hyx": [
+                  "hyx"
+                ],
+                "zs": [
+                  "zs"
+                ],
+                "hins": [
+                  "x",
+                  "z",
+                  "zs"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 20,
+          "kind": "hole",
+          "hole_id": "hole_0",
+          "parent_id": 19,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "hsort",
+                "type": "sort xs = sorted_xs"
+              },
+              {
+                "name": "ih",
+                "type": "sorted (y :: z :: zs) = true"
+              },
+              {
+                "name": "y",
+                "type": "ℕ"
+              },
+              {
+                "name": "ih'",
+                "type": "sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true"
+              },
+              {
+                "name": "z",
+                "type": "ℕ"
+              },
+              {
+                "name": "zs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "hins",
+                "type": "insort x (z :: zs) = z :: insort x zs"
+              }
+            ],
+            "goal": "sorted (y :: insort x (z :: zs)) = true"
+          }
+        }
+      ]
+    },
+    {
+      "fragment_id": 22,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_78.json",
+      "decl_name": "prop_78",
+      "root_node_id": 20,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "xs",
+            "type": "List ℕ"
+          },
+          {
+            "name": "hsort",
+            "type": "sort xs = sorted_xs"
+          },
+          {
+            "name": "ih",
+            "type": "sorted (y :: z :: zs) = true"
+          },
+          {
+            "name": "y",
+            "type": "ℕ"
+          },
+          {
+            "name": "ih'",
+            "type": "sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true"
+          },
+          {
+            "name": "z",
+            "type": "ℕ"
+          },
+          {
+            "name": "zs",
+            "type": "List ℕ"
+          }
+        ],
+        "goal": "sorted (y :: insort x (z :: zs)) = true"
+      },
+      "nodes": [
+        {
+          "id": 20,
+          "kind": "node",
+          "tactic_text": "rw [hins]",
+          "parent_id": null,
+          "child_ids": [
+            21
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "hsort",
+                "type": "sort xs = sorted_xs"
+              },
+              {
+                "name": "ih",
+                "type": "sorted (y :: z :: zs) = true"
+              },
+              {
+                "name": "y",
+                "type": "ℕ"
+              },
+              {
+                "name": "ih'",
+                "type": "sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true"
+              },
+              {
+                "name": "z",
+                "type": "ℕ"
+              },
+              {
+                "name": "zs",
+                "type": "List ℕ"
+              }
+            ],
+            "goal": "sorted (y :: insort x (z :: zs)) = true"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "x",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "xs",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "hsort",
+                  "type": "sort xs = sorted_xs"
+                },
+                {
+                  "name": "ih",
+                  "type": "sorted (y :: z :: zs) = true"
+                },
+                {
+                  "name": "y",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "ih'",
+                  "type": "sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true"
+                },
+                {
+                  "name": "z",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "zs",
+                  "type": "List ℕ"
+                }
+              ],
+              "goal": "sorted (y :: z :: insort x zs) = true"
+            }
+          ],
+          "summary": {
+            "directly_used": [
+              "hins"
+            ],
+            "dependency_maps": [
+              {
+                "x": [
+                  "x"
+                ],
+                "y": [
+                  "y"
+                ],
+                "hxz": [
+                  "hxz"
+                ],
+                "hyz": [
+                  "hyz"
+                ],
+                "z": [
+                  "z"
+                ],
+                "hle": [
+                  "hle"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "hzs": [
+                  "hzs"
+                ],
+                "ih'": [
+                  "ih'"
+                ],
+                "hyx": [
+                  "hyx"
+                ],
+                "zs": [
+                  "zs"
+                ],
+                "hins": [
+                  "hins"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 21,
+          "kind": "hole",
+          "hole_id": "hole_0",
+          "parent_id": 20,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "hsort",
+                "type": "sort xs = sorted_xs"
+              },
+              {
+                "name": "ih",
+                "type": "sorted (y :: z :: zs) = true"
+              },
+              {
+                "name": "y",
+                "type": "ℕ"
+              },
+              {
+                "name": "ih'",
+                "type": "sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true"
+              },
+              {
+                "name": "z",
+                "type": "ℕ"
+              },
+              {
+                "name": "zs",
+                "type": "List ℕ"
+              }
+            ],
+            "goal": "sorted (y :: z :: insort x zs) = true"
+          }
+        }
+      ]
+    },
+    {
+      "fragment_id": 23,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_78.json",
+      "decl_name": "prop_78",
+      "root_node_id": 19,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "xs",
+            "type": "List ℕ"
+          },
+          {
+            "name": "hsort",
+            "type": "sort xs = sorted_xs"
+          },
+          {
+            "name": "ih",
+            "type": "sorted (y :: z :: zs) = true"
+          },
+          {
+            "name": "y",
+            "type": "ℕ"
+          },
+          {
+            "name": "ih'",
+            "type": "sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true"
+          },
+          {
+            "name": "z",
+            "type": "ℕ"
+          },
+          {
+            "name": "zs",
+            "type": "List ℕ"
+          }
+        ],
+        "goal": "sorted (y :: insort x (z :: zs)) = true"
+      },
+      "nodes": [
+        {
+          "id": 19,
+          "kind": "node",
+          "tactic_text": "have hins : insort x (z :: zs) = z :: insort x zs := by simp [insort, hxz]",
+          "parent_id": null,
+          "child_ids": [
+            20
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "hsort",
+                "type": "sort xs = sorted_xs"
+              },
+              {
+                "name": "ih",
+                "type": "sorted (y :: z :: zs) = true"
+              },
+              {
+                "name": "y",
+                "type": "ℕ"
+              },
+              {
+                "name": "ih'",
+                "type": "sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true"
+              },
+              {
+                "name": "z",
+                "type": "ℕ"
+              },
+              {
+                "name": "zs",
+                "type": "List ℕ"
+              }
+            ],
+            "goal": "sorted (y :: insort x (z :: zs)) = true"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "x",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "xs",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "hsort",
+                  "type": "sort xs = sorted_xs"
+                },
+                {
+                  "name": "ih",
+                  "type": "sorted (y :: z :: zs) = true"
+                },
+                {
+                  "name": "y",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "ih'",
+                  "type": "sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true"
+                },
+                {
+                  "name": "z",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "zs",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "hins",
+                  "type": "insort x (z :: zs) = z :: insort x zs"
+                }
+              ],
+              "goal": "sorted (y :: insort x (z :: zs)) = true"
+            }
+          ],
+          "summary": {
+            "directly_used": [
+              "hxz",
+              "x",
+              "z",
+              "zs"
+            ],
+            "dependency_maps": [
+              {
+                "x": [
+                  "x"
+                ],
+                "y": [
+                  "y"
+                ],
+                "hxz": [
+                  "hxz"
+                ],
+                "hyz": [
+                  "hyz"
+                ],
+                "z": [
+                  "z"
+                ],
+                "hle": [
+                  "hle"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "hzs": [
+                  "hzs"
+                ],
+                "ih'": [
+                  "ih'"
+                ],
+                "hyx": [
+                  "hyx"
+                ],
+                "zs": [
+                  "zs"
+                ],
+                "hins": [
+                  "x",
+                  "z",
+                  "zs"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 20,
+          "kind": "node",
+          "tactic_text": "rw [hins]",
+          "parent_id": 19,
+          "child_ids": [
+            21
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "hsort",
+                "type": "sort xs = sorted_xs"
+              },
+              {
+                "name": "ih",
+                "type": "sorted (y :: z :: zs) = true"
+              },
+              {
+                "name": "y",
+                "type": "ℕ"
+              },
+              {
+                "name": "ih'",
+                "type": "sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true"
+              },
+              {
+                "name": "z",
+                "type": "ℕ"
+              },
+              {
+                "name": "zs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "hins",
+                "type": "insort x (z :: zs) = z :: insort x zs"
+              }
+            ],
+            "goal": "sorted (y :: insort x (z :: zs)) = true"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "x",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "xs",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "hsort",
+                  "type": "sort xs = sorted_xs"
+                },
+                {
+                  "name": "ih",
+                  "type": "sorted (y :: z :: zs) = true"
+                },
+                {
+                  "name": "y",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "ih'",
+                  "type": "sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true"
+                },
+                {
+                  "name": "z",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "zs",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "hins",
+                  "type": "insort x (z :: zs) = z :: insort x zs"
+                }
+              ],
+              "goal": "sorted (y :: z :: insort x zs) = true"
+            }
+          ],
+          "summary": {
+            "directly_used": [
+              "hins"
+            ],
+            "dependency_maps": [
+              {
+                "x": [
+                  "x"
+                ],
+                "y": [
+                  "y"
+                ],
+                "hxz": [
+                  "hxz"
+                ],
+                "hyz": [
+                  "hyz"
+                ],
+                "z": [
+                  "z"
+                ],
+                "hle": [
+                  "hle"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "hzs": [
+                  "hzs"
+                ],
+                "ih'": [
+                  "ih'"
+                ],
+                "hyx": [
+                  "hyx"
+                ],
+                "zs": [
+                  "zs"
+                ],
+                "hins": [
+                  "hins"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 21,
+          "kind": "hole",
+          "hole_id": "hole_0",
+          "parent_id": 20,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "hsort",
+                "type": "sort xs = sorted_xs"
+              },
+              {
+                "name": "ih",
+                "type": "sorted (y :: z :: zs) = true"
+              },
+              {
+                "name": "y",
+                "type": "ℕ"
+              },
+              {
+                "name": "ih'",
+                "type": "sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true"
+              },
+              {
+                "name": "z",
+                "type": "ℕ"
+              },
+              {
+                "name": "zs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "hins",
+                "type": "insort x (z :: zs) = z :: insort x zs"
+              }
+            ],
+            "goal": "sorted (y :: z :: insort x zs) = true"
+          }
+        }
+      ]
+    },
+    {
+      "fragment_id": 24,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_78.json",
+      "decl_name": "prop_78",
+      "root_node_id": 21,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "xs",
+            "type": "List ℕ"
+          },
+          {
+            "name": "hsort",
+            "type": "sort xs = sorted_xs"
+          },
+          {
+            "name": "ih",
+            "type": "sorted (y :: z :: zs) = true"
+          },
+          {
+            "name": "y",
+            "type": "ℕ"
+          },
+          {
+            "name": "ih'",
+            "type": "sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true"
+          },
+          {
+            "name": "z",
+            "type": "ℕ"
+          },
+          {
+            "name": "zs",
+            "type": "List ℕ"
+          }
+        ],
+        "goal": "sorted (y :: z :: insort x zs) = true"
+      },
+      "nodes": [
+        {
+          "id": 21,
+          "kind": "node",
+          "tactic_text": "simp [sorted, hyz]",
+          "parent_id": null,
+          "child_ids": [
+            22
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "hsort",
+                "type": "sort xs = sorted_xs"
+              },
+              {
+                "name": "ih",
+                "type": "sorted (y :: z :: zs) = true"
+              },
+              {
+                "name": "y",
+                "type": "ℕ"
+              },
+              {
+                "name": "ih'",
+                "type": "sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true"
+              },
+              {
+                "name": "z",
+                "type": "ℕ"
+              },
+              {
+                "name": "zs",
+                "type": "List ℕ"
+              }
+            ],
+            "goal": "sorted (y :: z :: insort x zs) = true"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "x",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "xs",
+                  "type": "List ℕ"
+                },
+                {
+                  "name": "hsort",
+                  "type": "sort xs = sorted_xs"
+                },
+                {
+                  "name": "ih",
+                  "type": "sorted (y :: z :: zs) = true"
+                },
+                {
+                  "name": "y",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "ih'",
+                  "type": "sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true"
+                },
+                {
+                  "name": "z",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "zs",
+                  "type": "List ℕ"
+                }
+              ],
+              "goal": "sorted (z :: insort x zs) = true"
+            }
+          ],
+          "summary": {
+            "directly_used": [
+              "hyz"
+            ],
+            "dependency_maps": [
+              {
+                "x": [
+                  "x"
+                ],
+                "y": [
+                  "y"
+                ],
+                "hxz": [
+                  "hxz"
+                ],
+                "hyz": [
+                  "hyz"
+                ],
+                "z": [
+                  "z"
+                ],
+                "hle": [
+                  "hle"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "hzs": [
+                  "hzs"
+                ],
+                "ih'": [
+                  "ih'"
+                ],
+                "hyx": [
+                  "hyx"
+                ],
+                "zs": [
+                  "zs"
+                ],
+                "hins": [
+                  "hins"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 22,
+          "kind": "hole",
+          "hole_id": "hole_0",
+          "parent_id": 21,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "x",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List ℕ"
+              },
+              {
+                "name": "hsort",
+                "type": "sort xs = sorted_xs"
+              },
+              {
+                "name": "ih",
+                "type": "sorted (y :: z :: zs) = true"
+              },
+              {
+                "name": "y",
+                "type": "ℕ"
+              },
+              {
+                "name": "ih'",
+                "type": "sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true"
+              },
+              {
+                "name": "z",
+                "type": "ℕ"
+              },
+              {
+                "name": "zs",
+                "type": "List ℕ"
+              }
+            ],
+            "goal": "sorted (z :: insort x zs) = true"
+          }
+        }
+      ]
+    }
+  ]
+}

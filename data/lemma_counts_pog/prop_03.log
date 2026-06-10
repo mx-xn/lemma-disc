@@ -1,0 +1,35 @@
+[1/4] Building POG...
+[info] welcome to sbt 1.10.1 (JetBrains s.r.o. Java 21.0.6)
+[info] loading project definition from /nas/lemma-disc/scala-core/project
+[info] loading settings for project scala-core from build.sbt ...
+[info] set current project to scala-core (in build file:/nas/lemma-disc/scala-core/)
+[info] running Serializer /tmp/lemma_trace_CefPiZ.json /tmp/lemma_pog_pDQlHt.json
+[success] Total time: 2 s, completed Jun 4, 2026, 12:40:22 AM
+[2/4] Enumerating fragments...
+[info] welcome to sbt 1.10.1 (JetBrains s.r.o. Java 21.0.6)
+[info] loading project definition from /nas/lemma-disc/scala-core/project
+[info] loading settings for project scala-core from build.sbt ...
+[info] set current project to scala-core (in build file:/nas/lemma-disc/scala-core/)
+[info] running Serializer --timeout 60000 /tmp/lemma_pog_pDQlHt.json /tmp/lemma_segments_DqgFyA.json
+[success] Total time: 2 s, completed Jun 4, 2026, 12:40:28 AM
+[2/4] Got 9 fragment(s).
+[3/4] Running support minimization...
+[info] welcome to sbt 1.10.1 (JetBrains s.r.o. Java 21.0.6)
+[info] loading project definition from /nas/lemma-disc/scala-core/project
+[info] loading settings for project scala-core from build.sbt ...
+[info] set current project to scala-core (in build file:/nas/lemma-disc/scala-core/)
+[info] running Serializer /tmp/lemma_segments_DqgFyA.json /tmp/lemma_out_nzSr5f.json
+[success] Total time: 2 s, completed Jun 4, 2026, 12:40:34 AM
+[4/4] Deduplicating lemmas...
+Deduplicated: 9 → 8 lemmas (1 dropped)
+[4/4] Lemmas    written to /nas/lemma-disc/data/lemma_counts_pog/prop_03_lemmas_pog.json
+[4/4] Fragments written to /nas/lemma-disc/data/lemma_counts_pog/prop_03_lemmas_pog.fragments.json
+--- 8 lemma statement(s) ---
+[0] prop_03: count n xs ≤ count n (xs ++ ys)
+[1] prop_03: (n : ℕ) (ys : List ℕ) (x : ℕ) (xs : List ℕ) (h1 : count n (x :: xs) ≤ count n (x :: (xs ++ ys))) : count n (x :: xs) ≤ count n (x :: xs ++ ys)
+[2] prop_03: (h1 : (if n = x then count n xs + 1 else count n xs) ≤ if n = x then count n (xs ++ ys) + 1 else count n (xs ++ ys)) : count n (x :: xs) ≤ count n (x :: (xs ++ ys))
+[3] prop_03: (n : ℕ) (ys : List ℕ) (x : ℕ) (xs : List ℕ) (h1 : (if n = x then count n xs + 1 else count n xs) ≤ if n = x then count n (xs ++ ys) + 1 else count n (xs ++ ys)) : count n (x :: xs) ≤ count n (x :: xs ++ ys)
+[4] prop_03: (n : ℕ) (ys : List ℕ) (x : ℕ) (xs : List ℕ) (ih : count n xs ≤ count n (xs ++ ys)) : count n (x :: xs) ≤ count n (x :: xs ++ ys)
+[5] prop_03: (ih : count n xs ≤ count n (xs ++ ys)) : count n (x :: xs) ≤ count n (x :: xs ++ ys)
+[6] prop_03: (n : ℕ) (ys : List ℕ) (x : ℕ) (xs : List ℕ) (ih : count n xs ≤ count n (xs ++ ys)) : (if n = x then count n xs + 1 else count n xs) ≤ if n = x then count n (xs ++ ys) + 1 else count n (xs ++ ys)
+[7] prop_03: (n : ℕ) (ys : List ℕ) (x : ℕ) (xs : List ℕ) (ih : count n xs ≤ count n (xs ++ ys)) : count n (x :: xs) ≤ count n (x :: (xs ++ ys))

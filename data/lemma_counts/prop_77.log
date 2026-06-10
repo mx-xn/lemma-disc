@@ -1,0 +1,25 @@
+[1/3] Enumerating fragments (limit=200, strategy=random)...
+Wrote 10 fragment(s) to /tmp/lemma_fragments_Pg6MIK.json
+[1/3] Got 10 fragment(s).
+[2/3] Running support minimization...
+[info] welcome to sbt 1.10.1 (JetBrains s.r.o. Java 21.0.6)
+[info] loading project definition from /nas/lemma-disc/scala-core/project
+[info] loading settings for project scala-core from build.sbt ...
+[info] set current project to scala-core (in build file:/nas/lemma-disc/scala-core/)
+[info] running Serializer /tmp/lemma_fragments_Pg6MIK.json /tmp/lemma_out_pjwaQQ.json
+[success] Total time: 1 s, completed Jun 4, 2026, 12:18:58 AM
+[3/3] Deduplicating lemmas...
+Deduplicated: 10 → 10 lemmas (0 dropped)
+[3/3] Lemmas    written to /nas/lemma-disc/data/lemma_counts/prop_77_lemmas.json
+[3/3] Fragments written to /nas/lemma-disc/data/lemma_counts/prop_77_lemmas.fragments.json
+--- 10 lemma statement(s) ---
+[0] prop_77: (ih : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true) (hzs : sorted (z :: zs) = true) (hins : insort x (z :: zs) = z :: insort x zs) : sorted (z :: insort x zs) = true
+[1] prop_77: (x : ℕ) (hyx : y ≤ x) (z : ℕ) (zs : List ℕ) (hzs : sorted (z :: zs) = true) (hxz : x ≤ z) : sorted (y :: insort x (z :: zs)) = true
+[2] prop_77: (x : ℕ) (z : ℕ) (zs : List ℕ) (ih : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true) (hyz : y ≤ z) (hzs : sorted (z :: zs) = true) (hins : insort x (z :: zs) = z :: insort x zs) : sorted (y :: insort x (z :: zs)) = true
+[3] prop_77: (x : ℕ) (z : ℕ) (zs : List ℕ) (hxz : ¬x ≤ z) (hins : insort x (z :: zs) = z :: insort x zs) (h1 : sorted (y :: z :: insort x zs) = true) : sorted (y :: insort x (z :: zs)) = true
+[4] prop_77: (x : ℕ) (y : ℕ) (hle : ¬x ≤ y) (hyx : y ≤ x) (h1 : sorted (y :: insort x ys) = true) : sorted (insort x (y :: ys)) = true
+[5] prop_77: (x : ℕ) (z : ℕ) (zs : List ℕ) (ih : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true) (hyz : y ≤ z) (hzs : sorted (z :: zs) = true) (hxz : ¬x ≤ z) : sorted (y :: insort x (z :: zs)) = true
+[6] prop_77: (x : ℕ) (hyx : y ≤ x) (z : ℕ) (zs : List ℕ) (ih : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true) (hyz : y ≤ z) (hzs : sorted (z :: zs) = true) : sorted (y :: insort x (z :: zs)) = true
+[7] prop_77: (y : ℕ) (z : ℕ) (zs : List ℕ) (h : sorted (y :: z :: zs) = true) (hyz : y ≤ z) (hzs : sorted (z :: zs) = true) (h1 : sorted (y :: insort x (z :: zs)) = true) : sorted (y :: insort x (z :: zs)) = true
+[8] prop_77: (x : ℕ) (y : ℕ) (hyx : y ≤ x) (z : ℕ) (zs : List ℕ) (ih : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true) (h : y ≤ z ∧ sorted (z :: zs) = true) : sorted (y :: insort x (z :: zs)) = true
+[9] prop_77: (x : ℕ) (y : ℕ) (hyx : y ≤ x) (z : ℕ) (zs : List ℕ) (ih : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true) (h : sorted (y :: z :: zs) = true) : sorted (y :: insort x (z :: zs)) = true

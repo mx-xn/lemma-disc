@@ -1,0 +1,1024 @@
+{
+  "lemmas": [
+    {
+      "fragment_id": 0,
+      "source_file": "digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [
+        "n : ℕ",
+        "ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs",
+        "xs : List α"
+      ],
+      "body": "drop n (drop (m + 1) []) = drop (n + (m + 1)) [] ∧ ((x : α) → drop n (drop (m + 0).succ (x :: xs)) = drop (n + m).succ (x :: xs))",
+      "conclusion": "drop n (drop (m + 1) xs) = drop (n + (m + 1)) xs",
+      "statement": "(n : ℕ) (ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) (xs : List α) (h1 : drop n (drop (m + 1) []) = drop (n + (m + 1)) [] ∧ ((x : α) → drop n (drop (m + 0).succ (x :: xs)) = drop (n + m).succ (x :: xs))) : drop n (drop (m + 1) xs) = drop (n + (m + 1)) xs"
+    },
+    {
+      "fragment_id": 1,
+      "source_file": "digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [
+        "n : ℕ",
+        "ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs",
+        "xs : List α"
+      ],
+      "body": "drop n [] = [] ∧ ((x : α) → drop n (drop (m + 0).succ (x :: xs)) = drop (n + m).succ (x :: xs))",
+      "conclusion": "drop n (drop (m + 1) xs) = drop (n + (m + 1)) xs",
+      "statement": "(n : ℕ) (ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) (xs : List α) (h1 : drop n [] = [] ∧ ((x : α) → drop n (drop (m + 0).succ (x :: xs)) = drop (n + m).succ (x :: xs))) : drop n (drop (m + 1) xs) = drop (n + (m + 1)) xs"
+    },
+    {
+      "fragment_id": 2,
+      "source_file": "digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [
+        "n : ℕ",
+        "m : ℕ",
+        "xs : List α"
+      ],
+      "body": "(ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop n (drop (m + 1) xs) = drop (n + (m + 1)) xs",
+      "conclusion": "drop n (drop m xs) = drop (n + m) xs",
+      "statement": "(n : ℕ) (m : ℕ) (xs : List α) (ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) (h1 : drop n (drop (m + 1) xs) = drop (n + (m + 1)) xs) : drop n (drop m xs) = drop (n + m) xs"
+    },
+    {
+      "fragment_id": 3,
+      "source_file": "digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [
+        "n : ℕ"
+      ],
+      "body": "True",
+      "conclusion": "drop n (drop (m + 1) []) = drop (n + (m + 1)) []",
+      "statement": "(n : ℕ) : drop n (drop (m + 1) []) = drop (n + (m + 1)) []"
+    },
+    {
+      "fragment_id": 4,
+      "source_file": "digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [
+        "n : ℕ",
+        "m : ℕ",
+        "xs : List α"
+      ],
+      "body": "(ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → (x : α) → drop n (drop (m + 1) (x :: xs)) = drop (n + (m + 1)) (x :: xs)",
+      "conclusion": "drop n (drop m xs) = drop (n + m) xs",
+      "statement": "(n : ℕ) (m : ℕ) (xs : List α) (ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) (x : α) (h1 : drop n (drop (m + 1) (x :: xs)) = drop (n + (m + 1)) (x :: xs)) : drop n (drop m xs) = drop (n + m) xs"
+    },
+    {
+      "fragment_id": 5,
+      "source_file": "digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [
+        "n : ℕ",
+        "m : ℕ",
+        "xs : List α"
+      ],
+      "body": "(ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop n (drop (m + 1) []) = drop (n + (m + 1)) [] ∧ ((x : α) → drop n (drop (m + 1) (x :: xs)) = drop (n + (m + 1)) (x :: xs))",
+      "conclusion": "drop n (drop m xs) = drop (n + m) xs",
+      "statement": "(n : ℕ) (m : ℕ) (xs : List α) (ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) (h1 : drop n (drop (m + 1) []) = drop (n + (m + 1)) [] ∧ ((x : α) → drop n (drop (m + 1) (x :: xs)) = drop (n + (m + 1)) (x :: xs))) : drop n (drop m xs) = drop (n + m) xs"
+    },
+    {
+      "fragment_id": 6,
+      "source_file": "digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [
+        "ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs",
+        "xs : List α"
+      ],
+      "body": "True",
+      "conclusion": "drop n (drop (m + 0).succ (x :: xs)) = drop (n + m).succ (x :: xs)",
+      "statement": "(ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) (xs : List α) : drop n (drop (m + 0).succ (x :: xs)) = drop (n + m).succ (x :: xs)"
+    },
+    {
+      "fragment_id": 7,
+      "source_file": "digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [
+        "ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs",
+        "xs : List α"
+      ],
+      "body": "True",
+      "conclusion": "drop n (drop (m + 1) (x :: xs)) = drop (n + (m + 1)) (x :: xs)",
+      "statement": "(ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) (xs : List α) : drop n (drop (m + 1) (x :: xs)) = drop (n + (m + 1)) (x :: xs)"
+    },
+    {
+      "fragment_id": 8,
+      "source_file": "digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [
+        "n : ℕ",
+        "ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs",
+        "xs : List α"
+      ],
+      "body": "drop n (drop (m + 1) []) = drop (n + (m + 1)) []",
+      "conclusion": "drop n (drop (m + 1) xs) = drop (n + (m + 1)) xs",
+      "statement": "(n : ℕ) (ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) (xs : List α) (h1 : drop n (drop (m + 1) []) = drop (n + (m + 1)) []) : drop n (drop (m + 1) xs) = drop (n + (m + 1)) xs"
+    },
+    {
+      "fragment_id": 9,
+      "source_file": "digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [
+        "n : ℕ"
+      ],
+      "body": "True",
+      "conclusion": "drop n [] = []",
+      "statement": "(n : ℕ) : drop n [] = []"
+    },
+    {
+      "fragment_id": 10,
+      "source_file": "digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [
+        "n : ℕ",
+        "ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs",
+        "xs : List α"
+      ],
+      "body": "drop n (drop (m + 1) []) = drop (n + (m + 1)) [] ∧ ((x : α) → drop n (drop m xs) = drop (n + m) xs)",
+      "conclusion": "drop n (drop (m + 1) xs) = drop (n + (m + 1)) xs",
+      "statement": "(n : ℕ) (ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) (xs : List α) (h1 : drop n (drop (m + 1) []) = drop (n + (m + 1)) [] ∧ ((x : α) → drop n (drop m xs) = drop (n + m) xs)) : drop n (drop (m + 1) xs) = drop (n + (m + 1)) xs"
+    },
+    {
+      "fragment_id": 11,
+      "source_file": "digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [
+        "n : ℕ",
+        "m : ℕ",
+        "xs : List α"
+      ],
+      "body": "drop n (drop 0 xs) = drop (n + 0) xs ∧ ((ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop n (drop (m + 1) []) = drop (n + (m + 1)) [] ∧ ((x : α) → drop n (drop (m + 0).succ (x :: xs)) = drop (n + m).succ (x :: xs)))",
+      "conclusion": "drop n (drop m xs) = drop (n + m) xs",
+      "statement": "(n : ℕ) (m : ℕ) (xs : List α) (h1 : drop n (drop 0 xs) = drop (n + 0) xs ∧ ((ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop n (drop (m + 1) []) = drop (n + (m + 1)) [] ∧ ((x : α) → drop n (drop (m + 0).succ (x :: xs)) = drop (n + m).succ (x :: xs)))) : drop n (drop m xs) = drop (n + m) xs"
+    },
+    {
+      "fragment_id": 12,
+      "source_file": "digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [
+        "n : ℕ"
+      ],
+      "body": "drop 0 [] = [] ∧ ((a✝ : (∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop n [] = []) → drop (n + 1) [] = [])",
+      "conclusion": "drop n (drop (m + 1) []) = drop (n + (m + 1)) []",
+      "statement": "(n : ℕ) (h1 : drop 0 [] = [] ∧ ((a✝ : (∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop n [] = []) → drop (n + 1) [] = [])) : drop n (drop (m + 1) []) = drop (n + (m + 1)) []"
+    },
+    {
+      "fragment_id": 13,
+      "source_file": "digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [
+        "n : ℕ",
+        "m : ℕ",
+        "xs : List α"
+      ],
+      "body": "(ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop n (drop (m + 1) []) = drop (n + (m + 1)) []",
+      "conclusion": "drop n (drop m xs) = drop (n + m) xs",
+      "statement": "(n : ℕ) (m : ℕ) (xs : List α) (ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) (h1 : drop n (drop (m + 1) []) = drop (n + (m + 1)) []) : drop n (drop m xs) = drop (n + m) xs"
+    },
+    {
+      "fragment_id": 14,
+      "source_file": "digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [
+        "n : ℕ"
+      ],
+      "body": "(a✝ : (∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop n [] = []) → drop (n + 1) [] = []",
+      "conclusion": "drop n [] = []",
+      "statement": "(n : ℕ) (a✝ : (∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop n [] = []) (h1 : drop (n + 1) [] = []) : drop n [] = []"
+    },
+    {
+      "fragment_id": 15,
+      "source_file": "digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [],
+      "body": "drop n (drop m xs) = drop (n + m) xs",
+      "conclusion": "drop n (drop (m + 1) (x :: xs)) = drop (n + (m + 1)) (x :: xs)",
+      "statement": "(h1 : drop n (drop m xs) = drop (n + m) xs) : drop n (drop (m + 1) (x :: xs)) = drop (n + (m + 1)) (x :: xs)"
+    },
+    {
+      "fragment_id": 16,
+      "source_file": "digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [
+        "n : ℕ"
+      ],
+      "body": "(a✝ : (∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop n [] = []) → drop (n + 1) [] = []",
+      "conclusion": "drop n (drop (m + 1) []) = drop (n + (m + 1)) []",
+      "statement": "(n : ℕ) (a✝ : (∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop n [] = []) (h1 : drop (n + 1) [] = []) : drop n (drop (m + 1) []) = drop (n + (m + 1)) []"
+    },
+    {
+      "fragment_id": 17,
+      "source_file": "digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [
+        "n : ℕ",
+        "m : ℕ",
+        "xs : List α"
+      ],
+      "body": "(ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop n [] = [] ∧ ((x : α) → drop n (drop m xs) = drop (n + m) xs)",
+      "conclusion": "drop n (drop m xs) = drop (n + m) xs",
+      "statement": "(n : ℕ) (m : ℕ) (xs : List α) (ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) (h1 : drop n [] = [] ∧ ((x : α) → drop n (drop m xs) = drop (n + m) xs)) : drop n (drop m xs) = drop (n + m) xs"
+    },
+    {
+      "fragment_id": 18,
+      "source_file": "digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [
+        "n : ℕ",
+        "ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs",
+        "xs : List α"
+      ],
+      "body": "(x : α) → drop n (drop (m + 1) (x :: xs)) = drop (n + (m + 1)) (x :: xs)",
+      "conclusion": "drop n (drop (m + 1) xs) = drop (n + (m + 1)) xs",
+      "statement": "(n : ℕ) (ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) (xs : List α) (x : α) (h1 : drop n (drop (m + 1) (x :: xs)) = drop (n + (m + 1)) (x :: xs)) : drop n (drop (m + 1) xs) = drop (n + (m + 1)) xs"
+    },
+    {
+      "fragment_id": 19,
+      "source_file": "digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [
+        "n : ℕ"
+      ],
+      "body": "drop 0 [] = []",
+      "conclusion": "drop n [] = []",
+      "statement": "(n : ℕ) (h1 : drop 0 [] = []) : drop n [] = []"
+    },
+    {
+      "fragment_id": 20,
+      "source_file": "digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [
+        "n : ℕ",
+        "m : ℕ",
+        "xs : List α"
+      ],
+      "body": "drop n (drop 0 xs) = drop (n + 0) xs ∧ ((ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop n [] = [] ∧ ((x : α) → drop n (drop (m + 1) (x :: xs)) = drop (n + (m + 1)) (x :: xs)))",
+      "conclusion": "drop n (drop m xs) = drop (n + m) xs",
+      "statement": "(n : ℕ) (m : ℕ) (xs : List α) (h1 : drop n (drop 0 xs) = drop (n + 0) xs ∧ ((ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop n [] = [] ∧ ((x : α) → drop n (drop (m + 1) (x :: xs)) = drop (n + (m + 1)) (x :: xs)))) : drop n (drop m xs) = drop (n + m) xs"
+    },
+    {
+      "fragment_id": 21,
+      "source_file": "digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [
+        "n : ℕ",
+        "m : ℕ",
+        "xs : List α"
+      ],
+      "body": "(ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop n (drop (m + 1) []) = drop (n + (m + 1)) [] ∧ ((x : α) → drop n (drop (m + 0).succ (x :: xs)) = drop (n + m).succ (x :: xs))",
+      "conclusion": "drop n (drop m xs) = drop (n + m) xs",
+      "statement": "(n : ℕ) (m : ℕ) (xs : List α) (ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) (h1 : drop n (drop (m + 1) []) = drop (n + (m + 1)) [] ∧ ((x : α) → drop n (drop (m + 0).succ (x :: xs)) = drop (n + m).succ (x :: xs))) : drop n (drop m xs) = drop (n + m) xs"
+    },
+    {
+      "fragment_id": 22,
+      "source_file": "digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [
+        "n : ℕ",
+        "ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs",
+        "xs : List α"
+      ],
+      "body": "drop n [] = [] ∧ ((x : α) → drop n (drop (m + 1) (x :: xs)) = drop (n + (m + 1)) (x :: xs))",
+      "conclusion": "drop n (drop (m + 1) xs) = drop (n + (m + 1)) xs",
+      "statement": "(n : ℕ) (ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) (xs : List α) (h1 : drop n [] = [] ∧ ((x : α) → drop n (drop (m + 1) (x :: xs)) = drop (n + (m + 1)) (x :: xs))) : drop n (drop (m + 1) xs) = drop (n + (m + 1)) xs"
+    },
+    {
+      "fragment_id": 23,
+      "source_file": "digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [
+        "n : ℕ",
+        "m : ℕ",
+        "xs : List α"
+      ],
+      "body": "(ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop n (drop (m + 1) []) = drop (n + (m + 1)) [] ∧ ((x : α) → drop n (drop m xs) = drop (n + m) xs)",
+      "conclusion": "drop n (drop m xs) = drop (n + m) xs",
+      "statement": "(n : ℕ) (m : ℕ) (xs : List α) (ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) (h1 : drop n (drop (m + 1) []) = drop (n + (m + 1)) [] ∧ ((x : α) → drop n (drop m xs) = drop (n + m) xs)) : drop n (drop m xs) = drop (n + m) xs"
+    },
+    {
+      "fragment_id": 24,
+      "source_file": "digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [
+        "n : ℕ"
+      ],
+      "body": "drop 0 [] = []",
+      "conclusion": "drop n (drop (m + 1) []) = drop (n + (m + 1)) []",
+      "statement": "(n : ℕ) (h1 : drop 0 [] = []) : drop n (drop (m + 1) []) = drop (n + (m + 1)) []"
+    },
+    {
+      "fragment_id": 25,
+      "source_file": "digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [
+        "n : ℕ",
+        "m : ℕ",
+        "xs : List α"
+      ],
+      "body": "(ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop n [] = [] ∧ ((x : α) → drop n (drop (m + 1) (x :: xs)) = drop (n + (m + 1)) (x :: xs))",
+      "conclusion": "drop n (drop m xs) = drop (n + m) xs",
+      "statement": "(n : ℕ) (m : ℕ) (xs : List α) (ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) (h1 : drop n [] = [] ∧ ((x : α) → drop n (drop (m + 1) (x :: xs)) = drop (n + (m + 1)) (x :: xs))) : drop n (drop m xs) = drop (n + m) xs"
+    },
+    {
+      "fragment_id": 26,
+      "source_file": "digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [
+        "n : ℕ",
+        "m : ℕ",
+        "xs : List α"
+      ],
+      "body": "drop n (drop 0 xs) = drop (n + 0) xs ∧ ((ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop n [] = [] ∧ ((x : α) → drop n (drop m xs) = drop (n + m) xs))",
+      "conclusion": "drop n (drop m xs) = drop (n + m) xs",
+      "statement": "(n : ℕ) (m : ℕ) (xs : List α) (h1 : drop n (drop 0 xs) = drop (n + 0) xs ∧ ((ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop n [] = [] ∧ ((x : α) → drop n (drop m xs) = drop (n + m) xs))) : drop n (drop m xs) = drop (n + m) xs"
+    },
+    {
+      "fragment_id": 27,
+      "source_file": "digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [
+        "n : ℕ",
+        "m : ℕ",
+        "xs : List α"
+      ],
+      "body": "drop n (drop 0 xs) = drop (n + 0) xs ∧ ((ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop n (drop (m + 1) []) = drop (n + (m + 1)) [] ∧ ((x : α) → drop n (drop (m + 1) (x :: xs)) = drop (n + (m + 1)) (x :: xs)))",
+      "conclusion": "drop n (drop m xs) = drop (n + m) xs",
+      "statement": "(n : ℕ) (m : ℕ) (xs : List α) (h1 : drop n (drop 0 xs) = drop (n + 0) xs ∧ ((ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop n (drop (m + 1) []) = drop (n + (m + 1)) [] ∧ ((x : α) → drop n (drop (m + 1) (x :: xs)) = drop (n + (m + 1)) (x :: xs)))) : drop n (drop m xs) = drop (n + m) xs"
+    },
+    {
+      "fragment_id": 28,
+      "source_file": "digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [
+        "n : ℕ",
+        "m : ℕ",
+        "xs : List α"
+      ],
+      "body": "drop n (drop 0 xs) = drop (n + 0) xs ∧ ((ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop n (drop (m + 1) []) = drop (n + (m + 1)) [] ∧ ((x : α) → drop n (drop m xs) = drop (n + m) xs))",
+      "conclusion": "drop n (drop m xs) = drop (n + m) xs",
+      "statement": "(n : ℕ) (m : ℕ) (xs : List α) (h1 : drop n (drop 0 xs) = drop (n + 0) xs ∧ ((ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop n (drop (m + 1) []) = drop (n + (m + 1)) [] ∧ ((x : α) → drop n (drop m xs) = drop (n + m) xs))) : drop n (drop m xs) = drop (n + m) xs"
+    },
+    {
+      "fragment_id": 29,
+      "source_file": "digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [
+        "n : ℕ",
+        "m : ℕ",
+        "xs : List α"
+      ],
+      "body": "(ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop n [] = [] ∧ ((x : α) → drop n (drop (m + 0).succ (x :: xs)) = drop (n + m).succ (x :: xs))",
+      "conclusion": "drop n (drop m xs) = drop (n + m) xs",
+      "statement": "(n : ℕ) (m : ℕ) (xs : List α) (ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) (h1 : drop n [] = [] ∧ ((x : α) → drop n (drop (m + 0).succ (x :: xs)) = drop (n + m).succ (x :: xs))) : drop n (drop m xs) = drop (n + m) xs"
+    },
+    {
+      "fragment_id": 30,
+      "source_file": "digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [
+        "n : ℕ",
+        "ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs",
+        "xs : List α"
+      ],
+      "body": "True",
+      "conclusion": "drop n (drop (m + 1) xs) = drop (n + (m + 1)) xs",
+      "statement": "(n : ℕ) (ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) (xs : List α) : drop n (drop (m + 1) xs) = drop (n + (m + 1)) xs"
+    },
+    {
+      "fragment_id": 31,
+      "source_file": "digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [
+        "n : ℕ",
+        "m : ℕ",
+        "xs : List α"
+      ],
+      "body": "drop n (drop 0 xs) = drop (n + 0) xs ∧ ((ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → (x : α) → drop n (drop (m + 0).succ (x :: xs)) = drop (n + m).succ (x :: xs))",
+      "conclusion": "drop n (drop m xs) = drop (n + m) xs",
+      "statement": "(n : ℕ) (m : ℕ) (xs : List α) (h1 : drop n (drop 0 xs) = drop (n + 0) xs ∧ ((ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → (x : α) → drop n (drop (m + 0).succ (x :: xs)) = drop (n + m).succ (x :: xs))) : drop n (drop m xs) = drop (n + m) xs"
+    },
+    {
+      "fragment_id": 32,
+      "source_file": "digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [
+        "n : ℕ",
+        "m : ℕ",
+        "xs : List α"
+      ],
+      "body": "(ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop 0 [] = [] ∧ ((x : α) → drop n (drop m xs) = drop (n + m) xs)",
+      "conclusion": "drop n (drop m xs) = drop (n + m) xs",
+      "statement": "(n : ℕ) (m : ℕ) (xs : List α) (ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) (h1 : drop 0 [] = [] ∧ ((x : α) → drop n (drop m xs) = drop (n + m) xs)) : drop n (drop m xs) = drop (n + m) xs"
+    },
+    {
+      "fragment_id": 33,
+      "source_file": "digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [
+        "n : ℕ",
+        "ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs",
+        "xs : List α"
+      ],
+      "body": "((a✝ : (∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop n [] = []) → drop (n + 1) [] = []) ∧ ((x : α) → drop n (drop (m + 0).succ (x :: xs)) = drop (n + m).succ (x :: xs))",
+      "conclusion": "drop n (drop (m + 1) xs) = drop (n + (m + 1)) xs",
+      "statement": "(n : ℕ) (ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) (xs : List α) (h1 : ((a✝ : (∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop n [] = []) → drop (n + 1) [] = []) ∧ ((x : α) → drop n (drop (m + 0).succ (x :: xs)) = drop (n + m).succ (x :: xs))) : drop n (drop (m + 1) xs) = drop (n + (m + 1)) xs"
+    },
+    {
+      "fragment_id": 34,
+      "source_file": "digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [
+        "n : ℕ",
+        "ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs",
+        "xs : List α"
+      ],
+      "body": "((a✝ : (∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop n [] = []) → drop (n + 1) [] = []) ∧ ((x : α) → drop n (drop (m + 1) (x :: xs)) = drop (n + (m + 1)) (x :: xs))",
+      "conclusion": "drop n (drop (m + 1) xs) = drop (n + (m + 1)) xs",
+      "statement": "(n : ℕ) (ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) (xs : List α) (h1 : ((a✝ : (∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop n [] = []) → drop (n + 1) [] = []) ∧ ((x : α) → drop n (drop (m + 1) (x :: xs)) = drop (n + (m + 1)) (x :: xs))) : drop n (drop (m + 1) xs) = drop (n + (m + 1)) xs"
+    },
+    {
+      "fragment_id": 35,
+      "source_file": "digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [
+        "n : ℕ",
+        "ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs",
+        "xs : List α"
+      ],
+      "body": "(x : α) → drop n (drop m xs) = drop (n + m) xs",
+      "conclusion": "drop n (drop (m + 1) xs) = drop (n + (m + 1)) xs",
+      "statement": "(n : ℕ) (ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) (xs : List α) (x : α) (h1 : drop n (drop m xs) = drop (n + m) xs) : drop n (drop (m + 1) xs) = drop (n + (m + 1)) xs"
+    },
+    {
+      "fragment_id": 36,
+      "source_file": "digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [
+        "n : ℕ",
+        "ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs",
+        "xs : List α"
+      ],
+      "body": "drop 0 [] = [] ∧ ((x : α) → drop n (drop (m + 1) (x :: xs)) = drop (n + (m + 1)) (x :: xs))",
+      "conclusion": "drop n (drop (m + 1) xs) = drop (n + (m + 1)) xs",
+      "statement": "(n : ℕ) (ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) (xs : List α) (h1 : drop 0 [] = [] ∧ ((x : α) → drop n (drop (m + 1) (x :: xs)) = drop (n + (m + 1)) (x :: xs))) : drop n (drop (m + 1) xs) = drop (n + (m + 1)) xs"
+    },
+    {
+      "fragment_id": 37,
+      "source_file": "digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [
+        "n : ℕ",
+        "ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs",
+        "xs : List α"
+      ],
+      "body": "drop 0 [] = [] ∧ ((a✝ : (∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop n [] = []) → drop (n + 1) [] = [])",
+      "conclusion": "drop n (drop (m + 1) xs) = drop (n + (m + 1)) xs",
+      "statement": "(n : ℕ) (ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) (xs : List α) (h1 : drop 0 [] = [] ∧ ((a✝ : (∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop n [] = []) → drop (n + 1) [] = [])) : drop n (drop (m + 1) xs) = drop (n + (m + 1)) xs"
+    },
+    {
+      "fragment_id": 38,
+      "source_file": "digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [
+        "n : ℕ",
+        "m : ℕ",
+        "xs : List α"
+      ],
+      "body": "drop n (drop 0 xs) = drop (n + 0) xs ∧ ((ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop n [] = [] ∧ ((x : α) → drop n (drop (m + 0).succ (x :: xs)) = drop (n + m).succ (x :: xs)))",
+      "conclusion": "drop n (drop m xs) = drop (n + m) xs",
+      "statement": "(n : ℕ) (m : ℕ) (xs : List α) (h1 : drop n (drop 0 xs) = drop (n + 0) xs ∧ ((ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop n [] = [] ∧ ((x : α) → drop n (drop (m + 0).succ (x :: xs)) = drop (n + m).succ (x :: xs)))) : drop n (drop m xs) = drop (n + m) xs"
+    },
+    {
+      "fragment_id": 39,
+      "source_file": "digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [
+        "n : ℕ",
+        "m : ℕ",
+        "xs : List α"
+      ],
+      "body": "drop n (drop 0 xs) = drop (n + 0) xs ∧ ((ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → ((a✝ : (∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop n [] = []) → drop (n + 1) [] = []) ∧ ((x : α) → drop n (drop (m + 0).succ (x :: xs)) = drop (n + m).succ (x :: xs)))",
+      "conclusion": "drop n (drop m xs) = drop (n + m) xs",
+      "statement": "(n : ℕ) (m : ℕ) (xs : List α) (h1 : drop n (drop 0 xs) = drop (n + 0) xs ∧ ((ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → ((a✝ : (∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop n [] = []) → drop (n + 1) [] = []) ∧ ((x : α) → drop n (drop (m + 0).succ (x :: xs)) = drop (n + m).succ (x :: xs)))) : drop n (drop m xs) = drop (n + m) xs"
+    },
+    {
+      "fragment_id": 40,
+      "source_file": "digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [
+        "n : ℕ",
+        "m : ℕ",
+        "xs : List α"
+      ],
+      "body": "(ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → (drop 0 [] = [] ∧ ((a✝ : (∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop n [] = []) → drop (n + 1) [] = [])) ∧ ((x : α) → drop n (drop (m + 0).succ (x :: xs)) = drop (n + m).succ (x :: xs))",
+      "conclusion": "drop n (drop m xs) = drop (n + m) xs",
+      "statement": "(n : ℕ) (m : ℕ) (xs : List α) (ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) (h1 : (drop 0 [] = [] ∧ ((a✝ : (∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop n [] = []) → drop (n + 1) [] = [])) ∧ ((x : α) → drop n (drop (m + 0).succ (x :: xs)) = drop (n + m).succ (x :: xs))) : drop n (drop m xs) = drop (n + m) xs"
+    },
+    {
+      "fragment_id": 41,
+      "source_file": "digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [
+        "n : ℕ",
+        "m : ℕ",
+        "xs : List α"
+      ],
+      "body": "drop n (drop 0 xs) = drop (n + 0) xs ∧ ((ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → (drop 0 [] = [] ∧ ((a✝ : (∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop n [] = []) → drop (n + 1) [] = [])) ∧ ((x : α) → drop n (drop (m + 1) (x :: xs)) = drop (n + (m + 1)) (x :: xs)))",
+      "conclusion": "drop n (drop m xs) = drop (n + m) xs",
+      "statement": "(n : ℕ) (m : ℕ) (xs : List α) (h1 : drop n (drop 0 xs) = drop (n + 0) xs ∧ ((ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → (drop 0 [] = [] ∧ ((a✝ : (∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop n [] = []) → drop (n + 1) [] = [])) ∧ ((x : α) → drop n (drop (m + 1) (x :: xs)) = drop (n + (m + 1)) (x :: xs)))) : drop n (drop m xs) = drop (n + m) xs"
+    },
+    {
+      "fragment_id": 42,
+      "source_file": "digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [
+        "n : ℕ",
+        "ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs",
+        "xs : List α"
+      ],
+      "body": "drop n [] = [] ∧ ((x : α) → drop n (drop m xs) = drop (n + m) xs)",
+      "conclusion": "drop n (drop (m + 1) xs) = drop (n + (m + 1)) xs",
+      "statement": "(n : ℕ) (ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) (xs : List α) (h1 : drop n [] = [] ∧ ((x : α) → drop n (drop m xs) = drop (n + m) xs)) : drop n (drop (m + 1) xs) = drop (n + (m + 1)) xs"
+    },
+    {
+      "fragment_id": 43,
+      "source_file": "digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [
+        "n : ℕ",
+        "ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs",
+        "xs : List α"
+      ],
+      "body": "drop n [] = []",
+      "conclusion": "drop n (drop (m + 1) xs) = drop (n + (m + 1)) xs",
+      "statement": "(n : ℕ) (ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) (xs : List α) (h1 : drop n [] = []) : drop n (drop (m + 1) xs) = drop (n + (m + 1)) xs"
+    },
+    {
+      "fragment_id": 44,
+      "source_file": "digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [
+        "n : ℕ",
+        "m : ℕ",
+        "xs : List α"
+      ],
+      "body": "drop n (drop 0 xs) = drop (n + 0) xs ∧ ((ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop 0 [] = [] ∧ ((x : α) → drop n (drop (m + 1) (x :: xs)) = drop (n + (m + 1)) (x :: xs)))",
+      "conclusion": "drop n (drop m xs) = drop (n + m) xs",
+      "statement": "(n : ℕ) (m : ℕ) (xs : List α) (h1 : drop n (drop 0 xs) = drop (n + 0) xs ∧ ((ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop 0 [] = [] ∧ ((x : α) → drop n (drop (m + 1) (x :: xs)) = drop (n + (m + 1)) (x :: xs)))) : drop n (drop m xs) = drop (n + m) xs"
+    },
+    {
+      "fragment_id": 45,
+      "source_file": "digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [
+        "n : ℕ",
+        "m : ℕ",
+        "xs : List α"
+      ],
+      "body": "drop n (drop 0 xs) = drop (n + 0) xs ∧ ((ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → (x : α) → drop n (drop (m + 1) (x :: xs)) = drop (n + (m + 1)) (x :: xs))",
+      "conclusion": "drop n (drop m xs) = drop (n + m) xs",
+      "statement": "(n : ℕ) (m : ℕ) (xs : List α) (h1 : drop n (drop 0 xs) = drop (n + 0) xs ∧ ((ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → (x : α) → drop n (drop (m + 1) (x :: xs)) = drop (n + (m + 1)) (x :: xs))) : drop n (drop m xs) = drop (n + m) xs"
+    },
+    {
+      "fragment_id": 46,
+      "source_file": "digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [
+        "n : ℕ",
+        "ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs",
+        "xs : List α"
+      ],
+      "body": "(x : α) → drop n (drop (m + 0).succ (x :: xs)) = drop (n + m).succ (x :: xs)",
+      "conclusion": "drop n (drop (m + 1) xs) = drop (n + (m + 1)) xs",
+      "statement": "(n : ℕ) (ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) (xs : List α) (x : α) (h1 : drop n (drop (m + 0).succ (x :: xs)) = drop (n + m).succ (x :: xs)) : drop n (drop (m + 1) xs) = drop (n + (m + 1)) xs"
+    },
+    {
+      "fragment_id": 47,
+      "source_file": "digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [
+        "n : ℕ",
+        "m : ℕ",
+        "xs : List α"
+      ],
+      "body": "drop n (drop 0 xs) = drop (n + 0) xs ∧ ((ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop 0 [] = [] ∧ ((a✝ : (∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop n [] = []) → drop (n + 1) [] = []))",
+      "conclusion": "drop n (drop m xs) = drop (n + m) xs",
+      "statement": "(n : ℕ) (m : ℕ) (xs : List α) (h1 : drop n (drop 0 xs) = drop (n + 0) xs ∧ ((ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop 0 [] = [] ∧ ((a✝ : (∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop n [] = []) → drop (n + 1) [] = []))) : drop n (drop m xs) = drop (n + m) xs"
+    },
+    {
+      "fragment_id": 48,
+      "source_file": "digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [
+        "n : ℕ",
+        "ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs",
+        "xs : List α"
+      ],
+      "body": "(drop 0 [] = [] ∧ ((a✝ : (∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop n [] = []) → drop (n + 1) [] = [])) ∧ ((x : α) → drop n (drop (m + 1) (x :: xs)) = drop (n + (m + 1)) (x :: xs))",
+      "conclusion": "drop n (drop (m + 1) xs) = drop (n + (m + 1)) xs",
+      "statement": "(n : ℕ) (ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) (xs : List α) (h1 : (drop 0 [] = [] ∧ ((a✝ : (∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop n [] = []) → drop (n + 1) [] = [])) ∧ ((x : α) → drop n (drop (m + 1) (x :: xs)) = drop (n + (m + 1)) (x :: xs))) : drop n (drop (m + 1) xs) = drop (n + (m + 1)) xs"
+    },
+    {
+      "fragment_id": 49,
+      "source_file": "digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [
+        "n : ℕ",
+        "ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs",
+        "xs : List α"
+      ],
+      "body": "((a✝ : (∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop n [] = []) → drop (n + 1) [] = []) ∧ ((x : α) → drop n (drop m xs) = drop (n + m) xs)",
+      "conclusion": "drop n (drop (m + 1) xs) = drop (n + (m + 1)) xs",
+      "statement": "(n : ℕ) (ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) (xs : List α) (h1 : ((a✝ : (∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop n [] = []) → drop (n + 1) [] = []) ∧ ((x : α) → drop n (drop m xs) = drop (n + m) xs)) : drop n (drop (m + 1) xs) = drop (n + (m + 1)) xs"
+    },
+    {
+      "fragment_id": 50,
+      "source_file": "digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [
+        "n : ℕ",
+        "ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs",
+        "xs : List α"
+      ],
+      "body": "(drop 0 [] = [] ∧ ((a✝ : (∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop n [] = []) → drop (n + 1) [] = [])) ∧ ((x : α) → drop n (drop (m + 0).succ (x :: xs)) = drop (n + m).succ (x :: xs))",
+      "conclusion": "drop n (drop (m + 1) xs) = drop (n + (m + 1)) xs",
+      "statement": "(n : ℕ) (ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) (xs : List α) (h1 : (drop 0 [] = [] ∧ ((a✝ : (∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop n [] = []) → drop (n + 1) [] = [])) ∧ ((x : α) → drop n (drop (m + 0).succ (x :: xs)) = drop (n + m).succ (x :: xs))) : drop n (drop (m + 1) xs) = drop (n + (m + 1)) xs"
+    },
+    {
+      "fragment_id": 51,
+      "source_file": "digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [
+        "n : ℕ",
+        "m : ℕ",
+        "xs : List α"
+      ],
+      "body": "drop n (drop 0 xs) = drop (n + 0) xs ∧ ((ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop 0 [] = [] ∧ ((x : α) → drop n (drop m xs) = drop (n + m) xs))",
+      "conclusion": "drop n (drop m xs) = drop (n + m) xs",
+      "statement": "(n : ℕ) (m : ℕ) (xs : List α) (h1 : drop n (drop 0 xs) = drop (n + 0) xs ∧ ((ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop 0 [] = [] ∧ ((x : α) → drop n (drop m xs) = drop (n + m) xs))) : drop n (drop m xs) = drop (n + m) xs"
+    },
+    {
+      "fragment_id": 52,
+      "source_file": "digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [
+        "n : ℕ",
+        "m : ℕ",
+        "xs : List α"
+      ],
+      "body": "drop n (drop 0 xs) = drop (n + 0) xs ∧ ((ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → ((a✝ : (∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop n [] = []) → drop (n + 1) [] = []) ∧ ((x : α) → drop n (drop (m + 1) (x :: xs)) = drop (n + (m + 1)) (x :: xs)))",
+      "conclusion": "drop n (drop m xs) = drop (n + m) xs",
+      "statement": "(n : ℕ) (m : ℕ) (xs : List α) (h1 : drop n (drop 0 xs) = drop (n + 0) xs ∧ ((ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → ((a✝ : (∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop n [] = []) → drop (n + 1) [] = []) ∧ ((x : α) → drop n (drop (m + 1) (x :: xs)) = drop (n + (m + 1)) (x :: xs)))) : drop n (drop m xs) = drop (n + m) xs"
+    },
+    {
+      "fragment_id": 53,
+      "source_file": "digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [
+        "n : ℕ",
+        "m : ℕ",
+        "xs : List α"
+      ],
+      "body": "drop n (drop 0 xs) = drop (n + 0) xs ∧ ((ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop n (drop (m + 1) []) = drop (n + (m + 1)) [])",
+      "conclusion": "drop n (drop m xs) = drop (n + m) xs",
+      "statement": "(n : ℕ) (m : ℕ) (xs : List α) (h1 : drop n (drop 0 xs) = drop (n + 0) xs ∧ ((ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop n (drop (m + 1) []) = drop (n + (m + 1)) [])) : drop n (drop m xs) = drop (n + m) xs"
+    },
+    {
+      "fragment_id": 54,
+      "source_file": "digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [
+        "n : ℕ",
+        "ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs",
+        "xs : List α"
+      ],
+      "body": "(drop 0 [] = [] ∧ ((a✝ : (∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop n [] = []) → drop (n + 1) [] = [])) ∧ ((x : α) → drop n (drop m xs) = drop (n + m) xs)",
+      "conclusion": "drop n (drop (m + 1) xs) = drop (n + (m + 1)) xs",
+      "statement": "(n : ℕ) (ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) (xs : List α) (h1 : (drop 0 [] = [] ∧ ((a✝ : (∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop n [] = []) → drop (n + 1) [] = [])) ∧ ((x : α) → drop n (drop m xs) = drop (n + m) xs)) : drop n (drop (m + 1) xs) = drop (n + (m + 1)) xs"
+    },
+    {
+      "fragment_id": 55,
+      "source_file": "digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [
+        "n : ℕ",
+        "m : ℕ",
+        "xs : List α"
+      ],
+      "body": "(ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → ((a✝ : (∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop n [] = []) → drop (n + 1) [] = []) ∧ ((x : α) → drop n (drop (m + 0).succ (x :: xs)) = drop (n + m).succ (x :: xs))",
+      "conclusion": "drop n (drop m xs) = drop (n + m) xs",
+      "statement": "(n : ℕ) (m : ℕ) (xs : List α) (ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) (h1 : ((a✝ : (∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop n [] = []) → drop (n + 1) [] = []) ∧ ((x : α) → drop n (drop (m + 0).succ (x :: xs)) = drop (n + m).succ (x :: xs))) : drop n (drop m xs) = drop (n + m) xs"
+    },
+    {
+      "fragment_id": 56,
+      "source_file": "digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [
+        "n : ℕ",
+        "ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs",
+        "xs : List α"
+      ],
+      "body": "drop 0 [] = [] ∧ ((x : α) → drop n (drop m xs) = drop (n + m) xs)",
+      "conclusion": "drop n (drop (m + 1) xs) = drop (n + (m + 1)) xs",
+      "statement": "(n : ℕ) (ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) (xs : List α) (h1 : drop 0 [] = [] ∧ ((x : α) → drop n (drop m xs) = drop (n + m) xs)) : drop n (drop (m + 1) xs) = drop (n + (m + 1)) xs"
+    },
+    {
+      "fragment_id": 57,
+      "source_file": "digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [
+        "n : ℕ",
+        "m : ℕ",
+        "xs : List α"
+      ],
+      "body": "(ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop 0 [] = [] ∧ ((x : α) → drop n (drop (m + 0).succ (x :: xs)) = drop (n + m).succ (x :: xs))",
+      "conclusion": "drop n (drop m xs) = drop (n + m) xs",
+      "statement": "(n : ℕ) (m : ℕ) (xs : List α) (ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) (h1 : drop 0 [] = [] ∧ ((x : α) → drop n (drop (m + 0).succ (x :: xs)) = drop (n + m).succ (x :: xs))) : drop n (drop m xs) = drop (n + m) xs"
+    },
+    {
+      "fragment_id": 58,
+      "source_file": "digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [
+        "n : ℕ",
+        "m : ℕ",
+        "xs : List α"
+      ],
+      "body": "(ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop 0 [] = [] ∧ ((a✝ : (∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop n [] = []) → drop (n + 1) [] = [])",
+      "conclusion": "drop n (drop m xs) = drop (n + m) xs",
+      "statement": "(n : ℕ) (m : ℕ) (xs : List α) (ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) (h1 : drop 0 [] = [] ∧ ((a✝ : (∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop n [] = []) → drop (n + 1) [] = [])) : drop n (drop m xs) = drop (n + m) xs"
+    },
+    {
+      "fragment_id": 59,
+      "source_file": "digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [
+        "n : ℕ",
+        "m : ℕ",
+        "xs : List α"
+      ],
+      "body": "(ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop n [] = []",
+      "conclusion": "drop n (drop m xs) = drop (n + m) xs",
+      "statement": "(n : ℕ) (m : ℕ) (xs : List α) (ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) (h1 : drop n [] = []) : drop n (drop m xs) = drop (n + m) xs"
+    },
+    {
+      "fragment_id": 60,
+      "source_file": "digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [
+        "n : ℕ",
+        "ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs",
+        "xs : List α"
+      ],
+      "body": "(a✝ : (∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop n [] = []) → drop (n + 1) [] = []",
+      "conclusion": "drop n (drop (m + 1) xs) = drop (n + (m + 1)) xs",
+      "statement": "(n : ℕ) (ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) (xs : List α) (a✝ : (∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop n [] = []) (h1 : drop (n + 1) [] = []) : drop n (drop (m + 1) xs) = drop (n + (m + 1)) xs"
+    },
+    {
+      "fragment_id": 61,
+      "source_file": "digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [
+        "n : ℕ",
+        "m : ℕ",
+        "xs : List α"
+      ],
+      "body": "(ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop 0 [] = [] ∧ ((x : α) → drop n (drop (m + 1) (x :: xs)) = drop (n + (m + 1)) (x :: xs))",
+      "conclusion": "drop n (drop m xs) = drop (n + m) xs",
+      "statement": "(n : ℕ) (m : ℕ) (xs : List α) (ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) (h1 : drop 0 [] = [] ∧ ((x : α) → drop n (drop (m + 1) (x :: xs)) = drop (n + (m + 1)) (x :: xs))) : drop n (drop m xs) = drop (n + m) xs"
+    },
+    {
+      "fragment_id": 62,
+      "source_file": "digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [
+        "n : ℕ",
+        "m : ℕ",
+        "xs : List α"
+      ],
+      "body": "(ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → ((a✝ : (∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop n [] = []) → drop (n + 1) [] = []) ∧ ((x : α) → drop n (drop m xs) = drop (n + m) xs)",
+      "conclusion": "drop n (drop m xs) = drop (n + m) xs",
+      "statement": "(n : ℕ) (m : ℕ) (xs : List α) (ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) (h1 : ((a✝ : (∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop n [] = []) → drop (n + 1) [] = []) ∧ ((x : α) → drop n (drop m xs) = drop (n + m) xs)) : drop n (drop m xs) = drop (n + m) xs"
+    },
+    {
+      "fragment_id": 63,
+      "source_file": "digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [
+        "n : ℕ",
+        "m : ℕ",
+        "xs : List α"
+      ],
+      "body": "drop n (drop 0 xs) = drop (n + 0) xs ∧ ((ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → ((a✝ : (∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop n [] = []) → drop (n + 1) [] = []) ∧ ((x : α) → drop n (drop m xs) = drop (n + m) xs))",
+      "conclusion": "drop n (drop m xs) = drop (n + m) xs",
+      "statement": "(n : ℕ) (m : ℕ) (xs : List α) (h1 : drop n (drop 0 xs) = drop (n + 0) xs ∧ ((ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → ((a✝ : (∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop n [] = []) → drop (n + 1) [] = []) ∧ ((x : α) → drop n (drop m xs) = drop (n + m) xs))) : drop n (drop m xs) = drop (n + m) xs"
+    },
+    {
+      "fragment_id": 64,
+      "source_file": "digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [
+        "n : ℕ",
+        "ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs",
+        "xs : List α"
+      ],
+      "body": "drop 0 [] = [] ∧ ((x : α) → drop n (drop (m + 0).succ (x :: xs)) = drop (n + m).succ (x :: xs))",
+      "conclusion": "drop n (drop (m + 1) xs) = drop (n + (m + 1)) xs",
+      "statement": "(n : ℕ) (ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) (xs : List α) (h1 : drop 0 [] = [] ∧ ((x : α) → drop n (drop (m + 0).succ (x :: xs)) = drop (n + m).succ (x :: xs))) : drop n (drop (m + 1) xs) = drop (n + (m + 1)) xs"
+    },
+    {
+      "fragment_id": 65,
+      "source_file": "digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [
+        "n : ℕ",
+        "ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs",
+        "xs : List α"
+      ],
+      "body": "drop 0 [] = []",
+      "conclusion": "drop n (drop (m + 1) xs) = drop (n + (m + 1)) xs",
+      "statement": "(n : ℕ) (ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) (xs : List α) (h1 : drop 0 [] = []) : drop n (drop (m + 1) xs) = drop (n + (m + 1)) xs"
+    },
+    {
+      "fragment_id": 66,
+      "source_file": "digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [
+        "n : ℕ",
+        "m : ℕ",
+        "xs : List α"
+      ],
+      "body": "(ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → (x : α) → drop n (drop m xs) = drop (n + m) xs",
+      "conclusion": "drop n (drop m xs) = drop (n + m) xs",
+      "statement": "(n : ℕ) (m : ℕ) (xs : List α) (ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) (x : α) (h1 : drop n (drop m xs) = drop (n + m) xs) : drop n (drop m xs) = drop (n + m) xs"
+    },
+    {
+      "fragment_id": 67,
+      "source_file": "digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [
+        "n : ℕ",
+        "m : ℕ",
+        "xs : List α"
+      ],
+      "body": "(ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → ((a✝ : (∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop n [] = []) → drop (n + 1) [] = []) ∧ ((x : α) → drop n (drop (m + 1) (x :: xs)) = drop (n + (m + 1)) (x :: xs))",
+      "conclusion": "drop n (drop m xs) = drop (n + m) xs",
+      "statement": "(n : ℕ) (m : ℕ) (xs : List α) (ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) (h1 : ((a✝ : (∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop n [] = []) → drop (n + 1) [] = []) ∧ ((x : α) → drop n (drop (m + 1) (x :: xs)) = drop (n + (m + 1)) (x :: xs))) : drop n (drop m xs) = drop (n + m) xs"
+    },
+    {
+      "fragment_id": 68,
+      "source_file": "digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [
+        "n : ℕ",
+        "m : ℕ",
+        "xs : List α"
+      ],
+      "body": "drop n (drop 0 xs) = drop (n + 0) xs ∧ ((ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → (drop 0 [] = [] ∧ ((a✝ : (∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop n [] = []) → drop (n + 1) [] = [])) ∧ ((x : α) → drop n (drop m xs) = drop (n + m) xs))",
+      "conclusion": "drop n (drop m xs) = drop (n + m) xs",
+      "statement": "(n : ℕ) (m : ℕ) (xs : List α) (h1 : drop n (drop 0 xs) = drop (n + 0) xs ∧ ((ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → (drop 0 [] = [] ∧ ((a✝ : (∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop n [] = []) → drop (n + 1) [] = [])) ∧ ((x : α) → drop n (drop m xs) = drop (n + m) xs))) : drop n (drop m xs) = drop (n + m) xs"
+    },
+    {
+      "fragment_id": 69,
+      "source_file": "digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [
+        "n : ℕ",
+        "m : ℕ",
+        "xs : List α"
+      ],
+      "body": "drop n (drop 0 xs) = drop (n + 0) xs ∧ ((ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop 0 [] = [])",
+      "conclusion": "drop n (drop m xs) = drop (n + m) xs",
+      "statement": "(n : ℕ) (m : ℕ) (xs : List α) (h1 : drop n (drop 0 xs) = drop (n + 0) xs ∧ ((ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop 0 [] = [])) : drop n (drop m xs) = drop (n + m) xs"
+    },
+    {
+      "fragment_id": 70,
+      "source_file": "digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [
+        "n : ℕ",
+        "m : ℕ",
+        "xs : List α"
+      ],
+      "body": "drop n (drop 0 xs) = drop (n + 0) xs ∧ ((ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop n [] = [])",
+      "conclusion": "drop n (drop m xs) = drop (n + m) xs",
+      "statement": "(n : ℕ) (m : ℕ) (xs : List α) (h1 : drop n (drop 0 xs) = drop (n + 0) xs ∧ ((ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop n [] = [])) : drop n (drop m xs) = drop (n + m) xs"
+    },
+    {
+      "fragment_id": 71,
+      "source_file": "digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [
+        "n : ℕ",
+        "m : ℕ",
+        "xs : List α"
+      ],
+      "body": "(ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop 0 [] = []",
+      "conclusion": "drop n (drop m xs) = drop (n + m) xs",
+      "statement": "(n : ℕ) (m : ℕ) (xs : List α) (ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) (h1 : drop 0 [] = []) : drop n (drop m xs) = drop (n + m) xs"
+    },
+    {
+      "fragment_id": 72,
+      "source_file": "digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [
+        "n : ℕ",
+        "m : ℕ",
+        "xs : List α"
+      ],
+      "body": "(ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → (x : α) → drop n (drop (m + 0).succ (x :: xs)) = drop (n + m).succ (x :: xs)",
+      "conclusion": "drop n (drop m xs) = drop (n + m) xs",
+      "statement": "(n : ℕ) (m : ℕ) (xs : List α) (ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) (x : α) (h1 : drop n (drop (m + 0).succ (x :: xs)) = drop (n + m).succ (x :: xs)) : drop n (drop m xs) = drop (n + m) xs"
+    },
+    {
+      "fragment_id": 73,
+      "source_file": "digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [
+        "n : ℕ",
+        "m : ℕ",
+        "xs : List α"
+      ],
+      "body": "drop n (drop 0 xs) = drop (n + 0) xs ∧ ((ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop 0 [] = [] ∧ ((x : α) → drop n (drop (m + 0).succ (x :: xs)) = drop (n + m).succ (x :: xs)))",
+      "conclusion": "drop n (drop m xs) = drop (n + m) xs",
+      "statement": "(n : ℕ) (m : ℕ) (xs : List α) (h1 : drop n (drop 0 xs) = drop (n + 0) xs ∧ ((ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop 0 [] = [] ∧ ((x : α) → drop n (drop (m + 0).succ (x :: xs)) = drop (n + m).succ (x :: xs)))) : drop n (drop m xs) = drop (n + m) xs"
+    },
+    {
+      "fragment_id": 74,
+      "source_file": "digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [
+        "n : ℕ",
+        "m : ℕ",
+        "xs : List α"
+      ],
+      "body": "(ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → (drop 0 [] = [] ∧ ((a✝ : (∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop n [] = []) → drop (n + 1) [] = [])) ∧ ((x : α) → drop n (drop (m + 1) (x :: xs)) = drop (n + (m + 1)) (x :: xs))",
+      "conclusion": "drop n (drop m xs) = drop (n + m) xs",
+      "statement": "(n : ℕ) (m : ℕ) (xs : List α) (ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) (h1 : (drop 0 [] = [] ∧ ((a✝ : (∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop n [] = []) → drop (n + 1) [] = [])) ∧ ((x : α) → drop n (drop (m + 1) (x :: xs)) = drop (n + (m + 1)) (x :: xs))) : drop n (drop m xs) = drop (n + m) xs"
+    },
+    {
+      "fragment_id": 75,
+      "source_file": "digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [
+        "n : ℕ",
+        "m : ℕ",
+        "xs : List α"
+      ],
+      "body": "drop n (drop 0 xs) = drop (n + 0) xs ∧ ((ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → (a✝ : (∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop n [] = []) → drop (n + 1) [] = [])",
+      "conclusion": "drop n (drop m xs) = drop (n + m) xs",
+      "statement": "(n : ℕ) (m : ℕ) (xs : List α) (h1 : drop n (drop 0 xs) = drop (n + 0) xs ∧ ((ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → (a✝ : (∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop n [] = []) → drop (n + 1) [] = [])) : drop n (drop m xs) = drop (n + m) xs"
+    },
+    {
+      "fragment_id": 76,
+      "source_file": "digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [
+        "n : ℕ",
+        "m : ℕ",
+        "xs : List α"
+      ],
+      "body": "True",
+      "conclusion": "drop n (drop m xs) = drop (n + m) xs",
+      "statement": "(n : ℕ) (m : ℕ) (xs : List α) : drop n (drop m xs) = drop (n + m) xs"
+    },
+    {
+      "fragment_id": 77,
+      "source_file": "digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [
+        "n : ℕ",
+        "m : ℕ",
+        "xs : List α"
+      ],
+      "body": "(ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → (a✝ : (∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop n [] = []) → drop (n + 1) [] = []",
+      "conclusion": "drop n (drop m xs) = drop (n + m) xs",
+      "statement": "(n : ℕ) (m : ℕ) (xs : List α) (ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) (a✝ : (∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop n [] = []) (h1 : drop (n + 1) [] = []) : drop n (drop m xs) = drop (n + m) xs"
+    },
+    {
+      "fragment_id": 78,
+      "source_file": "digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [
+        "n : ℕ",
+        "m : ℕ",
+        "xs : List α"
+      ],
+      "body": "drop n (drop 0 xs) = drop (n + 0) xs ∧ ((ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → (drop 0 [] = [] ∧ ((a✝ : (∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop n [] = []) → drop (n + 1) [] = [])) ∧ ((x : α) → drop n (drop (m + 0).succ (x :: xs)) = drop (n + m).succ (x :: xs)))",
+      "conclusion": "drop n (drop m xs) = drop (n + m) xs",
+      "statement": "(n : ℕ) (m : ℕ) (xs : List α) (h1 : drop n (drop 0 xs) = drop (n + 0) xs ∧ ((ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → (drop 0 [] = [] ∧ ((a✝ : (∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop n [] = []) → drop (n + 1) [] = [])) ∧ ((x : α) → drop n (drop (m + 0).succ (x :: xs)) = drop (n + m).succ (x :: xs)))) : drop n (drop m xs) = drop (n + m) xs"
+    },
+    {
+      "fragment_id": 79,
+      "source_file": "digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [
+        "n : ℕ",
+        "m : ℕ",
+        "xs : List α"
+      ],
+      "body": "(ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → (drop 0 [] = [] ∧ ((a✝ : (∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop n [] = []) → drop (n + 1) [] = [])) ∧ ((x : α) → drop n (drop m xs) = drop (n + m) xs)",
+      "conclusion": "drop n (drop m xs) = drop (n + m) xs",
+      "statement": "(n : ℕ) (m : ℕ) (xs : List α) (ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) (h1 : (drop 0 [] = [] ∧ ((a✝ : (∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop n [] = []) → drop (n + 1) [] = [])) ∧ ((x : α) → drop n (drop m xs) = drop (n + m) xs)) : drop n (drop m xs) = drop (n + m) xs"
+    }
+  ]
+}

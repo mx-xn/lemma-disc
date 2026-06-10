@@ -1,0 +1,53 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "LemmaList",
+  "description": "Output of phase4 (support minimization). Consumed by phase5 (Lean emission). A flat list of extracted lemma objects, one per input fragment.",
+  "type": "object",
+  "required": ["lemmas"],
+  "additionalProperties": false,
+  "properties": {
+    "lemmas": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/LemmaObj" }
+    }
+  },
+  "definitions": {
+    "LemmaObj": {
+      "type": "object",
+      "required": ["fragment_id", "source_file", "decl_name", "premises", "body", "conclusion", "statement"],
+      "additionalProperties": false,
+      "properties": {
+        "fragment_id": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Matches the fragment_id from the input fragment."
+        },
+        "source_file": {
+          "type": "string",
+          "description": "Passed through from the input fragment."
+        },
+        "decl_name": {
+          "type": "string",
+          "description": "Passed through from the input fragment."
+        },
+        "premises": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Minimal support A ⊆ ΓF, formatted as 'name : Type' strings."
+        },
+        "body": {
+          "type": "string",
+          "description": "Lem(Υ) as a Lean proposition string, or 'True' when Lem(Υ) = ⊤."
+        },
+        "conclusion": {
+          "type": "string",
+          "description": "gF: the root goal of this fragment."
+        },
+        "statement": {
+          "type": "string",
+          "description": "Full lemma statement in Lean binder syntax: '(p1 : T1) ... (pN : TN) : conclusion'. Every premise from minimal support and every top-level antecedent of `body` is lifted into a binder; unnamed body antecedents receive fresh `h{k}` names that avoid collision with identifiers already in the statement. When `body` = 'True' no body binder is added. With zero binders the statement degenerates to just `conclusion`."
+        }
+      }
+    }
+  }
+}

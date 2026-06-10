@@ -1,0 +1,6139 @@
+{
+  "fragments": [
+    {
+      "fragment_id": 0,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_85.json",
+      "decl_name": "prop_85",
+      "root_node_id": 14,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "α",
+            "type": "Type u_1"
+          },
+          {
+            "name": "β",
+            "type": "Type u_2"
+          },
+          {
+            "name": "x",
+            "type": "α"
+          },
+          {
+            "name": "xs",
+            "type": "List α"
+          },
+          {
+            "name": "ih",
+            "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+          },
+          {
+            "name": "y",
+            "type": "β"
+          },
+          {
+            "name": "ys",
+            "type": "List β"
+          },
+          {
+            "name": "h",
+            "type": "length (x :: xs) = length (y :: ys)"
+          }
+        ],
+        "goal": "length xs = length ys"
+      },
+      "nodes": [
+        {
+          "id": 14,
+          "kind": "node",
+          "tactic_text": "simp only [length] at h",
+          "parent_id": null,
+          "child_ids": [
+            15
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "β",
+                "type": "Type u_2"
+              },
+              {
+                "name": "x",
+                "type": "α"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+              },
+              {
+                "name": "y",
+                "type": "β"
+              },
+              {
+                "name": "ys",
+                "type": "List β"
+              },
+              {
+                "name": "h",
+                "type": "length (x :: xs) = length (y :: ys)"
+              }
+            ],
+            "goal": "length xs = length ys"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "β",
+                  "type": "Type u_2"
+                },
+                {
+                  "name": "x",
+                  "type": "α"
+                },
+                {
+                  "name": "xs",
+                  "type": "List α"
+                },
+                {
+                  "name": "ih",
+                  "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+                },
+                {
+                  "name": "y",
+                  "type": "β"
+                },
+                {
+                  "name": "ys",
+                  "type": "List β"
+                },
+                {
+                  "name": "h",
+                  "type": "1 + length xs = 1 + length ys"
+                }
+              ],
+              "goal": "length xs = length ys"
+            }
+          ],
+          "summary": {
+            "directly_used": [
+              "h"
+            ],
+            "dependency_maps": [
+              {
+                "α": [
+                  "α"
+                ],
+                "β": [
+                  "β"
+                ],
+                "x": [
+                  "x"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "ih": [
+                  "ih"
+                ],
+                "y": [
+                  "y"
+                ],
+                "ys": [
+                  "ys"
+                ],
+                "h": [
+                  "ys",
+                  "xs"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 15,
+          "kind": "leaf",
+          "tactic_text": "omega",
+          "parent_id": 14,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "β",
+                "type": "Type u_2"
+              },
+              {
+                "name": "x",
+                "type": "α"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+              },
+              {
+                "name": "y",
+                "type": "β"
+              },
+              {
+                "name": "ys",
+                "type": "List β"
+              },
+              {
+                "name": "h",
+                "type": "1 + length xs = 1 + length ys"
+              }
+            ],
+            "goal": "length xs = length ys"
+          },
+          "summary": {
+            "directly_used": [
+              "h",
+              "ih",
+              "x",
+              "xs",
+              "y",
+              "ys",
+              "α",
+              "β"
+            ],
+            "dependency_maps": []
+          }
+        }
+      ]
+    },
+    {
+      "fragment_id": 1,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_85.json",
+      "decl_name": "prop_85",
+      "root_node_id": 12,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "α",
+            "type": "Type u_1"
+          },
+          {
+            "name": "β",
+            "type": "Type u_2"
+          },
+          {
+            "name": "x",
+            "type": "α"
+          },
+          {
+            "name": "xs",
+            "type": "List α"
+          },
+          {
+            "name": "ih",
+            "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+          },
+          {
+            "name": "y",
+            "type": "β"
+          },
+          {
+            "name": "ys",
+            "type": "List β"
+          },
+          {
+            "name": "h",
+            "type": "length (x :: xs) = length (y :: ys)"
+          },
+          {
+            "name": "h'",
+            "type": "length xs = length ys"
+          },
+          {
+            "name": "hL",
+            "type": "length (reverse xs) = length (reverse ys)"
+          }
+        ],
+        "goal": "zip' (reverse (x :: xs)) (reverse (y :: ys)) = reverse (zip' (x :: xs) (y :: ys))"
+      },
+      "nodes": [
+        {
+          "id": 12,
+          "kind": "node",
+          "tactic_text": "simp only [reverse, zip']",
+          "parent_id": null,
+          "child_ids": [
+            13
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "β",
+                "type": "Type u_2"
+              },
+              {
+                "name": "x",
+                "type": "α"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+              },
+              {
+                "name": "y",
+                "type": "β"
+              },
+              {
+                "name": "ys",
+                "type": "List β"
+              },
+              {
+                "name": "h",
+                "type": "length (x :: xs) = length (y :: ys)"
+              },
+              {
+                "name": "h'",
+                "type": "length xs = length ys"
+              },
+              {
+                "name": "hL",
+                "type": "length (reverse xs) = length (reverse ys)"
+              }
+            ],
+            "goal": "zip' (reverse (x :: xs)) (reverse (y :: ys)) = reverse (zip' (x :: xs) (y :: ys))"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "β",
+                  "type": "Type u_2"
+                },
+                {
+                  "name": "x",
+                  "type": "α"
+                },
+                {
+                  "name": "xs",
+                  "type": "List α"
+                },
+                {
+                  "name": "ih",
+                  "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+                },
+                {
+                  "name": "y",
+                  "type": "β"
+                },
+                {
+                  "name": "ys",
+                  "type": "List β"
+                },
+                {
+                  "name": "h",
+                  "type": "length (x :: xs) = length (y :: ys)"
+                },
+                {
+                  "name": "h'",
+                  "type": "length xs = length ys"
+                },
+                {
+                  "name": "hL",
+                  "type": "length (reverse xs) = length (reverse ys)"
+                }
+              ],
+              "goal": "zip' (reverse xs ++ [x]) (reverse ys ++ [y]) = reverse (zip' xs ys) ++ [(x, y)]"
+            }
+          ],
+          "summary": {
+            "directly_used": [],
+            "dependency_maps": [
+              {
+                "α": [
+                  "α"
+                ],
+                "β": [
+                  "β"
+                ],
+                "x": [
+                  "x"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "ih": [
+                  "ih"
+                ],
+                "y": [
+                  "y"
+                ],
+                "ys": [
+                  "ys"
+                ],
+                "h": [
+                  "h"
+                ],
+                "h'": [
+                  "h'"
+                ],
+                "hL": [
+                  "hL"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 13,
+          "kind": "leaf",
+          "tactic_text": "rw [zip'_append_singleton' _ _ _ _ hL, ih ys h']",
+          "parent_id": 12,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "β",
+                "type": "Type u_2"
+              },
+              {
+                "name": "x",
+                "type": "α"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+              },
+              {
+                "name": "y",
+                "type": "β"
+              },
+              {
+                "name": "ys",
+                "type": "List β"
+              },
+              {
+                "name": "h",
+                "type": "length (x :: xs) = length (y :: ys)"
+              },
+              {
+                "name": "h'",
+                "type": "length xs = length ys"
+              },
+              {
+                "name": "hL",
+                "type": "length (reverse xs) = length (reverse ys)"
+              }
+            ],
+            "goal": "zip' (reverse xs ++ [x]) (reverse ys ++ [y]) = reverse (zip' xs ys) ++ [(x, y)]"
+          },
+          "summary": {
+            "directly_used": [
+              "h'",
+              "hL",
+              "ih",
+              "ys"
+            ],
+            "dependency_maps": []
+          }
+        }
+      ]
+    },
+    {
+      "fragment_id": 2,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_85.json",
+      "decl_name": "prop_85",
+      "root_node_id": 11,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "α",
+            "type": "Type u_1"
+          },
+          {
+            "name": "β",
+            "type": "Type u_2"
+          },
+          {
+            "name": "x",
+            "type": "α"
+          },
+          {
+            "name": "xs",
+            "type": "List α"
+          },
+          {
+            "name": "ih",
+            "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+          },
+          {
+            "name": "y",
+            "type": "β"
+          },
+          {
+            "name": "ys",
+            "type": "List β"
+          },
+          {
+            "name": "h",
+            "type": "length (x :: xs) = length (y :: ys)"
+          },
+          {
+            "name": "h'",
+            "type": "length xs = length ys"
+          }
+        ],
+        "goal": "zip' (reverse (x :: xs)) (reverse (y :: ys)) = reverse (zip' (x :: xs) (y :: ys))"
+      },
+      "nodes": [
+        {
+          "id": 11,
+          "kind": "node",
+          "tactic_text": "have hL : length (reverse xs) = length (reverse ys) := by simp [length_reverse_eq', h']",
+          "parent_id": null,
+          "child_ids": [
+            12
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "β",
+                "type": "Type u_2"
+              },
+              {
+                "name": "x",
+                "type": "α"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+              },
+              {
+                "name": "y",
+                "type": "β"
+              },
+              {
+                "name": "ys",
+                "type": "List β"
+              },
+              {
+                "name": "h",
+                "type": "length (x :: xs) = length (y :: ys)"
+              },
+              {
+                "name": "h'",
+                "type": "length xs = length ys"
+              }
+            ],
+            "goal": "zip' (reverse (x :: xs)) (reverse (y :: ys)) = reverse (zip' (x :: xs) (y :: ys))"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "β",
+                  "type": "Type u_2"
+                },
+                {
+                  "name": "x",
+                  "type": "α"
+                },
+                {
+                  "name": "xs",
+                  "type": "List α"
+                },
+                {
+                  "name": "ih",
+                  "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+                },
+                {
+                  "name": "y",
+                  "type": "β"
+                },
+                {
+                  "name": "ys",
+                  "type": "List β"
+                },
+                {
+                  "name": "h",
+                  "type": "length (x :: xs) = length (y :: ys)"
+                },
+                {
+                  "name": "h'",
+                  "type": "length xs = length ys"
+                },
+                {
+                  "name": "hL",
+                  "type": "length (reverse xs) = length (reverse ys)"
+                }
+              ],
+              "goal": "zip' (reverse (x :: xs)) (reverse (y :: ys)) = reverse (zip' (x :: xs) (y :: ys))"
+            }
+          ],
+          "summary": {
+            "directly_used": [
+              "h'",
+              "xs",
+              "ys"
+            ],
+            "dependency_maps": [
+              {
+                "α": [
+                  "α"
+                ],
+                "β": [
+                  "β"
+                ],
+                "x": [
+                  "x"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "ih": [
+                  "ih"
+                ],
+                "y": [
+                  "y"
+                ],
+                "ys": [
+                  "ys"
+                ],
+                "h": [
+                  "h"
+                ],
+                "h'": [
+                  "h'"
+                ],
+                "hL": [
+                  "ys",
+                  "xs"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 12,
+          "kind": "node",
+          "tactic_text": "simp only [reverse, zip']",
+          "parent_id": 11,
+          "child_ids": [
+            13
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "β",
+                "type": "Type u_2"
+              },
+              {
+                "name": "x",
+                "type": "α"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+              },
+              {
+                "name": "y",
+                "type": "β"
+              },
+              {
+                "name": "ys",
+                "type": "List β"
+              },
+              {
+                "name": "h",
+                "type": "length (x :: xs) = length (y :: ys)"
+              },
+              {
+                "name": "h'",
+                "type": "length xs = length ys"
+              },
+              {
+                "name": "hL",
+                "type": "length (reverse xs) = length (reverse ys)"
+              }
+            ],
+            "goal": "zip' (reverse (x :: xs)) (reverse (y :: ys)) = reverse (zip' (x :: xs) (y :: ys))"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "β",
+                  "type": "Type u_2"
+                },
+                {
+                  "name": "x",
+                  "type": "α"
+                },
+                {
+                  "name": "xs",
+                  "type": "List α"
+                },
+                {
+                  "name": "ih",
+                  "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+                },
+                {
+                  "name": "y",
+                  "type": "β"
+                },
+                {
+                  "name": "ys",
+                  "type": "List β"
+                },
+                {
+                  "name": "h",
+                  "type": "length (x :: xs) = length (y :: ys)"
+                },
+                {
+                  "name": "h'",
+                  "type": "length xs = length ys"
+                },
+                {
+                  "name": "hL",
+                  "type": "length (reverse xs) = length (reverse ys)"
+                }
+              ],
+              "goal": "zip' (reverse xs ++ [x]) (reverse ys ++ [y]) = reverse (zip' xs ys) ++ [(x, y)]"
+            }
+          ],
+          "summary": {
+            "directly_used": [],
+            "dependency_maps": [
+              {
+                "α": [
+                  "α"
+                ],
+                "β": [
+                  "β"
+                ],
+                "x": [
+                  "x"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "ih": [
+                  "ih"
+                ],
+                "y": [
+                  "y"
+                ],
+                "ys": [
+                  "ys"
+                ],
+                "h": [
+                  "h"
+                ],
+                "h'": [
+                  "h'"
+                ],
+                "hL": [
+                  "hL"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 13,
+          "kind": "hole",
+          "hole_id": "ℓ0",
+          "parent_id": 12,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "β",
+                "type": "Type u_2"
+              },
+              {
+                "name": "x",
+                "type": "α"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+              },
+              {
+                "name": "y",
+                "type": "β"
+              },
+              {
+                "name": "ys",
+                "type": "List β"
+              },
+              {
+                "name": "h",
+                "type": "length (x :: xs) = length (y :: ys)"
+              },
+              {
+                "name": "h'",
+                "type": "length xs = length ys"
+              },
+              {
+                "name": "hL",
+                "type": "length (reverse xs) = length (reverse ys)"
+              }
+            ],
+            "goal": "zip' (reverse xs ++ [x]) (reverse ys ++ [y]) = reverse (zip' xs ys) ++ [(x, y)]"
+          }
+        }
+      ]
+    },
+    {
+      "fragment_id": 3,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_85.json",
+      "decl_name": "prop_85",
+      "root_node_id": 4,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "α",
+            "type": "Type u_1"
+          },
+          {
+            "name": "β",
+            "type": "Type u_2"
+          },
+          {
+            "name": "head✝",
+            "type": "β"
+          },
+          {
+            "name": "tail✝",
+            "type": "List β"
+          },
+          {
+            "name": "h",
+            "type": "length [] = length (head✝ :: tail✝)"
+          }
+        ],
+        "goal": "zip' (reverse []) (reverse (head✝ :: tail✝)) = reverse (zip' [] (head✝ :: tail✝))"
+      },
+      "nodes": [
+        {
+          "id": 4,
+          "kind": "node",
+          "tactic_text": "simp only [length] at h",
+          "parent_id": null,
+          "child_ids": [
+            5
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "β",
+                "type": "Type u_2"
+              },
+              {
+                "name": "head✝",
+                "type": "β"
+              },
+              {
+                "name": "tail✝",
+                "type": "List β"
+              },
+              {
+                "name": "h",
+                "type": "length [] = length (head✝ :: tail✝)"
+              }
+            ],
+            "goal": "zip' (reverse []) (reverse (head✝ :: tail✝)) = reverse (zip' [] (head✝ :: tail✝))"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "β",
+                  "type": "Type u_2"
+                },
+                {
+                  "name": "head✝",
+                  "type": "β"
+                },
+                {
+                  "name": "tail✝",
+                  "type": "List β"
+                },
+                {
+                  "name": "h",
+                  "type": "0 = 1 + length tail✝"
+                }
+              ],
+              "goal": "zip' (reverse []) (reverse (head✝ :: tail✝)) = reverse (zip' [] (head✝ :: tail✝))"
+            }
+          ],
+          "summary": {
+            "directly_used": [
+              "h"
+            ],
+            "dependency_maps": [
+              {
+                "α": [
+                  "α"
+                ],
+                "β": [
+                  "β"
+                ],
+                "head✝": [
+                  "head✝"
+                ],
+                "tail✝": [
+                  "tail✝"
+                ],
+                "h": [
+                  "h"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 5,
+          "kind": "leaf",
+          "tactic_text": "omega",
+          "parent_id": 4,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "β",
+                "type": "Type u_2"
+              },
+              {
+                "name": "head✝",
+                "type": "β"
+              },
+              {
+                "name": "tail✝",
+                "type": "List β"
+              },
+              {
+                "name": "h",
+                "type": "0 = 1 + length tail✝"
+              }
+            ],
+            "goal": "zip' (reverse []) (reverse (head✝ :: tail✝)) = reverse (zip' [] (head✝ :: tail✝))"
+          },
+          "summary": {
+            "directly_used": [
+              "h",
+              "head✝",
+              "tail✝",
+              "α",
+              "β"
+            ],
+            "dependency_maps": []
+          }
+        }
+      ]
+    },
+    {
+      "fragment_id": 4,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_85.json",
+      "decl_name": "prop_85",
+      "root_node_id": 10,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "α",
+            "type": "Type u_1"
+          },
+          {
+            "name": "β",
+            "type": "Type u_2"
+          },
+          {
+            "name": "x",
+            "type": "α"
+          },
+          {
+            "name": "xs",
+            "type": "List α"
+          },
+          {
+            "name": "ih",
+            "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+          },
+          {
+            "name": "y",
+            "type": "β"
+          },
+          {
+            "name": "ys",
+            "type": "List β"
+          },
+          {
+            "name": "h",
+            "type": "length (x :: xs) = length (y :: ys)"
+          }
+        ],
+        "goal": "zip' (reverse (x :: xs)) (reverse (y :: ys)) = reverse (zip' (x :: xs) (y :: ys))"
+      },
+      "nodes": [
+        {
+          "id": 10,
+          "kind": "node",
+          "tactic_text": "have h' : length xs = length ys := by simp only [length] at h; omega",
+          "parent_id": null,
+          "child_ids": [
+            11
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "β",
+                "type": "Type u_2"
+              },
+              {
+                "name": "x",
+                "type": "α"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+              },
+              {
+                "name": "y",
+                "type": "β"
+              },
+              {
+                "name": "ys",
+                "type": "List β"
+              },
+              {
+                "name": "h",
+                "type": "length (x :: xs) = length (y :: ys)"
+              }
+            ],
+            "goal": "zip' (reverse (x :: xs)) (reverse (y :: ys)) = reverse (zip' (x :: xs) (y :: ys))"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "β",
+                  "type": "Type u_2"
+                },
+                {
+                  "name": "x",
+                  "type": "α"
+                },
+                {
+                  "name": "xs",
+                  "type": "List α"
+                },
+                {
+                  "name": "ih",
+                  "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+                },
+                {
+                  "name": "y",
+                  "type": "β"
+                },
+                {
+                  "name": "ys",
+                  "type": "List β"
+                },
+                {
+                  "name": "h",
+                  "type": "length (x :: xs) = length (y :: ys)"
+                },
+                {
+                  "name": "h'",
+                  "type": "length xs = length ys"
+                }
+              ],
+              "goal": "zip' (reverse (x :: xs)) (reverse (y :: ys)) = reverse (zip' (x :: xs) (y :: ys))"
+            }
+          ],
+          "summary": {
+            "directly_used": [
+              "h",
+              "ih",
+              "x",
+              "xs",
+              "y",
+              "ys",
+              "α",
+              "β"
+            ],
+            "dependency_maps": [
+              {
+                "α": [
+                  "α"
+                ],
+                "β": [
+                  "β"
+                ],
+                "x": [
+                  "x"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "ih": [
+                  "ih"
+                ],
+                "y": [
+                  "y"
+                ],
+                "ys": [
+                  "ys"
+                ],
+                "h": [
+                  "h"
+                ],
+                "h'": [
+                  "ys",
+                  "xs"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 11,
+          "kind": "node",
+          "tactic_text": "have hL : length (reverse xs) = length (reverse ys) := by simp [length_reverse_eq', h']",
+          "parent_id": 10,
+          "child_ids": [
+            12
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "β",
+                "type": "Type u_2"
+              },
+              {
+                "name": "x",
+                "type": "α"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+              },
+              {
+                "name": "y",
+                "type": "β"
+              },
+              {
+                "name": "ys",
+                "type": "List β"
+              },
+              {
+                "name": "h",
+                "type": "length (x :: xs) = length (y :: ys)"
+              },
+              {
+                "name": "h'",
+                "type": "length xs = length ys"
+              }
+            ],
+            "goal": "zip' (reverse (x :: xs)) (reverse (y :: ys)) = reverse (zip' (x :: xs) (y :: ys))"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "β",
+                  "type": "Type u_2"
+                },
+                {
+                  "name": "x",
+                  "type": "α"
+                },
+                {
+                  "name": "xs",
+                  "type": "List α"
+                },
+                {
+                  "name": "ih",
+                  "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+                },
+                {
+                  "name": "y",
+                  "type": "β"
+                },
+                {
+                  "name": "ys",
+                  "type": "List β"
+                },
+                {
+                  "name": "h",
+                  "type": "length (x :: xs) = length (y :: ys)"
+                },
+                {
+                  "name": "h'",
+                  "type": "length xs = length ys"
+                },
+                {
+                  "name": "hL",
+                  "type": "length (reverse xs) = length (reverse ys)"
+                }
+              ],
+              "goal": "zip' (reverse (x :: xs)) (reverse (y :: ys)) = reverse (zip' (x :: xs) (y :: ys))"
+            }
+          ],
+          "summary": {
+            "directly_used": [
+              "h'",
+              "xs",
+              "ys"
+            ],
+            "dependency_maps": [
+              {
+                "α": [
+                  "α"
+                ],
+                "β": [
+                  "β"
+                ],
+                "x": [
+                  "x"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "ih": [
+                  "ih"
+                ],
+                "y": [
+                  "y"
+                ],
+                "ys": [
+                  "ys"
+                ],
+                "h": [
+                  "h"
+                ],
+                "h'": [
+                  "h'"
+                ],
+                "hL": [
+                  "ys",
+                  "xs"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 12,
+          "kind": "node",
+          "tactic_text": "simp only [reverse, zip']",
+          "parent_id": 11,
+          "child_ids": [
+            13
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "β",
+                "type": "Type u_2"
+              },
+              {
+                "name": "x",
+                "type": "α"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+              },
+              {
+                "name": "y",
+                "type": "β"
+              },
+              {
+                "name": "ys",
+                "type": "List β"
+              },
+              {
+                "name": "h",
+                "type": "length (x :: xs) = length (y :: ys)"
+              },
+              {
+                "name": "h'",
+                "type": "length xs = length ys"
+              },
+              {
+                "name": "hL",
+                "type": "length (reverse xs) = length (reverse ys)"
+              }
+            ],
+            "goal": "zip' (reverse (x :: xs)) (reverse (y :: ys)) = reverse (zip' (x :: xs) (y :: ys))"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "β",
+                  "type": "Type u_2"
+                },
+                {
+                  "name": "x",
+                  "type": "α"
+                },
+                {
+                  "name": "xs",
+                  "type": "List α"
+                },
+                {
+                  "name": "ih",
+                  "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+                },
+                {
+                  "name": "y",
+                  "type": "β"
+                },
+                {
+                  "name": "ys",
+                  "type": "List β"
+                },
+                {
+                  "name": "h",
+                  "type": "length (x :: xs) = length (y :: ys)"
+                },
+                {
+                  "name": "h'",
+                  "type": "length xs = length ys"
+                },
+                {
+                  "name": "hL",
+                  "type": "length (reverse xs) = length (reverse ys)"
+                }
+              ],
+              "goal": "zip' (reverse xs ++ [x]) (reverse ys ++ [y]) = reverse (zip' xs ys) ++ [(x, y)]"
+            }
+          ],
+          "summary": {
+            "directly_used": [],
+            "dependency_maps": [
+              {
+                "α": [
+                  "α"
+                ],
+                "β": [
+                  "β"
+                ],
+                "x": [
+                  "x"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "ih": [
+                  "ih"
+                ],
+                "y": [
+                  "y"
+                ],
+                "ys": [
+                  "ys"
+                ],
+                "h": [
+                  "h"
+                ],
+                "h'": [
+                  "h'"
+                ],
+                "hL": [
+                  "hL"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 13,
+          "kind": "leaf",
+          "tactic_text": "rw [zip'_append_singleton' _ _ _ _ hL, ih ys h']",
+          "parent_id": 12,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "β",
+                "type": "Type u_2"
+              },
+              {
+                "name": "x",
+                "type": "α"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+              },
+              {
+                "name": "y",
+                "type": "β"
+              },
+              {
+                "name": "ys",
+                "type": "List β"
+              },
+              {
+                "name": "h",
+                "type": "length (x :: xs) = length (y :: ys)"
+              },
+              {
+                "name": "h'",
+                "type": "length xs = length ys"
+              },
+              {
+                "name": "hL",
+                "type": "length (reverse xs) = length (reverse ys)"
+              }
+            ],
+            "goal": "zip' (reverse xs ++ [x]) (reverse ys ++ [y]) = reverse (zip' xs ys) ++ [(x, y)]"
+          },
+          "summary": {
+            "directly_used": [
+              "h'",
+              "hL",
+              "ih",
+              "ys"
+            ],
+            "dependency_maps": []
+          }
+        }
+      ]
+    },
+    {
+      "fragment_id": 5,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_85.json",
+      "decl_name": "prop_85",
+      "root_node_id": 2,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "α",
+            "type": "Type u_1"
+          },
+          {
+            "name": "β",
+            "type": "Type u_2"
+          },
+          {
+            "name": "ys",
+            "type": "List β"
+          },
+          {
+            "name": "h",
+            "type": "length [] = length ys"
+          }
+        ],
+        "goal": "zip' (reverse []) (reverse ys) = reverse (zip' [] ys)"
+      },
+      "nodes": [
+        {
+          "id": 2,
+          "kind": "node",
+          "tactic_text": "cases ys with\n| nil => _*_\n| cons _ _ => _*_",
+          "parent_id": null,
+          "child_ids": [
+            3,
+            4
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "β",
+                "type": "Type u_2"
+              },
+              {
+                "name": "ys",
+                "type": "List β"
+              },
+              {
+                "name": "h",
+                "type": "length [] = length ys"
+              }
+            ],
+            "goal": "zip' (reverse []) (reverse ys) = reverse (zip' [] ys)"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "β",
+                  "type": "Type u_2"
+                },
+                {
+                  "name": "h",
+                  "type": "length [] = length []"
+                }
+              ],
+              "goal": "zip' (reverse []) (reverse []) = reverse (zip' [] [])"
+            },
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "β",
+                  "type": "Type u_2"
+                },
+                {
+                  "name": "head✝",
+                  "type": "β"
+                },
+                {
+                  "name": "tail✝",
+                  "type": "List β"
+                },
+                {
+                  "name": "h",
+                  "type": "length [] = length (head✝ :: tail✝)"
+                }
+              ],
+              "goal": "zip' (reverse []) (reverse (head✝ :: tail✝)) = reverse (zip' [] (head✝ :: tail✝))"
+            }
+          ],
+          "summary": {
+            "directly_used": [
+              "h",
+              "ys",
+              "α",
+              "β"
+            ],
+            "dependency_maps": [
+              {
+                "α": [
+                  "α"
+                ],
+                "β": [
+                  "β"
+                ],
+                "h": [
+                  "h",
+                  "ys",
+                  "α",
+                  "β"
+                ]
+              },
+              {
+                "α": [
+                  "α"
+                ],
+                "β": [
+                  "β"
+                ],
+                "head✝": [
+                  "β"
+                ],
+                "tail✝": [
+                  "β"
+                ],
+                "h": [
+                  "h",
+                  "ys",
+                  "α",
+                  "β"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 3,
+          "kind": "leaf",
+          "tactic_text": "simp [reverse, zip']",
+          "parent_id": 2,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "β",
+                "type": "Type u_2"
+              },
+              {
+                "name": "h",
+                "type": "length [] = length []"
+              }
+            ],
+            "goal": "zip' (reverse []) (reverse []) = reverse (zip' [] [])"
+          },
+          "summary": {
+            "directly_used": [],
+            "dependency_maps": []
+          }
+        },
+        {
+          "id": 4,
+          "kind": "node",
+          "tactic_text": "simp only [length] at h",
+          "parent_id": 2,
+          "child_ids": [
+            5
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "β",
+                "type": "Type u_2"
+              },
+              {
+                "name": "head✝",
+                "type": "β"
+              },
+              {
+                "name": "tail✝",
+                "type": "List β"
+              },
+              {
+                "name": "h",
+                "type": "length [] = length (head✝ :: tail✝)"
+              }
+            ],
+            "goal": "zip' (reverse []) (reverse (head✝ :: tail✝)) = reverse (zip' [] (head✝ :: tail✝))"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "β",
+                  "type": "Type u_2"
+                },
+                {
+                  "name": "head✝",
+                  "type": "β"
+                },
+                {
+                  "name": "tail✝",
+                  "type": "List β"
+                },
+                {
+                  "name": "h",
+                  "type": "0 = 1 + length tail✝"
+                }
+              ],
+              "goal": "zip' (reverse []) (reverse (head✝ :: tail✝)) = reverse (zip' [] (head✝ :: tail✝))"
+            }
+          ],
+          "summary": {
+            "directly_used": [
+              "h"
+            ],
+            "dependency_maps": [
+              {
+                "α": [
+                  "α"
+                ],
+                "β": [
+                  "β"
+                ],
+                "head✝": [
+                  "head✝"
+                ],
+                "tail✝": [
+                  "tail✝"
+                ],
+                "h": [
+                  "h"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 5,
+          "kind": "leaf",
+          "tactic_text": "omega",
+          "parent_id": 4,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "β",
+                "type": "Type u_2"
+              },
+              {
+                "name": "head✝",
+                "type": "β"
+              },
+              {
+                "name": "tail✝",
+                "type": "List β"
+              },
+              {
+                "name": "h",
+                "type": "0 = 1 + length tail✝"
+              }
+            ],
+            "goal": "zip' (reverse []) (reverse (head✝ :: tail✝)) = reverse (zip' [] (head✝ :: tail✝))"
+          },
+          "summary": {
+            "directly_used": [
+              "h",
+              "head✝",
+              "tail✝",
+              "α",
+              "β"
+            ],
+            "dependency_maps": []
+          }
+        }
+      ]
+    },
+    {
+      "fragment_id": 6,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_85.json",
+      "decl_name": "prop_85",
+      "root_node_id": 8,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "α",
+            "type": "Type u_1"
+          },
+          {
+            "name": "β",
+            "type": "Type u_2"
+          },
+          {
+            "name": "x",
+            "type": "α"
+          },
+          {
+            "name": "xs",
+            "type": "List α"
+          },
+          {
+            "name": "ih",
+            "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+          },
+          {
+            "name": "h",
+            "type": "length (x :: xs) = length []"
+          }
+        ],
+        "goal": "zip' (reverse (x :: xs)) (reverse []) = reverse (zip' (x :: xs) [])"
+      },
+      "nodes": [
+        {
+          "id": 8,
+          "kind": "node",
+          "tactic_text": "simp only [length] at h",
+          "parent_id": null,
+          "child_ids": [
+            9
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "β",
+                "type": "Type u_2"
+              },
+              {
+                "name": "x",
+                "type": "α"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+              },
+              {
+                "name": "h",
+                "type": "length (x :: xs) = length []"
+              }
+            ],
+            "goal": "zip' (reverse (x :: xs)) (reverse []) = reverse (zip' (x :: xs) [])"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "β",
+                  "type": "Type u_2"
+                },
+                {
+                  "name": "x",
+                  "type": "α"
+                },
+                {
+                  "name": "xs",
+                  "type": "List α"
+                },
+                {
+                  "name": "ih",
+                  "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+                },
+                {
+                  "name": "h",
+                  "type": "1 + length xs = 0"
+                }
+              ],
+              "goal": "zip' (reverse (x :: xs)) (reverse []) = reverse (zip' (x :: xs) [])"
+            }
+          ],
+          "summary": {
+            "directly_used": [
+              "h"
+            ],
+            "dependency_maps": [
+              {
+                "α": [
+                  "α"
+                ],
+                "β": [
+                  "β"
+                ],
+                "x": [
+                  "x"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "ih": [
+                  "ih"
+                ],
+                "h": [
+                  "xs"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 9,
+          "kind": "leaf",
+          "tactic_text": "omega",
+          "parent_id": 8,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "β",
+                "type": "Type u_2"
+              },
+              {
+                "name": "x",
+                "type": "α"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+              },
+              {
+                "name": "h",
+                "type": "1 + length xs = 0"
+              }
+            ],
+            "goal": "zip' (reverse (x :: xs)) (reverse []) = reverse (zip' (x :: xs) [])"
+          },
+          "summary": {
+            "directly_used": [
+              "h",
+              "ih",
+              "x",
+              "xs",
+              "α",
+              "β"
+            ],
+            "dependency_maps": []
+          }
+        }
+      ]
+    },
+    {
+      "fragment_id": 7,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_85.json",
+      "decl_name": "prop_85",
+      "root_node_id": 11,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "α",
+            "type": "Type u_1"
+          },
+          {
+            "name": "β",
+            "type": "Type u_2"
+          },
+          {
+            "name": "x",
+            "type": "α"
+          },
+          {
+            "name": "xs",
+            "type": "List α"
+          },
+          {
+            "name": "ih",
+            "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+          },
+          {
+            "name": "y",
+            "type": "β"
+          },
+          {
+            "name": "ys",
+            "type": "List β"
+          },
+          {
+            "name": "h",
+            "type": "length (x :: xs) = length (y :: ys)"
+          },
+          {
+            "name": "h'",
+            "type": "length xs = length ys"
+          }
+        ],
+        "goal": "zip' (reverse (x :: xs)) (reverse (y :: ys)) = reverse (zip' (x :: xs) (y :: ys))"
+      },
+      "nodes": [
+        {
+          "id": 11,
+          "kind": "node",
+          "tactic_text": "have hL : length (reverse xs) = length (reverse ys) := by simp [length_reverse_eq', h']",
+          "parent_id": null,
+          "child_ids": [
+            12
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "β",
+                "type": "Type u_2"
+              },
+              {
+                "name": "x",
+                "type": "α"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+              },
+              {
+                "name": "y",
+                "type": "β"
+              },
+              {
+                "name": "ys",
+                "type": "List β"
+              },
+              {
+                "name": "h",
+                "type": "length (x :: xs) = length (y :: ys)"
+              },
+              {
+                "name": "h'",
+                "type": "length xs = length ys"
+              }
+            ],
+            "goal": "zip' (reverse (x :: xs)) (reverse (y :: ys)) = reverse (zip' (x :: xs) (y :: ys))"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "β",
+                  "type": "Type u_2"
+                },
+                {
+                  "name": "x",
+                  "type": "α"
+                },
+                {
+                  "name": "xs",
+                  "type": "List α"
+                },
+                {
+                  "name": "ih",
+                  "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+                },
+                {
+                  "name": "y",
+                  "type": "β"
+                },
+                {
+                  "name": "ys",
+                  "type": "List β"
+                },
+                {
+                  "name": "h",
+                  "type": "length (x :: xs) = length (y :: ys)"
+                },
+                {
+                  "name": "h'",
+                  "type": "length xs = length ys"
+                },
+                {
+                  "name": "hL",
+                  "type": "length (reverse xs) = length (reverse ys)"
+                }
+              ],
+              "goal": "zip' (reverse (x :: xs)) (reverse (y :: ys)) = reverse (zip' (x :: xs) (y :: ys))"
+            }
+          ],
+          "summary": {
+            "directly_used": [
+              "h'",
+              "xs",
+              "ys"
+            ],
+            "dependency_maps": [
+              {
+                "α": [
+                  "α"
+                ],
+                "β": [
+                  "β"
+                ],
+                "x": [
+                  "x"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "ih": [
+                  "ih"
+                ],
+                "y": [
+                  "y"
+                ],
+                "ys": [
+                  "ys"
+                ],
+                "h": [
+                  "h"
+                ],
+                "h'": [
+                  "h'"
+                ],
+                "hL": [
+                  "ys",
+                  "xs"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 12,
+          "kind": "node",
+          "tactic_text": "simp only [reverse, zip']",
+          "parent_id": 11,
+          "child_ids": [
+            13
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "β",
+                "type": "Type u_2"
+              },
+              {
+                "name": "x",
+                "type": "α"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+              },
+              {
+                "name": "y",
+                "type": "β"
+              },
+              {
+                "name": "ys",
+                "type": "List β"
+              },
+              {
+                "name": "h",
+                "type": "length (x :: xs) = length (y :: ys)"
+              },
+              {
+                "name": "h'",
+                "type": "length xs = length ys"
+              },
+              {
+                "name": "hL",
+                "type": "length (reverse xs) = length (reverse ys)"
+              }
+            ],
+            "goal": "zip' (reverse (x :: xs)) (reverse (y :: ys)) = reverse (zip' (x :: xs) (y :: ys))"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "β",
+                  "type": "Type u_2"
+                },
+                {
+                  "name": "x",
+                  "type": "α"
+                },
+                {
+                  "name": "xs",
+                  "type": "List α"
+                },
+                {
+                  "name": "ih",
+                  "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+                },
+                {
+                  "name": "y",
+                  "type": "β"
+                },
+                {
+                  "name": "ys",
+                  "type": "List β"
+                },
+                {
+                  "name": "h",
+                  "type": "length (x :: xs) = length (y :: ys)"
+                },
+                {
+                  "name": "h'",
+                  "type": "length xs = length ys"
+                },
+                {
+                  "name": "hL",
+                  "type": "length (reverse xs) = length (reverse ys)"
+                }
+              ],
+              "goal": "zip' (reverse xs ++ [x]) (reverse ys ++ [y]) = reverse (zip' xs ys) ++ [(x, y)]"
+            }
+          ],
+          "summary": {
+            "directly_used": [],
+            "dependency_maps": [
+              {
+                "α": [
+                  "α"
+                ],
+                "β": [
+                  "β"
+                ],
+                "x": [
+                  "x"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "ih": [
+                  "ih"
+                ],
+                "y": [
+                  "y"
+                ],
+                "ys": [
+                  "ys"
+                ],
+                "h": [
+                  "h"
+                ],
+                "h'": [
+                  "h'"
+                ],
+                "hL": [
+                  "hL"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 13,
+          "kind": "leaf",
+          "tactic_text": "rw [zip'_append_singleton' _ _ _ _ hL, ih ys h']",
+          "parent_id": 12,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "β",
+                "type": "Type u_2"
+              },
+              {
+                "name": "x",
+                "type": "α"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+              },
+              {
+                "name": "y",
+                "type": "β"
+              },
+              {
+                "name": "ys",
+                "type": "List β"
+              },
+              {
+                "name": "h",
+                "type": "length (x :: xs) = length (y :: ys)"
+              },
+              {
+                "name": "h'",
+                "type": "length xs = length ys"
+              },
+              {
+                "name": "hL",
+                "type": "length (reverse xs) = length (reverse ys)"
+              }
+            ],
+            "goal": "zip' (reverse xs ++ [x]) (reverse ys ++ [y]) = reverse (zip' xs ys) ++ [(x, y)]"
+          },
+          "summary": {
+            "directly_used": [
+              "h'",
+              "hL",
+              "ih",
+              "ys"
+            ],
+            "dependency_maps": []
+          }
+        }
+      ]
+    },
+    {
+      "fragment_id": 8,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_85.json",
+      "decl_name": "prop_85",
+      "root_node_id": 7,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "α",
+            "type": "Type u_1"
+          },
+          {
+            "name": "β",
+            "type": "Type u_2"
+          },
+          {
+            "name": "x",
+            "type": "α"
+          },
+          {
+            "name": "xs",
+            "type": "List α"
+          },
+          {
+            "name": "ih",
+            "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+          },
+          {
+            "name": "ys",
+            "type": "List β"
+          },
+          {
+            "name": "h",
+            "type": "length (x :: xs) = length ys"
+          }
+        ],
+        "goal": "zip' (reverse (x :: xs)) (reverse ys) = reverse (zip' (x :: xs) ys)"
+      },
+      "nodes": [
+        {
+          "id": 7,
+          "kind": "node",
+          "tactic_text": "cases ys with\n| nil => _*_\n| cons y ys => _*_\nhave h' : length xs = length ys := by simp only [length] at h; omega\nhave hL : length (reverse xs) = length (reverse ys) := by simp [length_reverse_eq', h']\nsimp only [reverse, zip']\nrw [zip'_append_singleton' _ _ _ _ hL, ih ys h']",
+          "parent_id": null,
+          "child_ids": [
+            8,
+            10,
+            14,
+            16
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "β",
+                "type": "Type u_2"
+              },
+              {
+                "name": "x",
+                "type": "α"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+              },
+              {
+                "name": "ys",
+                "type": "List β"
+              },
+              {
+                "name": "h",
+                "type": "length (x :: xs) = length ys"
+              }
+            ],
+            "goal": "zip' (reverse (x :: xs)) (reverse ys) = reverse (zip' (x :: xs) ys)"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "β",
+                  "type": "Type u_2"
+                },
+                {
+                  "name": "x",
+                  "type": "α"
+                },
+                {
+                  "name": "xs",
+                  "type": "List α"
+                },
+                {
+                  "name": "ih",
+                  "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+                },
+                {
+                  "name": "h",
+                  "type": "length (x :: xs) = length []"
+                }
+              ],
+              "goal": "zip' (reverse (x :: xs)) (reverse []) = reverse (zip' (x :: xs) [])"
+            },
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "β",
+                  "type": "Type u_2"
+                },
+                {
+                  "name": "x",
+                  "type": "α"
+                },
+                {
+                  "name": "xs",
+                  "type": "List α"
+                },
+                {
+                  "name": "ih",
+                  "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+                },
+                {
+                  "name": "y",
+                  "type": "β"
+                },
+                {
+                  "name": "ys",
+                  "type": "List β"
+                },
+                {
+                  "name": "h",
+                  "type": "length (x :: xs) = length (y :: ys)"
+                }
+              ],
+              "goal": "zip' (reverse (x :: xs)) (reverse (y :: ys)) = reverse (zip' (x :: xs) (y :: ys))"
+            },
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "β",
+                  "type": "Type u_2"
+                },
+                {
+                  "name": "x",
+                  "type": "α"
+                },
+                {
+                  "name": "xs",
+                  "type": "List α"
+                },
+                {
+                  "name": "ih",
+                  "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+                },
+                {
+                  "name": "y",
+                  "type": "β"
+                },
+                {
+                  "name": "ys",
+                  "type": "List β"
+                },
+                {
+                  "name": "h",
+                  "type": "length (x :: xs) = length (y :: ys)"
+                }
+              ],
+              "goal": "length xs = length ys"
+            },
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "β",
+                  "type": "Type u_2"
+                },
+                {
+                  "name": "x",
+                  "type": "α"
+                },
+                {
+                  "name": "xs",
+                  "type": "List α"
+                },
+                {
+                  "name": "ih",
+                  "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+                },
+                {
+                  "name": "y",
+                  "type": "β"
+                },
+                {
+                  "name": "ys",
+                  "type": "List β"
+                },
+                {
+                  "name": "h",
+                  "type": "length (x :: xs) = length (y :: ys)"
+                },
+                {
+                  "name": "h'",
+                  "type": "length xs = length ys"
+                }
+              ],
+              "goal": "length (reverse xs) = length (reverse ys)"
+            }
+          ],
+          "summary": {
+            "directly_used": [
+              "h",
+              "ih",
+              "x",
+              "xs",
+              "ys",
+              "α",
+              "β"
+            ],
+            "dependency_maps": [
+              {
+                "α": [
+                  "α"
+                ],
+                "β": [
+                  "β"
+                ],
+                "x": [
+                  "x"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "ih": [
+                  "ih"
+                ],
+                "h": [
+                  "x",
+                  "xs"
+                ]
+              },
+              {
+                "α": [
+                  "α"
+                ],
+                "β": [
+                  "β"
+                ],
+                "x": [
+                  "x"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "ih": [
+                  "ih"
+                ],
+                "y": [
+                  "β"
+                ],
+                "ys": [
+                  "ys"
+                ],
+                "h": [
+                  "ys",
+                  "x",
+                  "xs"
+                ]
+              },
+              {
+                "α": [
+                  "α"
+                ],
+                "β": [
+                  "β"
+                ],
+                "x": [
+                  "x"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "ih": [
+                  "ih"
+                ],
+                "y": [
+                  "β"
+                ],
+                "ys": [
+                  "ys"
+                ],
+                "h": [
+                  "ys",
+                  "x",
+                  "xs"
+                ]
+              },
+              {
+                "α": [
+                  "α"
+                ],
+                "β": [
+                  "β"
+                ],
+                "x": [
+                  "x"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "ih": [
+                  "ih"
+                ],
+                "y": [
+                  "β"
+                ],
+                "ys": [
+                  "ys"
+                ],
+                "h": [
+                  "ys",
+                  "x",
+                  "xs"
+                ],
+                "h'": [
+                  "ys",
+                  "xs"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 8,
+          "kind": "node",
+          "tactic_text": "simp only [length] at h",
+          "parent_id": 7,
+          "child_ids": [
+            9
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "β",
+                "type": "Type u_2"
+              },
+              {
+                "name": "x",
+                "type": "α"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+              },
+              {
+                "name": "h",
+                "type": "length (x :: xs) = length []"
+              }
+            ],
+            "goal": "zip' (reverse (x :: xs)) (reverse []) = reverse (zip' (x :: xs) [])"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "β",
+                  "type": "Type u_2"
+                },
+                {
+                  "name": "x",
+                  "type": "α"
+                },
+                {
+                  "name": "xs",
+                  "type": "List α"
+                },
+                {
+                  "name": "ih",
+                  "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+                },
+                {
+                  "name": "h",
+                  "type": "1 + length xs = 0"
+                }
+              ],
+              "goal": "zip' (reverse (x :: xs)) (reverse []) = reverse (zip' (x :: xs) [])"
+            }
+          ],
+          "summary": {
+            "directly_used": [
+              "h"
+            ],
+            "dependency_maps": [
+              {
+                "α": [
+                  "α"
+                ],
+                "β": [
+                  "β"
+                ],
+                "x": [
+                  "x"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "ih": [
+                  "ih"
+                ],
+                "h": [
+                  "xs"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 9,
+          "kind": "leaf",
+          "tactic_text": "omega",
+          "parent_id": 8,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "β",
+                "type": "Type u_2"
+              },
+              {
+                "name": "x",
+                "type": "α"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+              },
+              {
+                "name": "h",
+                "type": "1 + length xs = 0"
+              }
+            ],
+            "goal": "zip' (reverse (x :: xs)) (reverse []) = reverse (zip' (x :: xs) [])"
+          },
+          "summary": {
+            "directly_used": [
+              "h",
+              "ih",
+              "x",
+              "xs",
+              "α",
+              "β"
+            ],
+            "dependency_maps": []
+          }
+        },
+        {
+          "id": 10,
+          "kind": "node",
+          "tactic_text": "have h' : length xs = length ys := by simp only [length] at h; omega",
+          "parent_id": 7,
+          "child_ids": [
+            11
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "β",
+                "type": "Type u_2"
+              },
+              {
+                "name": "x",
+                "type": "α"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+              },
+              {
+                "name": "y",
+                "type": "β"
+              },
+              {
+                "name": "ys",
+                "type": "List β"
+              },
+              {
+                "name": "h",
+                "type": "length (x :: xs) = length (y :: ys)"
+              }
+            ],
+            "goal": "zip' (reverse (x :: xs)) (reverse (y :: ys)) = reverse (zip' (x :: xs) (y :: ys))"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "β",
+                  "type": "Type u_2"
+                },
+                {
+                  "name": "x",
+                  "type": "α"
+                },
+                {
+                  "name": "xs",
+                  "type": "List α"
+                },
+                {
+                  "name": "ih",
+                  "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+                },
+                {
+                  "name": "y",
+                  "type": "β"
+                },
+                {
+                  "name": "ys",
+                  "type": "List β"
+                },
+                {
+                  "name": "h",
+                  "type": "length (x :: xs) = length (y :: ys)"
+                },
+                {
+                  "name": "h'",
+                  "type": "length xs = length ys"
+                }
+              ],
+              "goal": "zip' (reverse (x :: xs)) (reverse (y :: ys)) = reverse (zip' (x :: xs) (y :: ys))"
+            }
+          ],
+          "summary": {
+            "directly_used": [
+              "h",
+              "ih",
+              "x",
+              "xs",
+              "y",
+              "ys",
+              "α",
+              "β"
+            ],
+            "dependency_maps": [
+              {
+                "α": [
+                  "α"
+                ],
+                "β": [
+                  "β"
+                ],
+                "x": [
+                  "x"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "ih": [
+                  "ih"
+                ],
+                "y": [
+                  "y"
+                ],
+                "ys": [
+                  "ys"
+                ],
+                "h": [
+                  "h"
+                ],
+                "h'": [
+                  "ys",
+                  "xs"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 11,
+          "kind": "node",
+          "tactic_text": "have hL : length (reverse xs) = length (reverse ys) := by simp [length_reverse_eq', h']",
+          "parent_id": 10,
+          "child_ids": [
+            12
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "β",
+                "type": "Type u_2"
+              },
+              {
+                "name": "x",
+                "type": "α"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+              },
+              {
+                "name": "y",
+                "type": "β"
+              },
+              {
+                "name": "ys",
+                "type": "List β"
+              },
+              {
+                "name": "h",
+                "type": "length (x :: xs) = length (y :: ys)"
+              },
+              {
+                "name": "h'",
+                "type": "length xs = length ys"
+              }
+            ],
+            "goal": "zip' (reverse (x :: xs)) (reverse (y :: ys)) = reverse (zip' (x :: xs) (y :: ys))"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "β",
+                  "type": "Type u_2"
+                },
+                {
+                  "name": "x",
+                  "type": "α"
+                },
+                {
+                  "name": "xs",
+                  "type": "List α"
+                },
+                {
+                  "name": "ih",
+                  "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+                },
+                {
+                  "name": "y",
+                  "type": "β"
+                },
+                {
+                  "name": "ys",
+                  "type": "List β"
+                },
+                {
+                  "name": "h",
+                  "type": "length (x :: xs) = length (y :: ys)"
+                },
+                {
+                  "name": "h'",
+                  "type": "length xs = length ys"
+                },
+                {
+                  "name": "hL",
+                  "type": "length (reverse xs) = length (reverse ys)"
+                }
+              ],
+              "goal": "zip' (reverse (x :: xs)) (reverse (y :: ys)) = reverse (zip' (x :: xs) (y :: ys))"
+            }
+          ],
+          "summary": {
+            "directly_used": [
+              "h'",
+              "xs",
+              "ys"
+            ],
+            "dependency_maps": [
+              {
+                "α": [
+                  "α"
+                ],
+                "β": [
+                  "β"
+                ],
+                "x": [
+                  "x"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "ih": [
+                  "ih"
+                ],
+                "y": [
+                  "y"
+                ],
+                "ys": [
+                  "ys"
+                ],
+                "h": [
+                  "h"
+                ],
+                "h'": [
+                  "h'"
+                ],
+                "hL": [
+                  "ys",
+                  "xs"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 12,
+          "kind": "node",
+          "tactic_text": "simp only [reverse, zip']",
+          "parent_id": 11,
+          "child_ids": [
+            13
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "β",
+                "type": "Type u_2"
+              },
+              {
+                "name": "x",
+                "type": "α"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+              },
+              {
+                "name": "y",
+                "type": "β"
+              },
+              {
+                "name": "ys",
+                "type": "List β"
+              },
+              {
+                "name": "h",
+                "type": "length (x :: xs) = length (y :: ys)"
+              },
+              {
+                "name": "h'",
+                "type": "length xs = length ys"
+              },
+              {
+                "name": "hL",
+                "type": "length (reverse xs) = length (reverse ys)"
+              }
+            ],
+            "goal": "zip' (reverse (x :: xs)) (reverse (y :: ys)) = reverse (zip' (x :: xs) (y :: ys))"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "β",
+                  "type": "Type u_2"
+                },
+                {
+                  "name": "x",
+                  "type": "α"
+                },
+                {
+                  "name": "xs",
+                  "type": "List α"
+                },
+                {
+                  "name": "ih",
+                  "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+                },
+                {
+                  "name": "y",
+                  "type": "β"
+                },
+                {
+                  "name": "ys",
+                  "type": "List β"
+                },
+                {
+                  "name": "h",
+                  "type": "length (x :: xs) = length (y :: ys)"
+                },
+                {
+                  "name": "h'",
+                  "type": "length xs = length ys"
+                },
+                {
+                  "name": "hL",
+                  "type": "length (reverse xs) = length (reverse ys)"
+                }
+              ],
+              "goal": "zip' (reverse xs ++ [x]) (reverse ys ++ [y]) = reverse (zip' xs ys) ++ [(x, y)]"
+            }
+          ],
+          "summary": {
+            "directly_used": [],
+            "dependency_maps": [
+              {
+                "α": [
+                  "α"
+                ],
+                "β": [
+                  "β"
+                ],
+                "x": [
+                  "x"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "ih": [
+                  "ih"
+                ],
+                "y": [
+                  "y"
+                ],
+                "ys": [
+                  "ys"
+                ],
+                "h": [
+                  "h"
+                ],
+                "h'": [
+                  "h'"
+                ],
+                "hL": [
+                  "hL"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 13,
+          "kind": "leaf",
+          "tactic_text": "rw [zip'_append_singleton' _ _ _ _ hL, ih ys h']",
+          "parent_id": 12,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "β",
+                "type": "Type u_2"
+              },
+              {
+                "name": "x",
+                "type": "α"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+              },
+              {
+                "name": "y",
+                "type": "β"
+              },
+              {
+                "name": "ys",
+                "type": "List β"
+              },
+              {
+                "name": "h",
+                "type": "length (x :: xs) = length (y :: ys)"
+              },
+              {
+                "name": "h'",
+                "type": "length xs = length ys"
+              },
+              {
+                "name": "hL",
+                "type": "length (reverse xs) = length (reverse ys)"
+              }
+            ],
+            "goal": "zip' (reverse xs ++ [x]) (reverse ys ++ [y]) = reverse (zip' xs ys) ++ [(x, y)]"
+          },
+          "summary": {
+            "directly_used": [
+              "h'",
+              "hL",
+              "ih",
+              "ys"
+            ],
+            "dependency_maps": []
+          }
+        },
+        {
+          "id": 14,
+          "kind": "node",
+          "tactic_text": "simp only [length] at h",
+          "parent_id": 7,
+          "child_ids": [
+            15
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "β",
+                "type": "Type u_2"
+              },
+              {
+                "name": "x",
+                "type": "α"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+              },
+              {
+                "name": "y",
+                "type": "β"
+              },
+              {
+                "name": "ys",
+                "type": "List β"
+              },
+              {
+                "name": "h",
+                "type": "length (x :: xs) = length (y :: ys)"
+              }
+            ],
+            "goal": "length xs = length ys"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "β",
+                  "type": "Type u_2"
+                },
+                {
+                  "name": "x",
+                  "type": "α"
+                },
+                {
+                  "name": "xs",
+                  "type": "List α"
+                },
+                {
+                  "name": "ih",
+                  "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+                },
+                {
+                  "name": "y",
+                  "type": "β"
+                },
+                {
+                  "name": "ys",
+                  "type": "List β"
+                },
+                {
+                  "name": "h",
+                  "type": "1 + length xs = 1 + length ys"
+                }
+              ],
+              "goal": "length xs = length ys"
+            }
+          ],
+          "summary": {
+            "directly_used": [
+              "h"
+            ],
+            "dependency_maps": [
+              {
+                "α": [
+                  "α"
+                ],
+                "β": [
+                  "β"
+                ],
+                "x": [
+                  "x"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "ih": [
+                  "ih"
+                ],
+                "y": [
+                  "y"
+                ],
+                "ys": [
+                  "ys"
+                ],
+                "h": [
+                  "ys",
+                  "xs"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 15,
+          "kind": "leaf",
+          "tactic_text": "omega",
+          "parent_id": 14,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "β",
+                "type": "Type u_2"
+              },
+              {
+                "name": "x",
+                "type": "α"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+              },
+              {
+                "name": "y",
+                "type": "β"
+              },
+              {
+                "name": "ys",
+                "type": "List β"
+              },
+              {
+                "name": "h",
+                "type": "1 + length xs = 1 + length ys"
+              }
+            ],
+            "goal": "length xs = length ys"
+          },
+          "summary": {
+            "directly_used": [
+              "h",
+              "ih",
+              "x",
+              "xs",
+              "y",
+              "ys",
+              "α",
+              "β"
+            ],
+            "dependency_maps": []
+          }
+        },
+        {
+          "id": 16,
+          "kind": "leaf",
+          "tactic_text": "simp [length_reverse_eq', h']",
+          "parent_id": 7,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "β",
+                "type": "Type u_2"
+              },
+              {
+                "name": "x",
+                "type": "α"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+              },
+              {
+                "name": "y",
+                "type": "β"
+              },
+              {
+                "name": "ys",
+                "type": "List β"
+              },
+              {
+                "name": "h",
+                "type": "length (x :: xs) = length (y :: ys)"
+              },
+              {
+                "name": "h'",
+                "type": "length xs = length ys"
+              }
+            ],
+            "goal": "length (reverse xs) = length (reverse ys)"
+          },
+          "summary": {
+            "directly_used": [
+              "h'"
+            ],
+            "dependency_maps": []
+          }
+        }
+      ]
+    },
+    {
+      "fragment_id": 9,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_85.json",
+      "decl_name": "prop_85",
+      "root_node_id": 1,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "α",
+            "type": "Type u_1"
+          },
+          {
+            "name": "β",
+            "type": "Type u_2"
+          },
+          {
+            "name": "ys",
+            "type": "List β"
+          }
+        ],
+        "goal": "length [] = length ys → zip' (reverse []) (reverse ys) = reverse (zip' [] ys)"
+      },
+      "nodes": [
+        {
+          "id": 1,
+          "kind": "node",
+          "tactic_text": "intro h",
+          "parent_id": null,
+          "child_ids": [
+            2
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "β",
+                "type": "Type u_2"
+              },
+              {
+                "name": "ys",
+                "type": "List β"
+              }
+            ],
+            "goal": "length [] = length ys → zip' (reverse []) (reverse ys) = reverse (zip' [] ys)"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "β",
+                  "type": "Type u_2"
+                },
+                {
+                  "name": "ys",
+                  "type": "List β"
+                },
+                {
+                  "name": "h",
+                  "type": "length [] = length ys"
+                }
+              ],
+              "goal": "zip' (reverse []) (reverse ys) = reverse (zip' [] ys)"
+            }
+          ],
+          "summary": {
+            "directly_used": [],
+            "dependency_maps": [
+              {
+                "α": [
+                  "α"
+                ],
+                "β": [
+                  "β"
+                ],
+                "ys": [
+                  "ys"
+                ],
+                "h": [
+                  "ys"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 2,
+          "kind": "node",
+          "tactic_text": "cases ys with\n| nil => _*_\n| cons _ _ => _*_",
+          "parent_id": 1,
+          "child_ids": [
+            3,
+            4
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "β",
+                "type": "Type u_2"
+              },
+              {
+                "name": "ys",
+                "type": "List β"
+              },
+              {
+                "name": "h",
+                "type": "length [] = length ys"
+              }
+            ],
+            "goal": "zip' (reverse []) (reverse ys) = reverse (zip' [] ys)"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "β",
+                  "type": "Type u_2"
+                },
+                {
+                  "name": "h",
+                  "type": "length [] = length []"
+                }
+              ],
+              "goal": "zip' (reverse []) (reverse []) = reverse (zip' [] [])"
+            },
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "β",
+                  "type": "Type u_2"
+                },
+                {
+                  "name": "head✝",
+                  "type": "β"
+                },
+                {
+                  "name": "tail✝",
+                  "type": "List β"
+                },
+                {
+                  "name": "h",
+                  "type": "length [] = length (head✝ :: tail✝)"
+                }
+              ],
+              "goal": "zip' (reverse []) (reverse (head✝ :: tail✝)) = reverse (zip' [] (head✝ :: tail✝))"
+            }
+          ],
+          "summary": {
+            "directly_used": [
+              "h",
+              "ys",
+              "α",
+              "β"
+            ],
+            "dependency_maps": [
+              {
+                "α": [
+                  "α"
+                ],
+                "β": [
+                  "β"
+                ],
+                "h": [
+                  "h",
+                  "ys",
+                  "α",
+                  "β"
+                ]
+              },
+              {
+                "α": [
+                  "α"
+                ],
+                "β": [
+                  "β"
+                ],
+                "head✝": [
+                  "β"
+                ],
+                "tail✝": [
+                  "β"
+                ],
+                "h": [
+                  "h",
+                  "ys",
+                  "α",
+                  "β"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 3,
+          "kind": "leaf",
+          "tactic_text": "simp [reverse, zip']",
+          "parent_id": 2,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "β",
+                "type": "Type u_2"
+              },
+              {
+                "name": "h",
+                "type": "length [] = length []"
+              }
+            ],
+            "goal": "zip' (reverse []) (reverse []) = reverse (zip' [] [])"
+          },
+          "summary": {
+            "directly_used": [],
+            "dependency_maps": []
+          }
+        },
+        {
+          "id": 4,
+          "kind": "node",
+          "tactic_text": "simp only [length] at h",
+          "parent_id": 2,
+          "child_ids": [
+            5
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "β",
+                "type": "Type u_2"
+              },
+              {
+                "name": "head✝",
+                "type": "β"
+              },
+              {
+                "name": "tail✝",
+                "type": "List β"
+              },
+              {
+                "name": "h",
+                "type": "length [] = length (head✝ :: tail✝)"
+              }
+            ],
+            "goal": "zip' (reverse []) (reverse (head✝ :: tail✝)) = reverse (zip' [] (head✝ :: tail✝))"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "β",
+                  "type": "Type u_2"
+                },
+                {
+                  "name": "head✝",
+                  "type": "β"
+                },
+                {
+                  "name": "tail✝",
+                  "type": "List β"
+                },
+                {
+                  "name": "h",
+                  "type": "0 = 1 + length tail✝"
+                }
+              ],
+              "goal": "zip' (reverse []) (reverse (head✝ :: tail✝)) = reverse (zip' [] (head✝ :: tail✝))"
+            }
+          ],
+          "summary": {
+            "directly_used": [
+              "h"
+            ],
+            "dependency_maps": [
+              {
+                "α": [
+                  "α"
+                ],
+                "β": [
+                  "β"
+                ],
+                "head✝": [
+                  "head✝"
+                ],
+                "tail✝": [
+                  "tail✝"
+                ],
+                "h": [
+                  "h"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 5,
+          "kind": "leaf",
+          "tactic_text": "omega",
+          "parent_id": 4,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "β",
+                "type": "Type u_2"
+              },
+              {
+                "name": "head✝",
+                "type": "β"
+              },
+              {
+                "name": "tail✝",
+                "type": "List β"
+              },
+              {
+                "name": "h",
+                "type": "0 = 1 + length tail✝"
+              }
+            ],
+            "goal": "zip' (reverse []) (reverse (head✝ :: tail✝)) = reverse (zip' [] (head✝ :: tail✝))"
+          },
+          "summary": {
+            "directly_used": [
+              "h",
+              "head✝",
+              "tail✝",
+              "α",
+              "β"
+            ],
+            "dependency_maps": []
+          }
+        }
+      ]
+    },
+    {
+      "fragment_id": 10,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_85.json",
+      "decl_name": "prop_85",
+      "root_node_id": 10,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "α",
+            "type": "Type u_1"
+          },
+          {
+            "name": "β",
+            "type": "Type u_2"
+          },
+          {
+            "name": "x",
+            "type": "α"
+          },
+          {
+            "name": "xs",
+            "type": "List α"
+          },
+          {
+            "name": "ih",
+            "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+          },
+          {
+            "name": "y",
+            "type": "β"
+          },
+          {
+            "name": "ys",
+            "type": "List β"
+          },
+          {
+            "name": "h",
+            "type": "length (x :: xs) = length (y :: ys)"
+          }
+        ],
+        "goal": "zip' (reverse (x :: xs)) (reverse (y :: ys)) = reverse (zip' (x :: xs) (y :: ys))"
+      },
+      "nodes": [
+        {
+          "id": 10,
+          "kind": "node",
+          "tactic_text": "have h' : length xs = length ys := by simp only [length] at h; omega",
+          "parent_id": null,
+          "child_ids": [
+            11
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "β",
+                "type": "Type u_2"
+              },
+              {
+                "name": "x",
+                "type": "α"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+              },
+              {
+                "name": "y",
+                "type": "β"
+              },
+              {
+                "name": "ys",
+                "type": "List β"
+              },
+              {
+                "name": "h",
+                "type": "length (x :: xs) = length (y :: ys)"
+              }
+            ],
+            "goal": "zip' (reverse (x :: xs)) (reverse (y :: ys)) = reverse (zip' (x :: xs) (y :: ys))"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "β",
+                  "type": "Type u_2"
+                },
+                {
+                  "name": "x",
+                  "type": "α"
+                },
+                {
+                  "name": "xs",
+                  "type": "List α"
+                },
+                {
+                  "name": "ih",
+                  "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+                },
+                {
+                  "name": "y",
+                  "type": "β"
+                },
+                {
+                  "name": "ys",
+                  "type": "List β"
+                },
+                {
+                  "name": "h",
+                  "type": "length (x :: xs) = length (y :: ys)"
+                },
+                {
+                  "name": "h'",
+                  "type": "length xs = length ys"
+                }
+              ],
+              "goal": "zip' (reverse (x :: xs)) (reverse (y :: ys)) = reverse (zip' (x :: xs) (y :: ys))"
+            }
+          ],
+          "summary": {
+            "directly_used": [
+              "h",
+              "ih",
+              "x",
+              "xs",
+              "y",
+              "ys",
+              "α",
+              "β"
+            ],
+            "dependency_maps": [
+              {
+                "α": [
+                  "α"
+                ],
+                "β": [
+                  "β"
+                ],
+                "x": [
+                  "x"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "ih": [
+                  "ih"
+                ],
+                "y": [
+                  "y"
+                ],
+                "ys": [
+                  "ys"
+                ],
+                "h": [
+                  "h"
+                ],
+                "h'": [
+                  "ys",
+                  "xs"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 11,
+          "kind": "node",
+          "tactic_text": "have hL : length (reverse xs) = length (reverse ys) := by simp [length_reverse_eq', h']",
+          "parent_id": 10,
+          "child_ids": [
+            12
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "β",
+                "type": "Type u_2"
+              },
+              {
+                "name": "x",
+                "type": "α"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+              },
+              {
+                "name": "y",
+                "type": "β"
+              },
+              {
+                "name": "ys",
+                "type": "List β"
+              },
+              {
+                "name": "h",
+                "type": "length (x :: xs) = length (y :: ys)"
+              },
+              {
+                "name": "h'",
+                "type": "length xs = length ys"
+              }
+            ],
+            "goal": "zip' (reverse (x :: xs)) (reverse (y :: ys)) = reverse (zip' (x :: xs) (y :: ys))"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "β",
+                  "type": "Type u_2"
+                },
+                {
+                  "name": "x",
+                  "type": "α"
+                },
+                {
+                  "name": "xs",
+                  "type": "List α"
+                },
+                {
+                  "name": "ih",
+                  "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+                },
+                {
+                  "name": "y",
+                  "type": "β"
+                },
+                {
+                  "name": "ys",
+                  "type": "List β"
+                },
+                {
+                  "name": "h",
+                  "type": "length (x :: xs) = length (y :: ys)"
+                },
+                {
+                  "name": "h'",
+                  "type": "length xs = length ys"
+                },
+                {
+                  "name": "hL",
+                  "type": "length (reverse xs) = length (reverse ys)"
+                }
+              ],
+              "goal": "zip' (reverse (x :: xs)) (reverse (y :: ys)) = reverse (zip' (x :: xs) (y :: ys))"
+            }
+          ],
+          "summary": {
+            "directly_used": [
+              "h'",
+              "xs",
+              "ys"
+            ],
+            "dependency_maps": [
+              {
+                "α": [
+                  "α"
+                ],
+                "β": [
+                  "β"
+                ],
+                "x": [
+                  "x"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "ih": [
+                  "ih"
+                ],
+                "y": [
+                  "y"
+                ],
+                "ys": [
+                  "ys"
+                ],
+                "h": [
+                  "h"
+                ],
+                "h'": [
+                  "h'"
+                ],
+                "hL": [
+                  "ys",
+                  "xs"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 12,
+          "kind": "hole",
+          "hole_id": "ℓ0",
+          "parent_id": 11,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "β",
+                "type": "Type u_2"
+              },
+              {
+                "name": "x",
+                "type": "α"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+              },
+              {
+                "name": "y",
+                "type": "β"
+              },
+              {
+                "name": "ys",
+                "type": "List β"
+              },
+              {
+                "name": "h",
+                "type": "length (x :: xs) = length (y :: ys)"
+              },
+              {
+                "name": "h'",
+                "type": "length xs = length ys"
+              },
+              {
+                "name": "hL",
+                "type": "length (reverse xs) = length (reverse ys)"
+              }
+            ],
+            "goal": "zip' (reverse (x :: xs)) (reverse (y :: ys)) = reverse (zip' (x :: xs) (y :: ys))"
+          }
+        }
+      ]
+    },
+    {
+      "fragment_id": 11,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_85.json",
+      "decl_name": "prop_85",
+      "root_node_id": 10,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "α",
+            "type": "Type u_1"
+          },
+          {
+            "name": "β",
+            "type": "Type u_2"
+          },
+          {
+            "name": "x",
+            "type": "α"
+          },
+          {
+            "name": "xs",
+            "type": "List α"
+          },
+          {
+            "name": "ih",
+            "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+          },
+          {
+            "name": "y",
+            "type": "β"
+          },
+          {
+            "name": "ys",
+            "type": "List β"
+          },
+          {
+            "name": "h",
+            "type": "length (x :: xs) = length (y :: ys)"
+          }
+        ],
+        "goal": "zip' (reverse (x :: xs)) (reverse (y :: ys)) = reverse (zip' (x :: xs) (y :: ys))"
+      },
+      "nodes": [
+        {
+          "id": 10,
+          "kind": "node",
+          "tactic_text": "have h' : length xs = length ys := by simp only [length] at h; omega",
+          "parent_id": null,
+          "child_ids": [
+            11
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "β",
+                "type": "Type u_2"
+              },
+              {
+                "name": "x",
+                "type": "α"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+              },
+              {
+                "name": "y",
+                "type": "β"
+              },
+              {
+                "name": "ys",
+                "type": "List β"
+              },
+              {
+                "name": "h",
+                "type": "length (x :: xs) = length (y :: ys)"
+              }
+            ],
+            "goal": "zip' (reverse (x :: xs)) (reverse (y :: ys)) = reverse (zip' (x :: xs) (y :: ys))"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "β",
+                  "type": "Type u_2"
+                },
+                {
+                  "name": "x",
+                  "type": "α"
+                },
+                {
+                  "name": "xs",
+                  "type": "List α"
+                },
+                {
+                  "name": "ih",
+                  "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+                },
+                {
+                  "name": "y",
+                  "type": "β"
+                },
+                {
+                  "name": "ys",
+                  "type": "List β"
+                },
+                {
+                  "name": "h",
+                  "type": "length (x :: xs) = length (y :: ys)"
+                },
+                {
+                  "name": "h'",
+                  "type": "length xs = length ys"
+                }
+              ],
+              "goal": "zip' (reverse (x :: xs)) (reverse (y :: ys)) = reverse (zip' (x :: xs) (y :: ys))"
+            }
+          ],
+          "summary": {
+            "directly_used": [
+              "h",
+              "ih",
+              "x",
+              "xs",
+              "y",
+              "ys",
+              "α",
+              "β"
+            ],
+            "dependency_maps": [
+              {
+                "α": [
+                  "α"
+                ],
+                "β": [
+                  "β"
+                ],
+                "x": [
+                  "x"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "ih": [
+                  "ih"
+                ],
+                "y": [
+                  "y"
+                ],
+                "ys": [
+                  "ys"
+                ],
+                "h": [
+                  "h"
+                ],
+                "h'": [
+                  "ys",
+                  "xs"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 11,
+          "kind": "node",
+          "tactic_text": "have hL : length (reverse xs) = length (reverse ys) := by simp [length_reverse_eq', h']",
+          "parent_id": 10,
+          "child_ids": [
+            12
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "β",
+                "type": "Type u_2"
+              },
+              {
+                "name": "x",
+                "type": "α"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+              },
+              {
+                "name": "y",
+                "type": "β"
+              },
+              {
+                "name": "ys",
+                "type": "List β"
+              },
+              {
+                "name": "h",
+                "type": "length (x :: xs) = length (y :: ys)"
+              },
+              {
+                "name": "h'",
+                "type": "length xs = length ys"
+              }
+            ],
+            "goal": "zip' (reverse (x :: xs)) (reverse (y :: ys)) = reverse (zip' (x :: xs) (y :: ys))"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "β",
+                  "type": "Type u_2"
+                },
+                {
+                  "name": "x",
+                  "type": "α"
+                },
+                {
+                  "name": "xs",
+                  "type": "List α"
+                },
+                {
+                  "name": "ih",
+                  "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+                },
+                {
+                  "name": "y",
+                  "type": "β"
+                },
+                {
+                  "name": "ys",
+                  "type": "List β"
+                },
+                {
+                  "name": "h",
+                  "type": "length (x :: xs) = length (y :: ys)"
+                },
+                {
+                  "name": "h'",
+                  "type": "length xs = length ys"
+                },
+                {
+                  "name": "hL",
+                  "type": "length (reverse xs) = length (reverse ys)"
+                }
+              ],
+              "goal": "zip' (reverse (x :: xs)) (reverse (y :: ys)) = reverse (zip' (x :: xs) (y :: ys))"
+            }
+          ],
+          "summary": {
+            "directly_used": [
+              "h'",
+              "xs",
+              "ys"
+            ],
+            "dependency_maps": [
+              {
+                "α": [
+                  "α"
+                ],
+                "β": [
+                  "β"
+                ],
+                "x": [
+                  "x"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "ih": [
+                  "ih"
+                ],
+                "y": [
+                  "y"
+                ],
+                "ys": [
+                  "ys"
+                ],
+                "h": [
+                  "h"
+                ],
+                "h'": [
+                  "h'"
+                ],
+                "hL": [
+                  "ys",
+                  "xs"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 12,
+          "kind": "node",
+          "tactic_text": "simp only [reverse, zip']",
+          "parent_id": 11,
+          "child_ids": [
+            13
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "β",
+                "type": "Type u_2"
+              },
+              {
+                "name": "x",
+                "type": "α"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+              },
+              {
+                "name": "y",
+                "type": "β"
+              },
+              {
+                "name": "ys",
+                "type": "List β"
+              },
+              {
+                "name": "h",
+                "type": "length (x :: xs) = length (y :: ys)"
+              },
+              {
+                "name": "h'",
+                "type": "length xs = length ys"
+              },
+              {
+                "name": "hL",
+                "type": "length (reverse xs) = length (reverse ys)"
+              }
+            ],
+            "goal": "zip' (reverse (x :: xs)) (reverse (y :: ys)) = reverse (zip' (x :: xs) (y :: ys))"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "β",
+                  "type": "Type u_2"
+                },
+                {
+                  "name": "x",
+                  "type": "α"
+                },
+                {
+                  "name": "xs",
+                  "type": "List α"
+                },
+                {
+                  "name": "ih",
+                  "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+                },
+                {
+                  "name": "y",
+                  "type": "β"
+                },
+                {
+                  "name": "ys",
+                  "type": "List β"
+                },
+                {
+                  "name": "h",
+                  "type": "length (x :: xs) = length (y :: ys)"
+                },
+                {
+                  "name": "h'",
+                  "type": "length xs = length ys"
+                },
+                {
+                  "name": "hL",
+                  "type": "length (reverse xs) = length (reverse ys)"
+                }
+              ],
+              "goal": "zip' (reverse xs ++ [x]) (reverse ys ++ [y]) = reverse (zip' xs ys) ++ [(x, y)]"
+            }
+          ],
+          "summary": {
+            "directly_used": [],
+            "dependency_maps": [
+              {
+                "α": [
+                  "α"
+                ],
+                "β": [
+                  "β"
+                ],
+                "x": [
+                  "x"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "ih": [
+                  "ih"
+                ],
+                "y": [
+                  "y"
+                ],
+                "ys": [
+                  "ys"
+                ],
+                "h": [
+                  "h"
+                ],
+                "h'": [
+                  "h'"
+                ],
+                "hL": [
+                  "hL"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 13,
+          "kind": "hole",
+          "hole_id": "ℓ0",
+          "parent_id": 12,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "β",
+                "type": "Type u_2"
+              },
+              {
+                "name": "x",
+                "type": "α"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+              },
+              {
+                "name": "y",
+                "type": "β"
+              },
+              {
+                "name": "ys",
+                "type": "List β"
+              },
+              {
+                "name": "h",
+                "type": "length (x :: xs) = length (y :: ys)"
+              },
+              {
+                "name": "h'",
+                "type": "length xs = length ys"
+              },
+              {
+                "name": "hL",
+                "type": "length (reverse xs) = length (reverse ys)"
+              }
+            ],
+            "goal": "zip' (reverse xs ++ [x]) (reverse ys ++ [y]) = reverse (zip' xs ys) ++ [(x, y)]"
+          }
+        }
+      ]
+    },
+    {
+      "fragment_id": 12,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_85.json",
+      "decl_name": "prop_85",
+      "root_node_id": 6,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "α",
+            "type": "Type u_1"
+          },
+          {
+            "name": "β",
+            "type": "Type u_2"
+          },
+          {
+            "name": "x",
+            "type": "α"
+          },
+          {
+            "name": "xs",
+            "type": "List α"
+          },
+          {
+            "name": "ih",
+            "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+          },
+          {
+            "name": "ys",
+            "type": "List β"
+          }
+        ],
+        "goal": "length (x :: xs) = length ys → zip' (reverse (x :: xs)) (reverse ys) = reverse (zip' (x :: xs) ys)"
+      },
+      "nodes": [
+        {
+          "id": 6,
+          "kind": "node",
+          "tactic_text": "intro h",
+          "parent_id": null,
+          "child_ids": [
+            7
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "β",
+                "type": "Type u_2"
+              },
+              {
+                "name": "x",
+                "type": "α"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+              },
+              {
+                "name": "ys",
+                "type": "List β"
+              }
+            ],
+            "goal": "length (x :: xs) = length ys → zip' (reverse (x :: xs)) (reverse ys) = reverse (zip' (x :: xs) ys)"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "β",
+                  "type": "Type u_2"
+                },
+                {
+                  "name": "x",
+                  "type": "α"
+                },
+                {
+                  "name": "xs",
+                  "type": "List α"
+                },
+                {
+                  "name": "ih",
+                  "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+                },
+                {
+                  "name": "ys",
+                  "type": "List β"
+                },
+                {
+                  "name": "h",
+                  "type": "length (x :: xs) = length ys"
+                }
+              ],
+              "goal": "zip' (reverse (x :: xs)) (reverse ys) = reverse (zip' (x :: xs) ys)"
+            }
+          ],
+          "summary": {
+            "directly_used": [],
+            "dependency_maps": [
+              {
+                "α": [
+                  "α"
+                ],
+                "β": [
+                  "β"
+                ],
+                "x": [
+                  "x"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "ih": [
+                  "ih"
+                ],
+                "ys": [
+                  "ys"
+                ],
+                "h": [
+                  "ys",
+                  "x",
+                  "xs"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 7,
+          "kind": "node",
+          "tactic_text": "cases ys with\n| nil => _*_\n| cons y ys => _*_\nhave h' : length xs = length ys := by simp only [length] at h; omega\nhave hL : length (reverse xs) = length (reverse ys) := by simp [length_reverse_eq', h']\nsimp only [reverse, zip']\nrw [zip'_append_singleton' _ _ _ _ hL, ih ys h']",
+          "parent_id": 6,
+          "child_ids": [
+            8,
+            10,
+            14,
+            16
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "β",
+                "type": "Type u_2"
+              },
+              {
+                "name": "x",
+                "type": "α"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+              },
+              {
+                "name": "ys",
+                "type": "List β"
+              },
+              {
+                "name": "h",
+                "type": "length (x :: xs) = length ys"
+              }
+            ],
+            "goal": "zip' (reverse (x :: xs)) (reverse ys) = reverse (zip' (x :: xs) ys)"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "β",
+                  "type": "Type u_2"
+                },
+                {
+                  "name": "x",
+                  "type": "α"
+                },
+                {
+                  "name": "xs",
+                  "type": "List α"
+                },
+                {
+                  "name": "ih",
+                  "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+                },
+                {
+                  "name": "h",
+                  "type": "length (x :: xs) = length []"
+                }
+              ],
+              "goal": "zip' (reverse (x :: xs)) (reverse []) = reverse (zip' (x :: xs) [])"
+            },
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "β",
+                  "type": "Type u_2"
+                },
+                {
+                  "name": "x",
+                  "type": "α"
+                },
+                {
+                  "name": "xs",
+                  "type": "List α"
+                },
+                {
+                  "name": "ih",
+                  "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+                },
+                {
+                  "name": "y",
+                  "type": "β"
+                },
+                {
+                  "name": "ys",
+                  "type": "List β"
+                },
+                {
+                  "name": "h",
+                  "type": "length (x :: xs) = length (y :: ys)"
+                }
+              ],
+              "goal": "zip' (reverse (x :: xs)) (reverse (y :: ys)) = reverse (zip' (x :: xs) (y :: ys))"
+            },
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "β",
+                  "type": "Type u_2"
+                },
+                {
+                  "name": "x",
+                  "type": "α"
+                },
+                {
+                  "name": "xs",
+                  "type": "List α"
+                },
+                {
+                  "name": "ih",
+                  "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+                },
+                {
+                  "name": "y",
+                  "type": "β"
+                },
+                {
+                  "name": "ys",
+                  "type": "List β"
+                },
+                {
+                  "name": "h",
+                  "type": "length (x :: xs) = length (y :: ys)"
+                }
+              ],
+              "goal": "length xs = length ys"
+            },
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "β",
+                  "type": "Type u_2"
+                },
+                {
+                  "name": "x",
+                  "type": "α"
+                },
+                {
+                  "name": "xs",
+                  "type": "List α"
+                },
+                {
+                  "name": "ih",
+                  "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+                },
+                {
+                  "name": "y",
+                  "type": "β"
+                },
+                {
+                  "name": "ys",
+                  "type": "List β"
+                },
+                {
+                  "name": "h",
+                  "type": "length (x :: xs) = length (y :: ys)"
+                },
+                {
+                  "name": "h'",
+                  "type": "length xs = length ys"
+                }
+              ],
+              "goal": "length (reverse xs) = length (reverse ys)"
+            }
+          ],
+          "summary": {
+            "directly_used": [
+              "h",
+              "ih",
+              "x",
+              "xs",
+              "ys",
+              "α",
+              "β"
+            ],
+            "dependency_maps": [
+              {
+                "α": [
+                  "α"
+                ],
+                "β": [
+                  "β"
+                ],
+                "x": [
+                  "x"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "ih": [
+                  "ih"
+                ],
+                "h": [
+                  "x",
+                  "xs"
+                ]
+              },
+              {
+                "α": [
+                  "α"
+                ],
+                "β": [
+                  "β"
+                ],
+                "x": [
+                  "x"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "ih": [
+                  "ih"
+                ],
+                "y": [
+                  "β"
+                ],
+                "ys": [
+                  "ys"
+                ],
+                "h": [
+                  "ys",
+                  "x",
+                  "xs"
+                ]
+              },
+              {
+                "α": [
+                  "α"
+                ],
+                "β": [
+                  "β"
+                ],
+                "x": [
+                  "x"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "ih": [
+                  "ih"
+                ],
+                "y": [
+                  "β"
+                ],
+                "ys": [
+                  "ys"
+                ],
+                "h": [
+                  "ys",
+                  "x",
+                  "xs"
+                ]
+              },
+              {
+                "α": [
+                  "α"
+                ],
+                "β": [
+                  "β"
+                ],
+                "x": [
+                  "x"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "ih": [
+                  "ih"
+                ],
+                "y": [
+                  "β"
+                ],
+                "ys": [
+                  "ys"
+                ],
+                "h": [
+                  "ys",
+                  "x",
+                  "xs"
+                ],
+                "h'": [
+                  "ys",
+                  "xs"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 8,
+          "kind": "node",
+          "tactic_text": "simp only [length] at h",
+          "parent_id": 7,
+          "child_ids": [
+            9
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "β",
+                "type": "Type u_2"
+              },
+              {
+                "name": "x",
+                "type": "α"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+              },
+              {
+                "name": "h",
+                "type": "length (x :: xs) = length []"
+              }
+            ],
+            "goal": "zip' (reverse (x :: xs)) (reverse []) = reverse (zip' (x :: xs) [])"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "β",
+                  "type": "Type u_2"
+                },
+                {
+                  "name": "x",
+                  "type": "α"
+                },
+                {
+                  "name": "xs",
+                  "type": "List α"
+                },
+                {
+                  "name": "ih",
+                  "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+                },
+                {
+                  "name": "h",
+                  "type": "1 + length xs = 0"
+                }
+              ],
+              "goal": "zip' (reverse (x :: xs)) (reverse []) = reverse (zip' (x :: xs) [])"
+            }
+          ],
+          "summary": {
+            "directly_used": [
+              "h"
+            ],
+            "dependency_maps": [
+              {
+                "α": [
+                  "α"
+                ],
+                "β": [
+                  "β"
+                ],
+                "x": [
+                  "x"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "ih": [
+                  "ih"
+                ],
+                "h": [
+                  "xs"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 9,
+          "kind": "leaf",
+          "tactic_text": "omega",
+          "parent_id": 8,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "β",
+                "type": "Type u_2"
+              },
+              {
+                "name": "x",
+                "type": "α"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+              },
+              {
+                "name": "h",
+                "type": "1 + length xs = 0"
+              }
+            ],
+            "goal": "zip' (reverse (x :: xs)) (reverse []) = reverse (zip' (x :: xs) [])"
+          },
+          "summary": {
+            "directly_used": [
+              "h",
+              "ih",
+              "x",
+              "xs",
+              "α",
+              "β"
+            ],
+            "dependency_maps": []
+          }
+        },
+        {
+          "id": 10,
+          "kind": "node",
+          "tactic_text": "have h' : length xs = length ys := by simp only [length] at h; omega",
+          "parent_id": 7,
+          "child_ids": [
+            11
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "β",
+                "type": "Type u_2"
+              },
+              {
+                "name": "x",
+                "type": "α"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+              },
+              {
+                "name": "y",
+                "type": "β"
+              },
+              {
+                "name": "ys",
+                "type": "List β"
+              },
+              {
+                "name": "h",
+                "type": "length (x :: xs) = length (y :: ys)"
+              }
+            ],
+            "goal": "zip' (reverse (x :: xs)) (reverse (y :: ys)) = reverse (zip' (x :: xs) (y :: ys))"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "β",
+                  "type": "Type u_2"
+                },
+                {
+                  "name": "x",
+                  "type": "α"
+                },
+                {
+                  "name": "xs",
+                  "type": "List α"
+                },
+                {
+                  "name": "ih",
+                  "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+                },
+                {
+                  "name": "y",
+                  "type": "β"
+                },
+                {
+                  "name": "ys",
+                  "type": "List β"
+                },
+                {
+                  "name": "h",
+                  "type": "length (x :: xs) = length (y :: ys)"
+                },
+                {
+                  "name": "h'",
+                  "type": "length xs = length ys"
+                }
+              ],
+              "goal": "zip' (reverse (x :: xs)) (reverse (y :: ys)) = reverse (zip' (x :: xs) (y :: ys))"
+            }
+          ],
+          "summary": {
+            "directly_used": [
+              "h",
+              "ih",
+              "x",
+              "xs",
+              "y",
+              "ys",
+              "α",
+              "β"
+            ],
+            "dependency_maps": [
+              {
+                "α": [
+                  "α"
+                ],
+                "β": [
+                  "β"
+                ],
+                "x": [
+                  "x"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "ih": [
+                  "ih"
+                ],
+                "y": [
+                  "y"
+                ],
+                "ys": [
+                  "ys"
+                ],
+                "h": [
+                  "h"
+                ],
+                "h'": [
+                  "ys",
+                  "xs"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 11,
+          "kind": "node",
+          "tactic_text": "have hL : length (reverse xs) = length (reverse ys) := by simp [length_reverse_eq', h']",
+          "parent_id": 10,
+          "child_ids": [
+            12
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "β",
+                "type": "Type u_2"
+              },
+              {
+                "name": "x",
+                "type": "α"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+              },
+              {
+                "name": "y",
+                "type": "β"
+              },
+              {
+                "name": "ys",
+                "type": "List β"
+              },
+              {
+                "name": "h",
+                "type": "length (x :: xs) = length (y :: ys)"
+              },
+              {
+                "name": "h'",
+                "type": "length xs = length ys"
+              }
+            ],
+            "goal": "zip' (reverse (x :: xs)) (reverse (y :: ys)) = reverse (zip' (x :: xs) (y :: ys))"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "β",
+                  "type": "Type u_2"
+                },
+                {
+                  "name": "x",
+                  "type": "α"
+                },
+                {
+                  "name": "xs",
+                  "type": "List α"
+                },
+                {
+                  "name": "ih",
+                  "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+                },
+                {
+                  "name": "y",
+                  "type": "β"
+                },
+                {
+                  "name": "ys",
+                  "type": "List β"
+                },
+                {
+                  "name": "h",
+                  "type": "length (x :: xs) = length (y :: ys)"
+                },
+                {
+                  "name": "h'",
+                  "type": "length xs = length ys"
+                },
+                {
+                  "name": "hL",
+                  "type": "length (reverse xs) = length (reverse ys)"
+                }
+              ],
+              "goal": "zip' (reverse (x :: xs)) (reverse (y :: ys)) = reverse (zip' (x :: xs) (y :: ys))"
+            }
+          ],
+          "summary": {
+            "directly_used": [
+              "h'",
+              "xs",
+              "ys"
+            ],
+            "dependency_maps": [
+              {
+                "α": [
+                  "α"
+                ],
+                "β": [
+                  "β"
+                ],
+                "x": [
+                  "x"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "ih": [
+                  "ih"
+                ],
+                "y": [
+                  "y"
+                ],
+                "ys": [
+                  "ys"
+                ],
+                "h": [
+                  "h"
+                ],
+                "h'": [
+                  "h'"
+                ],
+                "hL": [
+                  "ys",
+                  "xs"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 12,
+          "kind": "node",
+          "tactic_text": "simp only [reverse, zip']",
+          "parent_id": 11,
+          "child_ids": [
+            13
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "β",
+                "type": "Type u_2"
+              },
+              {
+                "name": "x",
+                "type": "α"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+              },
+              {
+                "name": "y",
+                "type": "β"
+              },
+              {
+                "name": "ys",
+                "type": "List β"
+              },
+              {
+                "name": "h",
+                "type": "length (x :: xs) = length (y :: ys)"
+              },
+              {
+                "name": "h'",
+                "type": "length xs = length ys"
+              },
+              {
+                "name": "hL",
+                "type": "length (reverse xs) = length (reverse ys)"
+              }
+            ],
+            "goal": "zip' (reverse (x :: xs)) (reverse (y :: ys)) = reverse (zip' (x :: xs) (y :: ys))"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "β",
+                  "type": "Type u_2"
+                },
+                {
+                  "name": "x",
+                  "type": "α"
+                },
+                {
+                  "name": "xs",
+                  "type": "List α"
+                },
+                {
+                  "name": "ih",
+                  "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+                },
+                {
+                  "name": "y",
+                  "type": "β"
+                },
+                {
+                  "name": "ys",
+                  "type": "List β"
+                },
+                {
+                  "name": "h",
+                  "type": "length (x :: xs) = length (y :: ys)"
+                },
+                {
+                  "name": "h'",
+                  "type": "length xs = length ys"
+                },
+                {
+                  "name": "hL",
+                  "type": "length (reverse xs) = length (reverse ys)"
+                }
+              ],
+              "goal": "zip' (reverse xs ++ [x]) (reverse ys ++ [y]) = reverse (zip' xs ys) ++ [(x, y)]"
+            }
+          ],
+          "summary": {
+            "directly_used": [],
+            "dependency_maps": [
+              {
+                "α": [
+                  "α"
+                ],
+                "β": [
+                  "β"
+                ],
+                "x": [
+                  "x"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "ih": [
+                  "ih"
+                ],
+                "y": [
+                  "y"
+                ],
+                "ys": [
+                  "ys"
+                ],
+                "h": [
+                  "h"
+                ],
+                "h'": [
+                  "h'"
+                ],
+                "hL": [
+                  "hL"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 13,
+          "kind": "leaf",
+          "tactic_text": "rw [zip'_append_singleton' _ _ _ _ hL, ih ys h']",
+          "parent_id": 12,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "β",
+                "type": "Type u_2"
+              },
+              {
+                "name": "x",
+                "type": "α"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+              },
+              {
+                "name": "y",
+                "type": "β"
+              },
+              {
+                "name": "ys",
+                "type": "List β"
+              },
+              {
+                "name": "h",
+                "type": "length (x :: xs) = length (y :: ys)"
+              },
+              {
+                "name": "h'",
+                "type": "length xs = length ys"
+              },
+              {
+                "name": "hL",
+                "type": "length (reverse xs) = length (reverse ys)"
+              }
+            ],
+            "goal": "zip' (reverse xs ++ [x]) (reverse ys ++ [y]) = reverse (zip' xs ys) ++ [(x, y)]"
+          },
+          "summary": {
+            "directly_used": [
+              "h'",
+              "hL",
+              "ih",
+              "ys"
+            ],
+            "dependency_maps": []
+          }
+        },
+        {
+          "id": 14,
+          "kind": "node",
+          "tactic_text": "simp only [length] at h",
+          "parent_id": 7,
+          "child_ids": [
+            15
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "β",
+                "type": "Type u_2"
+              },
+              {
+                "name": "x",
+                "type": "α"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+              },
+              {
+                "name": "y",
+                "type": "β"
+              },
+              {
+                "name": "ys",
+                "type": "List β"
+              },
+              {
+                "name": "h",
+                "type": "length (x :: xs) = length (y :: ys)"
+              }
+            ],
+            "goal": "length xs = length ys"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "β",
+                  "type": "Type u_2"
+                },
+                {
+                  "name": "x",
+                  "type": "α"
+                },
+                {
+                  "name": "xs",
+                  "type": "List α"
+                },
+                {
+                  "name": "ih",
+                  "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+                },
+                {
+                  "name": "y",
+                  "type": "β"
+                },
+                {
+                  "name": "ys",
+                  "type": "List β"
+                },
+                {
+                  "name": "h",
+                  "type": "1 + length xs = 1 + length ys"
+                }
+              ],
+              "goal": "length xs = length ys"
+            }
+          ],
+          "summary": {
+            "directly_used": [
+              "h"
+            ],
+            "dependency_maps": [
+              {
+                "α": [
+                  "α"
+                ],
+                "β": [
+                  "β"
+                ],
+                "x": [
+                  "x"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "ih": [
+                  "ih"
+                ],
+                "y": [
+                  "y"
+                ],
+                "ys": [
+                  "ys"
+                ],
+                "h": [
+                  "ys",
+                  "xs"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 15,
+          "kind": "leaf",
+          "tactic_text": "omega",
+          "parent_id": 14,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "β",
+                "type": "Type u_2"
+              },
+              {
+                "name": "x",
+                "type": "α"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+              },
+              {
+                "name": "y",
+                "type": "β"
+              },
+              {
+                "name": "ys",
+                "type": "List β"
+              },
+              {
+                "name": "h",
+                "type": "1 + length xs = 1 + length ys"
+              }
+            ],
+            "goal": "length xs = length ys"
+          },
+          "summary": {
+            "directly_used": [
+              "h",
+              "ih",
+              "x",
+              "xs",
+              "y",
+              "ys",
+              "α",
+              "β"
+            ],
+            "dependency_maps": []
+          }
+        },
+        {
+          "id": 16,
+          "kind": "leaf",
+          "tactic_text": "simp [length_reverse_eq', h']",
+          "parent_id": 7,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "β",
+                "type": "Type u_2"
+              },
+              {
+                "name": "x",
+                "type": "α"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (ys : List β), length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)"
+              },
+              {
+                "name": "y",
+                "type": "β"
+              },
+              {
+                "name": "ys",
+                "type": "List β"
+              },
+              {
+                "name": "h",
+                "type": "length (x :: xs) = length (y :: ys)"
+              },
+              {
+                "name": "h'",
+                "type": "length xs = length ys"
+              }
+            ],
+            "goal": "length (reverse xs) = length (reverse ys)"
+          },
+          "summary": {
+            "directly_used": [
+              "h'"
+            ],
+            "dependency_maps": []
+          }
+        }
+      ]
+    }
+  ]
+}

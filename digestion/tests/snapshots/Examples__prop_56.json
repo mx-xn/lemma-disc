@@ -1,0 +1,756 @@
+{
+  "name": "prop_56",
+  "statement": "theorem prop_56 (n: Nat) (m: Nat) (xs: List α) :\n  (drop n (drop m xs) = drop (n + m) xs) :=",
+  "root_tactic_id": 0,
+  "tactic_nodes": [
+    {
+      "id": 0,
+      "tactic_text": "induction m generalizing xs with\n| zero => _*_\n| succ m ih => _*_",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "α",
+            "type": "Type u_1"
+          },
+          {
+            "name": "n",
+            "type": "ℕ"
+          },
+          {
+            "name": "m",
+            "type": "ℕ"
+          },
+          {
+            "name": "xs",
+            "type": "List α"
+          }
+        ],
+        "goal": "drop n (drop m xs) = drop (n + m) xs"
+      },
+      "output_obligations": [
+        {
+          "hypotheses": [
+            {
+              "name": "α",
+              "type": "Type u_1"
+            },
+            {
+              "name": "n",
+              "type": "ℕ"
+            },
+            {
+              "name": "xs",
+              "type": "List α"
+            }
+          ],
+          "goal": "drop n (drop 0 xs) = drop (n + 0) xs"
+        },
+        {
+          "hypotheses": [
+            {
+              "name": "α",
+              "type": "Type u_1"
+            },
+            {
+              "name": "n",
+              "type": "ℕ"
+            },
+            {
+              "name": "m",
+              "type": "ℕ"
+            },
+            {
+              "name": "ih",
+              "type": "∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs"
+            },
+            {
+              "name": "xs",
+              "type": "List α"
+            }
+          ],
+          "goal": "drop n (drop (m + 1) xs) = drop (n + (m + 1)) xs"
+        }
+      ],
+      "summary": {
+        "directly_used": [
+          "m",
+          "n",
+          "xs"
+        ],
+        "dependency_maps": [
+          {
+            "α": [
+              "α"
+            ],
+            "n": [
+              "n"
+            ],
+            "xs": [
+              "xs"
+            ]
+          },
+          {
+            "α": [
+              "α"
+            ],
+            "n": [
+              "n"
+            ],
+            "m": [
+              "m"
+            ],
+            "ih": [
+              "n",
+              "α",
+              "xs",
+              "m"
+            ],
+            "xs": [
+              "xs"
+            ]
+          }
+        ]
+      },
+      "parent_id": null,
+      "child_ids": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": 1,
+      "tactic_text": "simp [drop]",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "α",
+            "type": "Type u_1"
+          },
+          {
+            "name": "n",
+            "type": "ℕ"
+          },
+          {
+            "name": "xs",
+            "type": "List α"
+          }
+        ],
+        "goal": "drop n (drop 0 xs) = drop (n + 0) xs"
+      },
+      "output_obligations": [],
+      "summary": {
+        "directly_used": [],
+        "dependency_maps": []
+      },
+      "parent_id": 0,
+      "child_ids": []
+    },
+    {
+      "id": 2,
+      "tactic_text": "cases xs with\n| nil => _*_\n| cons x xs => _*_",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "α",
+            "type": "Type u_1"
+          },
+          {
+            "name": "n",
+            "type": "ℕ"
+          },
+          {
+            "name": "m",
+            "type": "ℕ"
+          },
+          {
+            "name": "ih",
+            "type": "∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs"
+          },
+          {
+            "name": "xs",
+            "type": "List α"
+          }
+        ],
+        "goal": "drop n (drop (m + 1) xs) = drop (n + (m + 1)) xs"
+      },
+      "output_obligations": [
+        {
+          "hypotheses": [
+            {
+              "name": "α",
+              "type": "Type u_1"
+            },
+            {
+              "name": "n",
+              "type": "ℕ"
+            },
+            {
+              "name": "m",
+              "type": "ℕ"
+            },
+            {
+              "name": "ih",
+              "type": "∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs"
+            }
+          ],
+          "goal": "drop n (drop (m + 1) []) = drop (n + (m + 1)) []"
+        },
+        {
+          "hypotheses": [
+            {
+              "name": "α",
+              "type": "Type u_1"
+            },
+            {
+              "name": "n",
+              "type": "ℕ"
+            },
+            {
+              "name": "m",
+              "type": "ℕ"
+            },
+            {
+              "name": "ih",
+              "type": "∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs"
+            },
+            {
+              "name": "x",
+              "type": "α"
+            },
+            {
+              "name": "xs",
+              "type": "List α"
+            }
+          ],
+          "goal": "drop n (drop (m + 1) (x :: xs)) = drop (n + (m + 1)) (x :: xs)"
+        }
+      ],
+      "summary": {
+        "directly_used": [
+          "ih",
+          "n",
+          "xs"
+        ],
+        "dependency_maps": [
+          {
+            "α": [
+              "α"
+            ],
+            "n": [
+              "n"
+            ],
+            "m": [
+              "m"
+            ],
+            "ih": [
+              "ih"
+            ]
+          },
+          {
+            "α": [
+              "α"
+            ],
+            "n": [
+              "n"
+            ],
+            "m": [
+              "m"
+            ],
+            "ih": [
+              "ih"
+            ],
+            "x": [
+              "α"
+            ],
+            "xs": [
+              "xs"
+            ]
+          }
+        ]
+      },
+      "parent_id": 0,
+      "child_ids": [
+        3,
+        7
+      ]
+    },
+    {
+      "id": 3,
+      "tactic_text": "simp [drop]",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "α",
+            "type": "Type u_1"
+          },
+          {
+            "name": "n",
+            "type": "ℕ"
+          },
+          {
+            "name": "m",
+            "type": "ℕ"
+          },
+          {
+            "name": "ih",
+            "type": "∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs"
+          }
+        ],
+        "goal": "drop n (drop (m + 1) []) = drop (n + (m + 1)) []"
+      },
+      "output_obligations": [
+        {
+          "hypotheses": [
+            {
+              "name": "α",
+              "type": "Type u_1"
+            },
+            {
+              "name": "n",
+              "type": "ℕ"
+            },
+            {
+              "name": "m",
+              "type": "ℕ"
+            },
+            {
+              "name": "ih",
+              "type": "∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs"
+            }
+          ],
+          "goal": "drop n [] = []"
+        }
+      ],
+      "summary": {
+        "directly_used": [],
+        "dependency_maps": [
+          {
+            "α": [
+              "α"
+            ],
+            "n": [
+              "n"
+            ],
+            "m": [
+              "m"
+            ],
+            "ih": [
+              "ih"
+            ]
+          }
+        ]
+      },
+      "parent_id": 2,
+      "child_ids": [
+        4
+      ]
+    },
+    {
+      "id": 4,
+      "tactic_text": "induction n with\n| zero => _*_\n| succ n => _*_",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "α",
+            "type": "Type u_1"
+          },
+          {
+            "name": "n",
+            "type": "ℕ"
+          },
+          {
+            "name": "m",
+            "type": "ℕ"
+          },
+          {
+            "name": "ih",
+            "type": "∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs"
+          }
+        ],
+        "goal": "drop n [] = []"
+      },
+      "output_obligations": [
+        {
+          "hypotheses": [
+            {
+              "name": "α",
+              "type": "Type u_1"
+            },
+            {
+              "name": "m",
+              "type": "ℕ"
+            },
+            {
+              "name": "ih",
+              "type": "∀ (xs : List α), drop 0 (drop m xs) = drop (0 + m) xs"
+            }
+          ],
+          "goal": "drop 0 [] = []"
+        },
+        {
+          "hypotheses": [
+            {
+              "name": "α",
+              "type": "Type u_1"
+            },
+            {
+              "name": "m",
+              "type": "ℕ"
+            },
+            {
+              "name": "n",
+              "type": "ℕ"
+            },
+            {
+              "name": "a✝",
+              "type": "(∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop n [] = []"
+            },
+            {
+              "name": "ih",
+              "type": "∀ (xs : List α), drop (n + 1) (drop m xs) = drop (n + 1 + m) xs"
+            }
+          ],
+          "goal": "drop (n + 1) [] = []"
+        }
+      ],
+      "summary": {
+        "directly_used": [
+          "n"
+        ],
+        "dependency_maps": [
+          {
+            "α": [
+              "α"
+            ],
+            "m": [
+              "m"
+            ],
+            "ih": [
+              "α",
+              "m"
+            ]
+          },
+          {
+            "α": [
+              "α"
+            ],
+            "m": [
+              "m"
+            ],
+            "n": [
+              "n"
+            ],
+            "a✝": [
+              "n",
+              "α",
+              "m"
+            ],
+            "ih": [
+              "n",
+              "α",
+              "m"
+            ]
+          }
+        ]
+      },
+      "parent_id": 3,
+      "child_ids": [
+        5,
+        6
+      ]
+    },
+    {
+      "id": 5,
+      "tactic_text": "simp [drop]",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "α",
+            "type": "Type u_1"
+          },
+          {
+            "name": "m",
+            "type": "ℕ"
+          },
+          {
+            "name": "ih",
+            "type": "∀ (xs : List α), drop 0 (drop m xs) = drop (0 + m) xs"
+          }
+        ],
+        "goal": "drop 0 [] = []"
+      },
+      "output_obligations": [],
+      "summary": {
+        "directly_used": [],
+        "dependency_maps": []
+      },
+      "parent_id": 4,
+      "child_ids": []
+    },
+    {
+      "id": 6,
+      "tactic_text": "simp [drop]",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "α",
+            "type": "Type u_1"
+          },
+          {
+            "name": "m",
+            "type": "ℕ"
+          },
+          {
+            "name": "n",
+            "type": "ℕ"
+          },
+          {
+            "name": "a✝",
+            "type": "(∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) → drop n [] = []"
+          },
+          {
+            "name": "ih",
+            "type": "∀ (xs : List α), drop (n + 1) (drop m xs) = drop (n + 1 + m) xs"
+          }
+        ],
+        "goal": "drop (n + 1) [] = []"
+      },
+      "output_obligations": [],
+      "summary": {
+        "directly_used": [],
+        "dependency_maps": []
+      },
+      "parent_id": 4,
+      "child_ids": []
+    },
+    {
+      "id": 7,
+      "tactic_text": "simp only [Nat.add_succ]",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "α",
+            "type": "Type u_1"
+          },
+          {
+            "name": "n",
+            "type": "ℕ"
+          },
+          {
+            "name": "m",
+            "type": "ℕ"
+          },
+          {
+            "name": "ih",
+            "type": "∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs"
+          },
+          {
+            "name": "x",
+            "type": "α"
+          },
+          {
+            "name": "xs",
+            "type": "List α"
+          }
+        ],
+        "goal": "drop n (drop (m + 1) (x :: xs)) = drop (n + (m + 1)) (x :: xs)"
+      },
+      "output_obligations": [
+        {
+          "hypotheses": [
+            {
+              "name": "α",
+              "type": "Type u_1"
+            },
+            {
+              "name": "n",
+              "type": "ℕ"
+            },
+            {
+              "name": "m",
+              "type": "ℕ"
+            },
+            {
+              "name": "ih",
+              "type": "∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs"
+            },
+            {
+              "name": "x",
+              "type": "α"
+            },
+            {
+              "name": "xs",
+              "type": "List α"
+            }
+          ],
+          "goal": "drop n (drop (m + 0).succ (x :: xs)) = drop (n + m).succ (x :: xs)"
+        }
+      ],
+      "summary": {
+        "directly_used": [],
+        "dependency_maps": [
+          {
+            "α": [
+              "α"
+            ],
+            "n": [
+              "n"
+            ],
+            "m": [
+              "m"
+            ],
+            "ih": [
+              "ih"
+            ],
+            "x": [
+              "x"
+            ],
+            "xs": [
+              "xs"
+            ]
+          }
+        ]
+      },
+      "parent_id": 2,
+      "child_ids": [
+        8
+      ]
+    },
+    {
+      "id": 8,
+      "tactic_text": "simp [drop]",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "α",
+            "type": "Type u_1"
+          },
+          {
+            "name": "n",
+            "type": "ℕ"
+          },
+          {
+            "name": "m",
+            "type": "ℕ"
+          },
+          {
+            "name": "ih",
+            "type": "∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs"
+          },
+          {
+            "name": "x",
+            "type": "α"
+          },
+          {
+            "name": "xs",
+            "type": "List α"
+          }
+        ],
+        "goal": "drop n (drop (m + 0).succ (x :: xs)) = drop (n + m).succ (x :: xs)"
+      },
+      "output_obligations": [
+        {
+          "hypotheses": [
+            {
+              "name": "α",
+              "type": "Type u_1"
+            },
+            {
+              "name": "n",
+              "type": "ℕ"
+            },
+            {
+              "name": "m",
+              "type": "ℕ"
+            },
+            {
+              "name": "ih",
+              "type": "∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs"
+            },
+            {
+              "name": "x",
+              "type": "α"
+            },
+            {
+              "name": "xs",
+              "type": "List α"
+            }
+          ],
+          "goal": "drop n (drop m xs) = drop (n + m) xs"
+        }
+      ],
+      "summary": {
+        "directly_used": [],
+        "dependency_maps": [
+          {
+            "α": [
+              "α"
+            ],
+            "n": [
+              "n"
+            ],
+            "m": [
+              "m"
+            ],
+            "ih": [
+              "ih"
+            ],
+            "x": [
+              "x"
+            ],
+            "xs": [
+              "xs"
+            ]
+          }
+        ]
+      },
+      "parent_id": 7,
+      "child_ids": [
+        9
+      ]
+    },
+    {
+      "id": 9,
+      "tactic_text": "exact ih xs",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "α",
+            "type": "Type u_1"
+          },
+          {
+            "name": "n",
+            "type": "ℕ"
+          },
+          {
+            "name": "m",
+            "type": "ℕ"
+          },
+          {
+            "name": "ih",
+            "type": "∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs"
+          },
+          {
+            "name": "x",
+            "type": "α"
+          },
+          {
+            "name": "xs",
+            "type": "List α"
+          }
+        ],
+        "goal": "drop n (drop m xs) = drop (n + m) xs"
+      },
+      "output_obligations": [],
+      "summary": {
+        "directly_used": [
+          "ih",
+          "xs"
+        ],
+        "dependency_maps": []
+      },
+      "parent_id": 8,
+      "child_ids": []
+    }
+  ]
+}

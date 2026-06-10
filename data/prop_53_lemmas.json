@@ -1,0 +1,72 @@
+{
+  "lemmas": [
+    {
+      "fragment_id": 0,
+      "source_file": "digestion/tests/snapshots/Examples__prop_53.json",
+      "decl_name": "prop_53",
+      "premises": [
+        "xs : List ℕ"
+      ],
+      "body": "(x : ℕ) → (ih : count n xs = count n (sort xs)) → (if n = x then count n xs + 1 else count n xs) = if n = x then count n (sort xs) + 1 else count n (sort xs)",
+      "conclusion": "count n xs = count n (sort xs)",
+      "statement": "(xs : List ℕ) (x : ℕ) (ih : count n xs = count n (sort xs)) (h1 : (if n = x then count n xs + 1 else count n xs) = if n = x then count n (sort xs) + 1 else count n (sort xs)) : count n xs = count n (sort xs)"
+    },
+    {
+      "fragment_id": 1,
+      "source_file": "digestion/tests/snapshots/Examples__prop_53.json",
+      "decl_name": "prop_53",
+      "premises": [
+        "xs : List ℕ"
+      ],
+      "body": "count n [] = count n (sort []) ∧ ((x : ℕ) → (ih : count n xs = count n (sort xs)) → (if n = x then count n xs + 1 else count n xs) = if n = x then count n (sort xs) + 1 else count n (sort xs))",
+      "conclusion": "count n xs = count n (sort xs)",
+      "statement": "(xs : List ℕ) (h1 : count n [] = count n (sort []) ∧ ((x : ℕ) → (ih : count n xs = count n (sort xs)) → (if n = x then count n xs + 1 else count n xs) = if n = x then count n (sort xs) + 1 else count n (sort xs))) : count n xs = count n (sort xs)"
+    },
+    {
+      "fragment_id": 2,
+      "source_file": "digestion/tests/snapshots/Examples__prop_53.json",
+      "decl_name": "prop_53",
+      "premises": [
+        "ih : count n xs = count n (sort xs)"
+      ],
+      "body": "True",
+      "conclusion": "count n (x :: xs) = count n (sort (x :: xs))",
+      "statement": "(ih : count n xs = count n (sort xs)) : count n (x :: xs) = count n (sort (x :: xs))"
+    },
+    {
+      "fragment_id": 3,
+      "source_file": "digestion/tests/snapshots/Examples__prop_53.json",
+      "decl_name": "prop_53",
+      "premises": [
+        "xs : List ℕ"
+      ],
+      "body": "(x : ℕ) → (ih : count n xs = count n (sort xs)) → count n (x :: xs) = count n (sort (x :: xs))",
+      "conclusion": "count n xs = count n (sort xs)",
+      "statement": "(xs : List ℕ) (x : ℕ) (ih : count n xs = count n (sort xs)) (h1 : count n (x :: xs) = count n (sort (x :: xs))) : count n xs = count n (sort xs)"
+    },
+    {
+      "fragment_id": 4,
+      "source_file": "digestion/tests/snapshots/Examples__prop_53.json",
+      "decl_name": "prop_53",
+      "premises": [
+        "n : ℕ",
+        "xs : List ℕ"
+      ],
+      "body": "True",
+      "conclusion": "count n xs = count n (sort xs)",
+      "statement": "(n : ℕ) (xs : List ℕ) : count n xs = count n (sort xs)"
+    },
+    {
+      "fragment_id": 5,
+      "source_file": "digestion/tests/snapshots/Examples__prop_53.json",
+      "decl_name": "prop_53",
+      "premises": [
+        "n : ℕ",
+        "xs : List ℕ"
+      ],
+      "body": "count n [] = count n (sort [])",
+      "conclusion": "count n xs = count n (sort xs)",
+      "statement": "(n : ℕ) (xs : List ℕ) (h1 : count n [] = count n (sort [])) : count n xs = count n (sort xs)"
+    }
+  ]
+}

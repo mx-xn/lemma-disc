@@ -1,0 +1,92 @@
+{
+  "lemmas": [
+    {
+      "fragment_id": 0,
+      "source_file": "digestion/tests/snapshots/Examples__prop_02.json",
+      "decl_name": "prop_02",
+      "premises": [
+        "ys : List ℕ",
+        "x : ℕ",
+        "xs : List ℕ",
+        "ih : ∀ (n : ℕ), count n xs + count n ys = count n (xs ++ ys)",
+        "n : ℕ",
+        "h : n = x"
+      ],
+      "body": "True",
+      "conclusion": "count n xs + 1 + count n ys = count n (xs ++ ys) + 1",
+      "statement": "(ys : List ℕ) (x : ℕ) (xs : List ℕ) (ih : ∀ (n : ℕ), count n xs + count n ys = count n (xs ++ ys)) (n : ℕ) (h : n = x) : count n xs + 1 + count n ys = count n (xs ++ ys) + 1"
+    },
+    {
+      "fragment_id": 1,
+      "source_file": "digestion/tests/snapshots/Examples__prop_02.json",
+      "decl_name": "prop_02",
+      "premises": [
+        "ys : List ℕ",
+        "x : ℕ",
+        "xs : List ℕ",
+        "n : ℕ"
+      ],
+      "body": "(if n = x then count n xs + 1 else count n xs) + count n ys =",
+      "conclusion": "count n (x :: xs) + count n ys = count n (x :: xs ++ ys)",
+      "statement": "(ys : List ℕ) (x : ℕ) (xs : List ℕ) (n : ℕ) (h1 : (if n = x then count n xs + 1 else count n xs) + count n ys =) : count n (x :: xs) + count n ys = count n (x :: xs ++ ys)"
+    },
+    {
+      "fragment_id": 2,
+      "source_file": "digestion/tests/snapshots/Examples__prop_02.json",
+      "decl_name": "prop_02",
+      "premises": [
+        "ys : List ℕ",
+        "x : ℕ",
+        "xs : List ℕ",
+        "ih : ∀ (n : ℕ), count n xs + count n ys = count n (xs ++ ys)",
+        "n : ℕ"
+      ],
+      "body": "True",
+      "conclusion": "(if n = x then count n xs + 1 else count n xs) + count n ys =",
+      "statement": "(ys : List ℕ) (x : ℕ) (xs : List ℕ) (ih : ∀ (n : ℕ), count n xs + count n ys = count n (xs ++ ys)) (n : ℕ) : (if n = x then count n xs + 1 else count n xs) + count n ys ="
+    },
+    {
+      "fragment_id": 3,
+      "source_file": "digestion/tests/snapshots/Examples__prop_02.json",
+      "decl_name": "prop_02",
+      "premises": [
+        "ys : List ℕ",
+        "x : ℕ",
+        "xs : List ℕ",
+        "ih : ∀ (n : ℕ), count n xs + count n ys = count n (xs ++ ys)",
+        "n : ℕ"
+      ],
+      "body": "True",
+      "conclusion": "count n (x :: xs) + count n ys = count n (x :: xs ++ ys)",
+      "statement": "(ys : List ℕ) (x : ℕ) (xs : List ℕ) (ih : ∀ (n : ℕ), count n xs + count n ys = count n (xs ++ ys)) (n : ℕ) : count n (x :: xs) + count n ys = count n (x :: xs ++ ys)"
+    },
+    {
+      "fragment_id": 4,
+      "source_file": "digestion/tests/snapshots/Examples__prop_02.json",
+      "decl_name": "prop_02",
+      "premises": [
+        "ys : List ℕ",
+        "x : ℕ",
+        "xs : List ℕ",
+        "ih : ∀ (n : ℕ), count n xs + count n ys = count n (xs ++ ys)",
+        "n : ℕ"
+      ],
+      "body": "True",
+      "conclusion": "count n (x :: xs) + count n ys = count n (x :: (xs ++ ys))",
+      "statement": "(ys : List ℕ) (x : ℕ) (xs : List ℕ) (ih : ∀ (n : ℕ), count n xs + count n ys = count n (xs ++ ys)) (n : ℕ) : count n (x :: xs) + count n ys = count n (x :: (xs ++ ys))"
+    },
+    {
+      "fragment_id": 5,
+      "source_file": "digestion/tests/snapshots/Examples__prop_02.json",
+      "decl_name": "prop_02",
+      "premises": [
+        "n : ℕ",
+        "xs : List ℕ",
+        "ys : List ℕ"
+      ],
+      "body": "True",
+      "conclusion": "count n xs + count n ys = count n (xs ++ ys)",
+      "statement": "(n : ℕ) (xs : List ℕ) (ys : List ℕ) : count n xs + count n ys = count n (xs ++ ys)"
+    }
+  ]
+}

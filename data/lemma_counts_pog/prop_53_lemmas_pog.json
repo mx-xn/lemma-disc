@@ -1,0 +1,33 @@
+{
+  "lemmas": [
+    {
+      "fragment_id": 0,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_53.json",
+      "decl_name": "prop_53",
+      "premises": [],
+      "body": "True",
+      "conclusion": "count n xs = count n (sort xs)",
+      "statement": "count n xs = count n (sort xs)"
+    },
+    {
+      "fragment_id": 1,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_53.json",
+      "decl_name": "prop_53",
+      "premises": [],
+      "body": "(if n = x then count n xs + 1 else count n xs) = if n = x then count n (sort xs) + 1 else count n (sort xs)",
+      "conclusion": "count n (x :: xs) = count n (sort (x :: xs))",
+      "statement": "(h1 : (if n = x then count n xs + 1 else count n xs) = if n = x then count n (sort xs) + 1 else count n (sort xs)) : count n (x :: xs) = count n (sort (x :: xs))"
+    },
+    {
+      "fragment_id": 2,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_53.json",
+      "decl_name": "prop_53",
+      "premises": [
+        "ih : count n xs = count n (sort xs)"
+      ],
+      "body": "True",
+      "conclusion": "count n (x :: xs) = count n (sort (x :: xs))",
+      "statement": "(ih : count n xs = count n (sort xs)) : count n (x :: xs) = count n (sort (x :: xs))"
+    }
+  ]
+}

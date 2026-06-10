@@ -1,0 +1,37 @@
+# Independent git repos — not submodules
+data/input/algebra-in-lean/
+data/input/juvix-lean/
+data/input/MiniCodePropsLeanSrc/
+
+# Scala / sbt
+target/
+project/target/
+project/project/
+.metals/
+.bsp/
+.scala-build/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+*.egg
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Secrets
+.env

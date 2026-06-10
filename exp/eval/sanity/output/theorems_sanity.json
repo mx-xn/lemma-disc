@@ -1,0 +1,38 @@
+{
+  "lake_project": "/nas/lemma-disc/data/input/MiniCodePropsLeanSrc",
+  "imports": [
+    "LeanSrc.Examples"
+  ],
+  "theorems": [
+    {
+      "theorem_id": "prop_58",
+      "lean_path": "LeanSrc/Examples.lean",
+      "statement_text": "(n: Nat) (xs: List α) (ys: List β) : (drop n (zip' xs ys) = zip' (drop n xs) (drop n ys))",
+      "local_ctx": "def drop (n: Nat) (xs: List α) : List α :=\n  match n, xs with\n  | 0, _ => xs\n  | _, [] => []\n  | n + 1, _ :: xs => drop n xs\n\ndef zip' : List α → List β → List (α × β)\n  | [], _ => []\n  | _, [] => []\n  | x::xs, y::ys => ⟨x, y⟩ :: zip' xs ys"
+    },
+    {
+      "theorem_id": "prop_77",
+      "lean_path": "LeanSrc/Examples.lean",
+      "statement_text": "(x: Nat) (xs: List Nat) : (sorted xs → sorted (insort x xs))",
+      "local_ctx": "def insort : Nat → List Nat → List Nat\n  | n, [] => [n]\n  | n, x::xs => if n <= x then n::x::xs else x::(insort n xs)\n\ndef sorted : List Nat → Bool\n  | [] => True\n  | [_x] => True\n  | x::y::xs => and (x <= y) (sorted (y::xs))"
+    },
+    {
+      "theorem_id": "prop_78",
+      "lean_path": "LeanSrc/Examples.lean",
+      "statement_text": "(xs: List Nat) : sorted (sort xs)",
+      "local_ctx": "def insort : Nat → List Nat → List Nat\n  | n, [] => [n]\n  | n, x::xs => if n <= x then n::x::xs else x::(insort n xs)\n\ndef sort : List Nat → List Nat\n  | [] => []\n  | x::xs => insort x (sort xs)\n\ndef sorted : List Nat → Bool\n  | [] => True\n  | [_x] => True\n  | x::y::xs => and (x <= y) (sorted (y::xs))"
+    },
+    {
+      "theorem_id": "prop_85",
+      "lean_path": "LeanSrc/Examples.lean",
+      "statement_text": "(xs: List α) (ys: List β) : (length xs = length ys) → (zip' (reverse xs) (reverse ys) = reverse (zip' xs ys))",
+      "local_ctx": "def length (xs: List α) : Nat :=\n  match xs with\n  | [] => 0\n  | _ :: xs => 1 + length xs\n\ndef reverse (xs: List α) : List α :=\n  match xs with\n  | [] => []\n  | x :: xs => reverse xs ++ [x]\n\ndef zip' : List α → List β → List (α × β)\n  | [], _ => []\n  | _, [] => []\n  | x::xs, y::ys => ⟨x, y⟩ :: zip' xs ys"
+    },
+    {
+      "theorem_id": "prop_57",
+      "lean_path": "LeanSrc/Examples.lean",
+      "statement_text": "(n: Nat) (m: Nat) (xs: List α) : (drop n (take m xs) = take (m - n) (drop n xs))",
+      "local_ctx": "def take (n: Nat) (xs: List α) : List α :=\n  match n, xs with\n  | 0, _ => []\n  | _, [] => []\n  | n + 1, x :: xs => x :: take n xs\n\ndef drop (n: Nat) (xs: List α) : List α :=\n  match n, xs with\n  | 0, _ => xs\n  | _, [] => []\n  | n + 1, _ :: xs => drop n xs"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+[1/4] Building POG...
+[info] welcome to sbt 1.10.1 (JetBrains s.r.o. Java 21.0.6)
+[info] loading project definition from /nas/lemma-disc/scala-core/project
+[info] loading settings for project scala-core from build.sbt ...
+[info] set current project to scala-core (in build file:/nas/lemma-disc/scala-core/)
+[info] running Serializer /tmp/lemma_trace_U9t84T.json /tmp/lemma_pog_tFWOyM.json
+[success] Total time: 1 s, completed Jun 4, 2026, 12:39:46 AM
+[2/4] Enumerating fragments...
+[info] welcome to sbt 1.10.1 (JetBrains s.r.o. Java 21.0.6)
+[info] loading project definition from /nas/lemma-disc/scala-core/project
+[info] loading settings for project scala-core from build.sbt ...
+[info] set current project to scala-core (in build file:/nas/lemma-disc/scala-core/)
+[info] running Serializer --timeout 60000 /tmp/lemma_pog_tFWOyM.json /tmp/lemma_segments_tfQ0wn.json
+[success] Total time: 2 s, completed Jun 4, 2026, 12:39:53 AM
+[2/4] Got 31 fragment(s).
+[3/4] Running support minimization...
+[info] welcome to sbt 1.10.1 (JetBrains s.r.o. Java 21.0.6)
+[info] loading project definition from /nas/lemma-disc/scala-core/project
+[info] loading settings for project scala-core from build.sbt ...
+[info] set current project to scala-core (in build file:/nas/lemma-disc/scala-core/)
+[info] running Serializer /tmp/lemma_segments_tfQ0wn.json /tmp/lemma_out_UfEdp1.json
+[success] Total time: 2 s, completed Jun 4, 2026, 12:39:59 AM
+[4/4] Deduplicating lemmas...
+Deduplicated: 31 → 11 lemmas (20 dropped)
+[4/4] Lemmas    written to /nas/lemma-disc/data/lemma_counts_pog/prop_01_lemmas_pog.json
+[4/4] Fragments written to /nas/lemma-disc/data/lemma_counts_pog/prop_01_lemmas_pog.fragments.json
+--- 11 lemma statement(s) ---
+[0] prop_01: (h1 : take n [] = [] ∧ drop n [] = []) : take n [] ++ drop n [] = []
+[1] prop_01: take n xs ++ drop n xs = xs
+[2] prop_01: (n : ℕ) : take n [] = []
+[3] prop_01: take n [] = [] ∧ drop n [] = []
+[4] prop_01: take n [] ++ drop n [] = []
+[5] prop_01: (n : ℕ) : take n [] = [] ∧ drop n [] = []
+[6] prop_01: (n : ℕ) : take n [] ++ drop n [] = []
+[7] prop_01: (n : ℕ) : drop n [] = []
+[8] prop_01: (h1 : take n xs ++ drop n xs = xs) : take (n + 1) (x :: xs) ++ drop (n + 1) (x :: xs) = x :: xs
+[9] prop_01: (ih : ∀ (n : ℕ), take n xs ++ drop n xs = xs) (n : ℕ) : take (n + 1) (x :: xs) ++ drop (n + 1) (x :: xs) = x :: xs
+[10] prop_01: (ih : ∀ (n : ℕ), take n xs ++ drop n xs = xs) (n : ℕ) : take n (x :: xs) ++ drop n (x :: xs) = x :: xs

@@ -1,0 +1,180 @@
+{
+  "name": "prop_05",
+  "statement": "theorem prop_05 (n: Nat) (x: Nat) (xs: List Nat) :\n (n = x) →  (count n xs).succ = count n (x :: xs) :=",
+  "root_tactic_id": 0,
+  "tactic_nodes": [
+    {
+      "id": 0,
+      "tactic_text": "intro h",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "n",
+            "type": "ℕ"
+          },
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "xs",
+            "type": "List ℕ"
+          }
+        ],
+        "goal": "n = x → (count n xs).succ = count n (x :: xs)"
+      },
+      "output_obligations": [
+        {
+          "hypotheses": [
+            {
+              "name": "n",
+              "type": "ℕ"
+            },
+            {
+              "name": "x",
+              "type": "ℕ"
+            },
+            {
+              "name": "xs",
+              "type": "List ℕ"
+            },
+            {
+              "name": "h",
+              "type": "n = x"
+            }
+          ],
+          "goal": "(count n xs).succ = count n (x :: xs)"
+        }
+      ],
+      "summary": {
+        "directly_used": [],
+        "dependency_maps": [
+          {
+            "n": [
+              "n"
+            ],
+            "x": [
+              "x"
+            ],
+            "xs": [
+              "xs"
+            ],
+            "h": [
+              "n",
+              "x"
+            ]
+          }
+        ]
+      },
+      "parent_id": null,
+      "child_ids": [
+        1
+      ]
+    },
+    {
+      "id": 1,
+      "tactic_text": "rw [← h]",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "n",
+            "type": "ℕ"
+          },
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "xs",
+            "type": "List ℕ"
+          },
+          {
+            "name": "h",
+            "type": "n = x"
+          }
+        ],
+        "goal": "(count n xs).succ = count n (x :: xs)"
+      },
+      "output_obligations": [
+        {
+          "hypotheses": [
+            {
+              "name": "n",
+              "type": "ℕ"
+            },
+            {
+              "name": "x",
+              "type": "ℕ"
+            },
+            {
+              "name": "xs",
+              "type": "List ℕ"
+            },
+            {
+              "name": "h",
+              "type": "n = x"
+            }
+          ],
+          "goal": "(count n xs).succ = count n (n :: xs)"
+        }
+      ],
+      "summary": {
+        "directly_used": [
+          "h"
+        ],
+        "dependency_maps": [
+          {
+            "n": [
+              "n"
+            ],
+            "x": [
+              "x"
+            ],
+            "xs": [
+              "xs"
+            ],
+            "h": [
+              "h"
+            ]
+          }
+        ]
+      },
+      "parent_id": 0,
+      "child_ids": [
+        2
+      ]
+    },
+    {
+      "id": 2,
+      "tactic_text": "simp [count]",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "n",
+            "type": "ℕ"
+          },
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "xs",
+            "type": "List ℕ"
+          },
+          {
+            "name": "h",
+            "type": "n = x"
+          }
+        ],
+        "goal": "(count n xs).succ = count n (n :: xs)"
+      },
+      "output_obligations": [],
+      "summary": {
+        "directly_used": [],
+        "dependency_maps": []
+      },
+      "parent_id": 1,
+      "child_ids": []
+    }
+  ]
+}

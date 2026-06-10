@@ -1,0 +1,33 @@
+{
+  "lemmas": [
+    {
+      "fragment_id": 0,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_36.json",
+      "decl_name": "prop_36",
+      "premises": [],
+      "body": "True",
+      "conclusion": "takeWhile (fun x => decide True) xs = xs",
+      "statement": "takeWhile (fun x => decide True) xs = xs"
+    },
+    {
+      "fragment_id": 1,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_36.json",
+      "decl_name": "prop_36",
+      "premises": [],
+      "body": "takeWhile (fun x => true) xs = xs",
+      "conclusion": "takeWhile (fun x => decide True) (x :: xs) = x :: xs",
+      "statement": "(h1 : takeWhile (fun x => true) xs = xs) : takeWhile (fun x => decide True) (x :: xs) = x :: xs"
+    },
+    {
+      "fragment_id": 2,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_36.json",
+      "decl_name": "prop_36",
+      "premises": [
+        "ih : takeWhile (fun x => decide True) xs = xs"
+      ],
+      "body": "True",
+      "conclusion": "takeWhile (fun x => decide True) (x :: xs) = x :: xs",
+      "statement": "(ih : takeWhile (fun x => decide True) xs = xs) : takeWhile (fun x => decide True) (x :: xs) = x :: xs"
+    }
+  ]
+}

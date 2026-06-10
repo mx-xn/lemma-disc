@@ -1,0 +1,2442 @@
+{
+  "name": "prop_77",
+  "statement": "theorem prop_77 (x: Nat) (xs: List Nat) :\n  (sorted xs → sorted (insort x xs)) :=",
+  "root_tactic_id": 0,
+  "tactic_nodes": [
+    {
+      "id": 0,
+      "tactic_text": "induction xs with\n| nil => _*_\n| cons y ys ih => _*_",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "xs",
+            "type": "List ℕ"
+          }
+        ],
+        "goal": "sorted xs = true → sorted (insort x xs) = true"
+      },
+      "output_obligations": [
+        {
+          "hypotheses": [
+            {
+              "name": "x",
+              "type": "ℕ"
+            }
+          ],
+          "goal": "sorted [] = true → sorted (insort x []) = true"
+        },
+        {
+          "hypotheses": [
+            {
+              "name": "x",
+              "type": "ℕ"
+            },
+            {
+              "name": "y",
+              "type": "ℕ"
+            },
+            {
+              "name": "ys",
+              "type": "List ℕ"
+            },
+            {
+              "name": "ih",
+              "type": "sorted ys = true → sorted (insort x ys) = true"
+            }
+          ],
+          "goal": "sorted (y :: ys) = true → sorted (insort x (y :: ys)) = true"
+        }
+      ],
+      "summary": {
+        "directly_used": [
+          "x",
+          "xs"
+        ],
+        "dependency_maps": [
+          {
+            "x": [
+              "x"
+            ]
+          },
+          {
+            "x": [
+              "x"
+            ],
+            "y": [
+              "x",
+              "xs"
+            ],
+            "ys": [
+              "x",
+              "xs"
+            ],
+            "ih": [
+              "x"
+            ]
+          }
+        ]
+      },
+      "parent_id": null,
+      "child_ids": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": 1,
+      "tactic_text": "simp [insort, sorted]",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "x",
+            "type": "ℕ"
+          }
+        ],
+        "goal": "sorted [] = true → sorted (insort x []) = true"
+      },
+      "output_obligations": [],
+      "summary": {
+        "directly_used": [],
+        "dependency_maps": []
+      },
+      "parent_id": 0,
+      "child_ids": []
+    },
+    {
+      "id": 2,
+      "tactic_text": "intro h",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "y",
+            "type": "ℕ"
+          },
+          {
+            "name": "ys",
+            "type": "List ℕ"
+          },
+          {
+            "name": "ih",
+            "type": "sorted ys = true → sorted (insort x ys) = true"
+          }
+        ],
+        "goal": "sorted (y :: ys) = true → sorted (insort x (y :: ys)) = true"
+      },
+      "output_obligations": [
+        {
+          "hypotheses": [
+            {
+              "name": "x",
+              "type": "ℕ"
+            },
+            {
+              "name": "y",
+              "type": "ℕ"
+            },
+            {
+              "name": "ys",
+              "type": "List ℕ"
+            },
+            {
+              "name": "ih",
+              "type": "sorted ys = true → sorted (insort x ys) = true"
+            },
+            {
+              "name": "h",
+              "type": "sorted (y :: ys) = true"
+            }
+          ],
+          "goal": "sorted (insort x (y :: ys)) = true"
+        }
+      ],
+      "summary": {
+        "directly_used": [],
+        "dependency_maps": [
+          {
+            "x": [
+              "x"
+            ],
+            "y": [
+              "y"
+            ],
+            "ys": [
+              "ys"
+            ],
+            "ih": [
+              "ih"
+            ],
+            "h": [
+              "ys",
+              "y"
+            ]
+          }
+        ]
+      },
+      "parent_id": 0,
+      "child_ids": [
+        3
+      ]
+    },
+    {
+      "id": 3,
+      "tactic_text": "by_cases hle : x ≤ y",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "y",
+            "type": "ℕ"
+          },
+          {
+            "name": "ys",
+            "type": "List ℕ"
+          },
+          {
+            "name": "ih",
+            "type": "sorted ys = true → sorted (insort x ys) = true"
+          },
+          {
+            "name": "h",
+            "type": "sorted (y :: ys) = true"
+          }
+        ],
+        "goal": "sorted (insort x (y :: ys)) = true"
+      },
+      "output_obligations": [
+        {
+          "hypotheses": [
+            {
+              "name": "x",
+              "type": "ℕ"
+            },
+            {
+              "name": "y",
+              "type": "ℕ"
+            },
+            {
+              "name": "ys",
+              "type": "List ℕ"
+            },
+            {
+              "name": "ih",
+              "type": "sorted ys = true → sorted (insort x ys) = true"
+            },
+            {
+              "name": "h",
+              "type": "sorted (y :: ys) = true"
+            },
+            {
+              "name": "hle",
+              "type": "x ≤ y"
+            }
+          ],
+          "goal": "sorted (insort x (y :: ys)) = true"
+        },
+        {
+          "hypotheses": [
+            {
+              "name": "x",
+              "type": "ℕ"
+            },
+            {
+              "name": "y",
+              "type": "ℕ"
+            },
+            {
+              "name": "ys",
+              "type": "List ℕ"
+            },
+            {
+              "name": "ih",
+              "type": "sorted ys = true → sorted (insort x ys) = true"
+            },
+            {
+              "name": "h",
+              "type": "sorted (y :: ys) = true"
+            },
+            {
+              "name": "hle",
+              "type": "¬x ≤ y"
+            }
+          ],
+          "goal": "sorted (insort x (y :: ys)) = true"
+        }
+      ],
+      "summary": {
+        "directly_used": [
+          "x",
+          "y"
+        ],
+        "dependency_maps": [
+          {
+            "x": [
+              "x"
+            ],
+            "y": [
+              "y"
+            ],
+            "ys": [
+              "ys"
+            ],
+            "ih": [
+              "ih"
+            ],
+            "h": [
+              "h"
+            ],
+            "hle": [
+              "x",
+              "y"
+            ]
+          },
+          {
+            "x": [
+              "x"
+            ],
+            "y": [
+              "y"
+            ],
+            "ys": [
+              "ys"
+            ],
+            "ih": [
+              "ih"
+            ],
+            "h": [
+              "h"
+            ],
+            "hle": [
+              "x",
+              "y"
+            ]
+          }
+        ]
+      },
+      "parent_id": 2,
+      "child_ids": [
+        4,
+        5
+      ]
+    },
+    {
+      "id": 4,
+      "tactic_text": "simp [insort, sorted, hle, h]",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "y",
+            "type": "ℕ"
+          },
+          {
+            "name": "ys",
+            "type": "List ℕ"
+          },
+          {
+            "name": "ih",
+            "type": "sorted ys = true → sorted (insort x ys) = true"
+          },
+          {
+            "name": "h",
+            "type": "sorted (y :: ys) = true"
+          },
+          {
+            "name": "hle",
+            "type": "x ≤ y"
+          }
+        ],
+        "goal": "sorted (insort x (y :: ys)) = true"
+      },
+      "output_obligations": [],
+      "summary": {
+        "directly_used": [
+          "h",
+          "hle"
+        ],
+        "dependency_maps": []
+      },
+      "parent_id": 3,
+      "child_ids": []
+    },
+    {
+      "id": 5,
+      "tactic_text": "have hyx : y ≤ x := Nat.le_of_lt (Nat.lt_of_not_le hle)",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "y",
+            "type": "ℕ"
+          },
+          {
+            "name": "ys",
+            "type": "List ℕ"
+          },
+          {
+            "name": "ih",
+            "type": "sorted ys = true → sorted (insort x ys) = true"
+          },
+          {
+            "name": "h",
+            "type": "sorted (y :: ys) = true"
+          },
+          {
+            "name": "hle",
+            "type": "¬x ≤ y"
+          }
+        ],
+        "goal": "sorted (insort x (y :: ys)) = true"
+      },
+      "output_obligations": [
+        {
+          "hypotheses": [
+            {
+              "name": "x",
+              "type": "ℕ"
+            },
+            {
+              "name": "y",
+              "type": "ℕ"
+            },
+            {
+              "name": "ys",
+              "type": "List ℕ"
+            },
+            {
+              "name": "ih",
+              "type": "sorted ys = true → sorted (insort x ys) = true"
+            },
+            {
+              "name": "h",
+              "type": "sorted (y :: ys) = true"
+            },
+            {
+              "name": "hle",
+              "type": "¬x ≤ y"
+            },
+            {
+              "name": "hyx",
+              "type": "y ≤ x"
+            }
+          ],
+          "goal": "sorted (insort x (y :: ys)) = true"
+        }
+      ],
+      "summary": {
+        "directly_used": [
+          "hle",
+          "x",
+          "y"
+        ],
+        "dependency_maps": [
+          {
+            "x": [
+              "x"
+            ],
+            "y": [
+              "y"
+            ],
+            "ys": [
+              "ys"
+            ],
+            "ih": [
+              "ih"
+            ],
+            "h": [
+              "h"
+            ],
+            "hle": [
+              "hle"
+            ],
+            "hyx": [
+              "x",
+              "y"
+            ]
+          }
+        ]
+      },
+      "parent_id": 3,
+      "child_ids": [
+        6
+      ]
+    },
+    {
+      "id": 6,
+      "tactic_text": "simp only [insort, if_neg hle]",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "y",
+            "type": "ℕ"
+          },
+          {
+            "name": "ys",
+            "type": "List ℕ"
+          },
+          {
+            "name": "ih",
+            "type": "sorted ys = true → sorted (insort x ys) = true"
+          },
+          {
+            "name": "h",
+            "type": "sorted (y :: ys) = true"
+          },
+          {
+            "name": "hle",
+            "type": "¬x ≤ y"
+          },
+          {
+            "name": "hyx",
+            "type": "y ≤ x"
+          }
+        ],
+        "goal": "sorted (insort x (y :: ys)) = true"
+      },
+      "output_obligations": [
+        {
+          "hypotheses": [
+            {
+              "name": "x",
+              "type": "ℕ"
+            },
+            {
+              "name": "y",
+              "type": "ℕ"
+            },
+            {
+              "name": "ys",
+              "type": "List ℕ"
+            },
+            {
+              "name": "ih",
+              "type": "sorted ys = true → sorted (insort x ys) = true"
+            },
+            {
+              "name": "h",
+              "type": "sorted (y :: ys) = true"
+            },
+            {
+              "name": "hle",
+              "type": "¬x ≤ y"
+            },
+            {
+              "name": "hyx",
+              "type": "y ≤ x"
+            }
+          ],
+          "goal": "sorted (y :: insort x ys) = true"
+        }
+      ],
+      "summary": {
+        "directly_used": [
+          "hle"
+        ],
+        "dependency_maps": [
+          {
+            "x": [
+              "x"
+            ],
+            "y": [
+              "y"
+            ],
+            "ys": [
+              "ys"
+            ],
+            "ih": [
+              "ih"
+            ],
+            "h": [
+              "h"
+            ],
+            "hle": [
+              "hle"
+            ],
+            "hyx": [
+              "hyx"
+            ]
+          }
+        ]
+      },
+      "parent_id": 5,
+      "child_ids": [
+        7
+      ]
+    },
+    {
+      "id": 7,
+      "tactic_text": "cases ys with\n| nil => _*_\n| cons z zs => _*_",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "y",
+            "type": "ℕ"
+          },
+          {
+            "name": "ys",
+            "type": "List ℕ"
+          },
+          {
+            "name": "ih",
+            "type": "sorted ys = true → sorted (insort x ys) = true"
+          },
+          {
+            "name": "h",
+            "type": "sorted (y :: ys) = true"
+          },
+          {
+            "name": "hle",
+            "type": "¬x ≤ y"
+          },
+          {
+            "name": "hyx",
+            "type": "y ≤ x"
+          }
+        ],
+        "goal": "sorted (y :: insort x ys) = true"
+      },
+      "output_obligations": [
+        {
+          "hypotheses": [
+            {
+              "name": "x",
+              "type": "ℕ"
+            },
+            {
+              "name": "y",
+              "type": "ℕ"
+            },
+            {
+              "name": "hle",
+              "type": "¬x ≤ y"
+            },
+            {
+              "name": "hyx",
+              "type": "y ≤ x"
+            },
+            {
+              "name": "ih",
+              "type": "sorted [] = true → sorted (insort x []) = true"
+            },
+            {
+              "name": "h",
+              "type": "sorted [y] = true"
+            }
+          ],
+          "goal": "sorted (y :: insort x []) = true"
+        },
+        {
+          "hypotheses": [
+            {
+              "name": "x",
+              "type": "ℕ"
+            },
+            {
+              "name": "y",
+              "type": "ℕ"
+            },
+            {
+              "name": "hle",
+              "type": "¬x ≤ y"
+            },
+            {
+              "name": "hyx",
+              "type": "y ≤ x"
+            },
+            {
+              "name": "z",
+              "type": "ℕ"
+            },
+            {
+              "name": "zs",
+              "type": "List ℕ"
+            },
+            {
+              "name": "ih",
+              "type": "sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true"
+            },
+            {
+              "name": "h",
+              "type": "sorted (y :: z :: zs) = true"
+            }
+          ],
+          "goal": "sorted (y :: insort x (z :: zs)) = true"
+        },
+        {
+          "hypotheses": [
+            {
+              "name": "x",
+              "type": "ℕ"
+            },
+            {
+              "name": "y",
+              "type": "ℕ"
+            },
+            {
+              "name": "hle",
+              "type": "¬x ≤ y"
+            },
+            {
+              "name": "hyx",
+              "type": "y ≤ x"
+            },
+            {
+              "name": "z",
+              "type": "ℕ"
+            },
+            {
+              "name": "zs",
+              "type": "List ℕ"
+            },
+            {
+              "name": "ih",
+              "type": "sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true"
+            },
+            {
+              "name": "hyz",
+              "type": "y ≤ z"
+            },
+            {
+              "name": "hzs",
+              "type": "sorted (z :: zs) = true"
+            },
+            {
+              "name": "hxz",
+              "type": "x ≤ z"
+            }
+          ],
+          "goal": "insort x (z :: zs) = x :: z :: zs"
+        },
+        {
+          "hypotheses": [
+            {
+              "name": "x",
+              "type": "ℕ"
+            },
+            {
+              "name": "y",
+              "type": "ℕ"
+            },
+            {
+              "name": "hle",
+              "type": "¬x ≤ y"
+            },
+            {
+              "name": "hyx",
+              "type": "y ≤ x"
+            },
+            {
+              "name": "z",
+              "type": "ℕ"
+            },
+            {
+              "name": "zs",
+              "type": "List ℕ"
+            },
+            {
+              "name": "ih",
+              "type": "sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true"
+            },
+            {
+              "name": "hyz",
+              "type": "y ≤ z"
+            },
+            {
+              "name": "hzs",
+              "type": "sorted (z :: zs) = true"
+            },
+            {
+              "name": "hxz",
+              "type": "¬x ≤ z"
+            }
+          ],
+          "goal": "insort x (z :: zs) = z :: insort x zs"
+        },
+        {
+          "hypotheses": [
+            {
+              "name": "x",
+              "type": "ℕ"
+            },
+            {
+              "name": "y",
+              "type": "ℕ"
+            },
+            {
+              "name": "hle",
+              "type": "¬x ≤ y"
+            },
+            {
+              "name": "hyx",
+              "type": "y ≤ x"
+            },
+            {
+              "name": "z",
+              "type": "ℕ"
+            },
+            {
+              "name": "zs",
+              "type": "List ℕ"
+            },
+            {
+              "name": "ih",
+              "type": "sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true"
+            },
+            {
+              "name": "hyz",
+              "type": "y ≤ z"
+            },
+            {
+              "name": "hzs",
+              "type": "sorted (z :: zs) = true"
+            },
+            {
+              "name": "hxz",
+              "type": "¬x ≤ z"
+            },
+            {
+              "name": "hins",
+              "type": "insort x (z :: zs) = z :: insort x zs"
+            }
+          ],
+          "goal": "sorted (z :: insort x zs) = true"
+        }
+      ],
+      "summary": {
+        "directly_used": [
+          "h",
+          "hyx",
+          "ih",
+          "x",
+          "ys"
+        ],
+        "dependency_maps": [
+          {
+            "x": [
+              "x"
+            ],
+            "y": [
+              "y"
+            ],
+            "hle": [
+              "hle"
+            ],
+            "hyx": [
+              "hyx"
+            ],
+            "ih": [
+              "x"
+            ],
+            "h": [
+              "y"
+            ]
+          },
+          {
+            "x": [
+              "x"
+            ],
+            "y": [
+              "y"
+            ],
+            "hle": [
+              "hle"
+            ],
+            "hyx": [
+              "hyx"
+            ],
+            "z": [
+              "h",
+              "hyx",
+              "ih",
+              "x",
+              "ys"
+            ],
+            "zs": [
+              "h",
+              "hyx",
+              "ih",
+              "x",
+              "ys"
+            ],
+            "ih": [
+              "x"
+            ],
+            "h": [
+              "y"
+            ]
+          },
+          {
+            "x": [
+              "x"
+            ],
+            "y": [
+              "y"
+            ],
+            "hle": [
+              "hle"
+            ],
+            "hyx": [
+              "hyx"
+            ],
+            "z": [
+              "h",
+              "hyx",
+              "ih",
+              "x",
+              "ys"
+            ],
+            "zs": [
+              "h",
+              "hyx",
+              "ih",
+              "x",
+              "ys"
+            ],
+            "ih": [
+              "x"
+            ],
+            "hyz": [
+              "y"
+            ],
+            "hzs": [
+              "h",
+              "hyx",
+              "ih",
+              "x",
+              "ys"
+            ],
+            "hxz": [
+              "x"
+            ]
+          },
+          {
+            "x": [
+              "x"
+            ],
+            "y": [
+              "y"
+            ],
+            "hle": [
+              "hle"
+            ],
+            "hyx": [
+              "hyx"
+            ],
+            "z": [
+              "h",
+              "hyx",
+              "ih",
+              "x",
+              "ys"
+            ],
+            "zs": [
+              "h",
+              "hyx",
+              "ih",
+              "x",
+              "ys"
+            ],
+            "ih": [
+              "x"
+            ],
+            "hyz": [
+              "y"
+            ],
+            "hzs": [
+              "h",
+              "hyx",
+              "ih",
+              "x",
+              "ys"
+            ],
+            "hxz": [
+              "x"
+            ]
+          },
+          {
+            "x": [
+              "x"
+            ],
+            "y": [
+              "y"
+            ],
+            "hle": [
+              "hle"
+            ],
+            "hyx": [
+              "hyx"
+            ],
+            "z": [
+              "h",
+              "hyx",
+              "ih",
+              "x",
+              "ys"
+            ],
+            "zs": [
+              "h",
+              "hyx",
+              "ih",
+              "x",
+              "ys"
+            ],
+            "ih": [
+              "x"
+            ],
+            "hyz": [
+              "y"
+            ],
+            "hzs": [
+              "h",
+              "hyx",
+              "ih",
+              "x",
+              "ys"
+            ],
+            "hxz": [
+              "x"
+            ],
+            "hins": [
+              "x"
+            ]
+          }
+        ]
+      },
+      "parent_id": 6,
+      "child_ids": [
+        8,
+        9,
+        14,
+        18,
+        19
+      ]
+    },
+    {
+      "id": 8,
+      "tactic_text": "simp [sorted, insort, hyx]",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "y",
+            "type": "ℕ"
+          },
+          {
+            "name": "hle",
+            "type": "¬x ≤ y"
+          },
+          {
+            "name": "hyx",
+            "type": "y ≤ x"
+          },
+          {
+            "name": "ih",
+            "type": "sorted [] = true → sorted (insort x []) = true"
+          },
+          {
+            "name": "h",
+            "type": "sorted [y] = true"
+          }
+        ],
+        "goal": "sorted (y :: insort x []) = true"
+      },
+      "output_obligations": [],
+      "summary": {
+        "directly_used": [
+          "hyx"
+        ],
+        "dependency_maps": []
+      },
+      "parent_id": 7,
+      "child_ids": []
+    },
+    {
+      "id": 9,
+      "tactic_text": "simp [sorted] at h",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "y",
+            "type": "ℕ"
+          },
+          {
+            "name": "hle",
+            "type": "¬x ≤ y"
+          },
+          {
+            "name": "hyx",
+            "type": "y ≤ x"
+          },
+          {
+            "name": "z",
+            "type": "ℕ"
+          },
+          {
+            "name": "zs",
+            "type": "List ℕ"
+          },
+          {
+            "name": "ih",
+            "type": "sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true"
+          },
+          {
+            "name": "h",
+            "type": "sorted (y :: z :: zs) = true"
+          }
+        ],
+        "goal": "sorted (y :: insort x (z :: zs)) = true"
+      },
+      "output_obligations": [
+        {
+          "hypotheses": [
+            {
+              "name": "x",
+              "type": "ℕ"
+            },
+            {
+              "name": "y",
+              "type": "ℕ"
+            },
+            {
+              "name": "hle",
+              "type": "¬x ≤ y"
+            },
+            {
+              "name": "hyx",
+              "type": "y ≤ x"
+            },
+            {
+              "name": "z",
+              "type": "ℕ"
+            },
+            {
+              "name": "zs",
+              "type": "List ℕ"
+            },
+            {
+              "name": "ih",
+              "type": "sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true"
+            },
+            {
+              "name": "h",
+              "type": "y ≤ z ∧ sorted (z :: zs) = true"
+            }
+          ],
+          "goal": "sorted (y :: insort x (z :: zs)) = true"
+        }
+      ],
+      "summary": {
+        "directly_used": [
+          "h"
+        ],
+        "dependency_maps": [
+          {
+            "x": [
+              "x"
+            ],
+            "y": [
+              "y"
+            ],
+            "hle": [
+              "hle"
+            ],
+            "hyx": [
+              "hyx"
+            ],
+            "z": [
+              "z"
+            ],
+            "zs": [
+              "zs"
+            ],
+            "ih": [
+              "ih"
+            ],
+            "h": [
+              "y",
+              "z",
+              "zs"
+            ]
+          }
+        ]
+      },
+      "parent_id": 7,
+      "child_ids": [
+        10
+      ]
+    },
+    {
+      "id": 10,
+      "tactic_text": "obtain ⟨hyz, hzs⟩ := h",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "y",
+            "type": "ℕ"
+          },
+          {
+            "name": "hle",
+            "type": "¬x ≤ y"
+          },
+          {
+            "name": "hyx",
+            "type": "y ≤ x"
+          },
+          {
+            "name": "z",
+            "type": "ℕ"
+          },
+          {
+            "name": "zs",
+            "type": "List ℕ"
+          },
+          {
+            "name": "ih",
+            "type": "sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true"
+          },
+          {
+            "name": "h",
+            "type": "y ≤ z ∧ sorted (z :: zs) = true"
+          }
+        ],
+        "goal": "sorted (y :: insort x (z :: zs)) = true"
+      },
+      "output_obligations": [
+        {
+          "hypotheses": [
+            {
+              "name": "x",
+              "type": "ℕ"
+            },
+            {
+              "name": "y",
+              "type": "ℕ"
+            },
+            {
+              "name": "hle",
+              "type": "¬x ≤ y"
+            },
+            {
+              "name": "hyx",
+              "type": "y ≤ x"
+            },
+            {
+              "name": "z",
+              "type": "ℕ"
+            },
+            {
+              "name": "zs",
+              "type": "List ℕ"
+            },
+            {
+              "name": "ih",
+              "type": "sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true"
+            },
+            {
+              "name": "hyz",
+              "type": "y ≤ z"
+            },
+            {
+              "name": "hzs",
+              "type": "sorted (z :: zs) = true"
+            }
+          ],
+          "goal": "sorted (y :: insort x (z :: zs)) = true"
+        }
+      ],
+      "summary": {
+        "directly_used": [
+          "h"
+        ],
+        "dependency_maps": [
+          {
+            "x": [
+              "x"
+            ],
+            "y": [
+              "y"
+            ],
+            "hle": [
+              "hle"
+            ],
+            "hyx": [
+              "hyx"
+            ],
+            "z": [
+              "z"
+            ],
+            "zs": [
+              "zs"
+            ],
+            "ih": [
+              "ih"
+            ],
+            "hyz": [
+              "y",
+              "z"
+            ],
+            "hzs": [
+              "z",
+              "zs"
+            ]
+          }
+        ]
+      },
+      "parent_id": 9,
+      "child_ids": [
+        11
+      ]
+    },
+    {
+      "id": 11,
+      "tactic_text": "by_cases hxz : x ≤ z",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "y",
+            "type": "ℕ"
+          },
+          {
+            "name": "hle",
+            "type": "¬x ≤ y"
+          },
+          {
+            "name": "hyx",
+            "type": "y ≤ x"
+          },
+          {
+            "name": "z",
+            "type": "ℕ"
+          },
+          {
+            "name": "zs",
+            "type": "List ℕ"
+          },
+          {
+            "name": "ih",
+            "type": "sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true"
+          },
+          {
+            "name": "hyz",
+            "type": "y ≤ z"
+          },
+          {
+            "name": "hzs",
+            "type": "sorted (z :: zs) = true"
+          }
+        ],
+        "goal": "sorted (y :: insort x (z :: zs)) = true"
+      },
+      "output_obligations": [
+        {
+          "hypotheses": [
+            {
+              "name": "x",
+              "type": "ℕ"
+            },
+            {
+              "name": "y",
+              "type": "ℕ"
+            },
+            {
+              "name": "hle",
+              "type": "¬x ≤ y"
+            },
+            {
+              "name": "hyx",
+              "type": "y ≤ x"
+            },
+            {
+              "name": "z",
+              "type": "ℕ"
+            },
+            {
+              "name": "zs",
+              "type": "List ℕ"
+            },
+            {
+              "name": "ih",
+              "type": "sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true"
+            },
+            {
+              "name": "hyz",
+              "type": "y ≤ z"
+            },
+            {
+              "name": "hzs",
+              "type": "sorted (z :: zs) = true"
+            },
+            {
+              "name": "hxz",
+              "type": "x ≤ z"
+            }
+          ],
+          "goal": "sorted (y :: insort x (z :: zs)) = true"
+        },
+        {
+          "hypotheses": [
+            {
+              "name": "x",
+              "type": "ℕ"
+            },
+            {
+              "name": "y",
+              "type": "ℕ"
+            },
+            {
+              "name": "hle",
+              "type": "¬x ≤ y"
+            },
+            {
+              "name": "hyx",
+              "type": "y ≤ x"
+            },
+            {
+              "name": "z",
+              "type": "ℕ"
+            },
+            {
+              "name": "zs",
+              "type": "List ℕ"
+            },
+            {
+              "name": "ih",
+              "type": "sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true"
+            },
+            {
+              "name": "hyz",
+              "type": "y ≤ z"
+            },
+            {
+              "name": "hzs",
+              "type": "sorted (z :: zs) = true"
+            },
+            {
+              "name": "hxz",
+              "type": "¬x ≤ z"
+            }
+          ],
+          "goal": "sorted (y :: insort x (z :: zs)) = true"
+        }
+      ],
+      "summary": {
+        "directly_used": [
+          "x",
+          "z"
+        ],
+        "dependency_maps": [
+          {
+            "x": [
+              "x"
+            ],
+            "y": [
+              "y"
+            ],
+            "hle": [
+              "hle"
+            ],
+            "hyx": [
+              "hyx"
+            ],
+            "z": [
+              "z"
+            ],
+            "zs": [
+              "zs"
+            ],
+            "ih": [
+              "ih"
+            ],
+            "hyz": [
+              "hyz"
+            ],
+            "hzs": [
+              "hzs"
+            ],
+            "hxz": [
+              "x",
+              "z"
+            ]
+          },
+          {
+            "x": [
+              "x"
+            ],
+            "y": [
+              "y"
+            ],
+            "hle": [
+              "hle"
+            ],
+            "hyx": [
+              "hyx"
+            ],
+            "z": [
+              "z"
+            ],
+            "zs": [
+              "zs"
+            ],
+            "ih": [
+              "ih"
+            ],
+            "hyz": [
+              "hyz"
+            ],
+            "hzs": [
+              "hzs"
+            ],
+            "hxz": [
+              "x",
+              "z"
+            ]
+          }
+        ]
+      },
+      "parent_id": 10,
+      "child_ids": [
+        12,
+        15
+      ]
+    },
+    {
+      "id": 12,
+      "tactic_text": "rw [show insort x (z :: zs) = x :: z :: zs from by simp [insort, hxz]]",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "y",
+            "type": "ℕ"
+          },
+          {
+            "name": "hle",
+            "type": "¬x ≤ y"
+          },
+          {
+            "name": "hyx",
+            "type": "y ≤ x"
+          },
+          {
+            "name": "z",
+            "type": "ℕ"
+          },
+          {
+            "name": "zs",
+            "type": "List ℕ"
+          },
+          {
+            "name": "ih",
+            "type": "sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true"
+          },
+          {
+            "name": "hyz",
+            "type": "y ≤ z"
+          },
+          {
+            "name": "hzs",
+            "type": "sorted (z :: zs) = true"
+          },
+          {
+            "name": "hxz",
+            "type": "x ≤ z"
+          }
+        ],
+        "goal": "sorted (y :: insort x (z :: zs)) = true"
+      },
+      "output_obligations": [
+        {
+          "hypotheses": [
+            {
+              "name": "x",
+              "type": "ℕ"
+            },
+            {
+              "name": "y",
+              "type": "ℕ"
+            },
+            {
+              "name": "hle",
+              "type": "¬x ≤ y"
+            },
+            {
+              "name": "hyx",
+              "type": "y ≤ x"
+            },
+            {
+              "name": "z",
+              "type": "ℕ"
+            },
+            {
+              "name": "zs",
+              "type": "List ℕ"
+            },
+            {
+              "name": "ih",
+              "type": "sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true"
+            },
+            {
+              "name": "hyz",
+              "type": "y ≤ z"
+            },
+            {
+              "name": "hzs",
+              "type": "sorted (z :: zs) = true"
+            },
+            {
+              "name": "hxz",
+              "type": "x ≤ z"
+            }
+          ],
+          "goal": "sorted (y :: x :: z :: zs) = true"
+        }
+      ],
+      "summary": {
+        "directly_used": [
+          "hxz",
+          "x",
+          "z",
+          "zs"
+        ],
+        "dependency_maps": [
+          {
+            "x": [
+              "x"
+            ],
+            "y": [
+              "y"
+            ],
+            "hle": [
+              "hle"
+            ],
+            "hyx": [
+              "hyx"
+            ],
+            "z": [
+              "z"
+            ],
+            "zs": [
+              "zs"
+            ],
+            "ih": [
+              "ih"
+            ],
+            "hyz": [
+              "hyz"
+            ],
+            "hzs": [
+              "hzs"
+            ],
+            "hxz": [
+              "hxz"
+            ]
+          }
+        ]
+      },
+      "parent_id": 11,
+      "child_ids": [
+        13
+      ]
+    },
+    {
+      "id": 13,
+      "tactic_text": "simp [sorted, hyx, hxz, hzs]",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "y",
+            "type": "ℕ"
+          },
+          {
+            "name": "hle",
+            "type": "¬x ≤ y"
+          },
+          {
+            "name": "hyx",
+            "type": "y ≤ x"
+          },
+          {
+            "name": "z",
+            "type": "ℕ"
+          },
+          {
+            "name": "zs",
+            "type": "List ℕ"
+          },
+          {
+            "name": "ih",
+            "type": "sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true"
+          },
+          {
+            "name": "hyz",
+            "type": "y ≤ z"
+          },
+          {
+            "name": "hzs",
+            "type": "sorted (z :: zs) = true"
+          },
+          {
+            "name": "hxz",
+            "type": "x ≤ z"
+          }
+        ],
+        "goal": "sorted (y :: x :: z :: zs) = true"
+      },
+      "output_obligations": [],
+      "summary": {
+        "directly_used": [
+          "hxz",
+          "hyx",
+          "hzs"
+        ],
+        "dependency_maps": []
+      },
+      "parent_id": 12,
+      "child_ids": []
+    },
+    {
+      "id": 14,
+      "tactic_text": "simp [insort, hxz]",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "y",
+            "type": "ℕ"
+          },
+          {
+            "name": "hle",
+            "type": "¬x ≤ y"
+          },
+          {
+            "name": "hyx",
+            "type": "y ≤ x"
+          },
+          {
+            "name": "z",
+            "type": "ℕ"
+          },
+          {
+            "name": "zs",
+            "type": "List ℕ"
+          },
+          {
+            "name": "ih",
+            "type": "sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true"
+          },
+          {
+            "name": "hyz",
+            "type": "y ≤ z"
+          },
+          {
+            "name": "hzs",
+            "type": "sorted (z :: zs) = true"
+          },
+          {
+            "name": "hxz",
+            "type": "x ≤ z"
+          }
+        ],
+        "goal": "insort x (z :: zs) = x :: z :: zs"
+      },
+      "output_obligations": [],
+      "summary": {
+        "directly_used": [
+          "hxz"
+        ],
+        "dependency_maps": []
+      },
+      "parent_id": 7,
+      "child_ids": []
+    },
+    {
+      "id": 15,
+      "tactic_text": "have hins : insort x (z :: zs) = z :: insort x zs := by simp [insort, hxz]",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "y",
+            "type": "ℕ"
+          },
+          {
+            "name": "hle",
+            "type": "¬x ≤ y"
+          },
+          {
+            "name": "hyx",
+            "type": "y ≤ x"
+          },
+          {
+            "name": "z",
+            "type": "ℕ"
+          },
+          {
+            "name": "zs",
+            "type": "List ℕ"
+          },
+          {
+            "name": "ih",
+            "type": "sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true"
+          },
+          {
+            "name": "hyz",
+            "type": "y ≤ z"
+          },
+          {
+            "name": "hzs",
+            "type": "sorted (z :: zs) = true"
+          },
+          {
+            "name": "hxz",
+            "type": "¬x ≤ z"
+          }
+        ],
+        "goal": "sorted (y :: insort x (z :: zs)) = true"
+      },
+      "output_obligations": [
+        {
+          "hypotheses": [
+            {
+              "name": "x",
+              "type": "ℕ"
+            },
+            {
+              "name": "y",
+              "type": "ℕ"
+            },
+            {
+              "name": "hle",
+              "type": "¬x ≤ y"
+            },
+            {
+              "name": "hyx",
+              "type": "y ≤ x"
+            },
+            {
+              "name": "z",
+              "type": "ℕ"
+            },
+            {
+              "name": "zs",
+              "type": "List ℕ"
+            },
+            {
+              "name": "ih",
+              "type": "sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true"
+            },
+            {
+              "name": "hyz",
+              "type": "y ≤ z"
+            },
+            {
+              "name": "hzs",
+              "type": "sorted (z :: zs) = true"
+            },
+            {
+              "name": "hxz",
+              "type": "¬x ≤ z"
+            },
+            {
+              "name": "hins",
+              "type": "insort x (z :: zs) = z :: insort x zs"
+            }
+          ],
+          "goal": "sorted (y :: insort x (z :: zs)) = true"
+        }
+      ],
+      "summary": {
+        "directly_used": [
+          "hxz",
+          "x",
+          "z",
+          "zs"
+        ],
+        "dependency_maps": [
+          {
+            "x": [
+              "x"
+            ],
+            "y": [
+              "y"
+            ],
+            "hle": [
+              "hle"
+            ],
+            "hyx": [
+              "hyx"
+            ],
+            "z": [
+              "z"
+            ],
+            "zs": [
+              "zs"
+            ],
+            "ih": [
+              "ih"
+            ],
+            "hyz": [
+              "hyz"
+            ],
+            "hzs": [
+              "hzs"
+            ],
+            "hxz": [
+              "hxz"
+            ],
+            "hins": [
+              "x",
+              "z",
+              "zs"
+            ]
+          }
+        ]
+      },
+      "parent_id": 11,
+      "child_ids": [
+        16
+      ]
+    },
+    {
+      "id": 16,
+      "tactic_text": "rw [hins]",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "y",
+            "type": "ℕ"
+          },
+          {
+            "name": "hle",
+            "type": "¬x ≤ y"
+          },
+          {
+            "name": "hyx",
+            "type": "y ≤ x"
+          },
+          {
+            "name": "z",
+            "type": "ℕ"
+          },
+          {
+            "name": "zs",
+            "type": "List ℕ"
+          },
+          {
+            "name": "ih",
+            "type": "sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true"
+          },
+          {
+            "name": "hyz",
+            "type": "y ≤ z"
+          },
+          {
+            "name": "hzs",
+            "type": "sorted (z :: zs) = true"
+          },
+          {
+            "name": "hxz",
+            "type": "¬x ≤ z"
+          },
+          {
+            "name": "hins",
+            "type": "insort x (z :: zs) = z :: insort x zs"
+          }
+        ],
+        "goal": "sorted (y :: insort x (z :: zs)) = true"
+      },
+      "output_obligations": [
+        {
+          "hypotheses": [
+            {
+              "name": "x",
+              "type": "ℕ"
+            },
+            {
+              "name": "y",
+              "type": "ℕ"
+            },
+            {
+              "name": "hle",
+              "type": "¬x ≤ y"
+            },
+            {
+              "name": "hyx",
+              "type": "y ≤ x"
+            },
+            {
+              "name": "z",
+              "type": "ℕ"
+            },
+            {
+              "name": "zs",
+              "type": "List ℕ"
+            },
+            {
+              "name": "ih",
+              "type": "sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true"
+            },
+            {
+              "name": "hyz",
+              "type": "y ≤ z"
+            },
+            {
+              "name": "hzs",
+              "type": "sorted (z :: zs) = true"
+            },
+            {
+              "name": "hxz",
+              "type": "¬x ≤ z"
+            },
+            {
+              "name": "hins",
+              "type": "insort x (z :: zs) = z :: insort x zs"
+            }
+          ],
+          "goal": "sorted (y :: z :: insort x zs) = true"
+        }
+      ],
+      "summary": {
+        "directly_used": [
+          "hins"
+        ],
+        "dependency_maps": [
+          {
+            "x": [
+              "x"
+            ],
+            "y": [
+              "y"
+            ],
+            "hle": [
+              "hle"
+            ],
+            "hyx": [
+              "hyx"
+            ],
+            "z": [
+              "z"
+            ],
+            "zs": [
+              "zs"
+            ],
+            "ih": [
+              "ih"
+            ],
+            "hyz": [
+              "hyz"
+            ],
+            "hzs": [
+              "hzs"
+            ],
+            "hxz": [
+              "hxz"
+            ],
+            "hins": [
+              "hins"
+            ]
+          }
+        ]
+      },
+      "parent_id": 15,
+      "child_ids": [
+        17
+      ]
+    },
+    {
+      "id": 17,
+      "tactic_text": "simp [sorted, hyz, show sorted (z :: insort x zs) = true from by rw [← hins]; exact ih hzs]",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "y",
+            "type": "ℕ"
+          },
+          {
+            "name": "hle",
+            "type": "¬x ≤ y"
+          },
+          {
+            "name": "hyx",
+            "type": "y ≤ x"
+          },
+          {
+            "name": "z",
+            "type": "ℕ"
+          },
+          {
+            "name": "zs",
+            "type": "List ℕ"
+          },
+          {
+            "name": "ih",
+            "type": "sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true"
+          },
+          {
+            "name": "hyz",
+            "type": "y ≤ z"
+          },
+          {
+            "name": "hzs",
+            "type": "sorted (z :: zs) = true"
+          },
+          {
+            "name": "hxz",
+            "type": "¬x ≤ z"
+          },
+          {
+            "name": "hins",
+            "type": "insort x (z :: zs) = z :: insort x zs"
+          }
+        ],
+        "goal": "sorted (y :: z :: insort x zs) = true"
+      },
+      "output_obligations": [],
+      "summary": {
+        "directly_used": [
+          "hins",
+          "hyz",
+          "hzs",
+          "ih",
+          "x",
+          "z",
+          "zs"
+        ],
+        "dependency_maps": []
+      },
+      "parent_id": 16,
+      "child_ids": []
+    },
+    {
+      "id": 18,
+      "tactic_text": "simp [insort, hxz]",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "y",
+            "type": "ℕ"
+          },
+          {
+            "name": "hle",
+            "type": "¬x ≤ y"
+          },
+          {
+            "name": "hyx",
+            "type": "y ≤ x"
+          },
+          {
+            "name": "z",
+            "type": "ℕ"
+          },
+          {
+            "name": "zs",
+            "type": "List ℕ"
+          },
+          {
+            "name": "ih",
+            "type": "sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true"
+          },
+          {
+            "name": "hyz",
+            "type": "y ≤ z"
+          },
+          {
+            "name": "hzs",
+            "type": "sorted (z :: zs) = true"
+          },
+          {
+            "name": "hxz",
+            "type": "¬x ≤ z"
+          }
+        ],
+        "goal": "insort x (z :: zs) = z :: insort x zs"
+      },
+      "output_obligations": [],
+      "summary": {
+        "directly_used": [
+          "hxz"
+        ],
+        "dependency_maps": []
+      },
+      "parent_id": 7,
+      "child_ids": []
+    },
+    {
+      "id": 19,
+      "tactic_text": "rw [← hins]",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "y",
+            "type": "ℕ"
+          },
+          {
+            "name": "hle",
+            "type": "¬x ≤ y"
+          },
+          {
+            "name": "hyx",
+            "type": "y ≤ x"
+          },
+          {
+            "name": "z",
+            "type": "ℕ"
+          },
+          {
+            "name": "zs",
+            "type": "List ℕ"
+          },
+          {
+            "name": "ih",
+            "type": "sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true"
+          },
+          {
+            "name": "hyz",
+            "type": "y ≤ z"
+          },
+          {
+            "name": "hzs",
+            "type": "sorted (z :: zs) = true"
+          },
+          {
+            "name": "hxz",
+            "type": "¬x ≤ z"
+          },
+          {
+            "name": "hins",
+            "type": "insort x (z :: zs) = z :: insort x zs"
+          }
+        ],
+        "goal": "sorted (z :: insort x zs) = true"
+      },
+      "output_obligations": [
+        {
+          "hypotheses": [
+            {
+              "name": "x",
+              "type": "ℕ"
+            },
+            {
+              "name": "y",
+              "type": "ℕ"
+            },
+            {
+              "name": "hle",
+              "type": "¬x ≤ y"
+            },
+            {
+              "name": "hyx",
+              "type": "y ≤ x"
+            },
+            {
+              "name": "z",
+              "type": "ℕ"
+            },
+            {
+              "name": "zs",
+              "type": "List ℕ"
+            },
+            {
+              "name": "ih",
+              "type": "sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true"
+            },
+            {
+              "name": "hyz",
+              "type": "y ≤ z"
+            },
+            {
+              "name": "hzs",
+              "type": "sorted (z :: zs) = true"
+            },
+            {
+              "name": "hxz",
+              "type": "¬x ≤ z"
+            },
+            {
+              "name": "hins",
+              "type": "insort x (z :: zs) = z :: insort x zs"
+            }
+          ],
+          "goal": "sorted (insort x (z :: zs)) = true"
+        }
+      ],
+      "summary": {
+        "directly_used": [
+          "hins"
+        ],
+        "dependency_maps": [
+          {
+            "x": [
+              "x"
+            ],
+            "y": [
+              "y"
+            ],
+            "hle": [
+              "hle"
+            ],
+            "hyx": [
+              "hyx"
+            ],
+            "z": [
+              "z"
+            ],
+            "zs": [
+              "zs"
+            ],
+            "ih": [
+              "ih"
+            ],
+            "hyz": [
+              "hyz"
+            ],
+            "hzs": [
+              "hzs"
+            ],
+            "hxz": [
+              "hxz"
+            ],
+            "hins": [
+              "hins"
+            ]
+          }
+        ]
+      },
+      "parent_id": 7,
+      "child_ids": [
+        20
+      ]
+    },
+    {
+      "id": 20,
+      "tactic_text": "exact ih hzs",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "x",
+            "type": "ℕ"
+          },
+          {
+            "name": "y",
+            "type": "ℕ"
+          },
+          {
+            "name": "hle",
+            "type": "¬x ≤ y"
+          },
+          {
+            "name": "hyx",
+            "type": "y ≤ x"
+          },
+          {
+            "name": "z",
+            "type": "ℕ"
+          },
+          {
+            "name": "zs",
+            "type": "List ℕ"
+          },
+          {
+            "name": "ih",
+            "type": "sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true"
+          },
+          {
+            "name": "hyz",
+            "type": "y ≤ z"
+          },
+          {
+            "name": "hzs",
+            "type": "sorted (z :: zs) = true"
+          },
+          {
+            "name": "hxz",
+            "type": "¬x ≤ z"
+          },
+          {
+            "name": "hins",
+            "type": "insort x (z :: zs) = z :: insort x zs"
+          }
+        ],
+        "goal": "sorted (insort x (z :: zs)) = true"
+      },
+      "output_obligations": [],
+      "summary": {
+        "directly_used": [
+          "hzs",
+          "ih"
+        ],
+        "dependency_maps": []
+      },
+      "parent_id": 19,
+      "child_ids": []
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+[1/4] Building POG...
+[info] welcome to sbt 1.10.1 (JetBrains s.r.o. Java 21.0.6)
+[info] loading project definition from /nas/lemma-disc/scala-core/project
+[info] loading settings for project scala-core from build.sbt ...
+[info] set current project to scala-core (in build file:/nas/lemma-disc/scala-core/)
+[info] running Serializer /tmp/lemma_trace_P7LeYM.json /tmp/lemma_pog_IPP5rx.json
+[success] Total time: 1 s, completed Jun 4, 2026, 12:40:57 AM
+[2/4] Enumerating fragments...
+[info] welcome to sbt 1.10.1 (JetBrains s.r.o. Java 21.0.6)
+[info] loading project definition from /nas/lemma-disc/scala-core/project
+[info] loading settings for project scala-core from build.sbt ...
+[info] set current project to scala-core (in build file:/nas/lemma-disc/scala-core/)
+[info] running Serializer --timeout 60000 /tmp/lemma_pog_IPP5rx.json /tmp/lemma_segments_2iiKI6.json
+[success] Total time: 2 s, completed Jun 4, 2026, 12:41:02 AM
+[2/4] Got 10 fragment(s).
+[3/4] Running support minimization...
+[info] welcome to sbt 1.10.1 (JetBrains s.r.o. Java 21.0.6)
+[info] loading project definition from /nas/lemma-disc/scala-core/project
+[info] loading settings for project scala-core from build.sbt ...
+[info] set current project to scala-core (in build file:/nas/lemma-disc/scala-core/)
+[info] running Serializer /tmp/lemma_segments_2iiKI6.json /tmp/lemma_out_Pq0voL.json
+[success] Total time: 1 s, completed Jun 4, 2026, 12:41:08 AM
+[4/4] Deduplicating lemmas...
+Deduplicated: 10 → 6 lemmas (4 dropped)
+[4/4] Lemmas    written to /nas/lemma-disc/data/lemma_counts_pog/prop_14_lemmas_pog.json
+[4/4] Fragments written to /nas/lemma-disc/data/lemma_counts_pog/prop_14_lemmas_pog.fragments.json
+--- 6 lemma statement(s) ---
+[0] prop_14: filter p (xs ++ ys) = filter p xs ++ filter p ys
+[1] prop_14: (h1 : (if p x = true then x :: filter p (xs ++ ys) else filter p (xs ++ ys)) =) : filter p (x :: xs ++ ys) = filter p (x :: xs) ++ filter p ys
+[2] prop_14: (h1 : filter p (xs ++ ys) = filter p xs ++ filter p ys) : x :: filter p (xs ++ ys) = x :: filter p xs ++ filter p ys
+[3] prop_14: (ih : filter p (xs ++ ys) = filter p xs ++ filter p ys) : filter p (x :: xs ++ ys) = filter p (x :: xs) ++ filter p ys
+[4] prop_14: (ih : filter p (xs ++ ys) = filter p xs ++ filter p ys) : x :: filter p (xs ++ ys) = x :: filter p xs ++ filter p ys
+[5] prop_14: (ih : filter p (xs ++ ys) = filter p xs ++ filter p ys) : (if p x = true then x :: filter p (xs ++ ys) else filter p (xs ++ ys)) =

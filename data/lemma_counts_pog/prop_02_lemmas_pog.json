@@ -1,0 +1,119 @@
+{
+  "lemmas": [
+    {
+      "fragment_id": 0,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_02.json",
+      "decl_name": "prop_02",
+      "premises": [],
+      "body": "True",
+      "conclusion": "count n xs + count n ys = count n (xs ++ ys)",
+      "statement": "count n xs + count n ys = count n (xs ++ ys)"
+    },
+    {
+      "fragment_id": 1,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_02.json",
+      "decl_name": "prop_02",
+      "premises": [
+        "ys : List ℕ",
+        "x : ℕ",
+        "xs : List ℕ",
+        "n : ℕ"
+      ],
+      "body": "count n (x :: xs) + count n ys = count n (x :: (xs ++ ys))",
+      "conclusion": "count n (x :: xs) + count n ys = count n (x :: xs ++ ys)",
+      "statement": "(ys : List ℕ) (x : ℕ) (xs : List ℕ) (n : ℕ) (h1 : count n (x :: xs) + count n ys = count n (x :: (xs ++ ys))) : count n (x :: xs) + count n ys = count n (x :: xs ++ ys)"
+    },
+    {
+      "fragment_id": 2,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_02.json",
+      "decl_name": "prop_02",
+      "premises": [],
+      "body": "(if n = x then count n xs + 1 else count n xs) + count n ys =",
+      "conclusion": "count n (x :: xs) + count n ys = count n (x :: (xs ++ ys))",
+      "statement": "(h1 : (if n = x then count n xs + 1 else count n xs) + count n ys =) : count n (x :: xs) + count n ys = count n (x :: (xs ++ ys))"
+    },
+    {
+      "fragment_id": 3,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_02.json",
+      "decl_name": "prop_02",
+      "premises": [
+        "ys : List ℕ",
+        "x : ℕ",
+        "xs : List ℕ",
+        "n : ℕ"
+      ],
+      "body": "(if n = x then count n xs + 1 else count n xs) + count n ys =",
+      "conclusion": "count n (x :: xs) + count n ys = count n (x :: xs ++ ys)",
+      "statement": "(ys : List ℕ) (x : ℕ) (xs : List ℕ) (n : ℕ) (h1 : (if n = x then count n xs + 1 else count n xs) + count n ys =) : count n (x :: xs) + count n ys = count n (x :: xs ++ ys)"
+    },
+    {
+      "fragment_id": 4,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_02.json",
+      "decl_name": "prop_02",
+      "premises": [
+        "ih : ∀ (n : ℕ), count n xs + count n ys = count n (xs ++ ys)",
+        "n : ℕ"
+      ],
+      "body": "(h' : count n xs + count n ys = count n (xs ++ ys)) → count n (x :: xs) + count n ys = count n (x :: xs ++ ys)",
+      "conclusion": "count n (x :: xs) + count n ys = count n (x :: xs ++ ys)",
+      "statement": "(ih : ∀ (n : ℕ), count n xs + count n ys = count n (xs ++ ys)) (n : ℕ) (h' : count n xs + count n ys = count n (xs ++ ys)) (h1 : count n (x :: xs) + count n ys = count n (x :: xs ++ ys)) : count n (x :: xs) + count n ys = count n (x :: xs ++ ys)"
+    },
+    {
+      "fragment_id": 5,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_02.json",
+      "decl_name": "prop_02",
+      "premises": [
+        "ys : List ℕ",
+        "x : ℕ",
+        "xs : List ℕ",
+        "ih : ∀ (n : ℕ), count n xs + count n ys = count n (xs ++ ys)",
+        "n : ℕ"
+      ],
+      "body": "True",
+      "conclusion": "count n (x :: xs) + count n ys = count n (x :: xs ++ ys)",
+      "statement": "(ys : List ℕ) (x : ℕ) (xs : List ℕ) (ih : ∀ (n : ℕ), count n xs + count n ys = count n (xs ++ ys)) (n : ℕ) : count n (x :: xs) + count n ys = count n (x :: xs ++ ys)"
+    },
+    {
+      "fragment_id": 6,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_02.json",
+      "decl_name": "prop_02",
+      "premises": [
+        "ih : ∀ (n : ℕ), count n xs + count n ys = count n (xs ++ ys)",
+        "n : ℕ"
+      ],
+      "body": "True",
+      "conclusion": "count n (x :: xs) + count n ys = count n (x :: xs ++ ys)",
+      "statement": "(ih : ∀ (n : ℕ), count n xs + count n ys = count n (xs ++ ys)) (n : ℕ) : count n (x :: xs) + count n ys = count n (x :: xs ++ ys)"
+    },
+    {
+      "fragment_id": 7,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_02.json",
+      "decl_name": "prop_02",
+      "premises": [
+        "ys : List ℕ",
+        "x : ℕ",
+        "xs : List ℕ",
+        "ih : ∀ (n : ℕ), count n xs + count n ys = count n (xs ++ ys)",
+        "n : ℕ"
+      ],
+      "body": "True",
+      "conclusion": "(if n = x then count n xs + 1 else count n xs) + count n ys =",
+      "statement": "(ys : List ℕ) (x : ℕ) (xs : List ℕ) (ih : ∀ (n : ℕ), count n xs + count n ys = count n (xs ++ ys)) (n : ℕ) : (if n = x then count n xs + 1 else count n xs) + count n ys ="
+    },
+    {
+      "fragment_id": 8,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_02.json",
+      "decl_name": "prop_02",
+      "premises": [
+        "ys : List ℕ",
+        "x : ℕ",
+        "xs : List ℕ",
+        "ih : ∀ (n : ℕ), count n xs + count n ys = count n (xs ++ ys)",
+        "n : ℕ"
+      ],
+      "body": "True",
+      "conclusion": "count n (x :: xs) + count n ys = count n (x :: (xs ++ ys))",
+      "statement": "(ys : List ℕ) (x : ℕ) (xs : List ℕ) (ih : ∀ (n : ℕ), count n xs + count n ys = count n (xs ++ ys)) (n : ℕ) : count n (x :: xs) + count n ys = count n (x :: (xs ++ ys))"
+    }
+  ]
+}

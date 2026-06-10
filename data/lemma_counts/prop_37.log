@@ -1,0 +1,16 @@
+[1/3] Enumerating fragments (limit=200, strategy=random)...
+Warning: no valid fragments found.
+Wrote 0 fragment(s) to /tmp/lemma_fragments_doHcJs.json
+[1/3] Got 0 fragment(s).
+[2/3] Running support minimization...
+[info] welcome to sbt 1.10.1 (JetBrains s.r.o. Java 21.0.6)
+[info] loading project definition from /nas/lemma-disc/scala-core/project
+[info] loading settings for project scala-core from build.sbt ...
+[info] set current project to scala-core (in build file:/nas/lemma-disc/scala-core/)
+[info] running Serializer /tmp/lemma_fragments_doHcJs.json /tmp/lemma_out_F5YX4v.json
+[success] Total time: 1 s, completed Jun 4, 2026, 12:18:16 AM
+[3/3] Deduplicating lemmas...
+Deduplicated: 0 → 0 lemmas (0 dropped)
+[3/3] Lemmas    written to /nas/lemma-disc/data/lemma_counts/prop_37_lemmas.json
+[3/3] Fragments written to /nas/lemma-disc/data/lemma_counts/prop_37_lemmas.fragments.json
+--- 0 lemma statement(s) ---

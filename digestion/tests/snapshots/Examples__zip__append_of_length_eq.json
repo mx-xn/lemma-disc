@@ -1,0 +1,1660 @@
+{
+  "name": "zip'_append_of_length_eq",
+  "statement": "lemma zip'_append_of_length_eq {α β : Type _}\n    (xs as : List α) (ys bs : List β)\n    (h : List.length xs = List.length ys) :\n    zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs) :=",
+  "root_tactic_id": 0,
+  "tactic_nodes": [
+    {
+      "id": 0,
+      "tactic_text": "induction xs generalizing ys with\n| nil => _*_\n| cons x xs ih => _*_",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "α",
+            "type": "Type u_1"
+          },
+          {
+            "name": "β",
+            "type": "Type u_2"
+          },
+          {
+            "name": "xs",
+            "type": "List α"
+          },
+          {
+            "name": "as",
+            "type": "List α"
+          },
+          {
+            "name": "ys",
+            "type": "List β"
+          },
+          {
+            "name": "bs",
+            "type": "List β"
+          },
+          {
+            "name": "h",
+            "type": "xs.length = ys.length"
+          }
+        ],
+        "goal": "zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+      },
+      "output_obligations": [
+        {
+          "hypotheses": [
+            {
+              "name": "α",
+              "type": "Type u_1"
+            },
+            {
+              "name": "β",
+              "type": "Type u_2"
+            },
+            {
+              "name": "as",
+              "type": "List α"
+            },
+            {
+              "name": "bs",
+              "type": "List β"
+            },
+            {
+              "name": "ys",
+              "type": "List β"
+            },
+            {
+              "name": "h",
+              "type": "[].length = ys.length"
+            }
+          ],
+          "goal": "zip' [] ys ++ zip' as bs = zip' ([] ++ as) (ys ++ bs)"
+        },
+        {
+          "hypotheses": [
+            {
+              "name": "α",
+              "type": "Type u_1"
+            },
+            {
+              "name": "β",
+              "type": "Type u_2"
+            },
+            {
+              "name": "as",
+              "type": "List α"
+            },
+            {
+              "name": "bs",
+              "type": "List β"
+            },
+            {
+              "name": "x",
+              "type": "α"
+            },
+            {
+              "name": "xs",
+              "type": "List α"
+            },
+            {
+              "name": "ih",
+              "type": "∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+            },
+            {
+              "name": "ys",
+              "type": "List β"
+            },
+            {
+              "name": "h",
+              "type": "(x :: xs).length = ys.length"
+            }
+          ],
+          "goal": "zip' (x :: xs) ys ++ zip' as bs = zip' (x :: xs ++ as) (ys ++ bs)"
+        }
+      ],
+      "summary": {
+        "directly_used": [
+          "h",
+          "xs",
+          "ys"
+        ],
+        "dependency_maps": [
+          {
+            "α": [
+              "α"
+            ],
+            "β": [
+              "β"
+            ],
+            "as": [
+              "as"
+            ],
+            "bs": [
+              "bs"
+            ],
+            "ys": [
+              "ys"
+            ],
+            "h": [
+              "ys"
+            ]
+          },
+          {
+            "α": [
+              "α"
+            ],
+            "β": [
+              "β"
+            ],
+            "as": [
+              "as"
+            ],
+            "bs": [
+              "bs"
+            ],
+            "x": [
+              "α"
+            ],
+            "xs": [
+              "xs"
+            ],
+            "ih": [
+              "ys",
+              "β",
+              "xs",
+              "as",
+              "bs"
+            ],
+            "ys": [
+              "ys"
+            ],
+            "h": [
+              "ys",
+              "xs"
+            ]
+          }
+        ]
+      },
+      "parent_id": null,
+      "child_ids": [
+        1,
+        4
+      ]
+    },
+    {
+      "id": 1,
+      "tactic_text": "match ys, h with\n| [], _ => _*_\n| _ :: _, h => _*_",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "α",
+            "type": "Type u_1"
+          },
+          {
+            "name": "β",
+            "type": "Type u_2"
+          },
+          {
+            "name": "as",
+            "type": "List α"
+          },
+          {
+            "name": "bs",
+            "type": "List β"
+          },
+          {
+            "name": "ys",
+            "type": "List β"
+          },
+          {
+            "name": "h",
+            "type": "[].length = ys.length"
+          }
+        ],
+        "goal": "zip' [] ys ++ zip' as bs = zip' ([] ++ as) (ys ++ bs)"
+      },
+      "output_obligations": [
+        {
+          "hypotheses": [
+            {
+              "name": "α",
+              "type": "Type u_1"
+            },
+            {
+              "name": "β",
+              "type": "Type u_2"
+            },
+            {
+              "name": "as",
+              "type": "List α"
+            },
+            {
+              "name": "bs",
+              "type": "List β"
+            },
+            {
+              "name": "ys",
+              "type": "List β"
+            },
+            {
+              "name": "h",
+              "type": "[].length = ys.length"
+            },
+            {
+              "name": "x✝",
+              "type": "[].length = [].length"
+            }
+          ],
+          "goal": "zip' [] [] ++ zip' as bs = zip' ([] ++ as) ([] ++ bs)"
+        },
+        {
+          "hypotheses": [
+            {
+              "name": "α",
+              "type": "Type u_1"
+            },
+            {
+              "name": "β",
+              "type": "Type u_2"
+            },
+            {
+              "name": "as",
+              "type": "List α"
+            },
+            {
+              "name": "bs",
+              "type": "List β"
+            },
+            {
+              "name": "ys",
+              "type": "List β"
+            },
+            {
+              "name": "h✝",
+              "type": "[].length = ys.length"
+            },
+            {
+              "name": "head✝",
+              "type": "β"
+            },
+            {
+              "name": "tail✝",
+              "type": "List β"
+            },
+            {
+              "name": "h",
+              "type": "[].length = (head✝ :: tail✝).length"
+            }
+          ],
+          "goal": "zip' [] (head✝ :: tail✝) ++ zip' as bs = zip' ([] ++ as) (head✝ :: tail✝ ++ bs)"
+        }
+      ],
+      "summary": {
+        "directly_used": [
+          "h",
+          "ys"
+        ],
+        "dependency_maps": [
+          {
+            "α": [
+              "α"
+            ],
+            "β": [
+              "β"
+            ],
+            "as": [
+              "as"
+            ],
+            "bs": [
+              "bs"
+            ],
+            "ys": [
+              "ys"
+            ],
+            "h": [
+              "h"
+            ],
+            "x✝": [
+              "h",
+              "ys"
+            ]
+          },
+          {
+            "α": [
+              "α"
+            ],
+            "β": [
+              "β"
+            ],
+            "as": [
+              "as"
+            ],
+            "bs": [
+              "bs"
+            ],
+            "ys": [
+              "ys"
+            ],
+            "h✝": [
+              "ys"
+            ],
+            "head✝": [
+              "β"
+            ],
+            "tail✝": [
+              "β"
+            ],
+            "h": [
+              "h",
+              "ys"
+            ]
+          }
+        ]
+      },
+      "parent_id": 0,
+      "child_ids": [
+        2,
+        3
+      ]
+    },
+    {
+      "id": 2,
+      "tactic_text": "rfl",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "α",
+            "type": "Type u_1"
+          },
+          {
+            "name": "β",
+            "type": "Type u_2"
+          },
+          {
+            "name": "as",
+            "type": "List α"
+          },
+          {
+            "name": "bs",
+            "type": "List β"
+          },
+          {
+            "name": "ys",
+            "type": "List β"
+          },
+          {
+            "name": "h",
+            "type": "[].length = ys.length"
+          },
+          {
+            "name": "x✝",
+            "type": "[].length = [].length"
+          }
+        ],
+        "goal": "zip' [] [] ++ zip' as bs = zip' ([] ++ as) ([] ++ bs)"
+      },
+      "output_obligations": [],
+      "summary": {
+        "directly_used": [],
+        "dependency_maps": []
+      },
+      "parent_id": 1,
+      "child_ids": []
+    },
+    {
+      "id": 3,
+      "tactic_text": "simp [List.length_nil, List.length_cons] at h",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "α",
+            "type": "Type u_1"
+          },
+          {
+            "name": "β",
+            "type": "Type u_2"
+          },
+          {
+            "name": "as",
+            "type": "List α"
+          },
+          {
+            "name": "bs",
+            "type": "List β"
+          },
+          {
+            "name": "ys",
+            "type": "List β"
+          },
+          {
+            "name": "h✝",
+            "type": "[].length = ys.length"
+          },
+          {
+            "name": "head✝",
+            "type": "β"
+          },
+          {
+            "name": "tail✝",
+            "type": "List β"
+          },
+          {
+            "name": "h",
+            "type": "[].length = (head✝ :: tail✝).length"
+          }
+        ],
+        "goal": "zip' [] (head✝ :: tail✝) ++ zip' as bs = zip' ([] ++ as) (head✝ :: tail✝ ++ bs)"
+      },
+      "output_obligations": [],
+      "summary": {
+        "directly_used": [
+          "h"
+        ],
+        "dependency_maps": []
+      },
+      "parent_id": 1,
+      "child_ids": []
+    },
+    {
+      "id": 4,
+      "tactic_text": "match ys, h with\n| [], h => _*_\n| y :: ys, h => _*_",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "α",
+            "type": "Type u_1"
+          },
+          {
+            "name": "β",
+            "type": "Type u_2"
+          },
+          {
+            "name": "as",
+            "type": "List α"
+          },
+          {
+            "name": "bs",
+            "type": "List β"
+          },
+          {
+            "name": "x",
+            "type": "α"
+          },
+          {
+            "name": "xs",
+            "type": "List α"
+          },
+          {
+            "name": "ih",
+            "type": "∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+          },
+          {
+            "name": "ys",
+            "type": "List β"
+          },
+          {
+            "name": "h",
+            "type": "(x :: xs).length = ys.length"
+          }
+        ],
+        "goal": "zip' (x :: xs) ys ++ zip' as bs = zip' (x :: xs ++ as) (ys ++ bs)"
+      },
+      "output_obligations": [
+        {
+          "hypotheses": [
+            {
+              "name": "α",
+              "type": "Type u_1"
+            },
+            {
+              "name": "β",
+              "type": "Type u_2"
+            },
+            {
+              "name": "as",
+              "type": "List α"
+            },
+            {
+              "name": "bs",
+              "type": "List β"
+            },
+            {
+              "name": "x",
+              "type": "α"
+            },
+            {
+              "name": "xs",
+              "type": "List α"
+            },
+            {
+              "name": "ih",
+              "type": "∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+            },
+            {
+              "name": "ys",
+              "type": "List β"
+            },
+            {
+              "name": "h✝",
+              "type": "(x :: xs).length = ys.length"
+            },
+            {
+              "name": "h",
+              "type": "(x :: xs).length = [].length"
+            }
+          ],
+          "goal": "zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)"
+        },
+        {
+          "hypotheses": [
+            {
+              "name": "α",
+              "type": "Type u_1"
+            },
+            {
+              "name": "β",
+              "type": "Type u_2"
+            },
+            {
+              "name": "as",
+              "type": "List α"
+            },
+            {
+              "name": "bs",
+              "type": "List β"
+            },
+            {
+              "name": "x",
+              "type": "α"
+            },
+            {
+              "name": "xs",
+              "type": "List α"
+            },
+            {
+              "name": "ih",
+              "type": "∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+            },
+            {
+              "name": "ys✝",
+              "type": "List β"
+            },
+            {
+              "name": "h✝",
+              "type": "(x :: xs).length = ys✝.length"
+            },
+            {
+              "name": "y",
+              "type": "β"
+            },
+            {
+              "name": "ys",
+              "type": "List β"
+            },
+            {
+              "name": "h",
+              "type": "(x :: xs).length = (y :: ys).length"
+            }
+          ],
+          "goal": "zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)"
+        },
+        {
+          "hypotheses": [
+            {
+              "name": "α",
+              "type": "Type u_1"
+            },
+            {
+              "name": "β",
+              "type": "Type u_2"
+            },
+            {
+              "name": "as",
+              "type": "List α"
+            },
+            {
+              "name": "bs",
+              "type": "List β"
+            },
+            {
+              "name": "x",
+              "type": "α"
+            },
+            {
+              "name": "xs",
+              "type": "List α"
+            },
+            {
+              "name": "ih",
+              "type": "∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+            },
+            {
+              "name": "ys✝",
+              "type": "List β"
+            },
+            {
+              "name": "h✝",
+              "type": "(x :: xs).length = ys✝.length"
+            },
+            {
+              "name": "y",
+              "type": "β"
+            },
+            {
+              "name": "ys",
+              "type": "List β"
+            },
+            {
+              "name": "h",
+              "type": "(x :: xs).length = (y :: ys).length"
+            }
+          ],
+          "goal": "xs.length = ys.length"
+        }
+      ],
+      "summary": {
+        "directly_used": [
+          "h",
+          "ih",
+          "xs",
+          "ys"
+        ],
+        "dependency_maps": [
+          {
+            "α": [
+              "α"
+            ],
+            "β": [
+              "β"
+            ],
+            "as": [
+              "as"
+            ],
+            "bs": [
+              "bs"
+            ],
+            "x": [
+              "x"
+            ],
+            "xs": [
+              "xs"
+            ],
+            "ih": [
+              "ih"
+            ],
+            "ys": [
+              "ys"
+            ],
+            "h✝": [
+              "ys",
+              "xs",
+              "x"
+            ],
+            "h": [
+              "xs",
+              "x"
+            ]
+          },
+          {
+            "α": [
+              "α"
+            ],
+            "β": [
+              "β"
+            ],
+            "as": [
+              "as"
+            ],
+            "bs": [
+              "bs"
+            ],
+            "x": [
+              "x"
+            ],
+            "xs": [
+              "xs"
+            ],
+            "ih": [
+              "ih"
+            ],
+            "ys✝": [
+              "β"
+            ],
+            "h✝": [
+              "ys",
+              "xs",
+              "x"
+            ],
+            "y": [
+              "β"
+            ],
+            "ys": [
+              "ys"
+            ],
+            "h": [
+              "ys",
+              "xs",
+              "x"
+            ]
+          },
+          {
+            "α": [
+              "α"
+            ],
+            "β": [
+              "β"
+            ],
+            "as": [
+              "as"
+            ],
+            "bs": [
+              "bs"
+            ],
+            "x": [
+              "x"
+            ],
+            "xs": [
+              "xs"
+            ],
+            "ih": [
+              "ih"
+            ],
+            "ys✝": [
+              "β"
+            ],
+            "h✝": [
+              "ys",
+              "xs",
+              "x"
+            ],
+            "y": [
+              "β"
+            ],
+            "ys": [
+              "ys"
+            ],
+            "h": [
+              "ys",
+              "xs",
+              "x"
+            ]
+          }
+        ]
+      },
+      "parent_id": 0,
+      "child_ids": [
+        5,
+        6,
+        10
+      ]
+    },
+    {
+      "id": 5,
+      "tactic_text": "simp [List.length_cons, List.length_nil] at h",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "α",
+            "type": "Type u_1"
+          },
+          {
+            "name": "β",
+            "type": "Type u_2"
+          },
+          {
+            "name": "as",
+            "type": "List α"
+          },
+          {
+            "name": "bs",
+            "type": "List β"
+          },
+          {
+            "name": "x",
+            "type": "α"
+          },
+          {
+            "name": "xs",
+            "type": "List α"
+          },
+          {
+            "name": "ih",
+            "type": "∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+          },
+          {
+            "name": "ys",
+            "type": "List β"
+          },
+          {
+            "name": "h✝",
+            "type": "(x :: xs).length = ys.length"
+          },
+          {
+            "name": "h",
+            "type": "(x :: xs).length = [].length"
+          }
+        ],
+        "goal": "zip' (x :: xs) [] ++ zip' as bs = zip' (x :: xs ++ as) ([] ++ bs)"
+      },
+      "output_obligations": [],
+      "summary": {
+        "directly_used": [
+          "h"
+        ],
+        "dependency_maps": []
+      },
+      "parent_id": 4,
+      "child_ids": []
+    },
+    {
+      "id": 6,
+      "tactic_text": "have h' : List.length xs = List.length ys := by\n  rw [List.length_cons, List.length_cons] at h\n  exact Nat.succ.inj h",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "α",
+            "type": "Type u_1"
+          },
+          {
+            "name": "β",
+            "type": "Type u_2"
+          },
+          {
+            "name": "as",
+            "type": "List α"
+          },
+          {
+            "name": "bs",
+            "type": "List β"
+          },
+          {
+            "name": "x",
+            "type": "α"
+          },
+          {
+            "name": "xs",
+            "type": "List α"
+          },
+          {
+            "name": "ih",
+            "type": "∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+          },
+          {
+            "name": "ys✝",
+            "type": "List β"
+          },
+          {
+            "name": "h✝",
+            "type": "(x :: xs).length = ys✝.length"
+          },
+          {
+            "name": "y",
+            "type": "β"
+          },
+          {
+            "name": "ys",
+            "type": "List β"
+          },
+          {
+            "name": "h",
+            "type": "(x :: xs).length = (y :: ys).length"
+          }
+        ],
+        "goal": "zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)"
+      },
+      "output_obligations": [
+        {
+          "hypotheses": [
+            {
+              "name": "α",
+              "type": "Type u_1"
+            },
+            {
+              "name": "β",
+              "type": "Type u_2"
+            },
+            {
+              "name": "as",
+              "type": "List α"
+            },
+            {
+              "name": "bs",
+              "type": "List β"
+            },
+            {
+              "name": "x",
+              "type": "α"
+            },
+            {
+              "name": "xs",
+              "type": "List α"
+            },
+            {
+              "name": "ih",
+              "type": "∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+            },
+            {
+              "name": "ys✝",
+              "type": "List β"
+            },
+            {
+              "name": "h✝",
+              "type": "(x :: xs).length = ys✝.length"
+            },
+            {
+              "name": "y",
+              "type": "β"
+            },
+            {
+              "name": "ys",
+              "type": "List β"
+            },
+            {
+              "name": "h",
+              "type": "(x :: xs).length = (y :: ys).length"
+            },
+            {
+              "name": "h'",
+              "type": "xs.length = ys.length"
+            }
+          ],
+          "goal": "zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)"
+        }
+      ],
+      "summary": {
+        "directly_used": [
+          "h",
+          "xs",
+          "ys"
+        ],
+        "dependency_maps": [
+          {
+            "α": [
+              "α"
+            ],
+            "β": [
+              "β"
+            ],
+            "as": [
+              "as"
+            ],
+            "bs": [
+              "bs"
+            ],
+            "x": [
+              "x"
+            ],
+            "xs": [
+              "xs"
+            ],
+            "ih": [
+              "ih"
+            ],
+            "ys✝": [
+              "ys✝"
+            ],
+            "h✝": [
+              "h✝"
+            ],
+            "y": [
+              "y"
+            ],
+            "ys": [
+              "ys"
+            ],
+            "h": [
+              "h"
+            ],
+            "h'": [
+              "ys",
+              "xs"
+            ]
+          }
+        ]
+      },
+      "parent_id": 4,
+      "child_ids": [
+        7
+      ]
+    },
+    {
+      "id": 7,
+      "tactic_text": "rw [zip'_cons, List.cons_append]",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "α",
+            "type": "Type u_1"
+          },
+          {
+            "name": "β",
+            "type": "Type u_2"
+          },
+          {
+            "name": "as",
+            "type": "List α"
+          },
+          {
+            "name": "bs",
+            "type": "List β"
+          },
+          {
+            "name": "x",
+            "type": "α"
+          },
+          {
+            "name": "xs",
+            "type": "List α"
+          },
+          {
+            "name": "ih",
+            "type": "∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+          },
+          {
+            "name": "ys✝",
+            "type": "List β"
+          },
+          {
+            "name": "h✝",
+            "type": "(x :: xs).length = ys✝.length"
+          },
+          {
+            "name": "y",
+            "type": "β"
+          },
+          {
+            "name": "ys",
+            "type": "List β"
+          },
+          {
+            "name": "h",
+            "type": "(x :: xs).length = (y :: ys).length"
+          },
+          {
+            "name": "h'",
+            "type": "xs.length = ys.length"
+          }
+        ],
+        "goal": "zip' (x :: xs) (y :: ys) ++ zip' as bs = zip' (x :: xs ++ as) (y :: ys ++ bs)"
+      },
+      "output_obligations": [
+        {
+          "hypotheses": [
+            {
+              "name": "α",
+              "type": "Type u_1"
+            },
+            {
+              "name": "β",
+              "type": "Type u_2"
+            },
+            {
+              "name": "as",
+              "type": "List α"
+            },
+            {
+              "name": "bs",
+              "type": "List β"
+            },
+            {
+              "name": "x",
+              "type": "α"
+            },
+            {
+              "name": "xs",
+              "type": "List α"
+            },
+            {
+              "name": "ih",
+              "type": "∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+            },
+            {
+              "name": "ys✝",
+              "type": "List β"
+            },
+            {
+              "name": "h✝",
+              "type": "(x :: xs).length = ys✝.length"
+            },
+            {
+              "name": "y",
+              "type": "β"
+            },
+            {
+              "name": "ys",
+              "type": "List β"
+            },
+            {
+              "name": "h",
+              "type": "(x :: xs).length = (y :: ys).length"
+            },
+            {
+              "name": "h'",
+              "type": "xs.length = ys.length"
+            }
+          ],
+          "goal": "(x, y) :: (zip' xs ys ++ zip' as bs) = zip' (x :: xs ++ as) (y :: ys ++ bs)"
+        }
+      ],
+      "summary": {
+        "directly_used": [],
+        "dependency_maps": [
+          {
+            "α": [
+              "α"
+            ],
+            "β": [
+              "β"
+            ],
+            "as": [
+              "as"
+            ],
+            "bs": [
+              "bs"
+            ],
+            "x": [
+              "x"
+            ],
+            "xs": [
+              "xs"
+            ],
+            "ih": [
+              "ih"
+            ],
+            "ys✝": [
+              "ys✝"
+            ],
+            "h✝": [
+              "h✝"
+            ],
+            "y": [
+              "y"
+            ],
+            "ys": [
+              "ys"
+            ],
+            "h": [
+              "h"
+            ],
+            "h'": [
+              "h'"
+            ]
+          }
+        ]
+      },
+      "parent_id": 6,
+      "child_ids": [
+        8
+      ]
+    },
+    {
+      "id": 8,
+      "tactic_text": "rw [List.cons_append, List.cons_append, zip'_cons]",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "α",
+            "type": "Type u_1"
+          },
+          {
+            "name": "β",
+            "type": "Type u_2"
+          },
+          {
+            "name": "as",
+            "type": "List α"
+          },
+          {
+            "name": "bs",
+            "type": "List β"
+          },
+          {
+            "name": "x",
+            "type": "α"
+          },
+          {
+            "name": "xs",
+            "type": "List α"
+          },
+          {
+            "name": "ih",
+            "type": "∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+          },
+          {
+            "name": "ys✝",
+            "type": "List β"
+          },
+          {
+            "name": "h✝",
+            "type": "(x :: xs).length = ys✝.length"
+          },
+          {
+            "name": "y",
+            "type": "β"
+          },
+          {
+            "name": "ys",
+            "type": "List β"
+          },
+          {
+            "name": "h",
+            "type": "(x :: xs).length = (y :: ys).length"
+          },
+          {
+            "name": "h'",
+            "type": "xs.length = ys.length"
+          }
+        ],
+        "goal": "(x, y) :: (zip' xs ys ++ zip' as bs) = zip' (x :: xs ++ as) (y :: ys ++ bs)"
+      },
+      "output_obligations": [
+        {
+          "hypotheses": [
+            {
+              "name": "α",
+              "type": "Type u_1"
+            },
+            {
+              "name": "β",
+              "type": "Type u_2"
+            },
+            {
+              "name": "as",
+              "type": "List α"
+            },
+            {
+              "name": "bs",
+              "type": "List β"
+            },
+            {
+              "name": "x",
+              "type": "α"
+            },
+            {
+              "name": "xs",
+              "type": "List α"
+            },
+            {
+              "name": "ih",
+              "type": "∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+            },
+            {
+              "name": "ys✝",
+              "type": "List β"
+            },
+            {
+              "name": "h✝",
+              "type": "(x :: xs).length = ys✝.length"
+            },
+            {
+              "name": "y",
+              "type": "β"
+            },
+            {
+              "name": "ys",
+              "type": "List β"
+            },
+            {
+              "name": "h",
+              "type": "(x :: xs).length = (y :: ys).length"
+            },
+            {
+              "name": "h'",
+              "type": "xs.length = ys.length"
+            }
+          ],
+          "goal": "(x, y) :: (zip' xs ys ++ zip' as bs) = (x, y) :: zip' (xs ++ as) (ys ++ bs)"
+        }
+      ],
+      "summary": {
+        "directly_used": [],
+        "dependency_maps": [
+          {
+            "α": [
+              "α"
+            ],
+            "β": [
+              "β"
+            ],
+            "as": [
+              "as"
+            ],
+            "bs": [
+              "bs"
+            ],
+            "x": [
+              "x"
+            ],
+            "xs": [
+              "xs"
+            ],
+            "ih": [
+              "ih"
+            ],
+            "ys✝": [
+              "ys✝"
+            ],
+            "h✝": [
+              "h✝"
+            ],
+            "y": [
+              "y"
+            ],
+            "ys": [
+              "ys"
+            ],
+            "h": [
+              "h"
+            ],
+            "h'": [
+              "h'"
+            ]
+          }
+        ]
+      },
+      "parent_id": 7,
+      "child_ids": [
+        9
+      ]
+    },
+    {
+      "id": 9,
+      "tactic_text": "rw [ih ys h']",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "α",
+            "type": "Type u_1"
+          },
+          {
+            "name": "β",
+            "type": "Type u_2"
+          },
+          {
+            "name": "as",
+            "type": "List α"
+          },
+          {
+            "name": "bs",
+            "type": "List β"
+          },
+          {
+            "name": "x",
+            "type": "α"
+          },
+          {
+            "name": "xs",
+            "type": "List α"
+          },
+          {
+            "name": "ih",
+            "type": "∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+          },
+          {
+            "name": "ys✝",
+            "type": "List β"
+          },
+          {
+            "name": "h✝",
+            "type": "(x :: xs).length = ys✝.length"
+          },
+          {
+            "name": "y",
+            "type": "β"
+          },
+          {
+            "name": "ys",
+            "type": "List β"
+          },
+          {
+            "name": "h",
+            "type": "(x :: xs).length = (y :: ys).length"
+          },
+          {
+            "name": "h'",
+            "type": "xs.length = ys.length"
+          }
+        ],
+        "goal": "(x, y) :: (zip' xs ys ++ zip' as bs) = (x, y) :: zip' (xs ++ as) (ys ++ bs)"
+      },
+      "output_obligations": [],
+      "summary": {
+        "directly_used": [
+          "h'",
+          "ih",
+          "ys"
+        ],
+        "dependency_maps": []
+      },
+      "parent_id": 8,
+      "child_ids": []
+    },
+    {
+      "id": 10,
+      "tactic_text": "rw [List.length_cons, List.length_cons] at h",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "α",
+            "type": "Type u_1"
+          },
+          {
+            "name": "β",
+            "type": "Type u_2"
+          },
+          {
+            "name": "as",
+            "type": "List α"
+          },
+          {
+            "name": "bs",
+            "type": "List β"
+          },
+          {
+            "name": "x",
+            "type": "α"
+          },
+          {
+            "name": "xs",
+            "type": "List α"
+          },
+          {
+            "name": "ih",
+            "type": "∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+          },
+          {
+            "name": "ys✝",
+            "type": "List β"
+          },
+          {
+            "name": "h✝",
+            "type": "(x :: xs).length = ys✝.length"
+          },
+          {
+            "name": "y",
+            "type": "β"
+          },
+          {
+            "name": "ys",
+            "type": "List β"
+          },
+          {
+            "name": "h",
+            "type": "(x :: xs).length = (y :: ys).length"
+          }
+        ],
+        "goal": "xs.length = ys.length"
+      },
+      "output_obligations": [
+        {
+          "hypotheses": [
+            {
+              "name": "α",
+              "type": "Type u_1"
+            },
+            {
+              "name": "β",
+              "type": "Type u_2"
+            },
+            {
+              "name": "as",
+              "type": "List α"
+            },
+            {
+              "name": "bs",
+              "type": "List β"
+            },
+            {
+              "name": "x",
+              "type": "α"
+            },
+            {
+              "name": "xs",
+              "type": "List α"
+            },
+            {
+              "name": "ih",
+              "type": "∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+            },
+            {
+              "name": "ys✝",
+              "type": "List β"
+            },
+            {
+              "name": "h✝",
+              "type": "(x :: xs).length = ys✝.length"
+            },
+            {
+              "name": "y",
+              "type": "β"
+            },
+            {
+              "name": "ys",
+              "type": "List β"
+            },
+            {
+              "name": "h",
+              "type": "xs.length + 1 = ys.length + 1"
+            }
+          ],
+          "goal": "xs.length = ys.length"
+        }
+      ],
+      "summary": {
+        "directly_used": [
+          "h"
+        ],
+        "dependency_maps": [
+          {
+            "α": [
+              "α"
+            ],
+            "β": [
+              "β"
+            ],
+            "as": [
+              "as"
+            ],
+            "bs": [
+              "bs"
+            ],
+            "x": [
+              "x"
+            ],
+            "xs": [
+              "xs"
+            ],
+            "ih": [
+              "ih"
+            ],
+            "ys✝": [
+              "ys✝"
+            ],
+            "h✝": [
+              "h✝"
+            ],
+            "y": [
+              "y"
+            ],
+            "ys": [
+              "ys"
+            ],
+            "h": [
+              "ys",
+              "xs"
+            ]
+          }
+        ]
+      },
+      "parent_id": 4,
+      "child_ids": [
+        11
+      ]
+    },
+    {
+      "id": 11,
+      "tactic_text": "exact Nat.succ.inj h",
+      "input_obligation": {
+        "hypotheses": [
+          {
+            "name": "α",
+            "type": "Type u_1"
+          },
+          {
+            "name": "β",
+            "type": "Type u_2"
+          },
+          {
+            "name": "as",
+            "type": "List α"
+          },
+          {
+            "name": "bs",
+            "type": "List β"
+          },
+          {
+            "name": "x",
+            "type": "α"
+          },
+          {
+            "name": "xs",
+            "type": "List α"
+          },
+          {
+            "name": "ih",
+            "type": "∀ (ys : List β), xs.length = ys.length → zip' xs ys ++ zip' as bs = zip' (xs ++ as) (ys ++ bs)"
+          },
+          {
+            "name": "ys✝",
+            "type": "List β"
+          },
+          {
+            "name": "h✝",
+            "type": "(x :: xs).length = ys✝.length"
+          },
+          {
+            "name": "y",
+            "type": "β"
+          },
+          {
+            "name": "ys",
+            "type": "List β"
+          },
+          {
+            "name": "h",
+            "type": "xs.length + 1 = ys.length + 1"
+          }
+        ],
+        "goal": "xs.length = ys.length"
+      },
+      "output_obligations": [],
+      "summary": {
+        "directly_used": [
+          "h"
+        ],
+        "dependency_maps": []
+      },
+      "parent_id": 10,
+      "child_ids": []
+    }
+  ]
+}

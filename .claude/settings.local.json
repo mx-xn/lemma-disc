@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(conda run -n lemma python -c ' *)",
+      "Bash(sed -n '55,75p' /nas/conda-envs/lemma/lib/python3.14/site-packages/lean_dojo_v2/lean_dojo/data_extraction/ast.py)",
+      "Read(//nas/conda-envs/lemma/lib/python3.14/site-packages/lean_dojo_v2/lean_dojo/data_extraction/**)"
+    ]
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "lemmas": [
+    {
+      "fragment_id": 0,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [
+        "n : ℕ"
+      ],
+      "body": "True",
+      "conclusion": "drop n (drop (m + 1) []) = drop (n + (m + 1)) []",
+      "statement": "(n : ℕ) : drop n (drop (m + 1) []) = drop (n + (m + 1)) []"
+    },
+    {
+      "fragment_id": 1,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [
+        "ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs",
+        "xs : List α"
+      ],
+      "body": "True",
+      "conclusion": "drop n (drop (m + 0).succ (x :: xs)) = drop (n + m).succ (x :: xs)",
+      "statement": "(ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) (xs : List α) : drop n (drop (m + 0).succ (x :: xs)) = drop (n + m).succ (x :: xs)"
+    },
+    {
+      "fragment_id": 2,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [
+        "ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs",
+        "xs : List α"
+      ],
+      "body": "True",
+      "conclusion": "drop n (drop (m + 1) (x :: xs)) = drop (n + (m + 1)) (x :: xs)",
+      "statement": "(ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) (xs : List α) : drop n (drop (m + 1) (x :: xs)) = drop (n + (m + 1)) (x :: xs)"
+    },
+    {
+      "fragment_id": 3,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [
+        "n : ℕ"
+      ],
+      "body": "True",
+      "conclusion": "drop n [] = []",
+      "statement": "(n : ℕ) : drop n [] = []"
+    },
+    {
+      "fragment_id": 4,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [],
+      "body": "drop n (drop m xs) = drop (n + m) xs",
+      "conclusion": "drop n (drop (m + 1) (x :: xs)) = drop (n + (m + 1)) (x :: xs)",
+      "statement": "(h1 : drop n (drop m xs) = drop (n + m) xs) : drop n (drop (m + 1) (x :: xs)) = drop (n + (m + 1)) (x :: xs)"
+    },
+    {
+      "fragment_id": 5,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [
+        "n : ℕ",
+        "ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs",
+        "xs : List α"
+      ],
+      "body": "True",
+      "conclusion": "drop n (drop (m + 1) xs) = drop (n + (m + 1)) xs",
+      "statement": "(n : ℕ) (ih : ∀ (xs : List α), drop n (drop m xs) = drop (n + m) xs) (xs : List α) : drop n (drop (m + 1) xs) = drop (n + (m + 1)) xs"
+    },
+    {
+      "fragment_id": 6,
+      "source_file": "/nas/lemma-disc/digestion/tests/snapshots/Examples__prop_56.json",
+      "decl_name": "prop_56",
+      "premises": [
+        "n : ℕ",
+        "m : ℕ",
+        "xs : List α"
+      ],
+      "body": "True",
+      "conclusion": "drop n (drop m xs) = drop (n + m) xs",
+      "statement": "(n : ℕ) (m : ℕ) (xs : List α) : drop n (drop m xs) = drop (n + m) xs"
+    }
+  ]
+}

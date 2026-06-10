@@ -1,0 +1,2454 @@
+{
+  "fragments": [
+    {
+      "fragment_id": 0,
+      "source_file": "digestion/tests/snapshots/Examples__prop_58.json",
+      "decl_name": "prop_58",
+      "root_node_id": 4,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "α",
+            "type": "Type u_1"
+          },
+          {
+            "name": "β",
+            "type": "Type u_2"
+          },
+          {
+            "name": "n",
+            "type": "ℕ"
+          },
+          {
+            "name": "ih",
+            "type": "∀ (xs : List α) (ys : List β), drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)"
+          },
+          {
+            "name": "ys",
+            "type": "List β"
+          },
+          {
+            "name": "x",
+            "type": "α"
+          },
+          {
+            "name": "xs",
+            "type": "List α"
+          }
+        ],
+        "goal": "drop (n + 1) (zip' (x :: xs) ys) = zip' (drop (n + 1) (x :: xs)) (drop (n + 1) ys)"
+      },
+      "nodes": [
+        {
+          "id": 4,
+          "kind": "node",
+          "tactic_text": "cases ys with\n| nil => _*_\n| cons y ys => _*_",
+          "parent_id": null,
+          "child_ids": [
+            5,
+            7
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "β",
+                "type": "Type u_2"
+              },
+              {
+                "name": "n",
+                "type": "ℕ"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (xs : List α) (ys : List β), drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)"
+              },
+              {
+                "name": "ys",
+                "type": "List β"
+              },
+              {
+                "name": "x",
+                "type": "α"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              }
+            ],
+            "goal": "drop (n + 1) (zip' (x :: xs) ys) = zip' (drop (n + 1) (x :: xs)) (drop (n + 1) ys)"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "β",
+                  "type": "Type u_2"
+                },
+                {
+                  "name": "n",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "ih",
+                  "type": "∀ (xs : List α) (ys : List β), drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)"
+                },
+                {
+                  "name": "x",
+                  "type": "α"
+                },
+                {
+                  "name": "xs",
+                  "type": "List α"
+                }
+              ],
+              "goal": "drop (n + 1) (zip' (x :: xs) []) = zip' (drop (n + 1) (x :: xs)) (drop (n + 1) [])"
+            },
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "β",
+                  "type": "Type u_2"
+                },
+                {
+                  "name": "n",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "ih",
+                  "type": "∀ (xs : List α) (ys : List β), drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)"
+                },
+                {
+                  "name": "x",
+                  "type": "α"
+                },
+                {
+                  "name": "xs",
+                  "type": "List α"
+                },
+                {
+                  "name": "y",
+                  "type": "β"
+                },
+                {
+                  "name": "ys",
+                  "type": "List β"
+                }
+              ],
+              "goal": "drop (n + 1) (zip' (x :: xs) (y :: ys)) = zip' (drop (n + 1) (x :: xs)) (drop (n + 1) (y :: ys))"
+            }
+          ],
+          "summary": {
+            "directly_used": [
+              "ih",
+              "n",
+              "xs",
+              "ys"
+            ],
+            "dependency_maps": [
+              {
+                "α": [
+                  "α"
+                ],
+                "β": [
+                  "β"
+                ],
+                "n": [
+                  "n"
+                ],
+                "ih": [
+                  "ih"
+                ],
+                "x": [
+                  "x"
+                ],
+                "xs": [
+                  "xs"
+                ]
+              },
+              {
+                "α": [
+                  "α"
+                ],
+                "β": [
+                  "β"
+                ],
+                "n": [
+                  "n"
+                ],
+                "ih": [
+                  "ih"
+                ],
+                "x": [
+                  "x"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "y": [
+                  "β"
+                ],
+                "ys": [
+                  "ys"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 5,
+          "kind": "node",
+          "tactic_text": "simp [zip', drop]",
+          "parent_id": 4,
+          "child_ids": [
+            6
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "β",
+                "type": "Type u_2"
+              },
+              {
+                "name": "n",
+                "type": "ℕ"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (xs : List α) (ys : List β), drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)"
+              },
+              {
+                "name": "x",
+                "type": "α"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              }
+            ],
+            "goal": "drop (n + 1) (zip' (x :: xs) []) = zip' (drop (n + 1) (x :: xs)) (drop (n + 1) [])"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "β",
+                  "type": "Type u_2"
+                },
+                {
+                  "name": "n",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "ih",
+                  "type": "∀ (xs : List α) (ys : List β), drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)"
+                },
+                {
+                  "name": "x",
+                  "type": "α"
+                },
+                {
+                  "name": "xs",
+                  "type": "List α"
+                }
+              ],
+              "goal": "zip' (drop n xs) [] = []"
+            }
+          ],
+          "summary": {
+            "directly_used": [],
+            "dependency_maps": [
+              {
+                "α": [
+                  "α"
+                ],
+                "β": [
+                  "β"
+                ],
+                "n": [
+                  "n"
+                ],
+                "ih": [
+                  "ih"
+                ],
+                "x": [
+                  "x"
+                ],
+                "xs": [
+                  "xs"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 6,
+          "kind": "leaf",
+          "tactic_text": "cases drop n xs <;> rfl",
+          "parent_id": 5,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "β",
+                "type": "Type u_2"
+              },
+              {
+                "name": "n",
+                "type": "ℕ"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (xs : List α) (ys : List β), drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)"
+              },
+              {
+                "name": "x",
+                "type": "α"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              }
+            ],
+            "goal": "zip' (drop n xs) [] = []"
+          },
+          "summary": {
+            "directly_used": [
+              "n",
+              "xs"
+            ],
+            "dependency_maps": []
+          }
+        },
+        {
+          "id": 7,
+          "kind": "node",
+          "tactic_text": "simp only [zip', drop]",
+          "parent_id": 4,
+          "child_ids": [
+            8
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "β",
+                "type": "Type u_2"
+              },
+              {
+                "name": "n",
+                "type": "ℕ"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (xs : List α) (ys : List β), drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)"
+              },
+              {
+                "name": "x",
+                "type": "α"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              },
+              {
+                "name": "y",
+                "type": "β"
+              },
+              {
+                "name": "ys",
+                "type": "List β"
+              }
+            ],
+            "goal": "drop (n + 1) (zip' (x :: xs) (y :: ys)) = zip' (drop (n + 1) (x :: xs)) (drop (n + 1) (y :: ys))"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "β",
+                  "type": "Type u_2"
+                },
+                {
+                  "name": "n",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "ih",
+                  "type": "∀ (xs : List α) (ys : List β), drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)"
+                },
+                {
+                  "name": "x",
+                  "type": "α"
+                },
+                {
+                  "name": "xs",
+                  "type": "List α"
+                },
+                {
+                  "name": "y",
+                  "type": "β"
+                },
+                {
+                  "name": "ys",
+                  "type": "List β"
+                }
+              ],
+              "goal": "drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)"
+            }
+          ],
+          "summary": {
+            "directly_used": [],
+            "dependency_maps": [
+              {
+                "α": [
+                  "α"
+                ],
+                "β": [
+                  "β"
+                ],
+                "n": [
+                  "n"
+                ],
+                "ih": [
+                  "ih"
+                ],
+                "x": [
+                  "x"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "y": [
+                  "y"
+                ],
+                "ys": [
+                  "ys"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 8,
+          "kind": "leaf",
+          "tactic_text": "exact ih xs ys",
+          "parent_id": 7,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "β",
+                "type": "Type u_2"
+              },
+              {
+                "name": "n",
+                "type": "ℕ"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (xs : List α) (ys : List β), drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)"
+              },
+              {
+                "name": "x",
+                "type": "α"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              },
+              {
+                "name": "y",
+                "type": "β"
+              },
+              {
+                "name": "ys",
+                "type": "List β"
+              }
+            ],
+            "goal": "drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)"
+          },
+          "summary": {
+            "directly_used": [
+              "ih",
+              "xs",
+              "ys"
+            ],
+            "dependency_maps": []
+          }
+        }
+      ]
+    },
+    {
+      "fragment_id": 1,
+      "source_file": "digestion/tests/snapshots/Examples__prop_58.json",
+      "decl_name": "prop_58",
+      "root_node_id": 5,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "α",
+            "type": "Type u_1"
+          },
+          {
+            "name": "β",
+            "type": "Type u_2"
+          },
+          {
+            "name": "n",
+            "type": "ℕ"
+          },
+          {
+            "name": "ih",
+            "type": "∀ (xs : List α) (ys : List β), drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)"
+          },
+          {
+            "name": "x",
+            "type": "α"
+          },
+          {
+            "name": "xs",
+            "type": "List α"
+          }
+        ],
+        "goal": "drop (n + 1) (zip' (x :: xs) []) = zip' (drop (n + 1) (x :: xs)) (drop (n + 1) [])"
+      },
+      "nodes": [
+        {
+          "id": 5,
+          "kind": "node",
+          "tactic_text": "simp [zip', drop]",
+          "parent_id": null,
+          "child_ids": [
+            6
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "β",
+                "type": "Type u_2"
+              },
+              {
+                "name": "n",
+                "type": "ℕ"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (xs : List α) (ys : List β), drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)"
+              },
+              {
+                "name": "x",
+                "type": "α"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              }
+            ],
+            "goal": "drop (n + 1) (zip' (x :: xs) []) = zip' (drop (n + 1) (x :: xs)) (drop (n + 1) [])"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "β",
+                  "type": "Type u_2"
+                },
+                {
+                  "name": "n",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "ih",
+                  "type": "∀ (xs : List α) (ys : List β), drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)"
+                },
+                {
+                  "name": "x",
+                  "type": "α"
+                },
+                {
+                  "name": "xs",
+                  "type": "List α"
+                }
+              ],
+              "goal": "zip' (drop n xs) [] = []"
+            }
+          ],
+          "summary": {
+            "directly_used": [],
+            "dependency_maps": [
+              {
+                "α": [
+                  "α"
+                ],
+                "β": [
+                  "β"
+                ],
+                "n": [
+                  "n"
+                ],
+                "ih": [
+                  "ih"
+                ],
+                "x": [
+                  "x"
+                ],
+                "xs": [
+                  "xs"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 6,
+          "kind": "leaf",
+          "tactic_text": "cases drop n xs <;> rfl",
+          "parent_id": 5,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "β",
+                "type": "Type u_2"
+              },
+              {
+                "name": "n",
+                "type": "ℕ"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (xs : List α) (ys : List β), drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)"
+              },
+              {
+                "name": "x",
+                "type": "α"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              }
+            ],
+            "goal": "zip' (drop n xs) [] = []"
+          },
+          "summary": {
+            "directly_used": [
+              "n",
+              "xs"
+            ],
+            "dependency_maps": []
+          }
+        }
+      ]
+    },
+    {
+      "fragment_id": 2,
+      "source_file": "digestion/tests/snapshots/Examples__prop_58.json",
+      "decl_name": "prop_58",
+      "root_node_id": 7,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "α",
+            "type": "Type u_1"
+          },
+          {
+            "name": "β",
+            "type": "Type u_2"
+          },
+          {
+            "name": "n",
+            "type": "ℕ"
+          },
+          {
+            "name": "ih",
+            "type": "∀ (xs : List α) (ys : List β), drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)"
+          },
+          {
+            "name": "x",
+            "type": "α"
+          },
+          {
+            "name": "xs",
+            "type": "List α"
+          },
+          {
+            "name": "y",
+            "type": "β"
+          },
+          {
+            "name": "ys",
+            "type": "List β"
+          }
+        ],
+        "goal": "drop (n + 1) (zip' (x :: xs) (y :: ys)) = zip' (drop (n + 1) (x :: xs)) (drop (n + 1) (y :: ys))"
+      },
+      "nodes": [
+        {
+          "id": 7,
+          "kind": "node",
+          "tactic_text": "simp only [zip', drop]",
+          "parent_id": null,
+          "child_ids": [
+            8
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "β",
+                "type": "Type u_2"
+              },
+              {
+                "name": "n",
+                "type": "ℕ"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (xs : List α) (ys : List β), drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)"
+              },
+              {
+                "name": "x",
+                "type": "α"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              },
+              {
+                "name": "y",
+                "type": "β"
+              },
+              {
+                "name": "ys",
+                "type": "List β"
+              }
+            ],
+            "goal": "drop (n + 1) (zip' (x :: xs) (y :: ys)) = zip' (drop (n + 1) (x :: xs)) (drop (n + 1) (y :: ys))"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "β",
+                  "type": "Type u_2"
+                },
+                {
+                  "name": "n",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "ih",
+                  "type": "∀ (xs : List α) (ys : List β), drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)"
+                },
+                {
+                  "name": "x",
+                  "type": "α"
+                },
+                {
+                  "name": "xs",
+                  "type": "List α"
+                },
+                {
+                  "name": "y",
+                  "type": "β"
+                },
+                {
+                  "name": "ys",
+                  "type": "List β"
+                }
+              ],
+              "goal": "drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)"
+            }
+          ],
+          "summary": {
+            "directly_used": [],
+            "dependency_maps": [
+              {
+                "α": [
+                  "α"
+                ],
+                "β": [
+                  "β"
+                ],
+                "n": [
+                  "n"
+                ],
+                "ih": [
+                  "ih"
+                ],
+                "x": [
+                  "x"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "y": [
+                  "y"
+                ],
+                "ys": [
+                  "ys"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 8,
+          "kind": "leaf",
+          "tactic_text": "exact ih xs ys",
+          "parent_id": 7,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "β",
+                "type": "Type u_2"
+              },
+              {
+                "name": "n",
+                "type": "ℕ"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (xs : List α) (ys : List β), drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)"
+              },
+              {
+                "name": "x",
+                "type": "α"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              },
+              {
+                "name": "y",
+                "type": "β"
+              },
+              {
+                "name": "ys",
+                "type": "List β"
+              }
+            ],
+            "goal": "drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)"
+          },
+          "summary": {
+            "directly_used": [
+              "ih",
+              "xs",
+              "ys"
+            ],
+            "dependency_maps": []
+          }
+        }
+      ]
+    },
+    {
+      "fragment_id": 3,
+      "source_file": "digestion/tests/snapshots/Examples__prop_58.json",
+      "decl_name": "prop_58",
+      "root_node_id": 2,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "α",
+            "type": "Type u_1"
+          },
+          {
+            "name": "β",
+            "type": "Type u_2"
+          },
+          {
+            "name": "n",
+            "type": "ℕ"
+          },
+          {
+            "name": "ih",
+            "type": "∀ (xs : List α) (ys : List β), drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)"
+          },
+          {
+            "name": "xs",
+            "type": "List α"
+          },
+          {
+            "name": "ys",
+            "type": "List β"
+          }
+        ],
+        "goal": "drop (n + 1) (zip' xs ys) = zip' (drop (n + 1) xs) (drop (n + 1) ys)"
+      },
+      "nodes": [
+        {
+          "id": 2,
+          "kind": "node",
+          "tactic_text": "cases xs with\n| nil => _*_\n| cons x xs => _*_",
+          "parent_id": null,
+          "child_ids": [
+            3,
+            4
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "β",
+                "type": "Type u_2"
+              },
+              {
+                "name": "n",
+                "type": "ℕ"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (xs : List α) (ys : List β), drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              },
+              {
+                "name": "ys",
+                "type": "List β"
+              }
+            ],
+            "goal": "drop (n + 1) (zip' xs ys) = zip' (drop (n + 1) xs) (drop (n + 1) ys)"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "β",
+                  "type": "Type u_2"
+                },
+                {
+                  "name": "n",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "ih",
+                  "type": "∀ (xs : List α) (ys : List β), drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)"
+                },
+                {
+                  "name": "ys",
+                  "type": "List β"
+                }
+              ],
+              "goal": "drop (n + 1) (zip' [] ys) = zip' (drop (n + 1) []) (drop (n + 1) ys)"
+            },
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "β",
+                  "type": "Type u_2"
+                },
+                {
+                  "name": "n",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "ih",
+                  "type": "∀ (xs : List α) (ys : List β), drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)"
+                },
+                {
+                  "name": "ys",
+                  "type": "List β"
+                },
+                {
+                  "name": "x",
+                  "type": "α"
+                },
+                {
+                  "name": "xs",
+                  "type": "List α"
+                }
+              ],
+              "goal": "drop (n + 1) (zip' (x :: xs) ys) = zip' (drop (n + 1) (x :: xs)) (drop (n + 1) ys)"
+            }
+          ],
+          "summary": {
+            "directly_used": [
+              "ih",
+              "n",
+              "xs",
+              "ys"
+            ],
+            "dependency_maps": [
+              {
+                "α": [
+                  "α"
+                ],
+                "β": [
+                  "β"
+                ],
+                "n": [
+                  "n"
+                ],
+                "ih": [
+                  "ih"
+                ],
+                "ys": [
+                  "ys"
+                ]
+              },
+              {
+                "α": [
+                  "α"
+                ],
+                "β": [
+                  "β"
+                ],
+                "n": [
+                  "n"
+                ],
+                "ih": [
+                  "ih"
+                ],
+                "ys": [
+                  "ys"
+                ],
+                "x": [
+                  "α"
+                ],
+                "xs": [
+                  "xs"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 3,
+          "kind": "leaf",
+          "tactic_text": "simp [zip', drop]",
+          "parent_id": 2,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "β",
+                "type": "Type u_2"
+              },
+              {
+                "name": "n",
+                "type": "ℕ"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (xs : List α) (ys : List β), drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)"
+              },
+              {
+                "name": "ys",
+                "type": "List β"
+              }
+            ],
+            "goal": "drop (n + 1) (zip' [] ys) = zip' (drop (n + 1) []) (drop (n + 1) ys)"
+          },
+          "summary": {
+            "directly_used": [],
+            "dependency_maps": []
+          }
+        },
+        {
+          "id": 4,
+          "kind": "node",
+          "tactic_text": "cases ys with\n| nil => _*_\n| cons y ys => _*_",
+          "parent_id": 2,
+          "child_ids": [
+            5,
+            7
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "β",
+                "type": "Type u_2"
+              },
+              {
+                "name": "n",
+                "type": "ℕ"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (xs : List α) (ys : List β), drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)"
+              },
+              {
+                "name": "ys",
+                "type": "List β"
+              },
+              {
+                "name": "x",
+                "type": "α"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              }
+            ],
+            "goal": "drop (n + 1) (zip' (x :: xs) ys) = zip' (drop (n + 1) (x :: xs)) (drop (n + 1) ys)"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "β",
+                  "type": "Type u_2"
+                },
+                {
+                  "name": "n",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "ih",
+                  "type": "∀ (xs : List α) (ys : List β), drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)"
+                },
+                {
+                  "name": "x",
+                  "type": "α"
+                },
+                {
+                  "name": "xs",
+                  "type": "List α"
+                }
+              ],
+              "goal": "drop (n + 1) (zip' (x :: xs) []) = zip' (drop (n + 1) (x :: xs)) (drop (n + 1) [])"
+            },
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "β",
+                  "type": "Type u_2"
+                },
+                {
+                  "name": "n",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "ih",
+                  "type": "∀ (xs : List α) (ys : List β), drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)"
+                },
+                {
+                  "name": "x",
+                  "type": "α"
+                },
+                {
+                  "name": "xs",
+                  "type": "List α"
+                },
+                {
+                  "name": "y",
+                  "type": "β"
+                },
+                {
+                  "name": "ys",
+                  "type": "List β"
+                }
+              ],
+              "goal": "drop (n + 1) (zip' (x :: xs) (y :: ys)) = zip' (drop (n + 1) (x :: xs)) (drop (n + 1) (y :: ys))"
+            }
+          ],
+          "summary": {
+            "directly_used": [
+              "ih",
+              "n",
+              "xs",
+              "ys"
+            ],
+            "dependency_maps": [
+              {
+                "α": [
+                  "α"
+                ],
+                "β": [
+                  "β"
+                ],
+                "n": [
+                  "n"
+                ],
+                "ih": [
+                  "ih"
+                ],
+                "x": [
+                  "x"
+                ],
+                "xs": [
+                  "xs"
+                ]
+              },
+              {
+                "α": [
+                  "α"
+                ],
+                "β": [
+                  "β"
+                ],
+                "n": [
+                  "n"
+                ],
+                "ih": [
+                  "ih"
+                ],
+                "x": [
+                  "x"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "y": [
+                  "β"
+                ],
+                "ys": [
+                  "ys"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 5,
+          "kind": "node",
+          "tactic_text": "simp [zip', drop]",
+          "parent_id": 4,
+          "child_ids": [
+            6
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "β",
+                "type": "Type u_2"
+              },
+              {
+                "name": "n",
+                "type": "ℕ"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (xs : List α) (ys : List β), drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)"
+              },
+              {
+                "name": "x",
+                "type": "α"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              }
+            ],
+            "goal": "drop (n + 1) (zip' (x :: xs) []) = zip' (drop (n + 1) (x :: xs)) (drop (n + 1) [])"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "β",
+                  "type": "Type u_2"
+                },
+                {
+                  "name": "n",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "ih",
+                  "type": "∀ (xs : List α) (ys : List β), drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)"
+                },
+                {
+                  "name": "x",
+                  "type": "α"
+                },
+                {
+                  "name": "xs",
+                  "type": "List α"
+                }
+              ],
+              "goal": "zip' (drop n xs) [] = []"
+            }
+          ],
+          "summary": {
+            "directly_used": [],
+            "dependency_maps": [
+              {
+                "α": [
+                  "α"
+                ],
+                "β": [
+                  "β"
+                ],
+                "n": [
+                  "n"
+                ],
+                "ih": [
+                  "ih"
+                ],
+                "x": [
+                  "x"
+                ],
+                "xs": [
+                  "xs"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 6,
+          "kind": "leaf",
+          "tactic_text": "cases drop n xs <;> rfl",
+          "parent_id": 5,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "β",
+                "type": "Type u_2"
+              },
+              {
+                "name": "n",
+                "type": "ℕ"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (xs : List α) (ys : List β), drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)"
+              },
+              {
+                "name": "x",
+                "type": "α"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              }
+            ],
+            "goal": "zip' (drop n xs) [] = []"
+          },
+          "summary": {
+            "directly_used": [
+              "n",
+              "xs"
+            ],
+            "dependency_maps": []
+          }
+        },
+        {
+          "id": 7,
+          "kind": "node",
+          "tactic_text": "simp only [zip', drop]",
+          "parent_id": 4,
+          "child_ids": [
+            8
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "β",
+                "type": "Type u_2"
+              },
+              {
+                "name": "n",
+                "type": "ℕ"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (xs : List α) (ys : List β), drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)"
+              },
+              {
+                "name": "x",
+                "type": "α"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              },
+              {
+                "name": "y",
+                "type": "β"
+              },
+              {
+                "name": "ys",
+                "type": "List β"
+              }
+            ],
+            "goal": "drop (n + 1) (zip' (x :: xs) (y :: ys)) = zip' (drop (n + 1) (x :: xs)) (drop (n + 1) (y :: ys))"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "β",
+                  "type": "Type u_2"
+                },
+                {
+                  "name": "n",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "ih",
+                  "type": "∀ (xs : List α) (ys : List β), drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)"
+                },
+                {
+                  "name": "x",
+                  "type": "α"
+                },
+                {
+                  "name": "xs",
+                  "type": "List α"
+                },
+                {
+                  "name": "y",
+                  "type": "β"
+                },
+                {
+                  "name": "ys",
+                  "type": "List β"
+                }
+              ],
+              "goal": "drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)"
+            }
+          ],
+          "summary": {
+            "directly_used": [],
+            "dependency_maps": [
+              {
+                "α": [
+                  "α"
+                ],
+                "β": [
+                  "β"
+                ],
+                "n": [
+                  "n"
+                ],
+                "ih": [
+                  "ih"
+                ],
+                "x": [
+                  "x"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "y": [
+                  "y"
+                ],
+                "ys": [
+                  "ys"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 8,
+          "kind": "leaf",
+          "tactic_text": "exact ih xs ys",
+          "parent_id": 7,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "β",
+                "type": "Type u_2"
+              },
+              {
+                "name": "n",
+                "type": "ℕ"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (xs : List α) (ys : List β), drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)"
+              },
+              {
+                "name": "x",
+                "type": "α"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              },
+              {
+                "name": "y",
+                "type": "β"
+              },
+              {
+                "name": "ys",
+                "type": "List β"
+              }
+            ],
+            "goal": "drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)"
+          },
+          "summary": {
+            "directly_used": [
+              "ih",
+              "xs",
+              "ys"
+            ],
+            "dependency_maps": []
+          }
+        }
+      ]
+    },
+    {
+      "fragment_id": 4,
+      "source_file": "digestion/tests/snapshots/Examples__prop_58.json",
+      "decl_name": "prop_58",
+      "root_node_id": 0,
+      "root_obligation": {
+        "hypotheses": [
+          {
+            "name": "α",
+            "type": "Type u_1"
+          },
+          {
+            "name": "β",
+            "type": "Type u_2"
+          },
+          {
+            "name": "n",
+            "type": "ℕ"
+          },
+          {
+            "name": "xs",
+            "type": "List α"
+          },
+          {
+            "name": "ys",
+            "type": "List β"
+          }
+        ],
+        "goal": "drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)"
+      },
+      "nodes": [
+        {
+          "id": 0,
+          "kind": "node",
+          "tactic_text": "induction n generalizing xs ys with\n| zero => _*_\n| succ n ih => _*_",
+          "parent_id": null,
+          "child_ids": [
+            1,
+            2
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "β",
+                "type": "Type u_2"
+              },
+              {
+                "name": "n",
+                "type": "ℕ"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              },
+              {
+                "name": "ys",
+                "type": "List β"
+              }
+            ],
+            "goal": "drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "β",
+                  "type": "Type u_2"
+                },
+                {
+                  "name": "xs",
+                  "type": "List α"
+                },
+                {
+                  "name": "ys",
+                  "type": "List β"
+                }
+              ],
+              "goal": "drop 0 (zip' xs ys) = zip' (drop 0 xs) (drop 0 ys)"
+            },
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "β",
+                  "type": "Type u_2"
+                },
+                {
+                  "name": "n",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "ih",
+                  "type": "∀ (xs : List α) (ys : List β), drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)"
+                },
+                {
+                  "name": "xs",
+                  "type": "List α"
+                },
+                {
+                  "name": "ys",
+                  "type": "List β"
+                }
+              ],
+              "goal": "drop (n + 1) (zip' xs ys) = zip' (drop (n + 1) xs) (drop (n + 1) ys)"
+            }
+          ],
+          "summary": {
+            "directly_used": [
+              "n",
+              "xs",
+              "ys"
+            ],
+            "dependency_maps": [
+              {
+                "α": [
+                  "α"
+                ],
+                "β": [
+                  "β"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "ys": [
+                  "ys"
+                ]
+              },
+              {
+                "α": [
+                  "α"
+                ],
+                "β": [
+                  "β"
+                ],
+                "n": [
+                  "n"
+                ],
+                "ih": [
+                  "α",
+                  "ys",
+                  "β",
+                  "xs",
+                  "n"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "ys": [
+                  "ys"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 1,
+          "kind": "leaf",
+          "tactic_text": "simp [drop]",
+          "parent_id": 0,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "β",
+                "type": "Type u_2"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              },
+              {
+                "name": "ys",
+                "type": "List β"
+              }
+            ],
+            "goal": "drop 0 (zip' xs ys) = zip' (drop 0 xs) (drop 0 ys)"
+          },
+          "summary": {
+            "directly_used": [],
+            "dependency_maps": []
+          }
+        },
+        {
+          "id": 2,
+          "kind": "node",
+          "tactic_text": "cases xs with\n| nil => _*_\n| cons x xs => _*_",
+          "parent_id": 0,
+          "child_ids": [
+            3,
+            4
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "β",
+                "type": "Type u_2"
+              },
+              {
+                "name": "n",
+                "type": "ℕ"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (xs : List α) (ys : List β), drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              },
+              {
+                "name": "ys",
+                "type": "List β"
+              }
+            ],
+            "goal": "drop (n + 1) (zip' xs ys) = zip' (drop (n + 1) xs) (drop (n + 1) ys)"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "β",
+                  "type": "Type u_2"
+                },
+                {
+                  "name": "n",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "ih",
+                  "type": "∀ (xs : List α) (ys : List β), drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)"
+                },
+                {
+                  "name": "ys",
+                  "type": "List β"
+                }
+              ],
+              "goal": "drop (n + 1) (zip' [] ys) = zip' (drop (n + 1) []) (drop (n + 1) ys)"
+            },
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "β",
+                  "type": "Type u_2"
+                },
+                {
+                  "name": "n",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "ih",
+                  "type": "∀ (xs : List α) (ys : List β), drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)"
+                },
+                {
+                  "name": "ys",
+                  "type": "List β"
+                },
+                {
+                  "name": "x",
+                  "type": "α"
+                },
+                {
+                  "name": "xs",
+                  "type": "List α"
+                }
+              ],
+              "goal": "drop (n + 1) (zip' (x :: xs) ys) = zip' (drop (n + 1) (x :: xs)) (drop (n + 1) ys)"
+            }
+          ],
+          "summary": {
+            "directly_used": [
+              "ih",
+              "n",
+              "xs",
+              "ys"
+            ],
+            "dependency_maps": [
+              {
+                "α": [
+                  "α"
+                ],
+                "β": [
+                  "β"
+                ],
+                "n": [
+                  "n"
+                ],
+                "ih": [
+                  "ih"
+                ],
+                "ys": [
+                  "ys"
+                ]
+              },
+              {
+                "α": [
+                  "α"
+                ],
+                "β": [
+                  "β"
+                ],
+                "n": [
+                  "n"
+                ],
+                "ih": [
+                  "ih"
+                ],
+                "ys": [
+                  "ys"
+                ],
+                "x": [
+                  "α"
+                ],
+                "xs": [
+                  "xs"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 3,
+          "kind": "leaf",
+          "tactic_text": "simp [zip', drop]",
+          "parent_id": 2,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "β",
+                "type": "Type u_2"
+              },
+              {
+                "name": "n",
+                "type": "ℕ"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (xs : List α) (ys : List β), drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)"
+              },
+              {
+                "name": "ys",
+                "type": "List β"
+              }
+            ],
+            "goal": "drop (n + 1) (zip' [] ys) = zip' (drop (n + 1) []) (drop (n + 1) ys)"
+          },
+          "summary": {
+            "directly_used": [],
+            "dependency_maps": []
+          }
+        },
+        {
+          "id": 4,
+          "kind": "node",
+          "tactic_text": "cases ys with\n| nil => _*_\n| cons y ys => _*_",
+          "parent_id": 2,
+          "child_ids": [
+            5,
+            7
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "β",
+                "type": "Type u_2"
+              },
+              {
+                "name": "n",
+                "type": "ℕ"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (xs : List α) (ys : List β), drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)"
+              },
+              {
+                "name": "ys",
+                "type": "List β"
+              },
+              {
+                "name": "x",
+                "type": "α"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              }
+            ],
+            "goal": "drop (n + 1) (zip' (x :: xs) ys) = zip' (drop (n + 1) (x :: xs)) (drop (n + 1) ys)"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "β",
+                  "type": "Type u_2"
+                },
+                {
+                  "name": "n",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "ih",
+                  "type": "∀ (xs : List α) (ys : List β), drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)"
+                },
+                {
+                  "name": "x",
+                  "type": "α"
+                },
+                {
+                  "name": "xs",
+                  "type": "List α"
+                }
+              ],
+              "goal": "drop (n + 1) (zip' (x :: xs) []) = zip' (drop (n + 1) (x :: xs)) (drop (n + 1) [])"
+            },
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "β",
+                  "type": "Type u_2"
+                },
+                {
+                  "name": "n",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "ih",
+                  "type": "∀ (xs : List α) (ys : List β), drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)"
+                },
+                {
+                  "name": "x",
+                  "type": "α"
+                },
+                {
+                  "name": "xs",
+                  "type": "List α"
+                },
+                {
+                  "name": "y",
+                  "type": "β"
+                },
+                {
+                  "name": "ys",
+                  "type": "List β"
+                }
+              ],
+              "goal": "drop (n + 1) (zip' (x :: xs) (y :: ys)) = zip' (drop (n + 1) (x :: xs)) (drop (n + 1) (y :: ys))"
+            }
+          ],
+          "summary": {
+            "directly_used": [
+              "ih",
+              "n",
+              "xs",
+              "ys"
+            ],
+            "dependency_maps": [
+              {
+                "α": [
+                  "α"
+                ],
+                "β": [
+                  "β"
+                ],
+                "n": [
+                  "n"
+                ],
+                "ih": [
+                  "ih"
+                ],
+                "x": [
+                  "x"
+                ],
+                "xs": [
+                  "xs"
+                ]
+              },
+              {
+                "α": [
+                  "α"
+                ],
+                "β": [
+                  "β"
+                ],
+                "n": [
+                  "n"
+                ],
+                "ih": [
+                  "ih"
+                ],
+                "x": [
+                  "x"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "y": [
+                  "β"
+                ],
+                "ys": [
+                  "ys"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 5,
+          "kind": "node",
+          "tactic_text": "simp [zip', drop]",
+          "parent_id": 4,
+          "child_ids": [
+            6
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "β",
+                "type": "Type u_2"
+              },
+              {
+                "name": "n",
+                "type": "ℕ"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (xs : List α) (ys : List β), drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)"
+              },
+              {
+                "name": "x",
+                "type": "α"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              }
+            ],
+            "goal": "drop (n + 1) (zip' (x :: xs) []) = zip' (drop (n + 1) (x :: xs)) (drop (n + 1) [])"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "β",
+                  "type": "Type u_2"
+                },
+                {
+                  "name": "n",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "ih",
+                  "type": "∀ (xs : List α) (ys : List β), drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)"
+                },
+                {
+                  "name": "x",
+                  "type": "α"
+                },
+                {
+                  "name": "xs",
+                  "type": "List α"
+                }
+              ],
+              "goal": "zip' (drop n xs) [] = []"
+            }
+          ],
+          "summary": {
+            "directly_used": [],
+            "dependency_maps": [
+              {
+                "α": [
+                  "α"
+                ],
+                "β": [
+                  "β"
+                ],
+                "n": [
+                  "n"
+                ],
+                "ih": [
+                  "ih"
+                ],
+                "x": [
+                  "x"
+                ],
+                "xs": [
+                  "xs"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 6,
+          "kind": "leaf",
+          "tactic_text": "cases drop n xs <;> rfl",
+          "parent_id": 5,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "β",
+                "type": "Type u_2"
+              },
+              {
+                "name": "n",
+                "type": "ℕ"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (xs : List α) (ys : List β), drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)"
+              },
+              {
+                "name": "x",
+                "type": "α"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              }
+            ],
+            "goal": "zip' (drop n xs) [] = []"
+          },
+          "summary": {
+            "directly_used": [
+              "n",
+              "xs"
+            ],
+            "dependency_maps": []
+          }
+        },
+        {
+          "id": 7,
+          "kind": "node",
+          "tactic_text": "simp only [zip', drop]",
+          "parent_id": 4,
+          "child_ids": [
+            8
+          ],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "β",
+                "type": "Type u_2"
+              },
+              {
+                "name": "n",
+                "type": "ℕ"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (xs : List α) (ys : List β), drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)"
+              },
+              {
+                "name": "x",
+                "type": "α"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              },
+              {
+                "name": "y",
+                "type": "β"
+              },
+              {
+                "name": "ys",
+                "type": "List β"
+              }
+            ],
+            "goal": "drop (n + 1) (zip' (x :: xs) (y :: ys)) = zip' (drop (n + 1) (x :: xs)) (drop (n + 1) (y :: ys))"
+          },
+          "output_obligations": [
+            {
+              "hypotheses": [
+                {
+                  "name": "α",
+                  "type": "Type u_1"
+                },
+                {
+                  "name": "β",
+                  "type": "Type u_2"
+                },
+                {
+                  "name": "n",
+                  "type": "ℕ"
+                },
+                {
+                  "name": "ih",
+                  "type": "∀ (xs : List α) (ys : List β), drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)"
+                },
+                {
+                  "name": "x",
+                  "type": "α"
+                },
+                {
+                  "name": "xs",
+                  "type": "List α"
+                },
+                {
+                  "name": "y",
+                  "type": "β"
+                },
+                {
+                  "name": "ys",
+                  "type": "List β"
+                }
+              ],
+              "goal": "drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)"
+            }
+          ],
+          "summary": {
+            "directly_used": [],
+            "dependency_maps": [
+              {
+                "α": [
+                  "α"
+                ],
+                "β": [
+                  "β"
+                ],
+                "n": [
+                  "n"
+                ],
+                "ih": [
+                  "ih"
+                ],
+                "x": [
+                  "x"
+                ],
+                "xs": [
+                  "xs"
+                ],
+                "y": [
+                  "y"
+                ],
+                "ys": [
+                  "ys"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": 8,
+          "kind": "leaf",
+          "tactic_text": "exact ih xs ys",
+          "parent_id": 7,
+          "child_ids": [],
+          "obligation": {
+            "hypotheses": [
+              {
+                "name": "α",
+                "type": "Type u_1"
+              },
+              {
+                "name": "β",
+                "type": "Type u_2"
+              },
+              {
+                "name": "n",
+                "type": "ℕ"
+              },
+              {
+                "name": "ih",
+                "type": "∀ (xs : List α) (ys : List β), drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)"
+              },
+              {
+                "name": "x",
+                "type": "α"
+              },
+              {
+                "name": "xs",
+                "type": "List α"
+              },
+              {
+                "name": "y",
+                "type": "β"
+              },
+              {
+                "name": "ys",
+                "type": "List β"
+              }
+            ],
+            "goal": "drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)"
+          },
+          "summary": {
+            "directly_used": [
+              "ih",
+              "xs",
+              "ys"
+            ],
+            "dependency_maps": []
+          }
+        }
+      ]
+    }
+  ]
+}
