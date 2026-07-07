@@ -2,6 +2,11 @@
 data/input/algebra-in-lean/
 data/input/juvix-lean/
 data/input/MiniCodePropsLeanSrc/
+exp/eval/domain_eval/result/cache/
+exp/eval/sanity/output/with_lemmas/cache/
+exp/eval/sanity/output/with_lemmas/cache/
+exp/eval/sanity/output/without_lemmas/cache/
+*/cache/
 
 # Scala / sbt
 target/

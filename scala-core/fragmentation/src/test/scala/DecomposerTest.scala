@@ -388,32 +388,30 @@ class DecomposerTest extends AnyFlatSpec with Matchers:
   }
 
   // Admissible V_H of linPog: {0},{1},{2},{0,1},{1,2},{0,1,2}. None branches, so
-  // the default heuristic accepts all; {0,1,2} is trivial ⇒ enumerate drops it.
-  "Decomposer.enumerate" should "emit exactly the admissible, non-trivial fragments of a tiny chain" in {
+  // singletons {0},{1},{2} are dropped; {0,1,2} is trivial ⇒ only 2-node fragments remain.
+  "Decomposer.enumerate" should "emit exactly the admissible, non-singleton, non-trivial fragments of a tiny chain" in {
     val (decomps, _) = Decomposer.enumerate(linPog, Decomposer.defaultHeuristic, 10_000)
-    decomps.map(_.vH).toSet shouldBe Set(Set(0), Set(1), Set(2), Set(0, 1), Set(1, 2))
+    decomps.map(_.vH).toSet shouldBe Set(Set(0, 1), Set(1, 2))
   }
 
   it should "attach the correct pre/post sets to each emitted fragment" in {
     val (decomps, _) = Decomposer.enumerate(linPog, Decomposer.defaultHeuristic, 10_000)
     val byVH = decomps.iterator.map(d => d.vH -> d).toMap
-    byVH(Set(2)).vPre    shouldBe Set(0, 1)   // 1 (cond 3) then 0 (cond 4)
-    byVH(Set(2)).vPost   shouldBe Set.empty
-    byVH(Set(1)).vPre    shouldBe Set(0)
-    byVH(Set(1)).vPost   shouldBe Set(2)
-    byVH(Set(0)).vPre    shouldBe Set.empty
-    byVH(Set(0)).vPost   shouldBe Set(1, 2)
+    byVH(Set(1, 2)).vPre  shouldBe Set(0)      // node 1 depends on 0 (cond 3), 0 has no further deps
+    byVH(Set(1, 2)).vPost shouldBe Set.empty
+    byVH(Set(0, 1)).vPre  shouldBe Set.empty
+    byVH(Set(0, 1)).vPost shouldBe Set(2)
   }
 
   // Branching POG 0→{1,2}, both leaves depend on 0; proof root 0. Here the
-  // heuristic actually bites: candidates containing the branching node 0 with an
-  // unfilled child are branch-with-a-hole.
+  // singleton filter bites ({1},{2}) and the heuristic bites ({0,1},{0,2} are
+  // branch-with-a-hole); only the allow-all heuristic can emit the 2-node sets.
   it should "let the heuristic gate branch-with-a-hole (default ⊂ allow-all)" in {
     val allow: Candidate.Heuristic = _ => true
     val (deflt, _) = Decomposer.enumerate(branchPog, Decomposer.defaultHeuristic, 10_000)
     val (open,  _) = Decomposer.enumerate(branchPog, allow, 10_000)
-    deflt.map(_.vH).toSet shouldBe Set(Set(1), Set(2))                       // {0},{0,1},{0,2} rejected
-    open.map(_.vH).toSet  shouldBe Set(Set(0), Set(1), Set(2), Set(0, 1), Set(0, 2))
+    deflt.map(_.vH).toSet shouldBe Set.empty                                 // {1},{2} singletons; {0,1},{0,2} branch-with-hole
+    open.map(_.vH).toSet  shouldBe Set(Set(0, 1), Set(0, 2))                 // singletons still dropped; {0,1,2} trivial
     deflt.map(_.vH).toSet.subsetOf(open.map(_.vH).toSet) shouldBe true
     // {0,1,2} is trivial (root 0, holes 0) ⇒ absent from BOTH.
     open.map(_.vH) should not contain Set(0, 1, 2)

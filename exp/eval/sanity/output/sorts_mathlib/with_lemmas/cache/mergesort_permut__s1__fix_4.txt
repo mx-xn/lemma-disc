@@ -1,0 +1,24 @@
+theorem:  mergesort_permut
+sample:   1
+attempt:  fix_4
+
+[proof]
+exact lemma_hint_3 (c := l) (a := mergesort l) (b := l) (t' := l.headD (Classical.arbitrary T)) (h1 := by
+  simpa using (lemma_hint_24 (l := l) (t := l.headD (Classical.arbitrary T))))
+
+[lean error]
+location:
+    theorem eval_mergesort_permut [LT T] [DecidableEq T] [DecidableRel (LT.lt (α := T))] (l : List T) : Permut (mergesort l) l := by
+      exact lemma_hint_3 (c := l) (a := mergesort l) (b := l) (t' := l.headD (Classical.arbitrary T)) (h1 := by
+                                                                             ^
+        simpa using (lemma_hint_24 (l := l) (t := l.headD (Classical.arbitrary T))))
+error: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  Nonempty T
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+
+location:
+      exact lemma_hint_3 (c := l) (a := mergesort l) (b := l) (t' := l.headD (Classical.arbitrary T)) (h1 := by
+        simpa using (lemma_hint_24 (l := l) (t := l.headD (Classical.arbitrary T))))
+       ^
+error: try 'simp' instead of 'simpa'
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`

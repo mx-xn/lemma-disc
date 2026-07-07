@@ -1,0 +1,101 @@
+theorem:  mergesort_correct
+sample:   2
+attempt:  init
+
+[proof]
+intro l
+by_cases h : l.length < 2
+· simp [mergesort, h]
+  constructor
+  · cases l with
+    | nil =>
+      exact Sorted.nil
+    | cons x xs =>
+      cases xs with
+      | nil =>
+        exact Sorted.singleton
+      | cons y ys =>
+        simp at h
+  · exact lemma_hint_0 l l (lemma_hint_15 l l)
+· simp [mergesort, h]
+  constructor
+  · cases hsortl : mergesort (left l) <;> cases hsortr : mergesort (right l) <;> simp [merge]
+    · exact Sorted.nil
+    · assumption
+    · assumption
+    · by_cases hxy : head! (t :: ts) < head! (t_1 :: ts_1) <;> simp [hxy]
+      · cases ts with
+        | nil =>
+          exact Sorted.singleton
+        | cons a as =>
+          exact Sorted.cons (by assumption) (by intro hlt; exact hxy hlt)
+      · cases ts_1 with
+        | nil =>
+          exact Sorted.singleton
+        | cons a as =>
+          exact Sorted.cons (by assumption) (by intro hlt; exact hxy hlt)
+  · exact lemma_hint_0 _ _ (lemma_hint_15 _ _)
+
+[lean error]
+location:
+              exact Sorted.singleton
+            | cons y ys =>
+                       ^
+              simp at h
+error: unsolved goals
+case pos.left.cons.cons
+T : Type
+inst✝² : Preorder T
+inst✝¹ : DecidableEq T
+inst✝ : DecidableRel LT.lt
+x y : T
+ys : List T
+h : ys.length + 1 + 1 < 2
+⊢ Sorted (x :: y :: ys)
+
+location:
+              simp at h
+        · exact lemma_hint_0 l l (lemma_hint_15 l l)
+                              ^
+      · simp [mergesort, h]
+error: Application type mismatch: The last
+  l
+argument has type
+  List T
+but is expected to have type
+  T
+in the application
+  lemma_hint_0 l l
+
+location:
+              simp at h
+        · exact lemma_hint_0 l l (lemma_hint_15 l l)
+                                                 ^
+      · simp [mergesort, h]
+error: Application type mismatch: The last
+  l
+argument has type
+  List T
+but is expected to have type
+  T
+in the application
+  lemma_hint_15 l l
+
+location:
+        · exact lemma_hint_0 l l (lemma_hint_15 l l)
+      · simp [mergesort, h]
+             ^
+        constructor
+error: Possibly looping simp theorem: `mergesort.eq_1`
+Note: Possibly caused by: `mergesort`
+Hint: You can disable a simp theorem from the default simp set by passing `- theoremName` to `simp`.
+
+location:
+        · exact lemma_hint_0 l l (lemma_hint_15 l l)
+      · simp [mergesort, h]
+       ^
+        constructor
+error: Tactic `simp` failed with a nested error:
+maximum recursion depth has been reached
+use `set_option maxRecDepth <num>` to increase limit
+use `set_option diagnostics true` to get diagnostic information

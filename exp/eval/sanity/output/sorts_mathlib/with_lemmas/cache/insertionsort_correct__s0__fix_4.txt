@@ -1,0 +1,57 @@
+theorem:  insertionsort_correct
+sample:   0
+attempt:  fix_4
+
+[proof]
+intro l
+induction l with
+| nil =>
+  constructor
+  · simp [insertionsort, Sorted.nil]
+  · exact lemma_hint_21
+| cons x xs ih =>
+  rcases ih with ⟨hs, hp⟩
+  constructor
+  ·
+    have hins : ∀ ys, Sorted ys → Sorted (insert_ x ys) := by
+      intro ys
+      induction ys with
+      | nil =>
+        intro hs'
+        simp [insert_]
+        exact Sorted.singleton
+      | cons y ys ihys =>
+        intro hs'
+        cases ys with
+        | nil =>
+          simp [insert_]
+          by_cases h : x < y
+          · simp [h]
+            exact Sorted.cons Sorted.singleton (by
+              intro hyx
+              exact (lt_irrefl x) (lt_trans h hyx))
+          · simp [h]
+            exact Sorted.cons Sorted.singleton h
+        | cons z zs =>
+          have htail : Sorted (z :: zs) := lemma_hint_34 y z zs hs'
+          have hrec : Sorted (insert_ x (z :: zs)) := ihys htail
+          by_cases h : x < y
+          · simpa [insert_] using lemma_hint_20 x y (z :: zs) ihys hs' h
+          · simpa [insert_, h] using lemma_hint_25 x y z zs hs' hrec
+    simpa [insertionsort] using hins (insertionsort xs) hs
+  · exact lemma_hint_3 x xs
+
+[lean error]
+location:
+                · simpa [insert_] using lemma_hint_20 x y (z :: zs) ihys hs' h
+                · simpa [insert_, h] using lemma_hint_25 x y z zs hs' hrec
+                                                                     ^
+          simpa [insertionsort] using hins (insertionsort xs) hs
+error: Application type mismatch: The argument
+  hrec
+has type
+  Sorted (insert_ x (z :: zs))
+but is expected to have type
+  Sorted (z :: insert_ x zs)
+in the application
+  lemma_hint_25 x y z zs hs' hrec

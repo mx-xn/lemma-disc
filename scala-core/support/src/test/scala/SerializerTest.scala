@@ -179,7 +179,8 @@ class SerializerTest extends AnyFlatSpec with Matchers:
     // Root Γ=[h1:Nat, h2:Bool], goal="P"
     // Node: U={h1}, π₁={h2→["h1"]}, child=Leaf(directly_used=["h2"])
     // support: A_child={h2}, π₁(h2)={h1}, pulled={h1}, total={h1}∪{h1}={h1}
-    // premises=["h1 : Nat"], body="True", statement="(h1 : Nat) → P"
+    // scope_vars=[], premises=["h1 : Nat"], body="True", statement="(h1 : Nat) : P"
+    // h2 is not in support and "h2" is not referenced in conclusion "P" → dropped from scope_vars.
     val h1 = wHyp("h1","Nat")
     val h2 = wHyp("h2","Bool")
     val rootObl = wObl(List(h1, h2), "P")
@@ -193,9 +194,10 @@ class SerializerTest extends AnyFlatSpec with Matchers:
       ))
     ))
     val out = lemma0(run(input))
-    out("premises").arr.map(_.str).toList shouldBe List("h1 : Nat")
-    out("body").str                       shouldBe "True"
-    out("statement").str                  shouldBe "(h1 : Nat) : P"
+    out("scope_vars").arr.map(_.str).toList shouldBe Nil
+    out("premises").arr.map(_.str).toList   shouldBe List("h1 : Nat")
+    out("body").str                         shouldBe "True"
+    out("statement").str                    shouldBe "(h1 : Nat) : P"
   }
 
   // ═══════════════════════════════════════════════════════════════════════════
@@ -259,10 +261,11 @@ class SerializerTest extends AnyFlatSpec with Matchers:
     //   body = "Q"
     //
     // Expected lemma:
+    //   scope_vars = []  (h2 not in support and "h2" unreachable from "P ∧ Q" or body "Q")
     //   premises   = ["h1 : Nat"]
     //   body       = "Q"
     //   conclusion = "P ∧ Q"
-    //   statement  = "(h1 : Nat) → Q → P ∧ Q"
+    //   statement  = "(h1 : Nat) (h2 : Q) : P ∧ Q"  (h1 is taken → fresh body binder = h2)
     val h1      = wHyp("h1","Nat")
     val h2      = wHyp("h2","Bool")
     val rootObl = wObl(List(h1, h2), "P ∧ Q")
@@ -291,9 +294,10 @@ class SerializerTest extends AnyFlatSpec with Matchers:
     out("fragment_id").num.toInt          shouldBe 10
     out("source_file").str                shouldBe "Conjunction.lean"
     out("decl_name").str                  shouldBe "and_intro"
-    out("premises").arr.map(_.str).toList shouldBe List("h1 : Nat")
-    out("body").str                       shouldBe "Q"
-    out("conclusion").str                 shouldBe "P ∧ Q"
+    out("scope_vars").arr.map(_.str).toList shouldBe Nil
+    out("premises").arr.map(_.str).toList   shouldBe List("h1 : Nat")
+    out("body").str                         shouldBe "Q"
+    out("conclusion").str                   shouldBe "P ∧ Q"
     // Body has no top-level `→` → lifted as a single binder. h1 is taken → fresh name = h2.
-    out("statement").str                  shouldBe "(h1 : Nat) (h2 : Q) : P ∧ Q"
+    out("statement").str                    shouldBe "(h1 : Nat) (h2 : Q) : P ∧ Q"
   }

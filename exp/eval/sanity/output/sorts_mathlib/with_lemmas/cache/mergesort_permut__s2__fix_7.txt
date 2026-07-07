@@ -1,0 +1,13 @@
+theorem:  mergesort_permut
+sample:   2
+attempt:  fix_7
+
+[proof]
+exact lemma_hint_0 (l := mergesort l) (t' := arbitrary T) ?_
+
+[lean error]
+location:
+    theorem eval_mergesort_permut [LT T] [DecidableEq T] [DecidableRel (LT.lt (α := T))] (l : List T) : Permut (mergesort l) l := by
+      exact lemma_hint_0 (l := mergesort l) (t' := arbitrary T) ?_
+                                                  ^
+error: error(lean.unknownIdentifier): Unknown identifier `arbitrary`

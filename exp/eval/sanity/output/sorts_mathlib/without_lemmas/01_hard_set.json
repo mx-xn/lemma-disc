@@ -1,0 +1,32 @@
+{
+  "lake_project": "data/input/MiniCodePropsLeanSrc",
+  "imports": [
+    "LeanSrc.Sorts_Mathlib"
+  ],
+  "theorems": [
+    {
+      "theorem_id": "merge_sorted",
+      "lean_path": "LeanSrc/Sorts_Mathlib.lean",
+      "statement_text": "[Preorder T] [DecidableRel (LT.lt (α := T))] {xs ys : List T} (sxs : Sorted xs) (sys : Sorted ys) : Sorted (merge xs ys)",
+      "final_error": "location:\n      | nil =>\n          intro sxs sys\n               ^\n          simpa [merge] using sys\nerror: Tactic `introN` failed: There are no additional binders or `let` bindings in the goal to introduce\ncase nil\nT : Type u_1\ninst✝¹ : Preorder T\ninst✝ : DecidableRel LT.lt\nys : List T\nsxs : Sorted []\nsys : Sorted ys\n⊢ Sorted (merge [] ys)\n\nlocation:\n      | cons a xs ih =>\n          intro sxs sys\n               ^\n          cases ys with\nerror: Tactic `introN` failed: There are no additional binders or `let` bindings in the goal to introduce\ncase cons\nT : Type u_1\ninst✝¹ : Preorder T\ninst✝ : DecidableRel LT.lt\na : T\nxs : List T\nih : ∀ {ys : List T}, Sorted xs → Sorted ys → Sorted (merge xs ys)\nys : List T\nsxs : Sorted (a :: xs)\nsys : Sorted ys\n⊢ Sorted (merge (a :: xs) ys)"
+    },
+    {
+      "theorem_id": "merge_permut",
+      "lean_path": "LeanSrc/Sorts_Mathlib.lean",
+      "statement_text": "[LT T] [DecidableEq T] [DecidableRel (LT.lt (α := T))] (xs ys : List T) : Permut (merge xs ys) (xs ++ ys)",
+      "final_error": "location:\n              · simp [merge, hxy, count1]\n                simpa using ih ys t\n               ^\nerror: Type mismatch: After simplification, term\n  ih ys t\n has type\n  count1 (merge xs ys) t = count1 (xs ++ ys) t\nbut is expected to have type\n  (if y = t then 1 else 0) + count1 (merge (x :: xs) ys) t = (if x = t then 1 else 0) + count1 (xs ++ y :: ys) t"
+    },
+    {
+      "theorem_id": "mergesort_permut",
+      "lean_path": "LeanSrc/Sorts_Mathlib.lean",
+      "statement_text": "[LT T] [DecidableEq T] [DecidableRel (LT.lt (α := T))] (l : List T) : Permut (mergesort l) l",
+      "final_error": "location:\n      intro t\n      simpa [Permut] using (And.right (mergesort_correct l)) t\n                                                        ^\nerror: Application type mismatch: The argument\n  l\nhas type\n  List T\nof sort `Type u_1` but is expected to have type\n  Type\nof sort `Type 1` in the application\n  @mergesort_correct l"
+    },
+    {
+      "theorem_id": "mergesort_correct",
+      "lean_path": "LeanSrc/Sorts_Mathlib.lean",
+      "statement_text": "(T : Type) [Preorder T] [DecidableEq T] [DecidableRel (LT.lt (α := T))] : SortCorrect (mergesort : List T -> List T)",
+      "final_error": "location:\n      intro l\n      simpa [SortCorrect]\n     ^\nerror: Tactic `assumption` failed\nT : Type\ninst✝² : Preorder T\ninst✝¹ : DecidableEq T\ninst✝ : DecidableRel LT.lt\nl : List T\n⊢ Sorted (mergesort l) ∧ Permut (mergesort l) l"
+    }
+  ]
+}

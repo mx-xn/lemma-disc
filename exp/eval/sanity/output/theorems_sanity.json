@@ -5,6 +5,12 @@
   ],
   "theorems": [
     {
+      "theorem_id": "prop_36",
+      "lean_path": "LeanSrc/Examples.lean",
+      "statement_text": "(xs: List α) : (takeWhile (fun _ => True) xs = xs)",
+      "local_ctx": "def takeWhile : (α → Bool) → List α → List α\n  | _, [] => []\n  | p, x::xs => if p x then x ::(takeWhile p xs) else []"
+    },
+    {
       "theorem_id": "prop_58",
       "lean_path": "LeanSrc/Examples.lean",
       "statement_text": "(n: Nat) (xs: List α) (ys: List β) : (drop n (zip' xs ys) = zip' (drop n xs) (drop n ys))",
@@ -27,6 +33,18 @@
       "lean_path": "LeanSrc/Examples.lean",
       "statement_text": "(xs: List α) (ys: List β) : (length xs = length ys) → (zip' (reverse xs) (reverse ys) = reverse (zip' xs ys))",
       "local_ctx": "def length (xs: List α) : Nat :=\n  match xs with\n  | [] => 0\n  | _ :: xs => 1 + length xs\n\ndef reverse (xs: List α) : List α :=\n  match xs with\n  | [] => []\n  | x :: xs => reverse xs ++ [x]\n\ndef zip' : List α → List β → List (α × β)\n  | [], _ => []\n  | _, [] => []\n  | x::xs, y::ys => ⟨x, y⟩ :: zip' xs ys"
+    },
+    {
+      "theorem_id": "prop_53",
+      "lean_path": "LeanSrc/Examples.lean",
+      "statement_text": "(n: Nat) (xs: List Nat) : (count n xs = count n (sort xs))",
+      "local_ctx": "def count (x: Nat) (ys: List Nat): Nat :=\n  match ys with\n  | [] => 0\n  | y :: ys =>\n    if x = y then\n      count x ys + 1\n    else\n      count x ys\n\ndef insort : Nat → List Nat → List Nat\n  | n, [] => [n]\n  | n, x::xs => if n <= x then n::x::xs else x::(insort n xs)\n\ndef sort : List Nat → List Nat\n  | [] => []\n  | x::xs => insort x (sort xs)"
+    },
+    {
+      "theorem_id": "prop_55",
+      "lean_path": "LeanSrc/Examples.lean",
+      "statement_text": "(n: Nat) (xs: List α) (ys: List α) : (drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys)",
+      "local_ctx": "def drop (n: Nat) (xs: List α) : List α :=\n  match n, xs with\n  | 0, _ => xs\n  | _, [] => []\n  | n + 1, _ :: xs => drop n xs\n\ndef length (xs: List α) : Nat :=\n  match xs with\n  | [] => 0\n  | _ :: xs => 1 + length xs"
     },
     {
       "theorem_id": "prop_57",

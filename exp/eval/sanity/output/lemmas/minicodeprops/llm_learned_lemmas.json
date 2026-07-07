@@ -1,0 +1,40 @@
+{
+  "lemmas": [
+    {
+      "statement": "(n : Nat) (xs : List α) : drop n ([] : List α) = []",
+      "proof": "by\n  cases n <;> rfl"
+    },
+    {
+      "statement": "(n : Nat) (xs : List α) : take n ([] : List α) = []",
+      "proof": "by\n  cases n <;> rfl"
+    },
+    {
+      "statement": "(x : Nat) (y : Nat) (ys : List Nat) : x ≤ y → sorted (y :: ys) → sorted (x :: y :: ys)",
+      "proof": "by\n  intro hxy hsorted\n  cases ys with\n  | nil =>\n    simp [sorted, hxy]\n  | cons z zs =>\n    simp [sorted] at hsorted ⊢\n    exact And.intro hxy hsorted"
+    },
+    {
+      "statement": "(x y : Nat) : ¬ x ≤ y → y ≤ x",
+      "proof": "by\n  intro h\n  exact Nat.le_of_lt (Nat.lt_of_not_le h)"
+    },
+    {
+      "statement": "(x z : Nat) (zs : List Nat) : x ≤ z → insort x (z :: zs) = x :: z :: zs",
+      "proof": "by\n  intro hxz\n  simp [insort, hxz]"
+    },
+    {
+      "statement": "(x z : Nat) (zs : List Nat) : ¬ x ≤ z → insort x (z :: zs) = z :: insort x zs",
+      "proof": "by\n  intro hxz\n  simp [insort, hxz]"
+    },
+    {
+      "statement": "(n : Nat) (xs : List Nat) : count n (insort n xs) = Nat.succ (count n xs)",
+      "proof": "by\n  induction xs with\n  | nil => simp [insort, count]\n  | cons y ys ih =>\n    by_cases hle : n ≤ y\n    · simp [insort, if_pos hle, count]\n    · simp only [insort, if_neg hle, count]\n      rw [ih]; split_ifs <;> omega"
+    },
+    {
+      "statement": "(n m : Nat) (xs : List Nat) : n ≠ m → count n (insort m xs) = count n xs",
+      "proof": "by\n  intro hnm\n  induction xs with\n  | nil => simp [insort, count, hnm]\n  | cons y ys ih =>\n    by_cases hle : m ≤ y\n    · simp [insort, if_pos hle, count, hnm]\n    · simp only [insort, if_neg hle, count]\n      rw [ih]"
+    },
+    {
+      "statement": "(xs : List α) (ys : List α) : drop 0 (xs ++ ys) = xs ++ ys",
+      "proof": "by\n  simp [drop]"
+    }
+  ]
+}

@@ -154,6 +154,10 @@ object Decomposer:
   def isTrivial(c: Candidate, pog: ProofOrderingGraph): Boolean =
     c.root == pog.rootTacticId && holeCount(c) == 0
 
+  /** A single-tactic fragment encodes no reusable structure. Dropped by
+   *  `enumerate` independent of the (swappable) heuristic. */
+  def isSingleton(c: Candidate): Boolean = c.size == 1
+
   // ── enumeration (§2.3 Phase A driver) ───────────────────────────────────────
 
   /** Enumerate admissible, non-trivial, heuristic-accepted decompositions of the
@@ -189,7 +193,7 @@ object Decomposer:
           examined += 1
           val root = fragmentRoot(vH, pog).get
           val c    = Candidate(root, vH.iterator.map(id => id -> mById(id)).toMap)
-          if !isTrivial(c, pog) && heuristic(c) then
+          if !isTrivial(c, pog) && !isSingleton(c) && heuristic(c) then
             out += decompose(vH, pog)
             accepted += 1
           else skipped += 1

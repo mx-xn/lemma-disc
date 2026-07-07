@@ -1,0 +1,19 @@
+theorem:  mergesort_permut
+sample:   1
+attempt:  fix_5
+
+[proof]
+intro t
+exact lemma_hint_24 (l := l) (t := t)
+
+[lean error]
+location:
+      intro t
+      exact lemma_hint_24 (l := l) (t := t)
+     ^
+error: Type mismatch
+  lemma_hint_24 l t
+has type
+  count1 l t = count1 l t
+but is expected to have type
+  count1 (mergesort l) t = count1 l t

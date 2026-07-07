@@ -1,0 +1,140 @@
+theorem:  merge_sorted
+sample:   0
+attempt:  init
+
+[proof]
+induction sxs generalizing ys with
+| nil =>
+  simp [merge]
+  intro sys
+  exact sys
+| singleton =>
+  intro ys sys
+  cases ys with
+  | nil =>
+    simp [merge]
+    exact Sorted.singleton
+  | cons y ys' =>
+    cases ys' with
+    | nil =>
+      by_cases hxy : x < y
+      · simp [merge, hxy]
+        exact Sorted.cons Sorted.singleton (by
+          intro hyx
+          exact (Preorder.not_lt_of_ge (Preorder.le_of_not_gt hxy)) hyx)
+      · simp [merge, hxy]
+        exact Sorted.cons sys hxy
+    | cons z zs =>
+      by_cases hxy : x < y
+      · simp [merge, hxy]
+        exact Sorted.cons (Sorted.cons sys (by
+          intro hyx
+          exact (Preorder.not_lt_of_ge (Preorder.le_of_not_gt hxy)) hyx)) (by
+            intro h
+            cases sys with
+            | cons _ _ _ _ _ hy =>
+              exact hy h
+            | _ => cases hxy)
+      · simp [merge, hxy]
+        exact Sorted.cons (merge_sorted Sorted.singleton (lemma_hint_3 y z zs sys)) (by
+          intro h
+          exact hxy h)
+| @cons a b xs sb hba IH =>
+  intro ys sys
+  cases ys with
+  | nil =>
+    simp [merge]
+    exact Sorted.cons sb hba
+  | cons y ys' =>
+    cases ys' with
+    | nil =>
+      by_cases hay : a < y
+      · simp [merge, hay]
+        exact Sorted.cons (Sorted.cons sb (by
+          intro hyb
+          have hya : y ≤ a := Preorder.le_of_not_gt (by
+            intro hay'
+            exact (Preorder.not_lt_of_ge (show a ≤ y from Preorder.le_of_lt hay)) hay')
+          have hba' : b ≤ y := le_trans (show b ≤ a from Preorder.le_of_not_gt hba) hya
+          exact (Preorder.not_lt_of_ge hba') hyb)) hba
+      · simp [merge, hay]
+        exact Sorted.cons (Sorted.cons sb hba) hay
+    | cons z zs =>
+      by_cases hay : a < y
+      · simp [merge, hay]
+        have hm : Sorted (merge (b :: xs) (y :: z :: zs)) := IH (Sorted.cons sys (by
+          cases sys with
+          | cons _ _ _ _ _ hy => exact hy
+          | _ => intro h; cases h))
+        apply Sorted.cons hm
+        intro h
+        by_cases hby : b < y
+        · simp [merge, hby] at h
+          exact hba h
+        · simp [merge, hby] at h
+          exact (Preorder.not_lt_of_ge (show y ≤ a from Preorder.le_of_not_gt hay)) h
+      · simp [merge, hay]
+        have sys' : Sorted (z :: zs) := lemma_hint_3 y z zs sys
+        have hm : Sorted (merge (a :: b :: xs) (z :: zs)) := merge_sorted (Sorted.cons sb hba) sys'
+        apply Sorted.cons hm
+        intro h
+        by_cases haz : a < z
+        · simp [merge, haz] at h
+          exact hay h
+        · simp [merge, haz] at h
+          cases sys with
+          | cons _ _ _ _ _ hy =>
+            exact hy h
+          | _ =>
+            cases h
+
+[lean error]
+location:
+        simp [merge]
+        intro sys
+             ^
+        exact sys
+error: Tactic `introN` failed: There are no additional binders or `let` bindings in the goal to introduce
+case nil
+T : Type u_1
+inst✝¹ : Preorder T
+inst✝ : DecidableRel LT.lt
+xs ys : List T
+sys : Sorted ys
+⊢ Sorted ys
+
+location:
+      | singleton =>
+        intro ys sys
+             ^
+        cases ys with
+error: Tactic `introN` failed: There are no additional binders or `let` bindings in the goal to introduce
+case singleton
+T : Type u_1
+inst✝¹ : Preorder T
+inst✝ : DecidableRel LT.lt
+xs : List T
+x✝ : T
+ys : List T
+sys : Sorted ys
+⊢ Sorted (merge [x✝] ys)
+
+location:
+      | @cons a b xs sb hba IH =>
+        intro ys sys
+             ^
+        cases ys with
+error: Tactic `introN` failed: There are no additional binders or `let` bindings in the goal to introduce
+case cons
+T : Type u_1
+inst✝¹ : Preorder T
+inst✝ : DecidableRel LT.lt
+xs✝ : List T
+a b : T
+xs : List T
+sb : Sorted (b :: xs)
+hba : ¬b < a
+IH : ∀ {ys : List T}, Sorted ys → Sorted (merge (b :: xs) ys)
+ys : List T
+sys : Sorted ys
+⊢ Sorted (merge (a :: b :: xs) ys)

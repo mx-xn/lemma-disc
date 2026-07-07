@@ -1,9 +1,11 @@
 """CLI for domain-scoped train/test lemma evaluation.
 
 Usage:
-    python -m exp.eval.domain_eval.run split  [options]
-    python -m exp.eval.domain_eval.run learn  [options]
-    python -m exp.eval.domain_eval.run eval   [options]
+    python -m exp.eval.domain_eval.run split      [options]
+    python -m exp.eval.domain_eval.run prep-lean  [options]
+    python -m exp.eval.domain_eval.run learn      [options]
+    python -m exp.eval.domain_eval.run validate   [options]
+    python -m exp.eval.domain_eval.run eval       [options]
 """
 from __future__ import annotations
 
@@ -12,7 +14,9 @@ from pathlib import Path
 from typing import Sequence
 
 from .stages.split import run_split
+from .stages.prep_lean import run_prep_lean
 from .stages.learn import run_learn
+from .stages.validate import run_validate
 from .stages.eval import run_eval
 
 DOMAIN_EVAL_ROOT = Path(__file__).resolve().parent
@@ -39,6 +43,21 @@ def _add_split_parser(sub: argparse._SubParsersAction) -> None:
     p.add_argument("--force", action="store_true")
 
 
+def _add_prep_lean_parser(sub: argparse._SubParsersAction) -> None:
+    p = sub.add_parser(
+        "prep-lean",
+        help="write a training-only copy of a Lean source file (for learn --method llm)",
+    )
+    p.add_argument("--lean-file", type=Path, required=True,
+                   help="full domain .lean source file")
+    p.add_argument("--train", type=Path, default=DEFAULT_OUTPUT_DIR / "train.json",
+                   dest="train_path",
+                   help="train.json from the split step")
+    p.add_argument("--output", type=Path, default=None, dest="output_path",
+                   help="destination .lean file (default: <stem>_train.lean alongside input)")
+    p.add_argument("--force", action="store_true")
+
+
 def _add_learn_parser(sub: argparse._SubParsersAction) -> None:
     p = sub.add_parser("learn", help="learn lemma library from training split")
     p.add_argument("--method", choices=["pipeline", "llm"], default="pipeline")
@@ -56,10 +75,37 @@ def _add_learn_parser(sub: argparse._SubParsersAction) -> None:
                    help="trace.json from digestion (pipeline only)")
     p.add_argument("--skip-pipeline", action="store_true",
                    help="skip run_full.sh; write empty raw_lemmas.json")
+    p.add_argument("--pipeline-timeout", type=int, default=None, dest="pipeline_timeout_ms",
+                   metavar="MS",
+                   help="timeout in ms for fragment enumeration (passed to run_full.sh --timeout)")
     # llm only
     p.add_argument("--lean-file", type=Path, default=None,
                    help="Lean source with training proofs only (llm only)")
-    p.add_argument("--model", default="gpt-5.4-mini", dest="llm_model")
+    p.add_argument("--model", default="gpt-5.4", dest="llm_model")
+
+
+def _add_validate_parser(sub: argparse._SubParsersAction) -> None:
+    p = sub.add_parser(
+        "validate",
+        help="interactive Lean check: discard or fix failing lemma statements",
+    )
+    p.add_argument(
+        "--lemmas", type=Path, default=DEFAULT_OUTPUT_DIR / "raw_lemmas.json",
+        dest="lemmas_path",
+        help="input lemma statements file (default: output/raw_lemmas.json)",
+    )
+    p.add_argument(
+        "--train", type=Path, default=DEFAULT_OUTPUT_DIR / "train.json",
+        dest="train_path",
+        help="train.json used to read lake_project/imports defaults",
+    )
+    p.add_argument("--output-dir", type=Path, default=DEFAULT_OUTPUT_DIR)
+    p.add_argument("--lake-project", type=Path, default=None)
+    p.add_argument(
+        "--imports", type=str, default=None,
+        help="comma-separated imports (overrides train.json)",
+    )
+    p.add_argument("--force", action="store_true")
 
 
 def _add_eval_parser(sub: argparse._SubParsersAction) -> None:
@@ -70,6 +116,8 @@ def _add_eval_parser(sub: argparse._SubParsersAction) -> None:
                    help="learned_lemmas.json; if absent runs baseline")
     p.add_argument("--top-k", type=int, default=None,
                    help="retrieve top-K lemmas per theorem via ByT5Retriever")
+    p.add_argument("--samples", type=int, default=1, dest="num_samples", metavar="M",
+                   help="number of independent proof samples per theorem (default: 1)")
     p.add_argument("--model", default="gpt-5.4-mini", dest="llm_model")
     p.add_argument("--max-attempts", type=int, default=3)
     p.add_argument("--workers", type=int, default=1)
@@ -83,7 +131,9 @@ def main(argv: Sequence[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="exp.eval.domain_eval.run")
     sub = parser.add_subparsers(dest="cmd", required=True)
     _add_split_parser(sub)
+    _add_prep_lean_parser(sub)
     _add_learn_parser(sub)
+    _add_validate_parser(sub)
     _add_eval_parser(sub)
     args = parser.parse_args(argv)
 
@@ -101,6 +151,15 @@ def main(argv: Sequence[str] | None = None) -> int:
         )
         return 0
 
+    if args.cmd == "prep-lean":
+        run_prep_lean(
+            lean_file=args.lean_file,
+            train_path=args.train_path,
+            output_path=args.output_path,
+            force=args.force,
+        )
+        return 0
+
     if args.cmd == "learn":
         run_learn(
             method=args.method,
@@ -110,9 +169,28 @@ def main(argv: Sequence[str] | None = None) -> int:
             imports_override=_split_imports(args.imports),
             trace_path=args.trace_path,
             skip_pipeline=args.skip_pipeline,
+            pipeline_timeout_ms=args.pipeline_timeout_ms,
             lean_file=args.lean_file,
             llm_model=args.llm_model,
             skip_fix=args.skip_fix,
+            force=args.force,
+        )
+        return 0
+
+    if args.cmd == "validate":
+        from exp.lib.corpus import load_theorems
+        from .stages.learn import _resolve_setup
+        tset = load_theorems(args.train_path)
+        lake_project, imports = _resolve_setup(
+            tset,
+            lake_project_override=args.lake_project,
+            imports_override=_split_imports(args.imports),
+        )
+        run_validate(
+            lemmas_path=args.lemmas_path,
+            output_dir=args.output_dir,
+            lake_project=lake_project,
+            imports=imports,
             force=args.force,
         )
         return 0
@@ -129,6 +207,7 @@ def main(argv: Sequence[str] | None = None) -> int:
             lake_project_override=args.lake_project,
             imports_override=_split_imports(args.imports),
             force=args.force,
+            num_samples=args.num_samples,
         )
         return 0
 

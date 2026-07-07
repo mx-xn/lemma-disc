@@ -1,10 +1,11 @@
-// Renders a (premises, body, conclusion) triple as a Lean-conventional theorem
-// statement: `(p1 : T1) ... (pN : TN) : conclusion`.
+// Renders a (scopeVars, premises, body, conclusion) quad as a Lean-conventional
+// theorem statement: `(s1 : T1) ... (p1 : U1) ... : conclusion`.
 //
-// All premises become binders; every top-level `→`-antecedent in `body` is lifted
-// into an additional binder. `(name : type)`-shaped antecedents keep their name;
-// unnamed ones receive a fresh `h{k}` that does not collide (as a whole word)
-// with anything already present in the premises, body, or conclusion.
+// scopeVars become explicit binders first, then premises, then every top-level
+// `→`-antecedent in `body` is lifted into an additional binder.
+// `(name : type)`-shaped antecedents keep their name; unnamed ones receive a
+// fresh `h{k}` that does not collide (as a whole word) with anything already
+// present in scope_vars, premises, body, or conclusion.
 //
 // Top-level here means "at paren/bracket depth 0 and not under a `∀`-quantifier";
 // nested `→`s inside binder types, `∀ … ,` bodies, or parenthesised subterms are
@@ -12,10 +13,11 @@
 
 object StatementFormatter:
 
-  def format(premises: List[String], body: String, conclusion: String): String =
+  def format(scopeVars: List[String], premises: List[String], body: String, conclusion: String): String =
+    val scopeBinders   = scopeVars.map(sv => s"($sv)")
     val premiseBinders = premises.map(p => s"($p)")
-    val bodyBinders    = liftBody(body, premises, conclusion)
-    val binders        = premiseBinders ++ bodyBinders
+    val bodyBinders    = liftBody(body, scopeVars ++ premises, conclusion)
+    val binders        = scopeBinders ++ premiseBinders ++ bodyBinders
     if binders.isEmpty then conclusion
     else binders.mkString(" ") + " : " + conclusion
 

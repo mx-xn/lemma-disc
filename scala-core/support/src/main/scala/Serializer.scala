@@ -72,6 +72,7 @@ object Serializer:
       "fragment_id" -> l.fragmentId,
       "source_file" -> l.sourceFile,
       "decl_name"   -> l.declName,
+      "scope_vars"  -> l.scopeVars,
       "premises"    -> l.premises,
       "body"        -> l.body,
       "conclusion"  -> l.conclusion,

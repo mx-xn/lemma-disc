@@ -22,4 +22,10 @@ object Linearizer:
       if ids.contains(id) then result += id
       byId(id).childIds.foreach(dfs)
     dfs(pog.rootTacticId)
-    result.result()
+    val out = result.result()
+    // Some proof trees are forests (LeanDojo extracts disconnected subtrees for
+    // inline `have ... := by ...` bodies). Fragments rooted in those subtrees
+    // cannot be replayed correctly from pog.rootObligation, so we reject them.
+    require(out.size == ids.size,
+      s"${ids.size - out.size} node(s) unreachable from proof root: ${(ids -- out.toSet).take(5)}")
+    out

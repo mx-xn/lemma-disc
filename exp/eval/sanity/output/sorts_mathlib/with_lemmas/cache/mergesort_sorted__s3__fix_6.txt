@@ -1,0 +1,9 @@
+theorem:  mergesort_sorted
+sample:   3
+attempt:  fix_6
+
+[proof]
+exact mergesort_sorted (T := T) l
+
+[lean result]
+OK

@@ -146,7 +146,8 @@ class SerializerTest extends AnyFlatSpec with Matchers:
     val prop14 = pf.pogs.find(_.declName == "prop_14").getOrElse(fail("no prop_14"))
     prop14.edges.toSet shouldBe Set(
       PogEdge(0, 2, ModifyEdge), PogEdge(2, 3, ModifyEdge), PogEdge(3, 4, ModifyEdge),
-      PogEdge(0, 5, UseEdge),    PogEdge(0, 6, UseEdge)
+      PogEdge(0, 1, UseEdge), PogEdge(4, 5, UseEdge), PogEdge(3, 6, UseEdge),
+      PogEdge(0, 5, UseEdge), PogEdge(0, 6, UseEdge)
     )
 
     val prop37 = pf.pogs.find(_.declName == "prop_37").getOrElse(fail("no prop_37"))

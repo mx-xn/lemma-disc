@@ -1,0 +1,72 @@
+{
+  "lemmas": [
+    {
+      "statement": "(n : Nat) (xs : List α) : drop n ([] : List α) = []",
+      "proof": "by\n  cases n <;> rfl"
+    },
+    {
+      "statement": "(n : Nat) (xs : List α) : take n ([] : List α) = []",
+      "proof": "by\n  cases n <;> rfl"
+    },
+    {
+      "statement": "(xs : List α) (ys : List β) : zip' [] ys = []",
+      "proof": "by\n  cases ys <;> rfl"
+    },
+    {
+      "statement": "(xs : List α) (ys : List β) : zip' xs [] = []",
+      "proof": "by\n  cases xs <;> rfl"
+    },
+    {
+      "statement": "(x : Nat) (y : Nat) (ys : List Nat) : x ≤ y → sorted (y :: ys) → sorted (x :: y :: ys)",
+      "proof": "by\n  intro hxy hsorted\n  cases ys with\n  | nil =>\n    simp [sorted, hxy]\n  | cons z zs =>\n    simp [sorted] at hsorted ⊢\n    exact And.intro hxy hsorted"
+    },
+    {
+      "statement": "(x y : Nat) : ¬ x ≤ y → y ≤ x",
+      "proof": "by\n  intro h\n  exact Nat.le_of_lt (Nat.lt_of_not_le h)"
+    },
+    {
+      "statement": "(x z : Nat) (zs : List Nat) : x ≤ z → insort x (z :: zs) = x :: z :: zs",
+      "proof": "by\n  intro hxz\n  simp [insort, hxz]"
+    },
+    {
+      "statement": "(x z : Nat) (zs : List Nat) : ¬ x ≤ z → insort x (z :: zs) = z :: insort x zs",
+      "proof": "by\n  intro hxz\n  simp [insort, hxz]"
+    },
+    {
+      "statement": "(n : Nat) (xs : List Nat) : count n (insort n xs) = Nat.succ (count n xs)",
+      "proof": "by\n  simpa [count]\n    using (count_insort n n xs)"
+    },
+    {
+      "statement": "(n m : Nat) (xs : List Nat) : n ≠ m → count n (insort m xs) = count n xs",
+      "proof": "by\n  intro hnm\n  simpa [count, hnm] using (count_insort n m xs)"
+    },
+    {
+      "statement": "(n : Nat) (xs : List Nat) : count n (sort xs) = count n xs",
+      "proof": "by\n  induction xs with\n  | nil =>\n    simp [sort]\n  | cons x xs ih =>\n    simp only [sort, count_insort, count]\n    rw [ih]"
+    },
+    {
+      "statement": "(n : Nat) (ys : List α) : drop n ([] ++ ys) = drop n [] ++ drop (n - length ([] : List α)) ys",
+      "proof": "by\n  simp [length, drop]"
+    },
+    {
+      "statement": "(xs : List α) (ys : List α) : drop 0 (xs ++ ys) = xs ++ ys",
+      "proof": "by\n  simp [drop]"
+    },
+    {
+      "statement": "(xs : List α) : length (reverse xs) = length xs",
+      "proof": "by\n  induction xs with\n  | nil =>\n    simp [reverse, length]\n  | cons x xs ih =>\n    simp [reverse, length, ih]"
+    },
+    {
+      "statement": "(xs : List α) (ys : List β) : length xs = length ys → length (reverse xs) = length (reverse ys)",
+      "proof": "by\n  intro h\n  rw [length_reverse, length_reverse, h]"
+    },
+    {
+      "statement": "(x : α) (y : β) (xs : List α) (ys : List β) :\n  zip' (reverse (x :: xs)) (reverse (y :: ys)) = (zip' (reverse xs) (reverse ys)) ++ [(x, y)]",
+      "proof": "by\n  simp [reverse, zip']"
+    },
+    {
+      "statement": "(xs : List α) (ys : List β) :\n  length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)",
+      "proof": "by\n  induction xs generalizing ys with\n  | nil =>\n    intro h\n    cases ys with\n    | nil =>\n      simp [reverse, zip']\n    | cons y ys =>\n      simp only [length] at h\n      omega\n  | cons x xs ih =>\n    intro h\n    cases ys with\n    | nil =>\n      simp only [length] at h\n      omega\n    | cons y ys =>\n      have h' : length xs = length ys := by\n        simp only [length] at h\n        omega\n      have ih' : zip' (reverse xs) (reverse"
+    }
+  ]
+}

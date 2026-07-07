@@ -1,0 +1,18 @@
+theorem:  mergesort_permut
+sample:   0
+attempt:  fix_6
+
+[proof]
+simpa [Permut] using (fun t => lemma_hint_24 (l := l) (t := t))
+
+[lean error]
+location:
+    theorem eval_mergesort_permut [LT T] [DecidableEq T] [DecidableRel (LT.lt (α := T))] (l : List T) : Permut (mergesort l) l := by
+      simpa [Permut] using (fun t => lemma_hint_24 (l := l) (t := t))
+     ^
+error: Type mismatch: After simplification, term
+  fun t => lemma_hint_24 l t
+ has type
+  True
+but is expected to have type
+  ∀ (t : T), count1 (mergesort l) t = count1 l t

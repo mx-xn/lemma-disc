@@ -218,11 +218,11 @@ class Pipeline34Test extends AnyFlatSpec with Matchers:
     }
   }
 
-  it should "[PE2] set statement=conclusion when body='True' and premises are empty" in {
-    // With no binders from premises and body dropped (⊤), the statement degenerates
+  it should "[PE2] set statement=conclusion when body='True', premises are empty, and scope_vars are empty" in {
+    // With no binders from scope_vars, premises, or body (⊤), the statement degenerates
     // to just the conclusion with no leading binder block.
     lemmas
-      .filter(l => l("body").str == "True" && l("premises").arr.isEmpty)
+      .filter(l => l("body").str == "True" && l("premises").arr.isEmpty && l("scope_vars").arr.isEmpty)
       .foreach { l =>
         withClue(s"decl='${l("decl_name").str}' fragment ${l("fragment_id").num.toInt}: ") {
           l("statement").str shouldBe l("conclusion").str

@@ -11,6 +11,7 @@ experiment can use its own prompt files.
 from __future__ import annotations
 
 import re
+import textwrap
 from dataclasses import dataclass, field
 from pathlib import Path
 
@@ -45,14 +46,14 @@ def parse_proof_response(text: str) -> str:
     """
     m = _PROOF_TAG_RE.search(text)
     if m:
-        return _strip_leading_by(m.group(1).strip())
+        return _strip_leading_by(textwrap.dedent(m.group(1)).strip("\n"))
     raw = text.strip()
     if raw.startswith("```"):
         first_nl = raw.find("\n")
         raw = raw[first_nl + 1:] if first_nl != -1 else raw
         if raw.endswith("```"):
             raw = raw[:-3]
-    return _strip_leading_by(raw.strip("\n"))
+    return _strip_leading_by(textwrap.dedent(raw).strip("\n"))
 
 
 @dataclass(frozen=True)
@@ -99,6 +100,7 @@ def prove(
     max_attempts: int = 3,
     baseline_template: str,
     fix_template: str,
+    lean_scratch_dir: Path | None = None,
 ) -> ProverResult:
     """Run the fix-loop. Returns as soon as any attempt succeeds."""
     result = ProverResult(ok=False)
@@ -117,6 +119,7 @@ def prove(
             lake_project=lake_project,
             imports=imports,
             decl_name=f"expB_{thm.theorem_id}",
+            scratch_dir=lean_scratch_dir,
         )
 
         result.attempts.append(Attempt(

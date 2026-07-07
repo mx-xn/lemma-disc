@@ -1,0 +1,44 @@
+theorem:  mergesort_sorted
+sample:   0
+attempt:  fix_7
+
+[proof]
+revert l
+refine Nat.strong_induction_on ?_ ?_
+intro n IH l hl
+· exact l.length
+· by_cases h : l.length < 2
+  · unfold mergesort
+    simp [h]
+    cases l with
+    | nil =>
+      exact Sorted.nil
+    | cons x xs =>
+      cases xs with
+      | nil =>
+        exact Sorted.singleton
+      | cons y ys =>
+        exfalso
+        simp at h
+  · unfold mergesort
+    simp [h]
+    apply merge_sorted
+    · apply IH (left l).length
+      · simpa [hl] using left_less l
+      · rfl
+    · apply IH (right l).length
+      · simpa [hl] using right_less l
+      · rfl
+
+[lean error]
+location:
+      refine Nat.strong_induction_on ?_ ?_
+      intro n IH l hl
+           ^
+      · exact l.length
+error: Tactic `introN` failed: There are no additional binders or `let` bindings in the goal to introduce
+case refine_1
+T : Type u_1
+inst✝¹ : Preorder T
+inst✝ : DecidableRel LT.lt
+⊢ ℕ

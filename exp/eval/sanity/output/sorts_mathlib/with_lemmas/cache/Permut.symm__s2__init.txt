@@ -1,0 +1,11 @@
+theorem:  Permut.symm
+sample:   2
+attempt:  init
+
+[proof]
+intro t
+symm
+exact p t
+
+[lean result]
+OK

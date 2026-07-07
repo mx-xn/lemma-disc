@@ -1,0 +1,9 @@
+theorem:  merge_sorted
+sample:   3
+attempt:  fix_2
+
+[proof]
+simpa using merge_sorted sxs sys
+
+[lean result]
+OK

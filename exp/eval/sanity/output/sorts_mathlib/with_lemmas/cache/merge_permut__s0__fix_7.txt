@@ -1,0 +1,36 @@
+theorem:  merge_permut
+sample:   0
+attempt:  fix_7
+
+[proof]
+induction xs generalizing ys with
+| nil =>
+  simp [merge, Permut]
+| cons x xs IH =>
+  induction ys with
+  | nil =>
+    simp [merge, Permut]
+  | cons y ys IHys =>
+    by_cases h : x < y
+    · simp [merge, h, Permut]
+      intro t
+      simp [count1]
+      exact IH (y :: ys) t
+    · intro t
+      simp [merge, h, count1]
+      simpa [Permut, count1, Nat.add_assoc, Nat.add_left_comm, Nat.add_comm] using
+        congrArg (fun n => (if y = t then 1 else 0) + n) (IHys t)
+
+[lean error]
+location:
+            simp [merge, h, count1]
+            simpa [Permut, count1, Nat.add_assoc, Nat.add_left_comm, Nat.add_comm] using
+           ^
+              congrArg (fun n => (if y = t then 1 else 0) + n) (IHys t)
+error: Type mismatch: After simplification, term
+  congrArg (fun n => (if y = t then 1 else 0) + n) (IHys t)
+ has type
+  (if y = t then 1 else 0) + count1 (merge (x :: xs) ys) t =
+    (if y = t then 1 else 0) + (count1 (xs ++ ys) t + if x = t then 1 else 0)
+but is expected to have type
+  (count1 (merge (x :: xs) ys) t + if y = t then 1 else 0) = count1 (xs ++ y :: ys) t + if x = t then 1 else 0

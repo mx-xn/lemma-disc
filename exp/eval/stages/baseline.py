@@ -15,6 +15,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import asdict
 from pathlib import Path
 
+from exp.eval.lib.result_store import load_results_file, merge_results_file
 from exp.lib.corpus import Theorem, TheoremSet, load_theorems
 from exp.lib.llm import LLM
 from exp.lib.prover import ProverResult, prove
@@ -64,31 +65,53 @@ def _hard_theorem_record(thm: Theorem, result: ProverResult) -> dict:
     }
 
 
+def _merge_hard_set(
+    path: Path,
+    lake_project: str,
+    imports: list[str],
+    rows: list[tuple[Theorem, ProverResult]],
+) -> None:
+    """Upsert the hard-set file: remove re-evaluated theorem_ids, add failing ones."""
+    existing = load_results_file(path)
+    if existing.get("lake_project") == lake_project:
+        hard_map: dict[str, dict] = {t["theorem_id"]: t for t in existing.get("theorems", [])}
+    else:
+        hard_map = {}
+
+    for thm, _ in rows:
+        hard_map.pop(thm.theorem_id, None)
+    for thm, result in rows:
+        if not result.ok:
+            hard_map[thm.theorem_id] = _hard_theorem_record(thm, result)
+
+    path.write_text(
+        json.dumps(
+            {"lake_project": lake_project, "imports": imports, "theorems": list(hard_map.values())},
+            ensure_ascii=False,
+            indent=2,
+        )
+    )
+
+
 def _write_artifacts(
     output_dir: Path,
     lake_project: Path,
     imports: list[str],
     rows: list[tuple[Theorem, ProverResult]],
+    *,
+    force: bool = False,
 ) -> None:
     output_dir.mkdir(parents=True, exist_ok=True)
+    lp = str(lake_project)
 
-    baseline = {
-        "lake_project": str(lake_project),
-        "imports": imports,
-        "results": {t.theorem_id: _theorem_record(t, r) for t, r in rows},
-    }
-    (output_dir / BASELINE_JSON).write_text(
-        json.dumps(baseline, ensure_ascii=False, indent=2)
+    merge_results_file(
+        output_dir / BASELINE_JSON,
+        lp,
+        imports,
+        {t.theorem_id: _theorem_record(t, r) for t, r in rows},
+        force=force,
     )
-
-    hard = {
-        "lake_project": str(lake_project),
-        "imports": imports,
-        "theorems": [_hard_theorem_record(t, r) for t, r in rows if not r.ok],
-    }
-    (output_dir / HARD_SET_JSON).write_text(
-        json.dumps(hard, ensure_ascii=False, indent=2)
-    )
+    _merge_hard_set(output_dir / HARD_SET_JSON, lp, imports, rows)
 
 
 def _prove_one(
@@ -97,18 +120,28 @@ def _prove_one(
     lake_project: Path,
     imports: list[str],
     max_attempts: int,
+    lean_scratch_dir: Path | None = None,
+    num_samples: int = 1,
 ) -> tuple[Theorem, ProverResult]:
-    print(f"[prove] {thm.theorem_id}", file=sys.stderr)
-    result = prove(
-        thm, llm,
-        lake_project=lake_project,
-        imports=imports,
-        max_attempts=max_attempts,
-        baseline_template=_BASELINE_TEMPLATE,
-        fix_template=_FIX_TEMPLATE,
-    )
+    print(f"[prove] {thm.theorem_id} ({num_samples} sample(s))", file=sys.stderr)
+    results = [
+        prove(
+            thm, llm,
+            lake_project=lake_project,
+            imports=imports,
+            max_attempts=max_attempts,
+            baseline_template=_BASELINE_TEMPLATE,
+            fix_template=_FIX_TEMPLATE,
+            lean_scratch_dir=lean_scratch_dir,
+        )
+        for _ in range(num_samples)
+    ]
+    # pass@M: succeed if any sample succeeded
+    winning = next((r for r in results if r.ok), None)
+    result = winning if winning is not None else results[-1]
+    n_ok = sum(1 for r in results if r.ok)
     status = "ok" if result.ok else "HARD"
-    print(f"  -> {thm.theorem_id}: {status} after {len(result.attempts)} attempt(s)", file=sys.stderr)
+    print(f"  -> {thm.theorem_id}: {status} ({n_ok}/{num_samples} samples ok)", file=sys.stderr)
     return thm, result
 
 
@@ -121,20 +154,16 @@ def run_baseline(
     llm_model: str,
     max_attempts: int,
     num_workers: int = 1,
+    num_samples: int = 1,
     lake_project_override: Path | None = None,
     imports_override: list[str] | None = None,
 ) -> None:
     output_dir = Path(output_dir)
-    baseline_path = output_dir / BASELINE_JSON
-
-    if baseline_path.exists() and not force:
-        print(f"[skip] {baseline_path} exists (use --force to overwrite)", file=sys.stderr)
-        return
-
     tset = load_theorems(Path(theorems_path))
     lake_project, imports = _resolve_setup(tset, lake_project_override, imports_override)
 
     llm = LLM(model=llm_model, cache_dir=output_dir / CACHE_SUBDIR)
+    lean_scratch_dir = output_dir / CACHE_SUBDIR
 
     rows: list[tuple[Theorem, ProverResult]] = []
 
@@ -142,7 +171,9 @@ def run_baseline(
         results_map: dict[str, tuple[Theorem, ProverResult]] = {}
         with ThreadPoolExecutor(max_workers=num_workers) as pool:
             futures = {
-                pool.submit(_prove_one, thm, llm, lake_project, imports, max_attempts): thm
+                pool.submit(
+                    _prove_one, thm, llm, lake_project, imports, max_attempts, lean_scratch_dir, num_samples
+                ): thm
                 for thm in tset.theorems
             }
             for fut in as_completed(futures):
@@ -163,7 +194,7 @@ def run_baseline(
     else:
         hard_count = 0
         for thm in tset.theorems:
-            thm, result = _prove_one(thm, llm, lake_project, imports, max_attempts)
+            thm, result = _prove_one(thm, llm, lake_project, imports, max_attempts, lean_scratch_dir, num_samples)
             rows.append((thm, result))
             if not result.ok:
                 hard_count += 1
@@ -171,7 +202,7 @@ def run_baseline(
                     print(f"[stop] reached --limit {limit}", file=sys.stderr)
                     break
 
-    _write_artifacts(output_dir, lake_project, imports, rows)
+    _write_artifacts(output_dir, lake_project, imports, rows, force=force)
     n_hard = sum(1 for _, r in rows if not r.ok)
     print(
         f"[done] {len(rows)} attempted, {n_hard} hard -> "

@@ -208,8 +208,11 @@ class BuilderTest extends AnyFlatSpec with Matchers:
       PogEdge(0, 2, ModifyEdge),
       PogEdge(2, 3, ModifyEdge),
       PogEdge(3, 4, ModifyEdge),
-      PogEdge(0, 5, UseEdge),
-      PogEdge(0, 6, UseEdge)
+      PogEdge(0, 1, UseEdge),   // leaf 1: nearest goal-modifier is 0
+      PogEdge(4, 5, UseEdge),   // leaf 5: nearest goal-modifier is 4
+      PogEdge(3, 6, UseEdge),   // leaf 6: nearest goal-modifier is 3
+      PogEdge(0, 5, UseEdge),   // leaf 5: ih use-dep traces back to induction (0)
+      PogEdge(0, 6, UseEdge)    // leaf 6: ih use-dep traces back to induction (0)
     )
   }
 

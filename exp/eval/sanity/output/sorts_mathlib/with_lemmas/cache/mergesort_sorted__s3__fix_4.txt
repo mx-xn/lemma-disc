@@ -1,0 +1,20 @@
+theorem:  mergesort_sorted
+sample:   3
+attempt:  fix_4
+
+[proof]
+exact lemma_hint_17 (T := T) l
+
+[lean error]
+location:
+    theorem eval_mergesort_sorted [Preorder T] [DecidableRel (LT.lt (α := T))] (l : List T) : Sorted (mergesort l) := by
+      exact lemma_hint_17 (T := T) l
+                                  ^
+error: Application type mismatch: The argument
+  l
+has type
+  List T
+but is expected to have type
+  T
+in the application
+  lemma_hint_17 l

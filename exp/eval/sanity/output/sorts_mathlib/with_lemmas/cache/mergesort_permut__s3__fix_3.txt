@@ -1,0 +1,22 @@
+theorem:  mergesort_permut
+sample:   3
+attempt:  fix_3
+
+[proof]
+exact lemma_hint_2 (a := mergesort l) (c := l) (t' := l.headD (Classical.choice (Classical.decEq T |> by contradiction))) (h1 := by
+  have h := lemma_hint_24 (l := l)
+  simpa using h (l.headD (Classical.choice (Classical.decEq T |> by contradiction))))
+
+[lean error]
+location:
+    theorem eval_mergesort_permut [LT T] [DecidableEq T] [DecidableRel (LT.lt (α := T))] (l : List T) : Permut (mergesort l) l := by
+      exact lemma_hint_2 (a := mergesort l) (c := l) (t' := l.headD (Classical.choice (Classical.decEq T |> by contradiction))) (h1 := by
+                                                                                                           ^
+        have h := lemma_hint_24 (l := l)
+error: invalid 'by' tactic, expected type has not been provided
+
+location:
+        have h := lemma_hint_24 (l := l)
+        simpa using h (l.headD (Classical.choice (Classical.decEq T |> by contradiction))))
+                                                                      ^
+error: invalid 'by' tactic, expected type has not been provided

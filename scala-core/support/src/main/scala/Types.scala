@@ -25,6 +25,7 @@ case class LemmaObj(
   fragmentId: Int,
   sourceFile: String,
   declName: String,
+  scopeVars: List[String],
   premises: List[String],
   body: String,
   conclusion: String,

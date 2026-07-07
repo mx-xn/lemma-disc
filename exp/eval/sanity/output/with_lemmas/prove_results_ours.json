@@ -1,0 +1,234 @@
+{
+  "lake_project": "/nas/lemma-disc/data/input/MiniCodePropsLeanSrc",
+  "imports": [
+    "LeanSrc.Examples"
+  ],
+  "results": {
+    "prop_36": {
+      "ok": true,
+      "final_error": "",
+      "attempts": [
+        {
+          "proof_body": "induction xs with\n| nil =>\n  rfl\n| cons x xs ih =>\n  simpa using lemma_hint_0 x xs ih",
+          "ok": true,
+          "error_text": "",
+          "raw_response": "<lean4_proof>\ninduction xs with\n| nil =>\n  rfl\n| cons x xs ih =>\n  simpa using lemma_hint_0 x xs ih\n</lean4_proof>",
+          "used_indices": [
+            0
+          ]
+        }
+      ]
+    },
+    "prop_58": {
+      "ok": true,
+      "final_error": "",
+      "attempts": [
+        {
+          "proof_body": "induction n with\n| zero =>\n  intro xs ys\n  rfl\n| succ n ih =>\n  intro xs ys\n  exact lemma_hint_0 n ih xs ys",
+          "ok": false,
+          "error_text": "location:\n      | zero =>\n        intro xs ys\n             ^\n        rfl\nerror: Tactic `introN` failed: There are no additional binders or `let` bindings in the goal to introduce\ncase zero\nα : Type u_1\nβ : Type u_2\nxs : List α\nys : List β\n⊢ drop 0 (zip' xs ys) = zip' (drop 0 xs) (drop 0 ys)\n\nlocation:\n      | succ n ih =>\n        intro xs ys\n             ^\n        exact lemma_hint_0 n ih xs ys\nerror: Tactic `introN` failed: There are no additional binders or `let` bindings in the goal to introduce\ncase succ\nα : Type u_1\nβ : Type u_2\nxs : List α\nys : List β\nn : ℕ\nih : drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)\n⊢ drop (n + 1) (zip' xs ys) = zip' (drop (n + 1) xs) (drop (n + 1) ys)",
+          "raw_response": "<lean4_proof>\ninduction n with\n| zero =>\n  intro xs ys\n  rfl\n| succ n ih =>\n  intro xs ys\n  exact lemma_hint_0 n ih xs ys\n</lean4_proof>",
+          "used_indices": [
+            0
+          ]
+        },
+        {
+          "proof_body": "revert xs ys\ninduction n with\n| zero =>\n  intro xs ys\n  rfl\n| succ n ih =>\n  intro xs ys\n  exact lemma_hint_0 n ih xs ys",
+          "ok": true,
+          "error_text": "",
+          "raw_response": "<reasoning>\nThe error occurs because `xs` and `ys` are already explicit theorem parameters, so after `induction n` there are no remaining binders to `intro`. Also, the induction hypothesis produced by plain `induction n` is too specialized unless we generalize `xs ys`. The minimal idiomatic fix is to revert/generalize `xs ys` before the induction, then re-introduce them in each case. This also matches the type expected by `lemma_hint_0`.\n</reasoning>\n\n<lean4_proof>\nrevert xs ys\ninduction n with\n| zero =>\n  intro xs ys\n  rfl\n| succ n ih =>\n  intro xs ys\n  exact lemma_hint_0 n ih xs ys\n</lean4_proof>",
+          "used_indices": [
+            0
+          ]
+        }
+      ]
+    },
+    "prop_77": {
+      "ok": true,
+      "final_error": "",
+      "attempts": [
+        {
+          "proof_body": "intro h\ninduction xs with\n| nil =>\n  simp [sorted, insort]\n| cons y ys ih =>\n  cases ys with\n  | nil =>\n    simp [sorted, insort]\n  | cons z zs =>\n    exact lemma_hint_3 x y (z :: zs) ih h",
+          "ok": false,
+          "error_text": "location:\n        cases ys with\n        | nil =>\n             ^\n          simp [sorted, insort]\nerror: unsolved goals\ncase cons.nil\nx y : ℕ\nih : sorted [] = true → sorted (insort x []) = true\nh : sorted [y] = true\n⊢ sorted (if x ≤ y then [x, y] else [y, x]) = true\n\nlocation:\n        | nil =>\n          simp [sorted, insort]\n               ^\n        | cons z zs =>\nerror: This simp argument is unused:\n  sorted\nHint: Omit it from the simp argument list.\n  simp [s̵o̵r̵t̵e̵d̵,̵ ̵insort]\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`",
+          "raw_response": "<lean4_proof>\nintro h\ninduction xs with\n| nil =>\n  simp [sorted, insort]\n| cons y ys ih =>\n  cases ys with\n  | nil =>\n    simp [sorted, insort]\n  | cons z zs =>\n    exact lemma_hint_3 x y (z :: zs) ih h\n</lean4_proof>",
+          "used_indices": [
+            3
+          ]
+        },
+        {
+          "proof_body": "intro h\ninduction xs with\n| nil =>\n  simp [sorted, insort]\n| cons y ys ih =>\n  exact lemma_hint_3 x y ys ih h",
+          "ok": true,
+          "error_text": "",
+          "raw_response": "<reasoning>\nThe failure is in the `ys = []` branch. After `cases ys`, the goal becomes\n`sorted (if x ≤ y then [x, y] else [y, x]) = true`, which `simp` does not solve automatically. The minimal fix is to avoid splitting on `ys` manually and instead use the provided hint lemma that already handles the `cons` case uniformly:\n`lemma_hint_3 x y ys ih h`.\nThen the base `nil` case is still discharged by simplification.\n</reasoning>\n\n<lean4_proof>\nintro h\ninduction xs with\n| nil =>\n  simp [sorted, insort]\n| cons y ys ih =>\n  exact lemma_hint_3 x y ys ih h\n</lean4_proof>",
+          "used_indices": [
+            3
+          ]
+        }
+      ]
+    },
+    "prop_78": {
+      "ok": false,
+      "final_error": "location:\n        have h1 : sorted (insort x sorted_xs) = true := by\n          subst hsort\n         ^\n          exact lemma_hint_2 x (sort xs) (by\nerror: Tactic `subst` failed: invalid equality proof, it is not of the form (x = t) or (t = x)\n  sort xs = sorted_xs\nx : ℕ\nxs : List ℕ\nih : sorted (sort xs) = true\nsorted_xs : List ℕ := sort xs\nhsort : sort xs = sorted_xs\n⊢ sorted (insort x sorted_xs) = true",
+      "attempts": [
+        {
+          "proof_body": "intro xs\ninduction xs with\n| nil =>\n  rfl\n| cons x xs ih =>\n  let sorted_xs := sort xs\n  have hsort : sort xs = sorted_xs := rfl\n  have h1 : sorted (insort x sorted_xs) = true := by\n    simpa [sorted_xs, hsort] using ih\n  exact lemma_hint_0 x xs ih sorted_xs hsort h1",
+          "ok": false,
+          "error_text": "location:\n    theorem eval_prop_78 (xs: List Nat) : sorted (sort xs) := by\n      intro xs\n           ^\n      induction xs with\nerror: Tactic `introN` failed: There are no additional binders or `let` bindings in the goal to introduce\nxs : List ℕ\n⊢ sorted (sort xs) = true",
+          "raw_response": "<lean4_proof>\nintro xs\ninduction xs with\n| nil =>\n  rfl\n| cons x xs ih =>\n  let sorted_xs := sort xs\n  have hsort : sort xs = sorted_xs := rfl\n  have h1 : sorted (insort x sorted_xs) = true := by\n    simpa [sorted_xs, hsort] using ih\n  exact lemma_hint_0 x xs ih sorted_xs hsort h1\n</lean4_proof>",
+          "used_indices": [
+            0
+          ]
+        },
+        {
+          "proof_body": "induction xs with\n| nil =>\n  rfl\n| cons x xs ih =>\n  let sorted_xs := sort xs\n  have hsort : sort xs = sorted_xs := rfl\n  have h1 : sorted (insort x sorted_xs) = true := by\n    simpa [sorted_xs, hsort] using ih\n  exact lemma_hint_0 x xs ih sorted_xs hsort h1",
+          "ok": false,
+          "error_text": "location:\n        have h1 : sorted (insort x sorted_xs) = true := by\n          simpa [sorted_xs, hsort] using ih\n         ^\n        exact lemma_hint_0 x xs ih sorted_xs hsort h1\nerror: Type mismatch: After simplification, term\n  ih\n has type\n  sorted sorted_xs = true\nbut is expected to have type\n  sorted (insort x sorted_xs) = true",
+          "raw_response": "<reasoning>\nThe error is caused by `intro xs`: the theorem already has `xs : List Nat` as an explicit parameter, so after `:= by` the goal is already `sorted (sort xs) = true` with `xs` in context. There is no binder left to introduce. The minimal fix is to remove `intro xs` and start induction directly on `xs`.\n</reasoning>\n\n<lean4_proof>\ninduction xs with\n| nil =>\n  rfl\n| cons x xs ih =>\n  let sorted_xs := sort xs\n  have hsort : sort xs = sorted_xs := rfl\n  have h1 : sorted (insort x sorted_xs) = true := by\n    simpa [sorted_xs, hsort] using ih\n  exact lemma_hint_0 x xs ih sorted_xs hsort h1\n</lean4_proof>",
+          "used_indices": [
+            0
+          ]
+        },
+        {
+          "proof_body": "induction xs with\n| nil =>\n  rfl\n| cons x xs ih =>\n  let sorted_xs := sort xs\n  have hsort : sort xs = sorted_xs := rfl\n  have h1 : sorted (insort x sorted_xs) = true := by\n    subst hsort\n    exact lemma_hint_2 x (sort xs) (by\n      intro h\n      simpa using h\n    ) ih\n  exact lemma_hint_0 x xs ih sorted_xs hsort h1",
+          "ok": false,
+          "error_text": "location:\n        have h1 : sorted (insort x sorted_xs) = true := by\n          subst hsort\n         ^\n          exact lemma_hint_2 x (sort xs) (by\nerror: Tactic `subst` failed: invalid equality proof, it is not of the form (x = t) or (t = x)\n  sort xs = sorted_xs\nx : ℕ\nxs : List ℕ\nih : sorted (sort xs) = true\nsorted_xs : List ℕ := sort xs\nhsort : sort xs = sorted_xs\n⊢ sorted (insort x sorted_xs) = true",
+          "raw_response": "<reasoning>\nThe error is in the construction of `h1`: `ih` proves `sorted (sort xs) = true`, which simplifies to `sorted sorted_xs = true`, but the goal was incorrectly `sorted (insort x sorted_xs) = true`. The minimal fix is to obtain `h1` directly from the admitted hint lemma that upgrades sortedness through `insort`, namely `lemma_hint_2`, instantiated with `ys := sort xs`.\n</reasoning>\n\n<lean4_proof>\ninduction xs with\n| nil =>\n  rfl\n| cons x xs ih =>\n  let sorted_xs := sort xs\n  have hsort : sort xs = sorted_xs := rfl\n  have h1 : sorted (insort x sorted_xs) = true := by\n    subst hsort\n    exact lemma_hint_2 x (sort xs) (by\n      intro h\n      simpa using h\n    ) ih\n  exact lemma_hint_0 x xs ih sorted_xs hsort h1\n</lean4_proof>",
+          "used_indices": [
+            0,
+            2
+          ]
+        }
+      ]
+    },
+    "prop_85": {
+      "ok": false,
+      "final_error": "location:\n      | nil =>\n        intro ys\n             ^\n        intro h\nerror: Tactic `introN` failed: There are no additional binders or `let` bindings in the goal to introduce\ncase nil\nα : Type u_1\nβ : Type u_2\nys : List β\nhlen : length [] = length ys\n⊢ zip' (reverse []) (reverse ys) = reverse (zip' [] ys)\n\nlocation:\n      | cons x xs ih =>\n        intro ys\n             ^\n        intro h\nerror: Tactic `introN` failed: There are no additional binders or `let` bindings in the goal to introduce\ncase cons\nα : Type u_1\nβ : Type u_2\nys : List β\nx : α\nxs : List α\nih : length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)\nhlen : length (x :: xs) = length ys\n⊢ zip' (reverse (x :: xs)) (reverse ys) = reverse (zip' (x :: xs) ys)",
+      "attempts": [
+        {
+          "proof_body": "intro xs\ninduction xs with\n| nil =>\n  intro ys\n  exact lemma_hint_8 ys\n| cons x xs ih =>\n  intro ys\n  cases ys with\n  | nil =>\n    intro h\n    exact lemma_hint_4 x xs ih h\n  | cons y ys =>\n    intro h\n    have h' : length xs = length ys := by\n      simpa [length] using h\n    exact lemma_hint_1 x y h xs ih ys h'",
+          "ok": false,
+          "error_text": "location:\n      intro xs\n      induction xs with\n     ^\n      | nil =>\nerror: Invalid target: Index in target's type is not a variable (consider using the `cases` tactic instead)\n  length ys",
+          "raw_response": "<lean4_proof>\nintro xs\ninduction xs with\n| nil =>\n  intro ys\n  exact lemma_hint_8 ys\n| cons x xs ih =>\n  intro ys\n  cases ys with\n  | nil =>\n    intro h\n    exact lemma_hint_4 x xs ih h\n  | cons y ys =>\n    intro h\n    have h' : length xs = length ys := by\n      simpa [length] using h\n    exact lemma_hint_1 x y h xs ih ys h'\n</lean4_proof>",
+          "used_indices": [
+            1,
+            4,
+            8
+          ]
+        },
+        {
+          "proof_body": "induction xs with\n| nil =>\n  intro ys\n  exact lemma_hint_8 ys\n| cons x xs ih =>\n  intro ys\n  cases ys with\n  | nil =>\n    intro h\n    exact lemma_hint_4 x xs ih h\n  | cons y ys =>\n    intro h\n    have h' : length xs = length ys := by\n      simpa [length] using h\n    exact lemma_hint_1 x y h xs ih ys h'",
+          "ok": false,
+          "error_text": "location:\n        intro ys\n        exact lemma_hint_8 ys\n                          ^\n      | cons x xs ih =>\nerror: Application type mismatch: The argument\n  ys\nhas type\n  length [] = length ys✝\nof sort `Prop` but is expected to have type\n  List ?m.26\nof sort `Type ?u.2261` in the application\n  lemma_hint_8 ys\n\nlocation:\n        cases ys with\n        | nil =>\n       ^\n          intro h\nerror: Invalid alternative name `nil`: Expected `refl`\n\nlocation:\n          exact lemma_hint_4 x xs ih h\n        | cons y ys =>\n       ^\n          intro h\nerror: Invalid alternative name `cons`: Expected `refl`\n\nlocation:\n        intro ys\n        cases ys with\n       ^\n        | nil =>\nerror: Dependent elimination failed: Failed to solve equation\n  length ys✝ = Nat.add 1 (length xs)",
+          "raw_response": "<reasoning>\nThe error comes from `intro xs` at the start of the proof body: `xs` and `ys` are already theorem parameters, so after entering the implication the target is not a function over `xs`. Trying to `induction xs` after re-introducing `xs` confuses Lean because `ys` appears in the indexed target. The minimal fix is to remove the erroneous `intro xs` and perform induction directly on the existing parameter `xs`.\n</reasoning>\n\n<lean4_proof>\ninduction xs with\n| nil =>\n  intro ys\n  exact lemma_hint_8 ys\n| cons x xs ih =>\n  intro ys\n  cases ys with\n  | nil =>\n    intro h\n    exact lemma_hint_4 x xs ih h\n  | cons y ys =>\n    intro h\n    have h' : length xs = length ys := by\n      simpa [length] using h\n    exact lemma_hint_1 x y h xs ih ys h'\n</lean4_proof>",
+          "used_indices": [
+            1,
+            4,
+            8
+          ]
+        },
+        {
+          "proof_body": "intro hlen\ninduction xs with\n| nil =>\n  intro ys\n  intro h\n  exact lemma_hint_8 ys h\n| cons x xs ih =>\n  intro ys\n  intro h\n  exact lemma_hint_0 x xs ih ys h",
+          "ok": false,
+          "error_text": "location:\n      | nil =>\n        intro ys\n             ^\n        intro h\nerror: Tactic `introN` failed: There are no additional binders or `let` bindings in the goal to introduce\ncase nil\nα : Type u_1\nβ : Type u_2\nys : List β\nhlen : length [] = length ys\n⊢ zip' (reverse []) (reverse ys) = reverse (zip' [] ys)\n\nlocation:\n      | cons x xs ih =>\n        intro ys\n             ^\n        intro h\nerror: Tactic `introN` failed: There are no additional binders or `let` bindings in the goal to introduce\ncase cons\nα : Type u_1\nβ : Type u_2\nys : List β\nx : α\nxs : List α\nih : length xs = length ys → zip' (reverse xs) (reverse ys) = reverse (zip' xs ys)\nhlen : length (x :: xs) = length ys\n⊢ zip' (reverse (x :: xs)) (reverse ys) = reverse (zip' (x :: xs) ys)",
+          "raw_response": "<reasoning>\nThe first error is in the `nil` branch of the induction on `xs`: after `induction xs`, the goal is still an implication, so `lemma_hint_8` must be applied after introducing both `ys` and the hypothesis `h`.\n\nThe later errors come from doing `cases ys` before introducing the implication hypothesis. Since the goal depends on `ys` through the hypothesis `(length (x :: xs) = length ys) → ...`, dependent elimination on `ys` fails. The minimal fix is to introduce `ys` and `h` first, then use the non-dependent helper lemma `lemma_hint_0`, which exactly handles the inductive step without needing to split on `ys`.\n</reasoning>\n\n<lean4_proof>\nintro hlen\ninduction xs with\n| nil =>\n  intro ys\n  intro h\n  exact lemma_hint_8 ys h\n| cons x xs ih =>\n  intro ys\n  intro h\n  exact lemma_hint_0 x xs ih ys h\n</lean4_proof>",
+          "used_indices": [
+            0,
+            8
+          ]
+        }
+      ]
+    },
+    "prop_53": {
+      "ok": true,
+      "final_error": "",
+      "attempts": [
+        {
+          "proof_body": "intro n xs\ninduction xs with\n| nil =>\n  rfl\n| cons x xs ih =>\n  exact lemma_hint_0 n x xs ih",
+          "ok": false,
+          "error_text": "location:\n    theorem eval_prop_53 (n: Nat) (xs: List Nat) : (count n xs = count n (sort xs)) := by\n      intro n xs\n           ^\n      induction xs with\nerror: Tactic `introN` failed: There are no additional binders or `let` bindings in the goal to introduce\nn : ℕ\nxs : List ℕ\n⊢ count n xs = count n (sort xs)",
+          "raw_response": "<lean4_proof>\nintro n xs\ninduction xs with\n| nil =>\n  rfl\n| cons x xs ih =>\n  exact lemma_hint_0 n x xs ih\n</lean4_proof>",
+          "used_indices": [
+            0
+          ]
+        },
+        {
+          "proof_body": "induction xs with\n| nil =>\n  rfl\n| cons x xs ih =>\n  exact lemma_hint_0 n x xs ih",
+          "ok": true,
+          "error_text": "",
+          "raw_response": "<reasoning>\nThe error is caused by `intro n xs` at the start of the proof. The theorem already has parameters `(n : Nat) (xs : List Nat)` in the local context, so there are no remaining binders to introduce. The minimal fix is to remove the `intro` line and proceed directly with induction on `xs`.\n</reasoning>\n\n<lean4_proof>\ninduction xs with\n| nil =>\n  rfl\n| cons x xs ih =>\n  exact lemma_hint_0 n x xs ih\n</lean4_proof>",
+          "used_indices": [
+            0
+          ]
+        }
+      ]
+    },
+    "prop_55": {
+      "ok": true,
+      "final_error": "",
+      "attempts": [
+        {
+          "proof_body": "intro n xs\ninduction xs with\n| nil =>\n  intro ys\n  cases n <;> rfl\n| cons x xs ih =>\n  intro ys\n  cases n with\n  | zero =>\n    rfl\n  | succ n =>\n    exact lemma_hint_8 ys x xs ih n",
+          "ok": false,
+          "error_text": "location:\n    theorem eval_prop_55 (n: Nat) (xs: List α) (ys: List α) : (drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) := by\n      intro n xs\n           ^\n      induction xs with\nerror: Tactic `introN` failed: There are no additional binders or `let` bindings in the goal to introduce\nα : Type u_1\nn : ℕ\nxs ys : List α\n⊢ drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+          "raw_response": "<lean4_proof>\nintro n xs\ninduction xs with\n| nil =>\n  intro ys\n  cases n <;> rfl\n| cons x xs ih =>\n  intro ys\n  cases n with\n  | zero =>\n    rfl\n  | succ n =>\n    exact lemma_hint_8 ys x xs ih n\n</lean4_proof>",
+          "used_indices": [
+            8
+          ]
+        },
+        {
+          "proof_body": "induction xs with\n| nil =>\n  cases n <;> rfl\n| cons x xs ih =>\n  cases n with\n  | zero =>\n    rfl\n  | succ n =>\n    exact lemma_hint_8 ys x xs ih n",
+          "ok": false,
+          "error_text": "location:\n        | zero =>\n          rfl\n         ^\n        | succ n =>\nerror: Tactic `rfl` failed: The left-hand side\n  drop 0 (x :: xs ++ ys)\nis not definitionally equal to the right-hand side\n  drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys\ncase cons.zero\nα : Type u_1\nys : List α\nx : α\nxs : List α\nih : drop 0 (xs ++ ys) = drop 0 xs ++ drop (0 - length xs) ys\n⊢ drop 0 (x :: xs ++ ys) = drop 0 (x :: xs) ++ drop (0 - length (x :: xs)) ys\n\nlocation:\n        | succ n =>\n          exact lemma_hint_8 ys x xs ih n\n                                    ^\nerror: Application type mismatch: The argument\n  ih\nhas type\n  drop (n + 1) (xs ++ ys) = drop (n + 1) xs ++ drop (n + 1 - length xs) ys\nbut is expected to have type\n  ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys\nin the application\n  lemma_hint_8 ys x xs ih",
+          "raw_response": "<reasoning>\nThe error occurs because the theorem already has all parameters `(n xs ys)` introduced in the statement, so `intro n xs` tries to introduce binders that do not exist. The minimal fix is to remove those `intro`s and perform induction directly on `xs`, keeping `n` and `ys` in context. Then each branch proceeds as before.\n</reasoning>\n\n<lean4_proof>\ninduction xs with\n| nil =>\n  cases n <;> rfl\n| cons x xs ih =>\n  cases n with\n  | zero =>\n    rfl\n  | succ n =>\n    exact lemma_hint_8 ys x xs ih n\n</lean4_proof>",
+          "used_indices": [
+            8
+          ]
+        },
+        {
+          "proof_body": "induction xs generalizing n with\n| nil =>\n  cases n <;> rfl\n| cons x xs ih =>\n  cases n with\n  | zero =>\n    exact lemma_hint_5 ys x xs ih 0\n  | succ n =>\n    exact lemma_hint_8 ys x xs ih n",
+          "ok": true,
+          "error_text": "",
+          "raw_response": "<reasoning>\nThe induction hypothesis was specialized to the current `n` because `induction xs with` did not generalize `n`. Thus in the `succ` case, `ih` had the wrong type for `lemma_hint_8`, which expects `ih : ∀ n, ...`. Also, the `zero` case is not definitional by `rfl`; it is exactly covered by `lemma_hint_5`.\n\nSo the minimal fix is to generalize `n` in the induction and use the provided hint lemmas for both cons subcases.\n</reasoning>\n\n<lean4_proof>\ninduction xs generalizing n with\n| nil =>\n  cases n <;> rfl\n| cons x xs ih =>\n  cases n with\n  | zero =>\n    exact lemma_hint_5 ys x xs ih 0\n  | succ n =>\n    exact lemma_hint_8 ys x xs ih n\n</lean4_proof>",
+          "used_indices": [
+            5,
+            8
+          ]
+        }
+      ]
+    },
+    "prop_57": {
+      "ok": true,
+      "final_error": "",
+      "attempts": [
+        {
+          "proof_body": "intro n m xs\ninduction xs generalizing n m with\n| nil =>\n  exact lemma_hint_7 n m\n| cons x xs ih =>\n  cases m with\n  | zero =>\n    cases n <;> rfl\n  | succ m' =>\n    cases n with\n    | zero =>\n      rfl\n    | succ n' =>\n      simpa using ih n' m'",
+          "ok": false,
+          "error_text": "location:\n    theorem eval_prop_57 (n: Nat) (m: Nat) (xs: List α) : (drop n (take m xs) = take (m - n) (drop n xs)) := by\n      intro n m xs\n           ^\n      induction xs generalizing n m with\nerror: Tactic `introN` failed: There are no additional binders or `let` bindings in the goal to introduce\nα : Type u_1\nn m : ℕ\nxs : List α\n⊢ drop n (take m xs) = take (m - n) (drop n xs)",
+          "raw_response": "<lean4_proof>\nintro n m xs\ninduction xs generalizing n m with\n| nil =>\n  exact lemma_hint_7 n m\n| cons x xs ih =>\n  cases m with\n  | zero =>\n    cases n <;> rfl\n  | succ m' =>\n    cases n with\n    | zero =>\n      rfl\n    | succ n' =>\n      simpa using ih n' m'\n</lean4_proof>",
+          "used_indices": [
+            7
+          ]
+        },
+        {
+          "proof_body": "induction xs generalizing n m with\n| nil =>\n  exact lemma_hint_7 n m\n| cons x xs ih =>\n  cases m with\n  | zero =>\n    cases n <;> rfl\n  | succ m' =>\n    cases n with\n    | zero =>\n      rfl\n    | succ n' =>\n      simpa using ih n' m'",
+          "ok": false,
+          "error_text": "location:\n        | zero =>\n          cases n <;> rfl\n                     ^\n        | succ m' =>\nerror: Tactic `rfl` failed: The left-hand side\n  drop (n✝ + 1) (take 0 (x :: xs))\nis not definitionally equal to the right-hand side\n  take (0 - (n✝ + 1)) (drop (n✝ + 1) (x :: xs))\ncase cons.zero.succ\nα : Type u_1\nx : α\nxs : List α\nih : ∀ (n m : ℕ), drop n (take m xs) = take (m - n) (drop n xs)\nn✝ : ℕ\n⊢ drop (n✝ + 1) (take 0 (x :: xs)) = take (0 - (n✝ + 1)) (drop (n✝ + 1) (x :: xs))",
+          "raw_response": "<reasoning>\nThe error occurs because the theorem already has parameters `(n : Nat) (m : Nat) (xs : List α)` introduced in the statement, so inside the proof there are no remaining binders for `intro n m xs` to introduce. The minimal fix is to remove that `intro` line and start the induction directly on `xs`, keeping the rest of the proof unchanged.\n</reasoning>\n\n<lean4_proof>\ninduction xs generalizing n m with\n| nil =>\n  exact lemma_hint_7 n m\n| cons x xs ih =>\n  cases m with\n  | zero =>\n    cases n <;> rfl\n  | succ m' =>\n    cases n with\n    | zero =>\n      rfl\n    | succ n' =>\n      simpa using ih n' m'\n</lean4_proof>",
+          "used_indices": [
+            7
+          ]
+        },
+        {
+          "proof_body": "induction xs generalizing n m with\n| nil =>\n  exact lemma_hint_7 n m\n| cons x xs ih =>\n  cases m with\n  | zero =>\n    cases n <;> simp [take, drop]\n  | succ m' =>\n    cases n with\n    | zero =>\n      rfl\n    | succ n' =>\n      simpa using ih n' m'",
+          "ok": true,
+          "error_text": "",
+          "raw_response": "<reasoning>\nThe failure is in the `m = 0` / `n = succ _` branch. There, `rfl` does not close the goal because the right-hand side contains `take (0 - (n+1)) (drop (n+1) (x :: xs))`, which is not definitionally reduced enough for `rfl`. The simplest fix is to use `simp [take, drop]` in that branch split, which evaluates both sides to `[]`. The rest of the proof can remain unchanged.\n</reasoning>\n\n<lean4_proof>\ninduction xs generalizing n m with\n| nil =>\n  exact lemma_hint_7 n m\n| cons x xs ih =>\n  cases m with\n  | zero =>\n    cases n <;> simp [take, drop]\n  | succ m' =>\n    cases n with\n    | zero =>\n      rfl\n    | succ n' =>\n      simpa using ih n' m'\n</lean4_proof>",
+          "used_indices": [
+            7
+          ]
+        }
+      ]
+    }
+  }
+}

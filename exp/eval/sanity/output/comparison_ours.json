@@ -1,0 +1,46 @@
+{
+  "total_theorems": 8,
+  "lemma_pool_size": 72,
+  "without_lemmas": {
+    "solved": 1,
+    "failed": 7
+  },
+  "with_lemmas": {
+    "solved": 6,
+    "failed": 2
+  },
+  "per_theorem": {
+    "prop_36": {
+      "without_lemmas": true,
+      "with_lemmas": true
+    },
+    "prop_53": {
+      "without_lemmas": false,
+      "with_lemmas": true
+    },
+    "prop_55": {
+      "without_lemmas": false,
+      "with_lemmas": true
+    },
+    "prop_57": {
+      "without_lemmas": false,
+      "with_lemmas": true
+    },
+    "prop_58": {
+      "without_lemmas": false,
+      "with_lemmas": true
+    },
+    "prop_77": {
+      "without_lemmas": false,
+      "with_lemmas": true
+    },
+    "prop_78": {
+      "without_lemmas": false,
+      "with_lemmas": false
+    },
+    "prop_85": {
+      "without_lemmas": false,
+      "with_lemmas": false
+    }
+  }
+}

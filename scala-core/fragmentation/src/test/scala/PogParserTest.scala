@@ -8,11 +8,11 @@ import upickle.default.{read, write}
  *  The fixture exercises every POG shape phase 3 must consume: branching and
  *  leaf nodes, null parent_ids, both edge kinds, footprints and branch paths.
  *
- *  Stats (verified via jq against the fixture on 2026-06-02):
+ *  Stats (verified via jq against the fixture on 2026-06-24):
  *    pogs (declarations)  25
- *    tactic nodes        222
- *    edges               201  (kinds: modify, use)
- *    pogs[0]             prop_14: 7 nodes, 5 edges
+ *    tactic nodes        208
+ *    edges               294  (kinds: modify, use)
+ *    pogs[0]             prop_14: 7 nodes, 8 edges
  */
 class PogParserTest extends AnyFlatSpec with Matchers:
 
@@ -37,8 +37,8 @@ class PogParserTest extends AnyFlatSpec with Matchers:
   }
 
   it should "recover every node and edge" in {
-    parsed.pogs.map(_.nodes.size).sum shouldBe 222
-    parsed.pogs.map(_.edges.size).sum shouldBe 201
+    parsed.pogs.map(_.nodes.size).sum shouldBe 208
+    parsed.pogs.map(_.edges.size).sum shouldBe 294
     parsed.pogs.flatMap(_.edges.map(_.kind)).toSet shouldBe Set(ModifyEdge, UseEdge)
   }
 
@@ -46,7 +46,7 @@ class PogParserTest extends AnyFlatSpec with Matchers:
     val first = parsed.pogs.head
     first.declName  shouldBe "prop_14"
     first.nodes     should have length 7
-    first.edges     should have length 5
+    first.edges     should have length 8
     // every node carries the phase-2 extensions, not just the phase-1 fields
     first.nodes.foreach { n =>
       n.footprint  should not be null

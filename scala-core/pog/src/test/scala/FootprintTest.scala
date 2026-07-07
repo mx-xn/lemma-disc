@@ -10,12 +10,15 @@ import org.scalatest.matchers.should.Matchers
  *  Footprint"), with the corrections agreed during design review:
  *
  *    modifies_hyps  = { h ∈ Γ | h dropped OR its `type` changed in SOME branch }
- *                     (INPUT names only; newly-introduced names never count —
- *                      paper Def 2: M ⊆ {g}∪Γ).
+ *                     ∪ { h | h newly introduced in SOME branch }
+ *                     (includes introductions so that tactics like `by_cases h`
+ *                      can be dependency-edge sources; without this they have
+ *                      modifies={} and are invisible to vPre).
  *    modifies_goal  = ∃ branch i. goalᵢ ≠ goal   (pure syntactic check).
  *    uses (D)       = (directly_used ∩ names(Γ)) \ modifies_hyps
  *                     (decision: D ⊆ Γ, so external lemma names are dropped).
  *    rho[i]         = invert(dependency_maps[i]) ∪ { "⊢" → {"⊢"} }
+ *                       ∪ { h → {h} for each h introduced in branch i }
  *                     for EVERY output branch; leaves (no outputs) → rho = [].
  *
  *  ── Two deliberate departures from the CLAUDE.md Step-4 *snippet* — do NOT
@@ -124,9 +127,7 @@ class FootprintTest extends AnyFlatSpec with Matchers:
     Footprint.compute(n).modifiesGoal shouldBe true
   }
 
-  it should "be true for `intro h` (goal `P → Q` ⟹ `Q`), and NOT put the introduced `h` in M_hyps" in {
-    // Supersedes the CLAUDE.md example table, which wrongly says M_goal=false /
-    // M_hyps={...} for intro.
+  it should "be true for `intro h` (goal `P → Q` ⟹ `Q`), and include the introduced `h` in M_hyps" in {
     val n = node(
       in   = obl("P → Q"),
       outs = List(obl("Q", h("h", "P"))),
@@ -134,7 +135,7 @@ class FootprintTest extends AnyFlatSpec with Matchers:
     )
     val f = Footprint.compute(n)
     f.modifiesGoal shouldBe true
-    f.modifiesHyps shouldBe Set.empty   // `h` is introduced, not an input hyp
+    f.modifiesHyps shouldBe Set("h")   // `h` is introduced — included so `intro h` can be an edge source
   }
 
 
@@ -169,12 +170,12 @@ class FootprintTest extends AnyFlatSpec with Matchers:
     Footprint.compute(n).modifiesHyps shouldBe Set("h")
   }
 
-  it should "NOT flag a newly-introduced hyp (introductions ∉ M_hyps)" in {
+  it should "include a newly-introduced hyp in M_hyps (introductions ∈ M_hyps)" in {
     val n = node(
       in   = obl("g", h("a", "A")),
       outs = List(obl("g", h("a", "A"), h("b", "B")))
     )
-    Footprint.compute(n).modifiesHyps shouldBe Set.empty
+    Footprint.compute(n).modifiesHyps shouldBe Set("b")
   }
 
   it should "NOT flag a pure REORDER of unchanged hyps" in {
@@ -385,17 +386,20 @@ class FootprintTest extends AnyFlatSpec with Matchers:
 
     Footprint.compute(root) shouldBe Footprint(
       uses         = Set.empty,             // U={xs}, but xs ∈ M_hyps ⇒ removed
-      modifiesHyps = Set("xs"),             // dropped in the nil branch
+      modifiesHyps = Set("xs", "x", "ih"), // xs dropped in nil branch; x,ih introduced in cons
       modifiesGoal = true,                  // both branch goals differ from input
       rho = List(
-        // nil branch: invert {α←α, p←p, ys←ys}  + goal
+        // nil branch: invert {α←α, p←p, ys←ys}  + goal  (no introductions)
         Map("α" -> Set("α"), "p" -> Set("p"), "ys" -> Set("ys"), Goal -> Set(Goal)),
         // cons branch: invert {α←α, p←p, ys←ys, x←α, xs←xs, ih←{xs,ys,p}} + goal
+        //              + self-maps for introduced x and ih
         Map(
           "α"  -> Set("α", "x"),
           "p"  -> Set("p", "ih"),
           "ys" -> Set("ys", "ih"),
           "xs" -> Set("xs", "ih"),
+          "x"  -> Set("x"),                // self-map: introduced x propagates as x
+          "ih" -> Set("ih"),               // self-map: introduced ih propagates as ih
           Goal -> Set(Goal)
         )
       )

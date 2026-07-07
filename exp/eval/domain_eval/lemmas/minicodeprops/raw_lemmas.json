@@ -1,0 +1,3080 @@
+{
+  "lemmas": [
+    {
+      "fragment_id": 0,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_14",
+      "scope_vars": [
+        "p : α → Bool",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "premises": [],
+      "body": "True",
+      "conclusion": "filter p (xs ++ ys) = filter p xs ++ filter p ys",
+      "statement": "(p : α → Bool) (xs : List α) (ys : List α) : filter p (xs ++ ys) = filter p xs ++ filter p ys"
+    },
+    {
+      "fragment_id": 1,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_29",
+      "scope_vars": [
+        "x : ℕ",
+        "xs : List ℕ"
+      ],
+      "premises": [],
+      "body": "True",
+      "conclusion": "x ∈ ins1 x xs",
+      "statement": "(x : ℕ) (xs : List ℕ) : x ∈ ins1 x xs"
+    },
+    {
+      "fragment_id": 2,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_30",
+      "scope_vars": [
+        "x : ℕ",
+        "xs : List ℕ"
+      ],
+      "premises": [],
+      "body": "True",
+      "conclusion": "x ∈ ins x xs",
+      "statement": "(x : ℕ) (xs : List ℕ) : x ∈ ins x xs"
+    },
+    {
+      "fragment_id": 3,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_35",
+      "scope_vars": [
+        "xs : List α"
+      ],
+      "premises": [],
+      "body": "True",
+      "conclusion": "dropWhile (fun x => decide False) xs = xs",
+      "statement": "(xs : List α) : dropWhile (fun x => decide False) xs = xs"
+    },
+    {
+      "fragment_id": 4,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_58",
+      "scope_vars": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List β"
+      ],
+      "premises": [],
+      "body": "True",
+      "conclusion": "drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)",
+      "statement": "(n : ℕ) (xs : List α) (ys : List β) : drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)"
+    },
+    {
+      "fragment_id": 5,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_77",
+      "scope_vars": [
+        "x : ℕ",
+        "xs : List ℕ"
+      ],
+      "premises": [],
+      "body": "True",
+      "conclusion": "sorted xs = true → sorted (insort x xs) = true",
+      "statement": "(x : ℕ) (xs : List ℕ) : sorted xs = true → sorted (insort x xs) = true"
+    },
+    {
+      "fragment_id": 6,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_78",
+      "scope_vars": [
+        "xs : List ℕ"
+      ],
+      "premises": [],
+      "body": "True",
+      "conclusion": "sorted (sort xs) = true",
+      "statement": "(xs : List ℕ) : sorted (sort xs) = true"
+    },
+    {
+      "fragment_id": 7,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_55",
+      "scope_vars": [
+        "ys : List α",
+        "n : ℕ"
+      ],
+      "premises": [],
+      "body": "drop n [] = []",
+      "conclusion": "drop n ([] ++ ys) = drop n [] ++ drop (n - length []) ys",
+      "statement": "(ys : List α) (n : ℕ) (h1 : drop n [] = []) : drop n ([] ++ ys) = drop n [] ++ drop (n - length []) ys"
+    },
+    {
+      "fragment_id": 8,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_57",
+      "scope_vars": [
+        "n : ℕ",
+        "m : ℕ",
+        "xs : List α"
+      ],
+      "premises": [],
+      "body": "(take_nil : ∀ (k : ℕ), take k [] = []) → drop n (take m xs) = take (m - n) (drop n xs)",
+      "conclusion": "drop n (take m xs) = take (m - n) (drop n xs)",
+      "statement": "(n : ℕ) (m : ℕ) (xs : List α) (take_nil : ∀ (k : ℕ), take k [] = []) (h1 : drop n (take m xs) = take (m - n) (drop n xs)) : drop n (take m xs) = take (m - n) (drop n xs)"
+    },
+    {
+      "fragment_id": 9,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_14",
+      "scope_vars": [
+        "p : α → Bool",
+        "ys : List α",
+        "x : α",
+        "xs : List α",
+        "ih : filter p (xs ++ ys) = filter p xs ++ filter p ys"
+      ],
+      "premises": [],
+      "body": "(if p x = true then x :: filter p (xs ++ ys) else filter p (xs ++ ys)) =",
+      "conclusion": "filter p (x :: xs ++ ys) = filter p (x :: xs) ++ filter p ys",
+      "statement": "(p : α → Bool) (ys : List α) (x : α) (xs : List α) (ih : filter p (xs ++ ys) = filter p xs ++ filter p ys) (h1 : (if p x = true then x :: filter p (xs ++ ys) else filter p (xs ++ ys)) =) : filter p (x :: xs ++ ys) = filter p (x :: xs) ++ filter p ys"
+    },
+    {
+      "fragment_id": 10,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_29",
+      "scope_vars": [
+        "x : ℕ",
+        "y : ℕ",
+        "ys : List ℕ",
+        "ih : x ∈ ins1 x ys"
+      ],
+      "premises": [],
+      "body": "x ∈ if x = y then y :: ys else y :: ins1 x ys",
+      "conclusion": "x ∈ ins1 x (y :: ys)",
+      "statement": "(x : ℕ) (y : ℕ) (ys : List ℕ) (ih : x ∈ ins1 x ys) (h1 : x ∈ if x = y then y :: ys else y :: ins1 x ys) : x ∈ ins1 x (y :: ys)"
+    },
+    {
+      "fragment_id": 11,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_30",
+      "scope_vars": [
+        "x : ℕ",
+        "y : ℕ",
+        "ys : List ℕ",
+        "ih : x ∈ ins x ys"
+      ],
+      "premises": [],
+      "body": "x ∈ if x < y then x :: y :: ys else y :: ins x ys",
+      "conclusion": "x ∈ ins x (y :: ys)",
+      "statement": "(x : ℕ) (y : ℕ) (ys : List ℕ) (ih : x ∈ ins x ys) (h1 : x ∈ if x < y then x :: y :: ys else y :: ins x ys) : x ∈ ins x (y :: ys)"
+    },
+    {
+      "fragment_id": 12,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_77",
+      "scope_vars": [
+        "x : ℕ",
+        "y : ℕ",
+        "ys : List ℕ",
+        "ih : sorted ys = true → sorted (insort x ys) = true"
+      ],
+      "premises": [],
+      "body": "(h : sorted (y :: ys) = true) → sorted (insort x (y :: ys)) = true",
+      "conclusion": "sorted (y :: ys) = true → sorted (insort x (y :: ys)) = true",
+      "statement": "(x : ℕ) (y : ℕ) (ys : List ℕ) (ih : sorted ys = true → sorted (insort x ys) = true) (h : sorted (y :: ys) = true) (h1 : sorted (insort x (y :: ys)) = true) : sorted (y :: ys) = true → sorted (insort x (y :: ys)) = true"
+    },
+    {
+      "fragment_id": 13,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_78",
+      "scope_vars": [
+        "x : ℕ",
+        "xs : List ℕ",
+        "ih : sorted (sort xs) = true"
+      ],
+      "premises": [],
+      "body": "sorted (insort x (sort xs)) = true",
+      "conclusion": "sorted (sort (x :: xs)) = true",
+      "statement": "(x : ℕ) (xs : List ℕ) (ih : sorted (sort xs) = true) (h1 : sorted (insort x (sort xs)) = true) : sorted (sort (x :: xs)) = true"
+    },
+    {
+      "fragment_id": 14,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_55",
+      "scope_vars": [
+        "n : ℕ",
+        "xs : List α",
+        "ys : List α"
+      ],
+      "premises": [],
+      "body": "True",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+      "statement": "(n : ℕ) (xs : List α) (ys : List α) : drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys"
+    },
+    {
+      "fragment_id": 15,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_57",
+      "scope_vars": [
+        "n : ℕ",
+        "m : ℕ",
+        "xs : List α"
+      ],
+      "premises": [],
+      "body": "(drop_nil : ∀ (k : ℕ), drop k [] = []) → drop n (take m xs) = take (m - n) (drop n xs)",
+      "conclusion": "drop n (take m xs) = take (m - n) (drop n xs)",
+      "statement": "(n : ℕ) (m : ℕ) (xs : List α) (drop_nil : ∀ (k : ℕ), drop k [] = []) (h1 : drop n (take m xs) = take (m - n) (drop n xs)) : drop n (take m xs) = take (m - n) (drop n xs)"
+    },
+    {
+      "fragment_id": 16,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_14",
+      "scope_vars": [
+        "p : α → Bool",
+        "ys : List α",
+        "x : α",
+        "xs : List α",
+        "ih : filter p (xs ++ ys) = filter p xs ++ filter p ys",
+        "h : p x = true"
+      ],
+      "premises": [],
+      "body": "filter p (xs ++ ys) = filter p xs ++ filter p ys",
+      "conclusion": "x :: filter p (xs ++ ys) = x :: filter p xs ++ filter p ys",
+      "statement": "(p : α → Bool) (ys : List α) (x : α) (xs : List α) (ih : filter p (xs ++ ys) = filter p xs ++ filter p ys) (h : p x = true) (h1 : filter p (xs ++ ys) = filter p xs ++ filter p ys) : x :: filter p (xs ++ ys) = x :: filter p xs ++ filter p ys"
+    },
+    {
+      "fragment_id": 17,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_29",
+      "scope_vars": [
+        "x : ℕ",
+        "y : ℕ",
+        "ys : List ℕ",
+        "ih : x ∈ ins1 x ys",
+        "h : x = y"
+      ],
+      "premises": [],
+      "body": "x = y ∨ x ∈ ys",
+      "conclusion": "x ∈ y :: ys",
+      "statement": "(x : ℕ) (y : ℕ) (ys : List ℕ) (ih : x ∈ ins1 x ys) (h : x = y) (h1 : x = y ∨ x ∈ ys) : x ∈ y :: ys"
+    },
+    {
+      "fragment_id": 18,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_58",
+      "scope_vars": [
+        "n : ℕ",
+        "ih : ∀ (xs : List α) (ys : List β), drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)",
+        "x : α",
+        "xs : List α"
+      ],
+      "premises": [],
+      "body": "zip' (drop n xs) [] = []",
+      "conclusion": "drop (n + 1) (zip' (x :: xs) []) = zip' (drop (n + 1) (x :: xs)) (drop (n + 1) [])",
+      "statement": "(n : ℕ) (ih : ∀ (xs : List α) (ys : List β), drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)) (x : α) (xs : List α) (h1 : zip' (drop n xs) [] = []) : drop (n + 1) (zip' (x :: xs) []) = zip' (drop (n + 1) (x :: xs)) (drop (n + 1) [])"
+    },
+    {
+      "fragment_id": 19,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_77",
+      "scope_vars": [
+        "x : ℕ",
+        "y : ℕ",
+        "ys : List ℕ",
+        "ih : sorted ys = true → sorted (insort x ys) = true"
+      ],
+      "premises": [],
+      "body": "True",
+      "conclusion": "sorted (y :: ys) = true → sorted (insort x (y :: ys)) = true",
+      "statement": "(x : ℕ) (y : ℕ) (ys : List ℕ) (ih : sorted ys = true → sorted (insort x ys) = true) : sorted (y :: ys) = true → sorted (insort x (y :: ys)) = true"
+    },
+    {
+      "fragment_id": 20,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_78",
+      "scope_vars": [
+        "x : ℕ"
+      ],
+      "premises": [
+        "xs : List ℕ",
+        "ih : sorted (sort xs) = true"
+      ],
+      "body": "(sorted_xs : List ℕ) → (hsort : sort xs = sorted_xs) → sorted (insort x sorted_xs) = true",
+      "conclusion": "sorted (insort x (sort xs)) = true",
+      "statement": "(x : ℕ) (xs : List ℕ) (ih : sorted (sort xs) = true) (sorted_xs : List ℕ) (hsort : sort xs = sorted_xs) (h1 : sorted (insort x sorted_xs) = true) : sorted (insort x (sort xs)) = true"
+    },
+    {
+      "fragment_id": 21,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_57",
+      "scope_vars": [
+        "n : ℕ",
+        "m : ℕ",
+        "xs : List α"
+      ],
+      "premises": [],
+      "body": "(take_nil : ∀ (k : ℕ), take k [] = []) → (drop_nil : ∀ (k : ℕ), drop k [] = []) → drop n (take m xs) = take (m - n) (drop n xs)",
+      "conclusion": "drop n (take m xs) = take (m - n) (drop n xs)",
+      "statement": "(n : ℕ) (m : ℕ) (xs : List α) (take_nil : ∀ (k : ℕ), take k [] = []) (drop_nil : ∀ (k : ℕ), drop k [] = []) (h1 : drop n (take m xs) = take (m - n) (drop n xs)) : drop n (take m xs) = take (m - n) (drop n xs)"
+    },
+    {
+      "fragment_id": 22,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_14",
+      "scope_vars": [
+        "p : α → Bool",
+        "ys : List α",
+        "x : α",
+        "xs : List α"
+      ],
+      "premises": [
+        "ih : filter p (xs ++ ys) = filter p xs ++ filter p ys"
+      ],
+      "body": "True",
+      "conclusion": "filter p (x :: xs ++ ys) = filter p (x :: xs) ++ filter p ys",
+      "statement": "(p : α → Bool) (ys : List α) (x : α) (xs : List α) (ih : filter p (xs ++ ys) = filter p xs ++ filter p ys) : filter p (x :: xs ++ ys) = filter p (x :: xs) ++ filter p ys"
+    },
+    {
+      "fragment_id": 23,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_29",
+      "scope_vars": [
+        "x : ℕ",
+        "y : ℕ",
+        "ys : List ℕ",
+        "ih : x ∈ ins1 x ys",
+        "h : x = y"
+      ],
+      "premises": [],
+      "body": "x = y",
+      "conclusion": "x = y ∨ x ∈ ys",
+      "statement": "(x : ℕ) (y : ℕ) (ys : List ℕ) (ih : x ∈ ins1 x ys) (h : x = y) (h1 : x = y) : x = y ∨ x ∈ ys"
+    },
+    {
+      "fragment_id": 24,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_30",
+      "scope_vars": [
+        "x : ℕ",
+        "y : ℕ",
+        "ys : List ℕ",
+        "ih : x ∈ ins x ys",
+        "h : ¬x < y"
+      ],
+      "premises": [],
+      "body": "x = y ∨ x ∈ ins x ys",
+      "conclusion": "x ∈ y :: ins x ys",
+      "statement": "(x : ℕ) (y : ℕ) (ys : List ℕ) (ih : x ∈ ins x ys) (h : ¬x < y) (h1 : x = y ∨ x ∈ ins x ys) : x ∈ y :: ins x ys"
+    },
+    {
+      "fragment_id": 25,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_58",
+      "scope_vars": [
+        "ih : ∀ (xs : List α) (ys : List β), drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)",
+        "ys : List β",
+        "x : α"
+      ],
+      "premises": [
+        "n : ℕ",
+        "xs : List α"
+      ],
+      "body": "True",
+      "conclusion": "drop (n + 1) (zip' (x :: xs) ys) = zip' (drop (n + 1) (x :: xs)) (drop (n + 1) ys)",
+      "statement": "(ih : ∀ (xs : List α) (ys : List β), drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)) (ys : List β) (x : α) (n : ℕ) (xs : List α) : drop (n + 1) (zip' (x :: xs) ys) = zip' (drop (n + 1) (x :: xs)) (drop (n + 1) ys)"
+    },
+    {
+      "fragment_id": 26,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_77",
+      "scope_vars": [
+        "ys : List ℕ",
+        "ih : sorted ys = true → sorted (insort x ys) = true"
+      ],
+      "premises": [
+        "x : ℕ",
+        "y : ℕ"
+      ],
+      "body": "(hyx : y ≤ x) → sorted (y :: ys) = true → sorted (insort x (y :: ys)) = true",
+      "conclusion": "sorted (y :: ys) = true → sorted (insort x (y :: ys)) = true",
+      "statement": "(ys : List ℕ) (ih : sorted ys = true → sorted (insort x ys) = true) (x : ℕ) (y : ℕ) (hyx : y ≤ x) (h1 : sorted (y :: ys) = true) (h2 : sorted (insort x (y :: ys)) = true) : sorted (y :: ys) = true → sorted (insort x (y :: ys)) = true"
+    },
+    {
+      "fragment_id": 27,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_78",
+      "scope_vars": [
+        "x : ℕ"
+      ],
+      "premises": [
+        "xs : List ℕ",
+        "ih : sorted (sort xs) = true"
+      ],
+      "body": "(sorted_xs : List ℕ) → (hsort : sort xs = sorted_xs) → sorted (insort x sorted_xs) = true",
+      "conclusion": "sorted (sort (x :: xs)) = true",
+      "statement": "(x : ℕ) (xs : List ℕ) (ih : sorted (sort xs) = true) (sorted_xs : List ℕ) (hsort : sort xs = sorted_xs) (h1 : sorted (insort x sorted_xs) = true) : sorted (sort (x :: xs)) = true"
+    },
+    {
+      "fragment_id": 28,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_55",
+      "scope_vars": [
+        "ys : List α"
+      ],
+      "premises": [
+        "n : ℕ"
+      ],
+      "body": "True",
+      "conclusion": "drop n [] = []",
+      "statement": "(ys : List α) (n : ℕ) : drop n [] = []"
+    },
+    {
+      "fragment_id": 29,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_57",
+      "scope_vars": [
+        "n : ℕ",
+        "m : ℕ",
+        "xs : List α"
+      ],
+      "premises": [],
+      "body": "True",
+      "conclusion": "drop n (take m xs) = take (m - n) (drop n xs)",
+      "statement": "(n : ℕ) (m : ℕ) (xs : List α) : drop n (take m xs) = take (m - n) (drop n xs)"
+    },
+    {
+      "fragment_id": 30,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_14",
+      "scope_vars": [
+        "p : α → Bool",
+        "ys : List α",
+        "x : α",
+        "xs : List α",
+        "h : p x = true"
+      ],
+      "premises": [
+        "ih : filter p (xs ++ ys) = filter p xs ++ filter p ys"
+      ],
+      "body": "True",
+      "conclusion": "x :: filter p (xs ++ ys) = x :: filter p xs ++ filter p ys",
+      "statement": "(p : α → Bool) (ys : List α) (x : α) (xs : List α) (h : p x = true) (ih : filter p (xs ++ ys) = filter p xs ++ filter p ys) : x :: filter p (xs ++ ys) = x :: filter p xs ++ filter p ys"
+    },
+    {
+      "fragment_id": 31,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_29",
+      "scope_vars": [
+        "x : ℕ",
+        "y : ℕ",
+        "ys : List ℕ",
+        "ih : x ∈ ins1 x ys",
+        "h : x = y"
+      ],
+      "premises": [],
+      "body": "x = y",
+      "conclusion": "x ∈ y :: ys",
+      "statement": "(x : ℕ) (y : ℕ) (ys : List ℕ) (ih : x ∈ ins1 x ys) (h : x = y) (h1 : x = y) : x ∈ y :: ys"
+    },
+    {
+      "fragment_id": 32,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_30",
+      "scope_vars": [
+        "x : ℕ",
+        "y : ℕ",
+        "ys : List ℕ",
+        "ih : x ∈ ins x ys",
+        "h : ¬x < y"
+      ],
+      "premises": [],
+      "body": "x ∈ ins x ys",
+      "conclusion": "x = y ∨ x ∈ ins x ys",
+      "statement": "(x : ℕ) (y : ℕ) (ys : List ℕ) (ih : x ∈ ins x ys) (h : ¬x < y) (h1 : x ∈ ins x ys) : x = y ∨ x ∈ ins x ys"
+    },
+    {
+      "fragment_id": 33,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_58",
+      "scope_vars": [],
+      "premises": [
+        "n : ℕ",
+        "ih : ∀ (xs : List α) (ys : List β), drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)",
+        "xs : List α",
+        "ys : List β"
+      ],
+      "body": "True",
+      "conclusion": "drop (n + 1) (zip' xs ys) = zip' (drop (n + 1) xs) (drop (n + 1) ys)",
+      "statement": "(n : ℕ) (ih : ∀ (xs : List α) (ys : List β), drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)) (xs : List α) (ys : List β) : drop (n + 1) (zip' xs ys) = zip' (drop (n + 1) xs) (drop (n + 1) ys)"
+    },
+    {
+      "fragment_id": 34,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_77",
+      "scope_vars": [
+        "x : ℕ",
+        "y : ℕ",
+        "ys : List ℕ",
+        "ih : sorted ys = true → sorted (insort x ys) = true",
+        "h : sorted (y :: ys) = true"
+      ],
+      "premises": [],
+      "body": "sorted (y :: insort x ys) = true",
+      "conclusion": "sorted (insort x (y :: ys)) = true",
+      "statement": "(x : ℕ) (y : ℕ) (ys : List ℕ) (ih : sorted ys = true → sorted (insort x ys) = true) (h : sorted (y :: ys) = true) (h1 : sorted (y :: insort x ys) = true) : sorted (insort x (y :: ys)) = true"
+    },
+    {
+      "fragment_id": 35,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_55",
+      "scope_vars": [
+        "ys : List α"
+      ],
+      "premises": [
+        "n : ℕ"
+      ],
+      "body": "True",
+      "conclusion": "drop n ([] ++ ys) = drop n [] ++ drop (n - length []) ys",
+      "statement": "(ys : List α) (n : ℕ) : drop n ([] ++ ys) = drop n [] ++ drop (n - length []) ys"
+    },
+    {
+      "fragment_id": 36,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_29",
+      "scope_vars": [
+        "x : ℕ",
+        "y : ℕ",
+        "ys : List ℕ",
+        "ih : x ∈ ins1 x ys"
+      ],
+      "premises": [],
+      "body": "True",
+      "conclusion": "x ∈ ins1 x (y :: ys)",
+      "statement": "(x : ℕ) (y : ℕ) (ys : List ℕ) (ih : x ∈ ins1 x ys) : x ∈ ins1 x (y :: ys)"
+    },
+    {
+      "fragment_id": 37,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_30",
+      "scope_vars": [
+        "x : ℕ",
+        "y : ℕ",
+        "ys : List ℕ",
+        "ih : x ∈ ins x ys",
+        "h : ¬x < y"
+      ],
+      "premises": [],
+      "body": "x ∈ ins x ys",
+      "conclusion": "x ∈ y :: ins x ys",
+      "statement": "(x : ℕ) (y : ℕ) (ys : List ℕ) (ih : x ∈ ins x ys) (h : ¬x < y) (h1 : x ∈ ins x ys) : x ∈ y :: ins x ys"
+    },
+    {
+      "fragment_id": 38,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_58",
+      "scope_vars": [
+        "ih : ∀ (xs : List α) (ys : List β), drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)",
+        "x : α"
+      ],
+      "premises": [
+        "n : ℕ",
+        "xs : List α"
+      ],
+      "body": "True",
+      "conclusion": "drop (n + 1) (zip' (x :: xs) []) = zip' (drop (n + 1) (x :: xs)) (drop (n + 1) [])",
+      "statement": "(ih : ∀ (xs : List α) (ys : List β), drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)) (x : α) (n : ℕ) (xs : List α) : drop (n + 1) (zip' (x :: xs) []) = zip' (drop (n + 1) (x :: xs)) (drop (n + 1) [])"
+    },
+    {
+      "fragment_id": 39,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_77",
+      "scope_vars": [
+        "ys : List ℕ",
+        "ih : sorted ys = true → sorted (insort x ys) = true",
+        "h : sorted (y :: ys) = true"
+      ],
+      "premises": [
+        "x : ℕ",
+        "y : ℕ"
+      ],
+      "body": "(hyx : y ≤ x) → sorted (y :: insort x ys) = true",
+      "conclusion": "sorted (insort x (y :: ys)) = true",
+      "statement": "(ys : List ℕ) (ih : sorted ys = true → sorted (insort x ys) = true) (h : sorted (y :: ys) = true) (x : ℕ) (y : ℕ) (hyx : y ≤ x) (h1 : sorted (y :: insort x ys) = true) : sorted (insort x (y :: ys)) = true"
+    },
+    {
+      "fragment_id": 40,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_14",
+      "scope_vars": [
+        "p : α → Bool",
+        "ys : List α",
+        "x : α",
+        "xs : List α"
+      ],
+      "premises": [
+        "ih : filter p (xs ++ ys) = filter p xs ++ filter p ys"
+      ],
+      "body": "True",
+      "conclusion": "(if p x = true then x :: filter p (xs ++ ys) else filter p (xs ++ ys)) =",
+      "statement": "(p : α → Bool) (ys : List α) (x : α) (xs : List α) (ih : filter p (xs ++ ys) = filter p xs ++ filter p ys) : (if p x = true then x :: filter p (xs ++ ys) else filter p (xs ++ ys)) ="
+    },
+    {
+      "fragment_id": 41,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_29",
+      "scope_vars": [
+        "x : ℕ",
+        "y : ℕ",
+        "ys : List ℕ",
+        "ih : x ∈ ins1 x ys"
+      ],
+      "premises": [
+        "h : x = y"
+      ],
+      "body": "True",
+      "conclusion": "x ∈ y :: ys",
+      "statement": "(x : ℕ) (y : ℕ) (ys : List ℕ) (ih : x ∈ ins1 x ys) (h : x = y) : x ∈ y :: ys"
+    },
+    {
+      "fragment_id": 42,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_58",
+      "scope_vars": [
+        "n : ℕ",
+        "ih : ∀ (xs : List α) (ys : List β), drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)",
+        "x : α",
+        "xs : List α",
+        "y : β",
+        "ys : List β"
+      ],
+      "premises": [],
+      "body": "drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)",
+      "conclusion": "drop (n + 1) (zip' (x :: xs) (y :: ys)) = zip' (drop (n + 1) (x :: xs)) (drop (n + 1) (y :: ys))",
+      "statement": "(n : ℕ) (ih : ∀ (xs : List α) (ys : List β), drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)) (x : α) (xs : List α) (y : β) (ys : List β) (h1 : drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)) : drop (n + 1) (zip' (x :: xs) (y :: ys)) = zip' (drop (n + 1) (x :: xs)) (drop (n + 1) (y :: ys))"
+    },
+    {
+      "fragment_id": 43,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_55",
+      "scope_vars": [
+        "ys : List α",
+        "x : α",
+        "xs : List α",
+        "ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+        "n : ℕ"
+      ],
+      "premises": [],
+      "body": "drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys",
+      "conclusion": "drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys",
+      "statement": "(ys : List α) (x : α) (xs : List α) (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) (n : ℕ) (h1 : drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys) : drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys"
+    },
+    {
+      "fragment_id": 44,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_14",
+      "scope_vars": [
+        "p : α → Bool",
+        "ys : List α",
+        "x : α",
+        "xs : List α"
+      ],
+      "premises": [
+        "ih : filter p (xs ++ ys) = filter p xs ++ filter p ys"
+      ],
+      "body": "True",
+      "conclusion": "filter p (x :: xs ++ ys) = filter p (x :: xs) ++ filter p ys",
+      "statement": "(p : α → Bool) (ys : List α) (x : α) (xs : List α) (ih : filter p (xs ++ ys) = filter p xs ++ filter p ys) : filter p (x :: xs ++ ys) = filter p (x :: xs) ++ filter p ys"
+    },
+    {
+      "fragment_id": 45,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_29",
+      "scope_vars": [
+        "x : ℕ",
+        "y : ℕ",
+        "ys : List ℕ",
+        "ih : x ∈ ins1 x ys"
+      ],
+      "premises": [
+        "h : x = y"
+      ],
+      "body": "True",
+      "conclusion": "x = y ∨ x ∈ ys",
+      "statement": "(x : ℕ) (y : ℕ) (ys : List ℕ) (ih : x ∈ ins1 x ys) (h : x = y) : x = y ∨ x ∈ ys"
+    },
+    {
+      "fragment_id": 46,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_30",
+      "scope_vars": [
+        "x : ℕ",
+        "y : ℕ",
+        "ys : List ℕ"
+      ],
+      "premises": [
+        "ih : x ∈ ins x ys"
+      ],
+      "body": "True",
+      "conclusion": "x ∈ if x < y then x :: y :: ys else y :: ins x ys",
+      "statement": "(x : ℕ) (y : ℕ) (ys : List ℕ) (ih : x ∈ ins x ys) : x ∈ if x < y then x :: y :: ys else y :: ins x ys"
+    },
+    {
+      "fragment_id": 47,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_58",
+      "scope_vars": [
+        "n : ℕ",
+        "x : α",
+        "y : β"
+      ],
+      "premises": [
+        "ih : ∀ (xs : List α) (ys : List β), drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)",
+        "xs : List α",
+        "ys : List β"
+      ],
+      "body": "True",
+      "conclusion": "drop (n + 1) (zip' (x :: xs) (y :: ys)) = zip' (drop (n + 1) (x :: xs)) (drop (n + 1) (y :: ys))",
+      "statement": "(n : ℕ) (x : α) (y : β) (ih : ∀ (xs : List α) (ys : List β), drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)) (xs : List α) (ys : List β) : drop (n + 1) (zip' (x :: xs) (y :: ys)) = zip' (drop (n + 1) (x :: xs)) (drop (n + 1) (y :: ys))"
+    },
+    {
+      "fragment_id": 48,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_77",
+      "scope_vars": [
+        "ys : List ℕ",
+        "ih : sorted ys = true → sorted (insort x ys) = true"
+      ],
+      "premises": [
+        "x : ℕ",
+        "y : ℕ"
+      ],
+      "body": "True",
+      "conclusion": "sorted (y :: ys) = true → sorted (insort x (y :: ys)) = true",
+      "statement": "(ys : List ℕ) (ih : sorted ys = true → sorted (insort x ys) = true) (x : ℕ) (y : ℕ) : sorted (y :: ys) = true → sorted (insort x (y :: ys)) = true"
+    },
+    {
+      "fragment_id": 49,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_78",
+      "scope_vars": [
+        "x : ℕ",
+        "xs : List ℕ",
+        "hsort : sort xs = sorted_xs",
+        "y : ℕ",
+        "ys : List ℕ",
+        "ih' : sorted ys = true → sorted (insort x ys) = true"
+      ],
+      "premises": [
+        "ih : sorted (y :: ys) = true"
+      ],
+      "body": "True",
+      "conclusion": "sorted (insort x (y :: ys)) = true",
+      "statement": "(x : ℕ) (xs : List ℕ) (hsort : sort xs = sorted_xs) (y : ℕ) (ys : List ℕ) (ih' : sorted ys = true → sorted (insort x ys) = true) (ih : sorted (y :: ys) = true) : sorted (insort x (y :: ys)) = true"
+    },
+    {
+      "fragment_id": 50,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_55",
+      "scope_vars": [
+        "ys : List α",
+        "x : α",
+        "xs : List α"
+      ],
+      "premises": [
+        "ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+        "n : ℕ"
+      ],
+      "body": "drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys",
+      "statement": "(ys : List α) (x : α) (xs : List α) (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) (n : ℕ) (h1 : drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys) : drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys"
+    },
+    {
+      "fragment_id": 51,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_57",
+      "scope_vars": [
+        "n : ℕ",
+        "m : ℕ"
+      ],
+      "premises": [],
+      "body": "(k : ℕ) → take k [] = []",
+      "conclusion": "∀ (k : ℕ), take k [] = []",
+      "statement": "(n : ℕ) (m : ℕ) (k : ℕ) (h1 : take k [] = []) : ∀ (k : ℕ), take k [] = []"
+    },
+    {
+      "fragment_id": 52,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_30",
+      "scope_vars": [
+        "x : ℕ",
+        "y : ℕ",
+        "ys : List ℕ"
+      ],
+      "premises": [
+        "ih : x ∈ ins x ys"
+      ],
+      "body": "True",
+      "conclusion": "x ∈ ins x (y :: ys)",
+      "statement": "(x : ℕ) (y : ℕ) (ys : List ℕ) (ih : x ∈ ins x ys) : x ∈ ins x (y :: ys)"
+    },
+    {
+      "fragment_id": 53,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_58",
+      "scope_vars": [
+        "x : α"
+      ],
+      "premises": [
+        "n : ℕ",
+        "ih : ∀ (xs : List α) (ys : List β), drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)",
+        "ys : List β",
+        "xs : List α"
+      ],
+      "body": "True",
+      "conclusion": "drop (n + 1) (zip' (x :: xs) ys) = zip' (drop (n + 1) (x :: xs)) (drop (n + 1) ys)",
+      "statement": "(x : α) (n : ℕ) (ih : ∀ (xs : List α) (ys : List β), drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)) (ys : List β) (xs : List α) : drop (n + 1) (zip' (x :: xs) ys) = zip' (drop (n + 1) (x :: xs)) (drop (n + 1) ys)"
+    },
+    {
+      "fragment_id": 54,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_77",
+      "scope_vars": [
+        "ih : sorted ys = true → sorted (insort x ys) = true"
+      ],
+      "premises": [
+        "x : ℕ",
+        "y : ℕ",
+        "ys : List ℕ"
+      ],
+      "body": "True",
+      "conclusion": "sorted (y :: ys) = true → sorted (insort x (y :: ys)) = true",
+      "statement": "(ih : sorted ys = true → sorted (insort x ys) = true) (x : ℕ) (y : ℕ) (ys : List ℕ) : sorted (y :: ys) = true → sorted (insort x (y :: ys)) = true"
+    },
+    {
+      "fragment_id": 55,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_78",
+      "scope_vars": [
+        "xs : List ℕ",
+        "hsort : sort xs = sorted_xs"
+      ],
+      "premises": [
+        "x : ℕ",
+        "sorted_xs : List ℕ",
+        "ih : sorted sorted_xs = true"
+      ],
+      "body": "True",
+      "conclusion": "sorted (insort x sorted_xs) = true",
+      "statement": "(xs : List ℕ) (hsort : sort xs = sorted_xs) (x : ℕ) (sorted_xs : List ℕ) (ih : sorted sorted_xs = true) : sorted (insort x sorted_xs) = true"
+    },
+    {
+      "fragment_id": 56,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_55",
+      "scope_vars": [
+        "ys : List α",
+        "x : α",
+        "xs : List α"
+      ],
+      "premises": [
+        "ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+        "n : ℕ"
+      ],
+      "body": "drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys",
+      "conclusion": "drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys",
+      "statement": "(ys : List α) (x : α) (xs : List α) (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) (n : ℕ) (h1 : drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys) : drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys"
+    },
+    {
+      "fragment_id": 57,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_29",
+      "scope_vars": [
+        "x : ℕ",
+        "y : ℕ",
+        "ys : List ℕ",
+        "ih : x ∈ ins1 x ys",
+        "h : ¬x = y"
+      ],
+      "premises": [],
+      "body": "x = y ∨ x ∈ ins1 x ys",
+      "conclusion": "x ∈ y :: ins1 x ys",
+      "statement": "(x : ℕ) (y : ℕ) (ys : List ℕ) (ih : x ∈ ins1 x ys) (h : ¬x = y) (h1 : x = y ∨ x ∈ ins1 x ys) : x ∈ y :: ins1 x ys"
+    },
+    {
+      "fragment_id": 58,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_30",
+      "scope_vars": [
+        "x : ℕ",
+        "y : ℕ",
+        "ys : List ℕ",
+        "h : ¬x < y"
+      ],
+      "premises": [
+        "ih : x ∈ ins x ys"
+      ],
+      "body": "True",
+      "conclusion": "x ∈ y :: ins x ys",
+      "statement": "(x : ℕ) (y : ℕ) (ys : List ℕ) (h : ¬x < y) (ih : x ∈ ins x ys) : x ∈ y :: ins x ys"
+    },
+    {
+      "fragment_id": 59,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_77",
+      "scope_vars": [
+        "x : ℕ",
+        "y : ℕ",
+        "ih : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true",
+        "z : ℕ",
+        "zs : List ℕ"
+      ],
+      "premises": [
+        "h : sorted (y :: z :: zs) = true"
+      ],
+      "body": "(hyz : y ≤ z) → (hzs : sorted (z :: zs) = true) → sorted (y :: insort x (z :: zs)) = true",
+      "conclusion": "sorted (y :: insort x (z :: zs)) = true",
+      "statement": "(x : ℕ) (y : ℕ) (ih : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true) (z : ℕ) (zs : List ℕ) (h : sorted (y :: z :: zs) = true) (hyz : y ≤ z) (hzs : sorted (z :: zs) = true) (h1 : sorted (y :: insort x (z :: zs)) = true) : sorted (y :: insort x (z :: zs)) = true"
+    },
+    {
+      "fragment_id": 60,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_78",
+      "scope_vars": [],
+      "premises": [
+        "x : ℕ",
+        "xs : List ℕ",
+        "ih : sorted (sort xs) = true"
+      ],
+      "body": "True",
+      "conclusion": "sorted (insort x (sort xs)) = true",
+      "statement": "(x : ℕ) (xs : List ℕ) (ih : sorted (sort xs) = true) : sorted (insort x (sort xs)) = true"
+    },
+    {
+      "fragment_id": 61,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_55",
+      "scope_vars": [],
+      "premises": [
+        "ys : List α",
+        "x : α",
+        "xs : List α",
+        "ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+        "n : ℕ"
+      ],
+      "body": "(key : n - length xs = n + 1 - (1 + length xs)) → drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys",
+      "conclusion": "drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys",
+      "statement": "(ys : List α) (x : α) (xs : List α) (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) (n : ℕ) (key : n - length xs = n + 1 - (1 + length xs)) (h1 : drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys) : drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys"
+    },
+    {
+      "fragment_id": 62,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_29",
+      "scope_vars": [
+        "x : ℕ",
+        "y : ℕ",
+        "ys : List ℕ",
+        "ih : x ∈ ins1 x ys",
+        "h : ¬x = y"
+      ],
+      "premises": [],
+      "body": "x ∈ ins1 x ys",
+      "conclusion": "x = y ∨ x ∈ ins1 x ys",
+      "statement": "(x : ℕ) (y : ℕ) (ys : List ℕ) (ih : x ∈ ins1 x ys) (h : ¬x = y) (h1 : x ∈ ins1 x ys) : x = y ∨ x ∈ ins1 x ys"
+    },
+    {
+      "fragment_id": 63,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_30",
+      "scope_vars": [
+        "x : ℕ",
+        "y : ℕ",
+        "ys : List ℕ"
+      ],
+      "premises": [
+        "ih : x ∈ ins x ys"
+      ],
+      "body": "True",
+      "conclusion": "x ∈ if x < y then x :: y :: ys else y :: ins x ys",
+      "statement": "(x : ℕ) (y : ℕ) (ys : List ℕ) (ih : x ∈ ins x ys) : x ∈ if x < y then x :: y :: ys else y :: ins x ys"
+    },
+    {
+      "fragment_id": 64,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_58",
+      "scope_vars": [
+        "x : α"
+      ],
+      "premises": [
+        "n : ℕ",
+        "ih : ∀ (xs : List α) (ys : List β), drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)",
+        "ys : List β",
+        "xs : List α"
+      ],
+      "body": "True",
+      "conclusion": "drop (n + 1) (zip' (x :: xs) ys) = zip' (drop (n + 1) (x :: xs)) (drop (n + 1) ys)",
+      "statement": "(x : α) (n : ℕ) (ih : ∀ (xs : List α) (ys : List β), drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)) (ys : List β) (xs : List α) : drop (n + 1) (zip' (x :: xs) ys) = zip' (drop (n + 1) (x :: xs)) (drop (n + 1) ys)"
+    },
+    {
+      "fragment_id": 65,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_77",
+      "scope_vars": [
+        "x : ℕ",
+        "ih : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true"
+      ],
+      "premises": [
+        "y : ℕ",
+        "h : sorted (y :: z :: zs) = true",
+        "z : ℕ",
+        "zs : List ℕ"
+      ],
+      "body": "(hyz : y ≤ z) → (hzs : sorted (z :: zs) = true) → sorted (y :: insort x (z :: zs)) = true",
+      "conclusion": "sorted (y :: insort x (z :: zs)) = true",
+      "statement": "(x : ℕ) (ih : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true) (y : ℕ) (h : sorted (y :: z :: zs) = true) (z : ℕ) (zs : List ℕ) (hyz : y ≤ z) (hzs : sorted (z :: zs) = true) (h1 : sorted (y :: insort x (z :: zs)) = true) : sorted (y :: insort x (z :: zs)) = true"
+    },
+    {
+      "fragment_id": 66,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_78",
+      "scope_vars": [],
+      "premises": [
+        "x : ℕ",
+        "xs : List ℕ",
+        "ih : sorted (sort xs) = true"
+      ],
+      "body": "True",
+      "conclusion": "sorted (sort (x :: xs)) = true",
+      "statement": "(x : ℕ) (xs : List ℕ) (ih : sorted (sort xs) = true) : sorted (sort (x :: xs)) = true"
+    },
+    {
+      "fragment_id": 67,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_55",
+      "scope_vars": [],
+      "premises": [
+        "ys : List α",
+        "x : α",
+        "xs : List α",
+        "ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+        "n : ℕ"
+      ],
+      "body": "(key : n - length xs = n + 1 - (1 + length xs)) → drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys",
+      "conclusion": "drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys",
+      "statement": "(ys : List α) (x : α) (xs : List α) (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) (n : ℕ) (key : n - length xs = n + 1 - (1 + length xs)) (h1 : drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys) : drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys"
+    },
+    {
+      "fragment_id": 68,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_57",
+      "scope_vars": [
+        "n : ℕ",
+        "m : ℕ"
+      ],
+      "premises": [
+        "k : ℕ"
+      ],
+      "body": "True",
+      "conclusion": "take k [] = []",
+      "statement": "(n : ℕ) (m : ℕ) (k : ℕ) : take k [] = []"
+    },
+    {
+      "fragment_id": 69,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_29",
+      "scope_vars": [
+        "x : ℕ",
+        "y : ℕ",
+        "ys : List ℕ",
+        "ih : x ∈ ins1 x ys",
+        "h : ¬x = y"
+      ],
+      "premises": [],
+      "body": "x ∈ ins1 x ys",
+      "conclusion": "x ∈ y :: ins1 x ys",
+      "statement": "(x : ℕ) (y : ℕ) (ys : List ℕ) (ih : x ∈ ins1 x ys) (h : ¬x = y) (h1 : x ∈ ins1 x ys) : x ∈ y :: ins1 x ys"
+    },
+    {
+      "fragment_id": 70,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_30",
+      "scope_vars": [
+        "x : ℕ",
+        "y : ℕ",
+        "ys : List ℕ"
+      ],
+      "premises": [
+        "ih : x ∈ ins x ys"
+      ],
+      "body": "True",
+      "conclusion": "x ∈ ins x (y :: ys)",
+      "statement": "(x : ℕ) (y : ℕ) (ys : List ℕ) (ih : x ∈ ins x ys) : x ∈ ins x (y :: ys)"
+    },
+    {
+      "fragment_id": 71,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_58",
+      "scope_vars": [],
+      "premises": [
+        "n : ℕ",
+        "ih : ∀ (xs : List α) (ys : List β), drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)",
+        "xs : List α",
+        "ys : List β"
+      ],
+      "body": "True",
+      "conclusion": "drop (n + 1) (zip' xs ys) = zip' (drop (n + 1) xs) (drop (n + 1) ys)",
+      "statement": "(n : ℕ) (ih : ∀ (xs : List α) (ys : List β), drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)) (xs : List α) (ys : List β) : drop (n + 1) (zip' xs ys) = zip' (drop (n + 1) xs) (drop (n + 1) ys)"
+    },
+    {
+      "fragment_id": 72,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_77",
+      "scope_vars": [
+        "y : ℕ",
+        "ih : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true",
+        "h : sorted (y :: z :: zs) = true"
+      ],
+      "premises": [
+        "x : ℕ",
+        "z : ℕ",
+        "zs : List ℕ"
+      ],
+      "body": "sorted (y :: x :: z :: zs) = true",
+      "conclusion": "sorted (y :: insort x (z :: zs)) = true",
+      "statement": "(y : ℕ) (ih : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true) (h : sorted (y :: z :: zs) = true) (x : ℕ) (z : ℕ) (zs : List ℕ) (h1 : sorted (y :: x :: z :: zs) = true) : sorted (y :: insort x (z :: zs)) = true"
+    },
+    {
+      "fragment_id": 73,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_78",
+      "scope_vars": [
+        "xs : List ℕ"
+      ],
+      "premises": [
+        "x : ℕ",
+        "sorted_xs : List ℕ",
+        "hsort : sort xs = sorted_xs",
+        "ih : sorted sorted_xs = true"
+      ],
+      "body": "True",
+      "conclusion": "sorted (insort x sorted_xs) = true",
+      "statement": "(xs : List ℕ) (x : ℕ) (sorted_xs : List ℕ) (hsort : sort xs = sorted_xs) (ih : sorted sorted_xs = true) : sorted (insort x sorted_xs) = true"
+    },
+    {
+      "fragment_id": 74,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_55",
+      "scope_vars": [],
+      "premises": [
+        "ys : List α",
+        "x : α",
+        "xs : List α",
+        "ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+        "n : ℕ"
+      ],
+      "body": "(key : n - length xs = n + 1 - (1 + length xs)) → drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys",
+      "statement": "(ys : List α) (x : α) (xs : List α) (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) (n : ℕ) (key : n - length xs = n + 1 - (1 + length xs)) (h1 : drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys) : drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys"
+    },
+    {
+      "fragment_id": 75,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_57",
+      "scope_vars": [
+        "n : ℕ",
+        "m : ℕ"
+      ],
+      "premises": [],
+      "body": "True",
+      "conclusion": "∀ (k : ℕ), take k [] = []",
+      "statement": "(n : ℕ) (m : ℕ) : ∀ (k : ℕ), take k [] = []"
+    },
+    {
+      "fragment_id": 76,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_29",
+      "scope_vars": [
+        "x : ℕ",
+        "xs : List ℕ"
+      ],
+      "premises": [],
+      "body": "True",
+      "conclusion": "x ∈ ins1 x xs",
+      "statement": "(x : ℕ) (xs : List ℕ) : x ∈ ins1 x xs"
+    },
+    {
+      "fragment_id": 77,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_30",
+      "scope_vars": [
+        "x : ℕ",
+        "y : ℕ",
+        "ys : List ℕ",
+        "h : ¬x < y"
+      ],
+      "premises": [
+        "ih : x ∈ ins x ys"
+      ],
+      "body": "True",
+      "conclusion": "x = y ∨ x ∈ ins x ys",
+      "statement": "(x : ℕ) (y : ℕ) (ys : List ℕ) (h : ¬x < y) (ih : x ∈ ins x ys) : x = y ∨ x ∈ ins x ys"
+    },
+    {
+      "fragment_id": 78,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_58",
+      "scope_vars": [
+        "n : ℕ",
+        "x : α",
+        "y : β"
+      ],
+      "premises": [
+        "ih : ∀ (xs : List α) (ys : List β), drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)",
+        "xs : List α",
+        "ys : List β"
+      ],
+      "body": "True",
+      "conclusion": "drop (n + 1) (zip' (x :: xs) (y :: ys)) = zip' (drop (n + 1) (x :: xs)) (drop (n + 1) (y :: ys))",
+      "statement": "(n : ℕ) (x : α) (y : β) (ih : ∀ (xs : List α) (ys : List β), drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)) (xs : List α) (ys : List β) : drop (n + 1) (zip' (x :: xs) (y :: ys)) = zip' (drop (n + 1) (x :: xs)) (drop (n + 1) (y :: ys))"
+    },
+    {
+      "fragment_id": 79,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_77",
+      "scope_vars": [
+        "x : ℕ",
+        "y : ℕ",
+        "ih : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true",
+        "h : sorted (y :: z :: zs) = true",
+        "z : ℕ",
+        "zs : List ℕ"
+      ],
+      "premises": [],
+      "body": "True",
+      "conclusion": "sorted (y :: insort x (z :: zs)) = true",
+      "statement": "(x : ℕ) (y : ℕ) (ih : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true) (h : sorted (y :: z :: zs) = true) (z : ℕ) (zs : List ℕ) : sorted (y :: insort x (z :: zs)) = true"
+    },
+    {
+      "fragment_id": 80,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_78",
+      "scope_vars": [],
+      "premises": [
+        "x : ℕ",
+        "xs : List ℕ",
+        "ih : sorted (sort xs) = true"
+      ],
+      "body": "True",
+      "conclusion": "sorted (insort x (sort xs)) = true",
+      "statement": "(x : ℕ) (xs : List ℕ) (ih : sorted (sort xs) = true) : sorted (insort x (sort xs)) = true"
+    },
+    {
+      "fragment_id": 81,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_55",
+      "scope_vars": [],
+      "premises": [
+        "ys : List α",
+        "x : α",
+        "xs : List α",
+        "ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+        "n : ℕ"
+      ],
+      "body": "(key : n - length xs = n + 1 - (1 + length xs)) → drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys",
+      "conclusion": "drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys",
+      "statement": "(ys : List α) (x : α) (xs : List α) (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) (n : ℕ) (key : n - length xs = n + 1 - (1 + length xs)) (h1 : drop n xs ++ drop (n - length xs) ys = drop n xs ++ drop (n + 1 - (1 + length xs)) ys) : drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys"
+    },
+    {
+      "fragment_id": 82,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_57",
+      "scope_vars": [
+        "n : ℕ",
+        "m : ℕ",
+        "take_nil : ∀ (k : ℕ), take k [] = []"
+      ],
+      "premises": [],
+      "body": "(k : ℕ) → drop k [] = []",
+      "conclusion": "∀ (k : ℕ), drop k [] = []",
+      "statement": "(n : ℕ) (m : ℕ) (take_nil : ∀ (k : ℕ), take k [] = []) (k : ℕ) (h1 : drop k [] = []) : ∀ (k : ℕ), drop k [] = []"
+    },
+    {
+      "fragment_id": 83,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_29",
+      "scope_vars": [
+        "ys : List ℕ"
+      ],
+      "premises": [
+        "x : ℕ",
+        "y : ℕ",
+        "ih : x ∈ ins1 x ys"
+      ],
+      "body": "True",
+      "conclusion": "x ∈ if x = y then y :: ys else y :: ins1 x ys",
+      "statement": "(ys : List ℕ) (x : ℕ) (y : ℕ) (ih : x ∈ ins1 x ys) : x ∈ if x = y then y :: ys else y :: ins1 x ys"
+    },
+    {
+      "fragment_id": 84,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_77",
+      "scope_vars": [
+        "ih : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true",
+        "z : ℕ",
+        "zs : List ℕ"
+      ],
+      "premises": [
+        "x : ℕ",
+        "y : ℕ",
+        "h : sorted (y :: z :: zs) = true"
+      ],
+      "body": "True",
+      "conclusion": "sorted (y :: insort x (z :: zs)) = true",
+      "statement": "(ih : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true) (z : ℕ) (zs : List ℕ) (x : ℕ) (y : ℕ) (h : sorted (y :: z :: zs) = true) : sorted (y :: insort x (z :: zs)) = true"
+    },
+    {
+      "fragment_id": 85,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_78",
+      "scope_vars": [],
+      "premises": [
+        "x : ℕ",
+        "xs : List ℕ",
+        "ih : sorted (sort xs) = true"
+      ],
+      "body": "True",
+      "conclusion": "sorted (sort (x :: xs)) = true",
+      "statement": "(x : ℕ) (xs : List ℕ) (ih : sorted (sort xs) = true) : sorted (sort (x :: xs)) = true"
+    },
+    {
+      "fragment_id": 86,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_55",
+      "scope_vars": [
+        "ys : List α",
+        "x : α",
+        "xs : List α",
+        "ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+        "n : ℕ"
+      ],
+      "premises": [],
+      "body": "True",
+      "conclusion": "drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys",
+      "statement": "(ys : List α) (x : α) (xs : List α) (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) (n : ℕ) : drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys"
+    },
+    {
+      "fragment_id": 87,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_29",
+      "scope_vars": [
+        "ys : List ℕ"
+      ],
+      "premises": [
+        "x : ℕ",
+        "y : ℕ",
+        "ih : x ∈ ins1 x ys"
+      ],
+      "body": "True",
+      "conclusion": "x ∈ ins1 x (y :: ys)",
+      "statement": "(ys : List ℕ) (x : ℕ) (y : ℕ) (ih : x ∈ ins1 x ys) : x ∈ ins1 x (y :: ys)"
+    },
+    {
+      "fragment_id": 88,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_30",
+      "scope_vars": [
+        "x : ℕ",
+        "y : ℕ",
+        "ys : List ℕ"
+      ],
+      "premises": [
+        "ih : x ∈ ins x ys"
+      ],
+      "body": "True",
+      "conclusion": "x ∈ if x < y then x :: y :: ys else y :: ins x ys",
+      "statement": "(x : ℕ) (y : ℕ) (ys : List ℕ) (ih : x ∈ ins x ys) : x ∈ if x < y then x :: y :: ys else y :: ins x ys"
+    },
+    {
+      "fragment_id": 89,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_77",
+      "scope_vars": [
+        "y : ℕ",
+        "ih : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true",
+        "h : sorted (y :: z :: zs) = true"
+      ],
+      "premises": [
+        "x : ℕ",
+        "z : ℕ",
+        "zs : List ℕ"
+      ],
+      "body": "True",
+      "conclusion": "sorted (y :: insort x (z :: zs)) = true",
+      "statement": "(y : ℕ) (ih : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true) (h : sorted (y :: z :: zs) = true) (x : ℕ) (z : ℕ) (zs : List ℕ) : sorted (y :: insort x (z :: zs)) = true"
+    },
+    {
+      "fragment_id": 90,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_78",
+      "scope_vars": [
+        "xs : List ℕ",
+        "hsort : sort xs = sorted_xs",
+        "ih : sorted (y :: ys) = true",
+        "ys : List ℕ",
+        "ih' : sorted ys = true → sorted (insort x ys) = true"
+      ],
+      "premises": [
+        "x : ℕ",
+        "y : ℕ"
+      ],
+      "body": "(hyx : y ≤ x) → sorted (insort x (y :: ys)) = true",
+      "conclusion": "sorted (insort x (y :: ys)) = true",
+      "statement": "(xs : List ℕ) (hsort : sort xs = sorted_xs) (ih : sorted (y :: ys) = true) (ys : List ℕ) (ih' : sorted ys = true → sorted (insort x ys) = true) (x : ℕ) (y : ℕ) (hyx : y ≤ x) (h1 : sorted (insort x (y :: ys)) = true) : sorted (insort x (y :: ys)) = true"
+    },
+    {
+      "fragment_id": 91,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_29",
+      "scope_vars": [
+        "ys : List ℕ"
+      ],
+      "premises": [
+        "x : ℕ",
+        "y : ℕ",
+        "ih : x ∈ ins1 x ys"
+      ],
+      "body": "True",
+      "conclusion": "x ∈ if x = y then y :: ys else y :: ins1 x ys",
+      "statement": "(ys : List ℕ) (x : ℕ) (y : ℕ) (ih : x ∈ ins1 x ys) : x ∈ if x = y then y :: ys else y :: ins1 x ys"
+    },
+    {
+      "fragment_id": 92,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_30",
+      "scope_vars": [
+        "x : ℕ",
+        "y : ℕ",
+        "ys : List ℕ"
+      ],
+      "premises": [
+        "ih : x ∈ ins x ys"
+      ],
+      "body": "True",
+      "conclusion": "x ∈ ins x (y :: ys)",
+      "statement": "(x : ℕ) (y : ℕ) (ys : List ℕ) (ih : x ∈ ins x ys) : x ∈ ins x (y :: ys)"
+    },
+    {
+      "fragment_id": 93,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_58",
+      "scope_vars": [
+        "x : α"
+      ],
+      "premises": [
+        "n : ℕ",
+        "ih : ∀ (xs : List α) (ys : List β), drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)",
+        "ys : List β",
+        "xs : List α"
+      ],
+      "body": "True",
+      "conclusion": "drop (n + 1) (zip' (x :: xs) ys) = zip' (drop (n + 1) (x :: xs)) (drop (n + 1) ys)",
+      "statement": "(x : α) (n : ℕ) (ih : ∀ (xs : List α) (ys : List β), drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)) (ys : List β) (xs : List α) : drop (n + 1) (zip' (x :: xs) ys) = zip' (drop (n + 1) (x :: xs)) (drop (n + 1) ys)"
+    },
+    {
+      "fragment_id": 94,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_77",
+      "scope_vars": [
+        "ih : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true",
+        "z : ℕ",
+        "zs : List ℕ"
+      ],
+      "premises": [
+        "x : ℕ",
+        "y : ℕ",
+        "h : sorted (y :: z :: zs) = true"
+      ],
+      "body": "True",
+      "conclusion": "sorted (y :: insort x (z :: zs)) = true",
+      "statement": "(ih : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true) (z : ℕ) (zs : List ℕ) (x : ℕ) (y : ℕ) (h : sorted (y :: z :: zs) = true) : sorted (y :: insort x (z :: zs)) = true"
+    },
+    {
+      "fragment_id": 95,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_78",
+      "scope_vars": [
+        "x : ℕ",
+        "xs : List ℕ",
+        "hsort : sort xs = sorted_xs",
+        "ih : sorted (y :: ys) = true",
+        "y : ℕ",
+        "ys : List ℕ",
+        "ih' : sorted ys = true → sorted (insort x ys) = true"
+      ],
+      "premises": [],
+      "body": "sorted (y :: insort x ys) = true",
+      "conclusion": "sorted (insort x (y :: ys)) = true",
+      "statement": "(x : ℕ) (xs : List ℕ) (hsort : sort xs = sorted_xs) (ih : sorted (y :: ys) = true) (y : ℕ) (ys : List ℕ) (ih' : sorted ys = true → sorted (insort x ys) = true) (h1 : sorted (y :: insort x ys) = true) : sorted (insort x (y :: ys)) = true"
+    },
+    {
+      "fragment_id": 96,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_55",
+      "scope_vars": [
+        "ys : List α",
+        "x : α",
+        "xs : List α"
+      ],
+      "premises": [
+        "ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+        "n : ℕ"
+      ],
+      "body": "True",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys",
+      "statement": "(ys : List α) (x : α) (xs : List α) (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) (n : ℕ) : drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys"
+    },
+    {
+      "fragment_id": 97,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_57",
+      "scope_vars": [
+        "n : ℕ",
+        "m : ℕ",
+        "take_nil : ∀ (k : ℕ), take k [] = []"
+      ],
+      "premises": [
+        "k : ℕ"
+      ],
+      "body": "True",
+      "conclusion": "drop k [] = []",
+      "statement": "(n : ℕ) (m : ℕ) (take_nil : ∀ (k : ℕ), take k [] = []) (k : ℕ) : drop k [] = []"
+    },
+    {
+      "fragment_id": 98,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_29",
+      "scope_vars": [
+        "ys : List ℕ"
+      ],
+      "premises": [
+        "x : ℕ",
+        "y : ℕ",
+        "ih : x ∈ ins1 x ys"
+      ],
+      "body": "True",
+      "conclusion": "x ∈ ins1 x (y :: ys)",
+      "statement": "(ys : List ℕ) (x : ℕ) (y : ℕ) (ih : x ∈ ins1 x ys) : x ∈ ins1 x (y :: ys)"
+    },
+    {
+      "fragment_id": 99,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_58",
+      "scope_vars": [],
+      "premises": [
+        "n : ℕ",
+        "ih : ∀ (xs : List α) (ys : List β), drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)",
+        "xs : List α",
+        "ys : List β"
+      ],
+      "body": "True",
+      "conclusion": "drop (n + 1) (zip' xs ys) = zip' (drop (n + 1) xs) (drop (n + 1) ys)",
+      "statement": "(n : ℕ) (ih : ∀ (xs : List α) (ys : List β), drop n (zip' xs ys) = zip' (drop n xs) (drop n ys)) (xs : List α) (ys : List β) : drop (n + 1) (zip' xs ys) = zip' (drop (n + 1) xs) (drop (n + 1) ys)"
+    },
+    {
+      "fragment_id": 100,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_77",
+      "scope_vars": [
+        "x : ℕ",
+        "xs : List ℕ"
+      ],
+      "premises": [],
+      "body": "True",
+      "conclusion": "sorted xs = true → sorted (insort x xs) = true",
+      "statement": "(x : ℕ) (xs : List ℕ) : sorted xs = true → sorted (insort x xs) = true"
+    },
+    {
+      "fragment_id": 101,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_78",
+      "scope_vars": [
+        "xs : List ℕ",
+        "hsort : sort xs = sorted_xs",
+        "ih : sorted (y :: ys) = true",
+        "ys : List ℕ",
+        "ih' : sorted ys = true → sorted (insort x ys) = true"
+      ],
+      "premises": [
+        "x : ℕ",
+        "y : ℕ"
+      ],
+      "body": "(hyx : y ≤ x) → sorted (y :: insort x ys) = true",
+      "conclusion": "sorted (insort x (y :: ys)) = true",
+      "statement": "(xs : List ℕ) (hsort : sort xs = sorted_xs) (ih : sorted (y :: ys) = true) (ys : List ℕ) (ih' : sorted ys = true → sorted (insort x ys) = true) (x : ℕ) (y : ℕ) (hyx : y ≤ x) (h1 : sorted (y :: insort x ys) = true) : sorted (insort x (y :: ys)) = true"
+    },
+    {
+      "fragment_id": 102,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_55",
+      "scope_vars": [
+        "ys : List α",
+        "x : α",
+        "xs : List α"
+      ],
+      "premises": [
+        "ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+        "n : ℕ"
+      ],
+      "body": "True",
+      "conclusion": "drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys",
+      "statement": "(ys : List α) (x : α) (xs : List α) (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) (n : ℕ) : drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys"
+    },
+    {
+      "fragment_id": 103,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_57",
+      "scope_vars": [
+        "n : ℕ",
+        "m : ℕ",
+        "take_nil : ∀ (k : ℕ), take k [] = []"
+      ],
+      "premises": [],
+      "body": "True",
+      "conclusion": "∀ (k : ℕ), drop k [] = []",
+      "statement": "(n : ℕ) (m : ℕ) (take_nil : ∀ (k : ℕ), take k [] = []) : ∀ (k : ℕ), drop k [] = []"
+    },
+    {
+      "fragment_id": 104,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_77",
+      "scope_vars": [
+        "ys : List ℕ",
+        "ih : sorted ys = true → sorted (insort x ys) = true"
+      ],
+      "premises": [
+        "x : ℕ",
+        "y : ℕ"
+      ],
+      "body": "True",
+      "conclusion": "sorted (y :: ys) = true → sorted (insort x (y :: ys)) = true",
+      "statement": "(ys : List ℕ) (ih : sorted ys = true → sorted (insort x ys) = true) (x : ℕ) (y : ℕ) : sorted (y :: ys) = true → sorted (insort x (y :: ys)) = true"
+    },
+    {
+      "fragment_id": 105,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_78",
+      "scope_vars": [
+        "x : ℕ",
+        "xs : List ℕ",
+        "hsort : sort xs = sorted_xs",
+        "ih : sorted (y :: ys) = true",
+        "y : ℕ",
+        "ys : List ℕ",
+        "ih' : sorted ys = true → sorted (insort x ys) = true"
+      ],
+      "premises": [],
+      "body": "True",
+      "conclusion": "sorted (insort x (y :: ys)) = true",
+      "statement": "(x : ℕ) (xs : List ℕ) (hsort : sort xs = sorted_xs) (ih : sorted (y :: ys) = true) (y : ℕ) (ys : List ℕ) (ih' : sorted ys = true → sorted (insort x ys) = true) : sorted (insort x (y :: ys)) = true"
+    },
+    {
+      "fragment_id": 106,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_29",
+      "scope_vars": [
+        "x : ℕ",
+        "y : ℕ",
+        "ys : List ℕ",
+        "h : ¬x = y"
+      ],
+      "premises": [
+        "ih : x ∈ ins1 x ys"
+      ],
+      "body": "True",
+      "conclusion": "x ∈ y :: ins1 x ys",
+      "statement": "(x : ℕ) (y : ℕ) (ys : List ℕ) (h : ¬x = y) (ih : x ∈ ins1 x ys) : x ∈ y :: ins1 x ys"
+    },
+    {
+      "fragment_id": 107,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_77",
+      "scope_vars": [
+        "y : ℕ",
+        "ih : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true",
+        "h : sorted (y :: z :: zs) = true"
+      ],
+      "premises": [
+        "x : ℕ",
+        "z : ℕ",
+        "zs : List ℕ"
+      ],
+      "body": "(hins : insort x (z :: zs) = z :: insort x zs) → sorted (y :: insort x (z :: zs)) = true",
+      "conclusion": "sorted (y :: insort x (z :: zs)) = true",
+      "statement": "(y : ℕ) (ih : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true) (h : sorted (y :: z :: zs) = true) (x : ℕ) (z : ℕ) (zs : List ℕ) (hins : insort x (z :: zs) = z :: insort x zs) (h1 : sorted (y :: insort x (z :: zs)) = true) : sorted (y :: insort x (z :: zs)) = true"
+    },
+    {
+      "fragment_id": 108,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_78",
+      "scope_vars": [],
+      "premises": [
+        "x : ℕ",
+        "xs : List ℕ",
+        "ih : sorted (sort xs) = true"
+      ],
+      "body": "True",
+      "conclusion": "sorted (insort x (sort xs)) = true",
+      "statement": "(x : ℕ) (xs : List ℕ) (ih : sorted (sort xs) = true) : sorted (insort x (sort xs)) = true"
+    },
+    {
+      "fragment_id": 109,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_55",
+      "scope_vars": [],
+      "premises": [
+        "ys : List α",
+        "x : α",
+        "xs : List α",
+        "ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+        "n : ℕ"
+      ],
+      "body": "True",
+      "conclusion": "drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys",
+      "statement": "(ys : List α) (x : α) (xs : List α) (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) (n : ℕ) : drop n (xs ++ ys) = drop n xs ++ drop (n + 1 - (1 + length xs)) ys"
+    },
+    {
+      "fragment_id": 110,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_57",
+      "scope_vars": [
+        "x : α",
+        "xs : List α"
+      ],
+      "premises": [
+        "ih : ∀ (n m : ℕ), drop n (take m xs) = take (m - n) (drop n xs)",
+        "n : ℕ",
+        "m : ℕ"
+      ],
+      "body": "True",
+      "conclusion": "drop n (take m (x :: xs)) = take (m - n) (drop n (x :: xs))",
+      "statement": "(x : α) (xs : List α) (ih : ∀ (n m : ℕ), drop n (take m xs) = take (m - n) (drop n xs)) (n : ℕ) (m : ℕ) : drop n (take m (x :: xs)) = take (m - n) (drop n (x :: xs))"
+    },
+    {
+      "fragment_id": 111,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_29",
+      "scope_vars": [
+        "ys : List ℕ"
+      ],
+      "premises": [
+        "x : ℕ",
+        "y : ℕ",
+        "ih : x ∈ ins1 x ys"
+      ],
+      "body": "True",
+      "conclusion": "x ∈ if x = y then y :: ys else y :: ins1 x ys",
+      "statement": "(ys : List ℕ) (x : ℕ) (y : ℕ) (ih : x ∈ ins1 x ys) : x ∈ if x = y then y :: ys else y :: ins1 x ys"
+    },
+    {
+      "fragment_id": 112,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_77",
+      "scope_vars": [
+        "x : ℕ",
+        "y : ℕ",
+        "ih : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true",
+        "h : sorted (y :: z :: zs) = true",
+        "z : ℕ",
+        "zs : List ℕ"
+      ],
+      "premises": [],
+      "body": "sorted (y :: z :: insort x zs) = true",
+      "conclusion": "sorted (y :: insort x (z :: zs)) = true",
+      "statement": "(x : ℕ) (y : ℕ) (ih : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true) (h : sorted (y :: z :: zs) = true) (z : ℕ) (zs : List ℕ) (h1 : sorted (y :: z :: insort x zs) = true) : sorted (y :: insort x (z :: zs)) = true"
+    },
+    {
+      "fragment_id": 113,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_78",
+      "scope_vars": [],
+      "premises": [
+        "x : ℕ",
+        "xs : List ℕ",
+        "ih : sorted (sort xs) = true"
+      ],
+      "body": "True",
+      "conclusion": "sorted (sort (x :: xs)) = true",
+      "statement": "(x : ℕ) (xs : List ℕ) (ih : sorted (sort xs) = true) : sorted (sort (x :: xs)) = true"
+    },
+    {
+      "fragment_id": 114,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_55",
+      "scope_vars": [],
+      "premises": [
+        "ys : List α",
+        "x : α",
+        "xs : List α",
+        "ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+        "n : ℕ"
+      ],
+      "body": "True",
+      "conclusion": "drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys",
+      "statement": "(ys : List α) (x : α) (xs : List α) (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) (n : ℕ) : drop (n + 1) (x :: xs ++ ys) = drop (n + 1) (x :: xs) ++ drop (n + 1 - length (x :: xs)) ys"
+    },
+    {
+      "fragment_id": 115,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_57",
+      "scope_vars": [
+        "x : α",
+        "xs : List α",
+        "ih : ∀ (n m : ℕ), drop n (take m xs) = take (m - n) (drop n xs)",
+        "n : ℕ",
+        "m : ℕ"
+      ],
+      "premises": [],
+      "body": "drop n (take m xs) = take (m - n) (drop n xs)",
+      "conclusion": "drop (n + 1) (take (m + 1) (x :: xs)) = take (m + 1 - (n + 1)) (drop (n + 1) (x :: xs))",
+      "statement": "(x : α) (xs : List α) (ih : ∀ (n m : ℕ), drop n (take m xs) = take (m - n) (drop n xs)) (n : ℕ) (m : ℕ) (h1 : drop n (take m xs) = take (m - n) (drop n xs)) : drop (n + 1) (take (m + 1) (x :: xs)) = take (m + 1 - (n + 1)) (drop (n + 1) (x :: xs))"
+    },
+    {
+      "fragment_id": 116,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_29",
+      "scope_vars": [
+        "ys : List ℕ"
+      ],
+      "premises": [
+        "x : ℕ",
+        "y : ℕ",
+        "ih : x ∈ ins1 x ys"
+      ],
+      "body": "True",
+      "conclusion": "x ∈ ins1 x (y :: ys)",
+      "statement": "(ys : List ℕ) (x : ℕ) (y : ℕ) (ih : x ∈ ins1 x ys) : x ∈ ins1 x (y :: ys)"
+    },
+    {
+      "fragment_id": 117,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_77",
+      "scope_vars": [
+        "y : ℕ",
+        "ih : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true",
+        "h : sorted (y :: z :: zs) = true"
+      ],
+      "premises": [
+        "x : ℕ",
+        "z : ℕ",
+        "zs : List ℕ"
+      ],
+      "body": "(hins : insort x (z :: zs) = z :: insort x zs) → sorted (y :: z :: insort x zs) = true",
+      "conclusion": "sorted (y :: insort x (z :: zs)) = true",
+      "statement": "(y : ℕ) (ih : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true) (h : sorted (y :: z :: zs) = true) (x : ℕ) (z : ℕ) (zs : List ℕ) (hins : insort x (z :: zs) = z :: insort x zs) (h1 : sorted (y :: z :: insort x zs) = true) : sorted (y :: insort x (z :: zs)) = true"
+    },
+    {
+      "fragment_id": 118,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_78",
+      "scope_vars": [
+        "xs : List ℕ"
+      ],
+      "premises": [
+        "x : ℕ",
+        "sorted_xs : List ℕ",
+        "hsort : sort xs = sorted_xs",
+        "ih : sorted sorted_xs = true"
+      ],
+      "body": "True",
+      "conclusion": "sorted (insort x sorted_xs) = true",
+      "statement": "(xs : List ℕ) (x : ℕ) (sorted_xs : List ℕ) (hsort : sort xs = sorted_xs) (ih : sorted sorted_xs = true) : sorted (insort x sorted_xs) = true"
+    },
+    {
+      "fragment_id": 119,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_55",
+      "scope_vars": [],
+      "premises": [
+        "ys : List α",
+        "x : α",
+        "xs : List α",
+        "ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+        "n : ℕ"
+      ],
+      "body": "True",
+      "conclusion": "n - length xs = n + 1 - (1 + length xs)",
+      "statement": "(ys : List α) (x : α) (xs : List α) (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) (n : ℕ) : n - length xs = n + 1 - (1 + length xs)"
+    },
+    {
+      "fragment_id": 120,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_57",
+      "scope_vars": [
+        "x : α",
+        "xs : List α"
+      ],
+      "premises": [
+        "ih : ∀ (n m : ℕ), drop n (take m xs) = take (m - n) (drop n xs)",
+        "n : ℕ",
+        "m : ℕ"
+      ],
+      "body": "True",
+      "conclusion": "drop (n + 1) (take (m + 1) (x :: xs)) = take (m + 1 - (n + 1)) (drop (n + 1) (x :: xs))",
+      "statement": "(x : α) (xs : List α) (ih : ∀ (n m : ℕ), drop n (take m xs) = take (m - n) (drop n xs)) (n : ℕ) (m : ℕ) : drop (n + 1) (take (m + 1) (x :: xs)) = take (m + 1 - (n + 1)) (drop (n + 1) (x :: xs))"
+    },
+    {
+      "fragment_id": 121,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_29",
+      "scope_vars": [
+        "ys : List ℕ"
+      ],
+      "premises": [
+        "x : ℕ",
+        "y : ℕ",
+        "ih : x ∈ ins1 x ys"
+      ],
+      "body": "True",
+      "conclusion": "x ∈ if x = y then y :: ys else y :: ins1 x ys",
+      "statement": "(ys : List ℕ) (x : ℕ) (y : ℕ) (ih : x ∈ ins1 x ys) : x ∈ if x = y then y :: ys else y :: ins1 x ys"
+    },
+    {
+      "fragment_id": 122,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_77",
+      "scope_vars": [
+        "y : ℕ",
+        "h : sorted (y :: z :: zs) = true"
+      ],
+      "premises": [
+        "x : ℕ",
+        "ih : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true",
+        "z : ℕ",
+        "zs : List ℕ"
+      ],
+      "body": "True",
+      "conclusion": "sorted (y :: insort x (z :: zs)) = true",
+      "statement": "(y : ℕ) (h : sorted (y :: z :: zs) = true) (x : ℕ) (ih : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true) (z : ℕ) (zs : List ℕ) : sorted (y :: insort x (z :: zs)) = true"
+    },
+    {
+      "fragment_id": 123,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_78",
+      "scope_vars": [],
+      "premises": [
+        "x : ℕ",
+        "xs : List ℕ",
+        "ih : sorted (sort xs) = true"
+      ],
+      "body": "True",
+      "conclusion": "sorted (insort x (sort xs)) = true",
+      "statement": "(x : ℕ) (xs : List ℕ) (ih : sorted (sort xs) = true) : sorted (insort x (sort xs)) = true"
+    },
+    {
+      "fragment_id": 124,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_55",
+      "scope_vars": [],
+      "premises": [
+        "ys : List α",
+        "x : α",
+        "xs : List α",
+        "ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+        "n : ℕ"
+      ],
+      "body": "True",
+      "conclusion": "drop n (x :: xs ++ ys) = drop n (x :: xs) ++ drop (n - length (x :: xs)) ys",
+      "statement": "(ys : List α) (x : α) (xs : List α) (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) (n : ℕ) : drop n (x :: xs ++ ys) = drop n (x :: xs) ++ drop (n - length (x :: xs)) ys"
+    },
+    {
+      "fragment_id": 125,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_57",
+      "scope_vars": [
+        "x : α",
+        "xs : List α"
+      ],
+      "premises": [
+        "ih : ∀ (n m : ℕ), drop n (take m xs) = take (m - n) (drop n xs)",
+        "m : ℕ",
+        "n : ℕ"
+      ],
+      "body": "True",
+      "conclusion": "drop (n + 1) (take m (x :: xs)) = take (m - (n + 1)) (drop (n + 1) (x :: xs))",
+      "statement": "(x : α) (xs : List α) (ih : ∀ (n m : ℕ), drop n (take m xs) = take (m - n) (drop n xs)) (m : ℕ) (n : ℕ) : drop (n + 1) (take m (x :: xs)) = take (m - (n + 1)) (drop (n + 1) (x :: xs))"
+    },
+    {
+      "fragment_id": 126,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_29",
+      "scope_vars": [
+        "ys : List ℕ"
+      ],
+      "premises": [
+        "x : ℕ",
+        "y : ℕ",
+        "ih : x ∈ ins1 x ys"
+      ],
+      "body": "True",
+      "conclusion": "x ∈ ins1 x (y :: ys)",
+      "statement": "(ys : List ℕ) (x : ℕ) (y : ℕ) (ih : x ∈ ins1 x ys) : x ∈ ins1 x (y :: ys)"
+    },
+    {
+      "fragment_id": 127,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_77",
+      "scope_vars": [
+        "z : ℕ",
+        "zs : List ℕ"
+      ],
+      "premises": [
+        "x : ℕ",
+        "y : ℕ",
+        "ih : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true",
+        "h : sorted (y :: z :: zs) = true"
+      ],
+      "body": "True",
+      "conclusion": "sorted (y :: insort x (z :: zs)) = true",
+      "statement": "(z : ℕ) (zs : List ℕ) (x : ℕ) (y : ℕ) (ih : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true) (h : sorted (y :: z :: zs) = true) : sorted (y :: insort x (z :: zs)) = true"
+    },
+    {
+      "fragment_id": 128,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_78",
+      "scope_vars": [],
+      "premises": [
+        "x : ℕ",
+        "xs : List ℕ",
+        "ih : sorted (sort xs) = true"
+      ],
+      "body": "True",
+      "conclusion": "sorted (sort (x :: xs)) = true",
+      "statement": "(x : ℕ) (xs : List ℕ) (ih : sorted (sort xs) = true) : sorted (sort (x :: xs)) = true"
+    },
+    {
+      "fragment_id": 129,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_55",
+      "scope_vars": [],
+      "premises": [
+        "ys : List α",
+        "x : α",
+        "xs : List α",
+        "ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+        "n : ℕ"
+      ],
+      "body": "True",
+      "conclusion": "drop n (x :: xs ++ ys) = drop n (x :: xs) ++ drop (n - length (x :: xs)) ys",
+      "statement": "(ys : List α) (x : α) (xs : List α) (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) (n : ℕ) : drop n (x :: xs ++ ys) = drop n (x :: xs) ++ drop (n - length (x :: xs)) ys"
+    },
+    {
+      "fragment_id": 130,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_77",
+      "scope_vars": [
+        "y : ℕ",
+        "h : sorted (y :: z :: zs) = true"
+      ],
+      "premises": [
+        "x : ℕ",
+        "ih : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true",
+        "z : ℕ",
+        "zs : List ℕ"
+      ],
+      "body": "True",
+      "conclusion": "sorted (y :: insort x (z :: zs)) = true",
+      "statement": "(y : ℕ) (h : sorted (y :: z :: zs) = true) (x : ℕ) (ih : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true) (z : ℕ) (zs : List ℕ) : sorted (y :: insort x (z :: zs)) = true"
+    },
+    {
+      "fragment_id": 131,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_78",
+      "scope_vars": [
+        "xs : List ℕ",
+        "hsort : sort xs = sorted_xs",
+        "ys : List ℕ",
+        "ih' : sorted ys = true → sorted (insort x ys) = true"
+      ],
+      "premises": [
+        "x : ℕ",
+        "ih : sorted (y :: ys) = true",
+        "y : ℕ"
+      ],
+      "body": "True",
+      "conclusion": "sorted (insort x (y :: ys)) = true",
+      "statement": "(xs : List ℕ) (hsort : sort xs = sorted_xs) (ys : List ℕ) (ih' : sorted ys = true → sorted (insort x ys) = true) (x : ℕ) (ih : sorted (y :: ys) = true) (y : ℕ) : sorted (insort x (y :: ys)) = true"
+    },
+    {
+      "fragment_id": 132,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_55",
+      "scope_vars": [],
+      "premises": [
+        "ys : List α",
+        "x : α",
+        "xs : List α",
+        "ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+        "n : ℕ"
+      ],
+      "body": "True",
+      "conclusion": "drop n (x :: xs ++ ys) = drop n (x :: xs) ++ drop (n - length (x :: xs)) ys",
+      "statement": "(ys : List α) (x : α) (xs : List α) (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) (n : ℕ) : drop n (x :: xs ++ ys) = drop n (x :: xs) ++ drop (n - length (x :: xs)) ys"
+    },
+    {
+      "fragment_id": 133,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_29",
+      "scope_vars": [
+        "ys : List ℕ"
+      ],
+      "premises": [
+        "x : ℕ",
+        "y : ℕ",
+        "ih : x ∈ ins1 x ys"
+      ],
+      "body": "True",
+      "conclusion": "x ∈ ins1 x (y :: ys)",
+      "statement": "(ys : List ℕ) (x : ℕ) (y : ℕ) (ih : x ∈ ins1 x ys) : x ∈ ins1 x (y :: ys)"
+    },
+    {
+      "fragment_id": 134,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_77",
+      "scope_vars": [
+        "z : ℕ",
+        "zs : List ℕ"
+      ],
+      "premises": [
+        "x : ℕ",
+        "y : ℕ",
+        "ih : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true",
+        "h : sorted (y :: z :: zs) = true"
+      ],
+      "body": "True",
+      "conclusion": "sorted (y :: insort x (z :: zs)) = true",
+      "statement": "(z : ℕ) (zs : List ℕ) (x : ℕ) (y : ℕ) (ih : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true) (h : sorted (y :: z :: zs) = true) : sorted (y :: insort x (z :: zs)) = true"
+    },
+    {
+      "fragment_id": 135,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_78",
+      "scope_vars": [
+        "xs : List ℕ",
+        "hsort : sort xs = sorted_xs"
+      ],
+      "premises": [
+        "x : ℕ",
+        "sorted_xs : List ℕ",
+        "ih : sorted sorted_xs = true"
+      ],
+      "body": "True",
+      "conclusion": "sorted (insort x sorted_xs) = true",
+      "statement": "(xs : List ℕ) (hsort : sort xs = sorted_xs) (x : ℕ) (sorted_xs : List ℕ) (ih : sorted sorted_xs = true) : sorted (insort x sorted_xs) = true"
+    },
+    {
+      "fragment_id": 136,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_29",
+      "scope_vars": [
+        "x : ℕ",
+        "y : ℕ",
+        "ys : List ℕ",
+        "h : ¬x = y"
+      ],
+      "premises": [
+        "ih : x ∈ ins1 x ys"
+      ],
+      "body": "True",
+      "conclusion": "x = y ∨ x ∈ ins1 x ys",
+      "statement": "(x : ℕ) (y : ℕ) (ys : List ℕ) (h : ¬x = y) (ih : x ∈ ins1 x ys) : x = y ∨ x ∈ ins1 x ys"
+    },
+    {
+      "fragment_id": 137,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_77",
+      "scope_vars": [
+        "y : ℕ"
+      ],
+      "premises": [
+        "x : ℕ",
+        "ih : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true",
+        "h : sorted (y :: z :: zs) = true",
+        "z : ℕ",
+        "zs : List ℕ"
+      ],
+      "body": "True",
+      "conclusion": "sorted (y :: insort x (z :: zs)) = true",
+      "statement": "(y : ℕ) (x : ℕ) (ih : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true) (h : sorted (y :: z :: zs) = true) (z : ℕ) (zs : List ℕ) : sorted (y :: insort x (z :: zs)) = true"
+    },
+    {
+      "fragment_id": 138,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_29",
+      "scope_vars": [
+        "x : ℕ",
+        "y : ℕ",
+        "ys : List ℕ",
+        "h : ¬x = y"
+      ],
+      "premises": [
+        "ih : x ∈ ins1 x ys"
+      ],
+      "body": "True",
+      "conclusion": "x ∈ y :: ins1 x ys",
+      "statement": "(x : ℕ) (y : ℕ) (ys : List ℕ) (h : ¬x = y) (ih : x ∈ ins1 x ys) : x ∈ y :: ins1 x ys"
+    },
+    {
+      "fragment_id": 139,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_77",
+      "scope_vars": [
+        "z : ℕ",
+        "zs : List ℕ"
+      ],
+      "premises": [
+        "x : ℕ",
+        "y : ℕ",
+        "ih : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true",
+        "h : sorted (y :: z :: zs) = true"
+      ],
+      "body": "True",
+      "conclusion": "sorted (y :: insort x (z :: zs)) = true",
+      "statement": "(z : ℕ) (zs : List ℕ) (x : ℕ) (y : ℕ) (ih : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true) (h : sorted (y :: z :: zs) = true) : sorted (y :: insort x (z :: zs)) = true"
+    },
+    {
+      "fragment_id": 140,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_78",
+      "scope_vars": [],
+      "premises": [
+        "x : ℕ",
+        "xs : List ℕ",
+        "ih : sorted (sort xs) = true"
+      ],
+      "body": "True",
+      "conclusion": "sorted (sort (x :: xs)) = true",
+      "statement": "(x : ℕ) (xs : List ℕ) (ih : sorted (sort xs) = true) : sorted (sort (x :: xs)) = true"
+    },
+    {
+      "fragment_id": 141,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_55",
+      "scope_vars": [],
+      "premises": [
+        "ys : List α",
+        "x : α",
+        "xs : List α",
+        "ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys",
+        "n : ℕ"
+      ],
+      "body": "True",
+      "conclusion": "drop n (x :: xs ++ ys) = drop n (x :: xs) ++ drop (n - length (x :: xs)) ys",
+      "statement": "(ys : List α) (x : α) (xs : List α) (ih : ∀ (n : ℕ), drop n (xs ++ ys) = drop n xs ++ drop (n - length xs) ys) (n : ℕ) : drop n (x :: xs ++ ys) = drop n (x :: xs) ++ drop (n - length (x :: xs)) ys"
+    },
+    {
+      "fragment_id": 142,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_29",
+      "scope_vars": [
+        "ys : List ℕ"
+      ],
+      "premises": [
+        "x : ℕ",
+        "y : ℕ",
+        "ih : x ∈ ins1 x ys"
+      ],
+      "body": "True",
+      "conclusion": "x ∈ if x = y then y :: ys else y :: ins1 x ys",
+      "statement": "(ys : List ℕ) (x : ℕ) (y : ℕ) (ih : x ∈ ins1 x ys) : x ∈ if x = y then y :: ys else y :: ins1 x ys"
+    },
+    {
+      "fragment_id": 143,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_77",
+      "scope_vars": [],
+      "premises": [
+        "x : ℕ",
+        "y : ℕ",
+        "ih : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true",
+        "h : sorted (y :: z :: zs) = true",
+        "z : ℕ",
+        "zs : List ℕ"
+      ],
+      "body": "True",
+      "conclusion": "sorted (y :: insort x (z :: zs)) = true",
+      "statement": "(x : ℕ) (y : ℕ) (ih : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true) (h : sorted (y :: z :: zs) = true) (z : ℕ) (zs : List ℕ) : sorted (y :: insort x (z :: zs)) = true"
+    },
+    {
+      "fragment_id": 144,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_78",
+      "scope_vars": [
+        "xs : List ℕ"
+      ],
+      "premises": [
+        "x : ℕ",
+        "sorted_xs : List ℕ",
+        "hsort : sort xs = sorted_xs",
+        "ih : sorted sorted_xs = true"
+      ],
+      "body": "True",
+      "conclusion": "sorted (insort x sorted_xs) = true",
+      "statement": "(xs : List ℕ) (x : ℕ) (sorted_xs : List ℕ) (hsort : sort xs = sorted_xs) (ih : sorted sorted_xs = true) : sorted (insort x sorted_xs) = true"
+    },
+    {
+      "fragment_id": 145,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_29",
+      "scope_vars": [
+        "ys : List ℕ"
+      ],
+      "premises": [
+        "x : ℕ",
+        "y : ℕ",
+        "ih : x ∈ ins1 x ys"
+      ],
+      "body": "True",
+      "conclusion": "x ∈ ins1 x (y :: ys)",
+      "statement": "(ys : List ℕ) (x : ℕ) (y : ℕ) (ih : x ∈ ins1 x ys) : x ∈ ins1 x (y :: ys)"
+    },
+    {
+      "fragment_id": 146,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_77",
+      "scope_vars": [
+        "z : ℕ",
+        "zs : List ℕ"
+      ],
+      "premises": [
+        "x : ℕ",
+        "y : ℕ",
+        "ih : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true",
+        "h : sorted (y :: z :: zs) = true"
+      ],
+      "body": "True",
+      "conclusion": "sorted (y :: insort x (z :: zs)) = true",
+      "statement": "(z : ℕ) (zs : List ℕ) (x : ℕ) (y : ℕ) (ih : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true) (h : sorted (y :: z :: zs) = true) : sorted (y :: insort x (z :: zs)) = true"
+    },
+    {
+      "fragment_id": 147,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_78",
+      "scope_vars": [],
+      "premises": [
+        "x : ℕ",
+        "xs : List ℕ",
+        "ih : sorted (sort xs) = true"
+      ],
+      "body": "True",
+      "conclusion": "sorted (insort x (sort xs)) = true",
+      "statement": "(x : ℕ) (xs : List ℕ) (ih : sorted (sort xs) = true) : sorted (insort x (sort xs)) = true"
+    },
+    {
+      "fragment_id": 148,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_29",
+      "scope_vars": [
+        "ys : List ℕ"
+      ],
+      "premises": [
+        "x : ℕ",
+        "y : ℕ",
+        "ih : x ∈ ins1 x ys"
+      ],
+      "body": "True",
+      "conclusion": "x ∈ if x = y then y :: ys else y :: ins1 x ys",
+      "statement": "(ys : List ℕ) (x : ℕ) (y : ℕ) (ih : x ∈ ins1 x ys) : x ∈ if x = y then y :: ys else y :: ins1 x ys"
+    },
+    {
+      "fragment_id": 149,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_77",
+      "scope_vars": [],
+      "premises": [
+        "x : ℕ",
+        "y : ℕ",
+        "ih : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true",
+        "h : sorted (y :: z :: zs) = true",
+        "z : ℕ",
+        "zs : List ℕ"
+      ],
+      "body": "True",
+      "conclusion": "sorted (y :: insort x (z :: zs)) = true",
+      "statement": "(x : ℕ) (y : ℕ) (ih : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true) (h : sorted (y :: z :: zs) = true) (z : ℕ) (zs : List ℕ) : sorted (y :: insort x (z :: zs)) = true"
+    },
+    {
+      "fragment_id": 150,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_78",
+      "scope_vars": [],
+      "premises": [
+        "x : ℕ",
+        "xs : List ℕ",
+        "ih : sorted (sort xs) = true"
+      ],
+      "body": "True",
+      "conclusion": "sorted (sort (x :: xs)) = true",
+      "statement": "(x : ℕ) (xs : List ℕ) (ih : sorted (sort xs) = true) : sorted (sort (x :: xs)) = true"
+    },
+    {
+      "fragment_id": 151,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_29",
+      "scope_vars": [
+        "ys : List ℕ"
+      ],
+      "premises": [
+        "x : ℕ",
+        "y : ℕ",
+        "ih : x ∈ ins1 x ys"
+      ],
+      "body": "True",
+      "conclusion": "x ∈ ins1 x (y :: ys)",
+      "statement": "(ys : List ℕ) (x : ℕ) (y : ℕ) (ih : x ∈ ins1 x ys) : x ∈ ins1 x (y :: ys)"
+    },
+    {
+      "fragment_id": 152,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_77",
+      "scope_vars": [
+        "z : ℕ",
+        "zs : List ℕ"
+      ],
+      "premises": [
+        "x : ℕ",
+        "y : ℕ",
+        "ih : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true",
+        "h : sorted (y :: z :: zs) = true"
+      ],
+      "body": "True",
+      "conclusion": "sorted (y :: insort x (z :: zs)) = true",
+      "statement": "(z : ℕ) (zs : List ℕ) (x : ℕ) (y : ℕ) (ih : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true) (h : sorted (y :: z :: zs) = true) : sorted (y :: insort x (z :: zs)) = true"
+    },
+    {
+      "fragment_id": 153,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_78",
+      "scope_vars": [
+        "x : ℕ",
+        "xs : List ℕ",
+        "hsort : sort xs = sorted_xs",
+        "y : ℕ",
+        "ih' : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true",
+        "z : ℕ",
+        "zs : List ℕ"
+      ],
+      "premises": [
+        "ih : sorted (y :: z :: zs) = true"
+      ],
+      "body": "(hyz : y ≤ z) → (hzs : sorted (z :: zs) = true) → sorted (y :: insort x (z :: zs)) = true",
+      "conclusion": "sorted (y :: insort x (z :: zs)) = true",
+      "statement": "(x : ℕ) (xs : List ℕ) (hsort : sort xs = sorted_xs) (y : ℕ) (ih' : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true) (z : ℕ) (zs : List ℕ) (ih : sorted (y :: z :: zs) = true) (hyz : y ≤ z) (hzs : sorted (z :: zs) = true) (h1 : sorted (y :: insort x (z :: zs)) = true) : sorted (y :: insort x (z :: zs)) = true"
+    },
+    {
+      "fragment_id": 154,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_29",
+      "scope_vars": [
+        "ys : List ℕ"
+      ],
+      "premises": [
+        "x : ℕ",
+        "y : ℕ",
+        "ih : x ∈ ins1 x ys"
+      ],
+      "body": "True",
+      "conclusion": "x ∈ if x = y then y :: ys else y :: ins1 x ys",
+      "statement": "(ys : List ℕ) (x : ℕ) (y : ℕ) (ih : x ∈ ins1 x ys) : x ∈ if x = y then y :: ys else y :: ins1 x ys"
+    },
+    {
+      "fragment_id": 155,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_77",
+      "scope_vars": [
+        "y : ℕ",
+        "h : sorted (y :: z :: zs) = true"
+      ],
+      "premises": [
+        "x : ℕ",
+        "ih : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true",
+        "z : ℕ",
+        "zs : List ℕ"
+      ],
+      "body": "True",
+      "conclusion": "sorted (y :: insort x (z :: zs)) = true",
+      "statement": "(y : ℕ) (h : sorted (y :: z :: zs) = true) (x : ℕ) (ih : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true) (z : ℕ) (zs : List ℕ) : sorted (y :: insort x (z :: zs)) = true"
+    },
+    {
+      "fragment_id": 156,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_78",
+      "scope_vars": [
+        "x : ℕ",
+        "xs : List ℕ",
+        "hsort : sort xs = sorted_xs",
+        "ih' : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true"
+      ],
+      "premises": [
+        "ih : sorted (y :: z :: zs) = true",
+        "y : ℕ",
+        "z : ℕ",
+        "zs : List ℕ"
+      ],
+      "body": "(hyz : y ≤ z) → (hzs : sorted (z :: zs) = true) → sorted (y :: insort x (z :: zs)) = true",
+      "conclusion": "sorted (y :: insort x (z :: zs)) = true",
+      "statement": "(x : ℕ) (xs : List ℕ) (hsort : sort xs = sorted_xs) (ih' : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true) (ih : sorted (y :: z :: zs) = true) (y : ℕ) (z : ℕ) (zs : List ℕ) (hyz : y ≤ z) (hzs : sorted (z :: zs) = true) (h1 : sorted (y :: insort x (z :: zs)) = true) : sorted (y :: insort x (z :: zs)) = true"
+    },
+    {
+      "fragment_id": 157,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_78",
+      "scope_vars": [
+        "xs : List ℕ",
+        "hsort : sort xs = sorted_xs",
+        "ih : sorted (y :: z :: zs) = true",
+        "y : ℕ",
+        "ih' : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true"
+      ],
+      "premises": [
+        "x : ℕ",
+        "z : ℕ",
+        "zs : List ℕ"
+      ],
+      "body": "sorted (y :: x :: z :: zs) = true",
+      "conclusion": "sorted (y :: insort x (z :: zs)) = true",
+      "statement": "(xs : List ℕ) (hsort : sort xs = sorted_xs) (ih : sorted (y :: z :: zs) = true) (y : ℕ) (ih' : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true) (x : ℕ) (z : ℕ) (zs : List ℕ) (h1 : sorted (y :: x :: z :: zs) = true) : sorted (y :: insort x (z :: zs)) = true"
+    },
+    {
+      "fragment_id": 158,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_77",
+      "scope_vars": [
+        "y : ℕ"
+      ],
+      "premises": [
+        "x : ℕ",
+        "ih : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true",
+        "h : sorted (y :: z :: zs) = true",
+        "z : ℕ",
+        "zs : List ℕ"
+      ],
+      "body": "True",
+      "conclusion": "sorted (y :: insort x (z :: zs)) = true",
+      "statement": "(y : ℕ) (x : ℕ) (ih : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true) (h : sorted (y :: z :: zs) = true) (z : ℕ) (zs : List ℕ) : sorted (y :: insort x (z :: zs)) = true"
+    },
+    {
+      "fragment_id": 159,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_78",
+      "scope_vars": [
+        "x : ℕ",
+        "xs : List ℕ",
+        "hsort : sort xs = sorted_xs",
+        "ih : sorted (y :: z :: zs) = true",
+        "y : ℕ",
+        "ih' : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true",
+        "z : ℕ",
+        "zs : List ℕ"
+      ],
+      "premises": [],
+      "body": "True",
+      "conclusion": "sorted (y :: insort x (z :: zs)) = true",
+      "statement": "(x : ℕ) (xs : List ℕ) (hsort : sort xs = sorted_xs) (ih : sorted (y :: z :: zs) = true) (y : ℕ) (ih' : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true) (z : ℕ) (zs : List ℕ) : sorted (y :: insort x (z :: zs)) = true"
+    },
+    {
+      "fragment_id": 160,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_78",
+      "scope_vars": [
+        "xs : List ℕ",
+        "hsort : sort xs = sorted_xs",
+        "ih' : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true",
+        "z : ℕ",
+        "zs : List ℕ"
+      ],
+      "premises": [
+        "x : ℕ",
+        "ih : sorted (y :: z :: zs) = true",
+        "y : ℕ"
+      ],
+      "body": "True",
+      "conclusion": "sorted (y :: insort x (z :: zs)) = true",
+      "statement": "(xs : List ℕ) (hsort : sort xs = sorted_xs) (ih' : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true) (z : ℕ) (zs : List ℕ) (x : ℕ) (ih : sorted (y :: z :: zs) = true) (y : ℕ) : sorted (y :: insort x (z :: zs)) = true"
+    },
+    {
+      "fragment_id": 161,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_77",
+      "scope_vars": [],
+      "premises": [
+        "x : ℕ",
+        "y : ℕ",
+        "ih : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true",
+        "h : sorted (y :: z :: zs) = true",
+        "z : ℕ",
+        "zs : List ℕ"
+      ],
+      "body": "True",
+      "conclusion": "sorted (y :: insort x (z :: zs)) = true",
+      "statement": "(x : ℕ) (y : ℕ) (ih : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true) (h : sorted (y :: z :: zs) = true) (z : ℕ) (zs : List ℕ) : sorted (y :: insort x (z :: zs)) = true"
+    },
+    {
+      "fragment_id": 162,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_78",
+      "scope_vars": [
+        "xs : List ℕ",
+        "hsort : sort xs = sorted_xs",
+        "ih : sorted (y :: z :: zs) = true",
+        "y : ℕ",
+        "ih' : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true"
+      ],
+      "premises": [
+        "x : ℕ",
+        "z : ℕ",
+        "zs : List ℕ"
+      ],
+      "body": "True",
+      "conclusion": "sorted (y :: insort x (z :: zs)) = true",
+      "statement": "(xs : List ℕ) (hsort : sort xs = sorted_xs) (ih : sorted (y :: z :: zs) = true) (y : ℕ) (ih' : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true) (x : ℕ) (z : ℕ) (zs : List ℕ) : sorted (y :: insort x (z :: zs)) = true"
+    },
+    {
+      "fragment_id": 163,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_77",
+      "scope_vars": [
+        "z : ℕ",
+        "zs : List ℕ"
+      ],
+      "premises": [
+        "x : ℕ",
+        "y : ℕ",
+        "ih : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true",
+        "h : sorted (y :: z :: zs) = true"
+      ],
+      "body": "True",
+      "conclusion": "sorted (y :: insort x (z :: zs)) = true",
+      "statement": "(z : ℕ) (zs : List ℕ) (x : ℕ) (y : ℕ) (ih : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true) (h : sorted (y :: z :: zs) = true) : sorted (y :: insort x (z :: zs)) = true"
+    },
+    {
+      "fragment_id": 164,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_78",
+      "scope_vars": [
+        "xs : List ℕ",
+        "hsort : sort xs = sorted_xs"
+      ],
+      "premises": [
+        "x : ℕ",
+        "sorted_xs : List ℕ",
+        "ih : sorted sorted_xs = true"
+      ],
+      "body": "True",
+      "conclusion": "sorted (insort x sorted_xs) = true",
+      "statement": "(xs : List ℕ) (hsort : sort xs = sorted_xs) (x : ℕ) (sorted_xs : List ℕ) (ih : sorted sorted_xs = true) : sorted (insort x sorted_xs) = true"
+    },
+    {
+      "fragment_id": 165,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_77",
+      "scope_vars": [
+        "y : ℕ",
+        "h : sorted (y :: z :: zs) = true"
+      ],
+      "premises": [
+        "x : ℕ",
+        "ih : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true",
+        "z : ℕ",
+        "zs : List ℕ"
+      ],
+      "body": "True",
+      "conclusion": "sorted (y :: insort x (z :: zs)) = true",
+      "statement": "(y : ℕ) (h : sorted (y :: z :: zs) = true) (x : ℕ) (ih : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true) (z : ℕ) (zs : List ℕ) : sorted (y :: insort x (z :: zs)) = true"
+    },
+    {
+      "fragment_id": 166,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_77",
+      "scope_vars": [
+        "z : ℕ",
+        "zs : List ℕ"
+      ],
+      "premises": [
+        "x : ℕ",
+        "y : ℕ",
+        "ih : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true",
+        "h : sorted (y :: z :: zs) = true"
+      ],
+      "body": "True",
+      "conclusion": "sorted (y :: insort x (z :: zs)) = true",
+      "statement": "(z : ℕ) (zs : List ℕ) (x : ℕ) (y : ℕ) (ih : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true) (h : sorted (y :: z :: zs) = true) : sorted (y :: insort x (z :: zs)) = true"
+    },
+    {
+      "fragment_id": 167,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_77",
+      "scope_vars": [
+        "y : ℕ",
+        "h : sorted (y :: z :: zs) = true"
+      ],
+      "premises": [
+        "x : ℕ",
+        "ih : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true",
+        "z : ℕ",
+        "zs : List ℕ"
+      ],
+      "body": "True",
+      "conclusion": "sorted (y :: insort x (z :: zs)) = true",
+      "statement": "(y : ℕ) (h : sorted (y :: z :: zs) = true) (x : ℕ) (ih : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true) (z : ℕ) (zs : List ℕ) : sorted (y :: insort x (z :: zs)) = true"
+    },
+    {
+      "fragment_id": 168,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_77",
+      "scope_vars": [
+        "y : ℕ"
+      ],
+      "premises": [
+        "x : ℕ",
+        "ih : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true",
+        "h : sorted (y :: z :: zs) = true",
+        "z : ℕ",
+        "zs : List ℕ"
+      ],
+      "body": "True",
+      "conclusion": "sorted (y :: insort x (z :: zs)) = true",
+      "statement": "(y : ℕ) (x : ℕ) (ih : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true) (h : sorted (y :: z :: zs) = true) (z : ℕ) (zs : List ℕ) : sorted (y :: insort x (z :: zs)) = true"
+    },
+    {
+      "fragment_id": 169,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_77",
+      "scope_vars": [
+        "z : ℕ",
+        "zs : List ℕ"
+      ],
+      "premises": [
+        "x : ℕ",
+        "y : ℕ",
+        "ih : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true",
+        "h : sorted (y :: z :: zs) = true"
+      ],
+      "body": "True",
+      "conclusion": "sorted (y :: insort x (z :: zs)) = true",
+      "statement": "(z : ℕ) (zs : List ℕ) (x : ℕ) (y : ℕ) (ih : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true) (h : sorted (y :: z :: zs) = true) : sorted (y :: insort x (z :: zs)) = true"
+    },
+    {
+      "fragment_id": 170,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_78",
+      "scope_vars": [
+        "xs : List ℕ",
+        "hsort : sort xs = sorted_xs",
+        "ys : List ℕ",
+        "ih' : sorted ys = true → sorted (insort x ys) = true"
+      ],
+      "premises": [
+        "x : ℕ",
+        "ih : sorted (y :: ys) = true",
+        "y : ℕ"
+      ],
+      "body": "True",
+      "conclusion": "sorted (insort x (y :: ys)) = true",
+      "statement": "(xs : List ℕ) (hsort : sort xs = sorted_xs) (ys : List ℕ) (ih' : sorted ys = true → sorted (insort x ys) = true) (x : ℕ) (ih : sorted (y :: ys) = true) (y : ℕ) : sorted (insort x (y :: ys)) = true"
+    },
+    {
+      "fragment_id": 171,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_78",
+      "scope_vars": [
+        "xs : List ℕ",
+        "hsort : sort xs = sorted_xs",
+        "ih : sorted (y :: z :: zs) = true",
+        "y : ℕ",
+        "ih' : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true"
+      ],
+      "premises": [
+        "x : ℕ",
+        "z : ℕ",
+        "zs : List ℕ"
+      ],
+      "body": "(hins : insort x (z :: zs) = z :: insort x zs) → sorted (y :: insort x (z :: zs)) = true",
+      "conclusion": "sorted (y :: insort x (z :: zs)) = true",
+      "statement": "(xs : List ℕ) (hsort : sort xs = sorted_xs) (ih : sorted (y :: z :: zs) = true) (y : ℕ) (ih' : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true) (x : ℕ) (z : ℕ) (zs : List ℕ) (hins : insort x (z :: zs) = z :: insort x zs) (h1 : sorted (y :: insort x (z :: zs)) = true) : sorted (y :: insort x (z :: zs)) = true"
+    },
+    {
+      "fragment_id": 172,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_78",
+      "scope_vars": [
+        "x : ℕ",
+        "xs : List ℕ",
+        "hsort : sort xs = sorted_xs",
+        "ih : sorted (y :: z :: zs) = true",
+        "y : ℕ",
+        "ih' : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true",
+        "z : ℕ",
+        "zs : List ℕ"
+      ],
+      "premises": [],
+      "body": "sorted (y :: z :: insort x zs) = true",
+      "conclusion": "sorted (y :: insort x (z :: zs)) = true",
+      "statement": "(x : ℕ) (xs : List ℕ) (hsort : sort xs = sorted_xs) (ih : sorted (y :: z :: zs) = true) (y : ℕ) (ih' : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true) (z : ℕ) (zs : List ℕ) (h1 : sorted (y :: z :: insort x zs) = true) : sorted (y :: insort x (z :: zs)) = true"
+    },
+    {
+      "fragment_id": 173,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_77",
+      "scope_vars": [],
+      "premises": [
+        "x : ℕ",
+        "y : ℕ",
+        "ih : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true",
+        "h : sorted (y :: z :: zs) = true",
+        "z : ℕ",
+        "zs : List ℕ"
+      ],
+      "body": "True",
+      "conclusion": "sorted (y :: insort x (z :: zs)) = true",
+      "statement": "(x : ℕ) (y : ℕ) (ih : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true) (h : sorted (y :: z :: zs) = true) (z : ℕ) (zs : List ℕ) : sorted (y :: insort x (z :: zs)) = true"
+    },
+    {
+      "fragment_id": 174,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_77",
+      "scope_vars": [
+        "z : ℕ",
+        "zs : List ℕ"
+      ],
+      "premises": [
+        "x : ℕ",
+        "y : ℕ",
+        "ih : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true",
+        "h : sorted (y :: z :: zs) = true"
+      ],
+      "body": "True",
+      "conclusion": "sorted (y :: insort x (z :: zs)) = true",
+      "statement": "(z : ℕ) (zs : List ℕ) (x : ℕ) (y : ℕ) (ih : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true) (h : sorted (y :: z :: zs) = true) : sorted (y :: insort x (z :: zs)) = true"
+    },
+    {
+      "fragment_id": 175,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_77",
+      "scope_vars": [
+        "y : ℕ",
+        "h : sorted (y :: z :: zs) = true"
+      ],
+      "premises": [
+        "x : ℕ",
+        "ih : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true",
+        "z : ℕ",
+        "zs : List ℕ"
+      ],
+      "body": "True",
+      "conclusion": "sorted (y :: insort x (z :: zs)) = true",
+      "statement": "(y : ℕ) (h : sorted (y :: z :: zs) = true) (x : ℕ) (ih : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true) (z : ℕ) (zs : List ℕ) : sorted (y :: insort x (z :: zs)) = true"
+    },
+    {
+      "fragment_id": 176,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_77",
+      "scope_vars": [
+        "y : ℕ"
+      ],
+      "premises": [
+        "x : ℕ",
+        "ih : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true",
+        "h : sorted (y :: z :: zs) = true",
+        "z : ℕ",
+        "zs : List ℕ"
+      ],
+      "body": "True",
+      "conclusion": "sorted (y :: insort x (z :: zs)) = true",
+      "statement": "(y : ℕ) (x : ℕ) (ih : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true) (h : sorted (y :: z :: zs) = true) (z : ℕ) (zs : List ℕ) : sorted (y :: insort x (z :: zs)) = true"
+    },
+    {
+      "fragment_id": 177,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_77",
+      "scope_vars": [
+        "x : ℕ",
+        "xs : List ℕ"
+      ],
+      "premises": [],
+      "body": "True",
+      "conclusion": "sorted xs = true → sorted (insort x xs) = true",
+      "statement": "(x : ℕ) (xs : List ℕ) : sorted xs = true → sorted (insort x xs) = true"
+    },
+    {
+      "fragment_id": 178,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_77",
+      "scope_vars": [
+        "ys : List ℕ",
+        "ih : sorted ys = true → sorted (insort x ys) = true"
+      ],
+      "premises": [
+        "x : ℕ",
+        "y : ℕ"
+      ],
+      "body": "True",
+      "conclusion": "sorted (y :: ys) = true → sorted (insort x (y :: ys)) = true",
+      "statement": "(ys : List ℕ) (ih : sorted ys = true → sorted (insort x ys) = true) (x : ℕ) (y : ℕ) : sorted (y :: ys) = true → sorted (insort x (y :: ys)) = true"
+    },
+    {
+      "fragment_id": 179,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_77",
+      "scope_vars": [
+        "ih : sorted ys = true → sorted (insort x ys) = true"
+      ],
+      "premises": [
+        "x : ℕ",
+        "y : ℕ",
+        "ys : List ℕ"
+      ],
+      "body": "True",
+      "conclusion": "sorted (y :: ys) = true → sorted (insort x (y :: ys)) = true",
+      "statement": "(ih : sorted ys = true → sorted (insort x ys) = true) (x : ℕ) (y : ℕ) (ys : List ℕ) : sorted (y :: ys) = true → sorted (insort x (y :: ys)) = true"
+    },
+    {
+      "fragment_id": 180,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_77",
+      "scope_vars": [
+        "x : ℕ",
+        "y : ℕ",
+        "ih : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true",
+        "z : ℕ",
+        "zs : List ℕ",
+        "hyz : y ≤ z",
+        "hzs : sorted (z :: zs) = true",
+        "hxz : ¬x ≤ z"
+      ],
+      "premises": [
+        "hins : insort x (z :: zs) = z :: insort x zs"
+      ],
+      "body": "sorted (insort x (z :: zs)) = true",
+      "conclusion": "sorted (z :: insort x zs) = true",
+      "statement": "(x : ℕ) (y : ℕ) (ih : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true) (z : ℕ) (zs : List ℕ) (hyz : y ≤ z) (hzs : sorted (z :: zs) = true) (hxz : ¬x ≤ z) (hins : insort x (z :: zs) = z :: insort x zs) (h1 : sorted (insort x (z :: zs)) = true) : sorted (z :: insort x zs) = true"
+    },
+    {
+      "fragment_id": 181,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_77",
+      "scope_vars": [
+        "x : ℕ",
+        "y : ℕ",
+        "z : ℕ",
+        "zs : List ℕ",
+        "hyz : y ≤ z",
+        "hxz : ¬x ≤ z",
+        "hins : insort x (z :: zs) = z :: insort x zs"
+      ],
+      "premises": [
+        "ih : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true",
+        "hzs : sorted (z :: zs) = true"
+      ],
+      "body": "True",
+      "conclusion": "sorted (z :: insort x zs) = true",
+      "statement": "(x : ℕ) (y : ℕ) (z : ℕ) (zs : List ℕ) (hyz : y ≤ z) (hxz : ¬x ≤ z) (hins : insort x (z :: zs) = z :: insort x zs) (ih : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true) (hzs : sorted (z :: zs) = true) : sorted (z :: insort x zs) = true"
+    },
+    {
+      "fragment_id": 182,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_77",
+      "scope_vars": [
+        "z : ℕ",
+        "zs : List ℕ",
+        "hyz : y ≤ z",
+        "hzs : sorted (z :: zs) = true",
+        "hxz : ¬x ≤ z",
+        "hins : insort x (z :: zs) = z :: insort x zs"
+      ],
+      "premises": [
+        "x : ℕ",
+        "y : ℕ",
+        "ih : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true"
+      ],
+      "body": "True",
+      "conclusion": "sorted (z :: insort x zs) = true",
+      "statement": "(z : ℕ) (zs : List ℕ) (hyz : y ≤ z) (hzs : sorted (z :: zs) = true) (hxz : ¬x ≤ z) (hins : insort x (z :: zs) = z :: insort x zs) (x : ℕ) (y : ℕ) (ih : sorted (z :: zs) = true → sorted (insort x (z :: zs)) = true) : sorted (z :: insort x zs) = true"
+    },
+    {
+      "fragment_id": 183,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_77",
+      "scope_vars": [
+        "y : ℕ"
+      ],
+      "premises": [
+        "x : ℕ",
+        "ys : List ℕ",
+        "ih : sorted ys = true → sorted (insort x ys) = true",
+        "h : sorted (y :: ys) = true"
+      ],
+      "body": "True",
+      "conclusion": "sorted (y :: insort x ys) = true",
+      "statement": "(y : ℕ) (x : ℕ) (ys : List ℕ) (ih : sorted ys = true → sorted (insort x ys) = true) (h : sorted (y :: ys) = true) : sorted (y :: insort x ys) = true"
+    },
+    {
+      "fragment_id": 184,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_77",
+      "scope_vars": [],
+      "premises": [
+        "x : ℕ",
+        "y : ℕ",
+        "ys : List ℕ",
+        "ih : sorted ys = true → sorted (insort x ys) = true",
+        "h : sorted (y :: ys) = true"
+      ],
+      "body": "True",
+      "conclusion": "sorted (y :: insort x ys) = true",
+      "statement": "(x : ℕ) (y : ℕ) (ys : List ℕ) (ih : sorted ys = true → sorted (insort x ys) = true) (h : sorted (y :: ys) = true) : sorted (y :: insort x ys) = true"
+    },
+    {
+      "fragment_id": 185,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_77",
+      "scope_vars": [
+        "y : ℕ"
+      ],
+      "premises": [
+        "x : ℕ",
+        "ys : List ℕ",
+        "ih : sorted ys = true → sorted (insort x ys) = true",
+        "h : sorted (y :: ys) = true"
+      ],
+      "body": "True",
+      "conclusion": "sorted (insort x (y :: ys)) = true",
+      "statement": "(y : ℕ) (x : ℕ) (ys : List ℕ) (ih : sorted ys = true → sorted (insort x ys) = true) (h : sorted (y :: ys) = true) : sorted (insort x (y :: ys)) = true"
+    },
+    {
+      "fragment_id": 186,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_77",
+      "scope_vars": [],
+      "premises": [
+        "x : ℕ",
+        "y : ℕ",
+        "ys : List ℕ",
+        "ih : sorted ys = true → sorted (insort x ys) = true",
+        "h : sorted (y :: ys) = true"
+      ],
+      "body": "True",
+      "conclusion": "sorted (insort x (y :: ys)) = true",
+      "statement": "(x : ℕ) (y : ℕ) (ys : List ℕ) (ih : sorted ys = true → sorted (insort x ys) = true) (h : sorted (y :: ys) = true) : sorted (insort x (y :: ys)) = true"
+    },
+    {
+      "fragment_id": 187,
+      "source_file": "LeanSrc/Examples.lean",
+      "decl_name": "prop_77",
+      "scope_vars": [],
+      "premises": [
+        "x : ℕ",
+        "y : ℕ",
+        "ys : List ℕ",
+        "ih : sorted ys = true → sorted (insort x ys) = true"
+      ],
+      "body": "True",
+      "conclusion": "sorted (y :: ys) = true → sorted (insort x (y :: ys)) = true",
+      "statement": "(x : ℕ) (y : ℕ) (ys : List ℕ) (ih : sorted ys = true → sorted (insort x ys) = true) : sorted (y :: ys) = true → sorted (insort x (y :: ys)) = true"
+    }
+  ]
+}

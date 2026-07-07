@@ -1,0 +1,7 @@
+{
+  "lake_project": "data/input/MiniCodePropsLeanSrc",
+  "imports": [
+    "LeanSrc.Sorts_Mathlib"
+  ],
+  "theorems": []
+}

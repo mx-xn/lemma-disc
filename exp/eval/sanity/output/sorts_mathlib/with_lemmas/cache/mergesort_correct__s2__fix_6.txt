@@ -1,0 +1,91 @@
+theorem:  mergesort_correct
+sample:   2
+attempt:  fix_6
+
+[proof]
+intro l
+by_cases h : l.length < 2
+· have hm : mergesort l = l := by
+    unfold mergesort
+    rw [if_pos h]
+  constructor
+  · rw [hm]
+    cases l with
+    | nil =>
+      exact Sorted.nil
+    | cons x xs =>
+      cases xs with
+      | nil =>
+        exact Sorted.singleton
+      | cons y ys =>
+        simp at h
+        linarith
+  · rw [hm]
+    exact lemma_hint_0 l l (lemma_hint_15 l l)
+· constructor
+  · unfold mergesort
+    rw [if_neg h]
+    by_cases hs : Sorted (merge (mergesort (left l)) (mergesort (right l)))
+    · exact hs
+    · exfalso
+      exact hs (by contradiction)
+  · unfold mergesort
+    rw [if_neg h]
+    exact lemma_hint_0 (merge (mergesort (left l)) (mergesort (right l))) l rfl
+
+[lean error]
+location:
+        · rw [hm]
+          exact lemma_hint_0 l l (lemma_hint_15 l l)
+                              ^
+      · constructor
+error: Application type mismatch: The last
+  l
+argument has type
+  List T
+but is expected to have type
+  T
+in the application
+  lemma_hint_0 l l
+
+location:
+        · rw [hm]
+          exact lemma_hint_0 l l (lemma_hint_15 l l)
+                                                 ^
+      · constructor
+error: Application type mismatch: The last
+  l
+argument has type
+  List T
+but is expected to have type
+  T
+in the application
+  lemma_hint_15 l l
+
+location:
+          · exfalso
+            exact hs (by contradiction)
+                        ^
+        · unfold mergesort
+error: Tactic `contradiction` failed
+T : Type
+inst✝² : Preorder T
+inst✝¹ : DecidableEq T
+inst✝ : DecidableRel LT.lt
+l : List T
+h : ¬l.length < 2
+hs : ¬Sorted (merge (mergesort (left l)) (mergesort (right l)))
+⊢ Sorted (merge (mergesort (left l)) (mergesort (right l)))
+
+location:
+          rw [if_neg h]
+          exact lemma_hint_0 (merge (mergesort (left l)) (mergesort (right l))) l rfl
+                                                                               ^
+error: Application type mismatch: The argument
+  l
+has type
+  List T
+but is expected to have type
+  T
+in the application
+  lemma_hint_0 (merge (mergesort (left l)) (mergesort (right l))) l

@@ -1,0 +1,58 @@
+theorem:  mergesort_correct
+sample:   3
+attempt:  fix_2
+
+[proof]
+intro l
+by_cases h : l.length < 2
+· have hm : mergesort l = l := by
+    unfold mergesort
+    simp [h]
+  constructor
+  · rw [hm]
+    cases l with
+    | nil =>
+      exact Sorted.nil
+    | cons x xs =>
+      cases xs with
+      | nil =>
+        exact Sorted.singleton
+      | cons y ys =>
+        simp at h
+        linarith
+  · rw [hm]
+    exact lemma_hint_0 l (Classical.choice (Classical.decEq T |> fun _ => by classical exact arbitrary T)) (lemma_hint_15 l _)
+· exfalso
+  cases l with
+  | nil =>
+    simp at h
+  | cons x xs =>
+    cases xs with
+    | nil =>
+      simp at h
+    | cons y ys =>
+      simp at h
+
+[lean error]
+location:
+        · rw [hm]
+          exact lemma_hint_0 l (Classical.choice (Classical.decEq T |> fun _ => by classical exact arbitrary T)) (lemma_hint_15 l _)
+                                                                                                  ^
+      · exfalso
+error: error(lean.unknownIdentifier): Unknown identifier `arbitrary`
+
+location:
+            simp at h
+          | cons y ys =>
+                     ^
+            simp at h
+error: unsolved goals
+case neg.cons.cons
+T : Type
+inst✝² : Preorder T
+inst✝¹ : DecidableEq T
+inst✝ : DecidableRel LT.lt
+x y : T
+ys : List T
+h : True
+⊢ False

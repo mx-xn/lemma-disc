@@ -5,6 +5,7 @@ the import list, so this module is corpus-agnostic.
 """
 from __future__ import annotations
 
+import datetime
 import hashlib
 import re
 import subprocess
@@ -141,6 +142,19 @@ def format_error(raw_output: str, source: str, proof_body: str = "") -> str:
     return "\n\n".join(parts)
 
 
+def _save_scratch(
+    scratch_dir: Path, decl_name: str, source: str, result: CheckResult
+) -> None:
+    ts = datetime.datetime.now().strftime("%Y%m%d_%H%M%S_%f")
+    folder = Path(scratch_dir) / f"{ts}_{decl_name}"
+    folder.mkdir(parents=True, exist_ok=True)
+    if result.ok:
+        comment = "/- lean_check result: ok -/"
+    else:
+        comment = f"/- lean_check result: FAIL\nerror:\n{result.error_text}\n-/"
+    (folder / "scratch.lean").write_text(source + "\n\n" + comment + "\n")
+
+
 def check_proof(
     statement_text: str,
     proof_body: str,
@@ -150,11 +164,14 @@ def check_proof(
     decl_name: str = "expB_target",
     preamble: str = "",
     timeout_s: float = 180.0,
+    scratch_dir: Path | None = None,
 ) -> CheckResult:
     """Synthesize a .lean file in ``lake_project`` and run ``lake env lean``.
 
     Returns ``ok=True`` iff Lean exits 0 with no ``error:`` line in its output.
-    The scratch file is always deleted before return.
+    The scratch file is always deleted before return. If ``scratch_dir`` is
+    given, a copy is saved there under a timestamped subfolder with the
+    result/error appended as a Lean block comment.
     """
     lake_project = Path(lake_project).resolve()
     if not lake_project.is_dir():
@@ -174,7 +191,10 @@ def check_proof(
         )
     except subprocess.TimeoutExpired:
         scratch_path.unlink(missing_ok=True)
-        return CheckResult(ok=False, error_text=f"lean timed out after {timeout_s}s")
+        result = CheckResult(ok=False, error_text=f"lean timed out after {timeout_s}s")
+        if scratch_dir is not None:
+            _save_scratch(scratch_dir, decl_name, source, result)
+        return result
     finally:
         scratch_path.unlink(missing_ok=True)
 
@@ -186,12 +206,26 @@ def check_proof(
         line for line in combined.splitlines()
         if not re.search(r"declaration uses [`']sorry[`']", line)
     )
-    ok = proc.returncode == 0 and "error:" not in combined
+    # Lean linters (e.g. unusedSimpArgs) emit lines formatted as "error: ..."
+    # even though they are warnings and the process exits 0. Strip those lines
+    # only for the ok-check so real errors are still passed to format_error.
+    combined_real_errors = "\n".join(
+        line for line in combined.splitlines()
+        if not re.search(r"error:.*\bThis\b.*\bis unused\b", line)
+    )
+    ok = proc.returncode == 0 and "error:" not in combined_real_errors
     if ok:
         # Lean exits 0 for sorry/admit (warning only) — intercept before returning success.
         for kw in ("sorry", "admit"):
             if kw in proof_body:
-                return CheckResult(ok=False, error_text=f"proof contains {kw}")
-        return CheckResult(ok=True, error_text="")
-    error_text = format_error(_truncate(combined), source, proof_body)
-    return CheckResult(ok=False, error_text=error_text)
+                result = CheckResult(ok=False, error_text=f"proof contains {kw}")
+                if scratch_dir is not None:
+                    _save_scratch(scratch_dir, decl_name, source, result)
+                return result
+        result = CheckResult(ok=True, error_text="")
+    else:
+        error_text = format_error(_truncate(combined), source, proof_body)
+        result = CheckResult(ok=False, error_text=error_text)
+    if scratch_dir is not None:
+        _save_scratch(scratch_dir, decl_name, source, result)
+    return result

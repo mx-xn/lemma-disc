@@ -1,0 +1,291 @@
+theorem:  merge_sorted
+sample:   2
+attempt:  fix_1
+
+[proof]
+induction sxs generalizing ys with
+| nil =>
+  simp [merge]
+  exact sys
+| singleton =>
+  cases ys with
+  | nil =>
+    simp [merge]
+    exact Sorted.singleton
+  | cons y ys' =>
+    cases ys' with
+    | nil =>
+      by_cases hxy : x < y
+      · simp [merge, hxy]
+        exact Sorted.cons Sorted.singleton (by
+          intro hyx
+          exact (Preorder.not_lt_of_ge (Preorder.le_of_not_gt hxy)) hyx)
+      · simp [merge, hxy]
+        exact Sorted.cons sys hxy
+    | cons z zs =>
+      by_cases hxy : x < y
+      · simp [merge, hxy]
+        exact Sorted.cons (Sorted.cons sys (by
+          intro hyx
+          exact (Preorder.not_lt_of_ge (Preorder.le_of_not_gt hxy)) hyx)) (by
+            intro h
+            cases sys with
+            | cons _ _ _ _ _ hy =>
+              exact hy h
+            | _ => cases hxy)
+      · simp [merge, hxy]
+        exact Sorted.cons (merge_sorted Sorted.singleton (lemma_hint_3 y z zs sys)) (by
+          intro h
+          exact hxy h)
+| @cons a b xs sb hba IH =>
+  cases ys with
+  | nil =>
+    simp [merge]
+    exact Sorted.cons sb hba
+  | cons y ys' =>
+    cases ys' with
+    | nil =>
+      by_cases hay : a < y
+      · simp [merge, hay]
+        exact Sorted.cons (Sorted.cons sb (by
+          intro hyb
+          have hya : y ≤ a := Preorder.le_of_not_gt (by
+            intro hay'
+            exact (Preorder.not_lt_of_ge (show a ≤ y from Preorder.le_of_lt hay)) hay')
+          have hba' : b ≤ y := le_trans (show b ≤ a from Preorder.le_of_not_gt hba) hya
+          exact (Preorder.not_lt_of_ge hba') hyb)) hba
+      · simp [merge, hay]
+        exact Sorted.cons (Sorted.cons sb hba) hay
+    | cons z zs =>
+      by_cases hay : a < y
+      · simp [merge, hay]
+        have hm : Sorted (merge (b :: xs) (y :: z :: zs)) := IH (Sorted.cons sys (by
+          cases sys with
+          | cons _ _ _ _ _ hy => exact hy
+          | _ => intro h; cases h))
+        apply Sorted.cons hm
+        intro h
+        by_cases hby : b < y
+        · simp [merge, hby] at h
+          exact hba h
+        · simp [merge, hby] at h
+          exact (Preorder.not_lt_of_ge (show y ≤ a from Preorder.le_of_not_gt hay)) h
+      · simp [merge, hay]
+        have sys' : Sorted (z :: zs) := lemma_hint_3 y z zs sys
+        have hm : Sorted (merge (a :: b :: xs) (z :: zs)) := merge_sorted (Sorted.cons sb hba) sys'
+        apply Sorted.cons hm
+        intro h
+        by_cases haz : a < z
+        · simp [merge, haz] at h
+          exact hay h
+        · simp [merge, haz] at h
+          cases sys with
+          | cons _ _ _ _ _ hy =>
+            exact hy h
+          | _ =>
+            cases h
+
+[lean error]
+location:
+          | nil =>
+            by_cases hxy : x < y
+                          ^
+            · simp [merge, hxy]
+error: error(lean.unknownIdentifier): Unknown identifier `x`
+
+location:
+                intro hyx
+                exact (Preorder.not_lt_of_ge (Preorder.le_of_not_gt hxy)) hyx)
+                      ^
+            · simp [merge, hxy]
+error: error(lean.unknownIdentifier): Unknown constant `Preorder.not_lt_of_ge`
+
+location:
+          | cons z zs =>
+            by_cases hxy : x < y
+                          ^
+            · simp [merge, hxy]
+error: error(lean.unknownIdentifier): Unknown identifier `x`
+
+location:
+                intro hyx
+                exact (Preorder.not_lt_of_ge (Preorder.le_of_not_gt hxy)) hyx)) (by
+                      ^
+                  intro h
+error: error(lean.unknownIdentifier): Unknown constant `Preorder.not_lt_of_ge`
+
+location:
+                  cases sys with
+                  | cons _ _ _ _ _ hy =>
+                 ^
+                    exact hy h
+error: Too many variable names provided at alternative `cons`: 6 provided, but 2 expected
+
+location:
+                  | cons _ _ _ _ _ hy =>
+                    exact hy h
+                         ^
+                  | _ => cases hxy)
+error: error(lean.unknownIdentifier): Unknown identifier `hy`
+
+location:
+            · simp [merge, hxy]
+              exact Sorted.cons (merge_sorted Sorted.singleton (lemma_hint_3 y z zs sys)) (by
+                               ^
+                intro h
+error: Application type mismatch: The argument
+  merge_sorted Sorted.singleton (lemma_hint_3 y z zs sys)
+has type
+  Sorted (merge [?m.301] (z :: zs))
+but is expected to have type
+  Sorted (?m.292 :: ?m.293)
+in the application
+  Sorted.cons (merge_sorted Sorted.singleton (lemma_hint_3 y z zs sys))
+
+location:
+                intro hyb
+                have hya : y ≤ a := Preorder.le_of_not_gt (by
+                                   ^
+                  intro hay'
+error: error(lean.unknownIdentifier): Unknown constant `Preorder.le_of_not_gt`
+
+location:
+                  exact (Preorder.not_lt_of_ge (show a ≤ y from Preorder.le_of_lt hay)) hay')
+                have hba' : b ≤ y := le_trans (show b ≤ a from Preorder.le_of_not_gt hba) hya
+                                                              ^
+                exact (Preorder.not_lt_of_ge hba') hyb)) hba
+error: error(lean.unknownIdentifier): Unknown constant `Preorder.le_of_not_gt`
+
+location:
+                have hba' : b ≤ y := le_trans (show b ≤ a from Preorder.le_of_not_gt hba) hya
+                exact (Preorder.not_lt_of_ge hba') hyb)) hba
+                      ^
+            · simp [merge, hay]
+error: error(lean.unknownIdentifier): Unknown constant `Preorder.not_lt_of_ge`
+
+location:
+            · simp [merge, hay]
+              have hm : Sorted (merge (b :: xs) (y :: z :: zs)) := IH (Sorted.cons sys (by
+                                                                                  ^
+                cases sys with
+error: Application type mismatch: The argument
+  sys
+has type
+  Sorted (y :: z :: zs)
+but is expected to have type
+  Sorted (z :: zs)
+in the application
+  Sorted.cons sys
+
+location:
+                cases sys with
+                | cons _ _ _ _ _ hy => exact hy
+               ^
+                | _ => intro h; cases h))
+error: Too many variable names provided at alternative `cons`: 6 provided, but 2 expected
+
+location:
+                cases sys with
+                | cons _ _ _ _ _ hy => exact hy
+                                            ^
+                | _ => intro h; cases h))
+error: error(lean.unknownIdentifier): Unknown identifier `hy`
+
+location:
+                | _ => intro h; cases h))
+              apply Sorted.cons hm
+                               ^
+              intro h
+error: Application type mismatch: The argument
+  hm
+has type
+  Sorted (merge (b :: xs) (y :: z :: zs))
+but is expected to have type
+  Sorted (?m.581 :: ?m.582)
+in the application
+  Sorted.cons hm
+
+location:
+                | _ => intro h; cases h))
+              apply Sorted.cons hm
+             ^
+              intro h
+error: Tactic `apply` failed: could not unify the conclusion of `Sorted.cons sorry`
+  Sorted (?m.580 :: ?m.581 :: ?m.582)
+with the goal
+  Sorted
+    (a ::
+      if b < y then b :: merge xs (y :: z :: zs)
+      else y :: if b < z then b :: merge xs (z :: zs) else z :: merge (b :: xs) zs)
+Note: The full type of `Sorted.cons sorry` is
+  ¬?m.581 < ?m.580 → Sorted (?m.580 :: ?m.581 :: ?m.582)
+case pos
+T : Type u_1
+inst✝¹ : Preorder T
+inst✝ : DecidableRel LT.lt
+xs✝ : List T
+a b : T
+xs : List T
+sb : Sorted (b :: xs)
+hba : ¬b < a
+IH : ∀ {ys : List T}, Sorted ys → Sorted (merge (b :: xs) ys)
+y z : T
+zs : List T
+sys : Sorted (y :: z :: zs)
+hay : a < y
+hm : Sorted (merge (b :: xs) (y :: z :: zs))
+⊢ Sorted
+    (a ::
+      if b < y then b :: merge xs (y :: z :: zs)
+      else y :: if b < z then b :: merge xs (z :: zs) else z :: merge (b :: xs) zs)
+
+location:
+              have hm : Sorted (merge (a :: b :: xs) (z :: zs)) := merge_sorted (Sorted.cons sb hba) sys'
+              apply Sorted.cons hm
+                               ^
+              intro h
+error: Application type mismatch: The argument
+  hm
+has type
+  Sorted (merge (a :: b :: xs) (z :: zs))
+but is expected to have type
+  Sorted (?m.616 :: ?m.617)
+in the application
+  Sorted.cons hm
+
+location:
+              have hm : Sorted (merge (a :: b :: xs) (z :: zs)) := merge_sorted (Sorted.cons sb hba) sys'
+              apply Sorted.cons hm
+             ^
+              intro h
+error: Tactic `apply` failed: could not unify the conclusion of `Sorted.cons sorry`
+  Sorted (?m.615 :: ?m.616 :: ?m.617)
+with the goal
+  Sorted
+    (y ::
+      if a < z then a :: if b < z then b :: merge xs (z :: zs) else z :: merge (b :: xs) zs
+      else z :: merge (a :: b :: xs) zs)
+Note: The full type of `Sorted.cons sorry` is
+  ¬?m.616 < ?m.615 → Sorted (?m.615 :: ?m.616 :: ?m.617)
+case neg
+T : Type u_1
+inst✝¹ : Preorder T
+inst✝ : DecidableRel LT.lt
+xs✝ : List T
+a b : T
+xs : List T
+sb : Sorted (b :: xs)
+hba : ¬b < a
+IH : ∀ {ys : List T}, Sorted ys → Sorted (merge (b :: xs) ys)
+y z : T
+zs : List T
+sys : Sorted (y :: z :: zs)
+hay : ¬a < y
+sys' : Sorted (z :: zs)
+hm : Sorted (merge (a :: b :: xs) (z :: zs))
+⊢ Sorted
+    (y ::
+      if a < z then a :: if b < z then b :: merge xs (z :: zs) else z :: merge (b :: xs) zs
+      else z :: merge (a :: b :: xs) zs)
+_expB_scratch_ea
+... [truncated, 5031 bytes total]

@@ -1,0 +1,38 @@
+theorem:  merge_permut
+sample:   3
+attempt:  fix_3
+
+[proof]
+induction xs generalizing ys with
+| nil =>
+  simp [merge, Permut]
+| cons x xs IH =>
+  induction ys with
+  | nil =>
+    simp [merge, Permut]
+  | cons y ys IHys =>
+    by_cases h : x < y
+    · simp [merge, h, Permut]
+      intro t
+      simp [count1]
+      exact IH (y :: ys) t
+    · intro t
+      have hy : Permut ([y] : List T) [y] := by
+        intro t'
+        simp [count1]
+      have hcount :=
+        lemma_hint_33 ([y] : List T) (merge (x :: xs) ys) [y] ((x :: xs) ++ ys) hy IHys t
+      simpa [merge, h, count1, List.cons_append, Nat.add_comm, Nat.add_left_comm, Nat.add_assoc] using hcount
+
+[lean error]
+location:
+              lemma_hint_33 ([y] : List T) (merge (x :: xs) ys) [y] ((x :: xs) ++ ys) hy IHys t
+            simpa [merge, h, count1, List.cons_append, Nat.add_comm, Nat.add_left_comm, Nat.add_assoc] using hcount
+           ^
+error: Type mismatch: After simplification, term
+  hcount
+ has type
+  (count1 (merge (x :: xs) ys) t + if y = t then 1 else 0) =
+    count1 (xs ++ ys) t + ((if x = t then 1 else 0) + if y = t then 1 else 0)
+but is expected to have type
+  (count1 (merge (x :: xs) ys) t + if y = t then 1 else 0) = count1 (xs ++ y :: ys) t + if x = t then 1 else 0

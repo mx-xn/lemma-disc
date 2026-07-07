@@ -1,0 +1,3144 @@
+{
+  "lemmas": [
+    {
+      "fragment_id": 0,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Maximal_largest",
+      "scope_vars": [
+        "inst✝¹ : Group G",
+        "inst✝ : Group G",
+        "H : Subgroup G"
+      ],
+      "premises": [],
+      "body": "(x : G) → (a✝ : x ∈ ↑H) → x ∈ ↑(Maximal G)",
+      "conclusion": "H ≤ Maximal G",
+      "statement": "(inst✝¹ : Group G) (inst✝ : Group G) (H : Subgroup G) (x : G) (a✝ : x ∈ ↑H) (h1 : x ∈ ↑(Maximal G)) : H ≤ Maximal G"
+    },
+    {
+      "fragment_id": 1,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.inter_comm",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "H : Subgroup G",
+        "K : Subgroup G"
+      ],
+      "premises": [],
+      "body": "{ carrier := (↑H).inter ↑K, has_id := ⋯, mul_closure := ⋯, inv_closure := ⋯ } =",
+      "conclusion": "H ∩ K = K ∩ H",
+      "statement": "(inst✝ : Group G) (H : Subgroup G) (K : Subgroup G) (h1 : { carrier := (↑H).inter ↑K, has_id := ⋯, mul_closure := ⋯, inv_closure := ⋯ } =) : H ∩ K = K ∩ H"
+    },
+    {
+      "fragment_id": 2,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.inter_assoc",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "H₁ : Subgroup G",
+        "H₂ : Subgroup G",
+        "H₃ : Subgroup G"
+      ],
+      "premises": [],
+      "body": "{ carrier := ((↑H₁).inter ↑H₂).inter ↑H₃, has_id := ⋯, mul_closure := ⋯, inv_closure := ⋯ } =",
+      "conclusion": "H₁ ∩ H₂ ∩ H₃ = H₁ ∩ (H₂ ∩ H₃)",
+      "statement": "(inst✝ : Group G) (H₁ : Subgroup G) (H₂ : Subgroup G) (H₃ : Subgroup G) (h1 : { carrier := ((↑H₁).inter ↑H₂).inter ↑H₃, has_id := ⋯, mul_closure := ⋯, inv_closure := ⋯ } =) : H₁ ∩ H₂ ∩ H₃ = H₁ ∩ (H₂ ∩ H₃)"
+    },
+    {
+      "fragment_id": 3,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.le_intersect_self",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "H : Subgroup G",
+        "K : Subgroup G"
+      ],
+      "premises": [],
+      "body": "(g : G) → (hg : g ∈ ↑(H ∩ K)) → g ∈ ↑H",
+      "conclusion": "H ∩ K ≤ H",
+      "statement": "(inst✝ : Group G) (H : Subgroup G) (K : Subgroup G) (g : G) (hg : g ∈ ↑(H ∩ K)) (h1 : g ∈ ↑H) : H ∩ K ≤ H"
+    },
+    {
+      "fragment_id": 4,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Generate_empty",
+      "scope_vars": [
+        "inst✝ : Group G"
+      ],
+      "premises": [],
+      "body": "(g : G) → (hg : g ∈ ↑(Generate ∅)) → g ∈ ↑(Minimal G)",
+      "conclusion": "Generate ∅ ≤ Minimal G",
+      "statement": "(inst✝ : Group G) (g : G) (hg : g ∈ ↑(Generate ∅)) (h1 : g ∈ ↑(Minimal G)) : Generate ∅ ≤ Minimal G"
+    },
+    {
+      "fragment_id": 5,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Generate_self_eq_self",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "H : Subgroup G"
+      ],
+      "premises": [],
+      "body": "(g : G) → (hg : g ∈ ↑(Generate ↑H)) → g ∈ ↑H",
+      "conclusion": "Generate ↑H ≤ H",
+      "statement": "(inst✝ : Group G) (H : Subgroup G) (g : G) (hg : g ∈ ↑(Generate ↑H)) (h1 : g ∈ ↑H) : Generate ↑H ≤ H"
+    },
+    {
+      "fragment_id": 6,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Generate_smallest_closure",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "S : Set G",
+        "H : Subgroup G"
+      ],
+      "premises": [],
+      "body": "(hl : S ⊆ ↑H) → (hr : H ≤ Generate S) → H = Generate S",
+      "conclusion": "S ⊆ ↑H ∧ H ≤ Generate S → H = Generate S",
+      "statement": "(inst✝ : Group G) (S : Set G) (H : Subgroup G) (hl : S ⊆ ↑H) (hr : H ≤ Generate S) (h1 : H = Generate S) : S ⊆ ↑H ∧ H ≤ Generate S → H = Generate S"
+    },
+    {
+      "fragment_id": 7,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_eq_Generate_singleton",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "x : G"
+      ],
+      "premises": [],
+      "body": "(g : G) → (hg : g ∈ ↑(Pows x)) → g ∈ ↑(Generate {x})",
+      "conclusion": "Pows x ≤ Generate {x}",
+      "statement": "(inst✝ : Group G) (x : G) (g : G) (hg : g ∈ ↑(Pows x)) (h1 : g ∈ ↑(Generate {x})) : Pows x ≤ Generate {x}"
+    },
+    {
+      "fragment_id": 8,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.gpowMap_bijective_of_order_zero",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "x : G",
+        "h : order x = 0"
+      ],
+      "premises": [],
+      "body": "(a : ℤ) → (b : ℤ) → (heq : gpowMap x a = gpowMap x b) → a = b",
+      "conclusion": "Injective (gpowMap x)",
+      "statement": "(inst✝ : Group G) (x : G) (h : order x = 0) (a : ℤ) (b : ℤ) (heq : gpowMap x a = gpowMap x b) (h1 : a = b) : Injective (gpowMap x)"
+    },
+    {
+      "fragment_id": 9,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_card_eq_order",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "x : G"
+      ],
+      "premises": [],
+      "body": "↑↑(Pows x) ≃ Fin (order x)",
+      "conclusion": "Nat.card ↑↑(Pows x) = order x",
+      "statement": "(inst✝ : Group G) (x : G) (h1 : ↑↑(Pows x) ≃ Fin (order x)) : Nat.card ↑↑(Pows x) = order x"
+    },
+    {
+      "fragment_id": 10,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_iso_Int_of_zero_order",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "hx : order x = 0"
+      ],
+      "premises": [
+        "x : G"
+      ],
+      "body": "Isomorphism (gpowMap x)",
+      "conclusion": "∃ φ, Isomorphism φ",
+      "statement": "(inst✝ : Group G) (hx : order x = 0) (x : G) (h1 : Isomorphism (gpowMap x)) : ∃ φ, Isomorphism φ"
+    },
+    {
+      "fragment_id": 11,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Maximal_largest",
+      "scope_vars": [],
+      "premises": [
+        "inst✝¹ : Group G",
+        "inst✝ : Group G",
+        "H : Subgroup G"
+      ],
+      "body": "True",
+      "conclusion": "H ≤ Maximal G",
+      "statement": "(inst✝¹ : Group G) (inst✝ : Group G) (H : Subgroup G) : H ≤ Maximal G"
+    },
+    {
+      "fragment_id": 12,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.inter_comm",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "H : Subgroup G",
+        "K : Subgroup G"
+      ],
+      "premises": [],
+      "body": "(↑H).inter ↑K = (↑K).inter ↑H",
+      "conclusion": "{ carrier := (↑H).inter ↑K, has_id := ⋯, mul_closure := ⋯, inv_closure := ⋯ } =",
+      "statement": "(inst✝ : Group G) (H : Subgroup G) (K : Subgroup G) (h1 : (↑H).inter ↑K = (↑K).inter ↑H) : { carrier := (↑H).inter ↑K, has_id := ⋯, mul_closure := ⋯, inv_closure := ⋯ } ="
+    },
+    {
+      "fragment_id": 13,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.inter_assoc",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "H₁ : Subgroup G",
+        "H₂ : Subgroup G",
+        "H₃ : Subgroup G"
+      ],
+      "premises": [],
+      "body": "((↑H₁).inter ↑H₂).inter ↑H₃ = (↑H₁).inter ((↑H₂).inter ↑H₃)",
+      "conclusion": "{ carrier := ((↑H₁).inter ↑H₂).inter ↑H₃, has_id := ⋯, mul_closure := ⋯, inv_closure := ⋯ } =",
+      "statement": "(inst✝ : Group G) (H₁ : Subgroup G) (H₂ : Subgroup G) (H₃ : Subgroup G) (h1 : ((↑H₁).inter ↑H₂).inter ↑H₃ = (↑H₁).inter ((↑H₂).inter ↑H₃)) : { carrier := ((↑H₁).inter ↑H₂).inter ↑H₃, has_id := ⋯, mul_closure := ⋯, inv_closure := ⋯ } ="
+    },
+    {
+      "fragment_id": 14,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.le_intersect_self",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "H : Subgroup G",
+        "K : Subgroup G"
+      ],
+      "premises": [],
+      "body": "True",
+      "conclusion": "H ∩ K ≤ H",
+      "statement": "(inst✝ : Group G) (H : Subgroup G) (K : Subgroup G) : H ∩ K ≤ H"
+    },
+    {
+      "fragment_id": 15,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Generate_empty",
+      "scope_vars": [
+        "inst✝ : Group G"
+      ],
+      "premises": [],
+      "body": "(g : G) → (hg : g ∈ ↑(Generate ∅)) → g ∈ ↑(Minimal G)",
+      "conclusion": "Generate ∅ ≤ Minimal G",
+      "statement": "(inst✝ : Group G) (g : G) (hg : g ∈ ↑(Generate ∅)) (h1 : g ∈ ↑(Minimal G)) : Generate ∅ ≤ Minimal G"
+    },
+    {
+      "fragment_id": 16,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Generate_self_eq_self",
+      "scope_vars": [
+        "inst✝ : Group G"
+      ],
+      "premises": [
+        "H : Subgroup G"
+      ],
+      "body": "(g : G) → (hg : g ∈ ↑(Generate ↑H)) → g ∈ ↑H",
+      "conclusion": "Generate ↑H ≤ H",
+      "statement": "(inst✝ : Group G) (H : Subgroup G) (g : G) (hg : g ∈ ↑(Generate ↑H)) (h1 : g ∈ ↑H) : Generate ↑H ≤ H"
+    },
+    {
+      "fragment_id": 17,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Generate_smallest_closure",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "S : Set G",
+        "H : Subgroup G"
+      ],
+      "premises": [],
+      "body": "True",
+      "conclusion": "S ⊆ ↑H ∧ H ≤ Generate S → H = Generate S",
+      "statement": "(inst✝ : Group G) (S : Set G) (H : Subgroup G) : S ⊆ ↑H ∧ H ≤ Generate S → H = Generate S"
+    },
+    {
+      "fragment_id": 18,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_eq_Generate_singleton",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "x : G",
+        "g : G",
+        "hg : g ∈ ↑(Pows x)"
+      ],
+      "premises": [],
+      "body": "(H : Subgroup G) → (hH : {x} ⊆ ↑H) → g ∈ H",
+      "conclusion": "g ∈ ↑(Generate {x})",
+      "statement": "(inst✝ : Group G) (x : G) (g : G) (hg : g ∈ ↑(Pows x)) (H : Subgroup G) (hH : {x} ⊆ ↑H) (h1 : g ∈ H) : g ∈ ↑(Generate {x})"
+    },
+    {
+      "fragment_id": 19,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.gpowMap_bijective_of_order_zero",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "x : G"
+      ],
+      "premises": [
+        "h : order x = 0"
+      ],
+      "body": "True",
+      "conclusion": "Bijective (gpowMap x)",
+      "statement": "(inst✝ : Group G) (x : G) (h : order x = 0) : Bijective (gpowMap x)"
+    },
+    {
+      "fragment_id": 20,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_card_eq_order",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "x : G"
+      ],
+      "premises": [],
+      "body": "Fin (order x) ≃ ↑↑(Pows x)",
+      "conclusion": "↑↑(Pows x) ≃ Fin (order x)",
+      "statement": "(inst✝ : Group G) (x : G) (h1 : Fin (order x) ≃ ↑↑(Pows x)) : ↑↑(Pows x) ≃ Fin (order x)"
+    },
+    {
+      "fragment_id": 21,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_iso_Int_of_zero_order",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "x : G",
+        "hx : order x = 0"
+      ],
+      "premises": [],
+      "body": "(a : ℤ) → (b : ℤ) → μ (gpowMap x a) (gpowMap x b) = gpowMap x (μ a b)",
+      "conclusion": "Homomorphism (gpowMap x)",
+      "statement": "(inst✝ : Group G) (x : G) (hx : order x = 0) (a : ℤ) (b : ℤ) (h1 : μ (gpowMap x a) (gpowMap x b) = gpowMap x (μ a b)) : Homomorphism (gpowMap x)"
+    },
+    {
+      "fragment_id": 22,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.inter_comm",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "H : Subgroup G",
+        "K : Subgroup G"
+      ],
+      "premises": [],
+      "body": "(↑H).inter ↑K = (↑K).inter ↑H",
+      "conclusion": "H ∩ K = K ∩ H",
+      "statement": "(inst✝ : Group G) (H : Subgroup G) (K : Subgroup G) (h1 : (↑H).inter ↑K = (↑K).inter ↑H) : H ∩ K = K ∩ H"
+    },
+    {
+      "fragment_id": 23,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.inter_assoc",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "H₁ : Subgroup G",
+        "H₂ : Subgroup G",
+        "H₃ : Subgroup G"
+      ],
+      "premises": [],
+      "body": "((↑H₁).inter ↑H₂).inter ↑H₃ = (↑H₁).inter ((↑H₂).inter ↑H₃)",
+      "conclusion": "H₁ ∩ H₂ ∩ H₃ = H₁ ∩ (H₂ ∩ H₃)",
+      "statement": "(inst✝ : Group G) (H₁ : Subgroup G) (H₂ : Subgroup G) (H₃ : Subgroup G) (h1 : ((↑H₁).inter ↑H₂).inter ↑H₃ = (↑H₁).inter ((↑H₂).inter ↑H₃)) : H₁ ∩ H₂ ∩ H₃ = H₁ ∩ (H₂ ∩ H₃)"
+    },
+    {
+      "fragment_id": 24,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Generate_empty",
+      "scope_vars": [
+        "inst✝ : Group G"
+      ],
+      "premises": [],
+      "body": "(g : G) → (hg : g ∈ ↑(Generate ∅)) → g ∈ ↑(Minimal G)",
+      "conclusion": "Generate ∅ ≤ Minimal G",
+      "statement": "(inst✝ : Group G) (g : G) (hg : g ∈ ↑(Generate ∅)) (h1 : g ∈ ↑(Minimal G)) : Generate ∅ ≤ Minimal G"
+    },
+    {
+      "fragment_id": 25,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Generate_self_eq_self",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "H : Subgroup G",
+        "g : G"
+      ],
+      "premises": [
+        "hg : g ∈ ↑(Generate ↑H)"
+      ],
+      "body": "↑H ⊆ ↑H",
+      "conclusion": "g ∈ ↑H",
+      "statement": "(inst✝ : Group G) (H : Subgroup G) (g : G) (hg : g ∈ ↑(Generate ↑H)) (h1 : ↑H ⊆ ↑H) : g ∈ ↑H"
+    },
+    {
+      "fragment_id": 26,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Generate_smallest_closure",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "S : Set G",
+        "H : Subgroup G",
+        "hl : S ⊆ ↑H",
+        "hr : H ≤ Generate S"
+      ],
+      "premises": [],
+      "body": "(g : G) → (hg : g ∈ ↑(Generate S)) → g ∈ ↑H",
+      "conclusion": "Generate S ≤ H",
+      "statement": "(inst✝ : Group G) (S : Set G) (H : Subgroup G) (hl : S ⊆ ↑H) (hr : H ≤ Generate S) (g : G) (hg : g ∈ ↑(Generate S)) (h1 : g ∈ ↑H) : Generate S ≤ H"
+    },
+    {
+      "fragment_id": 27,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_eq_Generate_singleton",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "x : G"
+      ],
+      "premises": [],
+      "body": "(g : G) → (hg : g ∈ ↑(Pows x)) → (H : Subgroup G) → (hH : {x} ⊆ ↑H) → g ∈ H",
+      "conclusion": "Pows x ≤ Generate {x}",
+      "statement": "(inst✝ : Group G) (x : G) (g : G) (hg : g ∈ ↑(Pows x)) (H : Subgroup G) (hH : {x} ⊆ ↑H) (h1 : g ∈ H) : Pows x ≤ Generate {x}"
+    },
+    {
+      "fragment_id": 28,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.gpowMap_bijective_of_order_zero",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "x : G",
+        "h : order x = 0"
+      ],
+      "premises": [],
+      "body": "True",
+      "conclusion": "Bijective (gpowMap x)",
+      "statement": "(inst✝ : Group G) (x : G) (h : order x = 0) : Bijective (gpowMap x)"
+    },
+    {
+      "fragment_id": 29,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_card_eq_order",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "x : G"
+      ],
+      "premises": [],
+      "body": "Fin (order x) ≃ ↑↑(Pows x)",
+      "conclusion": "Nat.card ↑↑(Pows x) = order x",
+      "statement": "(inst✝ : Group G) (x : G) (h1 : Fin (order x) ≃ ↑↑(Pows x)) : Nat.card ↑↑(Pows x) = order x"
+    },
+    {
+      "fragment_id": 30,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_iso_Int_of_zero_order",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "x : G",
+        "hx : order x = 0",
+        "a : ℤ",
+        "b : ℤ"
+      ],
+      "premises": [],
+      "body": "⟨Magma.op (gpow x a) (gpow x b), ⋯⟩ = ⟨gpow x (a + b), ⋯⟩",
+      "conclusion": "μ (gpowMap x a) (gpowMap x b) = gpowMap x (μ a b)",
+      "statement": "(inst✝ : Group G) (x : G) (hx : order x = 0) (a : ℤ) (b : ℤ) (h1 : ⟨Magma.op (gpow x a) (gpow x b), ⋯⟩ = ⟨gpow x (a + b), ⋯⟩) : μ (gpowMap x a) (gpowMap x b) = gpowMap x (μ a b)"
+    },
+    {
+      "fragment_id": 31,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.inter_comm",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "H : Subgroup G",
+        "K : Subgroup G"
+      ],
+      "premises": [],
+      "body": "True",
+      "conclusion": "H ∩ K = K ∩ H",
+      "statement": "(inst✝ : Group G) (H : Subgroup G) (K : Subgroup G) : H ∩ K = K ∩ H"
+    },
+    {
+      "fragment_id": 32,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.inter_assoc",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "H₁ : Subgroup G",
+        "H₂ : Subgroup G",
+        "H₃ : Subgroup G"
+      ],
+      "premises": [],
+      "body": "True",
+      "conclusion": "H₁ ∩ H₂ ∩ H₃ = H₁ ∩ (H₂ ∩ H₃)",
+      "statement": "(inst✝ : Group G) (H₁ : Subgroup G) (H₂ : Subgroup G) (H₃ : Subgroup G) : H₁ ∩ H₂ ∩ H₃ = H₁ ∩ (H₂ ∩ H₃)"
+    },
+    {
+      "fragment_id": 33,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Generate_self_eq_self",
+      "scope_vars": [
+        "inst✝ : Group G"
+      ],
+      "premises": [
+        "H : Subgroup G"
+      ],
+      "body": "(g : G) → (hg : g ∈ ↑(Generate ↑H)) → ↑H ⊆ ↑H",
+      "conclusion": "Generate ↑H ≤ H",
+      "statement": "(inst✝ : Group G) (H : Subgroup G) (g : G) (hg : g ∈ ↑(Generate ↑H)) (h1 : ↑H ⊆ ↑H) : Generate ↑H ≤ H"
+    },
+    {
+      "fragment_id": 34,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Generate_smallest_closure",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "S : Set G",
+        "hl : S ⊆ ↑H",
+        "hr : H ≤ Generate S",
+        "g : G"
+      ],
+      "premises": [
+        "H : Subgroup G",
+        "hg : g ∈ ↑(Generate S)"
+      ],
+      "body": "S ⊆ ↑H",
+      "conclusion": "g ∈ ↑H",
+      "statement": "(inst✝ : Group G) (S : Set G) (hl : S ⊆ ↑H) (hr : H ≤ Generate S) (g : G) (H : Subgroup G) (hg : g ∈ ↑(Generate S)) (h1 : S ⊆ ↑H) : g ∈ ↑H"
+    },
+    {
+      "fragment_id": 35,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_eq_Generate_singleton",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "g : G",
+        "hg : g ∈ ↑(Pows x)"
+      ],
+      "premises": [
+        "x : G"
+      ],
+      "body": "(H : Subgroup G) → (hH : {x} ⊆ ↑H) → g ∈ H",
+      "conclusion": "g ∈ ↑(Generate {x})",
+      "statement": "(inst✝ : Group G) (g : G) (hg : g ∈ ↑(Pows x)) (x : G) (H : Subgroup G) (hH : {x} ⊆ ↑H) (h1 : g ∈ H) : g ∈ ↑(Generate {x})"
+    },
+    {
+      "fragment_id": 36,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.gpowMap_bijective_of_order_zero",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "a : ℤ",
+        "b : ℤ"
+      ],
+      "premises": [
+        "x : G",
+        "h : order x = 0",
+        "heq : gpowMap x a = gpowMap x b"
+      ],
+      "body": "True",
+      "conclusion": "a = b",
+      "statement": "(inst✝ : Group G) (a : ℤ) (b : ℤ) (x : G) (h : order x = 0) (heq : gpowMap x a = gpowMap x b) : a = b"
+    },
+    {
+      "fragment_id": 37,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_card_eq_order",
+      "scope_vars": [
+        "inst✝ : Group G"
+      ],
+      "premises": [
+        "x : G"
+      ],
+      "body": "Function.Bijective (finPowMap x (order x))",
+      "conclusion": "Fin (order x) ≃ ↑↑(Pows x)",
+      "statement": "(inst✝ : Group G) (x : G) (h1 : Function.Bijective (finPowMap x (order x))) : Fin (order x) ≃ ↑↑(Pows x)"
+    },
+    {
+      "fragment_id": 38,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_iso_Int_of_zero_order",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "x : G",
+        "hx : order x = 0"
+      ],
+      "premises": [],
+      "body": "(a : ℤ) → (b : ℤ) → ⟨Magma.op (gpow x a) (gpow x b), ⋯⟩ = ⟨gpow x (a + b), ⋯⟩",
+      "conclusion": "Homomorphism (gpowMap x)",
+      "statement": "(inst✝ : Group G) (x : G) (hx : order x = 0) (a : ℤ) (b : ℤ) (h1 : ⟨Magma.op (gpow x a) (gpow x b), ⋯⟩ = ⟨gpow x (a + b), ⋯⟩) : Homomorphism (gpowMap x)"
+    },
+    {
+      "fragment_id": 39,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.inter_comm",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "H : Subgroup G",
+        "K : Subgroup G"
+      ],
+      "premises": [],
+      "body": "True",
+      "conclusion": "{ carrier := (↑H).inter ↑K, has_id := ⋯, mul_closure := ⋯, inv_closure := ⋯ } =",
+      "statement": "(inst✝ : Group G) (H : Subgroup G) (K : Subgroup G) : { carrier := (↑H).inter ↑K, has_id := ⋯, mul_closure := ⋯, inv_closure := ⋯ } ="
+    },
+    {
+      "fragment_id": 40,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.inter_assoc",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "H₁ : Subgroup G",
+        "H₂ : Subgroup G",
+        "H₃ : Subgroup G"
+      ],
+      "premises": [],
+      "body": "True",
+      "conclusion": "{ carrier := ((↑H₁).inter ↑H₂).inter ↑H₃, has_id := ⋯, mul_closure := ⋯, inv_closure := ⋯ } =",
+      "statement": "(inst✝ : Group G) (H₁ : Subgroup G) (H₂ : Subgroup G) (H₃ : Subgroup G) : { carrier := ((↑H₁).inter ↑H₂).inter ↑H₃, has_id := ⋯, mul_closure := ⋯, inv_closure := ⋯ } ="
+    },
+    {
+      "fragment_id": 41,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Generate_empty",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "g : G"
+      ],
+      "premises": [
+        "hg : g ∈ ↑(Generate ∅)"
+      ],
+      "body": "∅ ⊆ ↑(Minimal G)",
+      "conclusion": "g ∈ ↑(Minimal G)",
+      "statement": "(inst✝ : Group G) (g : G) (hg : g ∈ ↑(Generate ∅)) (h1 : ∅ ⊆ ↑(Minimal G)) : g ∈ ↑(Minimal G)"
+    },
+    {
+      "fragment_id": 42,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Generate_self_eq_self",
+      "scope_vars": [
+        "inst✝ : Group G"
+      ],
+      "premises": [
+        "H : Subgroup G",
+        "g : G",
+        "hg : g ∈ ↑(Generate ↑H)"
+      ],
+      "body": "↑H ⊆ ↑H",
+      "conclusion": "g ∈ ↑H",
+      "statement": "(inst✝ : Group G) (H : Subgroup G) (g : G) (hg : g ∈ ↑(Generate ↑H)) (h1 : ↑H ⊆ ↑H) : g ∈ ↑H"
+    },
+    {
+      "fragment_id": 43,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Generate_smallest_closure",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "hl : S ⊆ ↑H",
+        "hr : H ≤ Generate S"
+      ],
+      "premises": [
+        "S : Set G",
+        "H : Subgroup G"
+      ],
+      "body": "(g : G) → (hg : g ∈ ↑(Generate S)) → S ⊆ ↑H",
+      "conclusion": "Generate S ≤ H",
+      "statement": "(inst✝ : Group G) (hl : S ⊆ ↑H) (hr : H ≤ Generate S) (S : Set G) (H : Subgroup G) (g : G) (hg : g ∈ ↑(Generate S)) (h1 : S ⊆ ↑H) : Generate S ≤ H"
+    },
+    {
+      "fragment_id": 44,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_eq_Generate_singleton",
+      "scope_vars": [
+        "inst✝ : Group G"
+      ],
+      "premises": [
+        "x : G"
+      ],
+      "body": "(g : G) → (hg : g ∈ ↑(Pows x)) → (H : Subgroup G) → (hH : {x} ⊆ ↑H) → g ∈ H",
+      "conclusion": "Pows x ≤ Generate {x}",
+      "statement": "(inst✝ : Group G) (x : G) (g : G) (hg : g ∈ ↑(Pows x)) (H : Subgroup G) (hH : {x} ⊆ ↑H) (h1 : g ∈ H) : Pows x ≤ Generate {x}"
+    },
+    {
+      "fragment_id": 45,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.gpowMap_bijective_of_order_zero",
+      "scope_vars": [
+        "inst✝ : Group G"
+      ],
+      "premises": [
+        "x : G",
+        "h : order x = 0"
+      ],
+      "body": "True",
+      "conclusion": "Injective (gpowMap x)",
+      "statement": "(inst✝ : Group G) (x : G) (h : order x = 0) : Injective (gpowMap x)"
+    },
+    {
+      "fragment_id": 46,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_card_eq_order",
+      "scope_vars": [
+        "inst✝ : Group G"
+      ],
+      "premises": [
+        "x : G"
+      ],
+      "body": "Function.Bijective (finPowMap x (order x))",
+      "conclusion": "↑↑(Pows x) ≃ Fin (order x)",
+      "statement": "(inst✝ : Group G) (x : G) (h1 : Function.Bijective (finPowMap x (order x))) : ↑↑(Pows x) ≃ Fin (order x)"
+    },
+    {
+      "fragment_id": 47,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_iso_Int_of_zero_order",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "x : G",
+        "hx : order x = 0",
+        "a : ℤ",
+        "b : ℤ"
+      ],
+      "premises": [],
+      "body": "⟨Magma.op (gpow x a) (gpow x b), ⋯⟩ = ⟨μ (gpow x a) (gpow x b), ⋯⟩",
+      "conclusion": "⟨Magma.op (gpow x a) (gpow x b), ⋯⟩ = ⟨gpow x (a + b), ⋯⟩",
+      "statement": "(inst✝ : Group G) (x : G) (hx : order x = 0) (a : ℤ) (b : ℤ) (h1 : ⟨Magma.op (gpow x a) (gpow x b), ⋯⟩ = ⟨μ (gpow x a) (gpow x b), ⋯⟩) : ⟨Magma.op (gpow x a) (gpow x b), ⋯⟩ = ⟨gpow x (a + b), ⋯⟩"
+    },
+    {
+      "fragment_id": 48,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Generate_empty",
+      "scope_vars": [
+        "inst✝ : Group G"
+      ],
+      "premises": [],
+      "body": "(g : G) → (hg : g ∈ ↑(Generate ∅)) → ∅ ⊆ ↑(Minimal G)",
+      "conclusion": "Generate ∅ ≤ Minimal G",
+      "statement": "(inst✝ : Group G) (g : G) (hg : g ∈ ↑(Generate ∅)) (h1 : ∅ ⊆ ↑(Minimal G)) : Generate ∅ ≤ Minimal G"
+    },
+    {
+      "fragment_id": 49,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Generate_self_eq_self",
+      "scope_vars": [
+        "inst✝ : Group G"
+      ],
+      "premises": [
+        "H : Subgroup G"
+      ],
+      "body": "(g : G) → (hg : g ∈ ↑(Generate ↑H)) → ↑H ⊆ ↑H",
+      "conclusion": "Generate ↑H ≤ H",
+      "statement": "(inst✝ : Group G) (H : Subgroup G) (g : G) (hg : g ∈ ↑(Generate ↑H)) (h1 : ↑H ⊆ ↑H) : Generate ↑H ≤ H"
+    },
+    {
+      "fragment_id": 50,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Generate_smallest_closure",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "S : Set G",
+        "H : Subgroup G"
+      ],
+      "premises": [],
+      "body": "True",
+      "conclusion": "S ⊆ ↑H ∧ H ≤ Generate S → H = Generate S",
+      "statement": "(inst✝ : Group G) (S : Set G) (H : Subgroup G) : S ⊆ ↑H ∧ H ≤ Generate S → H = Generate S"
+    },
+    {
+      "fragment_id": 51,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_eq_Generate_singleton",
+      "scope_vars": [
+        "inst✝ : Group G"
+      ],
+      "premises": [
+        "x : G"
+      ],
+      "body": "(g : G) → (hg : g ∈ ↑(Pows x)) → (a : ℤ) → (ha : gpow x a = g) → g ∈ ↑(Generate {x})",
+      "conclusion": "Pows x ≤ Generate {x}",
+      "statement": "(inst✝ : Group G) (x : G) (g : G) (hg : g ∈ ↑(Pows x)) (a : ℤ) (ha : gpow x a = g) (h1 : g ∈ ↑(Generate {x})) : Pows x ≤ Generate {x}"
+    },
+    {
+      "fragment_id": 52,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.gpowMap_bijective_of_order_zero",
+      "scope_vars": [
+        "inst✝ : Group G"
+      ],
+      "premises": [
+        "x : G",
+        "h : order x = 0",
+        "a : ℤ",
+        "b : ℤ",
+        "heq : gpowMap x a = gpowMap x b"
+      ],
+      "body": "True",
+      "conclusion": "a = b",
+      "statement": "(inst✝ : Group G) (x : G) (h : order x = 0) (a : ℤ) (b : ℤ) (heq : gpowMap x a = gpowMap x b) : a = b"
+    },
+    {
+      "fragment_id": 53,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_card_eq_order",
+      "scope_vars": [
+        "inst✝ : Group G"
+      ],
+      "premises": [
+        "x : G"
+      ],
+      "body": "Function.Bijective (finPowMap x (order x))",
+      "conclusion": "Nat.card ↑↑(Pows x) = order x",
+      "statement": "(inst✝ : Group G) (x : G) (h1 : Function.Bijective (finPowMap x (order x))) : Nat.card ↑↑(Pows x) = order x"
+    },
+    {
+      "fragment_id": 54,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_iso_Int_of_zero_order",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "x : G",
+        "hx : order x = 0",
+        "a : ℤ",
+        "b : ℤ"
+      ],
+      "premises": [],
+      "body": "⟨Magma.op (gpow x a) (gpow x b), ⋯⟩ = ⟨μ (gpow x a) (gpow x b), ⋯⟩",
+      "conclusion": "μ (gpowMap x a) (gpowMap x b) = gpowMap x (μ a b)",
+      "statement": "(inst✝ : Group G) (x : G) (hx : order x = 0) (a : ℤ) (b : ℤ) (h1 : ⟨Magma.op (gpow x a) (gpow x b), ⋯⟩ = ⟨μ (gpow x a) (gpow x b), ⋯⟩) : μ (gpowMap x a) (gpowMap x b) = gpowMap x (μ a b)"
+    },
+    {
+      "fragment_id": 55,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Generate_empty",
+      "scope_vars": [
+        "inst✝ : Group G"
+      ],
+      "premises": [
+        "g : G",
+        "hg : g ∈ ↑(Generate ∅)"
+      ],
+      "body": "∅ ⊆ ↑(Minimal G)",
+      "conclusion": "g ∈ ↑(Minimal G)",
+      "statement": "(inst✝ : Group G) (g : G) (hg : g ∈ ↑(Generate ∅)) (h1 : ∅ ⊆ ↑(Minimal G)) : g ∈ ↑(Minimal G)"
+    },
+    {
+      "fragment_id": 56,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Generate_self_eq_self",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "H : Subgroup G"
+      ],
+      "premises": [],
+      "body": "True",
+      "conclusion": "Generate ↑H = H",
+      "statement": "(inst✝ : Group G) (H : Subgroup G) : Generate ↑H = H"
+    },
+    {
+      "fragment_id": 57,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Generate_smallest_closure",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "S : Set G",
+        "H : Subgroup G"
+      ],
+      "premises": [
+        "hl : S ⊆ ↑H",
+        "hr : H ≤ Generate S"
+      ],
+      "body": "True",
+      "conclusion": "H = Generate S",
+      "statement": "(inst✝ : Group G) (S : Set G) (H : Subgroup G) (hl : S ⊆ ↑H) (hr : H ≤ Generate S) : H = Generate S"
+    },
+    {
+      "fragment_id": 58,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_eq_Generate_singleton",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "x : G",
+        "g : G"
+      ],
+      "premises": [
+        "hg : g ∈ ↑(Pows x)"
+      ],
+      "body": "(H : Subgroup G) → (hH : {x} ⊆ ↑H) → (a : ℤ) → (ha : gpow x a = g) → g ∈ H",
+      "conclusion": "g ∈ ↑(Generate {x})",
+      "statement": "(inst✝ : Group G) (x : G) (g : G) (hg : g ∈ ↑(Pows x)) (H : Subgroup G) (hH : {x} ⊆ ↑H) (a : ℤ) (ha : gpow x a = g) (h1 : g ∈ H) : g ∈ ↑(Generate {x})"
+    },
+    {
+      "fragment_id": 59,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.gpowMap_bijective_of_order_zero",
+      "scope_vars": [
+        "inst✝ : Group G"
+      ],
+      "premises": [
+        "x : G",
+        "h : order x = 0"
+      ],
+      "body": "True",
+      "conclusion": "Injective (gpowMap x)",
+      "statement": "(inst✝ : Group G) (x : G) (h : order x = 0) : Injective (gpowMap x)"
+    },
+    {
+      "fragment_id": 60,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_card_eq_order",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "x : G"
+      ],
+      "premises": [],
+      "body": "order x ≠ 0",
+      "conclusion": "Function.Bijective (finPowMap x (order x))",
+      "statement": "(inst✝ : Group G) (x : G) (h1 : order x ≠ 0) : Function.Bijective (finPowMap x (order x))"
+    },
+    {
+      "fragment_id": 61,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_iso_Int_of_zero_order",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "x : G",
+        "hx : order x = 0"
+      ],
+      "premises": [],
+      "body": "(a : ℤ) → (b : ℤ) → ⟨Magma.op (gpow x a) (gpow x b), ⋯⟩ = ⟨μ (gpow x a) (gpow x b), ⋯⟩",
+      "conclusion": "Homomorphism (gpowMap x)",
+      "statement": "(inst✝ : Group G) (x : G) (hx : order x = 0) (a : ℤ) (b : ℤ) (h1 : ⟨Magma.op (gpow x a) (gpow x b), ⋯⟩ = ⟨μ (gpow x a) (gpow x b), ⋯⟩) : Homomorphism (gpowMap x)"
+    },
+    {
+      "fragment_id": 62,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Generate_empty",
+      "scope_vars": [
+        "inst✝ : Group G"
+      ],
+      "premises": [],
+      "body": "(g : G) → (hg : g ∈ ↑(Generate ∅)) → ∅ ⊆ ↑(Minimal G)",
+      "conclusion": "Generate ∅ ≤ Minimal G",
+      "statement": "(inst✝ : Group G) (g : G) (hg : g ∈ ↑(Generate ∅)) (h1 : ∅ ⊆ ↑(Minimal G)) : Generate ∅ ≤ Minimal G"
+    },
+    {
+      "fragment_id": 63,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Generate_self_eq_self",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "H : Subgroup G"
+      ],
+      "premises": [],
+      "body": "True",
+      "conclusion": "Generate ↑H ≤ H",
+      "statement": "(inst✝ : Group G) (H : Subgroup G) : Generate ↑H ≤ H"
+    },
+    {
+      "fragment_id": 64,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Generate_smallest_closure",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "S : Set G",
+        "H : Subgroup G",
+        "hr : H ≤ Generate S"
+      ],
+      "premises": [
+        "hl : S ⊆ ↑H"
+      ],
+      "body": "True",
+      "conclusion": "Generate S ≤ H",
+      "statement": "(inst✝ : Group G) (S : Set G) (H : Subgroup G) (hr : H ≤ Generate S) (hl : S ⊆ ↑H) : Generate S ≤ H"
+    },
+    {
+      "fragment_id": 65,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_eq_Generate_singleton",
+      "scope_vars": [
+        "inst✝ : Group G"
+      ],
+      "premises": [
+        "x : G"
+      ],
+      "body": "(g : G) → (hg : g ∈ ↑(Pows x)) → (H : Subgroup G) → (hH : {x} ⊆ ↑H) → (a : ℤ) → (ha : gpow x a = g) → g ∈ H",
+      "conclusion": "Pows x ≤ Generate {x}",
+      "statement": "(inst✝ : Group G) (x : G) (g : G) (hg : g ∈ ↑(Pows x)) (H : Subgroup G) (hH : {x} ⊆ ↑H) (a : ℤ) (ha : gpow x a = g) (h1 : g ∈ H) : Pows x ≤ Generate {x}"
+    },
+    {
+      "fragment_id": 66,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.gpowMap_bijective_of_order_zero",
+      "scope_vars": [
+        "inst✝ : Group G"
+      ],
+      "premises": [
+        "x : G",
+        "h : order x = 0",
+        "a : ℤ",
+        "b : ℤ",
+        "heq : gpowMap x a = gpowMap x b"
+      ],
+      "body": "True",
+      "conclusion": "a = b",
+      "statement": "(inst✝ : Group G) (x : G) (h : order x = 0) (a : ℤ) (b : ℤ) (heq : gpowMap x a = gpowMap x b) : a = b"
+    },
+    {
+      "fragment_id": 67,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_card_eq_order",
+      "scope_vars": [
+        "inst✝ : Group G"
+      ],
+      "premises": [
+        "x : G"
+      ],
+      "body": "order x ≠ 0",
+      "conclusion": "Fin (order x) ≃ ↑↑(Pows x)",
+      "statement": "(inst✝ : Group G) (x : G) (h1 : order x ≠ 0) : Fin (order x) ≃ ↑↑(Pows x)"
+    },
+    {
+      "fragment_id": 68,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_iso_Int_of_zero_order",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "x : G",
+        "hx : order x = 0"
+      ],
+      "premises": [],
+      "body": "True",
+      "conclusion": "∃ φ, Isomorphism φ",
+      "statement": "(inst✝ : Group G) (x : G) (hx : order x = 0) : ∃ φ, Isomorphism φ"
+    },
+    {
+      "fragment_id": 69,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Generate_self_eq_self",
+      "scope_vars": [
+        "inst✝ : Group G"
+      ],
+      "premises": [
+        "H : Subgroup G"
+      ],
+      "body": "True",
+      "conclusion": "Generate ↑H ≤ H",
+      "statement": "(inst✝ : Group G) (H : Subgroup G) : Generate ↑H ≤ H"
+    },
+    {
+      "fragment_id": 70,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_eq_Generate_singleton",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "g : G"
+      ],
+      "premises": [
+        "x : G",
+        "hg : g ∈ ↑(Pows x)"
+      ],
+      "body": "(H : Subgroup G) → (hH : {x} ⊆ ↑H) → (a : ℤ) → (ha : gpow x a = g) → g ∈ H",
+      "conclusion": "g ∈ ↑(Generate {x})",
+      "statement": "(inst✝ : Group G) (g : G) (x : G) (hg : g ∈ ↑(Pows x)) (H : Subgroup G) (hH : {x} ⊆ ↑H) (a : ℤ) (ha : gpow x a = g) (h1 : g ∈ H) : g ∈ ↑(Generate {x})"
+    },
+    {
+      "fragment_id": 71,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_card_eq_order",
+      "scope_vars": [
+        "inst✝ : Group G"
+      ],
+      "premises": [
+        "x : G"
+      ],
+      "body": "order x ≠ 0",
+      "conclusion": "↑↑(Pows x) ≃ Fin (order x)",
+      "statement": "(inst✝ : Group G) (x : G) (h1 : order x ≠ 0) : ↑↑(Pows x) ≃ Fin (order x)"
+    },
+    {
+      "fragment_id": 72,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_iso_Int_of_zero_order",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "x : G",
+        "hx : order x = 0"
+      ],
+      "premises": [],
+      "body": "True",
+      "conclusion": "Homomorphism (gpowMap x)",
+      "statement": "(inst✝ : Group G) (x : G) (hx : order x = 0) : Homomorphism (gpowMap x)"
+    },
+    {
+      "fragment_id": 73,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Generate_self_eq_self",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "H : Subgroup G",
+        "g : G"
+      ],
+      "premises": [
+        "hg : g ∈ ↑(Generate ↑H)"
+      ],
+      "body": "True",
+      "conclusion": "g ∈ ↑H",
+      "statement": "(inst✝ : Group G) (H : Subgroup G) (g : G) (hg : g ∈ ↑(Generate ↑H)) : g ∈ ↑H"
+    },
+    {
+      "fragment_id": 74,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Generate_smallest_closure",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "S : Set G",
+        "hr : H ≤ Generate S",
+        "g : G"
+      ],
+      "premises": [
+        "H : Subgroup G",
+        "hl : S ⊆ ↑H",
+        "hg : g ∈ ↑(Generate S)"
+      ],
+      "body": "True",
+      "conclusion": "g ∈ ↑H",
+      "statement": "(inst✝ : Group G) (S : Set G) (hr : H ≤ Generate S) (g : G) (H : Subgroup G) (hl : S ⊆ ↑H) (hg : g ∈ ↑(Generate S)) : g ∈ ↑H"
+    },
+    {
+      "fragment_id": 75,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_eq_Generate_singleton",
+      "scope_vars": [
+        "inst✝ : Group G"
+      ],
+      "premises": [
+        "x : G"
+      ],
+      "body": "(g : G) → (hg : g ∈ ↑(Pows x)) → (H : Subgroup G) → (hH : {x} ⊆ ↑H) → (a : ℤ) → (ha : gpow x a = g) → g ∈ H",
+      "conclusion": "Pows x ≤ Generate {x}",
+      "statement": "(inst✝ : Group G) (x : G) (g : G) (hg : g ∈ ↑(Pows x)) (H : Subgroup G) (hH : {x} ⊆ ↑H) (a : ℤ) (ha : gpow x a = g) (h1 : g ∈ H) : Pows x ≤ Generate {x}"
+    },
+    {
+      "fragment_id": 76,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.gpowMap_bijective_of_order_zero",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "x : G",
+        "h : order x = 0"
+      ],
+      "premises": [],
+      "body": "(g : G) → (hg : g ∈ ↑(Pows x)) → ∃ x_1, gpowMap x x_1 = ⟨g, hg⟩",
+      "conclusion": "Surjective (gpowMap x)",
+      "statement": "(inst✝ : Group G) (x : G) (h : order x = 0) (g : G) (hg : g ∈ ↑(Pows x)) (h1 : ∃ x_1, gpowMap x x_1 = ⟨g, hg⟩) : Surjective (gpowMap x)"
+    },
+    {
+      "fragment_id": 77,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_card_eq_order",
+      "scope_vars": [
+        "inst✝ : Group G"
+      ],
+      "premises": [
+        "x : G"
+      ],
+      "body": "order x ≠ 0",
+      "conclusion": "Nat.card ↑↑(Pows x) = order x",
+      "statement": "(inst✝ : Group G) (x : G) (h1 : order x ≠ 0) : Nat.card ↑↑(Pows x) = order x"
+    },
+    {
+      "fragment_id": 78,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_iso_Int_of_zero_order",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "x : G",
+        "hx : order x = 0",
+        "a : ℤ",
+        "b : ℤ"
+      ],
+      "premises": [],
+      "body": "True",
+      "conclusion": "μ (gpowMap x a) (gpowMap x b) = gpowMap x (μ a b)",
+      "statement": "(inst✝ : Group G) (x : G) (hx : order x = 0) (a : ℤ) (b : ℤ) : μ (gpowMap x a) (gpowMap x b) = gpowMap x (μ a b)"
+    },
+    {
+      "fragment_id": 79,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Generate_smallest_closure",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "hr : H ≤ Generate S"
+      ],
+      "premises": [
+        "S : Set G",
+        "H : Subgroup G",
+        "hl : S ⊆ ↑H"
+      ],
+      "body": "True",
+      "conclusion": "Generate S ≤ H",
+      "statement": "(inst✝ : Group G) (hr : H ≤ Generate S) (S : Set G) (H : Subgroup G) (hl : S ⊆ ↑H) : Generate S ≤ H"
+    },
+    {
+      "fragment_id": 80,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_eq_Generate_singleton",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "x : G",
+        "g : G",
+        "hg : g ∈ ↑(Pows x)",
+        "H : Subgroup G",
+        "hH : {x} ⊆ ↑H"
+      ],
+      "premises": [],
+      "body": "gpow x a ∈ H",
+      "conclusion": "g ∈ H",
+      "statement": "(inst✝ : Group G) (x : G) (g : G) (hg : g ∈ ↑(Pows x)) (H : Subgroup G) (hH : {x} ⊆ ↑H) (h1 : gpow x a ∈ H) : g ∈ H"
+    },
+    {
+      "fragment_id": 81,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.gpowMap_bijective_of_order_zero",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "x : G",
+        "h : order x = 0",
+        "g : G"
+      ],
+      "premises": [
+        "hg : g ∈ ↑(Pows x)"
+      ],
+      "body": "(a : ℤ) → (ha : gpow x a = g) → ∃ x_1, gpowMap x x_1 = ⟨g, ⋯⟩",
+      "conclusion": "∃ x_1, gpowMap x x_1 = ⟨g, hg⟩",
+      "statement": "(inst✝ : Group G) (x : G) (h : order x = 0) (g : G) (hg : g ∈ ↑(Pows x)) (a : ℤ) (ha : gpow x a = g) (h1 : ∃ x_1, gpowMap x x_1 = ⟨g, ⋯⟩) : ∃ x_1, gpowMap x x_1 = ⟨g, hg⟩"
+    },
+    {
+      "fragment_id": 82,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_card_eq_order",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "x : G"
+      ],
+      "premises": [],
+      "body": "True",
+      "conclusion": "Nat.card ↑↑(Pows x) = order x",
+      "statement": "(inst✝ : Group G) (x : G) : Nat.card ↑↑(Pows x) = order x"
+    },
+    {
+      "fragment_id": 83,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Generate_empty",
+      "scope_vars": [
+        "inst✝ : Group G"
+      ],
+      "premises": [],
+      "body": "(g : G) → (hg : g ∈ ↑(Generate ∅)) → ∅ ⊆ ↑(Minimal G)",
+      "conclusion": "Generate ∅ ≤ Minimal G",
+      "statement": "(inst✝ : Group G) (g : G) (hg : g ∈ ↑(Generate ∅)) (h1 : ∅ ⊆ ↑(Minimal G)) : Generate ∅ ≤ Minimal G"
+    },
+    {
+      "fragment_id": 84,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Generate_self_eq_self",
+      "scope_vars": [
+        "inst✝ : Group G"
+      ],
+      "premises": [
+        "H : Subgroup G",
+        "g : G",
+        "hg : g ∈ ↑(Generate ↑H)"
+      ],
+      "body": "True",
+      "conclusion": "g ∈ ↑H",
+      "statement": "(inst✝ : Group G) (H : Subgroup G) (g : G) (hg : g ∈ ↑(Generate ↑H)) : g ∈ ↑H"
+    },
+    {
+      "fragment_id": 85,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Generate_smallest_closure",
+      "scope_vars": [
+        "inst✝ : Group G"
+      ],
+      "premises": [
+        "S : Set G",
+        "H : Subgroup G",
+        "hl : S ⊆ ↑H",
+        "hr : H ≤ Generate S"
+      ],
+      "body": "True",
+      "conclusion": "H = Generate S",
+      "statement": "(inst✝ : Group G) (S : Set G) (H : Subgroup G) (hl : S ⊆ ↑H) (hr : H ≤ Generate S) : H = Generate S"
+    },
+    {
+      "fragment_id": 86,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_eq_Generate_singleton",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "x : G",
+        "g : G",
+        "hg : g ∈ ↑(Pows x)"
+      ],
+      "premises": [],
+      "body": "(H : Subgroup G) → (hH : {x} ⊆ ↑H) → gpow x a ∈ H",
+      "conclusion": "g ∈ ↑(Generate {x})",
+      "statement": "(inst✝ : Group G) (x : G) (g : G) (hg : g ∈ ↑(Pows x)) (H : Subgroup G) (hH : {x} ⊆ ↑H) (h1 : gpow x a ∈ H) : g ∈ ↑(Generate {x})"
+    },
+    {
+      "fragment_id": 87,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.gpowMap_bijective_of_order_zero",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "h : order x = 0"
+      ],
+      "premises": [
+        "x : G"
+      ],
+      "body": "(g : G) → (hg : g ∈ ↑(Pows x)) → (a : ℤ) → (ha : gpow x a = g) → ∃ x_1, gpowMap x x_1 = ⟨g, ⋯⟩",
+      "conclusion": "Surjective (gpowMap x)",
+      "statement": "(inst✝ : Group G) (h : order x = 0) (x : G) (g : G) (hg : g ∈ ↑(Pows x)) (a : ℤ) (ha : gpow x a = g) (h1 : ∃ x_1, gpowMap x x_1 = ⟨g, ⋯⟩) : Surjective (gpowMap x)"
+    },
+    {
+      "fragment_id": 88,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_card_eq_order",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "x : G"
+      ],
+      "premises": [],
+      "body": "True",
+      "conclusion": "Nat.card ↑↑(Pows x) = order x",
+      "statement": "(inst✝ : Group G) (x : G) : Nat.card ↑↑(Pows x) = order x"
+    },
+    {
+      "fragment_id": 89,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_iso_Int_of_zero_order",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "x : G",
+        "hx : order x = 0",
+        "a : ℤ",
+        "b : ℤ"
+      ],
+      "premises": [],
+      "body": "True",
+      "conclusion": "⟨Magma.op (gpow x a) (gpow x b), ⋯⟩ = ⟨gpow x (a + b), ⋯⟩",
+      "statement": "(inst✝ : Group G) (x : G) (hx : order x = 0) (a : ℤ) (b : ℤ) : ⟨Magma.op (gpow x a) (gpow x b), ⋯⟩ = ⟨gpow x (a + b), ⋯⟩"
+    },
+    {
+      "fragment_id": 90,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Generate_empty",
+      "scope_vars": [
+        "inst✝ : Group G"
+      ],
+      "premises": [],
+      "body": "True",
+      "conclusion": "Generate ∅ = Minimal G",
+      "statement": "(inst✝ : Group G) : Generate ∅ = Minimal G"
+    },
+    {
+      "fragment_id": 91,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Generate_self_eq_self",
+      "scope_vars": [
+        "inst✝ : Group G"
+      ],
+      "premises": [
+        "H : Subgroup G"
+      ],
+      "body": "True",
+      "conclusion": "Generate ↑H ≤ H",
+      "statement": "(inst✝ : Group G) (H : Subgroup G) : Generate ↑H ≤ H"
+    },
+    {
+      "fragment_id": 92,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_eq_Generate_singleton",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "x : G"
+      ],
+      "premises": [],
+      "body": "(g : G) → (hg : g ∈ ↑(Pows x)) → (H : Subgroup G) → (hH : {x} ⊆ ↑H) → gpow x a ∈ H",
+      "conclusion": "Pows x ≤ Generate {x}",
+      "statement": "(inst✝ : Group G) (x : G) (g : G) (hg : g ∈ ↑(Pows x)) (H : Subgroup G) (hH : {x} ⊆ ↑H) (h1 : gpow x a ∈ H) : Pows x ≤ Generate {x}"
+    },
+    {
+      "fragment_id": 93,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.gpowMap_bijective_of_order_zero",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "x : G",
+        "h : order x = 0",
+        "g : G",
+        "ha : gpow x a = g"
+      ],
+      "premises": [
+        "a : ℤ"
+      ],
+      "body": "gpowMap x a = ⟨g, ⋯⟩",
+      "conclusion": "∃ x_1, gpowMap x x_1 = ⟨g, ⋯⟩",
+      "statement": "(inst✝ : Group G) (x : G) (h : order x = 0) (g : G) (ha : gpow x a = g) (a : ℤ) (h1 : gpowMap x a = ⟨g, ⋯⟩) : ∃ x_1, gpowMap x x_1 = ⟨g, ⋯⟩"
+    },
+    {
+      "fragment_id": 94,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_card_eq_order",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "x : G"
+      ],
+      "premises": [],
+      "body": "True",
+      "conclusion": "↑↑(Pows x) ≃ Fin (order x)",
+      "statement": "(inst✝ : Group G) (x : G) : ↑↑(Pows x) ≃ Fin (order x)"
+    },
+    {
+      "fragment_id": 95,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Generate_empty",
+      "scope_vars": [
+        "inst✝ : Group G"
+      ],
+      "premises": [],
+      "body": "True",
+      "conclusion": "Generate ∅ ≤ Minimal G",
+      "statement": "(inst✝ : Group G) : Generate ∅ ≤ Minimal G"
+    },
+    {
+      "fragment_id": 96,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Generate_self_eq_self",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "H : Subgroup G"
+      ],
+      "premises": [],
+      "body": "(g : G) → (hg : g ∈ ↑H) → g ∈ ↑(Generate ↑H)",
+      "conclusion": "H ≤ Generate ↑H",
+      "statement": "(inst✝ : Group G) (H : Subgroup G) (g : G) (hg : g ∈ ↑H) (h1 : g ∈ ↑(Generate ↑H)) : H ≤ Generate ↑H"
+    },
+    {
+      "fragment_id": 97,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.gpowMap_bijective_of_order_zero",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "x : G",
+        "h : order x = 0",
+        "g : G"
+      ],
+      "premises": [
+        "hg : g ∈ ↑(Pows x)"
+      ],
+      "body": "(a : ℤ) → (ha : gpow x a = g) → gpowMap x a = ⟨g, ⋯⟩",
+      "conclusion": "∃ x_1, gpowMap x x_1 = ⟨g, hg⟩",
+      "statement": "(inst✝ : Group G) (x : G) (h : order x = 0) (g : G) (hg : g ∈ ↑(Pows x)) (a : ℤ) (ha : gpow x a = g) (h1 : gpowMap x a = ⟨g, ⋯⟩) : ∃ x_1, gpowMap x x_1 = ⟨g, hg⟩"
+    },
+    {
+      "fragment_id": 98,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Generate_empty",
+      "scope_vars": [
+        "inst✝ : Group G"
+      ],
+      "premises": [],
+      "body": "True",
+      "conclusion": "Generate ∅ ≤ Minimal G",
+      "statement": "(inst✝ : Group G) : Generate ∅ ≤ Minimal G"
+    },
+    {
+      "fragment_id": 99,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Generate_self_eq_self",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "H : Subgroup G",
+        "g : G",
+        "hg : g ∈ ↑H"
+      ],
+      "premises": [],
+      "body": "(K : Subgroup G) → (hK : ↑H ⊆ ↑K) → g ∈ K",
+      "conclusion": "g ∈ ↑(Generate ↑H)",
+      "statement": "(inst✝ : Group G) (H : Subgroup G) (g : G) (hg : g ∈ ↑H) (K : Subgroup G) (hK : ↑H ⊆ ↑K) (h1 : g ∈ K) : g ∈ ↑(Generate ↑H)"
+    },
+    {
+      "fragment_id": 100,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_eq_Generate_singleton",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "g : G",
+        "hg : g ∈ ↑(Pows x)"
+      ],
+      "premises": [
+        "x : G"
+      ],
+      "body": "(H : Subgroup G) → (hH : {x} ⊆ ↑H) → gpow x a ∈ H",
+      "conclusion": "g ∈ ↑(Generate {x})",
+      "statement": "(inst✝ : Group G) (g : G) (hg : g ∈ ↑(Pows x)) (x : G) (H : Subgroup G) (hH : {x} ⊆ ↑H) (h1 : gpow x a ∈ H) : g ∈ ↑(Generate {x})"
+    },
+    {
+      "fragment_id": 101,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.gpowMap_bijective_of_order_zero",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "h : order x = 0"
+      ],
+      "premises": [
+        "x : G"
+      ],
+      "body": "(g : G) → (hg : g ∈ ↑(Pows x)) → (a : ℤ) → (ha : gpow x a = g) → gpowMap x a = ⟨g, ⋯⟩",
+      "conclusion": "Surjective (gpowMap x)",
+      "statement": "(inst✝ : Group G) (h : order x = 0) (x : G) (g : G) (hg : g ∈ ↑(Pows x)) (a : ℤ) (ha : gpow x a = g) (h1 : gpowMap x a = ⟨g, ⋯⟩) : Surjective (gpowMap x)"
+    },
+    {
+      "fragment_id": 102,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_card_eq_order",
+      "scope_vars": [
+        "inst✝ : Group G"
+      ],
+      "premises": [
+        "x : G"
+      ],
+      "body": "True",
+      "conclusion": "Fin (order x) ≃ ↑↑(Pows x)",
+      "statement": "(inst✝ : Group G) (x : G) : Fin (order x) ≃ ↑↑(Pows x)"
+    },
+    {
+      "fragment_id": 103,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Generate_empty",
+      "scope_vars": [
+        "inst✝ : Group G"
+      ],
+      "premises": [],
+      "body": "True",
+      "conclusion": "Generate ∅ ≤ Minimal G",
+      "statement": "(inst✝ : Group G) : Generate ∅ ≤ Minimal G"
+    },
+    {
+      "fragment_id": 104,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Generate_self_eq_self",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "H : Subgroup G"
+      ],
+      "premises": [],
+      "body": "(g : G) → (hg : g ∈ ↑H) → (K : Subgroup G) → (hK : ↑H ⊆ ↑K) → g ∈ K",
+      "conclusion": "H ≤ Generate ↑H",
+      "statement": "(inst✝ : Group G) (H : Subgroup G) (g : G) (hg : g ∈ ↑H) (K : Subgroup G) (hK : ↑H ⊆ ↑K) (h1 : g ∈ K) : H ≤ Generate ↑H"
+    },
+    {
+      "fragment_id": 105,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_eq_Generate_singleton",
+      "scope_vars": [
+        "inst✝ : Group G"
+      ],
+      "premises": [
+        "x : G"
+      ],
+      "body": "(g : G) → (hg : g ∈ ↑(Pows x)) → (H : Subgroup G) → (hH : {x} ⊆ ↑H) → gpow x a ∈ H",
+      "conclusion": "Pows x ≤ Generate {x}",
+      "statement": "(inst✝ : Group G) (x : G) (g : G) (hg : g ∈ ↑(Pows x)) (H : Subgroup G) (hH : {x} ⊆ ↑H) (h1 : gpow x a ∈ H) : Pows x ≤ Generate {x}"
+    },
+    {
+      "fragment_id": 106,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.gpowMap_bijective_of_order_zero",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "x : G",
+        "h : order x = 0",
+        "g : G",
+        "a : ℤ",
+        "ha : gpow x a = g"
+      ],
+      "premises": [],
+      "body": "⟨gpow x a, ⋯⟩ = ⟨g, ⋯⟩",
+      "conclusion": "gpowMap x a = ⟨g, ⋯⟩",
+      "statement": "(inst✝ : Group G) (x : G) (h : order x = 0) (g : G) (a : ℤ) (ha : gpow x a = g) (h1 : ⟨gpow x a, ⋯⟩ = ⟨g, ⋯⟩) : gpowMap x a = ⟨g, ⋯⟩"
+    },
+    {
+      "fragment_id": 107,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_card_eq_order",
+      "scope_vars": [
+        "inst✝ : Group G"
+      ],
+      "premises": [
+        "x : G"
+      ],
+      "body": "True",
+      "conclusion": "↑↑(Pows x) ≃ Fin (order x)",
+      "statement": "(inst✝ : Group G) (x : G) : ↑↑(Pows x) ≃ Fin (order x)"
+    },
+    {
+      "fragment_id": 108,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_iso_Int_of_zero_order",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "x : G"
+      ],
+      "premises": [
+        "hx : order x = 0"
+      ],
+      "body": "True",
+      "conclusion": "Isomorphism (gpowMap x)",
+      "statement": "(inst✝ : Group G) (x : G) (hx : order x = 0) : Isomorphism (gpowMap x)"
+    },
+    {
+      "fragment_id": 109,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Generate_self_eq_self",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "H : Subgroup G",
+        "g : G",
+        "hg : g ∈ ↑H",
+        "K : Subgroup G"
+      ],
+      "premises": [
+        "hK : ↑H ⊆ ↑K"
+      ],
+      "body": "g ∈ ↑H",
+      "conclusion": "g ∈ K",
+      "statement": "(inst✝ : Group G) (H : Subgroup G) (g : G) (hg : g ∈ ↑H) (K : Subgroup G) (hK : ↑H ⊆ ↑K) (h1 : g ∈ ↑H) : g ∈ K"
+    },
+    {
+      "fragment_id": 110,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_eq_Generate_singleton",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "H : Subgroup G",
+        "hH : {x} ⊆ ↑H"
+      ],
+      "premises": [
+        "x : G",
+        "g : G",
+        "hg : g ∈ ↑(Pows x)"
+      ],
+      "body": "(a : ℤ) → (ha : gpow x a = g) → gpow x a ∈ H",
+      "conclusion": "g ∈ H",
+      "statement": "(inst✝ : Group G) (H : Subgroup G) (hH : {x} ⊆ ↑H) (x : G) (g : G) (hg : g ∈ ↑(Pows x)) (a : ℤ) (ha : gpow x a = g) (h1 : gpow x a ∈ H) : g ∈ H"
+    },
+    {
+      "fragment_id": 111,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.gpowMap_bijective_of_order_zero",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "x : G",
+        "h : order x = 0",
+        "g : G",
+        "ha : gpow x a = g"
+      ],
+      "premises": [
+        "a : ℤ"
+      ],
+      "body": "⟨gpow x a, ⋯⟩ = ⟨g, ⋯⟩",
+      "conclusion": "∃ x_1, gpowMap x x_1 = ⟨g, ⋯⟩",
+      "statement": "(inst✝ : Group G) (x : G) (h : order x = 0) (g : G) (ha : gpow x a = g) (a : ℤ) (h1 : ⟨gpow x a, ⋯⟩ = ⟨g, ⋯⟩) : ∃ x_1, gpowMap x x_1 = ⟨g, ⋯⟩"
+    },
+    {
+      "fragment_id": 112,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_card_eq_order",
+      "scope_vars": [
+        "inst✝ : Group G"
+      ],
+      "premises": [
+        "x : G"
+      ],
+      "body": "True",
+      "conclusion": "Nat.card ↑↑(Pows x) = order x",
+      "statement": "(inst✝ : Group G) (x : G) : Nat.card ↑↑(Pows x) = order x"
+    },
+    {
+      "fragment_id": 113,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Generate_empty",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "g : G"
+      ],
+      "premises": [
+        "hg : g ∈ ↑(Generate ∅)"
+      ],
+      "body": "True",
+      "conclusion": "g ∈ ↑(Minimal G)",
+      "statement": "(inst✝ : Group G) (g : G) (hg : g ∈ ↑(Generate ∅)) : g ∈ ↑(Minimal G)"
+    },
+    {
+      "fragment_id": 114,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Generate_self_eq_self",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "g : G",
+        "hg : g ∈ ↑H"
+      ],
+      "premises": [
+        "H : Subgroup G"
+      ],
+      "body": "(K : Subgroup G) → (hK : ↑H ⊆ ↑K) → g ∈ ↑H",
+      "conclusion": "g ∈ ↑(Generate ↑H)",
+      "statement": "(inst✝ : Group G) (g : G) (hg : g ∈ ↑H) (H : Subgroup G) (K : Subgroup G) (hK : ↑H ⊆ ↑K) (h1 : g ∈ ↑H) : g ∈ ↑(Generate ↑H)"
+    },
+    {
+      "fragment_id": 115,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_eq_Generate_singleton",
+      "scope_vars": [
+        "inst✝ : Group G"
+      ],
+      "premises": [
+        "x : G",
+        "g : G",
+        "hg : g ∈ ↑(Pows x)"
+      ],
+      "body": "(H : Subgroup G) → (hH : {x} ⊆ ↑H) → (a : ℤ) → (ha : gpow x a = g) → gpow x a ∈ H",
+      "conclusion": "g ∈ ↑(Generate {x})",
+      "statement": "(inst✝ : Group G) (x : G) (g : G) (hg : g ∈ ↑(Pows x)) (H : Subgroup G) (hH : {x} ⊆ ↑H) (a : ℤ) (ha : gpow x a = g) (h1 : gpow x a ∈ H) : g ∈ ↑(Generate {x})"
+    },
+    {
+      "fragment_id": 116,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.gpowMap_bijective_of_order_zero",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "x : G",
+        "h : order x = 0",
+        "g : G"
+      ],
+      "premises": [
+        "hg : g ∈ ↑(Pows x)"
+      ],
+      "body": "(a : ℤ) → (ha : gpow x a = g) → ⟨gpow x a, ⋯⟩ = ⟨g, ⋯⟩",
+      "conclusion": "∃ x_1, gpowMap x x_1 = ⟨g, hg⟩",
+      "statement": "(inst✝ : Group G) (x : G) (h : order x = 0) (g : G) (hg : g ∈ ↑(Pows x)) (a : ℤ) (ha : gpow x a = g) (h1 : ⟨gpow x a, ⋯⟩ = ⟨g, ⋯⟩) : ∃ x_1, gpowMap x x_1 = ⟨g, hg⟩"
+    },
+    {
+      "fragment_id": 117,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_card_eq_order",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "x : G"
+      ],
+      "premises": [],
+      "body": "True",
+      "conclusion": "Function.Bijective (finPowMap x (order x))",
+      "statement": "(inst✝ : Group G) (x : G) : Function.Bijective (finPowMap x (order x))"
+    },
+    {
+      "fragment_id": 118,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Generate_self_eq_self",
+      "scope_vars": [
+        "inst✝ : Group G"
+      ],
+      "premises": [
+        "H : Subgroup G"
+      ],
+      "body": "(g : G) → (hg : g ∈ ↑H) → (K : Subgroup G) → (hK : ↑H ⊆ ↑K) → g ∈ ↑H",
+      "conclusion": "H ≤ Generate ↑H",
+      "statement": "(inst✝ : Group G) (H : Subgroup G) (g : G) (hg : g ∈ ↑H) (K : Subgroup G) (hK : ↑H ⊆ ↑K) (h1 : g ∈ ↑H) : H ≤ Generate ↑H"
+    },
+    {
+      "fragment_id": 119,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_eq_Generate_singleton",
+      "scope_vars": [
+        "inst✝ : Group G"
+      ],
+      "premises": [
+        "x : G"
+      ],
+      "body": "(g : G) → (hg : g ∈ ↑(Pows x)) → (H : Subgroup G) → (hH : {x} ⊆ ↑H) → (a : ℤ) → (ha : gpow x a = g) → gpow x a ∈ H",
+      "conclusion": "Pows x ≤ Generate {x}",
+      "statement": "(inst✝ : Group G) (x : G) (g : G) (hg : g ∈ ↑(Pows x)) (H : Subgroup G) (hH : {x} ⊆ ↑H) (a : ℤ) (ha : gpow x a = g) (h1 : gpow x a ∈ H) : Pows x ≤ Generate {x}"
+    },
+    {
+      "fragment_id": 120,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.gpowMap_bijective_of_order_zero",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "h : order x = 0"
+      ],
+      "premises": [
+        "x : G"
+      ],
+      "body": "(g : G) → (hg : g ∈ ↑(Pows x)) → (a : ℤ) → (ha : gpow x a = g) → ⟨gpow x a, ⋯⟩ = ⟨g, ⋯⟩",
+      "conclusion": "Surjective (gpowMap x)",
+      "statement": "(inst✝ : Group G) (h : order x = 0) (x : G) (g : G) (hg : g ∈ ↑(Pows x)) (a : ℤ) (ha : gpow x a = g) (h1 : ⟨gpow x a, ⋯⟩ = ⟨g, ⋯⟩) : Surjective (gpowMap x)"
+    },
+    {
+      "fragment_id": 121,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_card_eq_order",
+      "scope_vars": [
+        "inst✝ : Group G"
+      ],
+      "premises": [
+        "x : G"
+      ],
+      "body": "True",
+      "conclusion": "Fin (order x) ≃ ↑↑(Pows x)",
+      "statement": "(inst✝ : Group G) (x : G) : Fin (order x) ≃ ↑↑(Pows x)"
+    },
+    {
+      "fragment_id": 122,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Generate_empty",
+      "scope_vars": [
+        "inst✝ : Group G"
+      ],
+      "premises": [
+        "g : G",
+        "hg : g ∈ ↑(Generate ∅)"
+      ],
+      "body": "True",
+      "conclusion": "g ∈ ↑(Minimal G)",
+      "statement": "(inst✝ : Group G) (g : G) (hg : g ∈ ↑(Generate ∅)) : g ∈ ↑(Minimal G)"
+    },
+    {
+      "fragment_id": 123,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Generate_self_eq_self",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "H : Subgroup G"
+      ],
+      "premises": [],
+      "body": "True",
+      "conclusion": "Generate ↑H = H",
+      "statement": "(inst✝ : Group G) (H : Subgroup G) : Generate ↑H = H"
+    },
+    {
+      "fragment_id": 124,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_eq_Generate_singleton",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "H : Subgroup G"
+      ],
+      "premises": [
+        "x : G",
+        "g : G",
+        "hg : g ∈ ↑(Pows x)",
+        "hH : {x} ⊆ ↑H"
+      ],
+      "body": "(a : ℤ) → (ha : gpow x a = g) → gpow x a ∈ H",
+      "conclusion": "g ∈ H",
+      "statement": "(inst✝ : Group G) (H : Subgroup G) (x : G) (g : G) (hg : g ∈ ↑(Pows x)) (hH : {x} ⊆ ↑H) (a : ℤ) (ha : gpow x a = g) (h1 : gpow x a ∈ H) : g ∈ H"
+    },
+    {
+      "fragment_id": 125,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.gpowMap_bijective_of_order_zero",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "x : G",
+        "h : order x = 0"
+      ],
+      "premises": [],
+      "body": "True",
+      "conclusion": "Bijective (gpowMap x)",
+      "statement": "(inst✝ : Group G) (x : G) (h : order x = 0) : Bijective (gpowMap x)"
+    },
+    {
+      "fragment_id": 126,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_card_eq_order",
+      "scope_vars": [
+        "inst✝ : Group G"
+      ],
+      "premises": [
+        "x : G"
+      ],
+      "body": "True",
+      "conclusion": "↑↑(Pows x) ≃ Fin (order x)",
+      "statement": "(inst✝ : Group G) (x : G) : ↑↑(Pows x) ≃ Fin (order x)"
+    },
+    {
+      "fragment_id": 127,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Generate_empty",
+      "scope_vars": [
+        "inst✝ : Group G"
+      ],
+      "premises": [],
+      "body": "True",
+      "conclusion": "Generate ∅ ≤ Minimal G",
+      "statement": "(inst✝ : Group G) : Generate ∅ ≤ Minimal G"
+    },
+    {
+      "fragment_id": 128,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Generate_self_eq_self",
+      "scope_vars": [
+        "inst✝ : Group G"
+      ],
+      "premises": [
+        "H : Subgroup G"
+      ],
+      "body": "True",
+      "conclusion": "H ≤ Generate ↑H",
+      "statement": "(inst✝ : Group G) (H : Subgroup G) : H ≤ Generate ↑H"
+    },
+    {
+      "fragment_id": 129,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_eq_Generate_singleton",
+      "scope_vars": [
+        "inst✝ : Group G"
+      ],
+      "premises": [
+        "x : G",
+        "g : G",
+        "hg : g ∈ ↑(Pows x)"
+      ],
+      "body": "(H : Subgroup G) → (hH : {x} ⊆ ↑H) → (a : ℤ) → (ha : gpow x a = g) → gpow x a ∈ H",
+      "conclusion": "g ∈ ↑(Generate {x})",
+      "statement": "(inst✝ : Group G) (x : G) (g : G) (hg : g ∈ ↑(Pows x)) (H : Subgroup G) (hH : {x} ⊆ ↑H) (a : ℤ) (ha : gpow x a = g) (h1 : gpow x a ∈ H) : g ∈ ↑(Generate {x})"
+    },
+    {
+      "fragment_id": 130,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.gpowMap_bijective_of_order_zero",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "x : G",
+        "h : order x = 0"
+      ],
+      "premises": [],
+      "body": "True",
+      "conclusion": "Surjective (gpowMap x)",
+      "statement": "(inst✝ : Group G) (x : G) (h : order x = 0) : Surjective (gpowMap x)"
+    },
+    {
+      "fragment_id": 131,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_card_eq_order",
+      "scope_vars": [
+        "inst✝ : Group G"
+      ],
+      "premises": [
+        "x : G"
+      ],
+      "body": "True",
+      "conclusion": "Nat.card ↑↑(Pows x) = order x",
+      "statement": "(inst✝ : Group G) (x : G) : Nat.card ↑↑(Pows x) = order x"
+    },
+    {
+      "fragment_id": 132,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Generate_empty",
+      "scope_vars": [
+        "inst✝ : Group G"
+      ],
+      "premises": [
+        "g : G",
+        "hg : g ∈ ↑(Generate ∅)"
+      ],
+      "body": "True",
+      "conclusion": "g ∈ ↑(Minimal G)",
+      "statement": "(inst✝ : Group G) (g : G) (hg : g ∈ ↑(Generate ∅)) : g ∈ ↑(Minimal G)"
+    },
+    {
+      "fragment_id": 133,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Generate_self_eq_self",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "H : Subgroup G",
+        "g : G"
+      ],
+      "premises": [
+        "hg : g ∈ ↑H"
+      ],
+      "body": "True",
+      "conclusion": "g ∈ ↑(Generate ↑H)",
+      "statement": "(inst✝ : Group G) (H : Subgroup G) (g : G) (hg : g ∈ ↑H) : g ∈ ↑(Generate ↑H)"
+    },
+    {
+      "fragment_id": 134,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_eq_Generate_singleton",
+      "scope_vars": [
+        "inst✝ : Group G"
+      ],
+      "premises": [
+        "x : G"
+      ],
+      "body": "(g : G) → (hg : g ∈ ↑(Pows x)) → (H : Subgroup G) → (hH : {x} ⊆ ↑H) → (a : ℤ) → (ha : gpow x a = g) → gpow x a ∈ H",
+      "conclusion": "Pows x ≤ Generate {x}",
+      "statement": "(inst✝ : Group G) (x : G) (g : G) (hg : g ∈ ↑(Pows x)) (H : Subgroup G) (hH : {x} ⊆ ↑H) (a : ℤ) (ha : gpow x a = g) (h1 : gpow x a ∈ H) : Pows x ≤ Generate {x}"
+    },
+    {
+      "fragment_id": 135,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.gpowMap_bijective_of_order_zero",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "x : G",
+        "h : order x = 0",
+        "g : G"
+      ],
+      "premises": [
+        "hg : g ∈ ↑(Pows x)"
+      ],
+      "body": "True",
+      "conclusion": "∃ x_1, gpowMap x x_1 = ⟨g, hg⟩",
+      "statement": "(inst✝ : Group G) (x : G) (h : order x = 0) (g : G) (hg : g ∈ ↑(Pows x)) : ∃ x_1, gpowMap x x_1 = ⟨g, hg⟩"
+    },
+    {
+      "fragment_id": 136,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_card_eq_order",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "x : G"
+      ],
+      "premises": [],
+      "body": "Nat.card ↑↑(Pows x) = 0",
+      "conclusion": "Nat.card ↑↑(Pows x) = order x",
+      "statement": "(inst✝ : Group G) (x : G) (h1 : Nat.card ↑↑(Pows x) = 0) : Nat.card ↑↑(Pows x) = order x"
+    },
+    {
+      "fragment_id": 137,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Generate_empty",
+      "scope_vars": [
+        "inst✝ : Group G"
+      ],
+      "premises": [],
+      "body": "True",
+      "conclusion": "Generate ∅ ≤ Minimal G",
+      "statement": "(inst✝ : Group G) : Generate ∅ ≤ Minimal G"
+    },
+    {
+      "fragment_id": 138,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Generate_self_eq_self",
+      "scope_vars": [
+        "inst✝ : Group G"
+      ],
+      "premises": [
+        "H : Subgroup G"
+      ],
+      "body": "True",
+      "conclusion": "H ≤ Generate ↑H",
+      "statement": "(inst✝ : Group G) (H : Subgroup G) : H ≤ Generate ↑H"
+    },
+    {
+      "fragment_id": 139,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_eq_Generate_singleton",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "x : G",
+        "g : G",
+        "hg : g ∈ ↑(Pows x)",
+        "H : Subgroup G",
+        "hH : {x} ⊆ ↑H"
+      ],
+      "premises": [],
+      "body": "x ∈ H",
+      "conclusion": "gpow x a ∈ H",
+      "statement": "(inst✝ : Group G) (x : G) (g : G) (hg : g ∈ ↑(Pows x)) (H : Subgroup G) (hH : {x} ⊆ ↑H) (h1 : x ∈ H) : gpow x a ∈ H"
+    },
+    {
+      "fragment_id": 140,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.gpowMap_bijective_of_order_zero",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "h : order x = 0"
+      ],
+      "premises": [
+        "x : G"
+      ],
+      "body": "True",
+      "conclusion": "Surjective (gpowMap x)",
+      "statement": "(inst✝ : Group G) (h : order x = 0) (x : G) : Surjective (gpowMap x)"
+    },
+    {
+      "fragment_id": 141,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_card_eq_order",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "x : G"
+      ],
+      "premises": [],
+      "body": "(↑(Pows x)).Infinite",
+      "conclusion": "Nat.card ↑↑(Pows x) = 0",
+      "statement": "(inst✝ : Group G) (x : G) (h1 : (↑(Pows x)).Infinite) : Nat.card ↑↑(Pows x) = 0"
+    },
+    {
+      "fragment_id": 142,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Generate_self_eq_self",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "H : Subgroup G",
+        "g : G",
+        "K : Subgroup G"
+      ],
+      "premises": [
+        "hg : g ∈ ↑H",
+        "hK : ↑H ⊆ ↑K"
+      ],
+      "body": "True",
+      "conclusion": "g ∈ K",
+      "statement": "(inst✝ : Group G) (H : Subgroup G) (g : G) (K : Subgroup G) (hg : g ∈ ↑H) (hK : ↑H ⊆ ↑K) : g ∈ K"
+    },
+    {
+      "fragment_id": 143,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_eq_Generate_singleton",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "x : G",
+        "g : G",
+        "hg : g ∈ ↑(Pows x)",
+        "H : Subgroup G"
+      ],
+      "premises": [
+        "hH : {x} ⊆ ↑H"
+      ],
+      "body": "x ∈ H",
+      "conclusion": "gpow x a ∈ H",
+      "statement": "(inst✝ : Group G) (x : G) (g : G) (hg : g ∈ ↑(Pows x)) (H : Subgroup G) (hH : {x} ⊆ ↑H) (h1 : x ∈ H) : gpow x a ∈ H"
+    },
+    {
+      "fragment_id": 144,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.gpowMap_bijective_of_order_zero",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "x : G",
+        "h : order x = 0",
+        "g : G",
+        "ha : gpow x a = g"
+      ],
+      "premises": [
+        "a : ℤ"
+      ],
+      "body": "True",
+      "conclusion": "∃ x_1, gpowMap x x_1 = ⟨g, ⋯⟩",
+      "statement": "(inst✝ : Group G) (x : G) (h : order x = 0) (g : G) (ha : gpow x a = g) (a : ℤ) : ∃ x_1, gpowMap x x_1 = ⟨g, ⋯⟩"
+    },
+    {
+      "fragment_id": 145,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_card_eq_order",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "x : G"
+      ],
+      "premises": [],
+      "body": "(↑(Pows x)).Infinite",
+      "conclusion": "Nat.card ↑↑(Pows x) = order x",
+      "statement": "(inst✝ : Group G) (x : G) (h1 : (↑(Pows x)).Infinite) : Nat.card ↑↑(Pows x) = order x"
+    },
+    {
+      "fragment_id": 146,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Generate_empty",
+      "scope_vars": [
+        "inst✝ : Group G"
+      ],
+      "premises": [],
+      "body": "True",
+      "conclusion": "Generate ∅ ≤ Minimal G",
+      "statement": "(inst✝ : Group G) : Generate ∅ ≤ Minimal G"
+    },
+    {
+      "fragment_id": 147,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Generate_self_eq_self",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "g : G"
+      ],
+      "premises": [
+        "H : Subgroup G",
+        "hg : g ∈ ↑H"
+      ],
+      "body": "True",
+      "conclusion": "g ∈ ↑(Generate ↑H)",
+      "statement": "(inst✝ : Group G) (g : G) (H : Subgroup G) (hg : g ∈ ↑H) : g ∈ ↑(Generate ↑H)"
+    },
+    {
+      "fragment_id": 148,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_eq_Generate_singleton",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "x : G",
+        "g : G",
+        "H : Subgroup G",
+        "hH : {x} ⊆ ↑H"
+      ],
+      "premises": [
+        "hg : g ∈ ↑(Pows x)"
+      ],
+      "body": "(a : ℤ) → (ha : gpow x a = g) → x ∈ H",
+      "conclusion": "gpow x a ∈ H",
+      "statement": "(inst✝ : Group G) (x : G) (g : G) (H : Subgroup G) (hH : {x} ⊆ ↑H) (hg : g ∈ ↑(Pows x)) (a : ℤ) (ha : gpow x a = g) (h1 : x ∈ H) : gpow x a ∈ H"
+    },
+    {
+      "fragment_id": 149,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.gpowMap_bijective_of_order_zero",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "x : G",
+        "h : order x = 0",
+        "g : G"
+      ],
+      "premises": [
+        "hg : g ∈ ↑(Pows x)"
+      ],
+      "body": "True",
+      "conclusion": "∃ x_1, gpowMap x x_1 = ⟨g, hg⟩",
+      "statement": "(inst✝ : Group G) (x : G) (h : order x = 0) (g : G) (hg : g ∈ ↑(Pows x)) : ∃ x_1, gpowMap x x_1 = ⟨g, hg⟩"
+    },
+    {
+      "fragment_id": 150,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_card_eq_order",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "x : G"
+      ],
+      "premises": [
+        "e : ℤ ≃ ↑↑(Pows x)"
+      ],
+      "body": "Infinite ℤ",
+      "conclusion": "(↑(Pows x)).Infinite",
+      "statement": "(inst✝ : Group G) (x : G) (e : ℤ ≃ ↑↑(Pows x)) (h1 : Infinite ℤ) : (↑(Pows x)).Infinite"
+    },
+    {
+      "fragment_id": 151,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Generate_empty",
+      "scope_vars": [
+        "inst✝ : Group G"
+      ],
+      "premises": [],
+      "body": "True",
+      "conclusion": "Generate ∅ = Minimal G",
+      "statement": "(inst✝ : Group G) : Generate ∅ = Minimal G"
+    },
+    {
+      "fragment_id": 152,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_eq_Generate_singleton",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "x : G",
+        "g : G",
+        "H : Subgroup G"
+      ],
+      "premises": [
+        "hg : g ∈ ↑(Pows x)",
+        "hH : {x} ⊆ ↑H"
+      ],
+      "body": "(a : ℤ) → (ha : gpow x a = g) → x ∈ H",
+      "conclusion": "gpow x a ∈ H",
+      "statement": "(inst✝ : Group G) (x : G) (g : G) (H : Subgroup G) (hg : g ∈ ↑(Pows x)) (hH : {x} ⊆ ↑H) (a : ℤ) (ha : gpow x a = g) (h1 : x ∈ H) : gpow x a ∈ H"
+    },
+    {
+      "fragment_id": 153,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.gpowMap_bijective_of_order_zero",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "h : order x = 0"
+      ],
+      "premises": [
+        "x : G"
+      ],
+      "body": "True",
+      "conclusion": "Surjective (gpowMap x)",
+      "statement": "(inst✝ : Group G) (h : order x = 0) (x : G) : Surjective (gpowMap x)"
+    },
+    {
+      "fragment_id": 154,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_eq_Generate_singleton",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "x : G",
+        "g : G",
+        "hg : g ∈ ↑(Pows x)",
+        "H : Subgroup G",
+        "hH : {x} ⊆ ↑H"
+      ],
+      "premises": [],
+      "body": "x ∈ H",
+      "conclusion": "g ∈ H",
+      "statement": "(inst✝ : Group G) (x : G) (g : G) (hg : g ∈ ↑(Pows x)) (H : Subgroup G) (hH : {x} ⊆ ↑H) (h1 : x ∈ H) : g ∈ H"
+    },
+    {
+      "fragment_id": 155,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.gpowMap_bijective_of_order_zero",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "x : G",
+        "h : order x = 0",
+        "g : G",
+        "a : ℤ",
+        "ha : gpow x a = g"
+      ],
+      "premises": [],
+      "body": "True",
+      "conclusion": "gpowMap x a = ⟨g, ⋯⟩",
+      "statement": "(inst✝ : Group G) (x : G) (h : order x = 0) (g : G) (a : ℤ) (ha : gpow x a = g) : gpowMap x a = ⟨g, ⋯⟩"
+    },
+    {
+      "fragment_id": 156,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_card_eq_order",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "x : G"
+      ],
+      "premises": [
+        "e : ℤ ≃ ↑↑(Pows x)"
+      ],
+      "body": "True",
+      "conclusion": "(↑(Pows x)).Infinite",
+      "statement": "(inst✝ : Group G) (x : G) (e : ℤ ≃ ↑↑(Pows x)) : (↑(Pows x)).Infinite"
+    },
+    {
+      "fragment_id": 157,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_eq_Generate_singleton",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "x : G",
+        "g : G",
+        "hg : g ∈ ↑(Pows x)"
+      ],
+      "premises": [],
+      "body": "(H : Subgroup G) → (hH : {x} ⊆ ↑H) → x ∈ H",
+      "conclusion": "g ∈ ↑(Generate {x})",
+      "statement": "(inst✝ : Group G) (x : G) (g : G) (hg : g ∈ ↑(Pows x)) (H : Subgroup G) (hH : {x} ⊆ ↑H) (h1 : x ∈ H) : g ∈ ↑(Generate {x})"
+    },
+    {
+      "fragment_id": 158,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.gpowMap_bijective_of_order_zero",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "x : G",
+        "h : order x = 0",
+        "g : G",
+        "ha : gpow x a = g"
+      ],
+      "premises": [
+        "a : ℤ"
+      ],
+      "body": "True",
+      "conclusion": "∃ x_1, gpowMap x x_1 = ⟨g, ⋯⟩",
+      "statement": "(inst✝ : Group G) (x : G) (h : order x = 0) (g : G) (ha : gpow x a = g) (a : ℤ) : ∃ x_1, gpowMap x x_1 = ⟨g, ⋯⟩"
+    },
+    {
+      "fragment_id": 159,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_card_eq_order",
+      "scope_vars": [
+        "inst✝ : Group G"
+      ],
+      "premises": [
+        "x : G"
+      ],
+      "body": "Function.Bijective (gpowMap x)",
+      "conclusion": "ℤ ≃ ↑↑(Pows x)",
+      "statement": "(inst✝ : Group G) (x : G) (h1 : Function.Bijective (gpowMap x)) : ℤ ≃ ↑↑(Pows x)"
+    },
+    {
+      "fragment_id": 160,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_eq_Generate_singleton",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "x : G"
+      ],
+      "premises": [],
+      "body": "(g : G) → (hg : g ∈ ↑(Pows x)) → (H : Subgroup G) → (hH : {x} ⊆ ↑H) → x ∈ H",
+      "conclusion": "Pows x ≤ Generate {x}",
+      "statement": "(inst✝ : Group G) (x : G) (g : G) (hg : g ∈ ↑(Pows x)) (H : Subgroup G) (hH : {x} ⊆ ↑H) (h1 : x ∈ H) : Pows x ≤ Generate {x}"
+    },
+    {
+      "fragment_id": 161,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.gpowMap_bijective_of_order_zero",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "x : G",
+        "h : order x = 0",
+        "g : G"
+      ],
+      "premises": [
+        "hg : g ∈ ↑(Pows x)"
+      ],
+      "body": "True",
+      "conclusion": "∃ x_1, gpowMap x x_1 = ⟨g, hg⟩",
+      "statement": "(inst✝ : Group G) (x : G) (h : order x = 0) (g : G) (hg : g ∈ ↑(Pows x)) : ∃ x_1, gpowMap x x_1 = ⟨g, hg⟩"
+    },
+    {
+      "fragment_id": 162,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_card_eq_order",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "x : G"
+      ],
+      "premises": [],
+      "body": "order x = 0",
+      "conclusion": "Function.Bijective (gpowMap x)",
+      "statement": "(inst✝ : Group G) (x : G) (h1 : order x = 0) : Function.Bijective (gpowMap x)"
+    },
+    {
+      "fragment_id": 163,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_eq_Generate_singleton",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "x : G",
+        "g : G",
+        "hg : g ∈ ↑(Pows x)",
+        "H : Subgroup G"
+      ],
+      "premises": [
+        "hH : {x} ⊆ ↑H"
+      ],
+      "body": "x ∈ H",
+      "conclusion": "g ∈ H",
+      "statement": "(inst✝ : Group G) (x : G) (g : G) (hg : g ∈ ↑(Pows x)) (H : Subgroup G) (hH : {x} ⊆ ↑H) (h1 : x ∈ H) : g ∈ H"
+    },
+    {
+      "fragment_id": 164,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.gpowMap_bijective_of_order_zero",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "h : order x = 0"
+      ],
+      "premises": [
+        "x : G"
+      ],
+      "body": "True",
+      "conclusion": "Surjective (gpowMap x)",
+      "statement": "(inst✝ : Group G) (h : order x = 0) (x : G) : Surjective (gpowMap x)"
+    },
+    {
+      "fragment_id": 165,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_card_eq_order",
+      "scope_vars": [
+        "inst✝ : Group G"
+      ],
+      "premises": [
+        "x : G"
+      ],
+      "body": "order x = 0",
+      "conclusion": "ℤ ≃ ↑↑(Pows x)",
+      "statement": "(inst✝ : Group G) (x : G) (h1 : order x = 0) : ℤ ≃ ↑↑(Pows x)"
+    },
+    {
+      "fragment_id": 166,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_eq_Generate_singleton",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "g : G",
+        "hg : g ∈ ↑(Pows x)"
+      ],
+      "premises": [
+        "x : G"
+      ],
+      "body": "(H : Subgroup G) → (hH : {x} ⊆ ↑H) → x ∈ H",
+      "conclusion": "g ∈ ↑(Generate {x})",
+      "statement": "(inst✝ : Group G) (g : G) (hg : g ∈ ↑(Pows x)) (x : G) (H : Subgroup G) (hH : {x} ⊆ ↑H) (h1 : x ∈ H) : g ∈ ↑(Generate {x})"
+    },
+    {
+      "fragment_id": 167,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_eq_Generate_singleton",
+      "scope_vars": [
+        "inst✝ : Group G"
+      ],
+      "premises": [
+        "x : G"
+      ],
+      "body": "(g : G) → (hg : g ∈ ↑(Pows x)) → (H : Subgroup G) → (hH : {x} ⊆ ↑H) → x ∈ H",
+      "conclusion": "Pows x ≤ Generate {x}",
+      "statement": "(inst✝ : Group G) (x : G) (g : G) (hg : g ∈ ↑(Pows x)) (H : Subgroup G) (hH : {x} ⊆ ↑H) (h1 : x ∈ H) : Pows x ≤ Generate {x}"
+    },
+    {
+      "fragment_id": 168,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_card_eq_order",
+      "scope_vars": [
+        "inst✝ : Group G"
+      ],
+      "premises": [
+        "x : G"
+      ],
+      "body": "True",
+      "conclusion": "(↑(Pows x)).Infinite",
+      "statement": "(inst✝ : Group G) (x : G) : (↑(Pows x)).Infinite"
+    },
+    {
+      "fragment_id": 169,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_eq_Generate_singleton",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "H : Subgroup G",
+        "hH : {x} ⊆ ↑H"
+      ],
+      "premises": [
+        "x : G",
+        "g : G",
+        "hg : g ∈ ↑(Pows x)"
+      ],
+      "body": "(a : ℤ) → (ha : gpow x a = g) → x ∈ H",
+      "conclusion": "g ∈ H",
+      "statement": "(inst✝ : Group G) (H : Subgroup G) (hH : {x} ⊆ ↑H) (x : G) (g : G) (hg : g ∈ ↑(Pows x)) (a : ℤ) (ha : gpow x a = g) (h1 : x ∈ H) : g ∈ H"
+    },
+    {
+      "fragment_id": 170,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_card_eq_order",
+      "scope_vars": [
+        "inst✝ : Group G"
+      ],
+      "premises": [
+        "x : G"
+      ],
+      "body": "True",
+      "conclusion": "Nat.card ↑↑(Pows x) = 0",
+      "statement": "(inst✝ : Group G) (x : G) : Nat.card ↑↑(Pows x) = 0"
+    },
+    {
+      "fragment_id": 171,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_eq_Generate_singleton",
+      "scope_vars": [
+        "inst✝ : Group G"
+      ],
+      "premises": [
+        "x : G",
+        "g : G",
+        "hg : g ∈ ↑(Pows x)"
+      ],
+      "body": "(H : Subgroup G) → (hH : {x} ⊆ ↑H) → (a : ℤ) → (ha : gpow x a = g) → x ∈ H",
+      "conclusion": "g ∈ ↑(Generate {x})",
+      "statement": "(inst✝ : Group G) (x : G) (g : G) (hg : g ∈ ↑(Pows x)) (H : Subgroup G) (hH : {x} ⊆ ↑H) (a : ℤ) (ha : gpow x a = g) (h1 : x ∈ H) : g ∈ ↑(Generate {x})"
+    },
+    {
+      "fragment_id": 172,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_eq_Generate_singleton",
+      "scope_vars": [
+        "inst✝ : Group G"
+      ],
+      "premises": [
+        "x : G"
+      ],
+      "body": "(g : G) → (hg : g ∈ ↑(Pows x)) → (H : Subgroup G) → (hH : {x} ⊆ ↑H) → (a : ℤ) → (ha : gpow x a = g) → x ∈ H",
+      "conclusion": "Pows x ≤ Generate {x}",
+      "statement": "(inst✝ : Group G) (x : G) (g : G) (hg : g ∈ ↑(Pows x)) (H : Subgroup G) (hH : {x} ⊆ ↑H) (a : ℤ) (ha : gpow x a = g) (h1 : x ∈ H) : Pows x ≤ Generate {x}"
+    },
+    {
+      "fragment_id": 173,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_eq_Generate_singleton",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "H : Subgroup G"
+      ],
+      "premises": [
+        "x : G",
+        "g : G",
+        "hg : g ∈ ↑(Pows x)",
+        "hH : {x} ⊆ ↑H"
+      ],
+      "body": "(a : ℤ) → (ha : gpow x a = g) → x ∈ H",
+      "conclusion": "g ∈ H",
+      "statement": "(inst✝ : Group G) (H : Subgroup G) (x : G) (g : G) (hg : g ∈ ↑(Pows x)) (hH : {x} ⊆ ↑H) (a : ℤ) (ha : gpow x a = g) (h1 : x ∈ H) : g ∈ H"
+    },
+    {
+      "fragment_id": 174,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_eq_Generate_singleton",
+      "scope_vars": [
+        "inst✝ : Group G"
+      ],
+      "premises": [
+        "x : G"
+      ],
+      "body": "(g : G) → (hg : g ∈ ↑(Pows x)) → (H : Subgroup G) → (hH : {x} ⊆ ↑H) → (a : ℤ) → (ha : gpow x a = g) → x ∈ H",
+      "conclusion": "Pows x ≤ Generate {x}",
+      "statement": "(inst✝ : Group G) (x : G) (g : G) (hg : g ∈ ↑(Pows x)) (H : Subgroup G) (hH : {x} ⊆ ↑H) (a : ℤ) (ha : gpow x a = g) (h1 : x ∈ H) : Pows x ≤ Generate {x}"
+    },
+    {
+      "fragment_id": 175,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_card_eq_order",
+      "scope_vars": [
+        "inst✝ : Group G"
+      ],
+      "premises": [
+        "x : G"
+      ],
+      "body": "True",
+      "conclusion": "ℤ ≃ ↑↑(Pows x)",
+      "statement": "(inst✝ : Group G) (x : G) : ℤ ≃ ↑↑(Pows x)"
+    },
+    {
+      "fragment_id": 176,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_eq_Generate_singleton",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "x : G"
+      ],
+      "premises": [],
+      "body": "True",
+      "conclusion": "Pows x = Generate {x}",
+      "statement": "(inst✝ : Group G) (x : G) : Pows x = Generate {x}"
+    },
+    {
+      "fragment_id": 177,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_eq_Generate_singleton",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "x : G"
+      ],
+      "premises": [],
+      "body": "True",
+      "conclusion": "Pows x ≤ Generate {x}",
+      "statement": "(inst✝ : Group G) (x : G) : Pows x ≤ Generate {x}"
+    },
+    {
+      "fragment_id": 178,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_eq_Generate_singleton",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "g : G",
+        "hg : g ∈ ↑(Pows x)"
+      ],
+      "premises": [
+        "x : G"
+      ],
+      "body": "True",
+      "conclusion": "g ∈ ↑(Generate {x})",
+      "statement": "(inst✝ : Group G) (g : G) (hg : g ∈ ↑(Pows x)) (x : G) : g ∈ ↑(Generate {x})"
+    },
+    {
+      "fragment_id": 179,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_eq_Generate_singleton",
+      "scope_vars": [
+        "inst✝ : Group G"
+      ],
+      "premises": [
+        "x : G"
+      ],
+      "body": "True",
+      "conclusion": "Pows x ≤ Generate {x}",
+      "statement": "(inst✝ : Group G) (x : G) : Pows x ≤ Generate {x}"
+    },
+    {
+      "fragment_id": 180,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_eq_Generate_singleton",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "g : G",
+        "hg : g ∈ ↑(Pows x)"
+      ],
+      "premises": [
+        "x : G"
+      ],
+      "body": "True",
+      "conclusion": "g ∈ ↑(Generate {x})",
+      "statement": "(inst✝ : Group G) (g : G) (hg : g ∈ ↑(Pows x)) (x : G) : g ∈ ↑(Generate {x})"
+    },
+    {
+      "fragment_id": 181,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_eq_Generate_singleton",
+      "scope_vars": [
+        "inst✝ : Group G"
+      ],
+      "premises": [
+        "x : G"
+      ],
+      "body": "True",
+      "conclusion": "Pows x ≤ Generate {x}",
+      "statement": "(inst✝ : Group G) (x : G) : Pows x ≤ Generate {x}"
+    },
+    {
+      "fragment_id": 182,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_eq_Generate_singleton",
+      "scope_vars": [
+        "inst✝ : Group G"
+      ],
+      "premises": [
+        "x : G"
+      ],
+      "body": "True",
+      "conclusion": "Pows x ≤ Generate {x}",
+      "statement": "(inst✝ : Group G) (x : G) : Pows x ≤ Generate {x}"
+    },
+    {
+      "fragment_id": 183,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_card_eq_order",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "x : G"
+      ],
+      "premises": [],
+      "body": "True",
+      "conclusion": "Function.Bijective (gpowMap x)",
+      "statement": "(inst✝ : Group G) (x : G) : Function.Bijective (gpowMap x)"
+    },
+    {
+      "fragment_id": 184,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_eq_Generate_singleton",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "g : G"
+      ],
+      "premises": [
+        "x : G",
+        "hg : g ∈ ↑(Pows x)"
+      ],
+      "body": "True",
+      "conclusion": "g ∈ ↑(Generate {x})",
+      "statement": "(inst✝ : Group G) (g : G) (x : G) (hg : g ∈ ↑(Pows x)) : g ∈ ↑(Generate {x})"
+    },
+    {
+      "fragment_id": 185,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_eq_Generate_singleton",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "g : G"
+      ],
+      "premises": [
+        "x : G",
+        "hg : g ∈ ↑(Pows x)"
+      ],
+      "body": "True",
+      "conclusion": "g ∈ ↑(Generate {x})",
+      "statement": "(inst✝ : Group G) (g : G) (x : G) (hg : g ∈ ↑(Pows x)) : g ∈ ↑(Generate {x})"
+    },
+    {
+      "fragment_id": 186,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_eq_Generate_singleton",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "x : G",
+        "g : G",
+        "hg : g ∈ ↑(Pows x)",
+        "H : Subgroup G"
+      ],
+      "premises": [
+        "hH : {x} ⊆ ↑H"
+      ],
+      "body": "True",
+      "conclusion": "g ∈ H",
+      "statement": "(inst✝ : Group G) (x : G) (g : G) (hg : g ∈ ↑(Pows x)) (H : Subgroup G) (hH : {x} ⊆ ↑H) : g ∈ H"
+    },
+    {
+      "fragment_id": 187,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_eq_Generate_singleton",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "g : G",
+        "hg : g ∈ ↑(Pows x)"
+      ],
+      "premises": [
+        "x : G",
+        "H : Subgroup G",
+        "hH : {x} ⊆ ↑H"
+      ],
+      "body": "True",
+      "conclusion": "g ∈ H",
+      "statement": "(inst✝ : Group G) (g : G) (hg : g ∈ ↑(Pows x)) (x : G) (H : Subgroup G) (hH : {x} ⊆ ↑H) : g ∈ H"
+    },
+    {
+      "fragment_id": 188,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_eq_Generate_singleton",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "g : G",
+        "hg : g ∈ ↑(Pows x)"
+      ],
+      "premises": [
+        "x : G"
+      ],
+      "body": "True",
+      "conclusion": "g ∈ ↑(Generate {x})",
+      "statement": "(inst✝ : Group G) (g : G) (hg : g ∈ ↑(Pows x)) (x : G) : g ∈ ↑(Generate {x})"
+    },
+    {
+      "fragment_id": 189,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_eq_Generate_singleton",
+      "scope_vars": [
+        "inst✝ : Group G"
+      ],
+      "premises": [
+        "x : G"
+      ],
+      "body": "True",
+      "conclusion": "Pows x ≤ Generate {x}",
+      "statement": "(inst✝ : Group G) (x : G) : Pows x ≤ Generate {x}"
+    },
+    {
+      "fragment_id": 190,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_eq_Generate_singleton",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "H : Subgroup G"
+      ],
+      "premises": [
+        "x : G",
+        "g : G",
+        "hg : g ∈ ↑(Pows x)",
+        "hH : {x} ⊆ ↑H"
+      ],
+      "body": "True",
+      "conclusion": "g ∈ H",
+      "statement": "(inst✝ : Group G) (H : Subgroup G) (x : G) (g : G) (hg : g ∈ ↑(Pows x)) (hH : {x} ⊆ ↑H) : g ∈ H"
+    },
+    {
+      "fragment_id": 191,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_eq_Generate_singleton",
+      "scope_vars": [
+        "inst✝ : Group G"
+      ],
+      "premises": [
+        "x : G",
+        "g : G",
+        "hg : g ∈ ↑(Pows x)"
+      ],
+      "body": "True",
+      "conclusion": "g ∈ ↑(Generate {x})",
+      "statement": "(inst✝ : Group G) (x : G) (g : G) (hg : g ∈ ↑(Pows x)) : g ∈ ↑(Generate {x})"
+    },
+    {
+      "fragment_id": 192,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_eq_Generate_singleton",
+      "scope_vars": [
+        "inst✝ : Group G"
+      ],
+      "premises": [
+        "x : G",
+        "g : G",
+        "hg : g ∈ ↑(Pows x)",
+        "H : Subgroup G",
+        "hH : {x} ⊆ ↑H"
+      ],
+      "body": "True",
+      "conclusion": "g ∈ H",
+      "statement": "(inst✝ : Group G) (x : G) (g : G) (hg : g ∈ ↑(Pows x)) (H : Subgroup G) (hH : {x} ⊆ ↑H) : g ∈ H"
+    },
+    {
+      "fragment_id": 193,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_eq_Generate_singleton",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "x : G",
+        "g : G",
+        "hg : g ∈ ↑(Pows x)",
+        "H : Subgroup G"
+      ],
+      "premises": [
+        "hH : {x} ⊆ ↑H"
+      ],
+      "body": "True",
+      "conclusion": "gpow x a ∈ H",
+      "statement": "(inst✝ : Group G) (x : G) (g : G) (hg : g ∈ ↑(Pows x)) (H : Subgroup G) (hH : {x} ⊆ ↑H) : gpow x a ∈ H"
+    },
+    {
+      "fragment_id": 194,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_eq_Generate_singleton",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "g : G",
+        "hg : g ∈ ↑(Pows x)"
+      ],
+      "premises": [
+        "x : G",
+        "H : Subgroup G",
+        "hH : {x} ⊆ ↑H"
+      ],
+      "body": "True",
+      "conclusion": "gpow x a ∈ H",
+      "statement": "(inst✝ : Group G) (g : G) (hg : g ∈ ↑(Pows x)) (x : G) (H : Subgroup G) (hH : {x} ⊆ ↑H) : gpow x a ∈ H"
+    },
+    {
+      "fragment_id": 195,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_eq_Generate_singleton",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "x : G",
+        "g : G",
+        "H : Subgroup G"
+      ],
+      "premises": [
+        "hg : g ∈ ↑(Pows x)",
+        "hH : {x} ⊆ ↑H"
+      ],
+      "body": "True",
+      "conclusion": "gpow x a ∈ H",
+      "statement": "(inst✝ : Group G) (x : G) (g : G) (H : Subgroup G) (hg : g ∈ ↑(Pows x)) (hH : {x} ⊆ ↑H) : gpow x a ∈ H"
+    },
+    {
+      "fragment_id": 196,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_eq_Generate_singleton",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "g : G"
+      ],
+      "premises": [
+        "x : G",
+        "hg : g ∈ ↑(Pows x)",
+        "H : Subgroup G",
+        "hH : {x} ⊆ ↑H"
+      ],
+      "body": "True",
+      "conclusion": "gpow x a ∈ H",
+      "statement": "(inst✝ : Group G) (g : G) (x : G) (hg : g ∈ ↑(Pows x)) (H : Subgroup G) (hH : {x} ⊆ ↑H) : gpow x a ∈ H"
+    },
+    {
+      "fragment_id": 197,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_eq_Generate_singleton",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "x : G"
+      ],
+      "premises": [],
+      "body": "(g : G) → (hg : g ∈ ↑(Generate {x})) → g ∈ ↑(Pows x)",
+      "conclusion": "Generate {x} ≤ Pows x",
+      "statement": "(inst✝ : Group G) (x : G) (g : G) (hg : g ∈ ↑(Generate {x})) (h1 : g ∈ ↑(Pows x)) : Generate {x} ≤ Pows x"
+    },
+    {
+      "fragment_id": 198,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_eq_Generate_singleton",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "x : G",
+        "g : G",
+        "hg : g ∈ ↑(Generate {x})"
+      ],
+      "premises": [],
+      "body": "∃ a, gpow x a = g",
+      "conclusion": "g ∈ ↑(Pows x)",
+      "statement": "(inst✝ : Group G) (x : G) (g : G) (hg : g ∈ ↑(Generate {x})) (h1 : ∃ a, gpow x a = g) : g ∈ ↑(Pows x)"
+    },
+    {
+      "fragment_id": 199,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_eq_Generate_singleton",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "x : G"
+      ],
+      "premises": [],
+      "body": "(g : G) → (hg : g ∈ ↑(Generate {x})) → ∃ a, gpow x a = g",
+      "conclusion": "Generate {x} ≤ Pows x",
+      "statement": "(inst✝ : Group G) (x : G) (g : G) (hg : g ∈ ↑(Generate {x})) (h1 : ∃ a, gpow x a = g) : Generate {x} ≤ Pows x"
+    },
+    {
+      "fragment_id": 200,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_eq_Generate_singleton",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "x : G",
+        "g : G",
+        "hg : g ∈ ↑(Generate {x})"
+      ],
+      "premises": [],
+      "body": "x ∈ ↑(Pows x)",
+      "conclusion": "{x} ⊆ ↑(Pows x)",
+      "statement": "(inst✝ : Group G) (x : G) (g : G) (hg : g ∈ ↑(Generate {x})) (h1 : x ∈ ↑(Pows x)) : {x} ⊆ ↑(Pows x)"
+    },
+    {
+      "fragment_id": 201,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_eq_Generate_singleton",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "x : G"
+      ],
+      "premises": [],
+      "body": "True",
+      "conclusion": "Pows x = Generate {x}",
+      "statement": "(inst✝ : Group G) (x : G) : Pows x = Generate {x}"
+    },
+    {
+      "fragment_id": 202,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_eq_Generate_singleton",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "g : G",
+        "n : ℤ",
+        "hn : gpow x n = g"
+      ],
+      "premises": [
+        "x : G"
+      ],
+      "body": "True",
+      "conclusion": "∃ a, gpow x a = g",
+      "statement": "(inst✝ : Group G) (g : G) (n : ℤ) (hn : gpow x n = g) (x : G) : ∃ a, gpow x a = g"
+    },
+    {
+      "fragment_id": 203,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_eq_Generate_singleton",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "g : G",
+        "n : ℤ",
+        "hn : gpow x n = g"
+      ],
+      "premises": [
+        "x : G"
+      ],
+      "body": "True",
+      "conclusion": "g ∈ ↑(Pows x)",
+      "statement": "(inst✝ : Group G) (g : G) (n : ℤ) (hn : gpow x n = g) (x : G) : g ∈ ↑(Pows x)"
+    },
+    {
+      "fragment_id": 204,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_eq_Generate_singleton",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "g : G"
+      ],
+      "premises": [
+        "x : G",
+        "hg : g ∈ ↑(Generate {x})"
+      ],
+      "body": "True",
+      "conclusion": "∃ a, gpow x a = g",
+      "statement": "(inst✝ : Group G) (g : G) (x : G) (hg : g ∈ ↑(Generate {x})) : ∃ a, gpow x a = g"
+    },
+    {
+      "fragment_id": 205,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_eq_Generate_singleton",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "g : G"
+      ],
+      "premises": [
+        "x : G",
+        "hg : g ∈ ↑(Generate {x})"
+      ],
+      "body": "True",
+      "conclusion": "g ∈ ↑(Pows x)",
+      "statement": "(inst✝ : Group G) (g : G) (x : G) (hg : g ∈ ↑(Generate {x})) : g ∈ ↑(Pows x)"
+    },
+    {
+      "fragment_id": 206,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_eq_Generate_singleton",
+      "scope_vars": [
+        "inst✝ : Group G"
+      ],
+      "premises": [
+        "x : G"
+      ],
+      "body": "True",
+      "conclusion": "Generate {x} ≤ Pows x",
+      "statement": "(inst✝ : Group G) (x : G) : Generate {x} ≤ Pows x"
+    },
+    {
+      "fragment_id": 207,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_eq_Generate_singleton",
+      "scope_vars": [
+        "inst✝ : Group G"
+      ],
+      "premises": [
+        "x : G",
+        "g : G",
+        "hg : g ∈ ↑(Generate {x})"
+      ],
+      "body": "True",
+      "conclusion": "∃ a, gpow x a = g",
+      "statement": "(inst✝ : Group G) (x : G) (g : G) (hg : g ∈ ↑(Generate {x})) : ∃ a, gpow x a = g"
+    },
+    {
+      "fragment_id": 208,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_eq_Generate_singleton",
+      "scope_vars": [
+        "inst✝ : Group G"
+      ],
+      "premises": [
+        "x : G",
+        "g : G",
+        "hg : g ∈ ↑(Generate {x})"
+      ],
+      "body": "True",
+      "conclusion": "g ∈ ↑(Pows x)",
+      "statement": "(inst✝ : Group G) (x : G) (g : G) (hg : g ∈ ↑(Generate {x})) : g ∈ ↑(Pows x)"
+    },
+    {
+      "fragment_id": 209,
+      "source_file": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "decl_name": "AlgebraInLean.Pows_eq_Generate_singleton",
+      "scope_vars": [
+        "inst✝ : Group G",
+        "x : G",
+        "g : G",
+        "hg : g ∈ ↑(Generate {x})"
+      ],
+      "premises": [],
+      "body": "True",
+      "conclusion": "{x} ⊆ ↑(Pows x)",
+      "statement": "(inst✝ : Group G) (x : G) (g : G) (hg : g ∈ ↑(Generate {x})) : {x} ⊆ ↑(Pows x)"
+    }
+  ]
+}

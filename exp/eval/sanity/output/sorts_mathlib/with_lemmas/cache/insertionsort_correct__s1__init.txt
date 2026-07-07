@@ -1,0 +1,122 @@
+theorem:  insertionsort_correct
+sample:   1
+attempt:  init
+
+[proof]
+intro l
+induction l with
+| nil =>
+  constructor
+  · simp [insertionsort, Sorted.nil]
+  · exact lemma_hint_21
+| cons x xs ih =>
+  rcases ih with ⟨hs, hp⟩
+  constructor
+  ·
+    have hins : ∀ ys, Sorted ys → Sorted (insert_ x ys) := by
+      intro ys hy
+      induction hy with
+      | nil =>
+        simp [insert_]
+        exact Sorted.singleton
+      | singleton =>
+        simp [insert_]
+        by_cases h : x < x_1
+        · simp [h]
+          exact Sorted.cons Sorted.singleton (by intro hx; exact h hx)
+        · simp [h]
+          exact Sorted.cons Sorted.singleton h
+      | @cons a b xs hsrt hab ihs =>
+        simp [insert_]
+        by_cases hax : x < a
+        · simp [hax]
+          exact Sorted.cons (Sorted.cons hsrt hab) (by intro hx; exact hax hx)
+        · simp [hax]
+          by_cases hxb : x < b
+          · exact lemma_hint_28 a x hax b xs (Sorted.cons hsrt hab) (ihs hsrt) hxb
+          · have htail : Sorted (b :: xs) := hsrt
+            have hinsTail : Sorted (insert_ x (b :: xs)) := ihs hsrt
+            exact Sorted.cons hinsTail (by
+              intro hba
+              exact hxb ((lt_of_not_lt hab) hba))
+    exact hins _ hs
+  · exact lemma_hint_3 x xs
+
+[lean error]
+location:
+              simp [insert_]
+              by_cases h : x < x_1
+                              ^
+              · simp [h]
+error: error(lean.unknownIdentifier): Unknown identifier `x_1`
+
+location:
+              by_cases h : x < x_1
+              · simp [h]
+               ^
+                exact Sorted.cons Sorted.singleton (by intro hx; exact h hx)
+error: `simp` made no progress
+
+location:
+                exact Sorted.cons Sorted.singleton (by intro hx; exact h hx)
+              · simp [h]
+               ^
+                exact Sorted.cons Sorted.singleton h
+error: `simp` made no progress
+
+location:
+              · simp [hax]
+                exact Sorted.cons (Sorted.cons hsrt hab) (by intro hx; exact hax hx)
+                                                                            ^
+              · simp [hax]
+error: Function expected at
+  hax
+but this term has type
+  x < a
+Note: Expected a function because this term is being applied to the argument
+  hx
+
+location:
+                by_cases hxb : x < b
+                · exact lemma_hint_28 a x hax b xs (Sorted.cons hsrt hab) (ihs hsrt) hxb
+                                                                          ^
+                · have htail : Sorted (b :: xs) := hsrt
+error: Function expected at
+  ihs
+but this term has type
+  Sorted (insert_ x (b :: xs))
+Note: Expected a function because this term is being applied to the argument
+  hsrt
+
+location:
+                · have htail : Sorted (b :: xs) := hsrt
+                  have hinsTail : Sorted (insert_ x (b :: xs)) := ihs hsrt
+                                                                 ^
+                  exact Sorted.cons hinsTail (by
+error: Function expected at
+  ihs
+but this term has type
+  Sorted (insert_ x (b :: xs))
+Note: Expected a function because this term is being applied to the argument
+  hsrt
+
+location:
+                  have hinsTail : Sorted (insert_ x (b :: xs)) := ihs hsrt
+                  exact Sorted.cons hinsTail (by
+                                   ^
+                    intro hba
+error: Application type mismatch: The argument
+  hinsTail
+has type
+  Sorted (insert_ x (b :: xs))
+but is expected to have type
+  Sorted (?m.165 :: ?m.166)
+in the application
+  Sorted.cons hinsTail
+
+location:
+                    intro hba
+                    exact hxb ((lt_of_not_lt hab) hba))
+                               ^
+          exact hins _ hs
+error: error(lean.unknownIdentifier): Unknown identifier `lt_of_not_lt`

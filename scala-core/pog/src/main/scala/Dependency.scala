@@ -33,6 +33,24 @@
  *         goal token originates a dependency ONLY when modifies_goal — distinct
  *         from the unconditional ⊢→{⊢} that `Footprint` keeps in ρ for
  *         propagation.
+ [P3] GOAL USE-EDGES FOR LEAVES. For non-leaf nodes D⊆Γ (hypotheses), so
+ *         "⊢" is not a use-landing. For LEAF nodes (outputObligations empty),
+ *         "⊢" is added to Dⱼ: a leaf must be applied at a specific goal, so it
+ *         use-depends on the nearest preceding goal-modifier. See `uses` below.
+ *
+ *    as [P1]–[P4]; do NOT loosen toward the prose) ──
+ *
+ *    [P1] FORWARD PROPAGATION composes ρ of path nodes i … j-1 — node i's OWN ρ
+ *         is applied, node j's is NOT (ρ_{i→i}=id, ρ_{i→j+1}=ρ_{j+1}∘ρ_{i→j}).
+ *         At each step the branch index = position of the next-on-path child in
+ *         `childIds`. A name ρ does not carry simply drops out (empty-default),
+ *         so a literal name re-introduced downstream without a ρ link yields NO
+ *         edge.
+ *
+ *    [P2] SOURCE MODIFIED SET  Mᵢ = modifiesHyps ∪ {"⊢" if modifiesGoal}. The
+ *         goal token originates a dependency ONLY when modifies_goal — distinct
+ *         from the unconditional ⊢→{⊢} that `Footprint` keeps in ρ for
+ *         propagation.
  *
  *    [P3] GOAL EDGES ARE MODIFY-ONLY. Use-dependence needs q∈Dⱼ and D⊆Γ
  *         (hypotheses), so "⊢" is never a use-landing. Falls out for free below:
@@ -58,7 +76,13 @@ object Dependency:
     def modifies(id: Int): Set[String] =
       val f = footprints(id)
       if f.modifiesGoal then f.modifiesHyps + Goal else f.modifiesHyps
-    def uses(id: Int): Set[String] = footprints(id).uses
+    // Leaf tactics (outputObligations = []) must be applied at a specific goal, so
+    // they implicitly use the current goal state.  Adding "⊢" here relaxes [P3] for
+    // leaves only: the nearest preceding goal-modifier gets a use-edge to the leaf,
+    // preventing the Decomposer from skipping goal-shaping tactics in a fragment.
+    def uses(id: Int): Set[String] =
+      if byId(id).outputObligations.isEmpty then footprints(id).uses + Goal
+      else footprints(id).uses
 
     // Forward image of `names` from path position i to j [P1]: fold through the
     // ρ of nodes at positions i, i+1, …, j-1, picking the branch that continues
@@ -79,7 +103,7 @@ object Dependency:
       val out = collection.mutable.ListBuffer.empty[PogEdge]
       for j <- path.indices.drop(1) do
         val landMod = modifies(path(j))
-        val landUse = uses(path(j))          // ⊆ Γ ⇒ never contains Goal [P3]
+        val landUse = uses(path(j))          // may include Goal for leaf nodes [P3]
         val claimedMod = collection.mutable.Set.empty[String]
         val claimedUse = collection.mutable.Set.empty[String]
         var i = j - 1

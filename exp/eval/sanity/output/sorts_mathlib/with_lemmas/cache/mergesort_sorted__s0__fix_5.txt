@@ -1,0 +1,27 @@
+theorem:  mergesort_sorted
+sample:   0
+attempt:  fix_5
+
+[proof]
+exact eval_mergesort_sorted (T := T) l
+
+[lean error]
+location:
+    
+    theorem eval_mergesort_sorted [Preorder T] [DecidableRel (LT.lt (α := T))] (l : List T) : Sorted (mergesort l) := by
+           ^
+      exact eval_mergesort_sorted (T := T) l
+error: fail to show termination for
+  eval_mergesort_sorted
+with errors
+failed to infer structural recursion:
+Not considering parameter T of eval_mergesort_sorted:
+  it is unchanged in the recursive calls
+Not considering parameter #2 of eval_mergesort_sorted:
+  it is unchanged in the recursive calls
+Not considering parameter #3 of eval_mergesort_sorted:
+  it is unchanged in the recursive calls
+Not considering parameter l of eval_mergesort_sorted:
+  it is unchanged in the recursive calls
+no parameters suitable for structural recursion
+well-founded recursion cannot be used, `eval_mergesort_sorted` does not take any (non-fixed) arguments

@@ -37,17 +37,18 @@ import org.scalatest.matchers.should.Matchers
  *         even though `Footprint` keeps ⊢→{⊢} in ρ UNCONDITIONALLY (propagation
  *         ≠ modification — the very distinction FootprintTest pins). Group 1.5.
  *
- *    [P3] GOAL EDGES ARE MODIFY-ONLY. Use-dependence requires q∈Dⱼ and D⊆Γ
- *         (hypotheses); "⊢" is never a use-landing. So goal→goal threading is
- *         always a MODIFY edge. (The CLAUDE.md DependencyTest table loosely
- *         lists a goal case as a "use" edge — superseded.) Groups 3.2, 4.2, 9.
+ *    [P3] GOAL USE-EDGES FOR LEAVES. For non-leaf nodes, "⊢" is never a
+ *         use-landing (D⊆Γ). For LEAF nodes (outputObligations empty), "⊢" IS
+ *         added to Dⱼ: leaf use-depends on nearest preceding goal-modifier.
+ *         Non-leaf goal→goal threading is still MODIFY-only. Groups 3.2, 4.2, 9.
  *
  *    [P4] "NO INTERMEDIATE k" IS PER-LANDING-NAME. An intermediate k cancels a
  *         witness only when it ALSO lands on the SAME q (the `claimedFor(j)`
  *         set of CLAUDE.md Step 6). Independent names do not cross-cancel:
  *         Group 4.4 keeps both use(2,3)[via h] and use(1,3)[via k]; the prop_14
  *         use-edges 0→5/0→6 survive because the intervening goal modifiers land
- *         on ⊢, not on `ih`.
+ *         on ⊢, not on `ih`. Group 9 also now has 0→1/4→5/3→6 use-edges for the
+ *         three leaf nodes (relaxed [P3] for leaves).
  *
  *  `compute` is a function of the TREE SHAPE (parentId/childIds for paths and
  *  branch indices) and the supplied `footprints` map; obligation CONTENTS and
@@ -167,13 +168,15 @@ class DependencyTest extends AnyFlatSpec with Matchers:
     run(ns, fps) shouldBe Set(PogEdge(0, 1, ModifyEdge))
   }
 
-  it should "treat goal→goal threading as a MODIFY edge ([P3], never a use-edge)" in {
+  it should "emit both MODIFY and USE for goal→goal when target is a leaf ([P3] relaxed for leaves)" in {
+    // node 1 is a leaf (Nil children): uses(1) includes "⊢", so both modify-dep
+    // (0 modifies goal, lands on modifies(1)=⊢) and use-dep (lands on uses(1)=⊢) fire.
     val ns = List(tn(0, None, List(1)), tn(1, Some(0), Nil))
     val fps = Map(
       0 -> fp(modGoal = true, rho = List(carry())),  // carry() = just ⊢→{⊢}
       1 -> fp(modGoal = true)
     )
-    run(ns, fps) shouldBe Set(PogEdge(0, 1, ModifyEdge))
+    run(ns, fps) shouldBe Set(PogEdge(0, 1, ModifyEdge), PogEdge(0, 1, UseEdge))
   }
 
 
@@ -192,14 +195,16 @@ class DependencyTest extends AnyFlatSpec with Matchers:
     run(ns, fps) shouldBe Set(PogEdge(0, 1, ModifyEdge), PogEdge(1, 2, UseEdge))
   }
 
-  it should "chain three goal modifiers as (0,1)+(1,2) only — not (0,2)" in {
+  it should "chain three goal modifiers: (0,1)+(1,2) modify, plus (1,2) use for the leaf" in {
+    // node 2 is a leaf (Nil children): it gets both 1→2 modify (goal→goal) and
+    // 1→2 use (leaf claims ⊢); node 0 is blocked on both names by node 1.
     val ns = List(tn(0, None, List(1)), tn(1, Some(0), List(2)), tn(2, Some(1), Nil))
     val fps = Map(
       0 -> fp(modGoal = true, rho = List(carry())),
       1 -> fp(modGoal = true, rho = List(carry())),
       2 -> fp(modGoal = true)
     )
-    run(ns, fps) shouldBe Set(PogEdge(0, 1, ModifyEdge), PogEdge(1, 2, ModifyEdge))
+    run(ns, fps) shouldBe Set(PogEdge(0, 1, ModifyEdge), PogEdge(1, 2, ModifyEdge), PogEdge(1, 2, UseEdge))
   }
 
   it should "span an unrelated intermediate: mod h, (touch nothing), use h ⇒ (0,2)use" in {
@@ -399,7 +404,8 @@ class DependencyTest extends AnyFlatSpec with Matchers:
   //   xs propagates into `ih` (rho split), so each `exact ih` USE-depends on the
   //   induction node 0 — and the intervening goal modifiers (2,3,4) land on ⊢,
   //   never on `ih`, so under per-name minimality [P4] they do NOT cancel 0→5/0→6.
-  //   nil branch (node 1) is independent of xs ⇒ no incoming edge.
+  //   Relaxed [P3]: each leaf also use-depends on the nearest preceding goal-modifier:
+  //   node 1 (nil leaf) → 0→1 use; node 5 (exact ih leaf) → 4→5 use; node 6 → 3→6 use.
 
   private lazy val fixture: os.Path =
     Iterator.iterate(os.pwd)(_ / os.up)
@@ -417,8 +423,11 @@ class DependencyTest extends AnyFlatSpec with Matchers:
       PogEdge(0, 2, ModifyEdge),
       PogEdge(2, 3, ModifyEdge),
       PogEdge(3, 4, ModifyEdge),
-      PogEdge(0, 5, UseEdge),
-      PogEdge(0, 6, UseEdge)
+      PogEdge(0, 1, UseEdge),   // leaf 1 (nil branch): nearest goal-modifier is 0
+      PogEdge(4, 5, UseEdge),   // leaf 5 (exact ih): nearest goal-modifier is 4
+      PogEdge(3, 6, UseEdge),   // leaf 6 (exact ih): nearest goal-modifier is 3
+      PogEdge(0, 5, UseEdge),   // leaf 5: ih use-dep traces back to induction (0)
+      PogEdge(0, 6, UseEdge)    // leaf 6: ih use-dep traces back to induction (0)
     )
   }
 

@@ -1,0 +1,36 @@
+theorem:  mergesort_sorted
+sample:   3
+attempt:  fix_2
+
+[proof]
+unfold mergesort
+split
+· simp [Sorted.nil]
+·
+  have hl := left_less l
+  have hr := right_less l
+  simp
+
+[lean error]
+location:
+      split
+      · simp [Sorted.nil]
+       ^
+      ·
+error: `simp` made no progress
+
+location:
+      · simp [Sorted.nil]
+      ·
+     ^
+        have hl := left_less l
+error: unsolved goals
+case isFalse
+T : Type u_1
+inst✝¹ : Preorder T
+inst✝ : DecidableRel LT.lt
+l : List T
+h✝ : ¬l.length < 2
+hl : l.length > 0 → (left l).length < l.length
+hr : l.length > 1 → (right l).length < l.length
+⊢ Sorted (merge (mergesort (left l)) (mergesort (right l)))

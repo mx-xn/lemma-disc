@@ -1,0 +1,146 @@
+theorem:  mergesort_correct
+sample:   0
+attempt:  fix_1
+
+[proof]
+intro l
+by_cases h : l.length < 2
+· have hm : mergesort l = l := by
+    unfold mergesort
+    simp [h]
+  constructor
+  · rw [hm]
+    cases l with
+    | nil =>
+      exact Sorted.nil
+    | cons x xs =>
+      cases xs with
+      | nil =>
+        exact Sorted.singleton
+      | cons y ys =>
+        simp at h
+        linarith
+  · rw [hm]
+    intro t
+    rfl
+· have hm : mergesort l = merge (mergesort (left l)) (mergesort (right l)) := by
+    unfold mergesort
+    simp [h]
+  constructor
+  · rw [hm]
+    cases h1 : mergesort (left l) <;> cases h2 : mergesort (right l) <;> simp [merge]
+      · exact Sorted.nil
+      · assumption
+      · assumption
+      · by_cases hxy : head! (t :: ts) < head! (t_1 :: ts_1) <;> simp [hxy]
+        · cases ts with
+          | nil =>
+            exact Sorted.singleton
+          | cons a as =>
+            exact Sorted.cons (by assumption) (by intro hlt; exact hxy hlt)
+        · cases ts_1 with
+          | nil =>
+            exact Sorted.singleton
+          | cons a as =>
+            exact Sorted.cons (by assumption) (by intro hlt; exact hxy hlt)
+  · intro t
+    rfl
+
+[lean error]
+location:
+          rfl
+      · have hm : mergesort l = merge (mergesort (left l)) (mergesort (right l)) := by
+                                                                                   ^
+          unfold mergesort
+error: unsolved goals
+T : Type
+inst✝² : Preorder T
+inst✝¹ : DecidableEq T
+inst✝ : DecidableRel LT.lt
+l : List T
+h : ¬l.length < 2
+⊢ merge (mergesort (left l)) (mergesort (right l)) =
+    merge (if (left l).length < 2 then left l else merge (mergesort (left (left l))) (mergesort (right (left l))))
+      (if (right l).length < 2 then right l else merge (mergesort (left (right l))) (mergesort (right (right l))))
+
+location:
+        constructor
+        · rw [hm]
+       ^
+          cases h1 : mergesort (left l) <;> cases h2 : mergesort (right l) <;> simp [merge]
+error: unsolved goals
+case neg.left.nil.nil
+T : Type
+inst✝² : Preorder T
+inst✝¹ : DecidableEq T
+inst✝ : DecidableRel LT.lt
+l : List T
+h : ¬l.length < 2
+hm : mergesort l = merge (mergesort (left l)) (mergesort (right l))
+h1 : mergesort (left l) = []
+h2 : mergesort (right l) = []
+⊢ Sorted []
+case neg.left.nil.cons
+T : Type
+inst✝² : Preorder T
+inst✝¹ : DecidableEq T
+inst✝ : DecidableRel LT.lt
+l : List T
+h : ¬l.length < 2
+hm : mergesort l = merge (mergesort (left l)) (mergesort (right l))
+h1 : mergesort (left l) = []
+head✝ : T
+tail✝ : List T
+h2 : mergesort (right l) = head✝ :: tail✝
+⊢ Sorted (head✝ :: tail✝)
+case neg.left.cons.nil
+T : Type
+inst✝² : Preorder T
+inst✝¹ : DecidableEq T
+inst✝ : DecidableRel LT.lt
+l : List T
+h : ¬l.length < 2
+hm : mergesort l = merge (mergesort (left l)) (mergesort (right l))
+head✝ : T
+tail✝ : List T
+h1 : mergesort (left l) = head✝ :: tail✝
+h2 : mergesort (right l) = []
+⊢ Sorted (head✝ :: tail✝)
+case neg.left.cons.cons
+T : Type
+inst✝² : Preorder T
+inst✝¹ : DecidableEq T
+inst✝ : DecidableRel LT.lt
+l : List T
+h : ¬l.length < 2
+hm : mergesort l = merge (mergesort (left l)) (mergesort (right l))
+head✝¹ : T
+tail✝¹ : List T
+h1 : mergesort (left l) = head✝¹ :: tail✝¹
+head✝ : T
+tail✝ : List T
+h2 : mergesort (right l) = head✝ :: tail✝
+⊢ Sorted (if head✝¹ < head✝ then head✝¹ :: merge tail✝¹ (head✝ :: tail✝) else head✝ :: merge (head✝¹ :: tail✝¹) tail✝)
+
+location:
+          rfl
+      · have hm : mergesort l = merge (mergesort (left l)) (mergesort (right l)) := by
+     ^
+          unfold mergesort
+error: unsolved goals
+case neg.right
+T : Type
+inst✝² : Preorder T
+inst✝¹ : DecidableEq T
+inst✝ : DecidableRel LT.lt
+l : List T
+h : ¬l.length < 2
+hm : mergesort l = merge (mergesort (left l)) (mergesort (right l))
+⊢ Permut (mergesort l) l
+
+location:
+          cases h1 : mergesort (left l) <;> cases h2 : mergesort (right l) <;> simp [merge]
+            · exact Sorted.nil
+           ^
+            · assumption
+error: unexpected token '·'; expected command

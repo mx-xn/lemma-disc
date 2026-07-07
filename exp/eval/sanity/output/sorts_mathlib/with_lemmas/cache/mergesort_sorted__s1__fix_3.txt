@@ -1,0 +1,13 @@
+theorem:  mergesort_sorted
+sample:   1
+attempt:  fix_3
+
+[proof]
+simpa using sorted_mergesort (T := T) l
+
+[lean error]
+location:
+    theorem eval_mergesort_sorted [Preorder T] [DecidableRel (LT.lt (α := T))] (l : List T) : Sorted (mergesort l) := by
+      simpa using sorted_mergesort (T := T) l
+                 ^
+error: error(lean.unknownIdentifier): Unknown identifier `sorted_mergesort`

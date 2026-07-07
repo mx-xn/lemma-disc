@@ -1,0 +1,254 @@
+theorem:  merge_sorted
+sample:   2
+attempt:  fix_3
+
+[proof]
+induction xs with
+| nil =>
+  simp [merge]
+  exact sys
+| cons a xs ih =>
+  cases ys with
+  | nil =>
+    simp [merge]
+    exact sxs
+  | cons y ys =>
+    cases xs with
+    | nil =>
+      cases ys with
+      | nil =>
+        simp [merge]
+        by_cases h : a < y
+        · simp [h]
+          apply Sorted.cons
+          · exact Sorted.singleton
+          · intro hy
+            exact lt_irrefl a (lt_trans h hy)
+        · simp [h]
+          apply Sorted.cons
+          · exact Sorted.singleton
+          · exact h
+      | cons z zs =>
+        simp [merge]
+        by_cases h : a < y
+        · simp [h]
+          apply Sorted.cons
+          · exact sys
+          · intro hy
+            exact lt_irrefl a (lt_trans h hy)
+        · by_cases haz : a < z
+          · simp [h, haz]
+            apply Sorted.cons
+            · exact Sorted.singleton
+            · exact h
+          · simp [h, haz]
+            apply Sorted.cons
+            · exact lemma_hint_5 y z zs sys
+            · exact lemma_hint_21 y z zs sys
+    | cons b xs' =>
+      simp [merge]
+      by_cases h : a < y
+      · by_cases hby : b < y
+        · simp [h, hby]
+          apply Sorted.cons
+          · apply ih
+            · exact lemma_hint_5 a b xs' sxs
+            · exact sys
+          · intro hm
+            exact lt_irrefl a (lt_trans h hm)
+        · simp [h, hby]
+          apply Sorted.cons
+          · apply Sorted.cons
+            · apply ih
+              · exact lemma_hint_5 a b xs' sxs
+              · exact sys
+            · exact hby
+          · intro hm
+            exact lt_irrefl a (lt_trans h hm)
+      · cases ys with
+        | nil =>
+          simp [h]
+          apply Sorted.cons
+          · exact sxs
+          · exact h
+        | cons z zs =>
+          by_cases haz : a < z
+          · simp [h, haz]
+            apply Sorted.cons
+            · apply ih
+              · exact sxs
+              · exact lemma_hint_5 y z zs sys
+            · intro hm
+              exact h hm
+          · simp [h, haz]
+            apply Sorted.cons
+            · apply Sorted.cons
+              · apply ih
+                · exact sxs
+                · exact lemma_hint_5 y z zs sys
+              · exact lemma_hint_21 y z zs sys
+            · intro hm
+              exact lemma_hint_21 y z (merge (a :: b :: xs') zs) (Sorted.cons (ih sxs (lemma_hint_5 y z zs sys)) hm)
+
+[lean error]
+location:
+                  apply Sorted.cons
+                  · exact Sorted.singleton
+                         ^
+                  · exact h
+error: typeclass instance problem is stuck
+  LT ?m.212
+Note: Lean will not try to resolve this typeclass instance problem because the type argument to `LT` is a metavariable. This argument must be fully determined before Lean will try to resolve the typeclass.
+Hint: Adding type annotations and supplying implicit arguments to functions can give Lean more information for typeclass resolution. For example, if you have a variable `x` that you intend to be a `Nat`, but Lean reports it as having an unresolved type like `?m`, replacing `x` with `(x : Nat)` can get typeclass resolution un-stuck.
+
+location:
+                  apply Sorted.cons
+                  · exact lemma_hint_5 y z zs sys
+                   ^
+                  · exact lemma_hint_21 y z zs sys
+error: Type mismatch
+  lemma_hint_5 y z zs sys
+has type
+  Sorted (z :: zs)
+but is expected to have type
+  Sorted (z :: merge [a] zs)
+
+location:
+                apply Sorted.cons
+                · apply ih
+                 ^
+                  · exact lemma_hint_5 a b xs' sxs
+error: Tactic `apply` failed: could not unify the conclusion of `ih`
+  Sorted (merge (b :: xs') (y :: ys))
+with the goal
+  Sorted (b :: merge xs' (y :: ys))
+Note: The full type of `ih` is
+  Sorted (b :: xs') → Sorted (merge (b :: xs') (y :: ys))
+case pos.a
+T : Type u_1
+inst✝¹ : Preorder T
+inst✝ : DecidableRel LT.lt
+a y : T
+ys : List T
+sys : Sorted (y :: ys)
+b : T
+xs' : List T
+sxs : Sorted (a :: b :: xs')
+ih : Sorted (b :: xs') → Sorted (merge (b :: xs') (y :: ys))
+h : a < y
+hby : b < y
+⊢ Sorted (b :: merge xs' (y :: ys))
+
+location:
+                · intro hm
+                  exact lt_irrefl a (lt_trans h hm)
+                                               ^
+              · simp [h, hby]
+error: Application type mismatch: The argument
+  hm
+has type
+  b < a
+but is expected to have type
+  y < a
+in the application
+  lt_trans h hm
+
+location:
+                apply Sorted.cons
+                · apply Sorted.cons
+                 ^
+                  · apply ih
+error: Tactic `apply` failed: could not unify the conclusion of `@Sorted.cons`
+  Sorted (?a :: ?b :: ?xs)
+with the goal
+  Sorted (y :: merge (b :: xs') ys)
+Note: The full type of `@Sorted.cons` is
+  ∀ {T : Type ?u.15422} [inst : LT T] {a b : T} {xs : List T}, Sorted (b :: xs) → ¬b < a → Sorted (a :: b :: xs)
+case neg.a
+T : Type u_1
+inst✝¹ : Preorder T
+inst✝ : DecidableRel LT.lt
+a y : T
+ys : List T
+sys : Sorted (y :: ys)
+b : T
+xs' : List T
+sxs : Sorted (a :: b :: xs')
+ih : Sorted (b :: xs') → Sorted (merge (b :: xs') (y :: ys))
+h : a < y
+hby : ¬b < y
+⊢ Sorted (y :: merge (b :: xs') ys)
+
+location:
+                simp [h]
+                apply Sorted.cons
+               ^
+                · exact sxs
+error: Tactic `apply` failed: could not unify the conclusion of `@Sorted.cons`
+  Sorted (?a :: ?b :: ?xs)
+with the goal
+  Sorted (y :: merge (a :: b :: xs') [])
+Note: The full type of `@Sorted.cons` is
+  ∀ {T : Type ?u.15588} [inst : LT T] {a b : T} {xs : List T}, Sorted (b :: xs) → ¬b < a → Sorted (a :: b :: xs)
+case neg.nil
+T : Type u_1
+inst✝¹ : Preorder T
+inst✝ : DecidableRel LT.lt
+a y b : T
+xs' : List T
+sxs : Sorted (a :: b :: xs')
+h : ¬a < y
+sys : Sorted [y]
+ih : Sorted (b :: xs') → Sorted (merge (b :: xs') [y])
+⊢ Sorted (y :: merge (a :: b :: xs') [])
+
+location:
+                · simp [h, haz]
+                  apply Sorted.cons
+                 ^
+                  · apply ih
+error: Tactic `apply` failed: could not unify the conclusion of `@Sorted.cons`
+  Sorted (?a :: ?b :: ?xs)
+with the goal
+  Sorted (y :: merge (a :: b :: xs') (z :: zs))
+Note: The full type of `@Sorted.cons` is
+  ∀ {T : Type ?u.15734} [inst : LT T] {a b : T} {xs : List T}, Sorted (b :: xs) → ¬b < a → Sorted (a :: b :: xs)
+case pos
+T : Type u_1
+inst✝¹ : Preorder T
+inst✝ : DecidableRel LT.lt
+a y b : T
+xs' : List T
+sxs : Sorted (a :: b :: xs')
+h : ¬a < y
+z : T
+zs : List T
+sys : Sorted (y :: z :: zs)
+ih : Sorted (b :: xs') → Sorted (merge (b :: xs') (y :: z :: zs))
+haz : a < z
+⊢ Sorted (y :: merge (a :: b :: xs') (z :: zs))
+
+location:
+                · simp [h, haz]
+                  apply Sorted.cons
+                 ^
+                  · apply Sorted.cons
+error: Tactic `apply` failed: could not unify the conclusion of `@Sorted.cons`
+  Sorted (?a :: ?b :: ?xs)
+with the goal
+  Sorted (y :: merge (a :: b :: xs') (z :: zs))
+Note: The full type of `@Sorted.cons` is
+  ∀ {T : Type ?u.15821} [inst : LT T] {a b : T} {xs : List T}, Sorted (b :: xs) → ¬b < a → Sorted (a :: b :: xs)
+case neg
+T : Type u_1
+inst✝¹ : Preorder T
+inst✝ : DecidableRel LT.lt
+a y b : T
+xs' : List T
+sxs : Sorted (a :: b :: xs')
+h : ¬a < y
+z : T
+zs : List T
+sys : Sorted (y :: z :: zs)
+ih : Sorted (b :: xs') → Sorted (merge (b :: xs') (y :: z 
+... [truncated, 4634 bytes total]

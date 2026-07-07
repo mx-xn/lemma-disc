@@ -176,6 +176,22 @@ Writes:
 If the domain file contains both train and test proofs, the user must produce
 a training-only copy before passing it here.
 
+### `validate`
+```
+python -m exp.eval.domain_eval.run validate
+    --lemmas     PATH   raw_lemmas.json from learn step (default: output/raw_lemmas.json)
+    --train      PATH   train.json to read lake_project/imports (default: output/train.json)
+    --output-dir PATH   (default: output/)
+    --lake-project PATH overrides train.json
+    --imports    STR    comma-separated (overrides train.json)
+    --force
+```
+Interactive step between `learn` and `eval`. Pre-filters obviously malformed
+statements (truncated, unbalanced brackets), Lean-checks the rest in one batch,
+then prompts `[d]iscard / [e]dit` for each failure. Writes `learned_lemmas.json`.
+Use `--skip-fix` on `learn` to skip the automated LLM fixer and rely on this
+step instead.
+
 ### `eval`
 ```
 python -m exp.eval.domain_eval.run eval

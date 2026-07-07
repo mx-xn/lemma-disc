@@ -1,16 +1,18 @@
-"""Sanity check: prove theorems with and without the learned lemma library.
+"""Sanity check: prove theorems with and without a learned lemma library.
 
-Step 1 (without lemmas): runs run_baseline, which uses baseline.md — a prompt
-  with no hint section — so the LLM is never told lemmas exist.
+Step 1 (without lemmas): runs run_baseline — no hints, LLM is never told lemmas exist.
+Step 2 (with lemmas):    runs prove_round with the full flat lemma pool.
 
-Step 2 (with lemmas): runs prove_round with the full flat lemma pool loaded
-  from Lemmas.lean, using the solo.md hint-aware prompt.
+Modes (--mode):
+  ours  --lemmas Lemmas.lean          pipeline-learned lemmas (Lean file format)
+  llm   --lemmas learned_lemmas.json  LLM-generated lemmas (JSON {"lemmas": [...]})
+  (no --lemmas)                       baseline only, no comparison
 
 Outputs written under --output-dir:
-  theorems_sanity.json      filtered theorems (only those covered in Lemmas.lean)
-  without_lemmas/           run_baseline artifacts (01_baseline.json, etc.)
-  with_lemmas/              prove_results.json from prove_round
-  comparison.json           side-by-side ok/fail per theorem + aggregate counts
+  theorems_sanity.json   theorems evaluated
+  without_lemmas/        run_baseline artifacts (01_baseline.json, etc.)
+  with_lemmas/           prove_results.json from prove_round
+  comparison.json        side-by-side ok/fail per theorem + aggregate counts
 
 Usage:
     python -m exp.eval.sanity.run [options]
@@ -26,7 +28,7 @@ from pathlib import Path
 from exp.eval.lib.retriever import ByT5Retriever, Retriever
 from exp.eval.sanity.lemma_loader import load_by_prop, load_flat
 from exp.eval.stages.baseline import BASELINE_JSON, run_baseline
-from exp.eval.stages.prove import RoundResult, prove_round
+from exp.eval.stages.prove import PROVE_RESULTS_JSON, RoundResult, prove_round
 from exp.lib.corpus import Theorem, TheoremSet, load_theorems
 from exp.lib.llm import LLM
 
@@ -142,8 +144,14 @@ def _write_theorems_json(
 
 
 def _load_baseline_ok(baseline_dir: Path) -> dict[str, bool]:
-    """Load {theorem_id -> ok} from the JSON written by run_baseline."""
+    """Load {theorem_id -> ok} from the full (merged) 01_baseline.json."""
     data = json.loads((baseline_dir / BASELINE_JSON).read_text())
+    return {tid: rec["ok"] for tid, rec in data["results"].items()}
+
+
+def _load_prove_ok(with_dir: Path) -> dict[str, bool]:
+    """Load {theorem_id -> ok} from the full (merged) prove_results.json."""
+    data = json.loads((with_dir / PROVE_RESULTS_JSON).read_text())
     return {tid: rec["ok"] for tid, rec in data["results"].items()}
 
 
@@ -154,8 +162,9 @@ def _load_baseline_ok(baseline_dir: Path) -> dict[str, bool]:
 def run(
     *,
     theorems_path: Path,
-    lemmas_path: Path,
+    lemmas_path: Path | None,
     output_dir: Path,
+    mode: str = "ours",
     llm_model: str,
     max_attempts: int,
     num_workers: int,
@@ -163,6 +172,8 @@ def run(
     theorem_ids: list[str] | None = None,
     retriever: Retriever | None = None,
     top_k: int | None = None,
+    num_samples: int = 1,
+    skip_baseline: bool = False,
 ) -> None:
     output_dir = Path(output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -170,64 +181,77 @@ def run(
     tset = load_theorems(theorems_path)
     lake_project, imports = _resolve_setup(tset)
 
-    lemma_dict = load_by_prop(lemmas_path)
-    lemma_pool = load_flat(lemmas_path)
-    filtered = filter_theorems(filter_by_ids(list(tset.theorems), theorem_ids), lemma_dict)
+    if lemmas_path is not None and mode == "ours":
+        lemma_dict = load_by_prop(lemmas_path)
+        lemma_pool = load_flat(lemmas_path)
+        filtered = filter_theorems(filter_by_ids(list(tset.theorems), theorem_ids), lemma_dict)
+    elif lemmas_path is not None and mode == "llm":
+        lemma_pool = [
+            e["statement"] if isinstance(e, dict) else e
+            for e in json.loads(lemmas_path.read_text()).get("lemmas", [])
+        ]
+        filtered = filter_by_ids(list(tset.theorems), theorem_ids)
+    elif lemmas_path is not None:
+        raise ValueError(f"unknown mode: {mode!r}; expected 'ours' or 'llm'")
+    else:
+        lemma_pool = []
+        filtered = filter_by_ids(list(tset.theorems), theorem_ids)
 
     if not filtered:
-        print("[sanity] no theorems matched the learned lemmas — nothing to do", file=sys.stderr)
+        print("[sanity] no theorems to evaluate — nothing to do", file=sys.stderr)
         return
 
-    per_theorem_pools = {
-        thm.theorem_id: lemma_dict[_prop_num(thm.theorem_id)]
-        for thm in filtered
-    }
-    pool_sizes = {tid: len(pool) for tid, pool in per_theorem_pools.items()}
     print(
-        f"[sanity] {len(filtered)} theorems, "
-        f"{len(lemma_pool)} total lemmas ({pool_sizes})",
+        f"[sanity] {len(filtered)} theorems, {len(lemma_pool)} lemma(s) [{mode}]",
         file=sys.stderr,
     )
 
-    # Write filtered theorems to disk so run_baseline can load them.
     theorems_json = output_dir / "theorems_sanity.json"
     _write_theorems_json(filtered, lake_project, imports, theorems_json)
 
-    # -- Condition A: no hints ------------------------------------------------
-    baseline_dir = output_dir / "without_lemmas"
-    run_baseline(
-        theorems_path=theorems_json,
-        output_dir=baseline_dir,
-        limit=None,
-        force=force,
-        llm_model=llm_model,
-        max_attempts=max_attempts,
-        num_workers=num_workers,
-    )
-    baseline_ok = _load_baseline_ok(baseline_dir)
+    # -- Condition A: no hints -----------------------------------------------
+    baseline_ok: dict[str, bool] = {}
+    if not skip_baseline:
+        baseline_dir = output_dir / "without_lemmas"
+        run_baseline(
+            theorems_path=theorems_json,
+            output_dir=baseline_dir,
+            limit=None,
+            force=force,
+            llm_model=llm_model,
+            max_attempts=max_attempts,
+            num_workers=num_workers,
+            num_samples=num_samples,
+        )
+        baseline_ok = _load_baseline_ok(baseline_dir)
 
-    # -- Condition B: with lemma library -------------------------------------
+    if lemmas_path is None:
+        return
+
+    # -- Condition B: with learned lemmas ------------------------------------
     with_dir = output_dir / "with_lemmas"
-    llm = LLM(model=llm_model, cache_dir=with_dir / "cache")
-    round_results: dict[str, RoundResult] = prove_round(
+    # LLM JSON cache lives in cache/llm/ so cache/ itself holds only human-readable .txt files.
+    llm = LLM(model=llm_model, cache_dir=with_dir / "cache" / "llm")
+    prove_round(
         filtered, lemma_pool, llm, lake_project, imports,
         max_attempts, with_dir, num_workers,
-        retriever=retriever, top_k=top_k,
-        per_theorem_pools=per_theorem_pools,
+        retriever=retriever, top_k=top_k, force=force, num_samples=num_samples,
     )
-    with_lemma_ok = {tid: r.ok for tid, r in round_results.items()}
+    # Read back the full merged file so comparison reflects all runs, not just this one.
+    with_lemma_ok = _load_prove_ok(with_dir)
 
-    # -- Comparison -----------------------------------------------------------
-    comparison = build_comparison(baseline_ok, with_lemma_ok, len(lemma_pool))
-    comp_path = output_dir / "comparison.json"
-    comp_path.write_text(json.dumps(comparison, ensure_ascii=False, indent=2))
+    # -- Comparison ----------------------------------------------------------
+    if not skip_baseline:
+        comparison = build_comparison(baseline_ok, with_lemma_ok, len(lemma_pool))
+        comp_path = output_dir / "comparison.json"
+        comp_path.write_text(json.dumps(comparison, ensure_ascii=False, indent=2))
 
-    wo = comparison["without_lemmas"]
-    wl = comparison["with_lemmas"]
-    total = comparison["total_theorems"]
-    print(f"[sanity] without lemmas : {wo['solved']}/{total} solved", file=sys.stderr)
-    print(f"[sanity]  with  lemmas  : {wl['solved']}/{total} solved", file=sys.stderr)
-    print(f"[sanity] comparison     -> {comp_path}", file=sys.stderr)
+        wo = comparison["without_lemmas"]
+        wl = comparison["with_lemmas"]
+        total = comparison["total_theorems"]
+        print(f"[sanity] without lemmas : {wo['solved']}/{total} solved", file=sys.stderr)
+        print(f"[sanity]  with  lemmas  : {wl['solved']}/{total} solved", file=sys.stderr)
+        print(f"[sanity] comparison     -> {comp_path}", file=sys.stderr)
 
 
 # ---------------------------------------------------------------------------
@@ -240,11 +264,13 @@ def _parse_args() -> argparse.Namespace:
     )
     p.add_argument("--theorems", type=Path, default=_DEFAULT_THEOREMS,
                    metavar="PATH", help="theorems.json input")
-    p.add_argument("--lemmas", type=Path, default=_DEFAULT_LEMMAS,
-                   metavar="PATH", help="Lemmas.lean with pre-learned hints")
+    p.add_argument("--lemmas", type=Path, default=None,
+                   metavar="PATH", help="learned lemmas file; if absent runs baseline only")
+    p.add_argument("--mode", choices=["ours", "llm"], default="ours",
+                   help="how to interpret --lemmas: 'ours' (Lemmas.lean) or 'llm' (JSON)")
     p.add_argument("--output-dir", type=Path, default=_DEFAULT_OUTPUT,
                    metavar="DIR", help="directory for all outputs")
-    p.add_argument("--model", default="gpt-5.2",
+    p.add_argument("--model", default="gpt-5.4",
                    help="LLM model identifier")
     p.add_argument("--max-attempts", type=int, default=3,
                    help="fix-loop budget per theorem per condition (default: 3)")
@@ -254,11 +280,15 @@ def _parse_args() -> argparse.Namespace:
                    help="overwrite existing results")
     p.add_argument("--theorem-ids", nargs="+", default=None,
                    metavar="ID", help="run only these theorem IDs (e.g. prop_29 prop_36); "
-                                      "default: all theorems covered in Lemmas.lean")
+                                      "default: all theorems (ours mode: further filtered by lemma coverage)")
     p.add_argument("--retriever", choices=["none", "byt5"], default="none",
                    help="retriever to use for condition B (default: none = pass all lemmas)")
     p.add_argument("--top-k", type=int, default=None, metavar="K",
                    help="retrieve top-K lemmas per theorem (required when --retriever byt5)")
+    p.add_argument("--samples", type=int, default=1, dest="num_samples", metavar="M",
+                   help="number of independent proof samples per theorem (default: 1)")
+    p.add_argument("--skip-baseline", action="store_true",
+                   help="skip the no-hints baseline condition (and comparison output)")
     return p.parse_args()
 
 
@@ -277,6 +307,7 @@ if __name__ == "__main__":
         theorems_path=args.theorems,
         lemmas_path=args.lemmas,
         output_dir=args.output_dir,
+        mode=args.mode,
         llm_model=args.model,
         max_attempts=args.max_attempts,
         num_workers=args.workers,
@@ -284,4 +315,6 @@ if __name__ == "__main__":
         theorem_ids=args.theorem_ids,
         retriever=retriever,
         top_k=args.top_k,
+        num_samples=args.num_samples,
+        skip_baseline=args.skip_baseline,
     )

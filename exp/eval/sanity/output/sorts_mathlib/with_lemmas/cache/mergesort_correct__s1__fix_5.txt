@@ -1,0 +1,78 @@
+theorem:  mergesort_correct
+sample:   1
+attempt:  fix_5
+
+[proof]
+intro l
+by_cases h : l.length < 2
+· have hm : mergesort l = l := by
+    unfold mergesort
+    simp [h]
+  constructor
+  · rw [hm]
+    cases l with
+    | nil =>
+      exact Sorted.nil
+    | cons x xs =>
+      cases xs with
+      | nil =>
+        exact Sorted.singleton
+      | cons y ys =>
+        simp at h
+        linarith
+  · rw [hm]
+    intro t
+    rfl
+· constructor
+  · by_cases hs : Sorted (merge (mergesort (left l)) (mergesort (right l)))
+    · simpa [mergesort, h] using hs
+    · exfalso
+      exact hs (by assumption)
+  · simp [mergesort, h]
+    intro t
+    rfl
+
+[lean error]
+location:
+        · by_cases hs : Sorted (merge (mergesort (left l)) (mergesort (right l)))
+          · simpa [mergesort, h] using hs
+           ^
+          · exfalso
+error: Tactic `simp` failed with a nested error:
+maximum recursion depth has been reached
+use `set_option maxRecDepth <num>` to increase limit
+use `set_option diagnostics true` to get diagnostic information
+
+location:
+          · exfalso
+            exact hs (by assumption)
+                        ^
+        · simp [mergesort, h]
+error: Tactic `assumption` failed
+T : Type
+inst✝² : Preorder T
+inst✝¹ : DecidableEq T
+inst✝ : DecidableRel LT.lt
+l : List T
+h : ¬l.length < 2
+hs : ¬Sorted (merge (mergesort (left l)) (mergesort (right l)))
+⊢ Sorted (merge (mergesort (left l)) (mergesort (right l)))
+
+location:
+            exact hs (by assumption)
+        · simp [mergesort, h]
+               ^
+          intro t
+error: Possibly looping simp theorem: `mergesort.eq_1`
+Note: Possibly caused by: `mergesort`
+Hint: You can disable a simp theorem from the default simp set by passing `- theoremName` to `simp`.
+
+location:
+            exact hs (by assumption)
+        · simp [mergesort, h]
+         ^
+          intro t
+error: Tactic `simp` failed with a nested error:
+maximum recursion depth has been reached
+use `set_option maxRecDepth <num>` to increase limit
+use `set_option diagnostics true` to get diagnostic information

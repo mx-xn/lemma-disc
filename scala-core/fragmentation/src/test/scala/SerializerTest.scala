@@ -51,14 +51,14 @@ class SerializerTest extends AnyFlatSpec with Matchers:
   // ── POG fixtures ─────────────────────────────────────────────────────────────
   //
   //  introChain: 0 → 1 → 2    edges: (0,1),(1,2),(0,2)
-  //    Admissible non-trivial V_H sets (default heuristic): {0},{1},{2},{0,1},{1,2}
-  //    {0,2} is non-convex (node 1 lies on the 0→2 edge-path); {0,1,2} is trivial.
-  //    → 5 fragments.
+  //    Non-singleton admissible non-trivial V_H sets (default heuristic): {0,1},{1,2}
+  //    {0},{1},{2} are singletons (dropped); {0,2} is non-convex; {0,1,2} is trivial.
+  //    → 2 fragments.
   //
   //  branchFork: 0 → {1, 2}   edges: (0,1),(0,2)
-  //    Default heuristic rejects {0},{0,1},{0,2} (branches + hole); {1,2} has no
-  //    common root so is inadmissible; {0,1,2} is trivial. → 2 fragments ({1},{2}).
-  //    With `_ => true`: {0},{0,1},{0,2} also accepted. → 5 fragments.
+  //    {1},{2} are singletons (dropped); {0},{0,1},{0,2} fail the default heuristic
+  //    (branches + hole); {1,2} is inadmissible (no common root); {0,1,2} is trivial.
+  //    → 0 fragments (default). With `_ => true`: {0,1},{0,2} accepted ({0} is a singleton). → 2 fragments.
   //
   //  leafPog: 0 (leaf, mₙ=0)
   //    Only V_H = {0} is admissible, and it is trivial (root=proofRoot, holeCount=0).
@@ -133,27 +133,28 @@ class SerializerTest extends AnyFlatSpec with Matchers:
   }
 
   "Serializer.buildAll (introChain)" should
-    "[A3] produce exactly 5 non-trivial accepted fragments for the 3-node linear chain" in {
-    Serializer.buildAll(pogFile("f.lean", introChain)).fragments should have size 5
+    "[A3] produce exactly 2 non-trivial accepted fragments for the 3-node linear chain" in {
+    Serializer.buildAll(pogFile("f.lean", introChain)).fragments should have size 2
   }
 
   "Serializer.buildAll (two-POG PogFile)" should
     "[A4] restart fragment IDs at 0 for each new declaration  [S3]" in {
-    // introChain → 5 fragments; branchFork (default heuristic) → 2 fragments.
+    // introChain → 2 fragments; branchFork (default heuristic) → 0 fragments
+    // (all candidates are singletons, trivial, or branch+hole).
     val fl    = Serializer.buildAll(pogFile("f.lean", introChain, branchFork))
     val icIds = fl.fragments.filter(_.declName == "intro_chain").map(_.fragmentId).sorted
     val bfIds = fl.fragments.filter(_.declName == "branch_fork").map(_.fragmentId).sorted
-    icIds shouldBe (0 until 5).toList
-    bfIds shouldBe List(0, 1)
+    icIds shouldBe List(0, 1)
+    bfIds shouldBe Nil
   }
 
   it should "[A5] accept more fragments with `_ => true` heuristic than with the default" in {
-    // Default rejects {0},{0,1},{0,2} on branchFork (branches + hole): 2 accepted.
-    // No-filter accepts all five admissible non-trivial sets: 5 accepted.
+    // Default: singletons {0},{1},{2} dropped; {0,1},{0,2} are branch+hole (rejected). → 0.
+    // No-filter: {0,1},{0,2} accepted; singletons {0},{1},{2} still dropped; {0,1,2} trivial. → 2.
     val default  = Serializer.buildAll(pogFile("f.lean", branchFork)).fragments.size
     val noFilter = Serializer.buildAll(pogFile("f.lean", branchFork), _ => true).fragments.size
-    default  shouldBe 2
-    noFilter shouldBe 5
+    default  shouldBe 0
+    noFilter shouldBe 2
   }
 
   it should "[A6] propagate PogFile.sourceFile to every emitted fragment's sourceFile  [S4]" in {
@@ -212,7 +213,7 @@ class SerializerTest extends AnyFlatSpec with Matchers:
     writePogFile(pogFile("f.lean", introChain), in)
     Serializer.run(Array(in.toString, out.toString))
     val fl = read[FragmentList](os.read(out))
-    fl.fragments should have size 5
+    fl.fragments should have size 2
   }
 
   "Serializer.run (batch)" should
@@ -224,7 +225,7 @@ class SerializerTest extends AnyFlatSpec with Matchers:
     Serializer.run(Array(inDir.toString, outDir.toString))
     os.exists(outDir / "a" / "a.json")                                  shouldBe true
     os.exists(outDir / "b" / "b.json")                                  shouldBe true
-    read[FragmentList](os.read(outDir / "a" / "a.json")).fragments should have size 5
+    read[FragmentList](os.read(outDir / "a" / "a.json")).fragments should have size 2
     read[FragmentList](os.read(outDir / "b" / "b.json")).fragments shouldBe Nil
   }
 

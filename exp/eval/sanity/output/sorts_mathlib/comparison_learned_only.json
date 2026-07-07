@@ -1,0 +1,46 @@
+{
+  "total_theorems": 8,
+  "lemma_pool_size": 116,
+  "without_lemmas": {
+    "solved": 1,
+    "failed": 7
+  },
+  "with_lemmas": {
+    "solved": 1,
+    "failed": 7
+  },
+  "per_theorem": {
+    "Permut.symm": {
+      "without_lemmas": true,
+      "with_lemmas": true
+    },
+    "insertionsort_correct": {
+      "without_lemmas": false,
+      "with_lemmas": false
+    },
+    "insertionsort_sorted": {
+      "without_lemmas": false,
+      "with_lemmas": false
+    },
+    "merge_permut": {
+      "without_lemmas": false,
+      "with_lemmas": false
+    },
+    "merge_sorted": {
+      "without_lemmas": false,
+      "with_lemmas": false
+    },
+    "mergesort_correct": {
+      "without_lemmas": false,
+      "with_lemmas": false
+    },
+    "mergesort_permut": {
+      "without_lemmas": false,
+      "with_lemmas": false
+    },
+    "mergesort_sorted": {
+      "without_lemmas": false,
+      "with_lemmas": false
+    }
+  }
+}

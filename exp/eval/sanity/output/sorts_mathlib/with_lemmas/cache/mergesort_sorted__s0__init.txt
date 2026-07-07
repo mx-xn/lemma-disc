@@ -1,0 +1,16 @@
+theorem:  mergesort_sorted
+sample:   0
+attempt:  init
+
+[proof]
+simpa [mergesort] using sort_sorted (sort := mergesort) l
+
+[lean error]
+location:
+    theorem eval_mergesort_sorted [Preorder T] [DecidableRel (LT.lt (α := T))] (l : List T) : Sorted (mergesort l) := by
+      simpa [mergesort] using sort_sorted (sort := mergesort) l
+     ^
+error: Tactic `simp` failed with a nested error:
+maximum recursion depth has been reached
+use `set_option maxRecDepth <num>` to increase limit
+use `set_option diagnostics true` to get diagnostic information

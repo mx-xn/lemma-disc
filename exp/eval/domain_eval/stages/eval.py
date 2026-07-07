@@ -20,6 +20,7 @@ def run_eval(
     lake_project_override: Path | None,
     imports_override: list[str] | None,
     force: bool,
+    num_samples: int = 1,
 ) -> None:
     output_dir = Path(output_dir)
 
@@ -54,7 +55,11 @@ def run_eval(
     from exp.eval.stages.prove import prove_round
 
     data = json.loads(Path(lemmas_path).read_text())
-    lemma_pool: list[str] = data.get("lemmas", [])
+    lemmas_raw = data.get("lemmas", [])
+    lemma_pool: list[str] = [
+        e["statement"] if isinstance(e, dict) else e
+        for e in lemmas_raw
+    ]
 
     tset = load_theorems(Path(theorems_path))
     lake_project = lake_project_override or tset.lake_project
@@ -71,7 +76,8 @@ def run_eval(
     lake_project = Path(lake_project)
     imports = list(imports)
 
-    llm = LLM(model=llm_model, cache_dir=output_dir / "cache")
+    # LLM JSON cache lives in cache/llm/ so cache/ itself holds only human-readable .txt files.
+    llm = LLM(model=llm_model, cache_dir=output_dir / "cache" / "llm")
     retriever = ByT5Retriever() if top_k is not None else None
 
     prove_round(
@@ -85,4 +91,5 @@ def run_eval(
         num_workers=num_workers,
         retriever=retriever,
         top_k=top_k,
+        num_samples=num_samples,
     )

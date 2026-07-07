@@ -47,7 +47,7 @@ Your output MUST follow this structure exactly:
 
 **Requirements:**
 1. `<reasoning>` is OPTIONAL. Include it only if it aids proof construction.
-2. `<lean4_proof>` is REQUIRED. It must contain ONLY the fixed tactic body — no `theorem` declaration, no `:= by`, no ``` fences.
+2. `<lean4_proof>` is REQUIRED. It must contain ONLY the fixed tactic body — no `theorem` declaration, no `:= by`, no ``` fences. All top-level tactics (`intro`, `induction`, `simp`, `exact`, `apply`, case branches `| foo =>`, etc.) must start at **column 0** (no leading whitespace). Sub-tactics inside case branches are indented by 2 or 4 spaces relative to the branch. 
 3. No `sorry` or `admit` in the proof body. All Lean 4 code must type-check (the admitted hints are provided in the environment separately).
 4. Follow the tag structure exactly. No extra text before, between, or after the tags.
 

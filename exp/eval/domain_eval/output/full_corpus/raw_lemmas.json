@@ -1,0 +1,2065 @@
+{
+  "lemmas": [
+    {
+      "fragment_id": 0,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "Permut.refl",
+      "scope_vars": [
+        "inst✝ : DecidableEq T",
+        "l : List T"
+      ],
+      "premises": [],
+      "body": "(t✝ : T) → count1 l t✝ = count1 l t✝",
+      "conclusion": "Permut l l",
+      "statement": "(inst✝ : DecidableEq T) (l : List T) (t✝ : T) (h1 : count1 l t✝ = count1 l t✝) : Permut l l"
+    },
+    {
+      "fragment_id": 1,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "Permut.refl",
+      "scope_vars": [
+        "inst✝ : DecidableEq T",
+        "l : List T"
+      ],
+      "premises": [],
+      "body": "True",
+      "conclusion": "∀ (t : T), count1 l t = count1 l t",
+      "statement": "(inst✝ : DecidableEq T) (l : List T) : ∀ (t : T), count1 l t = count1 l t"
+    },
+    {
+      "fragment_id": 2,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "Permut.symm",
+      "scope_vars": [
+        "inst✝ : DecidableEq T",
+        "l : List T",
+        "m : List T"
+      ],
+      "premises": [],
+      "body": "(t✝ : T) → count1 m t✝ = count1 l t✝",
+      "conclusion": "Permut m l",
+      "statement": "(inst✝ : DecidableEq T) (l : List T) (m : List T) (t✝ : T) (h1 : count1 m t✝ = count1 l t✝) : Permut m l"
+    },
+    {
+      "fragment_id": 3,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "Permut.symm",
+      "scope_vars": [
+        "inst✝ : DecidableEq T",
+        "l : List T",
+        "m : List T"
+      ],
+      "premises": [],
+      "body": "(t✝ : T) → count1 l t✝ = count1 m t✝",
+      "conclusion": "∀ (t : T), count1 m t = count1 l t",
+      "statement": "(inst✝ : DecidableEq T) (l : List T) (m : List T) (t✝ : T) (h1 : count1 l t✝ = count1 m t✝) : ∀ (t : T), count1 m t = count1 l t"
+    },
+    {
+      "fragment_id": 4,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "Permut.symm",
+      "scope_vars": [
+        "inst✝ : DecidableEq T",
+        "l : List T",
+        "m : List T"
+      ],
+      "premises": [],
+      "body": "(t✝ : T) → count1 l t✝ = count1 m t✝",
+      "conclusion": "Permut m l",
+      "statement": "(inst✝ : DecidableEq T) (l : List T) (m : List T) (t✝ : T) (h1 : count1 l t✝ = count1 m t✝) : Permut m l"
+    },
+    {
+      "fragment_id": 5,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "Permut.symm",
+      "scope_vars": [
+        "inst✝ : DecidableEq T",
+        "l : List T",
+        "m : List T",
+        "t✝ : T"
+      ],
+      "premises": [
+        "p : ∀ (t : T), count1 l t = count1 m t"
+      ],
+      "body": "True",
+      "conclusion": "count1 m t✝ = count1 l t✝",
+      "statement": "(inst✝ : DecidableEq T) (l : List T) (m : List T) (t✝ : T) (p : ∀ (t : T), count1 l t = count1 m t) : count1 m t✝ = count1 l t✝"
+    },
+    {
+      "fragment_id": 6,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "Permut.symm",
+      "scope_vars": [
+        "inst✝ : DecidableEq T",
+        "l : List T",
+        "m : List T"
+      ],
+      "premises": [
+        "p : ∀ (t : T), count1 l t = count1 m t"
+      ],
+      "body": "True",
+      "conclusion": "∀ (t : T), count1 m t = count1 l t",
+      "statement": "(inst✝ : DecidableEq T) (l : List T) (m : List T) (p : ∀ (t : T), count1 l t = count1 m t) : ∀ (t : T), count1 m t = count1 l t"
+    },
+    {
+      "fragment_id": 7,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "Permut.trans",
+      "scope_vars": [
+        "inst✝ : DecidableEq T",
+        "a : List T",
+        "c : List T"
+      ],
+      "premises": [],
+      "body": "(t✝ : T) → count1 a t✝ = count1 c t✝",
+      "conclusion": "Permut a c",
+      "statement": "(inst✝ : DecidableEq T) (a : List T) (c : List T) (t✝ : T) (h1 : count1 a t✝ = count1 c t✝) : Permut a c"
+    },
+    {
+      "fragment_id": 8,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "Permut.trans",
+      "scope_vars": [
+        "inst✝ : DecidableEq T",
+        "a : List T",
+        "b : List T",
+        "c : List T"
+      ],
+      "premises": [
+        "ab : ∀ (t : T), count1 a t = count1 b t"
+      ],
+      "body": "(t✝ : T) → count1 b t✝ = count1 c t✝",
+      "conclusion": "∀ (t : T), count1 a t = count1 c t",
+      "statement": "(inst✝ : DecidableEq T) (a : List T) (b : List T) (c : List T) (ab : ∀ (t : T), count1 a t = count1 b t) (t✝ : T) (h1 : count1 b t✝ = count1 c t✝) : ∀ (t : T), count1 a t = count1 c t"
+    },
+    {
+      "fragment_id": 9,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "Permut.trans",
+      "scope_vars": [
+        "inst✝ : DecidableEq T",
+        "c : List T"
+      ],
+      "premises": [
+        "a : List T",
+        "b : List T"
+      ],
+      "body": "(t✝ : T) → count1 b t✝ = count1 c t✝",
+      "conclusion": "Permut a c",
+      "statement": "(inst✝ : DecidableEq T) (c : List T) (a : List T) (b : List T) (t✝ : T) (h1 : count1 b t✝ = count1 c t✝) : Permut a c"
+    },
+    {
+      "fragment_id": 10,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "Permut.trans",
+      "scope_vars": [
+        "inst✝ : DecidableEq T",
+        "a : List T",
+        "b : List T",
+        "c : List T",
+        "t✝ : T"
+      ],
+      "premises": [
+        "ab : ∀ (t : T), count1 a t = count1 b t",
+        "bc : ∀ (t : T), count1 b t = count1 c t"
+      ],
+      "body": "True",
+      "conclusion": "count1 a t✝ = count1 c t✝",
+      "statement": "(inst✝ : DecidableEq T) (a : List T) (b : List T) (c : List T) (t✝ : T) (ab : ∀ (t : T), count1 a t = count1 b t) (bc : ∀ (t : T), count1 b t = count1 c t) : count1 a t✝ = count1 c t✝"
+    },
+    {
+      "fragment_id": 11,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "Permut.trans",
+      "scope_vars": [
+        "inst✝ : DecidableEq T",
+        "a : List T",
+        "b : List T",
+        "c : List T"
+      ],
+      "premises": [
+        "ab : ∀ (t : T), count1 a t = count1 b t",
+        "bc : ∀ (t : T), count1 b t = count1 c t"
+      ],
+      "body": "True",
+      "conclusion": "∀ (t : T), count1 a t = count1 c t",
+      "statement": "(inst✝ : DecidableEq T) (a : List T) (b : List T) (c : List T) (ab : ∀ (t : T), count1 a t = count1 b t) (bc : ∀ (t : T), count1 b t = count1 c t) : ∀ (t : T), count1 a t = count1 c t"
+    },
+    {
+      "fragment_id": 12,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "count_app",
+      "scope_vars": [
+        "inst✝ : DecidableEq T",
+        "b : List T",
+        "t : T"
+      ],
+      "premises": [],
+      "body": "True",
+      "conclusion": "count1 ([] ++ b) t = count1 [] t + count1 b t",
+      "statement": "(inst✝ : DecidableEq T) (b : List T) (t : T) : count1 ([] ++ b) t = count1 [] t + count1 b t"
+    },
+    {
+      "fragment_id": 13,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "count_app",
+      "scope_vars": [
+        "inst✝ : DecidableEq T",
+        "b : List T",
+        "t : T",
+        "head✝ : T",
+        "tail✝ : List T"
+      ],
+      "premises": [
+        "IH : count1 (tail✝ ++ b) t = count1 tail✝ t + count1 b t"
+      ],
+      "body": "True",
+      "conclusion": "count1 (head✝ :: tail✝ ++ b) t = count1 (head✝ :: tail✝) t + count1 b t",
+      "statement": "(inst✝ : DecidableEq T) (b : List T) (t : T) (head✝ : T) (tail✝ : List T) (IH : count1 (tail✝ ++ b) t = count1 tail✝ t + count1 b t) : count1 (head✝ :: tail✝ ++ b) t = count1 (head✝ :: tail✝) t + count1 b t"
+    },
+    {
+      "fragment_id": 14,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "Permut.app",
+      "scope_vars": [
+        "inst✝ : DecidableEq T",
+        "a : List T",
+        "b : List T",
+        "c : List T",
+        "d : List T"
+      ],
+      "premises": [],
+      "body": "(t : T) → count1 (a ++ b) t = count1 (c ++ d) t",
+      "conclusion": "Permut (a ++ b) (c ++ d)",
+      "statement": "(inst✝ : DecidableEq T) (a : List T) (b : List T) (c : List T) (d : List T) (t : T) (h1 : count1 (a ++ b) t = count1 (c ++ d) t) : Permut (a ++ b) (c ++ d)"
+    },
+    {
+      "fragment_id": 15,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "Permut.app",
+      "scope_vars": [
+        "inst✝ : DecidableEq T",
+        "c : List T",
+        "d : List T"
+      ],
+      "premises": [
+        "a : List T",
+        "b : List T",
+        "ac : Permut a c"
+      ],
+      "body": "(t : T) → (hl : count1 (a ++ b) t = count1 a t + count1 b t) → count1 (a ++ b) t = count1 (c ++ d) t",
+      "conclusion": "∀ (t : T), count1 (a ++ b) t = count1 (c ++ d) t",
+      "statement": "(inst✝ : DecidableEq T) (c : List T) (d : List T) (a : List T) (b : List T) (ac : Permut a c) (t : T) (hl : count1 (a ++ b) t = count1 a t + count1 b t) (h1 : count1 (a ++ b) t = count1 (c ++ d) t) : ∀ (t : T), count1 (a ++ b) t = count1 (c ++ d) t"
+    },
+    {
+      "fragment_id": 16,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "Permut.app",
+      "scope_vars": [
+        "inst✝ : DecidableEq T",
+        "c : List T",
+        "d : List T"
+      ],
+      "premises": [
+        "a : List T",
+        "b : List T",
+        "ac : Permut a c"
+      ],
+      "body": "(t : T) → (hl : count1 (a ++ b) t = count1 a t + count1 b t) → count1 (a ++ b) t = count1 (c ++ d) t",
+      "conclusion": "Permut (a ++ b) (c ++ d)",
+      "statement": "(inst✝ : DecidableEq T) (c : List T) (d : List T) (a : List T) (b : List T) (ac : Permut a c) (t : T) (hl : count1 (a ++ b) t = count1 a t + count1 b t) (h1 : count1 (a ++ b) t = count1 (c ++ d) t) : Permut (a ++ b) (c ++ d)"
+    },
+    {
+      "fragment_id": 17,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "Permut.app",
+      "scope_vars": [
+        "inst✝ : DecidableEq T",
+        "a : List T",
+        "b : List T"
+      ],
+      "premises": [
+        "c : List T",
+        "d : List T",
+        "ac : Permut a c"
+      ],
+      "body": "(t : T) → (hr : count1 (c ++ d) t = count1 c t + count1 d t) → count1 (a ++ b) t = count1 (c ++ d) t",
+      "conclusion": "∀ (t : T), count1 (a ++ b) t = count1 (c ++ d) t",
+      "statement": "(inst✝ : DecidableEq T) (a : List T) (b : List T) (c : List T) (d : List T) (ac : Permut a c) (t : T) (hr : count1 (c ++ d) t = count1 c t + count1 d t) (h1 : count1 (a ++ b) t = count1 (c ++ d) t) : ∀ (t : T), count1 (a ++ b) t = count1 (c ++ d) t"
+    },
+    {
+      "fragment_id": 18,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "Permut.app",
+      "scope_vars": [
+        "inst✝ : DecidableEq T",
+        "a : List T",
+        "b : List T"
+      ],
+      "premises": [
+        "c : List T",
+        "d : List T",
+        "ac : Permut a c"
+      ],
+      "body": "(t : T) → (hr : count1 (c ++ d) t = count1 c t + count1 d t) → count1 (a ++ b) t = count1 (c ++ d) t",
+      "conclusion": "Permut (a ++ b) (c ++ d)",
+      "statement": "(inst✝ : DecidableEq T) (a : List T) (b : List T) (c : List T) (d : List T) (ac : Permut a c) (t : T) (hr : count1 (c ++ d) t = count1 c t + count1 d t) (h1 : count1 (a ++ b) t = count1 (c ++ d) t) : Permut (a ++ b) (c ++ d)"
+    },
+    {
+      "fragment_id": 19,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "Permut.app",
+      "scope_vars": [
+        "inst✝ : DecidableEq T"
+      ],
+      "premises": [
+        "a : List T",
+        "b : List T",
+        "c : List T",
+        "d : List T",
+        "ac : Permut a c",
+        "t : T"
+      ],
+      "body": "(hl : count1 (a ++ b) t = count1 a t + count1 b t) → (hr : count1 (c ++ d) t = count1 c t + count1 d t) → count1 (a ++ b) t = count1 (c ++ d) t",
+      "conclusion": "count1 (a ++ b) t = count1 (c ++ d) t",
+      "statement": "(inst✝ : DecidableEq T) (a : List T) (b : List T) (c : List T) (d : List T) (ac : Permut a c) (t : T) (hl : count1 (a ++ b) t = count1 a t + count1 b t) (hr : count1 (c ++ d) t = count1 c t + count1 d t) (h1 : count1 (a ++ b) t = count1 (c ++ d) t) : count1 (a ++ b) t = count1 (c ++ d) t"
+    },
+    {
+      "fragment_id": 20,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "Permut.app",
+      "scope_vars": [
+        "inst✝ : DecidableEq T"
+      ],
+      "premises": [
+        "a : List T",
+        "b : List T",
+        "c : List T",
+        "d : List T",
+        "ac : Permut a c"
+      ],
+      "body": "(t : T) → (hl : count1 (a ++ b) t = count1 a t + count1 b t) → (hr : count1 (c ++ d) t = count1 c t + count1 d t) → count1 (a ++ b) t = count1 (c ++ d) t",
+      "conclusion": "∀ (t : T), count1 (a ++ b) t = count1 (c ++ d) t",
+      "statement": "(inst✝ : DecidableEq T) (a : List T) (b : List T) (c : List T) (d : List T) (ac : Permut a c) (t : T) (hl : count1 (a ++ b) t = count1 a t + count1 b t) (hr : count1 (c ++ d) t = count1 c t + count1 d t) (h1 : count1 (a ++ b) t = count1 (c ++ d) t) : ∀ (t : T), count1 (a ++ b) t = count1 (c ++ d) t"
+    },
+    {
+      "fragment_id": 21,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "Permut.app",
+      "scope_vars": [
+        "inst✝ : DecidableEq T"
+      ],
+      "premises": [
+        "a : List T",
+        "b : List T",
+        "c : List T",
+        "d : List T",
+        "ac : Permut a c"
+      ],
+      "body": "(t : T) → (hl : count1 (a ++ b) t = count1 a t + count1 b t) → (hr : count1 (c ++ d) t = count1 c t + count1 d t) → count1 (a ++ b) t = count1 (c ++ d) t",
+      "conclusion": "Permut (a ++ b) (c ++ d)",
+      "statement": "(inst✝ : DecidableEq T) (a : List T) (b : List T) (c : List T) (d : List T) (ac : Permut a c) (t : T) (hl : count1 (a ++ b) t = count1 a t + count1 b t) (hr : count1 (c ++ d) t = count1 c t + count1 d t) (h1 : count1 (a ++ b) t = count1 (c ++ d) t) : Permut (a ++ b) (c ++ d)"
+    },
+    {
+      "fragment_id": 22,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "Permut.app",
+      "scope_vars": [
+        "inst✝ : DecidableEq T",
+        "c : List T",
+        "d : List T"
+      ],
+      "premises": [
+        "a : List T",
+        "b : List T",
+        "ac : Permut a c",
+        "t : T"
+      ],
+      "body": "(hl : count1 (a ++ b) t = count1 a t + count1 b t) → count1 a t + count1 b t = count1 c t + count1 d t",
+      "conclusion": "count1 (a ++ b) t = count1 (c ++ d) t",
+      "statement": "(inst✝ : DecidableEq T) (c : List T) (d : List T) (a : List T) (b : List T) (ac : Permut a c) (t : T) (hl : count1 (a ++ b) t = count1 a t + count1 b t) (h1 : count1 a t + count1 b t = count1 c t + count1 d t) : count1 (a ++ b) t = count1 (c ++ d) t"
+    },
+    {
+      "fragment_id": 23,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "Permut.app",
+      "scope_vars": [
+        "inst✝ : DecidableEq T",
+        "a : List T",
+        "b : List T"
+      ],
+      "premises": [
+        "c : List T",
+        "d : List T",
+        "ac : Permut a c",
+        "t : T",
+        "hl : count1 (a ++ b) t = count1 a t + count1 b t"
+      ],
+      "body": "(hr : count1 (c ++ d) t = count1 c t + count1 d t) → count1 a t + count1 b t = count1 c t + count1 d t",
+      "conclusion": "count1 (a ++ b) t = count1 (c ++ d) t",
+      "statement": "(inst✝ : DecidableEq T) (a : List T) (b : List T) (c : List T) (d : List T) (ac : Permut a c) (t : T) (hl : count1 (a ++ b) t = count1 a t + count1 b t) (hr : count1 (c ++ d) t = count1 c t + count1 d t) (h1 : count1 a t + count1 b t = count1 c t + count1 d t) : count1 (a ++ b) t = count1 (c ++ d) t"
+    },
+    {
+      "fragment_id": 24,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "Permut.app",
+      "scope_vars": [
+        "inst✝ : DecidableEq T"
+      ],
+      "premises": [
+        "a : List T",
+        "b : List T",
+        "c : List T",
+        "d : List T",
+        "ac : Permut a c",
+        "t : T"
+      ],
+      "body": "(hl : count1 (a ++ b) t = count1 a t + count1 b t) → (hr : count1 (c ++ d) t = count1 c t + count1 d t) → count1 a t + count1 b t = count1 c t + count1 d t",
+      "conclusion": "count1 (a ++ b) t = count1 (c ++ d) t",
+      "statement": "(inst✝ : DecidableEq T) (a : List T) (b : List T) (c : List T) (d : List T) (ac : Permut a c) (t : T) (hl : count1 (a ++ b) t = count1 a t + count1 b t) (hr : count1 (c ++ d) t = count1 c t + count1 d t) (h1 : count1 a t + count1 b t = count1 c t + count1 d t) : count1 (a ++ b) t = count1 (c ++ d) t"
+    },
+    {
+      "fragment_id": 25,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "Permut.app",
+      "scope_vars": [
+        "inst✝ : DecidableEq T"
+      ],
+      "premises": [
+        "a : List T",
+        "b : List T",
+        "c : List T",
+        "d : List T",
+        "ac : Permut a c"
+      ],
+      "body": "(t : T) → (hl : count1 (a ++ b) t = count1 a t + count1 b t) → (hr : count1 (c ++ d) t = count1 c t + count1 d t) → count1 a t + count1 b t = count1 c t + count1 d t",
+      "conclusion": "∀ (t : T), count1 (a ++ b) t = count1 (c ++ d) t",
+      "statement": "(inst✝ : DecidableEq T) (a : List T) (b : List T) (c : List T) (d : List T) (ac : Permut a c) (t : T) (hl : count1 (a ++ b) t = count1 a t + count1 b t) (hr : count1 (c ++ d) t = count1 c t + count1 d t) (h1 : count1 a t + count1 b t = count1 c t + count1 d t) : ∀ (t : T), count1 (a ++ b) t = count1 (c ++ d) t"
+    },
+    {
+      "fragment_id": 26,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "Permut.app",
+      "scope_vars": [
+        "inst✝ : DecidableEq T"
+      ],
+      "premises": [
+        "a : List T",
+        "b : List T",
+        "c : List T",
+        "d : List T",
+        "ac : Permut a c"
+      ],
+      "body": "(t : T) → (hl : count1 (a ++ b) t = count1 a t + count1 b t) → (hr : count1 (c ++ d) t = count1 c t + count1 d t) → count1 a t + count1 b t = count1 c t + count1 d t",
+      "conclusion": "Permut (a ++ b) (c ++ d)",
+      "statement": "(inst✝ : DecidableEq T) (a : List T) (b : List T) (c : List T) (d : List T) (ac : Permut a c) (t : T) (hl : count1 (a ++ b) t = count1 a t + count1 b t) (hr : count1 (c ++ d) t = count1 c t + count1 d t) (h1 : count1 a t + count1 b t = count1 c t + count1 d t) : Permut (a ++ b) (c ++ d)"
+    },
+    {
+      "fragment_id": 27,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "Permut.app",
+      "scope_vars": [
+        "inst✝ : DecidableEq T",
+        "a : List T",
+        "b : List T",
+        "c : List T",
+        "d : List T"
+      ],
+      "premises": [
+        "ac : Permut a c",
+        "bd : Permut b d",
+        "t : T",
+        "hl : count1 (a ++ b) t = count1 a t + count1 b t",
+        "hr : count1 (c ++ d) t = count1 c t + count1 d t"
+      ],
+      "body": "True",
+      "conclusion": "count1 (a ++ b) t = count1 (c ++ d) t",
+      "statement": "(inst✝ : DecidableEq T) (a : List T) (b : List T) (c : List T) (d : List T) (ac : Permut a c) (bd : Permut b d) (t : T) (hl : count1 (a ++ b) t = count1 a t + count1 b t) (hr : count1 (c ++ d) t = count1 c t + count1 d t) : count1 (a ++ b) t = count1 (c ++ d) t"
+    },
+    {
+      "fragment_id": 28,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "Permut.app",
+      "scope_vars": [
+        "inst✝ : DecidableEq T",
+        "c : List T",
+        "d : List T"
+      ],
+      "premises": [
+        "a : List T",
+        "b : List T",
+        "ac : Permut a c",
+        "bd : Permut b d",
+        "t : T"
+      ],
+      "body": "True",
+      "conclusion": "count1 (a ++ b) t = count1 (c ++ d) t",
+      "statement": "(inst✝ : DecidableEq T) (c : List T) (d : List T) (a : List T) (b : List T) (ac : Permut a c) (bd : Permut b d) (t : T) : count1 (a ++ b) t = count1 (c ++ d) t"
+    },
+    {
+      "fragment_id": 29,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "Permut.app",
+      "scope_vars": [
+        "inst✝ : DecidableEq T",
+        "a : List T",
+        "b : List T"
+      ],
+      "premises": [
+        "c : List T",
+        "d : List T",
+        "ac : Permut a c",
+        "bd : Permut b d",
+        "t : T",
+        "hl : count1 (a ++ b) t = count1 a t + count1 b t"
+      ],
+      "body": "True",
+      "conclusion": "count1 (a ++ b) t = count1 (c ++ d) t",
+      "statement": "(inst✝ : DecidableEq T) (a : List T) (b : List T) (c : List T) (d : List T) (ac : Permut a c) (bd : Permut b d) (t : T) (hl : count1 (a ++ b) t = count1 a t + count1 b t) : count1 (a ++ b) t = count1 (c ++ d) t"
+    },
+    {
+      "fragment_id": 30,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "Permut.app",
+      "scope_vars": [
+        "inst✝ : DecidableEq T"
+      ],
+      "premises": [
+        "a : List T",
+        "b : List T",
+        "c : List T",
+        "d : List T",
+        "ac : Permut a c",
+        "bd : Permut b d",
+        "t : T"
+      ],
+      "body": "True",
+      "conclusion": "count1 (a ++ b) t = count1 (c ++ d) t",
+      "statement": "(inst✝ : DecidableEq T) (a : List T) (b : List T) (c : List T) (d : List T) (ac : Permut a c) (bd : Permut b d) (t : T) : count1 (a ++ b) t = count1 (c ++ d) t"
+    },
+    {
+      "fragment_id": 31,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "Permut.app",
+      "scope_vars": [
+        "inst✝ : DecidableEq T"
+      ],
+      "premises": [
+        "a : List T",
+        "b : List T",
+        "c : List T",
+        "d : List T",
+        "ac : Permut a c",
+        "bd : Permut b d"
+      ],
+      "body": "True",
+      "conclusion": "∀ (t : T), count1 (a ++ b) t = count1 (c ++ d) t",
+      "statement": "(inst✝ : DecidableEq T) (a : List T) (b : List T) (c : List T) (d : List T) (ac : Permut a c) (bd : Permut b d) : ∀ (t : T), count1 (a ++ b) t = count1 (c ++ d) t"
+    },
+    {
+      "fragment_id": 32,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "insertionsort_sorted",
+      "scope_vars": [
+        "inst✝¹ : Preorder T",
+        "inst✝ : DecidableRel LT.lt"
+      ],
+      "premises": [],
+      "body": "True",
+      "conclusion": "Sorted (insertionsort [])",
+      "statement": "(inst✝¹ : Preorder T) (inst✝ : DecidableRel LT.lt) : Sorted (insertionsort [])"
+    },
+    {
+      "fragment_id": 33,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "insertionsort_sorted",
+      "scope_vars": [
+        "inst✝¹ : Preorder T",
+        "inst✝ : DecidableRel LT.lt",
+        "x : T",
+        "xs : List T"
+      ],
+      "premises": [
+        "IH : Sorted (insertionsort xs)"
+      ],
+      "body": "True",
+      "conclusion": "Sorted (insertionsort (x :: xs))",
+      "statement": "(inst✝¹ : Preorder T) (inst✝ : DecidableRel LT.lt) (x : T) (xs : List T) (IH : Sorted (insertionsort xs)) : Sorted (insertionsort (x :: xs))"
+    },
+    {
+      "fragment_id": 34,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "insert_permut",
+      "scope_vars": [
+        "inst✝² : LT T",
+        "inst✝¹ : DecidableEq T",
+        "inst✝ : DecidableRel LT.lt",
+        "e : T"
+      ],
+      "premises": [],
+      "body": "∀ (t : T), count1 [e] t = count1 [e] t",
+      "conclusion": "Permut (insert_ e []) [e]",
+      "statement": "(inst✝² : LT T) (inst✝¹ : DecidableEq T) (inst✝ : DecidableRel LT.lt) (e : T) (h1 : ∀ (t : T), count1 [e] t = count1 [e] t) : Permut (insert_ e []) [e]"
+    },
+    {
+      "fragment_id": 35,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "insert_permut",
+      "scope_vars": [
+        "inst✝² : LT T",
+        "inst✝¹ : DecidableEq T",
+        "inst✝ : DecidableRel LT.lt",
+        "e : T"
+      ],
+      "premises": [],
+      "body": "(t✝ : T) → count1 [e] t✝ = count1 [e] t✝",
+      "conclusion": "Permut [e] [e]",
+      "statement": "(inst✝² : LT T) (inst✝¹ : DecidableEq T) (inst✝ : DecidableRel LT.lt) (e : T) (t✝ : T) (h1 : count1 [e] t✝ = count1 [e] t✝) : Permut [e] [e]"
+    },
+    {
+      "fragment_id": 36,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "insert_permut",
+      "scope_vars": [
+        "inst✝² : LT T",
+        "inst✝¹ : DecidableEq T",
+        "inst✝ : DecidableRel LT.lt",
+        "e : T"
+      ],
+      "premises": [],
+      "body": "(t✝ : T) → count1 [e] t✝ = count1 [e] t✝",
+      "conclusion": "Permut (insert_ e []) [e]",
+      "statement": "(inst✝² : LT T) (inst✝¹ : DecidableEq T) (inst✝ : DecidableRel LT.lt) (e : T) (t✝ : T) (h1 : count1 [e] t✝ = count1 [e] t✝) : Permut (insert_ e []) [e]"
+    },
+    {
+      "fragment_id": 37,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "insert_permut",
+      "scope_vars": [
+        "inst✝² : LT T",
+        "inst✝¹ : DecidableEq T",
+        "inst✝ : DecidableRel LT.lt",
+        "e : T"
+      ],
+      "premises": [],
+      "body": "True",
+      "conclusion": "∀ (t : T), count1 [e] t = count1 [e] t",
+      "statement": "(inst✝² : LT T) (inst✝¹ : DecidableEq T) (inst✝ : DecidableRel LT.lt) (e : T) : ∀ (t : T), count1 [e] t = count1 [e] t"
+    },
+    {
+      "fragment_id": 38,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "insert_permut",
+      "scope_vars": [
+        "inst✝² : LT T",
+        "inst✝¹ : DecidableEq T",
+        "inst✝ : DecidableRel LT.lt",
+        "e : T"
+      ],
+      "premises": [],
+      "body": "True",
+      "conclusion": "Permut [e] [e]",
+      "statement": "(inst✝² : LT T) (inst✝¹ : DecidableEq T) (inst✝ : DecidableRel LT.lt) (e : T) : Permut [e] [e]"
+    },
+    {
+      "fragment_id": 39,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "insert_permut",
+      "scope_vars": [
+        "inst✝² : LT T",
+        "inst✝¹ : DecidableEq T",
+        "inst✝ : DecidableRel LT.lt",
+        "e : T"
+      ],
+      "premises": [],
+      "body": "True",
+      "conclusion": "Permut (insert_ e []) [e]",
+      "statement": "(inst✝² : LT T) (inst✝¹ : DecidableEq T) (inst✝ : DecidableRel LT.lt) (e : T) : Permut (insert_ e []) [e]"
+    },
+    {
+      "fragment_id": 40,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "insert_permut",
+      "scope_vars": [
+        "inst✝² : LT T",
+        "inst✝¹ : DecidableEq T",
+        "inst✝ : DecidableRel LT.lt",
+        "e : T",
+        "x : T",
+        "xs : List T"
+      ],
+      "premises": [
+        "p : e < x"
+      ],
+      "body": "∀ (t : T), count1 (e :: x :: xs) t = count1 (e :: x :: xs) t",
+      "conclusion": "Permut (if e < x then e :: x :: xs else x :: insert_ e xs) (e :: x :: xs)",
+      "statement": "(inst✝² : LT T) (inst✝¹ : DecidableEq T) (inst✝ : DecidableRel LT.lt) (e : T) (x : T) (xs : List T) (p : e < x) (h1 : ∀ (t : T), count1 (e :: x :: xs) t = count1 (e :: x :: xs) t) : Permut (if e < x then e :: x :: xs else x :: insert_ e xs) (e :: x :: xs)"
+    },
+    {
+      "fragment_id": 41,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "insert_permut",
+      "scope_vars": [
+        "inst✝² : LT T",
+        "inst✝¹ : DecidableEq T",
+        "inst✝ : DecidableRel LT.lt",
+        "e : T",
+        "x : T",
+        "xs : List T"
+      ],
+      "premises": [],
+      "body": "(t✝ : T) → count1 (e :: x :: xs) t✝ = count1 (e :: x :: xs) t✝",
+      "conclusion": "Permut (e :: x :: xs) (e :: x :: xs)",
+      "statement": "(inst✝² : LT T) (inst✝¹ : DecidableEq T) (inst✝ : DecidableRel LT.lt) (e : T) (x : T) (xs : List T) (t✝ : T) (h1 : count1 (e :: x :: xs) t✝ = count1 (e :: x :: xs) t✝) : Permut (e :: x :: xs) (e :: x :: xs)"
+    },
+    {
+      "fragment_id": 42,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "insert_permut",
+      "scope_vars": [
+        "inst✝² : LT T",
+        "inst✝¹ : DecidableEq T",
+        "inst✝ : DecidableRel LT.lt",
+        "e : T",
+        "x : T",
+        "xs : List T"
+      ],
+      "premises": [
+        "p : e < x"
+      ],
+      "body": "(t✝ : T) → count1 (e :: x :: xs) t✝ = count1 (e :: x :: xs) t✝",
+      "conclusion": "Permut (if e < x then e :: x :: xs else x :: insert_ e xs) (e :: x :: xs)",
+      "statement": "(inst✝² : LT T) (inst✝¹ : DecidableEq T) (inst✝ : DecidableRel LT.lt) (e : T) (x : T) (xs : List T) (p : e < x) (t✝ : T) (h1 : count1 (e :: x :: xs) t✝ = count1 (e :: x :: xs) t✝) : Permut (if e < x then e :: x :: xs else x :: insert_ e xs) (e :: x :: xs)"
+    },
+    {
+      "fragment_id": 43,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "insert_permut",
+      "scope_vars": [
+        "inst✝² : LT T",
+        "inst✝¹ : DecidableEq T",
+        "inst✝ : DecidableRel LT.lt",
+        "e : T",
+        "x : T",
+        "xs : List T"
+      ],
+      "premises": [],
+      "body": "True",
+      "conclusion": "∀ (t : T), count1 (e :: x :: xs) t = count1 (e :: x :: xs) t",
+      "statement": "(inst✝² : LT T) (inst✝¹ : DecidableEq T) (inst✝ : DecidableRel LT.lt) (e : T) (x : T) (xs : List T) : ∀ (t : T), count1 (e :: x :: xs) t = count1 (e :: x :: xs) t"
+    },
+    {
+      "fragment_id": 44,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "insert_permut",
+      "scope_vars": [
+        "inst✝² : LT T",
+        "inst✝¹ : DecidableEq T",
+        "inst✝ : DecidableRel LT.lt",
+        "e : T",
+        "x : T",
+        "xs : List T"
+      ],
+      "premises": [],
+      "body": "True",
+      "conclusion": "Permut (e :: x :: xs) (e :: x :: xs)",
+      "statement": "(inst✝² : LT T) (inst✝¹ : DecidableEq T) (inst✝ : DecidableRel LT.lt) (e : T) (x : T) (xs : List T) : Permut (e :: x :: xs) (e :: x :: xs)"
+    },
+    {
+      "fragment_id": 45,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "insert_permut",
+      "scope_vars": [
+        "inst✝² : LT T",
+        "inst✝¹ : DecidableEq T",
+        "inst✝ : DecidableRel LT.lt",
+        "e : T",
+        "x : T",
+        "xs : List T"
+      ],
+      "premises": [
+        "p : e < x"
+      ],
+      "body": "True",
+      "conclusion": "Permut (if e < x then e :: x :: xs else x :: insert_ e xs) (e :: x :: xs)",
+      "statement": "(inst✝² : LT T) (inst✝¹ : DecidableEq T) (inst✝ : DecidableRel LT.lt) (e : T) (x : T) (xs : List T) (p : e < x) : Permut (if e < x then e :: x :: xs else x :: insert_ e xs) (e :: x :: xs)"
+    },
+    {
+      "fragment_id": 46,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "insert_permut",
+      "scope_vars": [
+        "inst✝² : LT T",
+        "inst✝¹ : DecidableEq T",
+        "inst✝ : DecidableRel LT.lt",
+        "e : T",
+        "x : T",
+        "xs : List T"
+      ],
+      "premises": [
+        "p : ¬e < x"
+      ],
+      "body": "(t : T) → count1 (x :: insert_ e xs) t = count1 (e :: x :: xs) t",
+      "conclusion": "Permut (if e < x then e :: x :: xs else x :: insert_ e xs) (e :: x :: xs)",
+      "statement": "(inst✝² : LT T) (inst✝¹ : DecidableEq T) (inst✝ : DecidableRel LT.lt) (e : T) (x : T) (xs : List T) (p : ¬e < x) (t : T) (h1 : count1 (x :: insert_ e xs) t = count1 (e :: x :: xs) t) : Permut (if e < x then e :: x :: xs else x :: insert_ e xs) (e :: x :: xs)"
+    },
+    {
+      "fragment_id": 47,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "insert_permut",
+      "scope_vars": [
+        "inst✝² : LT T",
+        "inst✝¹ : DecidableEq T",
+        "inst✝ : DecidableRel LT.lt",
+        "e : T",
+        "x : T",
+        "xs : List T"
+      ],
+      "premises": [],
+      "body": "(t : T) → (if x = t then 1 else 0) + count1 (insert_ e xs) t = (if e = t then 1 else 0) + count1 (x :: xs) t",
+      "conclusion": "Permut (x :: insert_ e xs) (e :: x :: xs)",
+      "statement": "(inst✝² : LT T) (inst✝¹ : DecidableEq T) (inst✝ : DecidableRel LT.lt) (e : T) (x : T) (xs : List T) (t : T) (h1 : (if x = t then 1 else 0) + count1 (insert_ e xs) t = (if e = t then 1 else 0) + count1 (x :: xs) t) : Permut (x :: insert_ e xs) (e :: x :: xs)"
+    },
+    {
+      "fragment_id": 48,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "insert_permut",
+      "scope_vars": [
+        "inst✝² : LT T",
+        "inst✝¹ : DecidableEq T",
+        "inst✝ : DecidableRel LT.lt",
+        "e : T",
+        "x : T",
+        "xs : List T"
+      ],
+      "premises": [
+        "p : ¬e < x"
+      ],
+      "body": "(t : T) → (if x = t then 1 else 0) + count1 (insert_ e xs) t = (if e = t then 1 else 0) + count1 (x :: xs) t",
+      "conclusion": "Permut (if e < x then e :: x :: xs else x :: insert_ e xs) (e :: x :: xs)",
+      "statement": "(inst✝² : LT T) (inst✝¹ : DecidableEq T) (inst✝ : DecidableRel LT.lt) (e : T) (x : T) (xs : List T) (p : ¬e < x) (t : T) (h1 : (if x = t then 1 else 0) + count1 (insert_ e xs) t = (if e = t then 1 else 0) + count1 (x :: xs) t) : Permut (if e < x then e :: x :: xs else x :: insert_ e xs) (e :: x :: xs)"
+    },
+    {
+      "fragment_id": 49,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "insert_permut",
+      "scope_vars": [
+        "inst✝² : LT T",
+        "inst✝¹ : DecidableEq T",
+        "inst✝ : DecidableRel LT.lt",
+        "e : T",
+        "x : T",
+        "xs : List T"
+      ],
+      "premises": [
+        "IH : Permut (insert_ e xs) (e :: xs)",
+        "t : T"
+      ],
+      "body": "(if x = t then 1 else 0) + count1 (e :: xs) t = (if e = t then 1 else 0) + count1 (x :: xs) t",
+      "conclusion": "count1 (x :: insert_ e xs) t = count1 (e :: x :: xs) t",
+      "statement": "(inst✝² : LT T) (inst✝¹ : DecidableEq T) (inst✝ : DecidableRel LT.lt) (e : T) (x : T) (xs : List T) (IH : Permut (insert_ e xs) (e :: xs)) (t : T) (h1 : (if x = t then 1 else 0) + count1 (e :: xs) t = (if e = t then 1 else 0) + count1 (x :: xs) t) : count1 (x :: insert_ e xs) t = count1 (e :: x :: xs) t"
+    },
+    {
+      "fragment_id": 50,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "insert_permut",
+      "scope_vars": [
+        "inst✝² : LT T",
+        "inst✝¹ : DecidableEq T",
+        "inst✝ : DecidableRel LT.lt",
+        "e : T",
+        "x : T",
+        "xs : List T"
+      ],
+      "premises": [
+        "IH : Permut (insert_ e xs) (e :: xs)"
+      ],
+      "body": "(t : T) → (if x = t then 1 else 0) + count1 (e :: xs) t = (if e = t then 1 else 0) + count1 (x :: xs) t",
+      "conclusion": "Permut (x :: insert_ e xs) (e :: x :: xs)",
+      "statement": "(inst✝² : LT T) (inst✝¹ : DecidableEq T) (inst✝ : DecidableRel LT.lt) (e : T) (x : T) (xs : List T) (IH : Permut (insert_ e xs) (e :: xs)) (t : T) (h1 : (if x = t then 1 else 0) + count1 (e :: xs) t = (if e = t then 1 else 0) + count1 (x :: xs) t) : Permut (x :: insert_ e xs) (e :: x :: xs)"
+    },
+    {
+      "fragment_id": 51,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "insert_permut",
+      "scope_vars": [
+        "inst✝² : LT T",
+        "inst✝¹ : DecidableEq T",
+        "inst✝ : DecidableRel LT.lt",
+        "e : T",
+        "x : T",
+        "xs : List T"
+      ],
+      "premises": [
+        "IH : Permut (insert_ e xs) (e :: xs)",
+        "p : ¬e < x"
+      ],
+      "body": "(t : T) → (if x = t then 1 else 0) + count1 (e :: xs) t = (if e = t then 1 else 0) + count1 (x :: xs) t",
+      "conclusion": "Permut (if e < x then e :: x :: xs else x :: insert_ e xs) (e :: x :: xs)",
+      "statement": "(inst✝² : LT T) (inst✝¹ : DecidableEq T) (inst✝ : DecidableRel LT.lt) (e : T) (x : T) (xs : List T) (IH : Permut (insert_ e xs) (e :: xs)) (p : ¬e < x) (t : T) (h1 : (if x = t then 1 else 0) + count1 (e :: xs) t = (if e = t then 1 else 0) + count1 (x :: xs) t) : Permut (if e < x then e :: x :: xs else x :: insert_ e xs) (e :: x :: xs)"
+    },
+    {
+      "fragment_id": 52,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "insert_permut",
+      "scope_vars": [
+        "inst✝² : LT T",
+        "inst✝¹ : DecidableEq T",
+        "inst✝ : DecidableRel LT.lt",
+        "e : T",
+        "x : T",
+        "xs : List T"
+      ],
+      "premises": [
+        "IH : Permut (insert_ e xs) (e :: xs)",
+        "t : T"
+      ],
+      "body": "(if x = t then 1 else 0) + ((if e = t then 1 else 0) + count1 xs t) =",
+      "conclusion": "(if x = t then 1 else 0) + count1 (insert_ e xs) t = (if e = t then 1 else 0) + count1 (x :: xs) t",
+      "statement": "(inst✝² : LT T) (inst✝¹ : DecidableEq T) (inst✝ : DecidableRel LT.lt) (e : T) (x : T) (xs : List T) (IH : Permut (insert_ e xs) (e :: xs)) (t : T) (h1 : (if x = t then 1 else 0) + ((if e = t then 1 else 0) + count1 xs t) =) : (if x = t then 1 else 0) + count1 (insert_ e xs) t = (if e = t then 1 else 0) + count1 (x :: xs) t"
+    },
+    {
+      "fragment_id": 53,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "insert_permut",
+      "scope_vars": [
+        "inst✝² : LT T",
+        "inst✝¹ : DecidableEq T",
+        "inst✝ : DecidableRel LT.lt",
+        "e : T",
+        "x : T",
+        "xs : List T"
+      ],
+      "premises": [
+        "IH : Permut (insert_ e xs) (e :: xs)",
+        "t : T"
+      ],
+      "body": "(if x = t then 1 else 0) + ((if e = t then 1 else 0) + count1 xs t) =",
+      "conclusion": "count1 (x :: insert_ e xs) t = count1 (e :: x :: xs) t",
+      "statement": "(inst✝² : LT T) (inst✝¹ : DecidableEq T) (inst✝ : DecidableRel LT.lt) (e : T) (x : T) (xs : List T) (IH : Permut (insert_ e xs) (e :: xs)) (t : T) (h1 : (if x = t then 1 else 0) + ((if e = t then 1 else 0) + count1 xs t) =) : count1 (x :: insert_ e xs) t = count1 (e :: x :: xs) t"
+    },
+    {
+      "fragment_id": 54,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "insert_permut",
+      "scope_vars": [
+        "inst✝² : LT T",
+        "inst✝¹ : DecidableEq T",
+        "inst✝ : DecidableRel LT.lt",
+        "e : T",
+        "x : T",
+        "xs : List T"
+      ],
+      "premises": [
+        "IH : Permut (insert_ e xs) (e :: xs)"
+      ],
+      "body": "(t : T) → (if x = t then 1 else 0) + ((if e = t then 1 else 0) + count1 xs t) =",
+      "conclusion": "Permut (x :: insert_ e xs) (e :: x :: xs)",
+      "statement": "(inst✝² : LT T) (inst✝¹ : DecidableEq T) (inst✝ : DecidableRel LT.lt) (e : T) (x : T) (xs : List T) (IH : Permut (insert_ e xs) (e :: xs)) (t : T) (h1 : (if x = t then 1 else 0) + ((if e = t then 1 else 0) + count1 xs t) =) : Permut (x :: insert_ e xs) (e :: x :: xs)"
+    },
+    {
+      "fragment_id": 55,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "insert_permut",
+      "scope_vars": [
+        "inst✝² : LT T",
+        "inst✝¹ : DecidableEq T",
+        "inst✝ : DecidableRel LT.lt",
+        "e : T",
+        "x : T",
+        "xs : List T"
+      ],
+      "premises": [
+        "IH : Permut (insert_ e xs) (e :: xs)",
+        "p : ¬e < x"
+      ],
+      "body": "(t : T) → (if x = t then 1 else 0) + ((if e = t then 1 else 0) + count1 xs t) =",
+      "conclusion": "Permut (if e < x then e :: x :: xs else x :: insert_ e xs) (e :: x :: xs)",
+      "statement": "(inst✝² : LT T) (inst✝¹ : DecidableEq T) (inst✝ : DecidableRel LT.lt) (e : T) (x : T) (xs : List T) (IH : Permut (insert_ e xs) (e :: xs)) (p : ¬e < x) (t : T) (h1 : (if x = t then 1 else 0) + ((if e = t then 1 else 0) + count1 xs t) =) : Permut (if e < x then e :: x :: xs else x :: insert_ e xs) (e :: x :: xs)"
+    },
+    {
+      "fragment_id": 56,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "insert_permut",
+      "scope_vars": [
+        "inst✝² : LT T",
+        "inst✝¹ : DecidableEq T",
+        "inst✝ : DecidableRel LT.lt",
+        "e : T",
+        "x : T",
+        "xs : List T",
+        "t : T"
+      ],
+      "premises": [],
+      "body": "(if x = t then 1 else 0) + (count1 xs t + if e = t then 1 else 0) =",
+      "conclusion": "(if x = t then 1 else 0) + count1 (e :: xs) t = (if e = t then 1 else 0) + count1 (x :: xs) t",
+      "statement": "(inst✝² : LT T) (inst✝¹ : DecidableEq T) (inst✝ : DecidableRel LT.lt) (e : T) (x : T) (xs : List T) (t : T) (h1 : (if x = t then 1 else 0) + (count1 xs t + if e = t then 1 else 0) =) : (if x = t then 1 else 0) + count1 (e :: xs) t = (if e = t then 1 else 0) + count1 (x :: xs) t"
+    },
+    {
+      "fragment_id": 57,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "insert_permut",
+      "scope_vars": [
+        "inst✝² : LT T",
+        "inst✝¹ : DecidableEq T",
+        "inst✝ : DecidableRel LT.lt",
+        "e : T",
+        "x : T",
+        "xs : List T"
+      ],
+      "premises": [
+        "IH : Permut (insert_ e xs) (e :: xs)",
+        "t : T"
+      ],
+      "body": "(if x = t then 1 else 0) + (count1 xs t + if e = t then 1 else 0) =",
+      "conclusion": "(if x = t then 1 else 0) + count1 (insert_ e xs) t = (if e = t then 1 else 0) + count1 (x :: xs) t",
+      "statement": "(inst✝² : LT T) (inst✝¹ : DecidableEq T) (inst✝ : DecidableRel LT.lt) (e : T) (x : T) (xs : List T) (IH : Permut (insert_ e xs) (e :: xs)) (t : T) (h1 : (if x = t then 1 else 0) + (count1 xs t + if e = t then 1 else 0) =) : (if x = t then 1 else 0) + count1 (insert_ e xs) t = (if e = t then 1 else 0) + count1 (x :: xs) t"
+    },
+    {
+      "fragment_id": 58,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "insert_permut",
+      "scope_vars": [
+        "inst✝² : LT T",
+        "inst✝¹ : DecidableEq T",
+        "inst✝ : DecidableRel LT.lt",
+        "e : T",
+        "x : T",
+        "xs : List T"
+      ],
+      "premises": [
+        "IH : Permut (insert_ e xs) (e :: xs)",
+        "t : T"
+      ],
+      "body": "(if x = t then 1 else 0) + (count1 xs t + if e = t then 1 else 0) =",
+      "conclusion": "count1 (x :: insert_ e xs) t = count1 (e :: x :: xs) t",
+      "statement": "(inst✝² : LT T) (inst✝¹ : DecidableEq T) (inst✝ : DecidableRel LT.lt) (e : T) (x : T) (xs : List T) (IH : Permut (insert_ e xs) (e :: xs)) (t : T) (h1 : (if x = t then 1 else 0) + (count1 xs t + if e = t then 1 else 0) =) : count1 (x :: insert_ e xs) t = count1 (e :: x :: xs) t"
+    },
+    {
+      "fragment_id": 59,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "insert_permut",
+      "scope_vars": [
+        "inst✝² : LT T",
+        "inst✝¹ : DecidableEq T",
+        "inst✝ : DecidableRel LT.lt",
+        "e : T",
+        "x : T",
+        "xs : List T"
+      ],
+      "premises": [
+        "IH : Permut (insert_ e xs) (e :: xs)"
+      ],
+      "body": "(t : T) → (if x = t then 1 else 0) + (count1 xs t + if e = t then 1 else 0) =",
+      "conclusion": "Permut (x :: insert_ e xs) (e :: x :: xs)",
+      "statement": "(inst✝² : LT T) (inst✝¹ : DecidableEq T) (inst✝ : DecidableRel LT.lt) (e : T) (x : T) (xs : List T) (IH : Permut (insert_ e xs) (e :: xs)) (t : T) (h1 : (if x = t then 1 else 0) + (count1 xs t + if e = t then 1 else 0) =) : Permut (x :: insert_ e xs) (e :: x :: xs)"
+    },
+    {
+      "fragment_id": 60,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "insert_permut",
+      "scope_vars": [
+        "inst✝² : LT T",
+        "inst✝¹ : DecidableEq T",
+        "inst✝ : DecidableRel LT.lt",
+        "e : T",
+        "x : T",
+        "xs : List T"
+      ],
+      "premises": [
+        "IH : Permut (insert_ e xs) (e :: xs)",
+        "p : ¬e < x"
+      ],
+      "body": "(t : T) → (if x = t then 1 else 0) + (count1 xs t + if e = t then 1 else 0) =",
+      "conclusion": "Permut (if e < x then e :: x :: xs else x :: insert_ e xs) (e :: x :: xs)",
+      "statement": "(inst✝² : LT T) (inst✝¹ : DecidableEq T) (inst✝ : DecidableRel LT.lt) (e : T) (x : T) (xs : List T) (IH : Permut (insert_ e xs) (e :: xs)) (p : ¬e < x) (t : T) (h1 : (if x = t then 1 else 0) + (count1 xs t + if e = t then 1 else 0) =) : Permut (if e < x then e :: x :: xs else x :: insert_ e xs) (e :: x :: xs)"
+    },
+    {
+      "fragment_id": 61,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "insert_permut",
+      "scope_vars": [],
+      "premises": [
+        "inst✝² : LT T",
+        "inst✝¹ : DecidableEq T",
+        "inst✝ : DecidableRel LT.lt",
+        "e : T",
+        "x : T",
+        "xs : List T",
+        "IH : Permut (insert_ e xs) (e :: xs)",
+        "p : ¬e < x",
+        "t : T"
+      ],
+      "body": "True",
+      "conclusion": "(if x = t then 1 else 0) + ((if e = t then 1 else 0) + count1 xs t) =",
+      "statement": "(inst✝² : LT T) (inst✝¹ : DecidableEq T) (inst✝ : DecidableRel LT.lt) (e : T) (x : T) (xs : List T) (IH : Permut (insert_ e xs) (e :: xs)) (p : ¬e < x) (t : T) : (if x = t then 1 else 0) + ((if e = t then 1 else 0) + count1 xs t) ="
+    },
+    {
+      "fragment_id": 62,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "insert_permut",
+      "scope_vars": [],
+      "premises": [
+        "inst✝² : LT T",
+        "inst✝¹ : DecidableEq T",
+        "inst✝ : DecidableRel LT.lt",
+        "e : T",
+        "x : T",
+        "xs : List T",
+        "IH : Permut (insert_ e xs) (e :: xs)",
+        "p : ¬e < x",
+        "t : T"
+      ],
+      "body": "True",
+      "conclusion": "(if x = t then 1 else 0) + count1 (e :: xs) t = (if e = t then 1 else 0) + count1 (x :: xs) t",
+      "statement": "(inst✝² : LT T) (inst✝¹ : DecidableEq T) (inst✝ : DecidableRel LT.lt) (e : T) (x : T) (xs : List T) (IH : Permut (insert_ e xs) (e :: xs)) (p : ¬e < x) (t : T) : (if x = t then 1 else 0) + count1 (e :: xs) t = (if e = t then 1 else 0) + count1 (x :: xs) t"
+    },
+    {
+      "fragment_id": 63,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "insert_permut",
+      "scope_vars": [],
+      "premises": [
+        "inst✝² : LT T",
+        "inst✝¹ : DecidableEq T",
+        "inst✝ : DecidableRel LT.lt",
+        "e : T",
+        "x : T",
+        "xs : List T",
+        "IH : Permut (insert_ e xs) (e :: xs)",
+        "p : ¬e < x",
+        "t : T"
+      ],
+      "body": "True",
+      "conclusion": "(if x = t then 1 else 0) + count1 (insert_ e xs) t = (if e = t then 1 else 0) + count1 (x :: xs) t",
+      "statement": "(inst✝² : LT T) (inst✝¹ : DecidableEq T) (inst✝ : DecidableRel LT.lt) (e : T) (x : T) (xs : List T) (IH : Permut (insert_ e xs) (e :: xs)) (p : ¬e < x) (t : T) : (if x = t then 1 else 0) + count1 (insert_ e xs) t = (if e = t then 1 else 0) + count1 (x :: xs) t"
+    },
+    {
+      "fragment_id": 64,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "insert_permut",
+      "scope_vars": [],
+      "premises": [
+        "inst✝² : LT T",
+        "inst✝¹ : DecidableEq T",
+        "inst✝ : DecidableRel LT.lt",
+        "e : T",
+        "x : T",
+        "xs : List T",
+        "IH : Permut (insert_ e xs) (e :: xs)",
+        "p : ¬e < x",
+        "t : T"
+      ],
+      "body": "True",
+      "conclusion": "count1 (x :: insert_ e xs) t = count1 (e :: x :: xs) t",
+      "statement": "(inst✝² : LT T) (inst✝¹ : DecidableEq T) (inst✝ : DecidableRel LT.lt) (e : T) (x : T) (xs : List T) (IH : Permut (insert_ e xs) (e :: xs)) (p : ¬e < x) (t : T) : count1 (x :: insert_ e xs) t = count1 (e :: x :: xs) t"
+    },
+    {
+      "fragment_id": 65,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "insert_permut",
+      "scope_vars": [],
+      "premises": [
+        "inst✝² : LT T",
+        "inst✝¹ : DecidableEq T",
+        "inst✝ : DecidableRel LT.lt",
+        "e : T",
+        "x : T",
+        "xs : List T",
+        "IH : Permut (insert_ e xs) (e :: xs)",
+        "p : ¬e < x"
+      ],
+      "body": "True",
+      "conclusion": "Permut (x :: insert_ e xs) (e :: x :: xs)",
+      "statement": "(inst✝² : LT T) (inst✝¹ : DecidableEq T) (inst✝ : DecidableRel LT.lt) (e : T) (x : T) (xs : List T) (IH : Permut (insert_ e xs) (e :: xs)) (p : ¬e < x) : Permut (x :: insert_ e xs) (e :: x :: xs)"
+    },
+    {
+      "fragment_id": 66,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "insert_permut",
+      "scope_vars": [],
+      "premises": [
+        "inst✝² : LT T",
+        "inst✝¹ : DecidableEq T",
+        "inst✝ : DecidableRel LT.lt",
+        "e : T",
+        "x : T",
+        "xs : List T",
+        "IH : Permut (insert_ e xs) (e :: xs)",
+        "p : ¬e < x"
+      ],
+      "body": "True",
+      "conclusion": "Permut (if e < x then e :: x :: xs else x :: insert_ e xs) (e :: x :: xs)",
+      "statement": "(inst✝² : LT T) (inst✝¹ : DecidableEq T) (inst✝ : DecidableRel LT.lt) (e : T) (x : T) (xs : List T) (IH : Permut (insert_ e xs) (e :: xs)) (p : ¬e < x) : Permut (if e < x then e :: x :: xs else x :: insert_ e xs) (e :: x :: xs)"
+    },
+    {
+      "fragment_id": 67,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "insert_permut",
+      "scope_vars": [],
+      "premises": [
+        "inst✝² : LT T",
+        "inst✝¹ : DecidableEq T",
+        "inst✝ : DecidableRel LT.lt",
+        "e : T",
+        "x : T",
+        "xs : List T",
+        "IH : Permut (insert_ e xs) (e :: xs)"
+      ],
+      "body": "True",
+      "conclusion": "Permut (if e < x then e :: x :: xs else x :: insert_ e xs) (e :: x :: xs)",
+      "statement": "(inst✝² : LT T) (inst✝¹ : DecidableEq T) (inst✝ : DecidableRel LT.lt) (e : T) (x : T) (xs : List T) (IH : Permut (insert_ e xs) (e :: xs)) : Permut (if e < x then e :: x :: xs else x :: insert_ e xs) (e :: x :: xs)"
+    },
+    {
+      "fragment_id": 68,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "insert_permut",
+      "scope_vars": [],
+      "premises": [
+        "inst✝² : LT T",
+        "inst✝¹ : DecidableEq T",
+        "inst✝ : DecidableRel LT.lt",
+        "e : T",
+        "x : T",
+        "xs : List T",
+        "IH : Permut (insert_ e xs) (e :: xs)"
+      ],
+      "body": "True",
+      "conclusion": "Permut (insert_ e (x :: xs)) (e :: x :: xs)",
+      "statement": "(inst✝² : LT T) (inst✝¹ : DecidableEq T) (inst✝ : DecidableRel LT.lt) (e : T) (x : T) (xs : List T) (IH : Permut (insert_ e xs) (e :: xs)) : Permut (insert_ e (x :: xs)) (e :: x :: xs)"
+    },
+    {
+      "fragment_id": 69,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "insertionsort_permut",
+      "scope_vars": [
+        "inst✝² : LT T",
+        "inst✝¹ : DecidableEq T",
+        "inst✝ : DecidableRel LT.lt"
+      ],
+      "premises": [],
+      "body": "∀ (t : T), count1 [] t = count1 [] t",
+      "conclusion": "Permut (insertionsort []) []",
+      "statement": "(inst✝² : LT T) (inst✝¹ : DecidableEq T) (inst✝ : DecidableRel LT.lt) (h1 : ∀ (t : T), count1 [] t = count1 [] t) : Permut (insertionsort []) []"
+    },
+    {
+      "fragment_id": 70,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "insertionsort_permut",
+      "scope_vars": [
+        "inst✝² : LT T",
+        "inst✝¹ : DecidableEq T",
+        "inst✝ : DecidableRel LT.lt"
+      ],
+      "premises": [],
+      "body": "(t✝ : T) → count1 [] t✝ = count1 [] t✝",
+      "conclusion": "Permut [] []",
+      "statement": "(inst✝² : LT T) (inst✝¹ : DecidableEq T) (inst✝ : DecidableRel LT.lt) (t✝ : T) (h1 : count1 [] t✝ = count1 [] t✝) : Permut [] []"
+    },
+    {
+      "fragment_id": 71,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "insertionsort_permut",
+      "scope_vars": [
+        "inst✝² : LT T",
+        "inst✝¹ : DecidableEq T",
+        "inst✝ : DecidableRel LT.lt"
+      ],
+      "premises": [],
+      "body": "(t✝ : T) → count1 [] t✝ = count1 [] t✝",
+      "conclusion": "Permut (insertionsort []) []",
+      "statement": "(inst✝² : LT T) (inst✝¹ : DecidableEq T) (inst✝ : DecidableRel LT.lt) (t✝ : T) (h1 : count1 [] t✝ = count1 [] t✝) : Permut (insertionsort []) []"
+    },
+    {
+      "fragment_id": 72,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "insertionsort_permut",
+      "scope_vars": [
+        "inst✝² : LT T",
+        "inst✝¹ : DecidableEq T",
+        "inst✝ : DecidableRel LT.lt"
+      ],
+      "premises": [],
+      "body": "True",
+      "conclusion": "∀ (t : T), count1 [] t = count1 [] t",
+      "statement": "(inst✝² : LT T) (inst✝¹ : DecidableEq T) (inst✝ : DecidableRel LT.lt) : ∀ (t : T), count1 [] t = count1 [] t"
+    },
+    {
+      "fragment_id": 73,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "insertionsort_permut",
+      "scope_vars": [
+        "inst✝² : LT T",
+        "inst✝¹ : DecidableEq T",
+        "inst✝ : DecidableRel LT.lt"
+      ],
+      "premises": [],
+      "body": "True",
+      "conclusion": "Permut [] []",
+      "statement": "(inst✝² : LT T) (inst✝¹ : DecidableEq T) (inst✝ : DecidableRel LT.lt) : Permut [] []"
+    },
+    {
+      "fragment_id": 74,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "insertionsort_permut",
+      "scope_vars": [
+        "inst✝² : LT T",
+        "inst✝¹ : DecidableEq T",
+        "inst✝ : DecidableRel LT.lt"
+      ],
+      "premises": [],
+      "body": "True",
+      "conclusion": "Permut (insertionsort []) []",
+      "statement": "(inst✝² : LT T) (inst✝¹ : DecidableEq T) (inst✝ : DecidableRel LT.lt) : Permut (insertionsort []) []"
+    },
+    {
+      "fragment_id": 75,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "insertionsort_permut",
+      "scope_vars": [
+        "inst✝² : LT T",
+        "inst✝¹ : DecidableEq T",
+        "inst✝ : DecidableRel LT.lt"
+      ],
+      "premises": [
+        "x : T",
+        "xs : List T"
+      ],
+      "body": "(h : Permut (insert_ x (insertionsort xs)) (x :: insertionsort xs)) → Permut (insert_ x (insertionsort xs)) (x :: xs)",
+      "conclusion": "Permut (insertionsort (x :: xs)) (x :: xs)",
+      "statement": "(inst✝² : LT T) (inst✝¹ : DecidableEq T) (inst✝ : DecidableRel LT.lt) (x : T) (xs : List T) (h : Permut (insert_ x (insertionsort xs)) (x :: insertionsort xs)) (h1 : Permut (insert_ x (insertionsort xs)) (x :: xs)) : Permut (insertionsort (x :: xs)) (x :: xs)"
+    },
+    {
+      "fragment_id": 76,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "insertionsort_permut",
+      "scope_vars": [
+        "inst✝² : LT T",
+        "inst✝¹ : DecidableEq T",
+        "inst✝ : DecidableRel LT.lt",
+        "x : T",
+        "xs : List T"
+      ],
+      "premises": [],
+      "body": "∀ (t : T), count1 (insert_ x (insertionsort xs)) t = count1 (x :: xs) t",
+      "conclusion": "Permut (insertionsort (x :: xs)) (x :: xs)",
+      "statement": "(inst✝² : LT T) (inst✝¹ : DecidableEq T) (inst✝ : DecidableRel LT.lt) (x : T) (xs : List T) (h1 : ∀ (t : T), count1 (insert_ x (insertionsort xs)) t = count1 (x :: xs) t) : Permut (insertionsort (x :: xs)) (x :: xs)"
+    },
+    {
+      "fragment_id": 77,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "insertionsort_permut",
+      "scope_vars": [
+        "inst✝² : LT T",
+        "inst✝¹ : DecidableEq T",
+        "inst✝ : DecidableRel LT.lt"
+      ],
+      "premises": [
+        "x : T",
+        "xs : List T"
+      ],
+      "body": "(h : Permut (insert_ x (insertionsort xs)) (x :: insertionsort xs)) → ∀ (t : T), count1 (insert_ x (insertionsort xs)) t = count1 (x :: xs) t",
+      "conclusion": "Permut (insert_ x (insertionsort xs)) (x :: xs)",
+      "statement": "(inst✝² : LT T) (inst✝¹ : DecidableEq T) (inst✝ : DecidableRel LT.lt) (x : T) (xs : List T) (h : Permut (insert_ x (insertionsort xs)) (x :: insertionsort xs)) (h1 : ∀ (t : T), count1 (insert_ x (insertionsort xs)) t = count1 (x :: xs) t) : Permut (insert_ x (insertionsort xs)) (x :: xs)"
+    },
+    {
+      "fragment_id": 78,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "insertionsort_permut",
+      "scope_vars": [
+        "inst✝² : LT T",
+        "inst✝¹ : DecidableEq T",
+        "inst✝ : DecidableRel LT.lt"
+      ],
+      "premises": [
+        "x : T",
+        "xs : List T"
+      ],
+      "body": "(h : Permut (insert_ x (insertionsort xs)) (x :: insertionsort xs)) → ∀ (t : T), count1 (insert_ x (insertionsort xs)) t = count1 (x :: xs) t",
+      "conclusion": "Permut (insertionsort (x :: xs)) (x :: xs)",
+      "statement": "(inst✝² : LT T) (inst✝¹ : DecidableEq T) (inst✝ : DecidableRel LT.lt) (x : T) (xs : List T) (h : Permut (insert_ x (insertionsort xs)) (x :: insertionsort xs)) (h1 : ∀ (t : T), count1 (insert_ x (insertionsort xs)) t = count1 (x :: xs) t) : Permut (insertionsort (x :: xs)) (x :: xs)"
+    },
+    {
+      "fragment_id": 79,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "insertionsort_permut",
+      "scope_vars": [
+        "inst✝² : LT T",
+        "inst✝¹ : DecidableEq T",
+        "inst✝ : DecidableRel LT.lt",
+        "x : T",
+        "xs : List T"
+      ],
+      "premises": [],
+      "body": "(t : T) → count1 (insert_ x (insertionsort xs)) t = count1 (x :: xs) t",
+      "conclusion": "Permut (insert_ x (insertionsort xs)) (x :: xs)",
+      "statement": "(inst✝² : LT T) (inst✝¹ : DecidableEq T) (inst✝ : DecidableRel LT.lt) (x : T) (xs : List T) (t : T) (h1 : count1 (insert_ x (insertionsort xs)) t = count1 (x :: xs) t) : Permut (insert_ x (insertionsort xs)) (x :: xs)"
+    },
+    {
+      "fragment_id": 80,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "insertionsort_permut",
+      "scope_vars": [
+        "inst✝² : LT T",
+        "inst✝¹ : DecidableEq T",
+        "inst✝ : DecidableRel LT.lt",
+        "x : T",
+        "xs : List T"
+      ],
+      "premises": [],
+      "body": "(t : T) → count1 (insert_ x (insertionsort xs)) t = count1 (x :: xs) t",
+      "conclusion": "Permut (insertionsort (x :: xs)) (x :: xs)",
+      "statement": "(inst✝² : LT T) (inst✝¹ : DecidableEq T) (inst✝ : DecidableRel LT.lt) (x : T) (xs : List T) (t : T) (h1 : count1 (insert_ x (insertionsort xs)) t = count1 (x :: xs) t) : Permut (insertionsort (x :: xs)) (x :: xs)"
+    },
+    {
+      "fragment_id": 81,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "insertionsort_permut",
+      "scope_vars": [
+        "inst✝² : LT T",
+        "inst✝¹ : DecidableEq T",
+        "inst✝ : DecidableRel LT.lt"
+      ],
+      "premises": [
+        "x : T",
+        "xs : List T"
+      ],
+      "body": "(h : Permut (insert_ x (insertionsort xs)) (x :: insertionsort xs)) → (t : T) → count1 (insert_ x (insertionsort xs)) t = count1 (x :: xs) t",
+      "conclusion": "Permut (insert_ x (insertionsort xs)) (x :: xs)",
+      "statement": "(inst✝² : LT T) (inst✝¹ : DecidableEq T) (inst✝ : DecidableRel LT.lt) (x : T) (xs : List T) (h : Permut (insert_ x (insertionsort xs)) (x :: insertionsort xs)) (t : T) (h1 : count1 (insert_ x (insertionsort xs)) t = count1 (x :: xs) t) : Permut (insert_ x (insertionsort xs)) (x :: xs)"
+    },
+    {
+      "fragment_id": 82,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "insertionsort_permut",
+      "scope_vars": [
+        "inst✝² : LT T",
+        "inst✝¹ : DecidableEq T",
+        "inst✝ : DecidableRel LT.lt"
+      ],
+      "premises": [
+        "x : T",
+        "xs : List T"
+      ],
+      "body": "(h : Permut (insert_ x (insertionsort xs)) (x :: insertionsort xs)) → (t : T) → count1 (insert_ x (insertionsort xs)) t = count1 (x :: xs) t",
+      "conclusion": "Permut (insertionsort (x :: xs)) (x :: xs)",
+      "statement": "(inst✝² : LT T) (inst✝¹ : DecidableEq T) (inst✝ : DecidableRel LT.lt) (x : T) (xs : List T) (h : Permut (insert_ x (insertionsort xs)) (x :: insertionsort xs)) (t : T) (h1 : count1 (insert_ x (insertionsort xs)) t = count1 (x :: xs) t) : Permut (insertionsort (x :: xs)) (x :: xs)"
+    },
+    {
+      "fragment_id": 83,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "insertionsort_permut",
+      "scope_vars": [
+        "inst✝² : LT T",
+        "inst✝¹ : DecidableEq T",
+        "inst✝ : DecidableRel LT.lt",
+        "x : T",
+        "xs : List T"
+      ],
+      "premises": [
+        "h : ∀ (t : T), count1 (insert_ x (insertionsort xs)) t = count1 (x :: insertionsort xs) t"
+      ],
+      "body": "(t : T) → count1 (x :: insertionsort xs) t = count1 (x :: xs) t",
+      "conclusion": "∀ (t : T), count1 (insert_ x (insertionsort xs)) t = count1 (x :: xs) t",
+      "statement": "(inst✝² : LT T) (inst✝¹ : DecidableEq T) (inst✝ : DecidableRel LT.lt) (x : T) (xs : List T) (h : ∀ (t : T), count1 (insert_ x (insertionsort xs)) t = count1 (x :: insertionsort xs) t) (t : T) (h1 : count1 (x :: insertionsort xs) t = count1 (x :: xs) t) : ∀ (t : T), count1 (insert_ x (insertionsort xs)) t = count1 (x :: xs) t"
+    },
+    {
+      "fragment_id": 84,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "insertionsort_permut",
+      "scope_vars": [
+        "inst✝² : LT T",
+        "inst✝¹ : DecidableEq T",
+        "inst✝ : DecidableRel LT.lt"
+      ],
+      "premises": [
+        "x : T",
+        "xs : List T"
+      ],
+      "body": "(t : T) → count1 (x :: insertionsort xs) t = count1 (x :: xs) t",
+      "conclusion": "Permut (insert_ x (insertionsort xs)) (x :: xs)",
+      "statement": "(inst✝² : LT T) (inst✝¹ : DecidableEq T) (inst✝ : DecidableRel LT.lt) (x : T) (xs : List T) (t : T) (h1 : count1 (x :: insertionsort xs) t = count1 (x :: xs) t) : Permut (insert_ x (insertionsort xs)) (x :: xs)"
+    },
+    {
+      "fragment_id": 85,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "insertionsort_permut",
+      "scope_vars": [
+        "inst✝² : LT T",
+        "inst✝¹ : DecidableEq T",
+        "inst✝ : DecidableRel LT.lt"
+      ],
+      "premises": [
+        "x : T",
+        "xs : List T"
+      ],
+      "body": "(t : T) → count1 (x :: insertionsort xs) t = count1 (x :: xs) t",
+      "conclusion": "Permut (insertionsort (x :: xs)) (x :: xs)",
+      "statement": "(inst✝² : LT T) (inst✝¹ : DecidableEq T) (inst✝ : DecidableRel LT.lt) (x : T) (xs : List T) (t : T) (h1 : count1 (x :: insertionsort xs) t = count1 (x :: xs) t) : Permut (insertionsort (x :: xs)) (x :: xs)"
+    },
+    {
+      "fragment_id": 86,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "insertionsort_permut",
+      "scope_vars": [
+        "inst✝² : LT T",
+        "inst✝¹ : DecidableEq T",
+        "inst✝ : DecidableRel LT.lt"
+      ],
+      "premises": [
+        "x : T",
+        "xs : List T"
+      ],
+      "body": "(h : Permut (insert_ x (insertionsort xs)) (x :: insertionsort xs)) → (t : T) → count1 (x :: insertionsort xs) t = count1 (x :: xs) t",
+      "conclusion": "Permut (insert_ x (insertionsort xs)) (x :: xs)",
+      "statement": "(inst✝² : LT T) (inst✝¹ : DecidableEq T) (inst✝ : DecidableRel LT.lt) (x : T) (xs : List T) (h : Permut (insert_ x (insertionsort xs)) (x :: insertionsort xs)) (t : T) (h1 : count1 (x :: insertionsort xs) t = count1 (x :: xs) t) : Permut (insert_ x (insertionsort xs)) (x :: xs)"
+    },
+    {
+      "fragment_id": 87,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "insertionsort_permut",
+      "scope_vars": [
+        "inst✝² : LT T",
+        "inst✝¹ : DecidableEq T",
+        "inst✝ : DecidableRel LT.lt"
+      ],
+      "premises": [
+        "x : T",
+        "xs : List T"
+      ],
+      "body": "(h : Permut (insert_ x (insertionsort xs)) (x :: insertionsort xs)) → (t : T) → count1 (x :: insertionsort xs) t = count1 (x :: xs) t",
+      "conclusion": "Permut (insertionsort (x :: xs)) (x :: xs)",
+      "statement": "(inst✝² : LT T) (inst✝¹ : DecidableEq T) (inst✝ : DecidableRel LT.lt) (x : T) (xs : List T) (h : Permut (insert_ x (insertionsort xs)) (x :: insertionsort xs)) (t : T) (h1 : count1 (x :: insertionsort xs) t = count1 (x :: xs) t) : Permut (insertionsort (x :: xs)) (x :: xs)"
+    },
+    {
+      "fragment_id": 88,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "insertionsort_permut",
+      "scope_vars": [
+        "inst✝² : LT T",
+        "inst✝¹ : DecidableEq T",
+        "inst✝ : DecidableRel LT.lt",
+        "x : T",
+        "xs : List T",
+        "t : T"
+      ],
+      "premises": [
+        "h : ∀ (t : T), count1 (insert_ x (insertionsort xs)) t = count1 (x :: insertionsort xs) t"
+      ],
+      "body": "(if x = t then 1 else 0) + count1 (insertionsort xs) t = (if x = t then 1 else 0) + count1 xs t",
+      "conclusion": "count1 (insert_ x (insertionsort xs)) t = count1 (x :: xs) t",
+      "statement": "(inst✝² : LT T) (inst✝¹ : DecidableEq T) (inst✝ : DecidableRel LT.lt) (x : T) (xs : List T) (t : T) (h : ∀ (t : T), count1 (insert_ x (insertionsort xs)) t = count1 (x :: insertionsort xs) t) (h1 : (if x = t then 1 else 0) + count1 (insertionsort xs) t = (if x = t then 1 else 0) + count1 xs t) : count1 (insert_ x (insertionsort xs)) t = count1 (x :: xs) t"
+    },
+    {
+      "fragment_id": 89,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "insertionsort_permut",
+      "scope_vars": [
+        "inst✝² : LT T",
+        "inst✝¹ : DecidableEq T",
+        "inst✝ : DecidableRel LT.lt",
+        "x : T",
+        "xs : List T"
+      ],
+      "premises": [
+        "h : ∀ (t : T), count1 (insert_ x (insertionsort xs)) t = count1 (x :: insertionsort xs) t"
+      ],
+      "body": "(t : T) → (if x = t then 1 else 0) + count1 (insertionsort xs) t = (if x = t then 1 else 0) + count1 xs t",
+      "conclusion": "∀ (t : T), count1 (insert_ x (insertionsort xs)) t = count1 (x :: xs) t",
+      "statement": "(inst✝² : LT T) (inst✝¹ : DecidableEq T) (inst✝ : DecidableRel LT.lt) (x : T) (xs : List T) (h : ∀ (t : T), count1 (insert_ x (insertionsort xs)) t = count1 (x :: insertionsort xs) t) (t : T) (h1 : (if x = t then 1 else 0) + count1 (insertionsort xs) t = (if x = t then 1 else 0) + count1 xs t) : ∀ (t : T), count1 (insert_ x (insertionsort xs)) t = count1 (x :: xs) t"
+    },
+    {
+      "fragment_id": 90,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "insertionsort_permut",
+      "scope_vars": [
+        "inst✝² : LT T",
+        "inst✝¹ : DecidableEq T",
+        "inst✝ : DecidableRel LT.lt"
+      ],
+      "premises": [
+        "x : T",
+        "xs : List T"
+      ],
+      "body": "(t : T) → (if x = t then 1 else 0) + count1 (insertionsort xs) t = (if x = t then 1 else 0) + count1 xs t",
+      "conclusion": "Permut (insert_ x (insertionsort xs)) (x :: xs)",
+      "statement": "(inst✝² : LT T) (inst✝¹ : DecidableEq T) (inst✝ : DecidableRel LT.lt) (x : T) (xs : List T) (t : T) (h1 : (if x = t then 1 else 0) + count1 (insertionsort xs) t = (if x = t then 1 else 0) + count1 xs t) : Permut (insert_ x (insertionsort xs)) (x :: xs)"
+    },
+    {
+      "fragment_id": 91,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "insertionsort_permut",
+      "scope_vars": [
+        "inst✝² : LT T",
+        "inst✝¹ : DecidableEq T",
+        "inst✝ : DecidableRel LT.lt"
+      ],
+      "premises": [
+        "x : T",
+        "xs : List T"
+      ],
+      "body": "(t : T) → (if x = t then 1 else 0) + count1 (insertionsort xs) t = (if x = t then 1 else 0) + count1 xs t",
+      "conclusion": "Permut (insertionsort (x :: xs)) (x :: xs)",
+      "statement": "(inst✝² : LT T) (inst✝¹ : DecidableEq T) (inst✝ : DecidableRel LT.lt) (x : T) (xs : List T) (t : T) (h1 : (if x = t then 1 else 0) + count1 (insertionsort xs) t = (if x = t then 1 else 0) + count1 xs t) : Permut (insertionsort (x :: xs)) (x :: xs)"
+    },
+    {
+      "fragment_id": 92,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "insertionsort_permut",
+      "scope_vars": [
+        "inst✝² : LT T",
+        "inst✝¹ : DecidableEq T",
+        "inst✝ : DecidableRel LT.lt"
+      ],
+      "premises": [
+        "x : T",
+        "xs : List T"
+      ],
+      "body": "(h : Permut (insert_ x (insertionsort xs)) (x :: insertionsort xs)) → (t : T) → (if x = t then 1 else 0) + count1 (insertionsort xs) t = (if x = t then 1 else 0) + count1 xs t",
+      "conclusion": "Permut (insert_ x (insertionsort xs)) (x :: xs)",
+      "statement": "(inst✝² : LT T) (inst✝¹ : DecidableEq T) (inst✝ : DecidableRel LT.lt) (x : T) (xs : List T) (h : Permut (insert_ x (insertionsort xs)) (x :: insertionsort xs)) (t : T) (h1 : (if x = t then 1 else 0) + count1 (insertionsort xs) t = (if x = t then 1 else 0) + count1 xs t) : Permut (insert_ x (insertionsort xs)) (x :: xs)"
+    },
+    {
+      "fragment_id": 93,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "insertionsort_permut",
+      "scope_vars": [
+        "inst✝² : LT T",
+        "inst✝¹ : DecidableEq T",
+        "inst✝ : DecidableRel LT.lt"
+      ],
+      "premises": [
+        "x : T",
+        "xs : List T"
+      ],
+      "body": "(h : Permut (insert_ x (insertionsort xs)) (x :: insertionsort xs)) → (t : T) → (if x = t then 1 else 0) + count1 (insertionsort xs) t = (if x = t then 1 else 0) + count1 xs t",
+      "conclusion": "Permut (insertionsort (x :: xs)) (x :: xs)",
+      "statement": "(inst✝² : LT T) (inst✝¹ : DecidableEq T) (inst✝ : DecidableRel LT.lt) (x : T) (xs : List T) (h : Permut (insert_ x (insertionsort xs)) (x :: insertionsort xs)) (t : T) (h1 : (if x = t then 1 else 0) + count1 (insertionsort xs) t = (if x = t then 1 else 0) + count1 xs t) : Permut (insertionsort (x :: xs)) (x :: xs)"
+    },
+    {
+      "fragment_id": 94,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "insertionsort_permut",
+      "scope_vars": [
+        "inst✝² : LT T",
+        "inst✝¹ : DecidableEq T",
+        "inst✝ : DecidableRel LT.lt",
+        "x : T",
+        "xs : List T"
+      ],
+      "premises": [
+        "IH : ∀ (t : T), count1 (insertionsort xs) t = count1 xs t",
+        "t : T"
+      ],
+      "body": "True",
+      "conclusion": "count1 (x :: insertionsort xs) t = count1 (x :: xs) t",
+      "statement": "(inst✝² : LT T) (inst✝¹ : DecidableEq T) (inst✝ : DecidableRel LT.lt) (x : T) (xs : List T) (IH : ∀ (t : T), count1 (insertionsort xs) t = count1 xs t) (t : T) : count1 (x :: insertionsort xs) t = count1 (x :: xs) t"
+    },
+    {
+      "fragment_id": 95,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "insertionsort_permut",
+      "scope_vars": [
+        "inst✝² : LT T",
+        "inst✝¹ : DecidableEq T",
+        "inst✝ : DecidableRel LT.lt",
+        "x : T",
+        "xs : List T"
+      ],
+      "premises": [
+        "IH : ∀ (t : T), count1 (insertionsort xs) t = count1 xs t",
+        "h : ∀ (t : T), count1 (insert_ x (insertionsort xs)) t = count1 (x :: insertionsort xs) t",
+        "t : T"
+      ],
+      "body": "True",
+      "conclusion": "count1 (insert_ x (insertionsort xs)) t = count1 (x :: xs) t",
+      "statement": "(inst✝² : LT T) (inst✝¹ : DecidableEq T) (inst✝ : DecidableRel LT.lt) (x : T) (xs : List T) (IH : ∀ (t : T), count1 (insertionsort xs) t = count1 xs t) (h : ∀ (t : T), count1 (insert_ x (insertionsort xs)) t = count1 (x :: insertionsort xs) t) (t : T) : count1 (insert_ x (insertionsort xs)) t = count1 (x :: xs) t"
+    },
+    {
+      "fragment_id": 96,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "insertionsort_permut",
+      "scope_vars": [
+        "inst✝² : LT T",
+        "inst✝¹ : DecidableEq T",
+        "inst✝ : DecidableRel LT.lt",
+        "x : T",
+        "xs : List T"
+      ],
+      "premises": [
+        "IH : ∀ (t : T), count1 (insertionsort xs) t = count1 xs t",
+        "h : ∀ (t : T), count1 (insert_ x (insertionsort xs)) t = count1 (x :: insertionsort xs) t"
+      ],
+      "body": "True",
+      "conclusion": "∀ (t : T), count1 (insert_ x (insertionsort xs)) t = count1 (x :: xs) t",
+      "statement": "(inst✝² : LT T) (inst✝¹ : DecidableEq T) (inst✝ : DecidableRel LT.lt) (x : T) (xs : List T) (IH : ∀ (t : T), count1 (insertionsort xs) t = count1 xs t) (h : ∀ (t : T), count1 (insert_ x (insertionsort xs)) t = count1 (x :: insertionsort xs) t) : ∀ (t : T), count1 (insert_ x (insertionsort xs)) t = count1 (x :: xs) t"
+    },
+    {
+      "fragment_id": 97,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "insertionsort_permut",
+      "scope_vars": [
+        "inst✝² : LT T",
+        "inst✝¹ : DecidableEq T",
+        "inst✝ : DecidableRel LT.lt"
+      ],
+      "premises": [
+        "x : T",
+        "xs : List T"
+      ],
+      "body": "True",
+      "conclusion": "Permut (insert_ x (insertionsort xs)) (x :: xs)",
+      "statement": "(inst✝² : LT T) (inst✝¹ : DecidableEq T) (inst✝ : DecidableRel LT.lt) (x : T) (xs : List T) : Permut (insert_ x (insertionsort xs)) (x :: xs)"
+    },
+    {
+      "fragment_id": 98,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "insertionsort_permut",
+      "scope_vars": [
+        "inst✝² : LT T",
+        "inst✝¹ : DecidableEq T",
+        "inst✝ : DecidableRel LT.lt"
+      ],
+      "premises": [
+        "x : T",
+        "xs : List T"
+      ],
+      "body": "True",
+      "conclusion": "Permut (insertionsort (x :: xs)) (x :: xs)",
+      "statement": "(inst✝² : LT T) (inst✝¹ : DecidableEq T) (inst✝ : DecidableRel LT.lt) (x : T) (xs : List T) : Permut (insertionsort (x :: xs)) (x :: xs)"
+    },
+    {
+      "fragment_id": 99,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "insertionsort_permut",
+      "scope_vars": [
+        "inst✝² : LT T",
+        "inst✝¹ : DecidableEq T",
+        "inst✝ : DecidableRel LT.lt"
+      ],
+      "premises": [
+        "x : T",
+        "xs : List T"
+      ],
+      "body": "True",
+      "conclusion": "Permut (insert_ x (insertionsort xs)) (x :: xs)",
+      "statement": "(inst✝² : LT T) (inst✝¹ : DecidableEq T) (inst✝ : DecidableRel LT.lt) (x : T) (xs : List T) : Permut (insert_ x (insertionsort xs)) (x :: xs)"
+    },
+    {
+      "fragment_id": 100,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "insertionsort_permut",
+      "scope_vars": [
+        "inst✝² : LT T",
+        "inst✝¹ : DecidableEq T",
+        "inst✝ : DecidableRel LT.lt"
+      ],
+      "premises": [
+        "x : T",
+        "xs : List T"
+      ],
+      "body": "True",
+      "conclusion": "Permut (insertionsort (x :: xs)) (x :: xs)",
+      "statement": "(inst✝² : LT T) (inst✝¹ : DecidableEq T) (inst✝ : DecidableRel LT.lt) (x : T) (xs : List T) : Permut (insertionsort (x :: xs)) (x :: xs)"
+    },
+    {
+      "fragment_id": 101,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "insertionsort_correct",
+      "scope_vars": [
+        "T : Type",
+        "inst✝² : Preorder T",
+        "inst✝¹ : DecidableEq T",
+        "inst✝ : DecidableRel LT.lt",
+        "l : List T"
+      ],
+      "premises": [],
+      "body": "True",
+      "conclusion": "Sorted (insertionsort l) ∧ Permut (insertionsort l) l",
+      "statement": "(T : Type) (inst✝² : Preorder T) (inst✝¹ : DecidableEq T) (inst✝ : DecidableRel LT.lt) (l : List T) : Sorted (insertionsort l) ∧ Permut (insertionsort l) l"
+    },
+    {
+      "fragment_id": 102,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "left_less",
+      "scope_vars": [
+        "l : List T"
+      ],
+      "premises": [],
+      "body": "l.length / 2 < l.length",
+      "conclusion": "(left l).length < l.length",
+      "statement": "(l : List T) (h1 : l.length / 2 < l.length) : (left l).length < l.length"
+    },
+    {
+      "fragment_id": 103,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "left_less",
+      "scope_vars": [
+        "l : List T"
+      ],
+      "premises": [
+        "p : l.length > 0"
+      ],
+      "body": "True",
+      "conclusion": "(List.take (l.length / 2) l).length < l.length",
+      "statement": "(l : List T) (p : l.length > 0) : (List.take (l.length / 2) l).length < l.length"
+    },
+    {
+      "fragment_id": 104,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "right_less",
+      "scope_vars": [
+        "l : List T"
+      ],
+      "premises": [],
+      "body": "0 < l.length ∧ 2 ≤ l.length",
+      "conclusion": "(right l).length < l.length",
+      "statement": "(l : List T) (h1 : 0 < l.length ∧ 2 ≤ l.length) : (right l).length < l.length"
+    },
+    {
+      "fragment_id": 105,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "right_less",
+      "scope_vars": [],
+      "premises": [
+        "l : List T",
+        "p : l.length > 1"
+      ],
+      "body": "True",
+      "conclusion": "(List.drop (l.length / 2) l).length < l.length",
+      "statement": "(l : List T) (p : l.length > 1) : (List.drop (l.length / 2) l).length < l.length"
+    },
+    {
+      "fragment_id": 106,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "double_left_less",
+      "scope_vars": [],
+      "premises": [
+        "l : List T",
+        "p : l.length > 1"
+      ],
+      "body": "(h1 : (left (left l)).length < (left l).length) → (h2 : (left l).length < l.length) → (left (left l)).length < l.length",
+      "conclusion": "(left (left l)).length < l.length",
+      "statement": "(l : List T) (p : l.length > 1) (h1 : (left (left l)).length < (left l).length) (h2 : (left l).length < l.length) (h3 : (left (left l)).length < l.length) : (left (left l)).length < l.length"
+    },
+    {
+      "fragment_id": 107,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "double_left_less",
+      "scope_vars": [],
+      "premises": [
+        "l : List T",
+        "p : l.length > 1",
+        "h1 : (left (left l)).length < (left l).length"
+      ],
+      "body": "True",
+      "conclusion": "(left (left l)).length < l.length",
+      "statement": "(l : List T) (p : l.length > 1) (h1 : (left (left l)).length < (left l).length) : (left (left l)).length < l.length"
+    },
+    {
+      "fragment_id": 108,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "double_right_less",
+      "scope_vars": [],
+      "premises": [
+        "l : List T",
+        "p : l.length > 2"
+      ],
+      "body": "(h1 : (right (right l)).length < (right l).length) → (h2 : (right l).length < l.length) → (right (right l)).length < l.length",
+      "conclusion": "(right (right l)).length < l.length",
+      "statement": "(l : List T) (p : l.length > 2) (h1 : (right (right l)).length < (right l).length) (h2 : (right l).length < l.length) (h3 : (right (right l)).length < l.length) : (right (right l)).length < l.length"
+    },
+    {
+      "fragment_id": 109,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "double_right_less",
+      "scope_vars": [],
+      "premises": [
+        "l : List T",
+        "p : l.length > 2",
+        "h1 : (right (right l)).length < (right l).length"
+      ],
+      "body": "True",
+      "conclusion": "(right (right l)).length < l.length",
+      "statement": "(l : List T) (p : l.length > 2) (h1 : (right (right l)).length < (right l).length) : (right (right l)).length < l.length"
+    },
+    {
+      "fragment_id": 110,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "merge_sorted",
+      "scope_vars": [
+        "inst✝¹ : Preorder T",
+        "inst✝ : DecidableRel LT.lt",
+        "ys : List T"
+      ],
+      "premises": [
+        "sys : Sorted ys"
+      ],
+      "body": "True",
+      "conclusion": "Sorted (merge [] ys)",
+      "statement": "(inst✝¹ : Preorder T) (inst✝ : DecidableRel LT.lt) (ys : List T) (sys : Sorted ys) : Sorted (merge [] ys)"
+    },
+    {
+      "fragment_id": 111,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "merge_sorted",
+      "scope_vars": [
+        "inst✝¹ : Preorder T",
+        "inst✝ : DecidableRel LT.lt",
+        "x : T",
+        "xs : List T"
+      ],
+      "premises": [
+        "sxs : Sorted (x :: xs)"
+      ],
+      "body": "True",
+      "conclusion": "Sorted (merge (x :: xs) [])",
+      "statement": "(inst✝¹ : Preorder T) (inst✝ : DecidableRel LT.lt) (x : T) (xs : List T) (sxs : Sorted (x :: xs)) : Sorted (merge (x :: xs) [])"
+    },
+    {
+      "fragment_id": 112,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "merge_sorted",
+      "scope_vars": [
+        "inst✝¹ : Preorder T",
+        "inst✝ : DecidableRel LT.lt"
+      ],
+      "premises": [
+        "x : T",
+        "xs : List T",
+        "IHx : ∀ {ys : List T}, Sorted xs → Sorted ys → Sorted (merge xs ys)",
+        "sxs : Sorted (x :: xs)",
+        "y : T",
+        "ys : List T",
+        "IHy : Sorted ys → Sorted (merge (x :: xs) ys)",
+        "sys : Sorted (y :: ys)",
+        "p : x < y"
+      ],
+      "body": "True",
+      "conclusion": "Sorted (if x < y then x :: merge xs (y :: ys) else y :: merge (x :: xs) ys)",
+      "statement": "(inst✝¹ : Preorder T) (inst✝ : DecidableRel LT.lt) (x : T) (xs : List T) (IHx : ∀ {ys : List T}, Sorted xs → Sorted ys → Sorted (merge xs ys)) (sxs : Sorted (x :: xs)) (y : T) (ys : List T) (IHy : Sorted ys → Sorted (merge (x :: xs) ys)) (sys : Sorted (y :: ys)) (p : x < y) : Sorted (if x < y then x :: merge xs (y :: ys) else y :: merge (x :: xs) ys)"
+    },
+    {
+      "fragment_id": 113,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "merge_sorted",
+      "scope_vars": [
+        "inst✝¹ : Preorder T",
+        "inst✝ : DecidableRel LT.lt",
+        "x : T",
+        "y : T",
+        "ys : List T"
+      ],
+      "premises": [
+        "sys : Sorted (y :: ys)",
+        "p : x < y"
+      ],
+      "body": "True",
+      "conclusion": "Sorted (x :: merge [] (y :: ys))",
+      "statement": "(inst✝¹ : Preorder T) (inst✝ : DecidableRel LT.lt) (x : T) (y : T) (ys : List T) (sys : Sorted (y :: ys)) (p : x < y) : Sorted (x :: merge [] (y :: ys))"
+    },
+    {
+      "fragment_id": 114,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "merge_sorted",
+      "scope_vars": [
+        "inst✝¹ : Preorder T",
+        "inst✝ : DecidableRel LT.lt",
+        "x : T",
+        "y : T",
+        "ys : List T",
+        "xx : T",
+        "xxs : List T"
+      ],
+      "premises": [
+        "sys : Sorted (y :: ys)",
+        "IHx : ∀ {ys : List T}, Sorted (xx :: xxs) → Sorted ys → Sorted (merge (xx :: xxs) ys)",
+        "sxs : Sorted (x :: xx :: xxs)"
+      ],
+      "body": "(ss : Sorted (merge (xx :: xxs) (y :: ys))) → Sorted (x :: if xx < y then xx :: merge xxs (y :: ys) else y :: merge (xx :: xxs) ys)",
+      "conclusion": "Sorted (x :: merge (xx :: xxs) (y :: ys))",
+      "statement": "(inst✝¹ : Preorder T) (inst✝ : DecidableRel LT.lt) (x : T) (y : T) (ys : List T) (xx : T) (xxs : List T) (sys : Sorted (y :: ys)) (IHx : ∀ {ys : List T}, Sorted (xx :: xxs) → Sorted ys → Sorted (merge (xx :: xxs) ys)) (sxs : Sorted (x :: xx :: xxs)) (ss : Sorted (merge (xx :: xxs) (y :: ys))) (h1 : Sorted (x :: if xx < y then xx :: merge xxs (y :: ys) else y :: merge (xx :: xxs) ys)) : Sorted (x :: merge (xx :: xxs) (y :: ys))"
+    },
+    {
+      "fragment_id": 115,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "merge_sorted",
+      "scope_vars": [
+        "inst✝¹ : Preorder T",
+        "inst✝ : DecidableRel LT.lt",
+        "x : T"
+      ],
+      "premises": [
+        "y : T",
+        "ys : List T",
+        "sys : Sorted (y :: ys)",
+        "xx : T",
+        "xxs : List T",
+        "IHx : ∀ {ys : List T}, Sorted (xx :: xxs) → Sorted ys → Sorted (merge (xx :: xxs) ys)",
+        "sxs : Sorted (x :: xx :: xxs)"
+      ],
+      "body": "(ss : Sorted (merge (xx :: xxs) (y :: ys))) → Sorted (x :: merge (xx :: xxs) (y :: ys))",
+      "conclusion": "Sorted (x :: merge (xx :: xxs) (y :: ys))",
+      "statement": "(inst✝¹ : Preorder T) (inst✝ : DecidableRel LT.lt) (x : T) (y : T) (ys : List T) (sys : Sorted (y :: ys)) (xx : T) (xxs : List T) (IHx : ∀ {ys : List T}, Sorted (xx :: xxs) → Sorted ys → Sorted (merge (xx :: xxs) ys)) (sxs : Sorted (x :: xx :: xxs)) (ss : Sorted (merge (xx :: xxs) (y :: ys))) (h1 : Sorted (x :: merge (xx :: xxs) (y :: ys))) : Sorted (x :: merge (xx :: xxs) (y :: ys))"
+    },
+    {
+      "fragment_id": 116,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "merge_sorted",
+      "scope_vars": [
+        "inst✝¹ : Preorder T",
+        "inst✝ : DecidableRel LT.lt",
+        "x : T",
+        "y : T",
+        "ys : List T",
+        "xx : T",
+        "xxs : List T"
+      ],
+      "premises": [
+        "ss : Sorted (merge (xx :: xxs) (y :: ys))"
+      ],
+      "body": "Sorted (x :: if xx < y then xx :: merge xxs (y :: ys) else y :: merge (xx :: xxs) ys)",
+      "conclusion": "Sorted (x :: merge (xx :: xxs) (y :: ys))",
+      "statement": "(inst✝¹ : Preorder T) (inst✝ : DecidableRel LT.lt) (x : T) (y : T) (ys : List T) (xx : T) (xxs : List T) (ss : Sorted (merge (xx :: xxs) (y :: ys))) (h1 : Sorted (x :: if xx < y then xx :: merge xxs (y :: ys) else y :: merge (xx :: xxs) ys)) : Sorted (x :: merge (xx :: xxs) (y :: ys))"
+    },
+    {
+      "fragment_id": 117,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "merge_sorted",
+      "scope_vars": [
+        "inst✝¹ : Preorder T",
+        "inst✝ : DecidableRel LT.lt",
+        "x : T"
+      ],
+      "premises": [
+        "y : T",
+        "ys : List T",
+        "sys : Sorted (y :: ys)",
+        "xx : T",
+        "xxs : List T",
+        "IHx : ∀ {ys : List T}, Sorted (xx :: xxs) → Sorted ys → Sorted (merge (xx :: xxs) ys)",
+        "sxs : Sorted (x :: xx :: xxs)"
+      ],
+      "body": "(ss : Sorted (merge (xx :: xxs) (y :: ys))) → Sorted (x :: if xx < y then xx :: merge xxs (y :: ys) else y :: merge (xx :: xxs) ys)",
+      "conclusion": "Sorted (x :: merge (xx :: xxs) (y :: ys))",
+      "statement": "(inst✝¹ : Preorder T) (inst✝ : DecidableRel LT.lt) (x : T) (y : T) (ys : List T) (sys : Sorted (y :: ys)) (xx : T) (xxs : List T) (IHx : ∀ {ys : List T}, Sorted (xx :: xxs) → Sorted ys → Sorted (merge (xx :: xxs) ys)) (sxs : Sorted (x :: xx :: xxs)) (ss : Sorted (merge (xx :: xxs) (y :: ys))) (h1 : Sorted (x :: if xx < y then xx :: merge xxs (y :: ys) else y :: merge (xx :: xxs) ys)) : Sorted (x :: merge (xx :: xxs) (y :: ys))"
+    },
+    {
+      "fragment_id": 118,
+      "source_file": "LeanSrc/Sorts_Mathlib.lean",
+      "decl_name": "mergesort_correct",
+      "scope_vars": [
+        "T : Type",
+        "inst✝² : Preorder T",
+        "inst✝¹ : DecidableEq T",
+        "inst✝ : DecidableRel LT.lt"
+      ],
+      "premises": [
+        "l : List T"
+      ],
+      "body": "True",
+      "conclusion": "Sorted (mergesort l) ∧ Permut (mergesort l) l",
+      "statement": "(T : Type) (inst✝² : Preorder T) (inst✝¹ : DecidableEq T) (inst✝ : DecidableRel LT.lt) (l : List T) : Sorted (mergesort l) ∧ Permut (mergesort l) l"
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+theorem:  mergesort_correct
+sample:   1
+attempt:  fix_7
+
+[proof]
+intro l
+by_cases h : l.length < 2
+· have hm : mergesort l = l := by
+    unfold mergesort
+    rw [if_pos h]
+  constructor
+  · rw [hm]
+    cases l with
+    | nil =>
+      exact Sorted.nil
+    | cons x xs =>
+      cases xs with
+      | nil =>
+        exact Sorted.singleton
+      | cons y ys =>
+        simp at h
+        linarith
+  · rw [hm]
+    unfold Permut
+    intro t
+    rfl
+· constructor
+  · unfold mergesort
+    rw [if_neg h]
+    by_cases hs : Sorted (merge (mergesort (left l)) (mergesort (right l)))
+    · exact hs
+    · exfalso
+      exact hs (by assumption)
+  · unfold mergesort
+    rw [if_neg h]
+    unfold Permut
+    intro t
+    rfl
+
+[lean error]
+location:
+          · exfalso
+            exact hs (by assumption)
+                        ^
+        · unfold mergesort
+error: Tactic `assumption` failed
+T : Type
+inst✝² : Preorder T
+inst✝¹ : DecidableEq T
+inst✝ : DecidableRel LT.lt
+l : List T
+h : ¬l.length < 2
+hs : ¬Sorted (merge (mergesort (left l)) (mergesort (right l)))
+⊢ Sorted (merge (mergesort (left l)) (mergesort (right l)))
+
+location:
+          intro t
+          rfl
+         ^
+error: Tactic `rfl` failed: The left-hand side
+  count1 (merge (mergesort (left l)) (mergesort (right l))) t
+is not definitionally equal to the right-hand side
+  count1 l t
+case neg.right
+T : Type
+inst✝² : Preorder T
+inst✝¹ : DecidableEq T
+inst✝ : DecidableRel LT.lt
+l : List T
+h : ¬l.length < 2
+t : T
+⊢ count1 (merge (mergesort (left l)) (mergesort (right l))) t = count1 l t

@@ -1,0 +1,13 @@
+theorem:  mergesort_sorted
+sample:   0
+attempt:  fix_1
+
+[proof]
+exact sort_sorted (sort := mergesort) l
+
+[lean error]
+location:
+    theorem eval_mergesort_sorted [Preorder T] [DecidableRel (LT.lt (α := T))] (l : List T) : Sorted (mergesort l) := by
+      exact sort_sorted (sort := mergesort) l
+           ^
+error: error(lean.unknownIdentifier): Unknown identifier `sort_sorted`

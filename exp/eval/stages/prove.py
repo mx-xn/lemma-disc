@@ -5,7 +5,25 @@ Like exp/expB/stages/solo.py but:
     candidates file
   - stores ``raw_response`` on each Attempt so LemmaRegistry.record_usage can
     parse <used_lemmas> indices across attempts
+  - supports M independent samples per theorem (pass@M); each sample is an
+    independent prove loop with its own fix budget
+  - writes per-attempt .txt debug files to the cache directory so results are
+    human-readable without opening JSON
   - writes prove_results.json in output_dir
+
+Schema for prove_results.json (per theorem_id):
+    {
+        "ok":          bool,          # true if any sample succeeded (pass@M)
+        "final_error": str,           # last sample's error when ok is False
+        "samples": [                  # one entry per sample
+            {
+                "ok":          bool,
+                "final_error": str,
+                "attempts":    [Attempt, ...]
+            },
+            ...
+        ]
+    }
 
 ``Attempt`` and ``RoundResult`` are defined here (not re-used from exp.lib.prover)
 because eval needs the extra ``raw_response`` field in the JSON schema.
@@ -19,6 +37,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import asdict, dataclass, field
 from pathlib import Path
 
+from exp.eval.lib.result_store import merge_results_file
 from exp.eval.lib.retriever import Retriever
 from exp.lib.corpus import Theorem
 from exp.lib.lean_check import check_proof
@@ -63,6 +82,14 @@ class RoundResult:
     final_error: str = ""
 
 
+@dataclass
+class TheoremResult:
+    """Aggregate result for one theorem across all M samples."""
+    ok: bool           # True if any sample succeeded (pass@M)
+    samples: list[RoundResult] = field(default_factory=list)
+    final_error: str = ""  # last sample's error when ok is False
+
+
 def _build_hint_preamble(lemma_pool: list[str]) -> str:
     return "\n".join(
         f"theorem lemma_hint_{i} {stmt} := by admit"
@@ -105,6 +132,32 @@ def _render_fix(
     )
 
 
+def _write_attempt_txt(
+    scratch_dir: Path,
+    theorem_id: str,
+    sample_index: int,
+    attempt_index: int,
+    proof_body: str,
+    ok: bool,
+    error_text: str,
+) -> None:
+    """Write a human-readable .txt file for one proving attempt."""
+    label = "init" if attempt_index == 0 else f"fix_{attempt_index}"
+    result_section = "[lean result]\nOK" if ok else f"[lean error]\n{error_text}"
+    content = (
+        f"theorem:  {theorem_id}\n"
+        f"sample:   {sample_index}\n"
+        f"attempt:  {label}\n"
+        f"\n"
+        f"[proof]\n"
+        f"{proof_body}\n"
+        f"\n"
+        f"{result_section}\n"
+    )
+    path = scratch_dir / f"{theorem_id}__s{sample_index}__{label}.txt"
+    path.write_text(content, encoding="utf-8")
+
+
 def _run_prove_loop(
     thm: Theorem,
     lemma_pool: list[str],
@@ -112,6 +165,8 @@ def _run_prove_loop(
     lake_project: Path,
     imports: list[str],
     max_attempts: int,
+    lean_scratch_dir: Path | None = None,
+    sample_index: int = 0,
 ) -> RoundResult:
     preamble = _build_hint_preamble(lemma_pool)
     attempts: list[Attempt] = []
@@ -132,7 +187,15 @@ def _run_prove_loop(
             imports=imports,
             decl_name=f"eval_{thm.theorem_id}",
             preamble=preamble,
+            scratch_dir=lean_scratch_dir,
         )
+
+        if lean_scratch_dir is not None:
+            _write_attempt_txt(
+                lean_scratch_dir, thm.theorem_id, sample_index, i,
+                proof_body, check.ok, check.error_text,
+            )
+
         attempts.append(Attempt(
             proof_body=proof_body,
             ok=check.ok,
@@ -150,6 +213,26 @@ def _run_prove_loop(
     )
 
 
+def _run_samples(
+    thm: Theorem,
+    lemma_pool: list[str],
+    llm: LLM,
+    lake_project: Path,
+    imports: list[str],
+    max_attempts: int,
+    lean_scratch_dir: Path | None,
+    num_samples: int,
+) -> list[RoundResult]:
+    """Run num_samples independent prove loops for one theorem."""
+    return [
+        _run_prove_loop(
+            thm, lemma_pool, llm, lake_project, imports,
+            max_attempts, lean_scratch_dir, sample_index=s,
+        )
+        for s in range(num_samples)
+    ]
+
+
 def _prove_one(
     thm: Theorem,
     lemma_pool: list[str],
@@ -160,21 +243,40 @@ def _prove_one(
     retriever: Retriever | None = None,
     top_k: int | None = None,
     per_theorem_pools: dict[str, list[str]] | None = None,
-) -> tuple[str, RoundResult]:
+    lean_scratch_dir: Path | None = None,
+    num_samples: int = 1,
+) -> tuple[str, TheoremResult]:
     pool = per_theorem_pools[thm.theorem_id] if per_theorem_pools else lemma_pool
     effective_pool = (
         retriever.retrieve(thm.statement_text, pool, top_k)
         if retriever is not None and top_k is not None
         else pool
     )
-    print(f"[prove] {thm.theorem_id} ({len(effective_pool)} hint(s))", file=sys.stderr)
-    result = _run_prove_loop(thm, effective_pool, llm, lake_project, imports, max_attempts)
-    status = "ok" if result.ok else "FAIL"
     print(
-        f"  -> {thm.theorem_id}: {status} after {len(result.attempts)} attempt(s)",
+        f"[prove] {thm.theorem_id} ({len(effective_pool)} hint(s), {num_samples} sample(s))",
         file=sys.stderr,
     )
-    return thm.theorem_id, result
+    samples = _run_samples(
+        thm, effective_pool, llm, lake_project, imports,
+        max_attempts, lean_scratch_dir, num_samples,
+    )
+    ok = any(s.ok for s in samples)
+    final_error = "" if ok else samples[-1].final_error
+    n_ok = sum(1 for s in samples if s.ok)
+    status = "ok" if ok else "FAIL"
+    print(
+        f"  -> {thm.theorem_id}: {status} ({n_ok}/{num_samples} samples ok)",
+        file=sys.stderr,
+    )
+    return thm.theorem_id, TheoremResult(ok=ok, samples=samples, final_error=final_error)
+
+
+def _serialize_sample(s: RoundResult) -> dict:
+    return {
+        "ok": s.ok,
+        "final_error": s.final_error,
+        "attempts": [asdict(a) for a in s.attempts],
+    }
 
 
 def prove_round(
@@ -189,23 +291,30 @@ def prove_round(
     retriever: Retriever | None = None,
     top_k: int | None = None,
     per_theorem_pools: dict[str, list[str]] | None = None,
-) -> dict[str, RoundResult]:
-    """Prove all theorems in this round using lemma_pool as hints.
+    force: bool = False,
+    num_samples: int = 1,
+) -> dict[str, TheoremResult]:
+    """Prove all theorems using lemma_pool as hints.
 
-    Writes prove_results.json under output_dir. Returns theorem_id -> RoundResult.
+    Writes prove_results.json under output_dir. Returns theorem_id -> TheoremResult.
+    Per-attempt .txt debug files and Lean scratch files are saved under
+    output_dir/cache/ for inspection; LLM JSON cache lives in output_dir/cache/llm/.
     """
     output_dir = Path(output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
+    lean_scratch_dir = output_dir / CACHE_SUBDIR
+    lean_scratch_dir.mkdir(parents=True, exist_ok=True)
 
-    results: dict[str, RoundResult] = {}
+    results: dict[str, TheoremResult] = {}
 
     if num_workers > 1:
-        results_map: dict[str, RoundResult] = {}
+        results_map: dict[str, TheoremResult] = {}
         with ThreadPoolExecutor(max_workers=num_workers) as pool:
             futures = {
                 pool.submit(
                     _prove_one, thm, lemma_pool, llm, lake_project, imports,
                     max_attempts, retriever, top_k, per_theorem_pools,
+                    lean_scratch_dir, num_samples,
                 ): thm
                 for thm in theorems
             }
@@ -222,23 +331,23 @@ def prove_round(
             tid, result = _prove_one(
                 thm, lemma_pool, llm, lake_project, imports,
                 max_attempts, retriever, top_k, per_theorem_pools,
+                lean_scratch_dir, num_samples,
             )
             results[tid] = result
 
-    artifact = {
-        "lake_project": str(lake_project),
-        "imports": imports,
-        "results": {
+    merge_results_file(
+        output_dir / PROVE_RESULTS_JSON,
+        str(lake_project),
+        imports,
+        {
             tid: {
                 "ok": r.ok,
                 "final_error": r.final_error,
-                "attempts": [asdict(a) for a in r.attempts],
+                "samples": [_serialize_sample(s) for s in r.samples],
             }
             for tid, r in results.items()
         },
-    }
-    (output_dir / PROVE_RESULTS_JSON).write_text(
-        json.dumps(artifact, ensure_ascii=False, indent=2)
+        force=force,
     )
     n_ok = sum(1 for r in results.values() if r.ok)
     print(

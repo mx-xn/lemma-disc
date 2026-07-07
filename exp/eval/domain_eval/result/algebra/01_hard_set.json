@@ -1,0 +1,50 @@
+{
+  "lake_project": "data/input/algebra-in-lean",
+  "imports": [
+    "AlgebraInLean.Chapter03.Sheet04"
+  ],
+  "theorems": [
+    {
+      "theorem_id": "Pows_contain_self",
+      "lean_path": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "statement_text": "(x : G) : x ∈ Pows x",
+      "final_error": "location:\n    \n    theorem expB_Pows_contain_self (x : G) : x ∈ Pows x := by\n                                                ^\n      change ∃ a, gpow x a = x\nerror: function expected at\n  Pows\nterm has type\n  ?m.51\n\nlocation:\n    theorem expB_Pows_contain_self (x : G) : x ∈ Pows x := by\n      change ∃ a, gpow x a = x\n                 ^\n        use 1\nerror: unknown identifier 'gpow'\n\nlocation:\n    theorem expB_Pows_contain_self (x : G) : x ∈ Pows x := by\n      change ∃ a, gpow x a = x\n                            ^\n        use 1\nerror: function expected at\n  x\nterm has type\n  G\n\nlocation:\n    \n    theorem expB_Pows_contain_self (x : G) : x ∈ Pows x := by\n                                                          ^\n      change ∃ a, gpow x a = x\nerror: unsolved goals\nG : Type u_1\nx✝ : Sort u_2\nPows : x✝\nx : G\n⊢ x ∈ sorryAx (?m.638 x) true"
+    },
+    {
+      "theorem_id": "`set_fintype_card_eq_univ_iff`",
+      "lean_path": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "statement_text": "defined in Mathlib. -/",
+      "final_error": "location:\n    \n    theorem expB_`set_fintype_card_eq_univ_iff` defined in Mathlib. -/ := by\n                ^\n      trivial\nerror: unexpected token; expected ':'"
+    },
+    {
+      "theorem_id": "finPowMap_order_bijective",
+      "lean_path": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "statement_text": "{x : G} (h : order x ≠ 0) : Bijective (finPowMap x (order x))",
+      "final_error": "location:\n    \n    theorem expB_finPowMap_order_bijective {x : G} (h : order x ≠ 0) : Bijective (finPowMap x (order x)) := by\n                                                       ^\n      classical\nerror: function expected at\n  order\nterm has type\n  ?m.11\n\nlocation:\n    \n    theorem expB_finPowMap_order_bijective {x : G} (h : order x ≠ 0) : Bijective (finPowMap x (order x)) := by\n                                                                      ^\n      classical\nerror: function expected at\n  Bijective\nterm has type\n  ?m.34\n\nlocation:\n      classical\n      constructor\n     ^\n      · intro a b hab\nerror: tactic 'constructor' failed, target is not an inductive datatype\nG : Sort u_1\nx✝¹ : Sort u_2\norder : x✝¹\nx✝ : Sort u_3\nBijective : x✝\nx : G\nh : sorryAx ℕ true ≠ 0\n⊢ sorryAx (Sort u_4) true"
+    },
+    {
+      "theorem_id": "Pows_iso_Cn_order",
+      "lean_path": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "statement_text": "(x : G) [h : NeZero (order x)] : ∃ (φ : Fin (order x) → Pows x), Isomorphism φ",
+      "final_error": "location:\n    \n    theorem expB_Pows_iso_Cn_order (x : G) [h : NeZero (order x)] : ∃ (φ : Fin (order x) → Pows x), Isomorphism φ := by\n                                                       ^\n      exact expB_Pows_iso_Cn_order (x := x)\nerror: function expected at\n  order\nterm has type\n  ?m.183\n\nlocation:\n    \n    theorem expB_Pows_iso_Cn_order (x : G) [h : NeZero (order x)] : ∃ (φ : Fin (order x) → Pows x), Isomorphism φ := by\n                                                                               ^\n      exact expB_Pows_iso_Cn_order (x := x)\nerror: function expected at\n  order\nterm has type\n  ?m.183\n\nlocation:\n    \n    theorem expB_Pows_iso_Cn_order (x : G) [h : NeZero (order x)] : ∃ (φ : Fin (order x) → Pows x), Isomorphism φ := by\n                                                                                          ^\n      exact expB_Pows_iso_Cn_order (x := x)\nerror: function expected at\n  Pows\nterm has type\n  ?m.712\n\nlocation:\n    \n    theorem expB_Pows_iso_Cn_order (x : G) [h : NeZero (order x)] : ∃ (φ : Fin (order x) → Pows x), Isomorphism φ := by\n                                                                                                   ^\n      exact expB_Pows_iso_Cn_order (x := x)\nerror: function expected at\n  Isomorphism\nterm has type\n  ?m.1244\n\nlocation:\n    \n    theorem expB_Pows_iso_Cn_order (x : G) [h : NeZero (order x)] : ∃ (φ : Fin (order x) → Pows x), Isomorphism φ := by\n                                                                                                                    ^\n      exact expB_Pows_iso_Cn_order (x := x)\nerror: unsolved goals\nG : Sort u_1\nx✝² : Sort u_2\norder : x✝²\nx✝¹ : Sort u_3\nPows : x✝¹\nx✝ : Sort u_4\nIsomorphism : x✝\nx : G\nh : NeZero (sorryAx (?m.3867 x) true)\n⊢ ∃ φ, sorryAx Prop true"
+    },
+    {
+      "theorem_id": "Generate_contain_set",
+      "lean_path": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "statement_text": "(S : Set G) : S ⊆ Generate S",
+      "final_error": "location:\n    \n    theorem expB_Generate_contain_set (S : Set G) : S ⊆ Generate S := by\n                                                       ^\n      intro x hx\nerror: function expected at\n  Generate\nterm has type\n  ?m.22\n\nlocation:\n      intro x hx\n      show x ∈ Generate S\n              ^\n      intro H hSH\nerror: function expected at\n  Generate\nterm has type\n  x✝\n\nlocation:\n      show x ∈ Generate S\n      intro H hSH\n     ^\n      exact hSH hx\nerror: tactic 'introN' failed, insufficient number of binders\nG : Type u_1\nx✝ : Sort u_2\nGenerate : x✝\nS : Set G\nx : G\nhx : x ∈ S\n⊢ x ∈ sorryAx (Set G) true"
+    },
+    {
+      "theorem_id": "Minimal_smallest",
+      "lean_path": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "statement_text": "[Group G] (H : Subgroup G) : Minimal G ≤ H",
+      "final_error": "location:\n    \n    theorem expB_Minimal_smallest [Group G] (H : Subgroup G) : Minimal G ≤ H := by\n                                                              ^\n      intro x hx\nerror: function expected at\n  Minimal\nterm has type\n  ?m.21\n\nlocation:\n    theorem expB_Minimal_smallest [Group G] (H : Subgroup G) : Minimal G ≤ H := by\n      intro x hx\n     ^\n        simp [Minimal] at hx\nerror: tactic 'introN' failed, insufficient number of binders\nG : Type u_1\nx✝ : Sort u_2\nMinimal : x✝\ninst✝ : Group G\nH : Subgroup G\nx : G\nhx : x ∈ sorryAx (Subgroup G) true\n⊢ x ∈ H\n\nlocation:\n      intro x hx\n        simp [Minimal] at hx\n                      ^\n        simpa [hx] using H.one_mem\nerror: unexpected token 'at'; expected command"
+    },
+    {
+      "theorem_id": "subgroup_eq_Maximal_of_card_eq_G",
+      "lean_path": "AlgebraInLean/Chapter03/Sheet04.lean",
+      "statement_text": "(H : Subgroup G) [Fintype G] [Fintype H] (h : Fintype.card G = Fintype.card H) : H = Maximal G",
+      "final_error": "location:\n    \n    theorem expB_subgroup_eq_Maximal_of_card_eq_G (H : Subgroup G) [Fintype G] [Fintype H] (h : Fintype.card G = Fintype.card H) : H = Maximal G := by\n                                                      ^\n      have f : H → G := fun h => (h : G)\nerror: failed to synthesize\n  Group G\nuse `set_option diagnostics true` to get diagnostic information\n\nlocation:\n    \n    theorem expB_subgroup_eq_Maximal_of_card_eq_G (H : Subgroup G) [Fintype G] [Fintype H] (h : Fintype.card G = Fintype.card H) : H = Maximal G := by\n                                                                                                                                      ^\n      have f : H → G := fun h => (h : G)\nerror: function expected at\n  Maximal\nterm has type\n  ?m.1513\n\nlocation:\n    \n    theorem expB_subgroup_eq_Maximal_of_card_eq_G (H : Subgroup G) [Fintype G] [Fintype H] (h : Fintype.card G = Fintype.card H) : H = Maximal G := by\n                                                                                                                                                   ^\n      have f : H → G := fun h => (h : G)\nerror: unsolved goals\nG : Type u_1\nx✝ : Sort u_2\nMaximal : x✝\nH : sorryAx (Type u_1) true\ninst✝¹ : Fintype G\ninst✝ : Fintype (sorryAx (Type u_3) true)\nh : Fintype.card G = Fintype.card (sorryAx (Type u_3) true)\nf : sorryAx (Sort ?u.3258) true\n⊢ H = sorryAx (sorryAx (Type u_1) true) true\n\nlocation:\n      have f : H → G := fun h => (h : G)\n        have hf_inj : Function.Injective f := by\n       ^\n          intro a b hab\nerror: unexpected token 'have'; expected command"
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+theorem:  mergesort_correct
+sample:   0
+attempt:  fix_4
+
+[proof]
+intro l
+by_cases h : l.length < 2
+· have hm : mergesort l = l := by
+    unfold mergesort
+    simp [h]
+  constructor
+  · rw [hm]
+    cases l with
+    | nil =>
+      exact Sorted.nil
+    | cons x xs =>
+      cases xs with
+      | nil =>
+        exact Sorted.singleton
+      | cons y ys =>
+        simp at h
+        linarith
+  · rw [hm]
+    exact lemma_hint_0 l (Classical.choice (Classical.decEq T |> fun _ => by infer_instance)) (lemma_hint_15 l (Classical.choice (Classical.decEq T |> fun _ => by infer_instance)))
+· unfold mergesort
+  simp [h]
+  constructor
+  · cases hmerge : merge (mergesort (left l)) (mergesort (right l)) with
+    | nil =>
+      exact Sorted.nil
+    | cons x xs =>
+      cases xs with
+      | nil =>
+        exact Sorted.singleton
+      | cons y ys =>
+        exact Sorted.cons (Sorted.cons Sorted.nil (by intro hlt; exact hlt.elim)) (by intro hlt; exact hlt.elim)
+  · exact lemma_hint_0 (merge (mergesort (left l)) (mergesort (right l))) l (by rfl)
+
+[lean error]
+location:
+        · rw [hm]
+          exact lemma_hint_0 l (Classical.choice (Classical.decEq T |> fun _ => by infer_instance)) (lemma_hint_15 l (Classical.choice (Classical.decEq T |> fun _ => by infer_instance)))
+                                                                                  ^
+      · unfold mergesort
+error: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  Nonempty T
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+
+location:
+        · rw [hm]
+          exact lemma_hint_0 l (Classical.choice (Classical.decEq T |> fun _ => by infer_instance)) (lemma_hint_15 l (Classical.choice (Classical.decEq T |> fun _ => by infer_instance)))
+                                                                                                                                                                        ^
+      · unfold mergesort
+error: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  Nonempty T
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+
+location:
+            | cons y ys =>
+              exact Sorted.cons (Sorted.cons Sorted.nil (by intro hlt; exact hlt.elim)) (by intro hlt; exact hlt.elim)
+                                            ^
+        · exact lemma_hint_0 (merge (mergesort (left l)) (mergesort (right l))) l (by rfl)
+error: Application type mismatch: The argument
+  Sorted.nil
+has type
+  Sorted []
+but is expected to have type
+  Sorted (?m.237 :: ?m.238)
+in the application
+  Sorted.cons Sorted.nil
+
+location:
+            | cons y ys =>
+              exact Sorted.cons (Sorted.cons Sorted.nil (by intro hlt; exact hlt.elim)) (by intro hlt; exact hlt.elim)
+                                                                            ^
+        · exact lemma_hint_0 (merge (mergesort (left l)) (mergesort (right l))) l (by rfl)
+error: error(lean.invalidField): Invalid field notation: Field projection operates on types of the form `C ...` where C is a constant. The expression
+  hlt
+has type `?m.235.1 ?m.237 ?m.236` which does not have the necessary form.
+
+location:
+            | cons y ys =>
+              exact Sorted.cons (Sorted.cons Sorted.nil (by intro hlt; exact hlt.elim)) (by intro hlt; exact hlt.elim)
+                                                                                                            ^
+        · exact lemma_hint_0 (merge (mergesort (left l)) (mergesort (right l))) l (by rfl)
+error: error(lean.invalidField): Invalid field notation: Field projection operates on types of the form `C ...` where C is a constant. The expression
+  hlt
+has type `inst✝².toLT.1 y x` which does not have the necessary form.
+
+location:
+              exact Sorted.cons (Sorted.cons Sorted.nil (by intro hlt; exact hlt.elim)) (by intro hlt; exact hlt.elim)
+        · exact lemma_hint_0 (merge (mergesort (left l)) (mergesort (right l))) l (by rfl)
+                                                                               ^
+error: Application type mismatch: The argument
+  l
+has type
+  List T
+but is expected to have type
+  T
+in the application
+  lemma_hint_0 (merge (mergesort (left l)) (mergesort (right l))) l

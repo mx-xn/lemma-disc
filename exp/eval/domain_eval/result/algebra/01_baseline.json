@@ -1,0 +1,155 @@
+{
+  "lake_project": "data/input/algebra-in-lean",
+  "imports": [
+    "AlgebraInLean.Chapter03.Sheet04"
+  ],
+  "results": {
+    "Pows_contain_self": {
+      "ok": false,
+      "attempts": [
+        {
+          "proof_body": "use 1\n  rw [gpow_one]",
+          "ok": false,
+          "error_text": "location:\n    \n    theorem expB_Pows_contain_self (x : G) : x ∈ Pows x := by\n                                                ^\n      use 1\nerror: function expected at\n  Pows\nterm has type\n  ?m.51\n\nlocation:\n    theorem expB_Pows_contain_self (x : G) : x ∈ Pows x := by\n      use 1\n         ^\n        rw [gpow_one]\nerror: function expected at\n  1\nterm has type\n  ?m.808"
+        },
+        {
+          "proof_body": "dsimp [Pows]\n  use 1\n  rw [gpow_one]",
+          "ok": false,
+          "error_text": "location:\n    \n    theorem expB_Pows_contain_self (x : G) : x ∈ Pows x := by\n                                                ^\n      dsimp [Pows]\nerror: function expected at\n  Pows\nterm has type\n  ?m.51\n\nlocation:\n    theorem expB_Pows_contain_self (x : G) : x ∈ Pows x := by\n      dsimp [Pows]\n     ^\n        use 1\nerror: invalid argument, variable is not a proposition or let-declaration\n\nlocation:\n      dsimp [Pows]\n        use 1\n       ^\n        rw [gpow_one]\nerror: unexpected identifier; expected command"
+        },
+        {
+          "proof_body": "change ∃ a, gpow x a = x\n  use 1\n  rw [gpow_one]",
+          "ok": false,
+          "error_text": "location:\n    \n    theorem expB_Pows_contain_self (x : G) : x ∈ Pows x := by\n                                                ^\n      change ∃ a, gpow x a = x\nerror: function expected at\n  Pows\nterm has type\n  ?m.51\n\nlocation:\n    theorem expB_Pows_contain_self (x : G) : x ∈ Pows x := by\n      change ∃ a, gpow x a = x\n                 ^\n        use 1\nerror: unknown identifier 'gpow'\n\nlocation:\n    theorem expB_Pows_contain_self (x : G) : x ∈ Pows x := by\n      change ∃ a, gpow x a = x\n                            ^\n        use 1\nerror: function expected at\n  x\nterm has type\n  G\n\nlocation:\n    \n    theorem expB_Pows_contain_self (x : G) : x ∈ Pows x := by\n                                                          ^\n      change ∃ a, gpow x a = x\nerror: unsolved goals\nG : Type u_1\nx✝ : Sort u_2\nPows : x✝\nx : G\n⊢ x ∈ sorryAx (?m.638 x) true"
+        }
+      ],
+      "final_error": "location:\n    \n    theorem expB_Pows_contain_self (x : G) : x ∈ Pows x := by\n                                                ^\n      change ∃ a, gpow x a = x\nerror: function expected at\n  Pows\nterm has type\n  ?m.51\n\nlocation:\n    theorem expB_Pows_contain_self (x : G) : x ∈ Pows x := by\n      change ∃ a, gpow x a = x\n                 ^\n        use 1\nerror: unknown identifier 'gpow'\n\nlocation:\n    theorem expB_Pows_contain_self (x : G) : x ∈ Pows x := by\n      change ∃ a, gpow x a = x\n                            ^\n        use 1\nerror: function expected at\n  x\nterm has type\n  G\n\nlocation:\n    \n    theorem expB_Pows_contain_self (x : G) : x ∈ Pows x := by\n                                                          ^\n      change ∃ a, gpow x a = x\nerror: unsolved goals\nG : Type u_1\nx✝ : Sort u_2\nPows : x✝\nx : G\n⊢ x ∈ sorryAx (?m.638 x) true"
+    },
+    "`set_fintype_card_eq_univ_iff`": {
+      "ok": false,
+      "attempts": [
+        {
+          "proof_body": "",
+          "ok": false,
+          "error_text": "location:\n    \n    theorem expB_`set_fintype_card_eq_univ_iff` defined in Mathlib. -/ := by\n                ^\n      \nerror: unexpected token; expected ':'"
+        },
+        {
+          "proof_body": "skip",
+          "ok": false,
+          "error_text": "location:\n    \n    theorem expB_`set_fintype_card_eq_univ_iff` defined in Mathlib. -/ := by\n                ^\n      skip\nerror: unexpected token; expected ':'"
+        },
+        {
+          "proof_body": "trivial",
+          "ok": false,
+          "error_text": "location:\n    \n    theorem expB_`set_fintype_card_eq_univ_iff` defined in Mathlib. -/ := by\n                ^\n      trivial\nerror: unexpected token; expected ':'"
+        }
+      ],
+      "final_error": "location:\n    \n    theorem expB_`set_fintype_card_eq_univ_iff` defined in Mathlib. -/ := by\n                ^\n      trivial\nerror: unexpected token; expected ':'"
+    },
+    "finPowMap_order_bijective": {
+      "ok": false,
+      "attempts": [
+        {
+          "proof_body": "  classical\n  constructor\n  · intro a b hab\n    apply Fin.ext\n    exact pow_fin_injective (x := x) h hab\n  · intro y\n    rcases y.property with ⟨n, rfl⟩\n    rcases pow_fin_surjective (x := x) h n with ⟨k, hk⟩\n    refine ⟨k, ?_⟩\n    apply Subtype.ext\n    exact hk",
+          "ok": false,
+          "error_text": "location:\n    \n    theorem expB_finPowMap_order_bijective {x : G} (h : order x ≠ 0) : Bijective (finPowMap x (order x)) := by\n                                                       ^\n        classical\nerror: function expected at\n  order\nterm has type\n  ?m.11\n\nlocation:\n    \n    theorem expB_finPowMap_order_bijective {x : G} (h : order x ≠ 0) : Bijective (finPowMap x (order x)) := by\n                                                                      ^\n        classical\nerror: function expected at\n  Bijective\nterm has type\n  ?m.34\n\nlocation:\n        classical\n        constructor\n       ^\n        · intro a b hab\nerror: tactic 'constructor' failed, target is not an inductive datatype\nG : Sort u_1\nx✝¹ : Sort u_2\norder : x✝¹\nx✝ : Sort u_3\nBijective : x✝\nx : G\nh : sorryAx ℕ true ≠ 0\n⊢ sorryAx (Sort u_4) true"
+        },
+        {
+          "proof_body": "classical\nrefine ⟨?_, ?_⟩\n· intro a b hab\n  apply Fin.ext\n  exact pow_fin_injective (x := x) h hab\n· intro y\n  rcases y.property with ⟨n, rfl⟩\n  rcases pow_fin_surjective (x := x) h n with ⟨k, hk⟩\n  refine ⟨k, ?_⟩\n  apply Subtype.ext\n  exact hk",
+          "ok": false,
+          "error_text": "location:\n    \n    theorem expB_finPowMap_order_bijective {x : G} (h : order x ≠ 0) : Bijective (finPowMap x (order x)) := by\n                                                       ^\n      classical\nerror: function expected at\n  order\nterm has type\n  ?m.11\n\nlocation:\n    \n    theorem expB_finPowMap_order_bijective {x : G} (h : order x ≠ 0) : Bijective (finPowMap x (order x)) := by\n                                                                      ^\n      classical\nerror: function expected at\n  Bijective\nterm has type\n  ?m.34\n\nlocation:\n      refine ⟨?_, ?_⟩\n      · intro a b hab\n     ^\n        apply Fin.ext\nerror: no goals to be solved"
+        },
+        {
+          "proof_body": "classical\nconstructor\n· intro a b hab\n  apply Fin.ext\n  exact pow_fin_injective (x := x) h hab\n· intro y\n  rcases y.property with ⟨n, rfl⟩\n  rcases pow_fin_surjective (x := x) h n with ⟨k, hk⟩\n  refine ⟨k, ?_⟩\n  apply Subtype.ext\n  exact hk",
+          "ok": false,
+          "error_text": "location:\n    \n    theorem expB_finPowMap_order_bijective {x : G} (h : order x ≠ 0) : Bijective (finPowMap x (order x)) := by\n                                                       ^\n      classical\nerror: function expected at\n  order\nterm has type\n  ?m.11\n\nlocation:\n    \n    theorem expB_finPowMap_order_bijective {x : G} (h : order x ≠ 0) : Bijective (finPowMap x (order x)) := by\n                                                                      ^\n      classical\nerror: function expected at\n  Bijective\nterm has type\n  ?m.34\n\nlocation:\n      classical\n      constructor\n     ^\n      · intro a b hab\nerror: tactic 'constructor' failed, target is not an inductive datatype\nG : Sort u_1\nx✝¹ : Sort u_2\norder : x✝¹\nx✝ : Sort u_3\nBijective : x✝\nx : G\nh : sorryAx ℕ true ≠ 0\n⊢ sorryAx (Sort u_4) true"
+        }
+      ],
+      "final_error": "location:\n    \n    theorem expB_finPowMap_order_bijective {x : G} (h : order x ≠ 0) : Bijective (finPowMap x (order x)) := by\n                                                       ^\n      classical\nerror: function expected at\n  order\nterm has type\n  ?m.11\n\nlocation:\n    \n    theorem expB_finPowMap_order_bijective {x : G} (h : order x ≠ 0) : Bijective (finPowMap x (order x)) := by\n                                                                      ^\n      classical\nerror: function expected at\n  Bijective\nterm has type\n  ?m.34\n\nlocation:\n      classical\n      constructor\n     ^\n      · intro a b hab\nerror: tactic 'constructor' failed, target is not an inductive datatype\nG : Sort u_1\nx✝¹ : Sort u_2\norder : x✝¹\nx✝ : Sort u_3\nBijective : x✝\nx : G\nh : sorryAx ℕ true ≠ 0\n⊢ sorryAx (Sort u_4) true"
+    },
+    "Pows_iso_Cn_order": {
+      "ok": false,
+      "attempts": [
+        {
+          "proof_body": "refine ⟨finPowMap x (order x), ?_⟩\n  simpa using finPowMap_bijective (x := x)",
+          "ok": false,
+          "error_text": "location:\n    \n    theorem expB_Pows_iso_Cn_order (x : G) [h : NeZero (order x)] : ∃ (φ : Fin (order x) → Pows x), Isomorphism φ := by\n                                                       ^\n      refine ⟨finPowMap x (order x), ?_⟩\nerror: function expected at\n  order\nterm has type\n  ?m.183\n\nlocation:\n    \n    theorem expB_Pows_iso_Cn_order (x : G) [h : NeZero (order x)] : ∃ (φ : Fin (order x) → Pows x), Isomorphism φ := by\n                                                                               ^\n      refine ⟨finPowMap x (order x), ?_⟩\nerror: function expected at\n  order\nterm has type\n  ?m.183\n\nlocation:\n    \n    theorem expB_Pows_iso_Cn_order (x : G) [h : NeZero (order x)] : ∃ (φ : Fin (order x) → Pows x), Isomorphism φ := by\n                                                                                          ^\n      refine ⟨finPowMap x (order x), ?_⟩\nerror: function expected at\n  Pows\nterm has type\n  ?m.712\n\nlocation:\n    \n    theorem expB_Pows_iso_Cn_order (x : G) [h : NeZero (order x)] : ∃ (φ : Fin (order x) → Pows x), Isomorphism φ := by\n                                                                                                   ^\n      refine ⟨finPowMap x (order x), ?_⟩\nerror: function expected at\n  Isomorphism\nterm has type\n  ?m.1244\n\nlocation:\n    theorem expB_Pows_iso_Cn_order (x : G) [h : NeZero (order x)] : ∃ (φ : Fin (order x) → Pows x), Isomorphism φ := by\n      refine ⟨finPowMap x (order x), ?_⟩\n            ^\n        simpa using finPowMap_bijective (x := x)\nerror: invalid constructor ⟨...⟩, expected type must be known\n\nlocation:\n      refine ⟨finPowMap x (order x), ?_⟩\n        simpa using finPowMap_bijective (x := x)\n             ^\nerror: unexpected token 'using'; expected command"
+        },
+        {
+          "proof_body": "refine Exists.intro (finPowMap x (order x)) ?_\nexact finPowMap_bijective (x := x)",
+          "ok": false,
+          "error_text": "location:\n    \n    theorem expB_Pows_iso_Cn_order (x : G) [h : NeZero (order x)] : ∃ (φ : Fin (order x) → Pows x), Isomorphism φ := by\n                                                       ^\n      refine Exists.intro (finPowMap x (order x)) ?_\nerror: function expected at\n  order\nterm has type\n  ?m.183\n\nlocation:\n    \n    theorem expB_Pows_iso_Cn_order (x : G) [h : NeZero (order x)] : ∃ (φ : Fin (order x) → Pows x), Isomorphism φ := by\n                                                                               ^\n      refine Exists.intro (finPowMap x (order x)) ?_\nerror: function expected at\n  order\nterm has type\n  ?m.183\n\nlocation:\n    \n    theorem expB_Pows_iso_Cn_order (x : G) [h : NeZero (order x)] : ∃ (φ : Fin (order x) → Pows x), Isomorphism φ := by\n                                                                                          ^\n      refine Exists.intro (finPowMap x (order x)) ?_\nerror: function expected at\n  Pows\nterm has type\n  ?m.712\n\nlocation:\n    \n    theorem expB_Pows_iso_Cn_order (x : G) [h : NeZero (order x)] : ∃ (φ : Fin (order x) → Pows x), Isomorphism φ := by\n                                                                                                   ^\n      refine Exists.intro (finPowMap x (order x)) ?_\nerror: function expected at\n  Isomorphism\nterm has type\n  ?m.1244\n\nlocation:\n    theorem expB_Pows_iso_Cn_order (x : G) [h : NeZero (order x)] : ∃ (φ : Fin (order x) → Pows x), Isomorphism φ := by\n      refine Exists.intro (finPowMap x (order x)) ?_\n                          ^\n      exact finPowMap_bijective (x := x)\nerror: unknown identifier 'finPowMap'\n\nlocation:\n      refine Exists.intro (finPowMap x (order x)) ?_\n      exact finPowMap_bijective (x := x)\n           ^\nerror: unknown identifier 'finPowMap_bijective'"
+        },
+        {
+          "proof_body": "exact expB_Pows_iso_Cn_order (x := x)",
+          "ok": false,
+          "error_text": "location:\n    \n    theorem expB_Pows_iso_Cn_order (x : G) [h : NeZero (order x)] : ∃ (φ : Fin (order x) → Pows x), Isomorphism φ := by\n                                                       ^\n      exact expB_Pows_iso_Cn_order (x := x)\nerror: function expected at\n  order\nterm has type\n  ?m.183\n\nlocation:\n    \n    theorem expB_Pows_iso_Cn_order (x : G) [h : NeZero (order x)] : ∃ (φ : Fin (order x) → Pows x), Isomorphism φ := by\n                                                                               ^\n      exact expB_Pows_iso_Cn_order (x := x)\nerror: function expected at\n  order\nterm has type\n  ?m.183\n\nlocation:\n    \n    theorem expB_Pows_iso_Cn_order (x : G) [h : NeZero (order x)] : ∃ (φ : Fin (order x) → Pows x), Isomorphism φ := by\n                                                                                          ^\n      exact expB_Pows_iso_Cn_order (x := x)\nerror: function expected at\n  Pows\nterm has type\n  ?m.712\n\nlocation:\n    \n    theorem expB_Pows_iso_Cn_order (x : G) [h : NeZero (order x)] : ∃ (φ : Fin (order x) → Pows x), Isomorphism φ := by\n                                                                                                   ^\n      exact expB_Pows_iso_Cn_order (x := x)\nerror: function expected at\n  Isomorphism\nterm has type\n  ?m.1244\n\nlocation:\n    \n    theorem expB_Pows_iso_Cn_order (x : G) [h : NeZero (order x)] : ∃ (φ : Fin (order x) → Pows x), Isomorphism φ := by\n                                                                                                                    ^\n      exact expB_Pows_iso_Cn_order (x := x)\nerror: unsolved goals\nG : Sort u_1\nx✝² : Sort u_2\norder : x✝²\nx✝¹ : Sort u_3\nPows : x✝¹\nx✝ : Sort u_4\nIsomorphism : x✝\nx : G\nh : NeZero (sorryAx (?m.3867 x) true)\n⊢ ∃ φ, sorryAx Prop true"
+        }
+      ],
+      "final_error": "location:\n    \n    theorem expB_Pows_iso_Cn_order (x : G) [h : NeZero (order x)] : ∃ (φ : Fin (order x) → Pows x), Isomorphism φ := by\n                                                       ^\n      exact expB_Pows_iso_Cn_order (x := x)\nerror: function expected at\n  order\nterm has type\n  ?m.183\n\nlocation:\n    \n    theorem expB_Pows_iso_Cn_order (x : G) [h : NeZero (order x)] : ∃ (φ : Fin (order x) → Pows x), Isomorphism φ := by\n                                                                               ^\n      exact expB_Pows_iso_Cn_order (x := x)\nerror: function expected at\n  order\nterm has type\n  ?m.183\n\nlocation:\n    \n    theorem expB_Pows_iso_Cn_order (x : G) [h : NeZero (order x)] : ∃ (φ : Fin (order x) → Pows x), Isomorphism φ := by\n                                                                                          ^\n      exact expB_Pows_iso_Cn_order (x := x)\nerror: function expected at\n  Pows\nterm has type\n  ?m.712\n\nlocation:\n    \n    theorem expB_Pows_iso_Cn_order (x : G) [h : NeZero (order x)] : ∃ (φ : Fin (order x) → Pows x), Isomorphism φ := by\n                                                                                                   ^\n      exact expB_Pows_iso_Cn_order (x := x)\nerror: function expected at\n  Isomorphism\nterm has type\n  ?m.1244\n\nlocation:\n    \n    theorem expB_Pows_iso_Cn_order (x : G) [h : NeZero (order x)] : ∃ (φ : Fin (order x) → Pows x), Isomorphism φ := by\n                                                                                                                    ^\n      exact expB_Pows_iso_Cn_order (x := x)\nerror: unsolved goals\nG : Sort u_1\nx✝² : Sort u_2\norder : x✝²\nx✝¹ : Sort u_3\nPows : x✝¹\nx✝ : Sort u_4\nIsomorphism : x✝\nx : G\nh : NeZero (sorryAx (?m.3867 x) true)\n⊢ ∃ φ, sorryAx Prop true"
+    },
+    "Generate_contain_set": {
+      "ok": false,
+      "attempts": [
+        {
+          "proof_body": "intro x hx\n  dsimp [Generate]\n  intro H hH\n  exact hH hx",
+          "ok": false,
+          "error_text": "location:\n    \n    theorem expB_Generate_contain_set (S : Set G) : S ⊆ Generate S := by\n                                                       ^\n      intro x hx\nerror: function expected at\n  Generate\nterm has type\n  ?m.22\n\nlocation:\n    theorem expB_Generate_contain_set (S : Set G) : S ⊆ Generate S := by\n      intro x hx\n     ^\n        dsimp [Generate]\nerror: tactic 'introN' failed, insufficient number of binders\nG : Type u_1\nx✝ : Sort u_2\nGenerate : x✝\nS : Set G\nx : G\nhx : x ∈ S\n⊢ x ∈ sorryAx (Set G) true"
+        },
+        {
+          "proof_body": "intro x hx\nchange ∀ H : Subgroup G, S ⊆ H → x ∈ H\nintro H hH\nexact hH hx",
+          "ok": false,
+          "error_text": "location:\n    \n    theorem expB_Generate_contain_set (S : Set G) : S ⊆ Generate S := by\n                                                       ^\n      intro x hx\nerror: function expected at\n  Generate\nterm has type\n  ?m.22\n\nlocation:\n      intro x hx\n      change ∀ H : Subgroup G, S ⊆ H → x ∈ H\n                  ^\n      intro H hH\nerror: failed to synthesize\n  Group G\nuse `set_option diagnostics true` to get diagnostic information"
+        },
+        {
+          "proof_body": "intro x hx\nshow x ∈ Generate S\nintro H hSH\nexact hSH hx",
+          "ok": false,
+          "error_text": "location:\n    \n    theorem expB_Generate_contain_set (S : Set G) : S ⊆ Generate S := by\n                                                       ^\n      intro x hx\nerror: function expected at\n  Generate\nterm has type\n  ?m.22\n\nlocation:\n      intro x hx\n      show x ∈ Generate S\n              ^\n      intro H hSH\nerror: function expected at\n  Generate\nterm has type\n  x✝\n\nlocation:\n      show x ∈ Generate S\n      intro H hSH\n     ^\n      exact hSH hx\nerror: tactic 'introN' failed, insufficient number of binders\nG : Type u_1\nx✝ : Sort u_2\nGenerate : x✝\nS : Set G\nx : G\nhx : x ∈ S\n⊢ x ∈ sorryAx (Set G) true"
+        }
+      ],
+      "final_error": "location:\n    \n    theorem expB_Generate_contain_set (S : Set G) : S ⊆ Generate S := by\n                                                       ^\n      intro x hx\nerror: function expected at\n  Generate\nterm has type\n  ?m.22\n\nlocation:\n      intro x hx\n      show x ∈ Generate S\n              ^\n      intro H hSH\nerror: function expected at\n  Generate\nterm has type\n  x✝\n\nlocation:\n      show x ∈ Generate S\n      intro H hSH\n     ^\n      exact hSH hx\nerror: tactic 'introN' failed, insufficient number of binders\nG : Type u_1\nx✝ : Sort u_2\nGenerate : x✝\nS : Set G\nx : G\nhx : x ∈ S\n⊢ x ∈ sorryAx (Set G) true"
+    },
+    "Minimal_smallest": {
+      "ok": false,
+      "attempts": [
+        {
+          "proof_body": "intro x hx\n  dsimp [Minimal] at hx\n  rw [hx]\n  exact H.one_mem",
+          "ok": false,
+          "error_text": "location:\n    \n    theorem expB_Minimal_smallest [Group G] (H : Subgroup G) : Minimal G ≤ H := by\n                                                              ^\n      intro x hx\nerror: function expected at\n  Minimal\nterm has type\n  ?m.21\n\nlocation:\n    theorem expB_Minimal_smallest [Group G] (H : Subgroup G) : Minimal G ≤ H := by\n      intro x hx\n     ^\n        dsimp [Minimal] at hx\nerror: tactic 'introN' failed, insufficient number of binders\nG : Type u_1\nx✝ : Sort u_2\nMinimal : x✝\ninst✝ : Group G\nH : Subgroup G\nx : G\nhx : x ∈ sorryAx (Subgroup G) true\n⊢ x ∈ H\n\nlocation:\n      intro x hx\n        dsimp [Minimal] at hx\n                       ^\n        rw [hx]\nerror: unexpected token 'at'; expected command"
+        },
+        {
+          "proof_body": "intro x hx\nunfold Minimal at hx\nsimp at hx\nsimpa [hx] using H.one_mem",
+          "ok": false,
+          "error_text": "location:\n    \n    theorem expB_Minimal_smallest [Group G] (H : Subgroup G) : Minimal G ≤ H := by\n                                                              ^\n      intro x hx\nerror: function expected at\n  Minimal\nterm has type\n  ?m.21\n\nlocation:\n      intro x hx\n      unfold Minimal at hx\n            ^\n      simp at hx\nerror: unknown constant 'Minimal'"
+        },
+        {
+          "proof_body": "intro x hx\n  simp [Minimal] at hx\n  simpa [hx] using H.one_mem",
+          "ok": false,
+          "error_text": "location:\n    \n    theorem expB_Minimal_smallest [Group G] (H : Subgroup G) : Minimal G ≤ H := by\n                                                              ^\n      intro x hx\nerror: function expected at\n  Minimal\nterm has type\n  ?m.21\n\nlocation:\n    theorem expB_Minimal_smallest [Group G] (H : Subgroup G) : Minimal G ≤ H := by\n      intro x hx\n     ^\n        simp [Minimal] at hx\nerror: tactic 'introN' failed, insufficient number of binders\nG : Type u_1\nx✝ : Sort u_2\nMinimal : x✝\ninst✝ : Group G\nH : Subgroup G\nx : G\nhx : x ∈ sorryAx (Subgroup G) true\n⊢ x ∈ H\n\nlocation:\n      intro x hx\n        simp [Minimal] at hx\n                      ^\n        simpa [hx] using H.one_mem\nerror: unexpected token 'at'; expected command"
+        }
+      ],
+      "final_error": "location:\n    \n    theorem expB_Minimal_smallest [Group G] (H : Subgroup G) : Minimal G ≤ H := by\n                                                              ^\n      intro x hx\nerror: function expected at\n  Minimal\nterm has type\n  ?m.21\n\nlocation:\n    theorem expB_Minimal_smallest [Group G] (H : Subgroup G) : Minimal G ≤ H := by\n      intro x hx\n     ^\n        simp [Minimal] at hx\nerror: tactic 'introN' failed, insufficient number of binders\nG : Type u_1\nx✝ : Sort u_2\nMinimal : x✝\ninst✝ : Group G\nH : Subgroup G\nx : G\nhx : x ∈ sorryAx (Subgroup G) true\n⊢ x ∈ H\n\nlocation:\n      intro x hx\n        simp [Minimal] at hx\n                      ^\n        simpa [hx] using H.one_mem\nerror: unexpected token 'at'; expected command"
+    },
+    "subgroup_eq_Maximal_of_card_eq_G": {
+      "ok": false,
+      "attempts": [
+        {
+          "proof_body": "ext x\n  apply Iff.intro\n  · intro hx\n    exact hx\n  · intro hx\n    by_contra hxH\n    let f : H → G := fun h => (h : G)\n    have hf_inj : Function.Injective f := by\n      intro a b hab\n      exact Subtype.ext hab\n    have hf_not_surj : ¬ Function.Surjective f := by\n      intro hsurj\n      obtain ⟨y, hy⟩ := hsurj x\n      exact hxH (by\n        simpa [f] using y.property)\n    have hlt : Fintype.card H < Fintype.card G :=\n      Fintype.card_lt_of_injective_not_surjective f hf_inj hf_not_surj\n    omega",
+          "ok": false,
+          "error_text": "location:\n    \n    theorem expB_subgroup_eq_Maximal_of_card_eq_G (H : Subgroup G) [Fintype G] [Fintype H] (h : Fintype.card G = Fintype.card H) : H = Maximal G := by\n                                                      ^\n      ext x\nerror: failed to synthesize\n  Group G\nuse `set_option diagnostics true` to get diagnostic information\n\nlocation:\n    \n    theorem expB_subgroup_eq_Maximal_of_card_eq_G (H : Subgroup G) [Fintype G] [Fintype H] (h : Fintype.card G = Fintype.card H) : H = Maximal G := by\n                                                                                                                                      ^\n      ext x\nerror: function expected at\n  Maximal\nterm has type\n  ?m.1513\n\nlocation:\n        apply Iff.intro\n        · intro hx\n       ^\n          exact hx\nerror: unexpected token '·'; expected command"
+        },
+        {
+          "proof_body": "let f : H → G := fun h => (h : G)\n  have hf_inj : Function.Injective f := by\n    intro a b hab\n    exact Subtype.ext hab\n  have hf_bij : Function.Bijective f := by\n    rw [Fintype.bijective_iff_injective_and_card]\n    exact ⟨hf_inj, h.symm⟩\n  ext x\n  apply Iff.intro\n  · intro hx\n    trivial\n  · intro hx\n    obtain ⟨y, rfl⟩ := hf_bij.surjective x\n    exact y.property",
+          "ok": false,
+          "error_text": "location:\n    \n    theorem expB_subgroup_eq_Maximal_of_card_eq_G (H : Subgroup G) [Fintype G] [Fintype H] (h : Fintype.card G = Fintype.card H) : H = Maximal G := by\n                                                      ^\n      let f : H → G := fun h => (h : G)\nerror: failed to synthesize\n  Group G\nuse `set_option diagnostics true` to get diagnostic information\n\nlocation:\n    \n    theorem expB_subgroup_eq_Maximal_of_card_eq_G (H : Subgroup G) [Fintype G] [Fintype H] (h : Fintype.card G = Fintype.card H) : H = Maximal G := by\n                                                                                                                                      ^\n      let f : H → G := fun h => (h : G)\nerror: function expected at\n  Maximal\nterm has type\n  ?m.1513\n\nlocation:\n    \n    theorem expB_subgroup_eq_Maximal_of_card_eq_G (H : Subgroup G) [Fintype G] [Fintype H] (h : Fintype.card G = Fintype.card H) : H = Maximal G := by\n                                                                                                                                                   ^\n      let f : H → G := fun h => (h : G)\nerror: unsolved goals\nG : Type u_1\nx✝ : Sort u_2\nMaximal : x✝\nH : sorryAx (Type u_1) true\ninst✝¹ : Fintype G\ninst✝ : Fintype (sorryAx (Type u_3) true)\nh : Fintype.card G = Fintype.card (sorryAx (Type u_3) true)\nf : sorryAx (Sort ?u.3258) true := sorryAx (sorryAx (Sort ?u.3258) true) true\n⊢ H = sorryAx (sorryAx (Type u_1) true) true\n\nlocation:\n      let f : H → G := fun h => (h : G)\n        have hf_inj : Function.Injective f := by\n       ^\n          intro a b hab\nerror: unexpected token 'have'; expected command"
+        },
+        {
+          "proof_body": "have f : H → G := fun h => (h : G)\n  have hf_inj : Function.Injective f := by\n    intro a b hab\n    exact Subtype.ext hab\n  have hf_bij : Function.Bijective f := by\n    rw [Fintype.bijective_iff_injective_and_card]\n    exact ⟨hf_inj, h.symm⟩\n  ext x\n  apply Iff.intro\n  · intro hx\n    trivial\n  · intro hx\n    obtain ⟨y, rfl⟩ := hf_bij.surjective x\n    exact y.property",
+          "ok": false,
+          "error_text": "location:\n    \n    theorem expB_subgroup_eq_Maximal_of_card_eq_G (H : Subgroup G) [Fintype G] [Fintype H] (h : Fintype.card G = Fintype.card H) : H = Maximal G := by\n                                                      ^\n      have f : H → G := fun h => (h : G)\nerror: failed to synthesize\n  Group G\nuse `set_option diagnostics true` to get diagnostic information\n\nlocation:\n    \n    theorem expB_subgroup_eq_Maximal_of_card_eq_G (H : Subgroup G) [Fintype G] [Fintype H] (h : Fintype.card G = Fintype.card H) : H = Maximal G := by\n                                                                                                                                      ^\n      have f : H → G := fun h => (h : G)\nerror: function expected at\n  Maximal\nterm has type\n  ?m.1513\n\nlocation:\n    \n    theorem expB_subgroup_eq_Maximal_of_card_eq_G (H : Subgroup G) [Fintype G] [Fintype H] (h : Fintype.card G = Fintype.card H) : H = Maximal G := by\n                                                                                                                                                   ^\n      have f : H → G := fun h => (h : G)\nerror: unsolved goals\nG : Type u_1\nx✝ : Sort u_2\nMaximal : x✝\nH : sorryAx (Type u_1) true\ninst✝¹ : Fintype G\ninst✝ : Fintype (sorryAx (Type u_3) true)\nh : Fintype.card G = Fintype.card (sorryAx (Type u_3) true)\nf : sorryAx (Sort ?u.3258) true\n⊢ H = sorryAx (sorryAx (Type u_1) true) true\n\nlocation:\n      have f : H → G := fun h => (h : G)\n        have hf_inj : Function.Injective f := by\n       ^\n          intro a b hab\nerror: unexpected token 'have'; expected command"
+        }
+      ],
+      "final_error": "location:\n    \n    theorem expB_subgroup_eq_Maximal_of_card_eq_G (H : Subgroup G) [Fintype G] [Fintype H] (h : Fintype.card G = Fintype.card H) : H = Maximal G := by\n                                                      ^\n      have f : H → G := fun h => (h : G)\nerror: failed to synthesize\n  Group G\nuse `set_option diagnostics true` to get diagnostic information\n\nlocation:\n    \n    theorem expB_subgroup_eq_Maximal_of_card_eq_G (H : Subgroup G) [Fintype G] [Fintype H] (h : Fintype.card G = Fintype.card H) : H = Maximal G := by\n                                                                                                                                      ^\n      have f : H → G := fun h => (h : G)\nerror: function expected at\n  Maximal\nterm has type\n  ?m.1513\n\nlocation:\n    \n    theorem expB_subgroup_eq_Maximal_of_card_eq_G (H : Subgroup G) [Fintype G] [Fintype H] (h : Fintype.card G = Fintype.card H) : H = Maximal G := by\n                                                                                                                                                   ^\n      have f : H → G := fun h => (h : G)\nerror: unsolved goals\nG : Type u_1\nx✝ : Sort u_2\nMaximal : x✝\nH : sorryAx (Type u_1) true\ninst✝¹ : Fintype G\ninst✝ : Fintype (sorryAx (Type u_3) true)\nh : Fintype.card G = Fintype.card (sorryAx (Type u_3) true)\nf : sorryAx (Sort ?u.3258) true\n⊢ H = sorryAx (sorryAx (Type u_1) true) true\n\nlocation:\n      have f : H → G := fun h => (h : G)\n        have hf_inj : Function.Injective f := by\n       ^\n          intro a b hab\nerror: unexpected token 'have'; expected command"
+    }
+  }
+}

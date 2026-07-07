@@ -202,17 +202,20 @@ class LemmaConstructorTest extends AnyFlatSpec with Matchers:
                         Leaf("tac", obl(List(hyp("h1","Nat")), "P"),
                              TacticSummary(Set.empty, Nil)))
     val lemma = LemmaConstructor.constructLemma(frag)
-    lemma.premises shouldBe Nil
+    lemma.premises  shouldBe Nil
+    lemma.scopeVars shouldBe Nil
   }
 
   it should "include only root hypotheses whose names appear in the support" in {
-    // Root has h1,h2,h3; support={h1,h3} → premises=[h1:T1, h3:T3], h2 excluded
+    // Root has h1,h2,h3; support={h1,h3} → premises=[h1:T1, h3:T3], h2 excluded to scopeVars
     val rootHyps = List(hyp("h1","T1"), hyp("h2","T2"), hyp("h3","T3"))
     val frag = Fragment(0, "F.lean", "f",
                         obl(rootHyps, "P"),
                         Leaf("tac", obl(rootHyps, "P"),
                              TacticSummary(Set("h1","h3"), Nil)))
-    LemmaConstructor.constructLemma(frag).premises shouldBe List("h1 : T1", "h3 : T3")
+    val lemma = LemmaConstructor.constructLemma(frag)
+    lemma.premises  shouldBe List("h1 : T1", "h3 : T3")
+    lemma.scopeVars shouldBe Nil
   }
 
   it should "preserve the hypothesis declaration order from rootObligation in premises" in {
@@ -301,8 +304,8 @@ class LemmaConstructorTest extends AnyFlatSpec with Matchers:
   }
 
   it should "lift body into a binder after premises when both are present" in {
-    // premises=[h2:Bool] (from support), body=non-⊤ Lem (no top-level →), conclusion=P.
-    // The body has no name → gets fresh `h1` (h2 is taken).
+    // h1 is not in support and not referenced in conclusion "P" or body "Q" → dropped from scope_vars.
+    // Fresh name for body avoids only h2 (premise) → gets h1.
     val rootHyps = List(hyp("h1","Nat"), hyp("h2","Bool"))
     val frag = Fragment(0, "F.lean", "f",
                         obl(rootHyps, "P"),
@@ -313,6 +316,7 @@ class LemmaConstructorTest extends AnyFlatSpec with Matchers:
                              TacticSummary(Set("h2"), List(Map.empty)),
                              List(Hole("ℓ1", obl(rootHyps, "Q")))))
     val lemma = LemmaConstructor.constructLemma(frag)
+    lemma.scopeVars  shouldBe Nil
     lemma.premises   shouldBe List("h2 : Bool")
     lemma.body       shouldBe "Q"
     lemma.statement  shouldBe "(h2 : Bool) (h1 : Q) : P"
@@ -439,6 +443,7 @@ class LemmaConstructorTest extends AnyFlatSpec with Matchers:
                              nodeSum,
                              List(Leaf("exact h2", obl(rootHyps, "R"), leafSum))))
     val lemma = LemmaConstructor.constructLemma(frag)
+    lemma.scopeVars shouldBe Nil
     lemma.premises  shouldBe List("h1 : Nat", "h3 : Nat")
     lemma.body      shouldBe "True"
     lemma.statement shouldBe "(h1 : Nat) (h3 : Nat) : Q"
@@ -501,10 +506,11 @@ class LemmaConstructorTest extends AnyFlatSpec with Matchers:
                          obl(rootHyps, "final_goal"), rootTree)
     val lemma = LemmaConstructor.constructLemma(frag)
 
+    lemma.scopeVars  shouldBe Nil
     lemma.premises   shouldBe List("h1 : Nat")
     lemma.body       shouldBe "L_leaf_goal ∧ ((h3 : Prop) → (h4 : Nat) → R_leaf_goal)"
     lemma.conclusion shouldBe "final_goal"
-    // body has no top-level → → lifted as one binder; h1/h3/h4 are in scope so fresh name = h2
+    // body lifted as one binder; h1 (premise), h3/h4 (in body) all blocked → h2 is fresh
     lemma.statement  shouldBe
       "(h1 : Nat) (h2 : L_leaf_goal ∧ ((h3 : Prop) → (h4 : Nat) → R_leaf_goal)) : final_goal"
   }
@@ -534,10 +540,55 @@ class LemmaConstructorTest extends AnyFlatSpec with Matchers:
       )
     )
     val lemma = LemmaConstructor.constructLemma(frag)
+    lemma.scopeVars  shouldBe List("h1 : Nat", "h2 : Nat")
     lemma.premises   shouldBe List("ih : h1+0=0+h1")
     lemma.body       shouldBe "h1+h2=h2+h1"
     lemma.conclusion shouldBe "h1+succ h2=succ h2+h1"
-    // h1 and h2 already appear as variables in body/conclusion → fresh name skips to h3
+    // h1/h2 are scope vars (taken), h3 is free in the avoid string → fresh name = h3
     lemma.statement  shouldBe
-      "(ih : h1+0=0+h1) (h3 : h1+h2=h2+h1) : h1+succ h2=succ h2+h1"
+      "(h1 : Nat) (h2 : Nat) (ih : h1+0=0+h1) (h3 : h1+h2=h2+h1) : h1+succ h2=succ h2+h1"
+  }
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // constructLemma — scope_var reachability filtering (new rules)
+  // ═══════════════════════════════════════════════════════════════════════════
+
+  it should "keep only scope_vars reachable from conclusion and drop the rest" in {
+    // h1 appears in conclusion "h1 = h1" → reachable → kept.
+    // h3 : Bool is not referenced anywhere in conclusion/body/premise types → dropped.
+    // support = {h2}, so h2 is a premise, h1 and h3 are non-support scope candidates.
+    val rootHyps = List(hyp("h1","Nat"), hyp("h2","Nat"), hyp("h3","Bool"))
+    val frag = Fragment(0, "F.lean", "f",
+                        obl(rootHyps, "h1 = h1"),
+                        Leaf("tac", obl(rootHyps, "h1 = h1"),
+                             TacticSummary(Set("h2"), Nil)))
+    val lemma = LemmaConstructor.constructLemma(frag)
+    lemma.scopeVars shouldBe List("h1 : Nat")
+    lemma.premises  shouldBe List("h2 : Nat")
+  }
+
+  it should "transitively keep scope_vars whose names appear in types of already-reachable scope_vars" in {
+    // conclusion "h1.length = 0" → seeds = {h1, length}
+    // h1 : List h2 → expand: add {List, h2} to seeds → h2 now reachable → kept
+    // h3 : Bool → "h3" never enters seeds → dropped
+    val rootHyps = List(hyp("h1","List h2"), hyp("h2","Nat"), hyp("h3","Bool"))
+    val frag = Fragment(0, "F.lean", "f",
+                        obl(rootHyps, "h1.length = 0"),
+                        Leaf("tac", obl(rootHyps, "h1.length = 0"),
+                             TacticSummary(Set.empty, Nil)))
+    val lemma = LemmaConstructor.constructLemma(frag)
+    lemma.scopeVars shouldBe List("h1 : List h2", "h2 : Nat")
+  }
+
+  it should "always keep inst-prefixed scope_vars even when unreferenced in conclusion or body" in {
+    // inst✝ : LT T starts with "inst" → unconditionally kept (type class instance rule).
+    // e appears in conclusion "e = e" → kept via reachability.
+    // unused : Bool has an unreachable name and no inst prefix → dropped.
+    val rootHyps = List(hyp("inst✝","LT T"), hyp("e","T"), hyp("unused","Bool"))
+    val frag = Fragment(0, "F.lean", "f",
+                        obl(rootHyps, "e = e"),
+                        Leaf("tac", obl(rootHyps, "e = e"),
+                             TacticSummary(Set.empty, Nil)))
+    val lemma = LemmaConstructor.constructLemma(frag)
+    lemma.scopeVars shouldBe List("inst✝ : LT T", "e : T")
   }

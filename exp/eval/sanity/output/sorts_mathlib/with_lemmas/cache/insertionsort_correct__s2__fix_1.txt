@@ -1,0 +1,85 @@
+theorem:  insertionsort_correct
+sample:   2
+attempt:  fix_1
+
+[proof]
+intro l
+induction l with
+| nil =>
+  constructor
+  · simp [insertionsort, Sorted.nil]
+  · exact lemma_hint_21
+| cons x xs ih =>
+  rcases ih with ⟨hs, hp⟩
+  constructor
+  ·
+    have hins : ∀ ys, Sorted ys → Sorted (insert_ x ys) := by
+      intro ys hy
+      induction ys with
+      | nil =>
+        simp [insert_]
+        exact Sorted.singleton
+      | cons y ys ihys =>
+        cases ys with
+        | nil =>
+          simp [insert_]
+          by_cases h : x < y
+          · simp [h]
+            exact Sorted.cons Sorted.singleton (by intro hyx; exact (Preorder.lt_irrefl _ ) (hyx.trans h))
+          · simp [h]
+            exact Sorted.cons Sorted.singleton h
+        | cons z zs =>
+          have s' : Sorted (z :: zs) := lemma_hint_33 y z zs hy
+          have ih' : Sorted (insert_ x (z :: zs)) := ihys s'
+          by_cases hxy : x < y
+          · simp [insert_, hxy]
+            exact Sorted.cons hy (by intro hyx; exact (Preorder.lt_irrefl _ ) (hyx.trans hxy))
+          · have : Sorted (insert_ x (z :: zs)) := ih'
+            by_cases hxz : x < z
+            · exact lemma_hint_28 y x hxy z zs hy ih' hxz
+            · have hz : Sorted (z :: zs) := lemma_hint_33 y z zs hy
+              have htail : Sorted (insert_ x (z :: zs)) := ih'
+              exact lemma_hint_24 y z zs hy htail
+    simpa [insertionsort] using hins (insertionsort xs) hs
+  · exact lemma_hint_3 x xs
+
+[lean error]
+location:
+                · simp [h]
+                  exact Sorted.cons Sorted.singleton (by intro hyx; exact (Preorder.lt_irrefl _ ) (hyx.trans h))
+                                                                          ^
+                · simp [h]
+error: error(lean.unknownIdentifier): Unknown constant `Preorder.lt_irrefl`
+
+location:
+                · simp [insert_, hxy]
+                  exact Sorted.cons hy (by intro hyx; exact (Preorder.lt_irrefl _ ) (hyx.trans hxy))
+                                                            ^
+                · have : Sorted (insert_ x (z :: zs)) := ih'
+error: error(lean.unknownIdentifier): Unknown constant `Preorder.lt_irrefl`
+
+location:
+                  by_cases hxz : x < z
+                  · exact lemma_hint_28 y x hxy z zs hy ih' hxz
+                   ^
+                  · have hz : Sorted (z :: zs) := lemma_hint_33 y z zs hy
+error: Type mismatch
+  lemma_hint_28 y x hxy z zs hy ih' hxz
+has type
+  Sorted (y :: if x < z then x :: z :: zs else z :: insert_ x zs)
+but is expected to have type
+  Sorted (insert_ x (y :: z :: zs))
+
+location:
+                    have htail : Sorted (insert_ x (z :: zs)) := ih'
+                    exact lemma_hint_24 y z zs hy htail
+                                           ^
+          simpa [insertionsort] using hins (insertionsort xs) hs
+error: Application type mismatch: The argument
+  zs
+has type
+  List T
+but is expected to have type
+  T
+in the application
+  lemma_hint_24 y z zs
