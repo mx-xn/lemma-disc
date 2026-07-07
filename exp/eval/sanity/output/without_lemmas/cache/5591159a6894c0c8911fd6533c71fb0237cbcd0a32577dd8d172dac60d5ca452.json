@@ -1,8 +1,0 @@
-{
-  "model": "gpt-5.2",
-  "temperature": 0.0,
-  "max_tokens": 2048,
-  "system": "You are an expert Lean 4 theorem prover. Your output **must** strictly adhere to the XML-tag format specified in each request.",
-  "user": "Prove the following Lean 4 theorem.\n\nImports in scope: LeanSrc.Examples.\n\n### Input\n\n* `<local_ctx>`: Local definitions from the same file that precede the target theorem. You may freely reference any of them without redefining them.\n\n<local_ctx>\ndef takeWhile : (α → Bool) → List α → List α\n  | _, [] => []\n  | p, x::xs => if p x then x ::(takeWhile p xs) else []\n</local_ctx>\n\nTheorem statement:\n\n    (xs: List α) : (takeWhile (fun _ => True) xs = xs)\n\n### Output Format & Requirements\n\nYour output MUST follow this structure exactly:\n\n<reasoning>\n...\n</reasoning>\n\n<lean4_proof>\n-- tactic proof body only\n</lean4_proof>\n\n**Requirements:**\n1. `<reasoning>` is OPTIONAL. Include it only if it aids proof construction.\n2. `<lean4_proof>` is REQUIRED. It must contain ONLY the tactic body — no `theorem` declaration, no `:= by`, no ``` fences. Your output is indented and placed directly after `:= by` in the compiled file.\n3. No `sorry` or `admit` anywhere. All Lean 4 code must type-check.\n4. Follow the tag structure exactly. No extra text before, between, or after the tags.\n\nEmit your response now.\n",
-  "response": "<reasoning>\nProve by induction on xs. In the cons case, simp reduces the if since predicate is always True.\n</reasoning>\n\n<lean4_proof>\n  induction xs with\n  | nil =>\n      simp [takeWhile]\n  | cons x xs ih =>\n      simp [takeWhile, ih]\n</lean4_proof>"
-}
